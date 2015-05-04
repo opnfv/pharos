@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_3df8b97b",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "shall we precise the list of existing testlabs in this document? explaining that Pharos provide recommendations for installation but is also a federation of testbeds. Shall we add a section \"if you want to join OPNFV Pharos federation of testbeds\"?",
+      "range": {
+        "startLine": 1,
+        "startChar": 7,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_bddde916",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "space",
+      "range": {
+        "startLine": 17,
+        "startChar": 56,
+        "endLine": 17,
+        "endChar": 57
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_fdc37136",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "I will mention Arno rather BGS",
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_3dd1d9fb",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "what are these tools?",
+      "range": {
+        "startLine": 76,
+        "startChar": 15,
+        "endLine": 76,
+        "endChar": 20
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_1dce1d5b",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "to be removed?",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 7
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_fdda5116",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 5
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_9de22dd4",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "For the tools on the Jumphost, better put a link to functest document http://artifacts.opnfv.org/functest/docs/functest.html rather duplicating the information",
+      "range": {
+        "startLine": 81,
+        "startChar": 5,
+        "endLine": 81,
+        "endChar": 10
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_7de761e5",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "it is maybe too late but same default glance image would have been nice. Fuel \u003d\u003e vTest, Foreman \u003d\u003e cirros \nscripts need to be adapted according to installer..",
+      "range": {
+        "startLine": 100,
+        "startChar": 76,
+        "endLine": 100,
+        "endChar": 78
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_ddd795ec",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "for further use, an ASCII figure such as the one used for LF description is easier to adapt, isn\u0027t it? https://wiki.opnfv.org/get_started/lflab_hosting",
+      "range": {
+        "startLine": 199,
+        "startChar": 43,
+        "endLine": 199,
+        "endChar": 46
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_9d090d98",
+        "filename": "docs/spec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2015-05-04T15:36:07Z",
+      "side": 1,
+      "message": "Did I miss something but not planned for Arno, only fuel and foreman are considered",
+      "range": {
+        "startLine": 213,
+        "startChar": 24,
+        "endLine": 213,
+        "endChar": 30
+      },
+      "revId": "b75bad685fdd0edb8312b655114247469be8efa7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
