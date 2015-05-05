@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_685d61e9",
+        "filename": "docs/pharos.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-05-05T12:46:05Z",
+      "side": 1,
+      "message": "Isn\u0027t committers coming from the INFO file?",
+      "revId": "bf8d0793e05c6dad2eeefe74ee470a8ee8b0c975",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
