@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_880f8de1",
+        "filename": "docs/spec.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-05-05T12:49:08Z",
+      "side": 1,
+      "message": "A general comment: all the tools below are hosted by LF so it can be a general statement here.\n\nRegarding robot/tempest/rally, they\u0027re installed on LF POD jumphost so they are also kind of \"hosted\" by LF.",
+      "revId": "7edcd41c18b6ba29d97cfc1de35458b9fa5de458",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_286f5994",
+        "filename": "docs/spec.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-05-05T12:49:08Z",
+      "side": 1,
+      "message": "just Jenkins",
+      "revId": "7edcd41c18b6ba29d97cfc1de35458b9fa5de458",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a045101_086c9d9b",
+        "filename": "docs/spec.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-05-05T12:49:08Z",
+      "side": 1,
+      "message": "Git Repository",
+      "revId": "7edcd41c18b6ba29d97cfc1de35458b9fa5de458",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
