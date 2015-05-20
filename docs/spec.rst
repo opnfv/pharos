@@ -31,8 +31,7 @@ Constraints of a Pharos compliant OPNFV test-bed environment
 Target Systems State
 ---------------------
 
-- Target system state includes default software components, network configuration, storage requirements `https://wiki.opnfv.org/get_started/get_started_system_state <https://wiki.opnfv.org/get_started/get_started_system_state>`
-
+- 'Target system state <https://wiki.opnfv.org/get_started/get_started_system_state>'_ includes default software components, network configuration, storage requirements
 
 Rls 1 specification is modeled from Arno
 
@@ -49,7 +48,7 @@ CPU:
 
 * Intel Xeon E5-2600 (IvyBridge at least, or similar)
 
-Local Storage:
+Local Storage (per server):
 
 * Disks: 4 x 500G-2T + 1 x 300GB SSD (leave some room for experiments)
 * First 2 disks should be combined to form a 1 TB virtual store for the OS/Software etc
@@ -96,13 +95,13 @@ Remote management
 
 **Remote access**
 
-- Remote access is required for …
+- Remote access is required for
 
   1. Developers to access deploy/test environments (credentials to be issued per POD / user)
   2. Connection of each environment to Jenkins master hosted by Linux Foundation for automated deployment and test
 
 - VPN is optional and dependent on company security rules (out of Pharos scope)
-- POD access rules / restrictions …
+- POD access rules / restrictions
 
   - Refer to individual test-bed as each company may have different access rules and procedures
 
@@ -118,13 +117,16 @@ Lights-out Management:
 
 - Out-of-band management for power on/off/reset and bare-metal provisioning
 - Access to server is through lights-out-management tool and/or a serial console
-- Intel lights-out ⇒ RMM http://www.intel.com/content/www/us/en/server-management/intel-remote-management-module.html
-- HP lights-out ⇒ ILO http://www8.hp.com/us/en/products/servers/ilo/index.html
-- CISCO lights-out ⇒ UCS https://developer.cisco.com/site/ucs-dev-center/index.gsp
+- Intel lights-out: RMM http://www.intel.com/content/www/us/en/server-management/intel-remote-management-module.html
+- HP lights-out: ILO http://www8.hp.com/us/en/products/servers/ilo/index.html
+- CISCO lights-out: UCS https://developer.cisco.com/site/ucs-dev-center/index.gsp
 
 Linux Foundation - VPN service for accessing Lights-Out Management (LOM) infrastructure for the UCS-M hardware
 
-- People who can authorize access … 1) 2) 3)
+- People who can authorize access
+  1.
+  2.
+  3.
 - The people who request VPN access must have a valid PGP key bearing a valid signature from one of these three people. When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key.
 
 Networking
@@ -164,7 +166,7 @@ Storage Network
 
 - Needs specification
 
-** Topology **
+**Topology**
 
 - Subnet, VLANs (want to standardize but may be constrained by existing lab setups or rules)
 - IPs
@@ -184,7 +186,7 @@ compute node bridge topology overview
 Architecture
 -------------
 
-** Network Diagram **
+**Network Diagram**
 
 The Pharos architecture may be described as follow: Figure 1: Standard Deployment Environment
 
@@ -208,10 +210,10 @@ Sample Network Drawings
 
 Files for documenting lab network layout. These were contributed as Visio VSDX format compressed as a ZIP file. Here is a sample of what the visio looks like.
 
-Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`
+Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`_
 
 .. image:: images/opnfv-example-lab-diagram.png
 
-FYI: `Here <http://www.opendaylight.org/community/community-labs>` is what the OpenDaylight lab wiki pages look like.
+FYI: `Here <http://www.opendaylight.org/community/community-labs>'_ is what the OpenDaylight lab wiki pages look like.
 
 
