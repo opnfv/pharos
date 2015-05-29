@@ -124,8 +124,25 @@ Lights-out Management:
 
 Linux Foundation - VPN service for accessing Lights-Out Management (LOM) infrastructure for the UCS-M hardware
 
-- People who can authorize access … 1) 2) 3)
-- The people who request VPN access must have a valid PGP key bearing a valid signature from one of these three people. When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key.
+- People with admin access to LF infrastructure:
+
+1. amaged@cisco.com
+2. cogibbs@cisco.com
+3. daniel.smith@ericsson.com
+4. dradez@redhat.com
+5. fatih.degirmenci@ericsson.com
+6. fbrockne@cisco.com
+7. jonas.bjurel@ericsson.com
+8. jose.lausuch@ericsson.com
+9. joseph.gasparakis@intel.com
+10. morgan.richomme@orange.com
+11. pbandzi@cisco.com
+12. phladky@cisco.com
+13. stefan.k.berg@ericsson.com
+14. szilard.cserey@ericsson.com
+15. trozet@redhat.com
+
+- The people who require VPN access must have a valid PGP key bearing a valid signature from one of these three people. When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key.
 
 Networking
 -----------
