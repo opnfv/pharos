@@ -72,28 +72,25 @@ Power Supply Single
 
 Jump Server Installation
 
-* OS: CentOS 7
-* KVM / Qemu
-* Installer (Foreman, Fuel, ...) in a VM
-* Tools
+  * OS: CentOS 7
+  * KVM / Qemu
+  * Installer (Foreman, Fuel, ...) in a VM
+  * Tools
 
 See `Jump Server Installation <https://wiki.opnfv.org/jump_server_installation_guide>`_ for detailed Jump Server installation details.
 
-Test Tools
+Test Tools - See `functest <http://artifacts.opnfv.org/functest/docs/functest.html>`_
 
-Jump Server - `functest <http://artifacts.opnfv.org/functest/docs/functest.html>`_
+Controller nodes - these are bare metal servers
 
-Controller nodes - bare metal
+Compute nodes - these bare metal servers
 
-Compute nodes - bare metal
+**Infrastructure naming conventions / recommendations**
 
-**Security**
+The Pharos specificaiton provides recomendations for default logins and  naming conventions
 
-- Servers
-
-  - Default permissions
-  - Server Logins
-  - **Pharos team needs to provide consistent usernames for infrastructure**
+See `Infrastructure naming conventions <https://wiki.opnfv.org/pharos/pharos_naming>`_
+  
 
 Remote management
 ------------------
