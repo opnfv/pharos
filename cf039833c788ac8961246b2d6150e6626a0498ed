@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_b5028e3c",
+        "filename": "docs/pharos-spec.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-06-03T20:35:25Z",
+      "side": 0,
+      "message": "This is similar to previous comment regarding wiki - open to mistakes - but I\u0027m not sure if media files can be referred using versions or something.",
+      "revId": "cf039833c788ac8961246b2d6150e6626a0498ed",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}

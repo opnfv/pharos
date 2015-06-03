@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a045101_b5dbaeec",
+        "filename": "docs/pharos-spec.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-06-03T20:35:25Z",
+      "side": 1,
+      "message": "The requirement may never change but someone could remove the contents of the page and make the link pointing to an empty page. Should this refer to a specific version of the wiki page?",
+      "revId": "15d71c2ed99d22d86996ec0f73b04868a77b7e87",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
