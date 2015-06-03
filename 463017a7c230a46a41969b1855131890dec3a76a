@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a045101_6f20b9f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2015-06-03T07:07:52Z",
+      "side": 1,
+      "message": "Can you please update the commit message as explained on below guide?\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "revId": "463017a7c230a46a41969b1855131890dec3a76a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a045101_cf034d72",
         "filename": "docs/spec.rst",
         "patchSetId": 1
