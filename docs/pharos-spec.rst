@@ -1,47 +1,38 @@
 Pharos Specification
 =====================
 
+
+.. contents:: Table of Contents
+   :backlinks: none
+
+
 Objectives / Scope
 -------------------
 
-Pharos spec defines the OPNFV test environment (in which OPNFV platform can be deployed and tested).
+The Pharos specification defines the OPNFV hardware environment upon which the OPNFV Arno platform release can be deployed on and tested.  This specification defines:
 
-- Provides a secure, scalable, standard and HA environment
-- Supports full deployment lifecycle (this requires a bare metal environment)
-- Supports functional and performance testing
-- Provides common tooling and test scenarios (including test cases and workloads) available to the community
+- A secure, scalable, standard and HA environment
+- Supports the full Arno deployment lifecycle (this requires a bare metal environment)
+- Supports functional and performance testing of the Arno release
 - Provides mechanisms and procedures for secure remote access to the test environment
 
-Virtualized environments will be useful but do not provide a fully featured deployment/test capability.
+Deploying Arno in a Virtualized environment is possible and will be useful, however it does not provide a fully featured deployment and test environment for the Arno release of OPNFV.
 
-The high level architecture may be summarized as follows:
+The high level architecture is outlined in the following diagram:
 
 .. image:: images/pharos-archi1.jpg
 
-Constraints of a Pharos compliant OPNFV test-bed environment
--------------------------------------------------------------
+A Pharos compliant OPNFV test-bed environment provides
+------------------------------------------------------
 
-- One CentOS 7 Jump Server on which the virtualized Openstack/OPNFV installer runs
-- Desired installer - may be Fuel, Foreman, Juju, etc
-- 2 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
-- Network topology allowing for LOM, Admin, Public, Private, and Storage Networks
-- Remote access
-- Test Tools
+- One CentOS 7 jump server on which the virtualized Openstack/OPNFV installer runs
+- In the Arno release you may select a deployment toolchain to deploy from the jump server from the Foreman and Fuel ISO images.
+- 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
+- A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
+- Remote access as defined by the Jenkins slave configuration guide http://artifacts.opnfv.org/arno.2015.1.0/docs/opnfv-jenkins-slave-connection.arno.2015.1.0.pdf
 
-Target Systems State
+Hardware requirements
 ---------------------
-
-- Target system state includes default software components, network configuration, storage requirements `https://wiki.opnfv.org/get_started/get_started_system_state <https://wiki.opnfv.org/get_started/get_started_system_state>`
-
-
-Rls 1 specification is modeled from Arno
-
-* First draft of environment for BGS https://wiki.opnfv.org/get_started/get_started_work_environment
-* Fuel environment https://wiki.opnfv.org/get_started/networkingblueprint
-* Foreman environment https://wiki.opnfv.org/get_started_experiment1#topology
-
-Hardware
----------
 
 **Servers**
 
@@ -68,29 +59,56 @@ Power Supply Single
 
 * Single power supply acceptable (redundant power not required/nice to have)
 
-**Provisioning**
+Provisioning the jump server
+----------------------------
 
-Jump Server Installation
+1. Obtain CentOS 7 Minimal ISO and install
 
-  * OS: CentOS 7
-  * KVM / Qemu
-  * Installer (Foreman, Fuel, ...) in a VM
-  * Tools
+  ``wget http://mirrors.kernel.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso``
 
-See `Jump Server Installation <https://wiki.opnfv.org/jump_server_installation_guide>`_ for detailed Jump Server installation details.
+2. Set parameters appropriate for your environment during installation
 
-Test Tools - See `functest <http://artifacts.opnfv.org/functest/docs/functest.html>`_
+3. Disable NetworkManager
 
-Controller nodes - these are bare metal servers
+  ``systemctl disable NetworkManager``
 
-Compute nodes - these bare metal servers
+4. Configure your /etc/sysconfig/network-scripts/ifcfg-* files for your network
 
-**Infrastructure naming conventions / recommendations**
+5. Restart networking
 
-The Pharos specificaiton provides recomendations for default logins and  naming conventions
+  ``service network restart``
 
-See `Infrastructure naming conventions <https://wiki.opnfv.org/pharos/pharos_naming>`_
-  
+6. Edit /etc/resolv.conf and add a nameserver
+
+  ``vi /etc/resolv.conf``
+
+7. Install libvirt & kvm
+
+  ``yum -y update``
+  ``yum -y install kvm qemu-kvm libvirt``
+  ``systemctl enable libvirtd``
+
+8. Reboot:
+
+  ``shutdown -r now``
+
+9. If you wish to avoid annoying delay when use ssh to log in, disable DNS lookups:
+
+  ``vi /etc/ssh/sshd_config``
+  Uncomment "UseDNS yes", change 'yes' to 'no'.
+  Save
+
+10. Restart sshd
+
+  ``systemctl restart sshd``
+
+11. Install virt-install
+
+  ``yum -y install virt-install``
+
+12. Begin the installation of the Arno release
+
+  Download your prefered ISO from the OPNFV dowloads page http://www.opnfv.org/software/download and follow the associated installation instructions.
 
 Remote management
 ------------------
@@ -211,16 +229,6 @@ The Pharos architecture may be described as follow: Figure 1: Standard Deploymen
 Figure 1: Standard Deployment Environment
 
 
-Tools
-------
-
-- Jenkins
-- Tempest / Rally
-- Robot
-- Git repository
-- Jira
-- FAQ channel
-
 Sample Network Drawings
 -----------------------
 
@@ -230,4 +238,14 @@ Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://w
 
 .. image:: images/opnfv-example-lab-diagram.png
 
-FYI: `Here <http://www.opendaylight.org/community/community-labs>` is what the OpenDaylight lab wiki pages look like.
+
+:Authors: Trevor Cooper (Intel)
+:Version: 1.0
+
+**Documentation tracking**
+
+Revision: _sha1_
+
+Build date:  _date_
+
+
