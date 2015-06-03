@@ -239,8 +239,8 @@ Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://w
 
 **Documentation tracking**
 
-Revision: _sha1
+Revision: _sha1_
 
-Build date:  _date
+Build date:  _date_
 
 
