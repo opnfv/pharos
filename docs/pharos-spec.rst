@@ -120,16 +120,16 @@ Remote management
   1. Developers to access deploy/test environments (credentials to be issued per POD / user)
   2. Connection of each environment to Jenkins master hosted by Linux Foundation for automated deployment and test
 
-- VPN is optional and dependent on company security rules (out of Pharos scope)
+- OpenVPN is generally used for remote however community hosted labs may vary due to company security rules
 - POD access rules / restrictions …
 
-  - Refer to individual test-bed as each company may have different access rules and procedures
+  - Refer to individual test-bed as each company may have different access rules and acceptable usage policies
 
 - Basic requirement is for SSH sessions to be established (initially on jump server)
-- Majority of packages installed on a system (tools or applications) will be pulled from an external storage solution so this type of things should be solved in a very general sense for the projects
+- Majority of packages installed on a system (tools or applications) will be pulled from an external repo so this scenario must be accomodated.
 
-Firewall rules
-
+Firewall rules should include 
+ 
 - SSH sessions
 - Jenkins sessions
 
@@ -175,7 +175,7 @@ Test-bed network
 
 Network Interfaces
 
-* Option 1: 4x1G Control, 2x40G Data, 48 Port Switch
+* Option I: 4x1G Control, 2x40G Data, 48 Port Switch
 
   * 1 x 1G for ILMI (Lights out Management )
   * 1 x 1G for Admin/PXE boot
@@ -195,22 +195,25 @@ Network Interfaces
   * 2 x 10G for control plane connectivity/Storage
   * 2 x 40G (or 10G) for data network
 
-** Topology **
-
+Documented configuration to include:
 - Subnet, VLANs (may be constrained by existing lab setups or rules)
 - IPs
 - Types of NW - lights-out, public, private, admin, storage
 - May be special NW requirements for performance related projects
 - Default gateways
 
+
+Controller node bridge topology overview
+
 .. image:: images/bridge1.png
 
-controller node bridge topology overview
 
+compute node bridge topology overview
 
 .. image:: images/bridge2.png
 
-compute node bridge topology overview
+
+
 
 Architecture
 -------------
@@ -242,5 +245,4 @@ Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://w
 Revision: _sha1
 
 Build date:  _date
-
 
