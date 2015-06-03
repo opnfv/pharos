@@ -4,7 +4,11 @@ Pharos Specification
 Objectives / Scope
 -------------------
 
-Pharos spec defines the OPNFV test environment (in which OPNFV platform can be deployed and tested …
+<<<<<<< HEAD
+Pharos spec defines the OPNFV test environment (in which OPNFV platform can be deployed and tested).
+=======
+Pharos spec defines the OPNFV test environment (in which OPNFV platform can be deployed and tested). 
+>>>>>>> parent of 9353456... Revert "Changed wording/bullet items and added a link in the Constraints section."
 
 - Provides a secure, scalable, standard and HA environment
 - Supports full deployment lifecycle (this requires a bare metal environment)
@@ -12,21 +16,27 @@ Pharos spec defines the OPNFV test environment (in which OPNFV platform can be d
 - Provides common tooling and test scenarios (including test cases and workloads) available to the community
 - Provides mechanisms and procedures for secure remote access to the test environment
 
-Virtualized environments will be useful but do not provide a fully featured deployment/test capability
+Virtualized environments will be useful but do not provide a fully featured deployment/test capability.
 
-The high level architecture may be summarized as follow:
+The high level architecture may be summarized as follows:
 
 .. image:: images/pharos-archi1.jpg
 
 Constraints of a Pharos compliant OPNFV test-bed environment
 -------------------------------------------------------------
 
-- One jump (provisioning server) in which the installer runs in a VM
-- 2 - 5 compute / controller nodes
-- Jump server provisioned with CentOS7
-- Installer (e.g. Foreman) runs its own DHCP server therefore management network should not have DHCP server
+<<<<<<< HEAD
+- One CentOS 7 Jump Server on which the virtualized Openstack/OPNFV installer runs
+- Desired installer - may be Fuel, Foreman, Juju, etc
+- 2 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
+=======
+- One CentOS 7 Jump Server on which the virtualized Openstack/OPNFV installer runs 
+- Desired installer - may be Fuel, Foreman, Juju, etc
+- 2 - 5 compute / controller nodes (`BGS requires 5 https://wiki.opnfv.org/get_started/get_started_work_environment`_)
+>>>>>>> parent of 9353456... Revert "Changed wording/bullet items and added a link in the Constraints section."
+- Network topology allowing for LOM, Admin, Public, Private, and Storage Networks
 - Remote access
-- A lights-out network is required for remote management and bare metal provisioning capability
+- Test Tools
 
 Target Systems State
 ---------------------
@@ -47,14 +57,16 @@ Hardware
 
 CPU:
 
-* Intel Xeon E5-2600 (IvyBridge at least, or similar)
+* Intel Xeon E5-2600v2 Series (Ivy Bridge and newer, or similar)
 
-Local Storage:
+Local Storage Configuration:
 
-* Disks: 4 x 500G-2T + 1 x 300GB SSD (leave some room for experiments)
-* First 2 disks should be combined to form a 1 TB virtual store for the OS/Software etc
-* Remaining should be combined to form a virtual disk for CEPH storage
-* The 5'th disk (SSD) for distributed storage (CEPH) journal towards SSD technology.
+Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for a reasonably functional environment. Additional and/or faster disks are nice to have and may produce a better result.
+
+* Disks: 2 x 1TB + 1 x 100GB SSD
+* The first 1TB HDD should be used for OS & additional software/tool installation
+* The second 1TB HDD configured for CEPH object storage
+* Finally, the 100GB SSD should be used as the CEPH journal
 * Performance testing requires a mix of compute nodes that have CEPH(swift+Cinder) and without CEPH storage
 * Virtual ISO boot capabilities or a separate PXE boot server (DHCP/tftp or Cobbler)
 
@@ -68,16 +80,24 @@ Power Supply Single
 
 **Provisioning**
 
-Pre-provisioning Jump Server
+Jump Server Installation
 
-* OS - CentOS7
+<<<<<<< HEAD
+* OS: CentOS 7
+=======
+* OS: CentOS 7 
+>>>>>>> parent of 9353456... Revert "Changed wording/bullet items and added a link in the Constraints section."
 * KVM / Qemu
 * Installer (Foreman, Fuel, ...) in a VM
-* Collaboration Tools
+* Tools
+
+See `Jump Server Installation <https://wiki.opnfv.org/jump_server_installation_guide>`_ for detailed Jump Server installation details.
+
+`Jump Server Provisioning <http://wiki.opnfv.org>`_
 
 Test Tools
 
-Jumphost - `functest <http://artifacts.opnfv.org/functest/docs/functest.html>`_
+Jump Server - `functest <http://artifacts.opnfv.org/functest/docs/functest.html>`_
 
 Controller nodes - bare metal
 
@@ -230,5 +250,3 @@ Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://w
 .. image:: images/opnfv-example-lab-diagram.png
 
 FYI: `Here <http://www.opendaylight.org/community/community-labs>` is what the OpenDaylight lab wiki pages look like.
-
-
