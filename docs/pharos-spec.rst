@@ -4,15 +4,16 @@ Pharos Specification
 Objectives / Scope
 -------------------
 
-Pharos spec defines the OPNFV test environment (in which OPNFV platform can be deployed and tested).
+Pharos defines the state of the deployment environment (i.e. pre-deployment state). While it defines the state of the environment it does not define the implementation of a test infrastructure. This guarantees that the OPNFV platform will sucessfully deploy and can be tested using the the automated toolchain.
 
+A Pharos compliant lab ...
 - Provides a secure, scalable, standard and HA environment
 - Supports full deployment lifecycle (this requires a bare metal environment)
 - Supports functional and performance testing
 - Provides common tooling and test scenarios (including test cases and workloads) available to the community
 - Provides mechanisms and procedures for secure remote access to the test environment
 
-Virtualized environments will be useful but do not provide a fully featured deployment/test capability.
+Virtualized environments will be useful for development but do not provide a fully featured deployment/test capability.
 
 The high level architecture may be summarized as follows:
 
@@ -22,9 +23,9 @@ Constraints of a Pharos compliant OPNFV test-bed environment
 -------------------------------------------------------------
 
 - One CentOS 7 Jump Server on which the virtualized Openstack/OPNFV installer runs
-- Desired installer - may be Fuel, Foreman, Juju, etc
+- Desired installer - may be Fuel, Foreman, etc
 - 2 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
-- Network topology allowing for LOM, Admin, Public, Private, and Storage Networks
+- Network topology allowing for Lights-out management, Admin, Public, Private, and Storage Networks
 - Remote access
 - Test Tools
 
@@ -34,9 +35,9 @@ Target Systems State
 - Target system state includes default software components, network configuration, storage requirements `https://wiki.opnfv.org/get_started/get_started_system_state <https://wiki.opnfv.org/get_started/get_started_system_state>`
 
 
-Rls 1 specification is modeled from Arno
+Rls 1 specification is modeled on setups used for integration/deployment with Fuel and Foreman ... 
 
-* First draft of environment for BGS https://wiki.opnfv.org/get_started/get_started_work_environment
+* Draft of environment for BGS https://wiki.opnfv.org/get_started/get_started_work_environment
 * Fuel environment https://wiki.opnfv.org/get_started/networkingblueprint
 * Foreman environment https://wiki.opnfv.org/get_started_experiment1#topology
 
@@ -177,14 +178,9 @@ Network Interfaces
   * 2 x 10G for control plane connectivity/Storage
   * 2 x 40G (or 10G) for data network
 
-Storage Network
-----------------
-
-- Needs specification
-
 ** Topology **
 
-- Subnet, VLANs (want to standardize but may be constrained by existing lab setups or rules)
+- Subnet, VLANs (may be constrained by existing lab setups or rules)
 - IPs
 - Types of NW - lights-out, public, private, admin, storage
 - May be special NW requirements for performance related projects
