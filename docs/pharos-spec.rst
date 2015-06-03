@@ -108,7 +108,7 @@ Provisioning the jump server
 
 12. Begin the installation of the Arno release
 
-  Download your preferred ISO from the OPNFV dowloads page http://www.opnfv.org/software/download and follow the associated installation instructions.
+  Download your preferred ISO from the `OPNFV dowloads page <http://www.opnfv.org/software/download>`_ and follow the associated installation instructions.
 
 Remote management
 ------------------
@@ -229,7 +229,7 @@ Sample Network Drawings
 
 Files for documenting lab network layout. These were contributed as Visio VSDX format compressed as a ZIP file. Here is a sample of what the visio looks like.
 
-Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`
+Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`_
 
 .. image:: images/opnfv-example-lab-diagram.png
 
@@ -239,8 +239,8 @@ Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://w
 
 **Documentation tracking**
 
-Revision: _sha1
+Revision: _sha1_
 
-Build date:  _date
+Build date:  _date_
 
 
