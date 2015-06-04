@@ -4,33 +4,38 @@ Dell OPNFV Testlab
 Overview
 ------------------
 
-Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project.
+Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project
 
 The Dell Testlab consists of 2 PODs
     * POD1 for Fuel
     * POD2 for Foreman 
  
 .. image:: images/Dell_Overview.jpg
-   :alt: Dell OPNFV Testlab Overview
-   
+   :height: 553
+   :width: 449
+   :alt: Dell Testlab Overiew
+   :align: left
+
 Each of the 2 PODs consists of 6 servers that consist of
     * 1 Jump Server
     * 3 Servers for Control Nodes
     * 2 Servers for Compute Nodes
 
 
+
 Hardware details
 -----------------
+
+All the servers within the two PODs reside within a single Dell PowerEdge 620 chassis and have the following specifications:
+
 
 
 **POD1-Fuel**
 
-The specifications for the servers within POD1 can be found below:
-
 +---------------------+---------------------+----------------+--------------+---------------------+------------+
 | Hostname            |  Model              |    Memory      | Storage      | Processor           | Socket     |
 +---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Fuel Jump Server     |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
+|Fuel Jump Server     |  Dell PowerEdge M620| 64 GB          |1200GB HDD    |Intel  Xeon E5-2640  |   2        |
 +---------------------+---------------------+----------------+--------------+---------------------+------------+
 |Node2                |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
 +---------------------+---------------------+----------------+--------------+---------------------+------------+
@@ -43,7 +48,61 @@ The specifications for the servers within POD1 can be found below:
 |Node6                |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
 +---------------------+---------------------+----------------+--------------+---------------------+------------+
 
-The specifications for the Network Interfaces of servers within POD1 can be seen below:
+
+
+
+**POD2-Foreman**
+
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+| Hostname            |  Model              |    Memory      | Storage      | Processor           | Socket     |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+|Foreman Jump Server  |  Dell PowerEdge M620| 64 GB          |300GB HDD     |Intel  Xeon E5-2640  |   2        |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+|Node7                |  Dell PowerEdge M620| 64 GB          |300GB HDD     |Intel  Xeon E5-2640  |   2        |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+|Node8                |  Dell PowerEdge M620| 64 GB          |300GB HDD     |Intel  Xeon E5-2640  |   2        |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+|Node9                |  Dell PowerEdge M620| 64 GB          |300GB HDD     |Intel  Xeon E5-2640  |   2        |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+|Node11               |  Dell PowerEdge M620| 64 GB          |300GB HDD     |Intel  Xeon E5-2640  |   2        |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+|Node12               |  Dell PowerEdge M620| 64 GB          |300GB HDD     |Intel  Xeon E5-2640  |   2        |
++---------------------+---------------------+----------------+--------------+---------------------+------------+
+
+
+
+
+
+Software
+---------
+
+The Jump servers in the Testlab are pre-provisioned with the following softwares: 
+
+ * Fuel-Jump Server: 
+
+ 1. OS: Ubuntu 14.04
+                  
+
+ * Foreman-Jump Server: 
+
+ 1. OS: CentOS7
+ 
+
+
+
+
+Networks
+----------
+
+
+
+**POD1-Fuel**
+
+.. image:: images/Dell_POD1.jpg
+   :height: 647
+   :width: 821
+   :alt: POD1-Fuel Overview
+   :align: left
 
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
 | Hostname            |  NIC Model                                   | Ports| MAC               | BW    | Roles                            | 
@@ -125,25 +184,13 @@ The specifications for the Network Interfaces of servers within POD1 can be seen
 
 **POD2-Foreman**
 
-The specifications for the servers within POD2 can be found below:
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-| Hostname            |  Model              |    Memory      | Storage      | Processor           | Socket     |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Foreman Jump Server  |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Node7                |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Node8                |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Node9                |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Node11               |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
-|Node12               |  Dell PowerEdge M620| 64 GB          |600GB HDD     |Intel  Xeon E5-2640  |   2        |
-+---------------------+---------------------+----------------+--------------+---------------------+------------+
+.. image:: images/Dell_POD2.jpg
+   :height: 721
+   :width: 785
+   :alt: POD2-Foreman Overview
+   :align: left
 
 
-The specifications for the Network Interfaces of the servers within POD2 can be seen below:
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
 | Hostname            |  NIC Model                                   | Ports| MAC             | BW    | Roles                            | 
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
@@ -225,59 +272,26 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 
 
 
-Software
----------
-
-The Jump servers in the Testlab are pre-provisioned with the following software: 
-
-   * Fuel-Jump Server: 
-            1. OS: Ubuntu 14.04
-            2. Preprovisoned softwares: KVM, VNC server
-			
-                                         
-   * Foreman-Jump Server: 
-            1. OS: Provisioned with CentOS7
-		
-
-
-
-
-Networks
-----------
-
-
-**POD1-Foreman Diagram**
-
-.. image:: images/Dell_POD1.jpg
-   :alt: Dell POD1 Networking
-
-
-
-
-**POD2-Foreman Diagram**
-
-.. image:: images/Dell_POD2.jpg
-   :alt: Dell POD2 Networking
-
-
-
-
 **Subnet allocations**
 
 +-------------------+----------------+-------------------+---------------+----------+
 | Network name      | Address        | Mask              | Gateway       | VLAN id  |
 +-------------------+----------------+-------------------+---------------+----------+
+| Fuel Admin        | 10.20.0.0      |  255.255.0.0      | 10.20.0.1     | Untagged |
++-------------------+----------------+-------------------+---------------+----------+
+| Fuel Mangement    | 192.168.0.0    |  255.255.255.0    | 192.168.0.1   | 101      |
++-------------------+----------------+-------------------+---------------+----------+
+| Fuel Storage      | 192.168.1.0    |  255.255.255.0    | 192.168.1.1   | 102      |
++-------------------+----------------+-------------------+---------------+----------+
+| Fuel Public       | 172.18.0.64    |  255.255.255.192  | 172.18.0.65   | Untagged | 
++-------------------+----------------+-------------------+---------------+----------+
 | Foreman  Admin    | 10.4.14.0      |  255.255.255.0    | 10.4.14.100   | Untagged | 
 +-------------------+----------------+-------------------+---------------+----------+
 | Foreman Private   | 10.4.5.0       |  255.255.255.0    | 10.4.5.1      | Untagged |
 +-------------------+----------------+-------------------+---------------+----------+
-| Public            | 172.18.0.0     |  255.255.255.0    | 172.18.0.1    | Untagged | 
+| Foreman Public    | 172.18.0.0     |  255.255.255.192  | 172.18.0.1    | Untagged | 
 +-------------------+----------------+-------------------+---------------+----------+
-|Fuel Admin         |10.20.0.0       |  255.255.0.0      | 10.20.0.1     | Untagged |
-+-------------------+----------------+-------------------+---------------+----------+
-|Fuel Mangement     |192.168.0.0     |  255.255.255.0    |192.168.0.1    | 101      |
-+-------------------+----------------+-------------------+---------------+----------+
-|Fuel Storage       |192.168.1.0     |  255.255.255.0    |192.168.1.1    | 102      |
+| Lights Out Network| 172.18.0.128   |  255.255.255.128  | 172.18.0.129  | Untagged | 
 +-------------------+----------------+-------------------+---------------+----------+
 
 
@@ -286,41 +300,38 @@ Networks
 **POD1**
 
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-| Hostname       | Lights-out address            | MAC              |Username             | Password            |
+| Hostname       | Lights-out address            | MAC              |    Username         | Password            |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Fuel-Jump       | 172.18.1.101                  |A4:1F:72:11:B4:80 |      root           |      calvin         |
+|Fuel-Jump       | 172.18.1.131                  |A4:1F:72:11:B4:80 |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node2           | 172.18.1.102                  |A4:1F:72:11:B4:8D |      root           |      calvin         |
+|Node2           | 172.18.1.132                  |A4:1F:72:11:B4:8D |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node3           | 172.18.1.103                  |A4:1F:72:11:B4:9A |      root           |      calvin         |
+|Node3           | 172.18.1.133                  |A4:1F:72:11:B4:9A |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node4           | 172.18.1.104                  |A4:1F:72:11:B4:A7 |      root           |      calvin         |
+|Node4           | 172.18.1.134                  |A4:1F:72:11:B4:A7 |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node5           | 172.18.1.105                  |A4:1F:72:11:B4:B4 |      root           |      calvin         |
+|Node5           | 172.18.1.135                  |A4:1F:72:11:B4:B4 |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node6           | 172.18.1.106                  |A4:1F:72:11:B4:C1 |      root           |      calvin         |
+|Node6           | 172.18.1.136                  |A4:1F:72:11:B4:C1 |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
 
 **POD2**
 
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-| Hostname       | Lights-out address            | MAC              |Username             | Password            |
+| Hostname       | Lights-out address            | MAC              |    Username         | Password            |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Foreman-Jump    | 172.18.1.113                  |A4:1F:72:11:B5:1C |      root           |      calvin         |
+|Foreman-Jump    | 172.18.1.143                  |A4:1F:72:11:B5:1C |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node7           | 172.18.1.107                  |A4:1F:72:11:B4:CE |      root           |      calvin         |
+|Node7           | 172.18.1.137                  |A4:1F:72:11:B4:CE |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node8           | 172.18.1.108                  |A4:1F:72:11:B4:DB |      root           |      calvin         |
+|Node8           | 172.18.1.138                  |A4:1F:72:11:B4:DB |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node9           | 172.18.1.109                  |A4:1F:72:11:B4:E8 |      root           |      calvin         |
+|Node9           | 172.18.1.139                  |A4:1F:72:11:B4:E8 |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node11          | 172.18.1.111                  |A4:1F:72:11:B5:02 |      root           |      calvin         |
+|Node11          | 172.18.1.141                  |A4:1F:72:11:B5:02 |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-|Node12          | 172.18.1.112                  |A4:1F:72:11:B5:0F |      root           |      calvin         |
+|Node12          | 172.18.1.142                  |A4:1F:72:11:B5:0F |      root           |      calvin         |
 +----------------+-------------------------------+------------------+---------------------+---------------------+
-
-
-
 
 
 
@@ -332,25 +343,34 @@ Remote access infrastructure
 
 The Dell OPNFV testlab is free to use for the OPNFV community.
 
-A VPN is used to provide access to the Dell Testlab. Details can be found in *Dell OPNFV-lab Access* document (Attach link)
+A VPN is used to provide access to the Dell Testlab.
 
 To access the Testlab, please contact Waqas_Riaz@DELL.com with the following details:
  * Name
+ * Email
+ * Designation
  * Organization
  * Purpose of using the lab
  
  Processing the request can take 2-3 business days.
 
- **Accessing the Jump Server**
- 
- The credentials for accessing the Jump servers are:
- 
- *Fuel-Jump*
- 
- User: opnfv
- password: d3ll1234
- 
- *Foreman-Jump*
- 
- User: root
- password: d3ll1234
+*Accessing the Teslab*
+-----------------------
+
+* POD1 JumpServer
+
+  IP: 172.18.0.67
+
+  User:  opnfv
+
+  Passwd: d3ll1234
+
+
+
+* POD2 JumpServer
+
+  IP: 172.18.0.11
+
+  User:  opnfv
+
+  Passwd: d3ll1234
