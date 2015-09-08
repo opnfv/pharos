@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_33ca50a2",
+        "filename": "docs/labs/ZTE.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2015-09-08T14:40:43Z",
+      "side": 1,
+      "message": "Cancel the user/password identification and use publickey only.",
+      "range": {
+        "startLine": 209,
+        "startChar": 75,
+        "endLine": 209,
+        "endChar": 105
+      },
+      "revId": "1086000a66ba2dfaa089d28fb46d71114c85f95d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
