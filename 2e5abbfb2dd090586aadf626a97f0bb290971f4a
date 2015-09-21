@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_c5f1fe96",
+        "filename": "docs/labs/ZTE.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1247
+      },
+      "writtenOn": "2015-09-21T01:06:32Z",
+      "side": 1,
+      "message": "it will be nice,if trailing red is deleted",
+      "range": {
+        "startLine": 165,
+        "startChar": 80,
+        "endLine": 165,
+        "endChar": 81
+      },
+      "revId": "2e5abbfb2dd090586aadf626a97f0bb290971f4a",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
