@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b4baa108",
+        "filename": "docs/labs/ZTE.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 290
+      },
+      "writtenOn": "2015-09-22T15:03:25Z",
+      "side": 1,
+      "message": "\u0027Jump ,please\u0027 should be \u0027Jump, please\u0027",
+      "revId": "0ff36e4cd8dda26a9f28bf5ee18c804db4c74f83",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d4bd2d04",
+        "filename": "docs/pharos.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 290
+      },
+      "writtenOn": "2015-09-22T15:03:25Z",
+      "side": 1,
+      "message": "\u0027Nan jing\u0027 should be \u0027Nanjing\u0027",
+      "revId": "0ff36e4cd8dda26a9f28bf5ee18c804db4c74f83",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
