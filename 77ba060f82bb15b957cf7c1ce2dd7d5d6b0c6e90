@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_5435bd44",
+        "filename": "docs/pharos.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 290
+      },
+      "writtenOn": "2015-09-22T23:25:59Z",
+      "side": 1,
+      "message": "Please insert one \u0027 \u0027(space) after \u0027China\u0027, or the table will not be shaped well.",
+      "revId": "77ba060f82bb15b957cf7c1ce2dd7d5d6b0c6e90",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
