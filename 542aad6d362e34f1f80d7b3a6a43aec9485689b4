@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a5c5d37_563c9a93",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2015-10-30T08:34:19Z",
+      "side": 1,
+      "message": "there is a \"carriage return\", maybe you edit in Windows, please use \"dos2unix\" clean it if you can.",
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_16462224",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2015-10-30T08:34:19Z",
+      "side": 1,
+      "message": "should be huawei-us-deploy-vm-2",
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_3641260c",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2015-10-30T08:34:19Z",
+      "side": 1,
+      "message": "Only 4.7 GB? It is not enough.",
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a5c5d37_56d5ba41",
         "filename": "docs/labs/Huawei_US.rst",
         "patchSetId": 3
