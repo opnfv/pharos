@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a5c5d37_56d5ba41",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 785
+      },
+      "writtenOn": "2015-10-30T06:49:45Z",
+      "side": 1,
+      "message": "",
+      "range": {
+        "startLine": 82,
+        "startChar": 13,
+        "endLine": 82,
+        "endChar": 17
+      },
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
