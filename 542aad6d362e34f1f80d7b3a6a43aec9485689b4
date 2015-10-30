@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a5c5d37_16ece2c6",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2015-10-30T18:07:35Z",
+      "side": 1,
+      "message": "really?I cannot see it",
+      "parentUuid": "9a5c5d37_563c9a93",
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a5c5d37_16462224",
         "filename": "docs/labs/Huawei_US.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-10-30T08:34:19Z",
       "side": 1,
       "message": "should be huawei-us-deploy-vm-2",
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_f6c94e5b",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2015-10-30T18:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a5c5d37_16462224",
       "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a5c5d37_16b502cd",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2015-10-30T18:07:35Z",
+      "side": 1,
+      "message": "sorry , it is 4.7TG",
+      "parentUuid": "9a5c5d37_3641260c",
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a5c5d37_56d5ba41",
         "filename": "docs/labs/Huawei_US.rst",
         "patchSetId": 3
@@ -64,6 +118,30 @@
       "writtenOn": "2015-10-30T06:49:45Z",
       "side": 1,
       "message": "",
+      "range": {
+        "startLine": 82,
+        "startChar": 13,
+        "endLine": 82,
+        "endChar": 17
+      },
+      "revId": "542aad6d362e34f1f80d7b3a6a43aec9485689b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_d6c64a49",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2015-10-30T18:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a5c5d37_56d5ba41",
       "range": {
         "startLine": 82,
         "startChar": 13,
