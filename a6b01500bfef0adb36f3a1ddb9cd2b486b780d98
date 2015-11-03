@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a5c5d37_7c79bdfb",
+        "filename": "docs/labs/Huawei_US.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2015-11-03T21:20:16Z",
+      "side": 1,
+      "message": "yes, you are right , this is wrong rst structure, I will submit a new patch.\nthank you very much.",
+      "parentUuid": "9a5c5d37_5c795992",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "a6b01500bfef0adb36f3a1ddb9cd2b486b780d98",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a5c5d37_fc67ede8",
         "filename": "docs/labs/Huawei_US.rst",
         "patchSetId": 5
