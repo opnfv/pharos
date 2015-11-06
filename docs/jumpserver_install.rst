@@ -20,9 +20,9 @@
 
   ``service network restart``
 
-6. Edit /etc/resolv.conf and add a nameserver
+6. Edit /etc/resolv.conf and add a nameserver, like:
 
-  ``vi /etc/resolv.conf``
+  ``echo 8.8.8.8 >> /etc/resolv.conf``
 
 7. Install libvirt & kvm
 
@@ -34,13 +34,20 @@
 
   ``shutdown -r now``
 
-9. If you wish to avoid annoying delay when use ssh to log in, disable DNS lookups:
+9. Configure SSHD
 
-  ``vi /etc/ssh/sshd_config``
+  If you wish to avoid annoying delay when use ssh to log in, disable DNS lookups:
 
-  Uncomment "UseDNS yes", change 'yes' to 'no'.
+  ``sed -i -e 's/^#UseDNS\ \+yes/UseDNS no/g' /etc/ssh/sshd_config``
 
-  Save
+  Disable Password Authenticaion for security:
+
+  ``sed -i -e 's/^#PasswordAuthentication\ \+yes/PasswordAuthentication no/g' /etc/ssh/sshd_config``
+
+  If you want to diable IPv6 connections, comment IPv6 ListenAddress and change AddressFamily to inet:
+
+  ``sed -i -e 's/^ListenAddress\ \+::/#ListenAddress ::/g' /etc/ssh/sshd_config``
+  ``sed -i -e 's/^AddressFamily\ \+any/AddressFamily inet/g' /etc/ssh/sshd_config``
 
 10. Restart sshd
 
@@ -53,6 +60,8 @@
 12. Visit artifacts.opnfv.org and D/L the OPNFV Fuel ISO
 
 13. Create a bridge using the interface on the PXE network, for example: br0
+
+  ``brctl addbr br0``
 
 14. Make a directory owned by qemu:
 
