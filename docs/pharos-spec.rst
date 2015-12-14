@@ -9,14 +9,16 @@ Pharos Specification
 Objectives / Scope
 -------------------
 
-The Pharos specification defines the OPNFV hardware environment upon which the OPNFV Arno platform release can be deployed on and tested. This specification defines:
+The Pharos specification defines the OPNFV hardware environment upon
+which the OPNFV Arno platform release can be deployed on and tested. This specification defines:
 
 - A secure, scalable, standard and HA environment
 - Supports the full Arno deployment lifecycle (this requires a bare metal environment)
 - Supports functional and performance testing of the Arno release
 - Provides mechanisms and procedures for secure remote access to the test environment
 
-Deploying Arno in a Virtualized environment is possible and will be useful, however it does not provide a fully featured deployment and test environment for the Arno release of OPNFV.
+Deploying Arno in a Virtualized environment is possible and will be useful,
+however it does not provide a fully featured deployment and test environment for the Arno release of OPNFV.
 
 The high level architecture is outlined in the following diagram:
 
@@ -29,7 +31,8 @@ A Pharos compliant OPNFV test-bed environment provides
 - In the Arno release you may select a deployment toolchain to deploy from the jump server from the Foreman and Fuel ISO images.
 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
 - A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
-- Remote access as defined by the Jenkins slave configuration guide http://artifacts.opnfv.org/arno.2015.1.0/docs/opnfv-jenkins-slave-connection.arno.2015.1.0.pdf
+- Remote access as defined by the Jenkins slave configuration guide
+http://artifacts.opnfv.org/arno.2015.1.0/docs/opnfv-jenkins-slave-connection.arno.2015.1.0.pdf
 
 Hardware requirements
 ---------------------
@@ -42,7 +45,9 @@ CPU:
 
 Local Storage Configuration:
 
-Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for a reasonably functional environment. Additional and/or faster disks are nice to have and may produce a better result.
+Below describes the minimum for the Pharos spec, which is designed to
+provide enough capacity for a reasonably functional environment.
+Additional and/or faster disks are nice to have and may produce a better result.
 
 * Disks: 2 x 1TB + 1 x 100GB SSD
 * The first 1TB HDD should be used for OS & additional software/tool installation
@@ -108,7 +113,8 @@ Provisioning the jump server
 
 12. Begin the installation of the Arno release
 
-  Download your preferred ISO from the `OPNFV dowloads page <http://www.opnfv.org/software/download>`_ and follow the associated installation instructions.
+  Download your preferred ISO from the
+`OPNFV dowloads page <http://www.opnfv.org/software/download>`_ and follow the associated installation instructions.
 
 Remote management
 ------------------
@@ -126,7 +132,8 @@ Remote management
   - Refer to individual test-bed as each company may have different access rules and acceptable usage policies
 
 - Basic requirement is for SSH sessions to be established (initially on jump server)
-- Majority of packages installed on a system (tools or applications) will be pulled from an external repo so this scenario must be accomodated.
+- Majority of packages installed on a system (tools or applications) will
+be pulled from an external repo so this scenario must be accomodated.
 
 Firewall rules should include 
  
@@ -161,7 +168,9 @@ Linux Foundation - VPN service for accessing Lights-Out Management (LOM) infrast
 14. szilard.cserey@ericsson.com
 15. trozet@redhat.com
 
-- The people who require VPN access must have a valid PGP key bearing a valid signature from one of these three people. When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key.
+- The people who require VPN access must have a valid PGP key bearing a valid signature
+from one of these three people. When issuing OpenVPN credentials, LF will be sending
+TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key.
 
 Networking
 -----------
@@ -170,7 +179,8 @@ Test-bed network
 
 * 24 or 48 Port TOR Switch
 * NICS - 1GE, 10GE - per server can be on-board or PCI-e
-* Connectivity for each data/control network is through a separate NIC. This simplifies Switch Management however requires more NICs on the server and also more switch ports
+* Connectivity for each data/control network is through a separate NIC.
+This simplifies Switch Management however requires more NICs on the server and also more switch ports
 * Lights-out network can share with Admin/Management
 
 Network Interfaces
@@ -185,11 +195,13 @@ Network Interfaces
 
 * Option II: 1x1G Control, 2x 40G (or 10G) Data, 24 Port Switch
 
-  * Connectivity to networks is through VLANs on the Control NIC. Data NIC used for VNF traffic and storage traffic segmented through VLANs
+  * Connectivity to networks is through VLANs on the Control NIC.
+Data NIC used for VNF traffic and storage traffic segmented through VLANs
 
 * Option III: 2x1G Control, 2x10G Data, 2x40G Storage, 24 Port Switch
 
-  * Data NIC used for VNF traffic, storage NIC used for control plane and Storage segmented through VLANs (separate host traffic from VNF)
+  * Data NIC used for VNF traffic, storage NIC used for control plane and
+Storage segmented through VLANs (separate host traffic from VNF)
   * 1 x 1G for IPMI
   * 1 x 1G for Admin/PXE boot
   * 2 x 10G for control plane connectivity/Storage
@@ -230,9 +242,11 @@ Figure 1: Standard Deployment Environment
 Sample Network Drawings
 -----------------------
 
-Files for documenting lab network layout. These were contributed as Visio VSDX format compressed as a ZIP file. Here is a sample of what the visio looks like.
+Files for documenting lab network layout. These were contributed as Visio VSDX format
+compressed as a ZIP file. Here is a sample of what the visio looks like.
 
-Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`_
+Download the visio zip file here:
+`opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`_
 
 .. image:: images/opnfv-example-lab-diagram.png
 
