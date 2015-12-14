@@ -4,15 +4,16 @@ Dell OPNFV Testlab
 Overview
 ------------------
 
-Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project.
+Dell is hosting an OPNFV testlab at its Santa Clara facility.
+The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project.
 
 The Dell Testlab consists of 2 PODs
     * POD1 for Fuel
-    * POD2 for Foreman 
- 
+    * POD2 for Foreman
+
 .. image:: images/Dell_Overview.jpg
    :alt: Dell OPNFV Testlab Overview
-   
+
 Each of the 2 PODs consists of 6 servers that consist of
     * 1 Jump Server
     * 3 Servers for Control Nodes
@@ -46,10 +47,10 @@ The specifications for the servers within POD1 can be found below:
 The specifications for the Network Interfaces of servers within POD1 can be seen below:
 
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-| Hostname            |  NIC Model                                   | Ports| MAC               | BW    | Roles                            | 
+| Hostname            |  NIC Model                                   | Ports| MAC               | BW    | Roles                            |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-|Fuel Jump            |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:81 | 10G   | Unused                           |   
-|                     |                                              +------+-------------------+-------+----------------------------------+                 
+|Fuel Jump            |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:81 | 10G   | Unused                           |
+|                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | em2  | A4:1F:72:11:B4:84 | 10G   | Unused                           |
 |                     +----------------------------------------------+------+-------------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 | A4:1F:72:11:B4:85 | 10G   | Public                           |
@@ -60,8 +61,8 @@ The specifications for the Network Interfaces of servers within POD1 can be seen
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | p1p2 | A4:1F:72:11:B4:8B | 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-|Node2                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:8E | 10G   | Unused                           |   
-|                     |                                              +------+-------------------+-------+----------------------------------+                 
+|Node2                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:8E | 10G   | Unused                           |
+|                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | em2  | A4:1F:72:11:B4:91 | 10G   | Unused                           |
 |                     +----------------------------------------------+------+-------------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 | A4:1F:72:11:B4:92 | 10G   | Public                           |
@@ -72,8 +73,8 @@ The specifications for the Network Interfaces of servers within POD1 can be seen
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | p1p2 | A4:1F:72:11:B4:98 | 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-|Node3                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:9B | 10G   | Unused                           |   
-|                     |                                              +------+-------------------+-------+----------------------------------+                 
+|Node3                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:9B | 10G   | Unused                           |
+|                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | em2  | A4:1F:72:11:B4:9E | 10G   | Unused                           |
 |                     +----------------------------------------------+------+-------------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 | A4:1F:72:11:B4:9F | 10G   | Public                           |
@@ -84,8 +85,8 @@ The specifications for the Network Interfaces of servers within POD1 can be seen
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | p1p2 | A4:1F:72:11:B4:A5 | 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-|Node4                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:A8 | 10G   | Unused                           |   
-|                     |                                              +------+-------------------+-------+----------------------------------+                 
+|Node4                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:A8 | 10G   | Unused                           |
+|                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | em2  | A4:1F:72:11:B4:AB | 10G   | Unused                           |
 |                     +----------------------------------------------+------+-------------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 | A4:1F:72:11:B4:AC | 10G   | Public                           |
@@ -96,8 +97,8 @@ The specifications for the Network Interfaces of servers within POD1 can be seen
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | p1p2 | A4:1F:72:11:B4:B1 | 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-|Node5                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:B5 | 10G   | Unused                           |   
-|                     |                                              +------+-------------------+-------+----------------------------------+                 
+|Node5                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:B5 | 10G   | Unused                           |
+|                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | em2  | A4:1F:72:11:B4:B8 | 10G   | Unused                           |
 |                     +----------------------------------------------+------+-------------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 | A4:1F:72:11:B4:B9 | 10G   | Public                           |
@@ -108,8 +109,8 @@ The specifications for the Network Interfaces of servers within POD1 can be seen
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | p1p2 | A4:1F:72:11:B4:C0 | 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
-|Node6                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:C2 | 10G   | Unused                           |   
-|                     |                                              +------+-------------------+-------+----------------------------------+                 
+|Node6                |  1, Broadcom  NetXtreme II BCM57810          | em1  | A4:1F:72:11:B4:C2 | 10G   | Unused                           |
+|                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              | em2  | A4:1F:72:11:B4:C5 | 10G   | Unused                           |
 |                     +----------------------------------------------+------+-------------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 | A4:1F:72:11:B4:C6 | 10G   | Public                           |
@@ -145,10 +146,10 @@ The specifications for the servers within POD2 can be found below:
 
 The specifications for the Network Interfaces of the servers within POD2 can be seen below:
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-| Hostname            |  NIC Model                                   | Ports| MAC             | BW    | Roles                            | 
+| Hostname            |  NIC Model                                   | Ports| MAC             | BW    | Roles                            |
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-|Foreman Jump         |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B5:1D| 10G   | Foreman Admin                    |   
-|                     |                                              +------+-----------------+-------+----------------------------------+                 
+|Foreman Jump         |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B5:1D| 10G   | Foreman Admin                    |
+|                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | em2  |A4:1F:72:11:B5:20| 10G   | Foreman Private/ Storage         |
 |                     +----------------------------------------------+------+-----------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 |A4:1F:72:11:B5:21| 10G   | Public                           |
@@ -159,8 +160,8 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 |                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | p1p2 |A4:1F:72:11:B4:8B| 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-|Node7                |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B4:CF| 10G   | Foreman Admin                    |   
-|                     |                                              +------+-----------------+-------+----------------------------------+                 
+|Node7                |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B4:CF| 10G   | Foreman Admin                    |
+|                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | em2  |A4:1F:72:11:B4:D2| 10G   | Foreman Private/ Storage         |
 |                     +----------------------------------------------+------+-----------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 |A4:1F:72:11:B4:D3| 10G   | Public                           |
@@ -171,8 +172,8 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 |                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | p1p2 |A4:1F:72:11:B4:DA| 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-|Node8                |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B4:DC| 10G   | Foreman Admin                    |   
-|                     |                                              +------+-----------------+-------+----------------------------------+                 
+|Node8                |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B4:DC| 10G   | Foreman Admin                    |
+|                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | em2  |A4:1F:72:11:B4:DF| 10G   | Foreman Private/ Storage         |
 |                     +----------------------------------------------+------+-----------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 |A4:1F:72:11:B4:E0| 10G   | Public                           |
@@ -183,8 +184,8 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 |                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | p1p2 |A4:1F:72:11:B4:E7| 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-|Node9                |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B4:E9| 10G   | Foreman Admin                    |   
-|                     |                                              +------+-----------------+-------+----------------------------------+                 
+|Node9                |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B4:E9| 10G   | Foreman Admin                    |
+|                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | em2  |A4:1F:72:11:B4:EC| 10G   | Foreman Private/ Storage         |
 |                     +----------------------------------------------+------+-----------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 |A4:1F:72:11:B4:ED| 10G   | Public                           |
@@ -195,8 +196,8 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 |                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | p1p2 |A4:1F:72:11:B4:F3| 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-|Node11               |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B5:03| 10G   | Foreman Admin                    |   
-|                     |                                              +------+-----------------+-------+----------------------------------+                 
+|Node11               |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B5:03| 10G   | Foreman Admin                    |
+|                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | em2  |A4:1F:72:11:B5:06| 10G   | Foreman Private/ Storage         |
 |                     +----------------------------------------------+------+-----------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 |A4:1F:72:11:B5:07| 10G   | Public                           |
@@ -207,8 +208,8 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 |                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | p1p2 |A4:1F:72:11:B5:0D| 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-----------------+-------+----------------------------------+
-|Node12               |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B5:10| 10G   | Foreman Admin                    |   
-|                     |                                              +------+-----------------+-------+----------------------------------+                 
+|Node12               |  1, Broadcom  NetXtreme II BCM57810          | em1  |A4:1F:72:11:B5:10| 10G   | Foreman Admin                    |
+|                     |                                              +------+-----------------+-------+----------------------------------+
 |                     |                                              | em2  |A4:1F:72:11:B5:13| 10G   | Foreman Private/ Storage         |
 |                     +----------------------------------------------+------+-----------------+-------+----------------------------------+
 |                     |  2, Intel  82599                             | p3p1 |A4:1F:72:11:B5:14| 10G   | Public                           |
@@ -228,50 +229,38 @@ The specifications for the Network Interfaces of the servers within POD2 can be 
 Software
 ---------
 
-The Jump servers in the Testlab are pre-provisioned with the following software: 
+The Jump servers in the Testlab are pre-provisioned with the following software:
 
-   * Fuel-Jump Server: 
+   * Fuel-Jump Server:
             1. OS: Ubuntu 14.04
-            2. Preprovisoned softwares: KVM, VNC server
-			
-                                         
-   * Foreman-Jump Server: 
+            2. Preprovisoned softwares: KVM, VNC serve
+
+   * Foreman-Jump Server:
             1. OS: Provisioned with CentOS7
-		
-
-
-
 
 Networks
 ----------
-
 
 **POD1-Foreman Diagram**
 
 .. image:: images/Dell_POD1.jpg
    :alt: Dell POD1 Networking
 
-
-
-
 **POD2-Foreman Diagram**
 
 .. image:: images/Dell_POD2.jpg
    :alt: Dell POD2 Networking
-
-
-
 
 **Subnet allocations**
 
 +-------------------+----------------+-------------------+---------------+----------+
 | Network name      | Address        | Mask              | Gateway       | VLAN id  |
 +-------------------+----------------+-------------------+---------------+----------+
-| Foreman  Admin    | 10.4.14.0      |  255.255.255.0    | 10.4.14.100   | Untagged | 
+| Foreman  Admin    | 10.4.14.0      |  255.255.255.0    | 10.4.14.100   | Untagged |
 +-------------------+----------------+-------------------+---------------+----------+
 | Foreman Private   | 10.4.5.0       |  255.255.255.0    | 10.4.5.1      | Untagged |
 +-------------------+----------------+-------------------+---------------+----------+
-| Public            | 172.18.0.0     |  255.255.255.0    | 172.18.0.1    | Untagged | 
+| Public            | 172.18.0.0     |  255.255.255.0    | 172.18.0.1    | Untagged |
 +-------------------+----------------+-------------------+---------------+----------+
 |Fuel Admin         |10.20.0.0       |  255.255.0.0      | 10.20.0.1     | Untagged |
 +-------------------+----------------+-------------------+---------------+----------+
@@ -320,37 +309,31 @@ Networks
 +----------------+-------------------------------+------------------+---------------------+---------------------+
 
 
-
-
-
-
-
-
-
 Remote access infrastructure
 -----------------------------
 
 The Dell OPNFV testlab is free to use for the OPNFV community.
 
-A VPN is used to provide access to the Dell Testlab. Details can be found in *Dell OPNFV-lab Access* document (Attach link)
+A VPN is used to provide access to the Dell Testlab.
+Details can be found in *Dell OPNFV-lab Access* document (Attach link)
 
 To access the Testlab, please contact Waqas_Riaz@DELL.com with the following details:
  * Name
  * Organization
  * Purpose of using the lab
- 
+
  Processing the request can take 2-3 business days.
 
  **Accessing the Jump Server**
- 
+
  The credentials for accessing the Jump servers are:
- 
+
  *Fuel-Jump*
- 
+
  User: opnfv
  password: d3ll1234
- 
+
  *Foreman-Jump*
- 
+
  User: root
  password: d3ll1234
