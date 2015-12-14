@@ -4,7 +4,8 @@ Dell OPNFV Testlab
 Overview
 ------------------
 
-Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project.
+Dell is hosting an OPNFV testlab at its Santa Clara facility.
+The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project.
 
 The Dell Testlab consists of 2 PODs
     * POD1 for Fuel
@@ -332,7 +333,8 @@ Remote access infrastructure
 
 The Dell OPNFV testlab is free to use for the OPNFV community.
 
-A VPN is used to provide access to the Dell Testlab. Details can be found in *Dell OPNFV-lab Access* document (Attach link)
+A VPN is used to provide access to the Dell Testlab.
+Details can be found in *Dell OPNFV-lab Access* document (Attach link)
 
 To access the Testlab, please contact Waqas_Riaz@DELL.com with the following details:
  * Name
