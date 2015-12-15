@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a5c5d37_56d8f1ee",
+        "filename": "docs/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2015-12-15T11:20:11Z",
+      "side": 1,
+      "message": "delete line 1-4",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 40
+      },
+      "revId": "9647ac9362fb4dd4092846e69875055ab400b5ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_b6e84d7d",
+        "filename": "docs/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2015-12-15T11:20:11Z",
+      "side": 1,
+      "message": "This is documentation tile, so it should be better to change this to \u0027Pharos Project\u0027.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9647ac9362fb4dd4092846e69875055ab400b5ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_d6f3c171",
+        "filename": "docs/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2015-12-15T11:20:11Z",
+      "side": 1,
+      "message": "use \u0027*\u0027 instead of \u0027\u003d\u0027 and add the same line in line 5 as over line.",
+      "revId": "9647ac9362fb4dd4092846e69875055ab400b5ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_16e2799f",
+        "filename": "docs/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2015-12-15T11:20:11Z",
+      "side": 1,
+      "message": "delete these as well",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "9647ac9362fb4dd4092846e69875055ab400b5ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
