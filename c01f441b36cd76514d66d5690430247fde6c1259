@@ -71,6 +71,52 @@
     },
     {
       "key": {
+        "uuid": "9a5c5d37_8bc9717a",
+        "filename": "docs/specification/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2016-01-12T09:37:04Z",
+      "side": 1,
+      "message": "we can delete this comment",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 40
+      },
+      "revId": "c01f441b36cd76514d66d5690430247fde6c1259",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a5c5d37_6bc4fd5e",
+        "filename": "docs/specification/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2016-01-12T09:37:04Z",
+      "side": 1,
+      "message": "sphinx will create relevant index in html and pdf, we don\u0027t need these lines anymore",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 15
+      },
+      "revId": "c01f441b36cd76514d66d5690430247fde6c1259",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a5c5d37_efd8fa80",
         "filename": "docs/specification/jumpserverinstall.rst",
         "patchSetId": 4
