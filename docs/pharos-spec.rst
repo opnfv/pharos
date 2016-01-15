@@ -140,6 +140,7 @@ Lights-out Management:
 - Intel lights-out ⇒ RMM http://www.intel.com/content/www/us/en/server-management/intel-remote-management-module.html
 - HP lights-out ⇒ ILO http://www8.hp.com/us/en/products/servers/ilo/index.html
 - CISCO lights-out ⇒ UCS https://developer.cisco.com/site/ucs-dev-center/index.gsp
+- Dell lights-out  ⇒ IDRAC  http://en.community.dell.com/techcenter/systems-management/w/wiki/3204.dell-remote-access-controller-drac-idrac
 
 Linux Foundation - VPN service for accessing Lights-Out Management (LOM) infrastructure for the UCS-M hardware
 
