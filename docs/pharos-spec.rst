@@ -9,14 +9,16 @@ Pharos Specification
 Objectives / Scope
 -------------------
 
-The Pharos specification defines the OPNFV hardware environment upon which the OPNFV Arno platform release can be deployed on and tested. This specification defines:
+The Pharos specification defines the OPNFV hardware environment upon which the OPNFV 
+Arno platform release can be deployed on and tested. This specification defines:
 
 - A secure, scalable, standard and HA environment
 - Supports the full Arno deployment lifecycle (this requires a bare metal environment)
 - Supports functional and performance testing of the Arno release
 - Provides mechanisms and procedures for secure remote access to the test environment
 
-Deploying Arno in a Virtualized environment is possible and will be useful, however it does not provide a fully featured deployment and test environment for the Arno release of OPNFV.
+Deploying Arno in a Virtualized environment is possible and will be useful, however 
+it does not provide a fully featured deployment and test environment for the Arno release of OPNFV.
 
 The high level architecture is outlined in the following diagram:
 
@@ -26,7 +28,8 @@ A Pharos compliant OPNFV test-bed environment provides
 ------------------------------------------------------
 
 - One CentOS 7 jump server on which the virtualized Openstack/OPNFV installer runs
-- In the Arno release you may select a deployment toolchain to deploy from the jump server from the Foreman and Fuel ISO images.
+- In the Arno release you may select a deployment toolchain to deploy from the jump server 
+from the Foreman and Fuel ISO images.
 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
 - A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
 - Remote access as defined by the Jenkins slave configuration guide http://artifacts.opnfv.org/arno.2015.1.0/docs/opnfv-jenkins-slave-connection.arno.2015.1.0.pdf
@@ -42,7 +45,8 @@ CPU:
 
 Local Storage Configuration:
 
-Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for a reasonably functional environment. Additional and/or faster disks are nice to have and may produce a better result.
+Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for a reasonably 
+functional environment. Additional and/or faster disks are nice to have and may produce a better result.
 
 * Disks: 2 x 1TB + 1 x 100GB SSD
 * The first 1TB HDD should be used for OS & additional software/tool installation
@@ -128,8 +132,8 @@ Remote management
 - Basic requirement is for SSH sessions to be established (initially on jump server)
 - Majority of packages installed on a system (tools or applications) will be pulled from an external repo so this scenario must be accomodated.
 
-Firewall rules should include 
- 
+Firewall rules should include
+
 - SSH sessions
 - Jenkins sessions
 
