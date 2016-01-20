@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a5c5d37_a948a687",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-01-20T14:44:58Z",
+      "side": 1,
+      "message": "This file does tno need to be here, the toolchain will delete it.  The index.rst file is in the opnfvdocs folder.  We should amend the files there to include the pharos files.",
+      "revId": "20552b6d88944472f94fd25e26329385c3ede551",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
