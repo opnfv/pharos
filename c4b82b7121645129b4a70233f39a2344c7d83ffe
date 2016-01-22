@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a4e6583_88543722",
+        "filename": "docs/lab-description/pod_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-01-22T22:11:36Z",
+      "side": 1,
+      "message": "No way we have ILO IP U/P readily available in public",
+      "revId": "c4b82b7121645129b4a70233f39a2344c7d83ffe",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_e85deb49",
+        "filename": "docs/lab-description/pod_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-01-22T22:11:36Z",
+      "side": 1,
+      "message": "For security policy reasons I don\u0027t think user information should be in a open access repo. Or did you plan to have it in the secured lab repo?",
+      "revId": "c4b82b7121645129b4a70233f39a2344c7d83ffe",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_c85a2f50",
+        "filename": "docs/lab-description/pod_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-01-22T22:11:36Z",
+      "side": 1,
+      "message": "Firewall rules should under no circumstace be documented publically, I even doubt it should be in secured-lab!",
+      "revId": "c4b82b7121645129b4a70233f39a2344c7d83ffe",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
