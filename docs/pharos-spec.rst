@@ -1,22 +1,22 @@
 Pharos Specification
 =====================
 
-
 .. contents:: Table of Contents
    :backlinks: none
-
 
 Objectives / Scope
 -------------------
 
-The Pharos specification defines the OPNFV hardware environment upon which the OPNFV Arno platform release can be deployed on and tested. This specification defines:
+The Pharos specification defines the OPNFV hardware environment upon which the OPNFV Arno
+platform release can be deployed on and tested. This specification defines:
 
 - A secure, scalable, standard and HA environment
 - Supports the full Arno deployment lifecycle (this requires a bare metal environment)
 - Supports functional and performance testing of the Arno release
 - Provides mechanisms and procedures for secure remote access to the test environment
 
-Deploying Arno in a Virtualized environment is possible and will be useful, however it does not provide a fully featured deployment and test environment for the Arno release of OPNFV.
+Deploying Arno in a Virtualized environment is possible and will be useful, however it does not
+provide a fully featured deployment and test environment for the Arno release of OPNFV.
 
 The high level architecture is outlined in the following diagram:
 
@@ -42,7 +42,9 @@ CPU:
 
 Local Storage Configuration:
 
-Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for a reasonably functional environment. Additional and/or faster disks are nice to have and may produce a better result.
+Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for a
+reasonably functional environment. Additional and/or faster disks are nice to have and may produce
+a better result.
 
 * Disks: 2 x 1TB + 1 x 100GB SSD
 * The first 1TB HDD should be used for OS & additional software/tool installation
@@ -108,12 +110,14 @@ Provisioning the jump server
 
 12. Begin the installation of the Arno release
 
-  Download your preferred ISO from the `OPNFV dowloads page <http://www.opnfv.org/software/download>`_ and follow the associated installation instructions.
+  Download your preferred ISO from the `OPNFV dowloads page <http://www.opnfv.org/software/download>`_
+  and follow the associated installation instructions.
 
 Remote management
 ------------------
 
-**Remote access**
+Remote access
+^^^^^^^^^^^^^
 
 - Remote access is required for …
 
@@ -128,8 +132,8 @@ Remote management
 - Basic requirement is for SSH sessions to be established (initially on jump server)
 - Majority of packages installed on a system (tools or applications) will be pulled from an external repo so this scenario must be accomodated.
 
-Firewall rules should include 
- 
+Firewall rules should include
+
 - SSH sessions
 - Jenkins sessions
 
@@ -162,12 +166,15 @@ Linux Foundation - VPN service for accessing Lights-Out Management (LOM) infrast
 14. szilard.cserey@ericsson.com
 15. trozet@redhat.com
 
-- The people who require VPN access must have a valid PGP key bearing a valid signature from one of these three people. When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key.
+The people who require VPN access must have a valid PGP key bearing a valid signature from one of
+these three people. When issuing OpenVPN credentials, LF will be sending TLS certificates and
+2-factor authentication tokens, encrypted to each recipient's PGP key.
 
 Networking
 -----------
 
 Test-bed network
+^^^^^^^^^^^^^^^^
 
 * 24 or 48 Port TOR Switch
 * NICS - 1GE, 10GE - per server can be on-board or PCI-e
@@ -175,10 +182,11 @@ Test-bed network
 * Lights-out network can share with Admin/Management
 
 Network Interfaces
+^^^^^^^^^^^^^^^^^^
 
 * Option I: 4x1G Control, 2x40G Data, 48 Port Switch
 
-  * 1 x 1G for ILMI (Lights out Management )
+  * 1 x 1G for ILMI (Lights out Management)
   * 1 x 1G for Admin/PXE boot
   * 1 x 1G for control Plane connectivity
   * 1 x 1G for storage
@@ -203,23 +211,20 @@ Documented configuration to include:
 - May be special NW requirements for performance related projects
 - Default gateways
 
-
 Controller node bridge topology overview
 
 .. image:: images/bridge1.png
-
 
 compute node bridge topology overview
 
 .. image:: images/bridge2.png
 
 
-
-
 Architecture
 -------------
 
-** Network Diagram **
+Network Diagram
+^^^^^^^^^^^^^^^
 
 The Pharos architecture may be described as follow: Figure 1: Standard Deployment Environment
 
@@ -231,19 +236,13 @@ Figure 1: Standard Deployment Environment
 Sample Network Drawings
 -----------------------
 
-Files for documenting lab network layout. These were contributed as Visio VSDX format compressed as a ZIP file. Here is a sample of what the visio looks like.
+Files for documenting lab network layout. These were contributed as Visio VSDX format compressed
+as a ZIP file. Here is a sample of what the visio looks like.
 
-Download the visio zip file here: `opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`_
+Download the visio zip file here:
+`opnfv-example-lab-diagram.vsdx.zip <https://wiki.opnfv.org/_media/opnfv-example-lab-diagram.vsdx.zip>`_
 
 .. image:: images/opnfv-example-lab-diagram.png
 
-
 :Authors: Trevor Cooper (Intel)
 :Version: 1.0
-
-**Documentation tracking**
-
-Revision: _sha1_
-
-Build date:  _date_
-

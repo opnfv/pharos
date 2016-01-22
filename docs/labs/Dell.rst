@@ -4,7 +4,8 @@ Dell OPNFV Testlab
 Overview
 ------------------
 
-Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would host baremetal servers for the use of OPNFV community as part of the OPNFV Pharos Project
+Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would host baremetal servers
+for the use of OPNFV community as part of the OPNFV Pharos Project
 
 
 The Dell Testlab consists of 2 PODs
@@ -27,11 +28,11 @@ Each of the 2 PODs consists of 6 servers that consist of
 Hardware details
 -----------------
 
-All the servers within the two PODs reside within a single Dell PowerEdge 620 chassis and have the following specifications:
+All the servers within the two PODs reside within a single Dell PowerEdge 620 chassis and have the
+following specifications:
 
-
-
-**POD1-Fuel**
+POD1-Fuel
+^^^^^^^^^
 
 +---------------------+----------------------+----------------+--------------+---------------------+------------+
 | Hostname            |  Model               | Memory         | Storage      | Processor           | Socket     |
@@ -49,10 +50,8 @@ All the servers within the two PODs reside within a single Dell PowerEdge 620 ch
 | Node6               |  Dell PowerEdge M620 | 64 GB          | 600GB HDD    | Intel  Xeon E5-2640 |   2        |
 +---------------------+----------------------+----------------+--------------+---------------------+------------+
 
-
-
-
-**POD2-Foreman**
+POD2-Foreman
+^^^^^^^^^^^^
 
 +---------------------+----------------------+----------------+--------------+---------------------+------------+
 | Hostname            |  Model               |    Memory      | Storage      | Processor           | Socket     |
@@ -70,10 +69,6 @@ All the servers within the two PODs reside within a single Dell PowerEdge 620 ch
 | Node12              |  Dell PowerEdge M620 | 64 GB          | 300GB HDD    | Intel  Xeon E5-2640 |   2        |
 +---------------------+----------------------+----------------+--------------+---------------------+------------+
 
-
-
-
-
 Software
 ---------
 
@@ -88,17 +83,11 @@ The Jump servers in the Testlab are pre-provisioned with the following softwares
 
  1. OS: CentOS7
 
-
-
-
-
 Networks
 ----------
 
-
-
-**POD1-Fuel**
-
+POD1-Fuel
+^^^^^^^^^
 .. image:: images/Dell_POD1.jpg
    :height: 647
    :width: 821
@@ -183,7 +172,8 @@ Networks
 
 
 
-**POD2-Foreman**
+POD2-Foreman
+^^^^^^^^^^^^
 
 .. image:: images/Dell_POD2.jpg
    :height: 721
@@ -268,12 +258,8 @@ Networks
 |                     |                                              | p1p2 | A4:1F:72:11:B4:8B | 10G   | Unused                           |
 +---------------------+----------------------------------------------+------+-------------------+-------+----------------------------------+
 
-
-
-
-
-
-**Subnet allocations**
+Subnet allocations
+^^^^^^^^^^^^^^^^^^
 
 +-------------------+----------------+-------------------+---------------+----------+
 | Network name      | Address        | Mask              | Gateway       | VLAN id  |
@@ -296,7 +282,8 @@ Networks
 +-------------------+----------------+-------------------+---------------+----------+
 
 
-**Lights out Network**
+Lights out Network
+^^^^^^^^^^^^^^^^^^
 
 **POD1**
 
@@ -335,10 +322,6 @@ Networks
 +----------------+-------------------------------+------------------+---------------------+---------------------+
 
 
-
-
-
-
 Remote access infrastructure
 -----------------------------
 
@@ -353,26 +336,22 @@ To access the Testlab, please contact Waqas_Riaz@DELL.com with the following det
  * Organization
  * Purpose of using the lab
 
- Processing the request can take 2-3 business days.
+Processing the request can take 2-3 business days.
 
 *Accessing the Teslab*
------------------------
+----------------------
 
-* POD1 JumpServer
+POD1 JumpServer
+^^^^^^^^^^^^^^^
 
   IP: 172.18.0.67
-
   User:  opnfv
-
   Passwd: d3ll1234
 
 
-
-* POD2 JumpServer
-
+POD2 JumpServer
+^^^^^^^^^^^^^^^
   IP: 172.18.0.11
-
   User:  opnfv
-
   Passwd: d3ll1234
 

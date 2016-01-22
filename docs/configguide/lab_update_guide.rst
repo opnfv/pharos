@@ -28,7 +28,7 @@ How to update the Start Page
  # go to gerrit web and add reviewers, wait to have it merged
  # after code gets merged http://artifacts.opnfv.org/pharos/docs/pharos.html will contain your change
 
- # edit Wiki page https://wiki.opnfv.org/pharos and look for {{scrape>http://artifacts.opnfv.org/pharos/docs/pharos.html}} 
+ # edit Wiki page https://wiki.opnfv.org/pharos and look for {{scrape>http://artifacts.opnfv.org/pharos/docs/pharos.html}}
  # click "Preview" and see if your change is shown; if shown add a short "Edit summary" and click "Save"
  # This must be done as Wiki does not auto update content for now
 
