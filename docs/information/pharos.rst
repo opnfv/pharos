@@ -2,15 +2,24 @@ Project: Testbed infrastructure (Pharos)
 #########################################
 
 
-The Pharos project deals with the creation of a distributed and federated NFV test capability that will be hosted by a number of companies in the OPNFV community. The goals consist in managing the list of community platforms, describing the different community platforms, offering timeslots and tools to perform tests, sharing the results and the best practices, supporting any test campaigns of the projects of the community (e.g. [[opnfv_functional_testing | functional testing project]], [[platform_performance_benchmarking|Qtip]], [[get_started|BGS]], [[oscar/project_proposal|oscar]],...). Pharos shall provide the infrastructure and the tooling needed by the different projects.
+The Pharos project deals with the creation of a distributed and federated NFV test capability that will be hosted
+by a number of companies in the OPNFV community. The goals consist in managing the list of community platforms,
+describing the different community platforms, offering timeslots and tools to perform tests, sharing the results
+and the best practices, supporting any test campaigns of the projects of the community (e.g.
+[[opnfv_functional_testing | functional testing project]], [[platform_performance_benchmarking|Qtip]],
+[[get_started|BGS]], [[oscar/project_proposal|oscar]],...). Pharos shall provide the infrastructure and the tooling
+needed by the different projects.
 
 
-.. image:: images/opnfv-test.jpg
+.. image:: ../images/opnfv-test.jpg
 
 Community Test Labs
 --------------------
 
-A summary of all Community Hosted OPNFV test labs (existing and planned) is also kept on the `wiki home page <https://wiki.opnfv.org/start#opnfv_community_labs>`. This section here contains additional details and project relationship mappings.  //NOTE: Please follow `these instructions <https://wiki.opnfv.org/lab_update_guide>` when updating this list.//
+A summary of all Community Hosted OPNFV test labs (existing and planned) is also kept on the `wiki home page
+<https://wiki.opnfv.org/start#opnfv_community_labs>`. This section here contains additional details and project
+relationship mappings.  //NOTE: Please follow `these instructions <https://wiki.opnfv.org/lab_update_guide>` when
+updating this list.//
 
 +-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
 | Map       | Hosting       |  Home page                                           | Contact person                              | Comments                            | Location             |
@@ -97,11 +106,3 @@ Pharos project - Key facts
   - `meetings <https://wiki.opnfv.org/wiki/test_and_performance_meetings>`_
 
 - Repository:  pharos
-
-**Documentation tracking**
-
-Revision: _sha1_
-
-Build date:  _date_
-
-

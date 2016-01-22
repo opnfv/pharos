@@ -8,7 +8,7 @@ A pharos compliant OPNFV test-bed provides:
 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
 - A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
 - Remote access as defined by the Jenkins slave configuration guide
-http://artifacts.opnfv.org/arno.2015.1.0/docs/opnfv-jenkins-slave-connection.arno.2015.1.0.pdf
+http://artifacts.opnfv.org/brahmaputra.1.0/docs/opnfv-jenkins-slave-connection.brahmaputra.1.0.html
 
 Hardware requirements
 ---------------------

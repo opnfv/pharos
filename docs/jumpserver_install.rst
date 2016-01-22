@@ -64,7 +64,9 @@
 
   ``cd /home/qemu``
 
-  ``virt-install -n opnfv-2015-05-22_18-34-07-fuel -r 4096 --vcpus=4 --cpuset=0-3 -c opnfv-2015-05-22_18-34-07.iso --os-type=linux --os-variant=rhel6 --boot hd,cdrom --disk path=/home/qemu/VMs/mirantis-fuel-6.0/disk/fuel-vhd0.qcow2,bus=virtio,size=50,format=qcow2 -w bridge=br0,model=virtio --graphics vnc,listen=0.0.0.0``
+  ``virt-install -n opnfv-2015-05-22_18-34-07-fuel -r 4096 --vcpus=4 --cpuset=0-3 -c opnfv-2015-05-22_18-34-07.iso
+  --os-type=linux --os-variant=rhel6 --boot hd,cdrom --disk path=/home/qemu/VMs/mirantis-fuel-6.0/disk/fuel-
+  vhd0.qcow2,bus=virtio,size=50,format=qcow2 -w bridge=br0,model=virtio --graphics vnc,listen=0.0.0.0``
 
 16. Temporarily flush the firewall rules to make things easier:
 
