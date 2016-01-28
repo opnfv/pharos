@@ -46,7 +46,7 @@ updating this list.//
 | 7         | Cable Labs    |                                                      |                                             | TBD                                 |                      |
 |           |               |                                                      |                                             |                                     |                      |
 +-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 8         | Dell          | https://wiki.opnfv.org/dell_hosting                  | Wenjing Chu                                 | Operational with PODs based on Arno | Santa Clara, CA      |
+| 8         | Dell          | https://wiki.opnfv.org/dell_hosting                  | Wenjing Chu                                 | Operational with 3 PODs   | Santa Clara, CA      |
 |           |               |                                                      |         Wenjing_Chu@DELL.com                | outputs                             |                      |
 +-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
 | 9         | Huawei        |                                                      | Sean Chen                                   | TBD                                 | Santa Clara, CA      |
