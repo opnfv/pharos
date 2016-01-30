@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Dell OPNFV Testlab
 ==================================================
 
@@ -367,9 +366,9 @@ Dell is hosting an OPNFV testlab at its Santa Clara facility. The testlab would 
 
 
 The Dell Testlab consists of 3 PODs for the use of the community
-    * POD1 (Jenkins slave: dell-us-testing-bm-1) 
+    * POD1 (Jenkins slave: dell-us-testing-bm-1)
     * POD2 (Jenkins slave: dell-us-deploying-bm2)
-    * POD3 (Jenkins slave: dell-us-delpoyingbm3)  
+    * POD3 (Jenkins slave: dell-us-delpoyingbm3)
 
 .. image:: images/Dell_Overview.jpg
    :height: 648
@@ -684,7 +683,7 @@ Networks
 |                     |                                              |      |                   |       |                                  |
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              |      |                   |       |                                  |
-|                     |                                              | em2  | EC:F4:BB:D6:F2:9A | 10G   | Internal Networks  (201,202,203) |     
+|                     |                                              | em2  | EC:F4:BB:D6:F2:9A | 10G   | Internal Networks  (201,202,203) |
 |                     |                                              |      |                   |       |                                  |
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              |      |                   |       |                                  |
@@ -720,7 +719,7 @@ Networks
 |                     |                                              |      |                   |       |                                  |
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              |      |                   |       |                                  |
-|                     |                                              | em2  | EC:F4:BB:D7:16:EA | 10G   | Internal Networks (201,202,203)  |     
+|                     |                                              | em2  | EC:F4:BB:D7:16:EA | 10G   | Internal Networks (201,202,203)  |
 |                     |                                              |      |                   |       |                                  |
 |                     |                                              +------+-------------------+-------+----------------------------------+
 |                     |                                              |      |                   |       |                                  |
@@ -816,7 +815,7 @@ Networks
 
 
 Remote access infrastructure
------------------------------
+----------------------------
 
 The Dell OPNFV testlab is free to use for the OPNFV community.
 
@@ -855,4 +854,3 @@ To access the Testlab, please visit the Dell OPNFV Lab's wiki page (https://wiki
   User: opnfv
 
   Passwd: d3ll1234
->>>>>>> f71f6b6... Updated Dell Lab's Documentation
