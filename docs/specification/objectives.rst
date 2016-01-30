@@ -1,13 +1,8 @@
 Objectives / Scope
 -------------------
 
-<<<<<<< HEAD
-The **Pharos Specification** defines a hardware environment for deployment and testing of the **Brahmaputra** 
-platform release. The **Pharos Project** is also responsible for defining lab capabilities, developing 
-=======
 The **Pharos Specification** defines a hardware environment for deployment and testing of the **Brahmaputra**
 platform release. The **Pharos Project** is also responsible for defining lab capabilities, developing
->>>>>>> 6978e2f... Cleaned up docs for toolchain errors.
 management/usage policies and process;  and a support plan for reliable access to project and release resources.
 Community labs are provided as a service by companies and are not controlled by Pharos however our objective is
 to provide easy visibility of all lab capabilities and their usage at all-times.
