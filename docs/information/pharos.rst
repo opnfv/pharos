@@ -2,11 +2,11 @@ Pharos Project: OPNFV Lab Infrastructure
 ########################################
 
 The **Pharos Project** deals with developing an OPNFV lab infrastructure that is geographically and technically diverse.
-This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by 
-individual companies and there is also an OPNFV lab hosted by the Linux Foundation that has controlled access for key 
-development and production activities. The **Pharos Specification** defines a "compliant" deployment and test 
+This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by
+individual companies and there is also an OPNFV lab hosted by the Linux Foundation that has controlled access for key
+development and production activities. The **Pharos Specification** defines a "compliant" deployment and test
 environment. Pharos is responsible for defining lab capabilities, developing management/usage policies and process;
-and a support plan for reliable access to project and release resources. Community labs are provided as a service 
+and a support plan for reliable access to project and release resources. Community labs are provided as a service
 by companies and are not controlled by Pharos however our goal is to provide easy visibility of all lab capabilities
 and their usage at all-times.
 
@@ -40,7 +40,7 @@ A map of OPNFV lab locations, lab owners and other individual lab information is
 | #  |  Organization |                                                          |                      |
 +----+---------------+----------------------------------------------------------+----------------------+
 | 1  | Linux         | https://wiki.opnfv.org/get_started/lflab_hosting         | Portland, Oregon     |
-|    |  Foundation   |                                                          |                      | 
+|    |  Foundation   |                                                          |                      |
 +--- +---------------+----------------------------------------------------------+----------------------+
 | 2  | Cable Labs    | Internal use only at present                             | Denver, Colorado     |
 |    |               |                                                          |                      |
