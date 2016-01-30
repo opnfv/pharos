@@ -1,7 +1,7 @@
 Project: Testbed infrastructure (Pharos)
 Project Creation Date: January 8, 2015
 Project Category: Integration & Testing
-Lifecycle State: Incubation
+Lifecycle State: Mature
 Primary Contact: Trevor Cooper (trevor.cooper@intel.com)
 Project Lead: Trevor Cooper (trevor.cooper@intel.com)
 Jira Project Name: Testbed infrastructure project
@@ -23,5 +23,3 @@ prabu.kuppuswamy@spirent.com
 s.chen@huawei.com
 saikrishna.kotha@xilinx.com
 yuyijun@huawei.com
-
-

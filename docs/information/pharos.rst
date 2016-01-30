@@ -1,86 +1,101 @@
-Project: Testbed infrastructure (Pharos)
-#########################################
+Pharos Project: OPNFV Lab Infrastructure
+########################################
+
+The **Pharos Project** deals with developing an OPNFV lab infrastructure that is geographically and technically diverse.
+This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by 
+individual companies and there is also an OPNFV lab hosted by the Linux Foundation that has controlled access for key 
+development and production activities. The **Pharos Specification** defines a "compliant" deployment and test 
+environment. Pharos is responsible for defining lab capabilities, developing management/usage policies and process;
+and a support plan for reliable access to project and release resources. Community labs are provided as a service 
+by companies and are not controlled by Pharos however our goal is to provide easy visibility of all lab capabilities
+and their usage at all-times.
 
 
-The Pharos project deals with the creation of a distributed and federated NFV test capability that will be hosted
-by a number of companies in the OPNFV community. The goals consist in managing the list of community platforms,
-describing the different community platforms, offering timeslots and tools to perform tests, sharing the results
-and the best practices, supporting any test campaigns of the projects of the community (e.g.
-[[opnfv_functional_testing | functional testing project]], [[platform_performance_benchmarking|Qtip]],
-[[get_started|BGS]], [[oscar/project_proposal|oscar]],...). Pharos shall provide the infrastructure and the tooling
-needed by the different projects.
+Communication
+-------------
 
+- Jira <https://jira.opnfv.org/projects/PHAROS/summary>
+- Weekly Pharos meeting logistics <https://wiki.opnfv.org/meetings#pharos_meetings>
+- Weekly Test Coordination meeting logistics <https://wiki.opnfv.org/meetings/test>
+- IRC: freenode.net #opnfv-pharos <http://webchat.freenode.net/?channels=opnfv-pharos>
+- Mailing List: use opnfv-tech-discuss and tag your emails with [Pharos] in the subject for filtering
 
-.. image:: ../images/opnfv-test.jpg
+**Process for requesting lab access and support** <https://wiki.opnfv.org/pharos_rls_b_support>
+
+**Pharos Lab Governance and Policies** <https://wiki.opnfv.org/pharos_policies>
+
+**Status of Community labs** <https://wiki.opnfv.org/pharos_rls_b_labs>
+
+**Pharos Milesone Planning** <https://wiki.opnfv.org/pharos_rls_b_plan>
+
 
 Community Test Labs
 --------------------
 
-A summary of all Community Hosted OPNFV test labs (existing and planned) is also kept on the `wiki home page
-<https://wiki.opnfv.org/start#opnfv_community_labs>`. This section here contains additional details and project
-relationship mappings.  //NOTE: Please follow `these instructions <https://wiki.opnfv.org/lab_update_guide>` when
-updating this list.//
+A map of OPNFV lab locations, lab owners and other individual lab information is maintained on the **Wiki**
+<https://wiki.opnfv.org/start#opnfv_community_labs>
 
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| Map       | Hosting       |  Home page                                           | Contact person                              | Comments                            | Location             |
-|  Position |  Organization |                                                      |                                             |                                     |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 1         | Spirent       | https://wiki.opnfv.org/pharos/spirentvctlab          | Iben Rodriguez                              | OpenDaylight, NFV, SDN, &           | Nephoscale           |
-|           |               |                                                      |      iben.rodriguez@spirent.com             | OpenStack testing in progress       | San Jose, CA         |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 2         | China Mobile  |                                                      | Fu Qiao                                     | PODs dedicated for BGS and          | Beijing, China       |
-|           |               |                                                      |      fuqiao@chinamobile.com                 | Functest                            |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 3         | Ericsson      | https://wiki.opnfv.org/get_started/ericsson_hosting  | Jonas Bjurel                                |                                     | Montreal, Canada     |
-|           |               |                                                      |         jonas.bjurel@ericsson.com           |                                     |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 4         | Huawei        |                                                      | Radoaca Vasile                              | TBD                                 | Xi an, China         |
-|           |               |                                                      |         radoaca.vasile@huawei.com           |                                     |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 5         | Intel         | https://wiki.opnfv.org/get_started/intel_hosting     | Trevor Cooper                               | Operational with PODs dedicated to  | Intel Labs; Hillsboro|
-|           |               |                                                      |         trevor.cooper@intel.com             | BGS and vSwitch projects            | Oregon               |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 6         | Orange        |                                                      | Morgan Richomme                             | Available Q1 2015                   | Orange Labs;         |
-|           |               |                                                      |         morgan.richomme@orange.com          |                                     | Lannion, France      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 7         | Cable Labs    |                                                      |                                             | TBD                                 |                      |
-|           |               |                                                      |                                             |                                     |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 8         | Dell          | https://wiki.opnfv.org/dell_hosting                  | Wenjing Chu                                 | Operational with 3 PODs   | Santa Clara, CA      |
-|           |               |                                                      |         Wenjing_Chu@DELL.com                | outputs                             |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 9         | Huawei        |                                                      | Sean Chen                                   | TBD                                 | Santa Clara, CA      |
-|           |               |                                                      |                                             |                                     |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
-| 10        | ZTE           |                                                      | Zhihui Wu                                   | BGS  Parser  Yardstick              | Nanjing, China       |
-|           |               |                                                      |         wu.zhihui1@zte.com.cn               |                                     |                      |
-+-----------+---------------+------------------------------------------------------+---------------------------------------------+-------------------------------------+----------------------+
++----+---------------+----------------------------------------------------------+----------------------+
+|    | Hosting       |  Home page                                               | Location             |
+| #  |  Organization |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 1  | Linux         | https://wiki.opnfv.org/get_started/lflab_hosting         | Portland, Oregon     |
+|    |  Foundation   |                                                          |                      | 
++--- +---------------+----------------------------------------------------------+----------------------+
+| 2  | Cable Labs    | Internal use only at present                             | Denver, Colorado     |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 3  | Spirent       | https://wiki.opnfv.org/pharos/spirentvctlab              | Nephoscale           |
+|    |               |                                                          | San Jose, CA         |
++----+---------------+----------------------------------------------------------+----------------------+
+| 4  | China Mobile  | https://wiki.opnfv.org/lab2_chinamobile_hosting          | Beijing, China       |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 5  | Dell          | https://wiki.opnfv.org/dell_hosting                      | Santa Clara, CA      |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 6  | Enea          | https://wiki.opnfv.org/enea-pharos-lab                   | Kista, Sweden        |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 7  | Ericsson      | https://wiki.opnfv.org/get_started/ericsson_hosting      | Montreal, Canada     |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 8  | Huawei        | https://wiki.opnfv.org/lab4_huawei                       | Xi an, China         |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 9  | Huawei        | https://wiki.opnfv.org/get_started/huawei_sc_hosting     | Santa Clara, CA      |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 10 | Intel         | https://wiki.opnfv.org/get_started/intel_hosting         | Hillsboro, Oregon    |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 11 | Orange        | https://wiki.opnfv.org/opnfv-orange                      | Lannion, France      |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 12 | Orange        | https://wiki.opnfv.org/opnfv-orange                      | Paris, France        |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+| 13 | ZTE           | https://wiki.opnfv.org/zte-nj-testlab                    | Nan Jing, China      |
+|    |               |                                                          |                      |
++----+---------------+----------------------------------------------------------+----------------------+
 
 
+Pharos project - Key Facts
+--------------------------
 
-Pharos management
-------------------
-
-- `Project proposal <https://wiki.opnfv.org/opnfv_testbed_infrastructure>`_
-- A "Pharos compliant" environment is the `standard configuration of a deployed system <https://wiki.opnfv.org/pharos/pharos_specification>`_ for test purposes
-- `Testing <https://wiki.opnfv.org/pharos_testing>`_ on "Pharos compliant" environment
-- `Project draft release <https://wiki.opnfv.org/pharos_draft_release>`_
-- `Task follow-up <https://wiki.opnfv.org/pharos_tasks>`_
-- `FAQ <https://wiki.opnfv.org/pharos_faq>`_
-- `meeting & minutes page] <https://wiki.opnfv.org/wiki/test_and_performance_meetings>`_ <- this page needs to be moved and renamed
-
-Pharos project - Key facts
----------------------------
-
+- Project: Testbed infrastructure (Pharos)
 - Project Creation Date:  January 8, 2015
 - Project Category:  Integration & Testing
-- Lifecycle State:  Incubation
+- Lifecycle State:  Mature
 - Primary Contact:  Trevor  <trevor.cooper@intel.com>
 - Project Lead:  Trevor  <trevor.cooper@intel.com>
 - Jira Project Name:  Testbed infrastructure Project
 - Jira Project Prefix:  PHAROS
-- Committers:
+- Mailing list tag: [pharos]
+- IRC: Server:freenode.net Channel:#opnfv-pharos
+- Repository: pharos
 
+- Committers:
   - Trevor Cooper<trevor.cooper@intel.com>
   - Fu Qiao <fuqiao@chinamobile.com>
   - Sheng-ann Yu <sheng-ann.yu@ericsson.com>
@@ -93,16 +108,3 @@ Pharos project - Key facts
   - Sean Chen <s.chen@huawei.com>
   - Saikrishna M Kotha <saikrishna.kotha@xilinx.com>
   - Eugene Yu <yuyijun@huawei.com>
-
-- Contributors:
-
-  - Iben Rodriguez <iben.rodriguez@spirent.com>
-
-
-- IRC : freenode.net #opnfv-pharos `http://webchat.freenode.net/?channels=opnfv-pharos <http://webchat.freenode.net/?channels=opnfv-pharos>`_
-- Mailing List : no dedicated mailing list - use opnfv-tech-discuss and tag your emails with [Pharos] in the subject for easier filtering
-- Meetings :
-
-  - `meetings <https://wiki.opnfv.org/wiki/test_and_performance_meetings>`_
-
-- Repository:  pharos

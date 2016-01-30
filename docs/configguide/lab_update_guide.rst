@@ -1,13 +1,13 @@
 How to update the lab info on this wiki
 ========================================
 
+
 Details about Hosted Community OPNFV Test Labs are located in 3 different places:
 
  - Summarized on the OPNFV wiki [[start#opnfv_community_labs|Start Page]]
  - Overview with additional details on the [[pharos#opnfv_test_labs|Pharos Test Bed Governance Project Page]]
  - With Project specific information on each project page
 
-----
 
 How to update the Start Page
 -----------------------------

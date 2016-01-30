@@ -1,7 +1,5 @@
 **Jump Server Configuration:**
 
-(Rough Placeholder, edit me)
-
 **Fuel**
 
 1. Obtain CentOS 7 Minimal ISO and install
@@ -77,7 +75,3 @@
 17. Connect to the console of the installing VM with your favorite VNC client.
 
 18. Change the IP settings to match the pod, use an IP in the PXE/Admin network for the Fuel Master
-
-**Foreman**
-
-TBA
