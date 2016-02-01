@@ -6,7 +6,9 @@ Test-bed network
 * 24 or 48 Port TOR Switch
 * NICS - 1GE, 10GE - per server can be on-board or PCI-e
 * Connectivity for each data/control network is through a separate NIC.
+
   *This simplifies Switch Management howeverrequires more NICs on the server and also more switch ports
+
 * Lights-out network can share with Admin/Management
 
 Network Interfaces
@@ -22,12 +24,15 @@ Network Interfaces
 * Option II: 1x1G Control, 2x 40G (or 10G) Data, 24 Port Switch
 
   * Connectivity to networks is through VLANs on the Control NIC.
+
     * Data NIC used for VNF traffic and storage traffic segmented through VLANs
 
 * Option III: 2x1G Control, 2x10G Data, 2x40G Storage, 24 Port Switch
 
   * Data NIC used for VNF traffic
+
     * Storage NIC used for control plane and Storage segmented through VLANs (separate host traffic from VNF)
+
   * 1 x 1G for IPMI
   * 1 x 1G for Admin/PXE boot
   * 2 x 10G for control plane connectivity/Storage
