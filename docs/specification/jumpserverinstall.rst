@@ -75,3 +75,4 @@
 17. Connect to the console of the installing VM with your favorite VNC client.
 
 18. Change the IP settings to match the pod, use an IP in the PXE/Admin network for the Fuel Master
+

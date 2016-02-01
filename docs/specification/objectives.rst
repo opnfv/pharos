@@ -8,10 +8,11 @@ Community labs are provided as a service by companies and are not controlled by 
 to provide easy visibility of all lab capabilities and their usage at all-times.
 
 Pharos lab infrastructure has the following objectives:
-- Provides secure, scalable, standard and HA environments for feature development
-- Supports the full Brahmaputra deployment lifecycle (this requires a **bare-metal** environment)
-- Supports functional and performance testing of the Brahmaputra release
-- Provides mechanisms and procedures for secure remote access to Pharos compliant environments for OPNFV community
+
+  - Provides secure, scalable, standard and HA environments for feature development
+  - Supports the full Brahmaputra deployment lifecycle (this requires a **bare-metal** environment)
+  - Supports functional and performance testing of the Brahmaputra release
+  - Provides mechanisms and procedures for secure remote access to Pharos compliant environments for OPNFV community
 
 Deploying Brahmaputra in a Virtualized environment is possible and will be useful, however it does not provide a fully
 featured deployment and realistic test environment for the Brahmaputra release of OPNFV.
@@ -19,3 +20,4 @@ featured deployment and realistic test environment for the Brahmaputra release o
 The high level architecture is outlined in the following diagram:
 
 .. image:: ../images/pharos-archi1.jpg
+
