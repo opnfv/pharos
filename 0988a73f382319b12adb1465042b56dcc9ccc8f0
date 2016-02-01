@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a4e6583_5cddce6f",
+        "filename": "docs/labs/OrangeIssy.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-02-01T09:46:26Z",
+      "side": 1,
+      "message": "tab not always properly managed when generating doc ument \u003d\u003e to be removed",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "0988a73f382319b12adb1465042b56dcc9ccc8f0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_3cda1279",
+        "filename": "docs/labs/OrangeIssy.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-02-01T09:46:26Z",
+      "side": 1,
+      "message": "tab",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 13
+      },
+      "revId": "0988a73f382319b12adb1465042b56dcc9ccc8f0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_1ce75642",
+        "filename": "docs/labs/OrangeIssy.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-02-01T09:46:26Z",
+      "side": 1,
+      "message": "tab",
+      "range": {
+        "startLine": 44,
+        "startChar": 1,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "0988a73f382319b12adb1465042b56dcc9ccc8f0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a4e6583_7cf88ae5",
+        "filename": "docs/labs/OrangeIssy.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-02-01T09:46:26Z",
+      "side": 1,
+      "message": "remove space",
+      "revId": "0988a73f382319b12adb1465042b56dcc9ccc8f0",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
