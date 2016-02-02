@@ -33,7 +33,7 @@ Community Test Labs
 --------------------
 
 A map of OPNFV lab locations, lab owners and other individual lab information is maintained on the **Wiki**
-<https://wiki.opnfv.org/start#opnfv_community_labs>
+<https://wiki.opnfv.org/pharos#community_labs>
 
 +----+---------------+----------------------------------------------------------+----------------------+
 |    | Hosting       |  Home page                                               | Location             |
