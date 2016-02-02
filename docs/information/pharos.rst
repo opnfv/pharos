@@ -1,5 +1,14 @@
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
+.. (c) 2016 OPNFV.
+
+.. OPNFV Pharos Project Information file.
+
+
+
+========================================
 Pharos Project: OPNFV Lab Infrastructure
-########################################
+========================================
 
 The **Pharos Project** deals with developing an OPNFV lab infrastructure that is geographically and technically diverse.
 This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by
