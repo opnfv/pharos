@@ -1,5 +1,14 @@
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
+.. (c) 2016 OPNFV.
+
+.. OPNFV Pharos Project Information file.
+
+
+
+========================================
 Pharos Project: OPNFV Lab Infrastructure
-########################################
+========================================
 
 The **Pharos Project** deals with developing an OPNFV lab infrastructure that is geographically and technically diverse.
 This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by
@@ -32,8 +41,8 @@ Communication
 Community Test Labs
 --------------------
 
-A map of OPNFV lab locations, lab owners and other individual lab information is maintained on the **Wiki**
-<https://wiki.opnfv.org/start#opnfv_community_labs>
+An interactive map of OPNFV lab locations, lab owners and other lab information is maintained on the Pharos **Wiki**
+<https://wiki.opnfv.org/pharos#community_labs>
 
 +----+---------------+----------------------------------------------------------+----------------------+
 |    | Hosting       |  Home page                                               | Location             |
@@ -41,7 +50,7 @@ A map of OPNFV lab locations, lab owners and other individual lab information is
 +----+---------------+----------------------------------------------------------+----------------------+
 | 1  | Linux         | https://wiki.opnfv.org/get_started/lflab_hosting         | Portland, Oregon     |
 |    |  Foundation   |                                                          |                      |
-+--- +---------------+----------------------------------------------------------+----------------------+
++----+---------------+----------------------------------------------------------+----------------------+
 | 2  | Cable Labs    | Internal use only at present                             | Denver, Colorado     |
 |    |               |                                                          |                      |
 +----+---------------+----------------------------------------------------------+----------------------+
