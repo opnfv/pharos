@@ -23,3 +23,7 @@ Indices and tables
 ==================
 
 * :ref:`search`
+
+Revision: _sha1_
+
+Build date: |today|

@@ -2,7 +2,13 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
-
+.. image:: ../etc/opnfv-logo.png
+  :height: 40
+  :width: 200
+  :alt: OPNFV
+  :align: left
+|
+|
 **************************
 Pharos Project Information
 **************************
@@ -19,3 +25,7 @@ Indices and tables
 ==================
 
 * :ref:`search`
+
+Revision: _sha1_
+
+Build date: |today|
