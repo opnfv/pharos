@@ -61,8 +61,3 @@ target/
 /docs_build/
 /docs_output/
 /releng/
-/src/dpdk/dpdk/
-/src/ovs/ovs/
-/src/qemu/qemu/
-/src_cuse/
-/src_vanilla/

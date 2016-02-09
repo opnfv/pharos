@@ -4,8 +4,13 @@
 
 .. OPNFV Pharos Project Information file.
 
-
-
+.. image:: ../etc/opnfv-logo.png
+  :height: 40
+  :width: 200
+  :alt: OPNFV
+  :align: left
+|
+|
 ========================================
 Pharos Project: OPNFV Lab Infrastructure
 ========================================
@@ -117,3 +122,7 @@ Pharos project - Key Facts
   - Sean Chen <s.chen@huawei.com>
   - Saikrishna M Kotha <saikrishna.kotha@xilinx.com>
   - Eugene Yu <yuyijun@huawei.com>
+
+Revision: _sha1_
+
+Build date: |today|
