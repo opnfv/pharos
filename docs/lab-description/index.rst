@@ -2,13 +2,6 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
-.. image:: ../etc/opnfv-logo.png
-  :height: 40
-  :width: 200
-  :alt: OPNFV
-  :align: left
-|
-|
 ****************************************
 Pharos Templates and Configuration Files
 ****************************************
@@ -18,14 +11,7 @@ Pharos Templates and Configuration Files
 
    ./lab_description.rst
    ./pod_description.rst
-
-:Authors: Trevor Cooper (Intel)
-:Version: 1.0
-
-Indices and tables
-==================
-
-* :ref:`search`
+   ./inventory.rst
 
 Revision: _sha1_
 
