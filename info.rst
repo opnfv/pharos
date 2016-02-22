@@ -11,7 +11,6 @@ IRC: Server:freenode.net Channel:#opnfv-pharos
 Repository: pharos
 
 Committers:
-
 trevor.cooper@intel.com
 fuqiao@chinamobile.com
 sheng-ann.yu@ericsson.com

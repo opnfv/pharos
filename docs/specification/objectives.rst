@@ -3,8 +3,8 @@
 .. (c) 2016 OPNFV.
 
 
-Objectives / Scope
--------------------
+Pharos Compliance
+-----------------
 
 The **Pharos Specification** defines a hardware environment for deployment and testing of the **Brahmaputra**
 platform release. The **Pharos Project** is also responsible for defining lab capabilities, developing

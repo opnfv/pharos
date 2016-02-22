@@ -1,10 +1,10 @@
-.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
 
-Pharos compliant environment
-----------------------------
+Hardware
+--------
 
 A pharos compliant OPNFV test-bed provides:
 
@@ -15,35 +15,29 @@ A pharos compliant OPNFV test-bed provides:
 - Remote access as defined by the Jenkins slave configuration guide
 http://artifacts.opnfv.org/brahmaputra.1.0/docs/opnfv-jenkins-slave-connection.brahmaputra.1.0.html
 
-Hardware requirements
----------------------
-
 **Servers**
 
-CPU:
+**CPU:**
 
-* Intel Xeon E5-2600v2 Series
-(Ivy Bridge and newer, or similar)
+* Intel Xeon E5-2600v2 Series or newer
 
-Local Storage Configuration:
+**Local Storage:**
 
-Below describes the minimum for the Pharos spec,
-which is designed to provide enough capacity for
-a reasonably functional environment. Additional
-and/or faster disks are nice to have and may
-produce a better result.
+Below describes the minimum for the Pharos spec, which is designed to provide enough capacity for
+a reasonably functional environment. Additional and/or faster disks are nice to have and mayproduce
+a better result.
 
-* Disks: 2 x 1TB + 1 x 100GB SSD
-* The first 1TB HDD should be used for OS & additional software/tool installation
-* The second 1TB HDD configured for CEPH object storage
-* Finally, the 100GB SSD should be used as the CEPH journal
-* Performance testing requires a mix of compute nodes that have CEPH(swift+Cinder) and without CEPH storage
+* Disks: 2 x 1TB HDD + 1 x 100GB SSD (or greater capacity)
+* The first HDD should be used for OS & additional software/tool installation
+* The second HDD is configured for CEPH object storage
+* The SSD should be used as the CEPH journal
+* Performance testing requires a mix of compute nodes with CEPH (Swift+Cinder) and without CEPH storage
 * Virtual ISO boot capabilities or a separate PXE boot server (DHCP/tftp or Cobbler)
 
-Memory:
+**Memory:**
 
 * 32G RAM Minimum
 
-Power Supply Single
+**Power Supply**
 
 * Single power supply acceptable (redundant power not required/nice to have)

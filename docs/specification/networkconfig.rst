@@ -45,7 +45,7 @@ Documented configuration to include:
 - May be special NW requirements for performance related projects
 - Default gateways
 
-ontroller node bridge topology overview
+Controller node bridge topology overview
 
 .. image:: ../images/bridge1.png
 
@@ -53,10 +53,7 @@ compute node bridge topology overview
 
 .. image:: ../images/bridge2.png
 
-Architecture
--------------
-
-** Network Diagram **
+**Network Diagram**
 
 The Pharos architecture may be described as follow:
 Figure 1: Standard Deployment Environment
@@ -65,8 +62,7 @@ Figure 1: Standard Deployment Environment
 
 Figure 1: Standard Deployment Environment
 
-Sample Network Drawings
------------------------
+**Sample Network Drawings**
 
 Files for documenting lab network layout.
 These were contributed as Visio VSDX format compressed as a ZIP
