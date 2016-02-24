@@ -2,10 +2,11 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
+.. _pharos_pod:
 
-===================================
-Pharos Lab POD description Template
-===================================
+**************************
+POD Specification Template
+**************************
 
 Introduction
 ------------
@@ -20,11 +21,10 @@ Describe any addional POD requirements beyond a standard Pharos compliant POD e.
 shared usage, ...
 
 
-Systems
--------
+Server Specifications
+---------------------
 
-Jump Host
-^^^^^^^^^
+**Jump Host**
 
 +--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------------+------------------------+------------------------+--------------+
 |    	       |              |              |              |              |              | Local        | Lights-out network     | 1GbE: NIC#/IP          | 10GbE: NIC#/IP         |              |
@@ -41,8 +41,8 @@ Jump Host
 +--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------------+------------------------+------------------------+--------------+
 
 
-Nodes
-^^^^^
+**Compute Nodes**
+
 
 +--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------------+------------------------+------------------------+--------------+
 |              |              |              |              |              |              | Local        | Lights-out network     | 1GbE: NIC#/IP          | 10GbE: NIC#/IP         |              |
@@ -92,5 +92,8 @@ Firewall Rules
 POD Topology
 ------------
 
-.. image:: images/<lab-name>_<diagram-name>.png|.jpg
-   :alt: Name of the diagram
+Provide a diagram showing the network topology of the POD. Any security sensitive details should
+not be exposed publically and can be stored in the secure Pharos repo. The following diagram is an example only.
+
+.. image:: ./images/pod_topology_example.png
+   :alt: POD diagram not found

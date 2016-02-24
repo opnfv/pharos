@@ -3,61 +3,53 @@
 .. (c) 2016 OPNFV.
 
 
-Remote management
+Remote Management
 ------------------
 
-**Remote access**
+Remote access is required for …
 
-- Remote access is required for …
+  * Developers to access deploy/test environments (credentials to be issued per POD / user)
+  * Connection of each environment to Jenkins master hosted by Linux Foundation for automated deployment and test
 
-  1. Developers to access deploy/test environments (credentials to be issued per POD / user)
-  2. Connection of each environment to Jenkins master hosted by Linux Foundation for automated deployment and test
+OpenVPN is generally used for remote however community hosted labs may vary due to company security rules. For POD
+access rules / restrictions refer to individual lab documentation as each company may have different access rules
+and acceptable usage policies.
 
-- OpenVPN is generally used for remote however community hosted labs may vary due to company security rules
-- POD access rules / restrictions …
+Basic requirements:
 
-  - Refer to individual test-bed as each company may have different access rules and acceptable usage policies
+  * SSH sessions to be established (initially on the jump server)
+  * Packages to be installed on a system (tools or applications) by pullig from an external repo.
 
-- Basic requirement is for SSH sessions to be established (initially on jump server)
-- Majority of packages installed on a system (tools or applications) will be pulled from an external repo.
+Firewall rules accomodate:
 
-Firewall rules should include
+  * SSH sessions
+  * Jenkins sessions
 
-- SSH sessions
-- Jenkins sessions
+Lights-out management network requirements:
 
-Lights-out Management:
+  * Out-of-band management for power on/off/reset and bare-metal provisioning
+  * Access to server is through a lights-out-management tool and/or a serial console
+  * Refer to applicable light-out mangement information from server manufacturer, such as ...
 
-- Out-of-band management for power on/off/reset and bare-metal provisioning
-- Access to server is through lights-out-management tool and/or a serial console
-- Intel lights-out ⇒ RMM http://www.intel.com/content/www/us/en/server-management/intel-remote-management-module.html
-- HP lights-out ⇒ ILO http://www8.hp.com/us/en/products/servers/ilo/index.html
-- CISCO lights-out ⇒ UCS https://developer.cisco.com/site/ucs-dev-center/index.gsp
+    * Intel lights-out `RMM <http://www.intel.com/content/www/us/en/server-management/intel-remote-management-module.html>`_
+    * HP lights-out `ILO <http://www8.hp.com/us/en/products/servers/ilo/index.html>`_
+    * CISCO lights-out `UCS <https://developer.cisco.com/site/ucs-dev-center/index.gsp>`_
 
-Linux Foundation - VPN service for accessing Lights-Out
-Management (LOM) infrastructure for the UCS-M hardware
+Linux Foundation Lab is a UCS-M hardware environment with controlled access *as needed*
 
-- People with admin access to LF infrastructure:
+    * `Access rules and procedure <https://wiki.opnfv.org/pharos/lf_lab>`_ are maintained on the Wiki
+    * `A list of people <https://wiki.opnfv.org/pharos/lf_lab#opnfv_community_members_with_access_to_opnfv_lf_lab>`_ with access is maintained on the Wiki
+    * Send access requests to infra-steering@lists.opnfv.org with the following information ...
 
-1. amaged@cisco.com
-2. cogibbs@cisco.com
-3. daniel.smith@ericsson.com
-4. dradez@redhat.com
-5. fatih.degirmenci@ericsson.com
-6. fbrockne@cisco.com
-7. jonas.bjurel@ericsson.com
-8. jose.lausuch@ericsson.com
-9. joseph.gasparakis@intel.com
-10. morgan.richomme@orange.com
-11. pbandzi@cisco.com
-12. phladky@cisco.com
-13. stefan.k.berg@ericsson.com
-14. szilard.cserey@ericsson.com
-15. trozet@redhat.com
+      * Name:
+      * Company:
+      * Approved Project:
+      * Project role:
+      * Why is access needed:
+      * How long is access needed (either a specified time period or define "done"):
+      * What specific POD/machines will be accessed:
+      * What support is needed from LF admins and LF community support team:
 
-- The people who require VPN access must have a valid
-PGP key bearing a valid signature from one of these
-three people. When issuing OpenVPN credentials, LF
-will be sending TLS certificates and 2-factor
-authentication tokens, encrypted to each recipient's PGP key.
-
+    * Once access is approved please follow instructions for setting up VPN access ... https://wiki.opnfv.org/get_started/lflab_hosting
+    * The people who require VPN access must have a valid PGP key bearing a valid signature from LF
+    * When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key

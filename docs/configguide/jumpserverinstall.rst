@@ -1,8 +1,16 @@
-**Jump Server Configuration:**
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. http://creativecommons.org/licenses/by/4.0
+.. (c) 2016 OPNFV.
 
-(Rough Placeholder, edit me)
 
-**Fuel**
+Jump Server Configuration
+-------------------------
+
+Jump server install procedures are maintained by each installer project. Addional Jump server
+configuraton BKMs will be maintained here. The below install information was used for Fuel however
+may be outdated (please refer to Fuel Installer documents).
+
+**Procedure**
 
 1. Obtain CentOS 7 Minimal ISO and install
 
@@ -64,9 +72,11 @@
 
   ``cd /home/qemu``
 
-  ``virt-install -n opnfv-2015-05-22_18-34-07-fuel -r 4096 --vcpus=4 --cpuset=0-3 -c opnfv-2015-05-22_18-34-07.iso
-  --os-type=linux --os-variant=rhel6 --boot hd,cdrom --disk path=/home/qemu/VMs/mirantis-fuel-6.0/disk/fuel-
-  vhd0.qcow2,bus=virtio,size=50,format=qcow2 -w bridge=br0,model=virtio --graphics vnc,listen=0.0.0.0``
+  ``virt-install -n opnfv-2015-05-22_18-34-07-fuel -r 4096 --vcpus=4
+  --cpuset=0-3 -c opnfv-2015-05-22_18-34-07.iso --os-type=linux
+  --os-variant=rhel6 --boot hd,cdrom --disk
+  path=/home/qemu/VMs/mirantis-fuel-6.0/disk/fuel-vhd0.qcow2,bus=virtio,size=50,format=qcow2
+  -w bridge=br0,model=virtio --graphics vnc,listen=0.0.0.0``
 
 16. Temporarily flush the firewall rules to make things easier:
 
@@ -75,7 +85,3 @@
 17. Connect to the console of the installing VM with your favorite VNC client.
 
 18. Change the IP settings to match the pod, use an IP in the PXE/Admin network for the Fuel Master
-
-**Foreman**
-
-TBA

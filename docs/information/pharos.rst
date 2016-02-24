@@ -4,12 +4,14 @@
 
 .. OPNFV Pharos Project Information file.
 
-==========================
+.. _pharos_information:
+
+**************************
 Pharos Project Information
-==========================
+**************************
 
 Introduction
-============
+------------
 
 The `Pharos Project <https://www.opnfv.org/developers/pharos>`_ deals with developing an OPNFV lab infrastructure that is geographically and technically diverse.
 This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by
@@ -34,7 +36,7 @@ Future lab capabilities are currently focussed on 1) Deployment automation 2) Da
 * `Pharos Planning <https://wiki.opnfv.org/pharos_rls_b_plan>`_
 
 Project Communication
-=====================
+---------------------
 
 * `Jira <https://jira.opnfv.org/projects/PHAROS/summary>`_
 * `Weekly Pharos meeting <https://wiki.opnfv.org/meetings#pharos_meetings>`_
@@ -43,21 +45,21 @@ Project Communication
 * Mailing List: use opnfv-tech-discuss and tag your emails with [Pharos] in the subject for filtering
 
 Project Release Artifacts
-=========================
+-------------------------
 
 * Project Repository: https://gerrit.opnfv.org/gerrit/#/q/pharos
 * Continuous Integration https://build.opnfv.org/ci/view/pharos/
 * Documentation: http://artifacts.opnfv.org/pharos/docs/
 
 Pharos Lab Process
-==================
+------------------
 
 * Process for requesting lab access and support https://wiki.opnfv.org/pharos_rls_b_support
 * Pharos Lab Governance and Policies https://wiki.opnfv.org/pharos_policies
 * Status of Community labs https://wiki.opnfv.org/pharos_rls_b_labs
 
 Current Labs
-============
+------------
 
 An interactive map of OPNFV lab locations, lab owners and other lab information is maintained on the `Pharos Wiki
 <https://wiki.opnfv.org/pharos#community_labs>`_
@@ -105,44 +107,9 @@ An interactive map of OPNFV lab locations, lab owners and other lab information 
 
 
 Pharos project Key Facts
-========================
+------------------------
 
-**Key Project Facts are mainatined in the Pharos INFO file**
+**Key Project Facts are maintained in the Pharos INFO file in the project repo**
 
-.. Reference Project Fact File ... does not work???
-
-.. include:: ../../INFO
-
-.. Remove below text once include directive above works
-
-- Project: Testbed infrastructure (Pharos)
-- Project Creation Date:  January 8, 2015
-- Project Category:  Integration & Testing
-- Lifecycle State:  Mature
-- Primary Contact:  Trevor  <trevor.cooper@intel.com>
-- Project Lead:  Trevor  <trevor.cooper@intel.com>
-- Jira Project Name:  Testbed infrastructure Project
-- Jira Project Prefix:  PHAROS
-- Mailing list tag: [pharos]
-- IRC: Server:freenode.net Channel:#opnfv-pharos
-- Repository: pharos
-
-- Committers:
-
-  - Trevor Cooper<trevor.cooper@intel.com>
-  - Fu Qiao <fuqiao@chinamobile.com>
-  - Sheng-ann Yu <sheng-ann.yu@ericsson.com>
-  - Wenjing Chu <Wenjing_Chu@DELL.com>
-  - Chris Donley <C.Donley@cablelabs.com>
-  - Morgan Richomme <morgan.richomme@orange.com>
-  - Erica Johnson <erica.johnson@iol.unh.edu>
-  - Hui Deng <denghui@chinamobile.com>
-  - Prabu Kuppuswamy <prabu.kuppuswamy@spirent.com>
-  - Sean Chen <s.chen@huawei.com>
-  - Saikrishna M Kotha <saikrishna.kotha@xilinx.com>
-  - Eugene Yu <yuyijun@huawei.com>
-
-
-Revision: _sha1_
-
-Build date: |today|
+  * Can be viewed on the project Wiki `INFO <https://wiki.opnfv.org/pharos?&#pharos_project_-_key_facts>`_
+  * Project key facts in repo: pharos/INFO
