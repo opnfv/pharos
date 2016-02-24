@@ -1,4 +1,4 @@
-. This work is licensed under a Creative Commons Attribution 4.0 International License.
+.. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
@@ -13,6 +13,7 @@ A pharos compliant OPNFV test-bed provides:
 - 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
 - A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
 - Remote access as defined by the Jenkins slave configuration guide
+
 http://artifacts.opnfv.org/brahmaputra.1.0/docs/opnfv-jenkins-slave-connection.brahmaputra.1.0.html
 
 **Servers**

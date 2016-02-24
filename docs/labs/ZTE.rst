@@ -173,11 +173,6 @@ The Jump servers in the Testlab are pre-provisioned with the following software:
 Networks
 ----------
 
-**POD-Fuel Diagram**
-
-.. image:: images/ZTE_POD.jpg
-   :alt: ZTE POD Networking
-
 **Subnet allocations**
 
 +-------------------+----------------+-------------------+---------------+----------+

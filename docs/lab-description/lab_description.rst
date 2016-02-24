@@ -2,10 +2,11 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
+.. _pharos_lab:
 
-===============================
-Pharos Lab Description Template
-===============================
+**************************
+Lab Specification Template
+**************************
 
 Introduction
 ------------
@@ -14,44 +15,48 @@ Add an summary of what your lab hosts, its focus areas and purpose
 
 
 Lab Resources
-=============
+-------------
 
 +----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-| Resource       | Project(s)     | Project Lead   | Email(s)       |  POD Role*     |  Status**      | Notes          |
+| POD Name       | Project(s)     | Project Lead(s)| Email(s)       |  POD Role      |  Status        | Notes          |
 +----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-| POD1           |  example       | John Doe       | john@intel.com |  CI: stable    |  Active        |                |
+| POD1           |  project name  | John Doe       | john@abc.com   |  CI: stable    |  Active        |                |
 +----------------+----------------+----------------+----------------+----------------+----------------+----------------+
 
-* POD Role: CI stable, CI latest, Dev/test, Stand-alone, ...
-** Status: Assigned, Configuration in progress, Active, Troubleshooting, Can be re-purposed, ...
+* **POD Name:** Use consistent naming / numbering to avoid confusion. Hyperlinked to POD description.
+* **POD Role:** CI stable, CI latest, Dev/test, Stand-alone, Virtual, ...
+* **Status:** Assigned, Configuring, Active, Troubleshooting, Available, ...
 
 
-Code of Conduct
-===============
+Acceptable Usage Policy
+-----------------------
 
-Define your lab's  policies and expectations here
+Define lab user policies and expectations
 
 
 Remote Access Infrastructure
-============================
+----------------------------
 
-Describe your lab remote access setup (type of access (VPN?), link speed, any restrictions, etc.)
-
-
-Remote Access Process
-=====================
-
-Define your lab's process for requesting access to the lab (e.g. VPN guide, how to modify BIOS settings, etc.)
+Describe lab remote access setup (typically VPN, also link speed, any known restrictions, etc.)
 
 
-Documentation
-=============
+Remote Access Procedure
+-----------------------
 
-List your lab specific documents here
+Define lab process for requesting access to the lab (e.g. VPN guide, how to modify BIOS settings, etc.)
+
+
+Lab Documentation
+-----------------
+
+List lab specific documents here
 
 
 Lab Topology
-============
+------------
 
-.. image:: images/<lab-name>_<diagram-name>.png|.jpg
-   :alt: Name of the diagram
+Provide a diagram showing the network topology of lab including lights-out network. Any security sensitive details should
+not be exposed publically. The following diagram is an example only.
+
+.. image:: ./images/lab_topology_example.jpg
+   :alt: Lab diagram not found

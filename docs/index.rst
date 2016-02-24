@@ -4,6 +4,8 @@
 
 .. OPNFV Pharos Documentation master file.
 
+.. _pharos_master:
+
 ======
 PHAROS
 ======
@@ -15,15 +17,12 @@ OPNFV Community Lab Infrastructure
    :maxdepth: 3
    :numbered: 3
 
-   ./information/index.rst
-   ./specification/index.rst
-   ./lab-description/index.rst
-   ./configguide/configguide.rst
+   ./information/pharos.rst
+   ./specification/pharosspec.rst
+   ./lab-description/templates.rst
+   ./configguide/pharosconfig.rst
 
 Indices
 =======
 * :ref:`search`
 
-Revision: _sha1_
-
-Build date: |today|

@@ -2,64 +2,51 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
+***************
+Lab Setup Guide
+***************
 
-==============================
-Pharos Lab Configuration Guide
-==============================
+Provides an overview for setting up a Pharos lab. A full set of
+:ref:`pharos_master` documents are maintained in the *pharos* repo.
 
-This section provides an overview for Pharos lab setup and operation. The tasks and expectations for configuring a
-Pharos compliant lab are explained along with reference to relavant Pharos documents.
+Contributing to the Pharos Community
+------------------------------------
 
-Overview of Community Lab Expectations
---------------------------------------
+The development, test and production activities rely on Pharos resources and support from the Pharos community. Lab
+owners and Pharos project committers/contributors will evolve the vision for Pharos as well as expand lab capabilities
+that are needed to help OPNFV be highly successful.
 
-* Designated lab owners and project committers participate in the Pharos community (discussions, meetings, ...)
-* Jira is used to track activities including lab operations (requests and support)
-* Production resources are connected to Jenkins and available 24/7 (other than scheduled maintenance and troubleshooting)
-* Lab resources are declared as either:
+* Jira is used to track Pharos activities including lab operations
+* PODs are connected to Jenkins and generally available 24/7 other than scheduled maintenance and troubleshooting
+* Lab resources are declared as either for *Development (bare-metal or virtual)*, *Production latest (bare-metal)* or *Production stable (bare-metal)*
 
-  * Development (bare-metal or virtual)
-  * Production - latest (bare-metal)
-  * Production - stable (bare-metal)
+Declaring a Pharos Lab
+----------------------
 
-On-boarding Steps
------------------
+* Provide the Pharos community with details of the intended setup, including ...
 
-* Provide Pharos community with details of intended setup, including ...
+  * Overview of resources are being offered to the community, intended purpose and known limitations
+  * Lab owner name with contacts
+  * Timelines for availablity for development, test, release production, ...
 
-  * Resources being offered
-  * Lab owner name / contacts
-  * Timelines for availablity for development and use in upcomming releases
+* Update the Pharos Wiki with lab details
 
-* Update Pharos Wiki
-  * Lab with location, owner
+  * Lab map, organization, contacts, status, location, resources, role, etc.
+  * https://wiki.opnfv.org/pharos#community_labs
+  * :ref:`pharos_wiki`
 
-* Create and fill *New Lab* Wiki pages
+* Update the Pharos project information file "Current Labs"
 
-  * Access policies
+  * :ref:`pharos_information`
+
+* Create new Wiki pages for lab and POD specific information
+
+  * Access procedures
   * Usage guidelines for developers
-  * Fill Lab and POD templates
-  * POD allocations (updated as PODs are assigned or revoked)
-  * Lab documentation with security sensitive infomation can be stored in the Pharos secure repo (will be available soon)
+  * Update infomtation as PODs are re-assigned or usage/availability changes
 
-* Network Information
-* Update Pharos infomation file i.e. pharos.rst
-* labupdateguide.rst ... how to update Pharos Wiki start page; how to update map info
-* Connect to CI
+* Fill Lab and POD templates ... :ref:`pharos_lab` ... :ref:`pharos_pod`
 
-Jump Server Install
--------------------
+  * Note that security sensitive lab information should be stored in the secure Pharos repo
 
-* jumpserverinstall.rst
-
-Lab Documentation
------------------
-
-* Pharos Wiki page
-* Map Info
-
-
-
-Revision: _sha1_
-
-Build date: |today|
+* Connect PODs to Jenkins/CI
