@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1a486d77_d87319e6",
+        "filename": "docs/information/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 304
+      },
+      "writtenOn": "2016-02-24T15:32:37Z",
+      "side": 0,
+      "message": "I preferred this structure, Would recommend adding a header here like:\n\n***********\nInformation\n***********\nbefore the TOC tree. It will give your overall doc a nice header if it doesn\u0027t already have one",
+      "revId": "b2231a970fb73f4f5df72b59ed9d58a039644ac3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a486d77_924a22ab",
         "filename": "docs/information/pharos.rst",
         "patchSetId": 1
