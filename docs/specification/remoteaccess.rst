@@ -56,8 +56,8 @@ Management (LOM) infrastructure for the UCS-M hardware
 15. trozet@redhat.com
 
 - The people who require VPN access must have a valid
+
 PGP key bearing a valid signature from one of these
 three people. When issuing OpenVPN credentials, LF
 will be sending TLS certificates and 2-factor
 authentication tokens, encrypted to each recipient's PGP key.
-

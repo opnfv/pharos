@@ -3,9 +3,11 @@
 .. (c) 2016 OPNFV.
 
 
-========================================
-How to update community lab info on wiki
-========================================
+.. _pharos_wiki:
+
+************************
+Updating the Pharos Wiki
+************************
 
 
 Details about Hosted Community OPNFV Test Labs are located in 3 different places:
@@ -18,7 +20,7 @@ Details about Hosted Community OPNFV Test Labs are located in 3 different places
 How to update the Start Page
 -----------------------------
 
-* Clone the Pharos Git repository and make the changes::
+Clone the Pharos Git repository and make the changes::
 
  git clone ssh://<lfid>@gerrit.opnfv.org:29418/pharos
 
@@ -38,7 +40,7 @@ How to update the Start Page
  # click "Preview" and see if your change is shown; if shown add a short "Edit summary" and click "Save"
  # This must be done as Wiki does not auto update content for now
 
-* You will see a section of code as shown below. Add your page to the bullet list with wiki link, nice name, and location summary
+You will see a section of code as shown below. Add your page to the bullet list with wiki link, nice name, and location summary
 
 
 How to update the map info on the Pharos Project Page
@@ -68,10 +70,3 @@ MAP::
  48.82,2.27,60,.8,marker-gold.png,Orange Labs;Paris \\
  [[http://test.com|test.com]] \\ internal link: [[::start]]\\ **DW Formatting**
  </olmap>
-
-
-**Documentation tracking**
-
-Revision: _sha1_
-
-Build date:  _date_

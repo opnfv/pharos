@@ -11,7 +11,9 @@ Test-bed network
 * 24 or 48 Port TOR Switch
 * NICS - 1GE, 10GE - per server can be on-board or PCI-e
 * Connectivity for each data/control network is through a separate NIC.
-  *This simplifies Switch Management howeverrequires more NICs on the server and also more switch ports
+
+  * This simplifies Switch Management howeverrequires more NICs on the server and also more switch ports
+
 * Lights-out network can share with Admin/Management
 
 Network Interfaces

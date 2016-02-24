@@ -2,19 +2,17 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
-====================
+.. Top level of Pharos specification documents.
+
+********************
 Pharos Specification
-====================
+********************
+
+The Pharos Specification provides information on Pharos hardware and network requirements
 
 .. toctree::
-   :maxdepth: 2
 
    ./objectives.rst
    ./hardwarespec.rst
    ./networkconfig.rst
-   ./jumpserverinstall.rst
    ./remoteaccess.rst
-
-Revision: _sha1_
-
-Build date: |today|

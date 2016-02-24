@@ -2,13 +2,10 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
-=========================
-Pharos POD Inventory File
-=========================
+******************
+POD Inventory File
+******************
 
-Introduction
-------------
-
-The Common Inventory File provides for a machine reabable format to input into every installer. For convenience the
+The Common Inventory File provides a template for machine reabable input into every installer. For convenience the
 YAML file template currently resides in the Genesis Project repo. Refer to the following patch for further infomation
-https://gerrit.opnfv.org/gerrit/#/c/4079
+https://gerrit.opnfv.org/gerrit/#/c/4079.

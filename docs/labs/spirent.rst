@@ -36,4 +36,4 @@ For example:
   * SSL and IPSec VPN will typically be leveraged to connect networks across the untrusted Internet or other third party networks.
   * Stand-alone DUT servers using STCv and AVv traffic generators could easily scale to hundreds of servers as needed.
 
-.. image:: iamges/spirent_vptc-public-drawing.png
+.. image:: images/spirent_vptc-public-drawing.png

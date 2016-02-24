@@ -4,9 +4,12 @@
   :width: 200
   :alt: OPNFV
   :align: left
+
 .. these two pipes are to seperate the logo from the first title
+
 |
 |
+
 How to create documentation for your OPNFV project
 ==================================================
 
@@ -44,10 +47,6 @@ This index file must refence your other rst files.
 
   * :ref:`search`
 
-  Revision: _sha1_
-
-  Build date: |today|
-
 
 The Sphinx Build
 ================
@@ -55,6 +54,7 @@ The Sphinx Build
 When you push documentation changes to gerrit a jenkins job will create html documentation.
 
 * Verify Jobs
+
 For verify jobs a link to the documentation will show up as a comment in gerrit for you to see the result.
 
 * Merge jobs
@@ -80,7 +80,3 @@ links are easy to add: Here is a link to sphinx, the tool that we are using to g
 
 
 Leave these at the bottom of each of your documents they are used internally
-
-Revision: _sha1_
-
-Build date: |today|

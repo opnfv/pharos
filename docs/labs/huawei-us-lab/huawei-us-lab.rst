@@ -1,5 +1,6 @@
-Introduction
-============
+===================================================
+Introduction of Huawei's lab located in Santa Clara
+===================================================
 
 Huawei's lab located in Santa Clara, CA will provide 1 full POD for baremetal deployment environment, 2
 standalone server for virtual deployment, and 1 server with 6 executors for project's building and gate-testing.
@@ -52,10 +53,6 @@ Below you'll find a topological view of the hosting set-up:
 |
 
 Figure 2: Full Pod network configuration
-
-
-How to use our resources?
-=========================
 
 Build Resource
 ^^^^^^^^^^^^^^
