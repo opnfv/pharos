@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_32e80e7c",
+        "filename": "docs/configguide/lab_update_guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 0,
+      "message": "need to leave a gap here for the indented bullet list to work.",
+      "revId": "b2231a970fb73f4f5df72b59ed9d58a039644ac3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_12ed128c",
+        "filename": "docs/configguide/lab_update_guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 0,
+      "message": "this is broken, check formatting.",
+      "revId": "b2231a970fb73f4f5df72b59ed9d58a039644ac3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_924a22ab",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 0,
+      "message": "I would remove the key project facts from the release document.  I suggest removing this section and instead pointing to the project wiki where you will maintain this information.",
+      "revId": "b2231a970fb73f4f5df72b59ed9d58a039644ac3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_32d12ece",
+        "filename": "docs/specification/hardwarespec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 0,
+      "message": "So, I\u0027m asking the Intel guy...  :D\nDo we have a similar ARM minimum at this stage that we expect and have verified?  I\u0027m not sure we do for B-release but did want to check.",
+      "revId": "b2231a970fb73f4f5df72b59ed9d58a039644ac3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_12d632c6",
+        "filename": "docs/specification/remoteaccess.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 0,
+      "message": "Rather than publishing this list can we point people to contact the opnfv infra mailing list?  (infra-steering@lists.opnfv.org \u003cinfra-steering@lists.opnfv.org\u003e)  Not so comfortable with lists of e-mail addresses in published release documents.",
+      "revId": "b2231a970fb73f4f5df72b59ed9d58a039644ac3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_f2da76e8",
+        "filename": "docs/lab-description/templates.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 1,
+      "message": "I suggest adding a little more detail here.  When the reader gets to this part of the document they are still absorbing.\nExplaining the purpose and use of these and being rather explicit that these are templates for \"when you want to set up your lab you need to fill these out\" would be good here.",
+      "revId": "745519c47ac8444b7a08b9b07e8ea5d2d29e6676",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_125f5274",
+        "filename": "docs/platformoverview/labinfrastructure.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 163
+      },
+      "writtenOn": "2016-02-24T08:09:59Z",
+      "side": 1,
+      "message": "I like the level of this as an overview doc chapter.  Great stuff Trevor.",
+      "revId": "745519c47ac8444b7a08b9b07e8ea5d2d29e6676",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
