@@ -9,19 +9,7 @@ Lab Setup Guide
 Provides an overview for setting up a Pharos lab. A full set of
 :ref:`pharos_master` documents are maintained in the *pharos* repo.
 
-Contributing to the Pharos Community
-------------------------------------
-
-The development, test and production activities rely on Pharos resources and support from the Pharos community. Lab
-owners and Pharos project committers/contributors will evolve the vision for Pharos as well as expand lab capabilities
-that are needed to help OPNFV be highly successful.
-
-* Jira is used to track Pharos activities including lab operations
-* PODs are connected to Jenkins and generally available 24/7 other than scheduled maintenance and troubleshooting
-* Lab resources are declared as either for *Development (bare-metal or virtual)*, *Production latest (bare-metal)* or *Production stable (bare-metal)*
-
-Declaring a Pharos Lab
-----------------------
+When setting up an OPNFV community lab ...
 
 * Provide the Pharos community with details of the intended setup, including ...
 
