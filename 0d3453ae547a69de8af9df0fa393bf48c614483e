@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a91bd0f_7c1430f5",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1469
+      },
+      "writtenOn": "2016-05-09T00:47:57Z",
+      "side": 1,
+      "message": "Please delete the whitespace.",
+      "range": {
+        "startLine": 14,
+        "startChar": 98,
+        "endLine": 14,
+        "endChar": 99
+      },
+      "revId": "0d3453ae547a69de8af9df0fa393bf48c614483e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_5c0fece1",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1469
+      },
+      "writtenOn": "2016-05-09T00:47:57Z",
+      "side": 1,
+      "message": "Nanjing would be better.",
+      "range": {
+        "startLine": 14,
+        "startChar": 43,
+        "endLine": 14,
+        "endChar": 50
+      },
+      "revId": "0d3453ae547a69de8af9df0fa393bf48c614483e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_1cf964c8",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1469
+      },
+      "writtenOn": "2016-05-09T00:47:57Z",
+      "side": 1,
+      "message": "It should be \"focuses\".",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "0d3453ae547a69de8af9df0fa393bf48c614483e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_3cf6a8d8",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1469
+      },
+      "writtenOn": "2016-05-09T00:47:57Z",
+      "side": 1,
+      "message": "It should be ZTE.",
+      "range": {
+        "startLine": 32,
+        "startChar": 40,
+        "endLine": 32,
+        "endChar": 42
+      },
+      "revId": "0d3453ae547a69de8af9df0fa393bf48c614483e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_dc021cb4",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1469
+      },
+      "writtenOn": "2016-05-09T00:47:57Z",
+      "side": 1,
+      "message": "Please delete the whitespace.",
+      "range": {
+        "startLine": 58,
+        "startChar": 107,
+        "endLine": 58,
+        "endChar": 108
+      },
+      "revId": "0d3453ae547a69de8af9df0fa393bf48c614483e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
