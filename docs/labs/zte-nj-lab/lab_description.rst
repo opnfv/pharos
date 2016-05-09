@@ -11,9 +11,8 @@ ZTE NJ Lab Specification
 Introduction
 ------------
 
-ZTE lab currently has one POD available in nanjing. The POD have 5 hosts, 3 controller+2 computer. 
-It focus on fuel project CI-related activities.
-
+ZTE lab currently has one POD available in Nanjing. The POD have 5 hosts, 3 controller+2 computer.
+It focuses on fuel project CI-related activitiesi.
 
 Lab Resources
 -------------
@@ -29,7 +28,7 @@ Acceptable Usage Policy
 -----------------------
 
 Resources located in OPNFV ZTE NJ Lab shall only be used for CI, infra setup/configuration and troubleshooting purposes.
-No development work is allowed in OPNFV LF Lab.
+No development work is allowed in OPNFV ZTE Lab.
 
 
 Remote Access Infrastructure
@@ -55,7 +54,7 @@ The following information should be provided in the request:
     What sepcific Host will be accessed:
     What support is needed from zte admin:
 
-Once access requirment is approved, the instructions for setting up VPN access will be send to you by mail. 
+Once access requirment is approved, the instructions for setting up VPN access will be send to you by mail.
 Lab Documentation
 -----------------
 
