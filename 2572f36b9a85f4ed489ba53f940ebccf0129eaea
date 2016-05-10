@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a91bd0f_92631d1a",
+        "filename": "docs/labs/zte-nj-lab/pod_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 212
+      },
+      "writtenOn": "2016-05-10T14:05:48Z",
+      "side": 1,
+      "message": "There is no need for install to access the jumpserver IPMI. And the address is not reachable by the public user.Please delete the address",
+      "range": {
+        "startLine": 31,
+        "startChar": 107,
+        "endLine": 31,
+        "endChar": 118
+      },
+      "revId": "2572f36b9a85f4ed489ba53f940ebccf0129eaea",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_526d9503",
+        "filename": "docs/labs/zte-nj-lab/pod_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 212
+      },
+      "writtenOn": "2016-05-10T14:05:48Z",
+      "side": 1,
+      "message": "Please delete the blank",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 22
+      },
+      "revId": "2572f36b9a85f4ed489ba53f940ebccf0129eaea",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
