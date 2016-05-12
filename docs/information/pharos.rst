@@ -104,6 +104,10 @@ An interactive map of OPNFV lab locations, lab owners and other lab information 
 | 12 | ZTE           | https://wiki.opnfv.org/zte-nj-testlab                    | Nan Jing, China      |
 |    |               |                                                          |                      |
 +----+---------------+----------------------------------------------------------+----------------------+
+| 13 | Okinawa       | https://wiki.opnfv.org/display/pharos/                   | Okinawa, Japan       |
+|    |   Open Lab    |             OOL+%28Okinawa+Open+Lab%29+TestLab           |                      |
++----+---------------+----------------------------------------------------------+----------------------+
+
 
 
 Pharos project Key Facts
