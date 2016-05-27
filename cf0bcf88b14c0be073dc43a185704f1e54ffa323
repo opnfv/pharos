@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a91bd0f_0adedf11",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:12:41Z",
+      "side": 1,
+      "message": "how about to use Okinawa",
+      "range": {
+        "startLine": 107,
+        "startChar": 7,
+        "endLine": 108,
+        "endChar": 18
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_2ae3a3da",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:12:41Z",
+      "side": 1,
+      "message": "it is too long here and the others bellow",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 173
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_8ad18ffd",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:12:41Z",
+      "side": 1,
+      "message": "is deployed by",
+      "range": {
+        "startLine": 7,
+        "startChar": 59,
+        "endLine": 7,
+        "endChar": 61
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_cae797e3",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:12:41Z",
+      "side": 1,
+      "message": "supports",
+      "range": {
+        "startLine": 7,
+        "startChar": 81,
+        "endLine": 7,
+        "endChar": 88
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_eaecdbc9",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:12:41Z",
+      "side": 1,
+      "message": "OpenVPN?",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_aaced358",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:12:41Z",
+      "side": 1,
+      "message": "what\u0027s the difference between Public and Fuel Public?",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 19
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
