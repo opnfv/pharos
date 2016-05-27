@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a91bd0f_6ad8cb1d",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:27:43Z",
+      "side": 1,
+      "message": "can you make this table narrower? it is too long.\n\nI think here is POD manager not installer Lead.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 134
+      },
+      "revId": "fd6cc5583cf259b9c08b4a162d7c5cbe044ded60",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_2a0ac38a",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:27:43Z",
+      "side": 1,
+      "message": "OpenVPN",
+      "range": {
+        "startLine": 37,
+        "startChar": 20,
+        "endLine": 37,
+        "endChar": 23
+      },
+      "revId": "fd6cc5583cf259b9c08b4a162d7c5cbe044ded60",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_6aef6bb1",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-05-27T08:27:43Z",
+      "side": 1,
+      "message": "to: ``wu.zhihui1@zte.com.cn``.",
+      "range": {
+        "startLine": 43,
+        "startChar": 63,
+        "endLine": 43,
+        "endChar": 87
+      },
+      "revId": "fd6cc5583cf259b9c08b4a162d7c5cbe044ded60",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
