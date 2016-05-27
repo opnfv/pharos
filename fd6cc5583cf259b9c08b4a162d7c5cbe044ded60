@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a91bd0f_8a6d0f35",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 212
+      },
+      "writtenOn": "2016-05-27T09:04:56Z",
+      "side": 1,
+      "message": "It is installer lead. Please check https://wiki.opnfv.org/display/pharos/Intel+Hosting",
+      "parentUuid": "9a91bd0f_6ad8cb1d",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 134
+      },
+      "revId": "fd6cc5583cf259b9c08b4a162d7c5cbe044ded60",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a91bd0f_2a0ac38a",
         "filename": "docs/labs/zte-nj-lab/lab_description.rst",
         "patchSetId": 3
