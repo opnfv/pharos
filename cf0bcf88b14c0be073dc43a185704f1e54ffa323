@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a91bd0f_b065e2e2",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2016-05-29T16:00:39Z",
+      "side": 1,
+      "message": "OK. I will change it to \"Okinawa\"",
+      "parentUuid": "9a91bd0f_0adedf11",
+      "range": {
+        "startLine": 107,
+        "startChar": 7,
+        "endLine": 108,
+        "endChar": 18
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a91bd0f_2ae3a3da",
         "filename": "docs/labs/OOL.rst",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-27T08:12:41Z",
       "side": 1,
       "message": "it is too long here and the others bellow",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 173
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_506256d9",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2016-05-29T16:00:39Z",
+      "side": 1,
+      "message": "How about the follows?\nOkinawa Open Laboratory provides the following facilities for OPNFV testing. \nCurrently release Brahmaputra is deployed on the POD which is deployed by Fuel installer.",
+      "parentUuid": "9a91bd0f_2ae3a3da",
       "range": {
         "startLine": 6,
         "startChar": 0,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "9a91bd0f_109ccebf",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2016-05-29T16:00:39Z",
+      "side": 1,
+      "message": "OK. I will change to the points you mentioned",
+      "parentUuid": "9a91bd0f_cae797e3",
+      "range": {
+        "startLine": 7,
+        "startChar": 81,
+        "endLine": 7,
+        "endChar": 88
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a91bd0f_eaecdbc9",
         "filename": "docs/labs/OOL.rst",
         "patchSetId": 4
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "9a91bd0f_705f5a0f",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2016-05-29T16:00:39Z",
+      "side": 1,
+      "message": "YES.",
+      "parentUuid": "9a91bd0f_eaecdbc9",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a91bd0f_aaced358",
         "filename": "docs/labs/OOL.rst",
         "patchSetId": 4
@@ -128,6 +224,30 @@
       "writtenOn": "2016-05-27T08:12:41Z",
       "side": 1,
       "message": "what\u0027s the difference between Public and Fuel Public?",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 19
+      },
+      "revId": "cf0bcf88b14c0be073dc43a185704f1e54ffa323",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_30a1d2f8",
+        "filename": "docs/labs/OOL.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2016-05-29T16:00:39Z",
+      "side": 1,
+      "message": "Public network in Jump server is the gateway for all other servers.\nFuel Public is external network for OpenStack the network is masqueraded in the \"Jump Server\" to access to internet.",
+      "parentUuid": "9a91bd0f_aaced358",
       "range": {
         "startLine": 151,
         "startChar": 2,
