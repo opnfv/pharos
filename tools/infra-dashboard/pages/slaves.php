@@ -8,6 +8,7 @@
 
 <?php
     include '../utils/jenkinsAdapter.php';
+    $array = $SLAVES->xpath('computer');
 
     echo '<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">';
     echo "<thead>";
@@ -18,8 +19,7 @@
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";
-
-    foreach ($SLAVES->xpath('computer') as &$value) {
+    foreach ($array as &$value) {
 
         $slave = $value->displayName;
         $idle = $value->idle;
@@ -55,6 +55,4 @@
     }
     echo '</tbody>';
     echo '</table>';
-
-
 ?>

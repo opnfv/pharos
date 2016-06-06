@@ -1140,12 +1140,12 @@ body {
 .collaborative-projects .gray-diagonal {
     min-height: 30px;
     width: 100%;
-    background: url(/opnfv-dashboard/media/diagonal-white.png) transparent repeat scroll top left;
+    background: url(../media/diagonal-white.png) transparent repeat scroll top left;
 }
 .collaborative-projects #collaborative-projects-logo {
     margin-top: 10px;
     height: 14px;
-    background: url(/opnfv-dashboard/media/collaborative-projects-logo.png) no-repeat scroll 10px center transparent;
+    background: url(../media/collaborative-projects-logo.png) no-repeat scroll 10px center transparent;
     width: 100%;
     max-width: 400px;
     float: left;
