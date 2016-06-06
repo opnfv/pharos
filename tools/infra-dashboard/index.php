@@ -98,7 +98,9 @@
 
             $(function() {
                 var dialog, form,
-                allFields = $( [] ).add( login_email ).add( login_password );
+                login_email = $( "#login_email" ),
+                login_password = $( "#login_password" ),
+                allFields = $( [] ).add( login_email ).add( login_password ),
                 emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
                 function checkLength( o, n, min, max ) {
