@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a7ca5a3_b7197b24",
+        "filename": "tools/infra-dashboard/utils/database.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-06-07T09:12:33Z",
+      "side": 1,
+      "message": "The database connection details are stored in the server in a file called \"auth-db.php\" and it is not part of the repo, to keep those details more secured.",
+      "revId": "c4441ddfd797a2a1eb68f582d98a2147af0d5440",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
