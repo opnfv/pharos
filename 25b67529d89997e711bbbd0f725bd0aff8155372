@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a7ca5a3_1374d597",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-07-14T06:55:16Z",
+      "side": 1,
+      "message": "it is a keyword for dnsmasq service",
+      "parentUuid": "5a7ca5a3_5e8fe923",
+      "range": {
+        "startLine": 12,
+        "startChar": 3,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "25b67529d89997e711bbbd0f725bd0aff8155372",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a7ca5a3_de7bf927",
         "filename": "docs/configguide/jumpserverinstall.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-01T01:46:08Z",
       "side": 1,
       "message": "should be \"disable\"",
+      "range": {
+        "startLine": 55,
+        "startChar": 17,
+        "endLine": 55,
+        "endChar": 23
+      },
+      "revId": "25b67529d89997e711bbbd0f725bd0aff8155372",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_f36ef9c8",
+        "filename": "docs/configguide/jumpserverinstall.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-07-14T06:55:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a7ca5a3_de7bf927",
       "range": {
         "startLine": 55,
         "startChar": 17,
