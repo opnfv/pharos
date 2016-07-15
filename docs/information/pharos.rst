@@ -13,7 +13,8 @@ Pharos Project Information
 Introduction
 ------------
 
-The `Pharos Project <https://www.opnfv.org/developers/pharos>`_ deals with developing an OPNFV lab infrastructure that is geographically and technically diverse.
+The `Pharos Project <https://www.opnfv.org/developers/pharos>`_ deals with developing an OPNFV lab infrastructure
+that is geographically and technically diverse.
 This will greatly assist in developing a highly robust and stable OPNFV platform. Community labs are hosted by
 individual companies and there is also an OPNFV lab hosted by the Linux Foundation that has controlled access for key
 development and production activities. The **Pharos Specification** defines a "compliant" deployment and test
@@ -32,14 +33,14 @@ Future lab capabilities are currently focussed on 1) Deployment automation 2) Da
 3) *Virtual Labs* for developer on-boarding.
 
 * Pharos page: https://www.opnfv.org/developers/pharos
-* Pharos project Wiki: https://wiki.opnfv.org/pharos
-* `Pharos Planning <https://wiki.opnfv.org/pharos_rls_b_plan>`_
+* Pharos project Wiki: https://wiki.opnfv.org/display/pharos
+* `Pharos Planning <https://wiki.opnfv.org/display/pharos/Pharos+Colorado+Plan>`_
 
 Project Communication
 ---------------------
 
 * `Jira <https://jira.opnfv.org/projects/PHAROS/summary>`_
-* `Weekly Pharos meeting <https://wiki.opnfv.org/meetings#pharos_meetings>`_
+* `Weekly Pharos meeting <https://wiki.opnfv.org/display/INF/Infra+Working+Group>`_
 * `Weekly coordination meeting for Test related projects <https://wiki.opnfv.org/meetings/test>`_
 * IRC: freenode.net #opnfv-pharos http://webchat.freenode.net/?channels=opnfv-pharos
 * Mailing List: use opnfv-tech-discuss and tag your emails with [Pharos] in the subject for filtering
@@ -54,9 +55,9 @@ Project Release Artifacts
 Pharos Lab Process
 ------------------
 
-* Process for requesting lab access and support https://wiki.opnfv.org/pharos_rls_b_support
-* Pharos Lab Governance and Policies https://wiki.opnfv.org/pharos_policies
-* Status of Community labs https://wiki.opnfv.org/pharos_rls_b_labs
+* Process for requesting lab access and support https://wiki.opnfv.org/display/pharos/Pharos+Rls+B+Support
+* Pharos Lab Governance and Policies https://wiki.opnfv.org/display/pharos/Pharos+Policies
+* Status of Community labs https://wiki.opnfv.org/display/pharos/#PharosHome-Overview
 
 Current Labs
 ------------
@@ -64,49 +65,49 @@ Current Labs
 An interactive map of OPNFV lab locations, lab owners and other lab information is maintained on the `Pharos Wiki
 <https://wiki.opnfv.org/pharos#community_labs>`_
 
-+----+---------------+----------------------------------------------------------+----------------------+
-|    | **Hosted by** |  **Home page**                                           | **Location**         |
-| #  |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 1  | Linux         | https://wiki.opnfv.org/get_started/lflab_hosting         | Portland, Oregon     |
-|    |  Foundation   |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 2  | Spirent       | https://wiki.opnfv.org/pharos/spirentvctlab              | Nephoscale, CA       |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 3  | China Mobile  | https://wiki.opnfv.org/lab2_chinamobile_hosting          | Beijing, China       |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 4  | Dell          | https://wiki.opnfv.org/dell_hosting                      | Santa Clara, CA      |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 5  | Enea          | https://wiki.opnfv.org/enea-pharos-lab                   | Kista, Sweden        |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 6  | Ericsson      | https://wiki.opnfv.org/get_started/ericsson_hosting      | Montreal, Canada     |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 7  | Huawei        | https://wiki.opnfv.org/lab4_huawei                       | Xi an, China         |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 8  | Huawei        | https://wiki.opnfv.org/get_started/huawei_sc_hosting     | Santa Clara, CA      |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 9  | Intel         | https://wiki.opnfv.org/get_started/intel_hosting         | Hillsboro, Oregon    |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 10 | Orange        | https://wiki.opnfv.org/opnfv-orange                      | Lannion, France      |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 11 | Orange        | https://wiki.opnfv.org/opnfv-orange                      | Paris, France        |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 12 | ZTE           | https://wiki.opnfv.org/zte-nj-testlab                    | Nan Jing, China      |
-|    |               |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
-| 13 | Okinawa       | https://wiki.opnfv.org/display/pharos/OOL+TestLab        | Okinawa              |
-|    |   Open Lab    |                                                          |                      |
-+----+---------------+----------------------------------------------------------+----------------------+
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| #  | **Hosted by** |  **Home page**                                                             | **Location**      |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 1  | Linux         | https://wiki.opnfv.org/display/pharos/Lflab+Hosting                        | Portland, Oregon  |
+|    | Foundation    |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 2  | Spirent       | https://wiki.opnfv.org/display/pharos/Spirentvctlab                        | Nephoscale, CA    |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 3  | China Mobile  | https://wiki.opnfv.org/display/pharos/Lab2+Chinamobile+Hosting             | Beijing, China    |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 4  | Dell          | https://wiki.opnfv.org/display/pharos/Dell+Hosting                         | Santa Clara, CA   |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 5  | Enea          | https://wiki.opnfv.org/display/pharos/Enea-pharos-lab                      | Kista, Sweden     |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 6  | Ericsson      | https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process | Montreal, Canada  |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 7  | Huawei        | https://wiki.opnfv.org/display/pharos/Lab4+Huawei                          | Xi an, China      |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 8  | Huawei        | https://wiki.opnfv.org/display/pharos/Huawei+Sc+Hosting                    | Santa Clara, CA   |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 9  | Intel         | https://wiki.opnfv.org/display/pharos/Intel+Hosting                        | Hillsboro, Oregon |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 10 | Orange        | https://wiki.opnfv.org/display/pharos/Opnfv-orange                         | Lannion, France   |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 11 | Orange        | https://wiki.opnfv.org/display/pharos/Opnfv-orange                         | Paris, France     |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 12 | ZTE           | https://wiki.opnfv.org/display/pharos/ZTE+NJ+Testlab                       | Nan Jing, China   |
+|    |               |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
+| 13 | Okinawa       | https://wiki.opnfv.org/display/pharos/OOL+TestLab                          | Okinawa           |
+|    | Open Lab      |                                                                            |                   |
++----+---------------+----------------------------------------------------------------------------+-------------------+
 
 
 
@@ -115,5 +116,5 @@ Pharos project Key Facts
 
 **Key Project Facts are maintained in the Pharos INFO file in the project repo**
 
-  * Can be viewed on the project Wiki `INFO <https://wiki.opnfv.org/pharos?&#pharos_project_-_key_facts>`_
-  * Project key facts in repo: pharos/INFO
+     * Can be viewed on the project Wiki `INFO <https://wiki.opnfv.org/display/pharos/#PharosHome-KeyProjectFacts>`_
+     * Project key facts in repo: pharos/INFO
