@@ -37,8 +37,8 @@ Lights-out management network requirements:
 
 Linux Foundation Lab is a UCS-M hardware environment with controlled access *as needed*
 
-    * `Access rules and procedure <https://wiki.opnfv.org/pharos/lf_lab>`_ are maintained on the Wiki
-    * `A list of people <https://wiki.opnfv.org/pharos/lf_lab#opnfv_community_members_with_access_to_opnfv_lf_lab>`_ with access is maintained on the Wiki
+    * `Access rules and procedure <https://wiki.opnfv.org/display/pharos/Lflab+Hosting>`_ are maintained on the Wiki
+    * `A list of people <https://wiki.opnfv.org/display/pharos/Lf+Support>`_ with access is maintained on the Wiki
     * Send access requests to infra-steering@lists.opnfv.org with the following information ...
 
       * Name:
@@ -50,6 +50,6 @@ Linux Foundation Lab is a UCS-M hardware environment with controlled access *as 
       * What specific POD/machines will be accessed:
       * What support is needed from LF admins and LF community support team:
 
-    * Once access is approved please follow instructions for setting up VPN access ... https://wiki.opnfv.org/get_started/lflab_hosting
+    * Once access is approved please follow instructions for setting up VPN access
     * The people who require VPN access must have a valid PGP key bearing a valid signature from LF
     * When issuing OpenVPN credentials, LF will be sending TLS certificates and 2-factor authentication tokens, encrypted to each recipient's PGP key
