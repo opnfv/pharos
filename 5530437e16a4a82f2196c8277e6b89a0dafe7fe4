@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a7ca5a3_49e37ad9",
+        "filename": "docs/configguide/configguide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4469
+      },
+      "writtenOn": "2016-07-15T07:20:06Z",
+      "side": 1,
+      "message": "Missing `_` for linking?",
+      "range": {
+        "startLine": 23,
+        "startChar": 79,
+        "endLine": 23,
+        "endChar": 80
+      },
+      "revId": "5530437e16a4a82f2196c8277e6b89a0dafe7fe4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_a9a32e9d",
+        "filename": "docs/configguide/configguide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4469
+      },
+      "writtenOn": "2016-07-15T07:20:06Z",
+      "side": 1,
+      "message": "IMHO, plain text like \"Community Labs\" is preferred here.",
+      "range": {
+        "startLine": 23,
+        "startChar": 5,
+        "endLine": 23,
+        "endChar": 19
+      },
+      "revId": "5530437e16a4a82f2196c8277e6b89a0dafe7fe4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a7ca5a3_e9ab6687",
         "filename": "docs/specification/remoteaccess.rst",
         "patchSetId": 1
