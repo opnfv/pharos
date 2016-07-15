@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a7ca5a3_e9ab6687",
+        "filename": "docs/specification/remoteaccess.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-07-15T05:35:10Z",
+      "side": 1,
+      "message": "Aric,\nI don\u0027t know where to find the exact information here, can you double check",
+      "range": {
+        "startLine": 41,
+        "startChar": 7,
+        "endLine": 41,
+        "endChar": 75
+      },
+      "revId": "5530437e16a4a82f2196c8277e6b89a0dafe7fe4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
