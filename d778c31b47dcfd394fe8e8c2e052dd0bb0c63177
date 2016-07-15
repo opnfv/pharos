@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a7ca5a3_09602231",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4469
+      },
+      "writtenOn": "2016-07-15T08:57:04Z",
+      "side": 1,
+      "message": "better to keep consistent format of the three items.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 82
+      },
+      "revId": "d778c31b47dcfd394fe8e8c2e052dd0bb0c63177",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
