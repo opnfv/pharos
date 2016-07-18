@@ -11,12 +11,15 @@ Updating Pharos Documents
 
 Details about each Community Lab is found in 3 places:
 
- - Summary of lab including location, contacts, status, etc. on the `Pharos Project Wiki page <https://wiki.opnfv.org/pharos>`_
- - Lab specific details are provided with dedicated Wiki pages, see this `Example Lab <https://wiki.opnfv.org/get_started/intel_hosting>`_
+ - Summary of lab including location, contacts, status, etc.
+   on the `Pharos Project Wiki page <https://wiki.opnfv.org/pharos>`_
+ - Lab specific details are provided with dedicated Wiki pages,
+   see this `Example Lab <https://wiki.opnfv.org/get_started/intel_hosting>`_
  - Pharos repo docs ...
 
     - docs/information/pharos.rst ... project information file
-    - docs/labs/ ... Lab documents (includes lab specific capabilities, usages and policies; POD information)
+    - docs/labs/ ... Lab documents (includes lab specific capabilities, usages and policies;
+      POD information)
     - docs/labs/images/ ... Lab and POD toplogies
 
 Update Pharos repo
@@ -25,7 +28,8 @@ Update Pharos repo
 Clone the Pharos Git repository
 
  * Make the changes to Pharos project information file (docs/information/pharos.rst)
- * After code gets merged http://artifacts.opnfv.org/pharos/docs/information/pharos.html will contain your change
+ * After code gets merged http://artifacts.opnfv.org/pharos/docs/information/pharos.html will
+   contain your change
 
 
 Update Pharos Wiki
@@ -35,19 +39,22 @@ Edit Wiki page
 
  * https://wiki.opnfv.org/pharos
  * Look for {{scrape>http://artifacts.opnfv.org/pharos/docs/information/pharos.html}}
- * Click "Preview" and see if your change is shown; if shown add a short "Edit summary" and click "Save" (Wiki does not auto update content)
+ * Click "Preview" and see if your change is shown; if shown add a short "Edit summary" and click
+   "Save" (Wiki does not auto update content)
 
-You will see a section of code as shown below. Add your page to the bullet list with wiki link, nice name, and location summary
+You will see a section of code as shown below. Add your page to the bullet list with wiki link, nice
+name, and location summary
 
 Update the map info on the Pharos Project Page https://wiki.opnfv.org/pharos?&#community_labs
 
- * You will see a section of code as shown below. Add your lab infomation to the list with a comma separated list as follows:
+ * You will see a section of code as shown below. Add your lab infomation to the list with a comma
+   separated list as follows:
 
     * longitude
     * latitude
     * .8 <- for size
-    * marker color png ([[marker-green.png|marker-green.png]], [[marker-blue.png|marker-blue.png]], [[marker-red.png|marker-red.png]], [[marker-gold.png|marker-gold.png]])
-    * Nice Format Lab Name
+    * marker color png ([[marker-green.png|marker-green.png]], [[marker-blue.png|marker-blue.png]],
+      [[marker-red.png|marker-red.png]], [[marker-gold.png|marker-gold.png]]) * Nice Format Lab Name
     * '';''
     * Location Summary
     * ''\\'' <-- for a new line

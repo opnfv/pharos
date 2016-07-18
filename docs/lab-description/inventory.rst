@@ -6,6 +6,6 @@
 POD Inventory File
 ******************
 
-The Common Inventory File provides a template for machine reabable input into every installer. For convenience the
-YAML file template currently resides in the Genesis Project repo. Refer to the following patch for further infomation
-https://gerrit.opnfv.org/gerrit/#/c/4079.
+The Common Inventory File provides a template for machine reabable input into every installer. For
+convenience the YAML file template currently resides in the Genesis Project repo. Refer to the
+following patch for further infomation https://gerrit.opnfv.org/gerrit/#/c/4079.
