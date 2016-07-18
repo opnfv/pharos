@@ -9,8 +9,10 @@ Hardware
 A pharos compliant OPNFV test-bed provides:
 
 - One CentOS 7 jump server on which the virtualized Openstack/OPNFV installer runs
-- In the Brahmaputra release you may select a variety of deployment toolchains to deploy from the jump server.
-- 5 compute / controller nodes (`BGS <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
+- In the Brahmaputra release you may select a variety of deployment toolchains to deploy from the
+  jump server.
+- 5 compute / controller nodes (`BGS
+  <https://wiki.opnfv.org/get_started/get_started_work_environment>`_ requires 5 nodes)
 - A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
 - Remote access as defined by the Jenkins slave configuration guide
 

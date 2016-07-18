@@ -2,10 +2,10 @@
 Introduction of Huawei's lab located in Santa Clara
 ===================================================
 
-Huawei's lab located in Santa Clara, CA will provide 1 full POD for baremetal deployment environment, 2
-standalone server for virtual deployment, and 1 server with 6 executors for project's building and gate-testing.
-All the resources have been attached to Jenkins master, you can view the slaves below
-in https://build.opnfv.org/ci/:
+Huawei's lab located in Santa Clara, CA will provide 1 full POD for baremetal deployment
+environment, 2 standalone server for virtual deployment, and 1 server with 6 executors for project's
+building and gate-testing.  All the resources have been attached to Jenkins master, you can view the
+slaves below in https://build.opnfv.org/ci/:
 
 * huawei-us-build-1
 * huawei-us-deploy-vm-1
@@ -18,8 +18,10 @@ Overall Description
 Hardware
 --------
 
-* 9 Huawei RH2285H V2 Rack Servers (128 GB RAM , 4.7 TB SATA SSDs, two Intel Xeon E5-2400 v2 series processors)
-* 1 Huawei S9300 10G switch for storage, management and public traffic - 2x10GE to each server.
+* 9 Huawei RH2285H V2 Rack Servers (128 GB RAM , 4.7 TB SATA SSDs, two Intel Xeon E5-2400 v2 series
+  processors)
+* 1 Huawei S9300 10G switch for storage, management and public traffic - 2x10GE to
+  each server.
 * 1 Huawei S5300 1G switch for installing and Lights+out management traffic - 2x1GE to each server.
 * 1 VPN concentrator for remote access and management.
 * 1 Huawei firewall and router for public network secure access.
@@ -57,32 +59,33 @@ Figure 2: Full Pod network configuration
 Build Resource
 ^^^^^^^^^^^^^^
 
-You can see the slaves named "huawei-us-build-[digit]" or "huawei-build-[digit]" in https://build.opnfv.org/ci/
+You can see the slaves named "huawei-us-build-[digit]" or "huawei-build-[digit]" in
+https://build.opnfv.org/ci/
 
-These resources are dedicated to CI. If you want to use Huawei resource to run some automated jobs, you do
-not need to apply for the credentials, just specify the node as "huawei-build" . For other purposes, please
-contact: [[weidong.shao@huawei.com]]
+These resources are dedicated to CI. If you want to use Huawei resource to run some automated jobs,
+you do not need to apply for the credentials, just specify the node as "huawei-build" . For other
+purposes, please contact: [[weidong.shao@huawei.com]]
 
 
 Deployment Resource
 ^^^^^^^^^^^^^^^^^^^
 
-You can see the slaves named "huawei-us-deploy-vm/bare-[digit]" or "huawei-deploy-vm/bare-[digit]" in
-https://build.opnfv.org/ci/
+You can see the slaves named "huawei-us-deploy-vm/bare-[digit]" or "huawei-deploy-vm/bare-[digit]"
+in https://build.opnfv.org/ci/
 
-We have two types of deployment resources, virtual deployment environment and baremetal deployment environment.
-Both can be deployed by any types of installer, and provide the same testbed for testing and the same
-infrastructure for VNF.
+We have two types of deployment resources, virtual deployment environment and baremetal deployment
+environment.  Both can be deployed by any types of installer, and provide the same testbed for
+testing and the same infrastructure for VNF.
 
-You can access our deployment resources by applying for the VPN credentials, please see the section below
-for details.
+You can access our deployment resources by applying for the VPN credentials, please see the section
+below for details.
 
 
 Access
 ======
 
-This environment is free to use by any OPNFV contributor or committer for the purpose of OPNFV approved
-activities, you just need to obtain VPN credentials to access.
+This environment is free to use by any OPNFV contributor or committer for the purpose of OPNFV
+approved activities, you just need to obtain VPN credentials to access.
 
 Access to this environment can be granted by sending a e-mail to:
   * [[weidong.shao@huawei.com]]

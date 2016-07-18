@@ -18,7 +18,8 @@ Details about each Community Lab is found in 3 places:
  - Pharos repo docs ...
 
     - docs/information/pharos.rst ... project information file
-    - docs/labs/ ... Lab documents (includes lab specific capabilities, usages and policies; POD information)
+    - docs/labs/ ... Lab documents (includes lab specific capabilities, usages and policies;
+      POD information)
     - docs/labs/images/ ... Lab and POD toplogies
 
 Update Pharos repo
@@ -27,7 +28,8 @@ Update Pharos repo
 Clone the Pharos Git repository
 
  * Make the changes to Pharos project information file (docs/information/pharos.rst)
- * After code gets merged http://artifacts.opnfv.org/pharos/docs/information/pharos.html will contain your change
+ * After code gets merged http://artifacts.opnfv.org/pharos/docs/information/pharos.html will
+   contain your change
 
 
 Update Pharos Wiki
@@ -37,16 +39,16 @@ Edit Wiki page
 
  * https://wiki.opnfv.org/pharos
  * Look for {{scrape>http://artifacts.opnfv.org/pharos/docs/information/pharos.html}}
- * Click "Preview" and see if your change is shown; if shown add a short "Edit summary" and click "Save"
-   (Wiki does not auto update content)
+ * Click "Preview" and see if your change is shown; if shown add a short "Edit summary" and click
+   "Save" (Wiki does not auto update content)
 
-You will see a section of code as shown below. Add your page to the bullet list with wiki link,
-nice name, and location summary
+You will see a section of code as shown below. Add your page to the bullet list with wiki link, nice
+name, and location summary
 
 Update the map info on the Pharos Project Page https://wiki.opnfv.org/pharos?&#community_labs
 
- * You will see a section of code as shown below. Add your lab infomation to the list with a comma separated
-   list as follows:
+ * You will see a section of code as shown below. Add your lab infomation to the list with a comma
+   separated list as follows:
 
     * longitude
     * latitude

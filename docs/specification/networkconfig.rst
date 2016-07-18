@@ -9,9 +9,12 @@ Networking
 **Network Hardware**
 
   * 24 or 48 Port TOR Switch
-  * NICs - Combination of 1GE and 10GE based on network topology options (per server can be on-board or use PCI-e)
-  * Connectivity for each data/control network is through a separate NIC. This simplifies Switch Management however requires more NICs on the server and also more switch ports
-  * BMC (Baseboard Management Controller) for lights-out mangement network using IPMI (Intelligent Platform Management Interface)
+  * NICs - Combination of 1GE and 10GE based on network topology options (per server can be on-board
+    or use PCI-e)
+  * Connectivity for each data/control network is through a separate NIC. This
+    simplifies Switch Management however requires more NICs on the server and also more switch ports
+  * BMC (Baseboard Management Controller) for lights-out mangement network using IPMI (Intelligent
+    Platform Management Interface)
 
 **Network Options**
 
@@ -31,7 +34,8 @@ Networking
   * Option III: 2x1G Control, 2x10G Data, 2x10G Storage, 24 Port Switch
 
     * Data NIC used for VNF traffic
-    * Storage NIC used for control plane and Storage segmented through VLANs (separate host traffic from VNF)
+    * Storage NIC used for control plane and Storage segmented through VLANs (separate host traffic
+      from VNF)
     * 1 x 1G for lights-out mangement
     * 1 x 1G for Admin/PXE boot
     * 2 x 10G for control-plane connectivity/storage
