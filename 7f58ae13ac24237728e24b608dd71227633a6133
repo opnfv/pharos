@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_195aeb83",
+        "filename": "docs/configguide/jumpserverinstall.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2016-07-19T09:15:48Z",
+      "side": 1,
+      "message": "echo \"nameserver 8.8.8.8\" ?",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 9
+      },
+      "revId": "7f58ae13ac24237728e24b608dd71227633a6133",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_f9504f60",
+        "filename": "docs/configguide/jumpserverinstall.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2016-07-19T09:15:48Z",
+      "side": 1,
+      "message": "showing exact command line is nice, but we should consider that this file could be different in distro/installation. I recommend to have two lines; one to comment out /^UseDNS / and the other to set this parameter (using \u0027\u003e\u003e\u0027?).\n\nnit: we don\u0027t need \u0027g\u0027 here as this pattern can be found only one time per line.",
+      "range": {
+        "startLine": 49,
+        "startChar": 43,
+        "endLine": 49,
+        "endChar": 44
+      },
+      "revId": "7f58ae13ac24237728e24b608dd71227633a6133",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
