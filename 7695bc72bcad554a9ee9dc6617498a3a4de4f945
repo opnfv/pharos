@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_f91ccf15",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4469
+      },
+      "writtenOn": "2016-07-19T02:38:47Z",
+      "side": 1,
+      "message": "I was referring to the hyperlink format. The first two will show the link address in the rendered output and the third one will embed the link but not display the address in page, IIUC.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 81
+      },
+      "revId": "7695bc72bcad554a9ee9dc6617498a3a4de4f945",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
