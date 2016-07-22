@@ -46,6 +46,30 @@
       "revId": "6c30e99e8c33605f01322a125bb88a6639fa9ff8",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_12dabd78",
+        "filename": "docs/configguide/jumpserverinstall.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 253
+      },
+      "writtenOn": "2016-07-22T11:08:43Z",
+      "side": 1,
+      "message": "Yep, current patch set looks good to me",
+      "parentUuid": "1a76adc5_bfa95226",
+      "range": {
+        "startLine": 82,
+        "startChar": 2,
+        "endLine": 82,
+        "endChar": 61
+      },
+      "revId": "6c30e99e8c33605f01322a125bb88a6639fa9ff8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
