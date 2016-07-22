@@ -22,6 +22,30 @@
       "revId": "6c30e99e8c33605f01322a125bb88a6639fa9ff8",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_bfa95226",
+        "filename": "docs/configguide/jumpserverinstall.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-07-22T08:19:41Z",
+      "side": 1,
+      "message": "agree.\n\nI just don\u0027t want to introduce others things in this patchset",
+      "parentUuid": "1a76adc5_622c884b",
+      "range": {
+        "startLine": 82,
+        "startChar": 2,
+        "endLine": 82,
+        "endChar": 61
+      },
+      "revId": "6c30e99e8c33605f01322a125bb88a6639fa9ff8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
