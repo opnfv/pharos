@@ -8,27 +8,33 @@
 ZTE NJ Lab Specification
 **************************
 
+
 Introduction
 ------------
 
-ZTE lab currently has one POD available in Nanjing. The POD have 5 hosts, 3 controller+2 computer.
-It focuses on fuel project CI-related activities.
+ZTE lab currently has two PODs available in Nanjing. Each POD has 5 servers, 3 controller nodes and
+2 computer nodes. These PODs focus on CI related activities.
+
 
 Lab Resources
 -------------
 
-+------------+--------------+-------------------+--------------------------+----------------+------------+-----------+
-| POD Name   | Project(s)   | Project Lead(s)   | Email(s)                 |  POD Role      |  Status    | Notes     |
-+------------+--------------+-------------------+--------------------------+----------------+------------+-----------+
-| POD1       |  FUEL        | Gregory Elkinbard | gelkinbard@mirantis.com  |  CI: latest    |  Active    |           |
-+------------+--------------+-------------------+--------------------------+----------------+------------+-----------+
++----------+------------+-------------------+-------------------------+------------+--------+--------------------+
+| POD Name | Project(s) | Project Lead(s)   | Email(s)                | POD Role   | Status | Notes              |
++----------+------------+-------------------+-------------------------+------------+--------+--------------------+
+| zte-pod1 | FUEL       | Gregory Elkinbard | gelkinbard@mirantis.com | CI: latest | Active | Doctor, Parser     |
+|          |            |                   |                         |            |        | Yardstick, Funtest |
++----------+------------+-------------------+-------------------------+------------+--------+--------------------+
+| zte-pod2 | FUEL       | Gregory Elkinbard | gelkinbard@mirantis.com | CI: latest | Active | Qtip               |
++----------+------------+-------------------+-------------------------+------------+--------+--------------------+
 
+* zte-pod1:`https://wiki.opnfv.org/display/pharos/ZTE+NJ+Testlab`_
 
 Acceptable Usage Policy
 -----------------------
 
-Resources located in OPNFV ZTE NJ Lab shall only be used for CI, infra setup/configuration and troubleshooting purposes.
-No development work is allowed in OPNFV ZTE Lab.
+Resources located in OPNFV ZTE NJ Lab shall only be used for CI, infra setup/configuration and
+troubleshooting purposes.  No development work is allowed in OPNFV ZTE Lab.
 
 
 Remote Access Infrastructure
@@ -55,13 +61,16 @@ The following information should be provided in the request:
     What support is needed from zte admin:
 
 Once access requirment is approved, the instructions for setting up VPN access will be send to you by mail.
+
+
 Lab Documentation
 -----------------
 
-../zte.rst
+./zte-pod1_description.rst
+./zte-pod2_description.rst
 
 
 Lab Topology
 ------------
 
-.. image:: ../images/ZTE_Overview.jpg
+.. image:: ./images/zte_nj_lab_topoloy.png
