@@ -21,6 +21,7 @@ OPNFV Community Lab Infrastructure
    ./specification/pharosspec.rst
    ./lab-description/templates.rst
    ./configguide/pharosconfig.rst
+   ./labs/zte-nj-lab/zte-nj.rst
 
 Indices
 =======
