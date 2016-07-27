@@ -1,5 +1,5 @@
 nodes:
-   - name: node1-control
+   - name: node1
      tags: control      #optional param, other valid value "compute"
      arch: "x86_64"
      mac_address: "4c:09:b4:b2:59:87" #pxe boot interface mac
@@ -8,7 +8,7 @@ nodes:
        address: 129.5.1.101
        user: zteroot
        pass: superuser
-   - name: node2-control
+   - name: node2
      tags: control
      arch: "x86_64"
      mac_address: "4c:09:b4:b2:59:fc"
@@ -17,7 +17,7 @@ nodes:
        address: 129.5.1.22
        user: zteroot
        pass: superuser
-   - name: node3-control
+   - name: node3
      tags: control
      arch: "x86_64"
      mac_address: "4c:09:b4:b2:59:a2"
@@ -27,7 +27,7 @@ nodes:
        user: zteroot
        pass: superuser
 
-   - name: node4-control
+   - name: node4
      tags: compute
      arch: "x86_64"
      mac_address: "4c:09:b4:b2:59:d8"
@@ -37,7 +37,7 @@ nodes:
        user: zteroot
        pass: superuser
 
-   - name: node5-control
+   - name: node5
      tags: compute
      arch: "x86_64"
      mac_address: "4c:09:b4:b2:59:75"
