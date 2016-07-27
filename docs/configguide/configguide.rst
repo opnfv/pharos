@@ -20,7 +20,7 @@ When setting up an OPNFV community lab ...
 * Update the Pharos Wiki with lab details
 
   * Lab map, organization, contacts, status, location, resources, role, etc.
-  * https://wiki.opnfv.org/pharos#community_labs
+  * `Community labs <https://wiki.opnfv.org/display/pharos#PharosHome-Overview>`_
   * :ref:`pharos_wiki`
 
 * Update the Pharos project information file "Current Labs"
