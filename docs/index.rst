@@ -23,7 +23,7 @@ OPNFV Community Lab Infrastructure
    ./configguide/pharosconfig.rst
    ./labs/Dell.rst
    ./labs/huawei-us-lab/huawei-us-lab.rst
-   ./labs/OOL.rst
+   ./labs/ool/ool.rst
    ./labs/orange-paris-lab/orange_paris.rst
    ./labs/spirent.rst
    ./labs/zte-sh-lab/zte-sh.rst
