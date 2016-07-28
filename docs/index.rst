@@ -27,6 +27,7 @@ OPNFV Community Lab Infrastructure
    ./labs/orange-paris-lab/orange_paris.rst
    ./labs/spirent.rst
    ./labs/zte-sh-lab/zte-sh.rst
+   ./labs/ool/ool.rst
 
 Indices
 =======
