@@ -1,0 +1,6 @@
+* Fullcalendar
+- no selectHelper for month select
+- if an event is selected in month select, browser timezone is ignored
+
+* layout
+- datatable does not stay in its panel if zoom is to high / browser window is not maximized
