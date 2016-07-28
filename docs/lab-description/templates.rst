@@ -9,7 +9,7 @@ Pharos Templates and Configuration Files
 ****************************************
 
 Lab and POD templates are provided to help lab owners document capabilities, configurations and
-network topologies.  Compute, network and storage specifications with network topology details are
+network topologies. Compute, network and storage specifications with network topology details are
 required to help developers use lab resources efficiently while minimizing support needs. This also
 greatly assists with troubleshhoting. It is the responsibility of the lab owner to keep individual
 lab documents updated and determine appropriate level of detail that is exposed publically through

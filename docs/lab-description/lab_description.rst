@@ -17,11 +17,11 @@ Add an summary of what your lab hosts, its focus areas and purpose
 Lab Resources
 -------------
 
-+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-| POD Name       | Project(s)     | Project Lead(s)| Email(s)       |  POD Role      |  Status        | Notes          |
-+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-| POD1           |  project name  | John Doe       | john@abc.com   |  CI: stable    |  Active        |                |
-+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
++----------+--------------+-----------------+--------------+-------------+---------+-------+
+| POD Name | Project(s)   | Project Lead(s) | Email(s)     |  POD Role   |  Status | Notes |
++----------+--------------+-----------------+--------------+-------------+---------+-------+
+| POD1     | Project Name | John Doe        | john@abc.com |  CI: stable |  Active |       |
++----------+--------------+-----------------+--------------+-------------+---------+-------+
 
 * **POD Name:** Use consistent naming / numbering to avoid confusion. Hyperlinked to POD description.
 * **POD Role:** CI stable, CI latest, Dev/test, Stand-alone, Virtual, ...
@@ -43,7 +43,8 @@ Describe lab remote access setup (typically VPN, also link speed, any known rest
 Remote Access Procedure
 -----------------------
 
-Define lab process for requesting access to the lab (e.g. VPN guide, how to modify BIOS settings, etc.)
+Define lab process for requesting access to the lab (e.g. VPN guide,
+how to modify BIOS settings, etc.)
 
 
 Lab Documentation
@@ -55,8 +56,8 @@ List lab specific documents here
 Lab Topology
 ------------
 
-Provide a diagram showing the network topology of lab including lights-out network. Any security sensitive details should
-not be exposed publically. The following diagram is an example only.
+Provide a diagram showing the network topology of lab including lights-out network. Any security
+sensitive details should not be exposed publically. The following diagram is an example only.
 
 .. image:: ./images/lab_topology_example.jpg
    :alt: Lab diagram not found
