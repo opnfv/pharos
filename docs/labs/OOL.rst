@@ -1,80 +1,96 @@
 OOL (Okinawa Open Laboratory) OPNFV Testlab
-==================================================
+===========================================
 
 Overview
-------------------
-Okinawa Open Laboratory provides the following facilities for OPNFV testing.  The testlab is now
-located only at Okinwa in Japan. ( We have plan to expand PODs and location.) The current depoyed
-version by Fuel installer on the POD is Brahmputra.  It supports functest, yardstick projects
-testing. You can connect to CI.  On each node an OPNFV solution will be installed based on Pharos
-Lab project.  On top of this infrastructure several VNFs will be deployed.  We provide VPN(OpenVPN)
-to connect the testlab.  You can check how to connect at “Access Procedure".
+--------
 
+Okinawa Open Laboratory provides the following facilities for OPNFV testing.
+The testlab is now located only at Okinwa in Japan.
+
+We have multiple PODs, although we have a plan to expand our testbed by adding
+machines and PODs. These PODs can support OPNFV testing utilizing functest,
+yardstick and so on. You can connect to those PODs. We provide VPN(OpenVPN) to
+connect the testlab.
 
 Environment
-------------------
-The test lab POD is setup along the Pharos project guidelines.
-Servers are deployed in the the following configuration.
+-----------
 
-* 1 Jump server
-* 3 Controller node
-* 2 compute node
+**PODs**
 
-**Hardware Description**
+# **ool-pod1**
+  This is a physical POD deployed by Fuel installer (Brahmputra), includeing
+  3 Controller Nodes and 1 Compute Node.
 
-* Summary
+# **ool-pod2**
+  This is a virtual POD deployed by Apex installer (master/Colorado).
+  This POD is built on one machine placed next to machines of the physical POD
+  (ool-pod1). Controller and compute nodes are VM.
 
-+----------------------------------------------+----------------------------+
-| Node                                         | Machine                    |
-+----------------------------------------------+----------------------------+
-| Jump server                                  | SuperMicro SYS-5018R-WR    |
-+----------------------------------------------+----------------------------+
-| Controller & Compute Nodes                   | FUJITSU PRIMERGY RX2530 M1 |
-+----------------------------------------------+----------------------------+
-| Switching 1(for each network except storage) | Juniper EX3300-24T         |
-+----------------------------------------------+----------------------------+
-| Switching 2(for storage)                     | Mellanox SX1024            |
-+----------------------------------------------+----------------------------+
+**Machines**
 
-* Machine Spec
++------------------+------------+----------------------------+
+| Machine          | Hostname   | Hardware                   |
++==================+============+============================+
+| Jump server      | OPNFV-Jump | SuperMicro SYS-5018R-WR    |
++------------------+------------+----------------------------+
+| Controller Node1 | node-9     | FUJITSU PRIMERGY RX2530 M1 |
++------------------+------------+----------------------------+
+| Controller Node2 | node-10    | FUJITSU PRIMERGY RX2530 M1 |
++------------------+------------+----------------------------+
+| Controller Node3 | node-11    | FUJITSU PRIMERGY RX2530 M1 |
++------------------+------------+----------------------------+
+| Compute Node1    | node-12    | FUJITSU PRIMERGY RX2530 M1 |
++------------------+------------+----------------------------+
+| Virtual POD      | apexv      | FUJITSU PRIMERGY RX2530 M1 |
++------------------+------------+----------------------------+
 
-+-------------------------+------------------+----+
-| SuperMicro SYS-5018R-WR |                  |    |
-+-------------------------+------------------+----+
-| CPU                     | Xeon E5-2630v3   | x1 |
-+-------------------------+------------------+----+
-| RAM                     | 32GB             | -  |
-+-------------------------+------------------+----+
-| HDD                     | SATA 7.2krpm 2TB | x1 |
-+-------------------------+------------------+----+
-| SSD                     | -                | -  |
-+-------------------------+------------------+----+
-| 1000BASE-T              | Intel            | x2 |
-+-------------------------+------------------+----+
-| 10GBASE-T               | Inte             | x2 |
-+-------------------------+------------------+----+
-| BMC                     | -                | x1 |
-+-------------------------+------------------+----+
+**Switches**
 
-+----------------------------+------------------+----+
-| FUJITSU PRIMERGY RX2530 M1 |                  |    |
-+----------------------------+------------------+----+
-| CPU                        | Xeon E5-2630v3   | x1 |
-+----------------------------+------------------+----+
-| RAM                        | 32GB             | -  |
-+----------------------------+------------------+----+
-| HDD                        | SATA 7.2krpm 2TB | x2 |
-+----------------------------+------------------+----+
-| SSD                        | 100GB            | x1 |
-+----------------------------+------------------+----+
-| 1000BASE-T                 | Emulex Skyhawk   | x2 |
-+----------------------------+------------------+----+
-| 10GBASE-T                  | Intel            | x2 |
-+----------------------------+------------------+----+
-| BMC                        | -                | x1 |
-+----------------------------+------------------+----+
++--------------------------------------------+--------------------+
+| Node                                       | Hardware           |
++============================================+====================+
+| Switch 1 (for each network except storage) | Juniper EX3300-24T |
++--------------------------------------------+--------------------+
+| Switch 2 (for storage)                     | Mellanox SX1024    |
++--------------------------------------------+--------------------+
 
----
+**Hardware Spec**
+
++------------------------------------+
+| SuperMicro SYS-5018R-WR            |
++============+==================+====+
+| CPU        | Xeon E5-2630v3   | x1 |
++------------+------------------+----+
+| RAM        | 32GB             | -  |
++------------+------------------+----+
+| HDD        | SATA 7.2krpm 2TB | x1 |
++------------+------------------+----+
+| SSD        | -                | -  |
++------------+------------------+----+
+| 1000BASE-T | Intel            | x2 |
++------------+------------------+----+
+| 10GBASE-T  | Intel            | x2 |
++------------+------------------+----+
+| BMC        | -                | x1 |
++------------+------------------+----+
+
++------------------------------------+
+| FUJITSU PRIMERGY RX2530 M1         |
++============+==================+====+
+| CPU        | Xeon E5-2630v3   | x1 |
++------------+------------------+----+
+| RAM        | 32GB             | -  |
++------------+------------------+----+
+| HDD        | SATA 7.2krpm 2TB | x2 |
++------------+------------------+----+
+| SSD        | 100GB            | x1 |
++------------+------------------+----+
+| 1000BASE-T | Emulex Skyhawk   | x2 |
++------------+------------------+----+
+| 10GBASE-T  | Intel            | x2 |
++------------+------------------+----+
+| BMC        | -                | x1 |
++------------+------------------+----+
 
 **Network**
 
@@ -83,14 +99,13 @@ Servers are deployed in the the following configuration.
 .. image:: images/ool-testlab.png
 
 
+* Server NICs
 
-* Server Nic
-
-Heres are the specifications for the Network Interfaces of servers within POD.
+Heres are ths specifications for the Network Interfaces of servers within POD.
 
 +------------+-------------------------------------------+--------+-------------------+------+--------------------+
 | Hostname   | NIC Model                                 | Ports  | MAC               | BW   | Role               |
-+------------+-------------------------------------------+--------+-------------------+------+--------------------+
++============+===========================================+========+===================+======+====================+
 | OPNFV-Jump | Intel I350                                | em1    | 0c:c4:7a:6c:a2:b2 | 1Gb  | Public             |
 +------------+-------------------------------------------+--------+-------------------+------+--------------------+
 | OPNFV-Jump | Intel I350                                | em2    | 0c:c4:7a:6c:a2:b2 | 1Gb  | Admin/Mgmt/Private |
@@ -143,12 +158,24 @@ Heres are the specifications for the Network Interfaces of servers within POD.
 +------------+-------------------------------------------+--------+-------------------+------+--------------------+
 | node-12    | Intel 82599ES                             | ens2f1 | 90:1b:0e:6d:08:32 | 10Gb | Storage            |
 +------------+-------------------------------------------+--------+-------------------+------+--------------------+
+| apexv      | Emulex OneConnect NIC (Skyhawk) (onboard) | eno1   | 90:1b:0e:6b:e5:d8 | 1Gb  | Admin              |
++------------+-------------------------------------------+--------+-------------------+------+--------------------+
+| apexv      | Emulex OneConnect NIC (Skyhawk) (onboard) | eno2   | 90:1b:0e:6b:e5:d9 | 1Gb  | Mgmt               |
++------------+-------------------------------------------+--------+-------------------+------+--------------------+
+| apexv      | Emulex OneConnect NIC (Skyhawk) (onboard) | eno3   | 90:1b:0e:6b:e5:da | 1Gb  | Public             |
++------------+-------------------------------------------+--------+-------------------+------+--------------------+
+| apexv      | Emulex OneConnect NIC (Skyhawk) (onboard) | eno4   | 90:1b:0e:6b:e5:db | 1Gb  | Prvate             |
++------------+-------------------------------------------+--------+-------------------+------+--------------------+
+| apexv      | Intel 82599ES                             | ens2f0 | 90:1b:0e:6d:08:f5 | 10Gb | Storage            |
++------------+-------------------------------------------+--------+-------------------+------+--------------------+
+| apexv      | Intel 82599ES                             | ens2f1 | 90:1b:0e:6d:08:f6 | 10Gb | Storage            |
++------------+-------------------------------------------+--------+-------------------+------+--------------------+
 
 * Subnet Allocations
 
 +----------------+---------------+---------------+----------------+----------+
 | Network name   | Address       | Mask          | Gateway        | VLAN id  |
-+----------------+---------------+---------------+----------------+----------+
++================+===============+===============+================+==========+
 | Public         | 192.168.25.0  | 255.255.255.0 | 192.168.25.254 | 103      |
 +----------------+---------------+---------------+----------------+----------+
 | Fuel Admin     | 192.168.103.0 | 255.255.255.0 | 192.168.103.1  | 103      |
@@ -162,14 +189,12 @@ Heres are the specifications for the Network Interfaces of servers within POD.
 | Fuel Storage   | 192.168.107.0 | 255.255.255.0 |                | Untagged |
 +----------------+---------------+---------------+----------------+----------+
 
----
-
-
 Access Procedure
 ------------------
 
-This environment is free to use by any OPNFV contributor or committer for the purpose of OPNFV
-approved activities. Access to this environment can be granted by sending a e-mail to: TBD
+This environment is free to use by any OPNFV contributor or committer for the
+purpose of OPNFV approved activities. Access to this environment can be granted
+by sending a e-mail to: TBD
 
 subject: opnfv_access_ool
 
