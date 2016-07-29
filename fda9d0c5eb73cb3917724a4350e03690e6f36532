@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_147700d6",
+        "filename": "docs/labs/zte-nj-lab/lab_description.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 212
+      },
+      "writtenOn": "2016-07-29T15:27:53Z",
+      "side": 1,
+      "message": "Do we plan to use nanjing pod2 as a daisy deploying POD?",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "fda9d0c5eb73cb3917724a4350e03690e6f36532",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
