@@ -1,0 +1,47 @@
+nodes:
+   - name: node1
+     tags: control
+     arch: "x86_64"
+     mac_address: "74:4a:a4:00:0b:85"
+     power:
+       type: ipmi
+       address: 192.168.1.32 
+       user: zteroot
+       pass: superuser
+   - name: node2
+     tags: control
+     arch: "x86_64"
+     mac_address: "74:4a:a4:00:5c:5d"
+     power:
+       type: ipmi
+       address: 192.168.1.33
+       user: zteroot
+       pass: superuser
+   - name: node3
+     tags: control
+     arch: "x86_64"
+     mac_address: "74:4a:a4:00:5c:35"
+     power:
+       type: ipmi
+       address: 192.168.1.34
+       user: zteroot
+       pass: superuser
+   - name: node4
+     tags: compute
+     arch: "x86_64"
+     mac_address: "74:4a:a4:00:5c:69"
+     power:
+       type: ipmi
+       address: 192.168.1.35
+       user: zteroot
+       pass: superuser
+   - name: node5
+     tags: compute
+     arch: "x86_64"
+     mac_address: "74:4a:a4:00:5c:6d"
+     power:
+       type: ipmi
+       address: 192.168.1.36
+       user: zteroot
+       pass: superuser
+
