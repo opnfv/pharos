@@ -1,0 +1,42 @@
+{% extends "dashboard/table.html" %}
+{% load staticfiles %}
+
+{% block table %}
+    <thead>
+    <tr>
+        <th>Slave name</th>
+        <th>Status</th>
+        <th>Job</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for slave in slaves %}
+        <tr>
+            <th><a target='_blank'
+                   href={{ slave.slaveurl }}>{{ slave.displayName }}</a>
+            </th>
+            <th style="background-color:{{ slave.status_color }}">
+                {{ slave.status }}
+            </th>
+            <th><a {{ slave.last_job.blink }} style="color:{{ slave.last_job.color }}"
+                                              target="_blank" href={{ slave.last_job.url }}>
+                {{ slave.last_job.name }}</a>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+{% endblock table %}
+
+
+{% block tablejs %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable({
+                columnDefs: [
+                    {type: 'status', targets: 1}
+                ],
+                "order": [[1, "asc"]]
+            });
+        });
+    </script>
+{% endblock tablejs %}

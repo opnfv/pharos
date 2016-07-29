@@ -1,0 +1,3 @@
+- implement ajax booking form to call from fullcalendar, then implement editing of multiple events
+- if the user is behind a VPN, his timezone settings might be wrong, there should be an option in the
+user settings to override the browser timezone.

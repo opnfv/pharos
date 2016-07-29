@@ -1,0 +1,24 @@
+{
+  "name": "pharos-dashboard-dependencies",
+  "authors": [
+    "maxbr <maxbr@mi.fu-berlin.de>"
+  ],
+  "description": "This package contains all the Js/CSS dependencies needed to run the Pharos Dashboard.",
+  "main": "",
+  "license": "Apache2",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "fullcalendar": "^2.9.0",
+    "jquery-migrate": "^3.0.0",
+    "startbootstrap-sb-admin-2": "^1.0.9"
+  }
+}
