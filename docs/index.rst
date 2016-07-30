@@ -21,6 +21,12 @@ OPNFV Community Lab Infrastructure
    ./specification/pharosspec.rst
    ./lab-description/templates.rst
    ./configguide/pharosconfig.rst
+   ./Dell.rst
+   ./huawei-us-lab/huawei-us-lab.rst
+   ./OOL.rst
+   ./orange-paris-lab/orange_paris.rst
+   ./spirent.rst
+
 
 Indices
 =======
