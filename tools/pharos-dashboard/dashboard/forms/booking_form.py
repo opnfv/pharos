@@ -1,22 +1,9 @@
-from dashboard.models import Booking
 import django.forms as forms
-from django.utils.translation import ugettext_lazy as _
 
 
-class BookingForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = ['start_date_time', 'end_date_time', 'purpose', 'booking_id']
-
-        PURPOSE = {
-            'id': 'purposefield',
-            'type': 'text',
-            'placeholder': 'Booking purpose',
-        }
-
-        widgets = {
-            'purpose': forms.TextInput(attrs=PURPOSE),
-        }
+class BookingForm(forms.Form):
+    fields = ['start_date_time', 'end_date_time', 'purpose', 'repeat',
+              'repeat_interval', 'repeat_end']
 
     # DATETIMEFORMAT should be equivalent to the moment.js format string that datetimepicker is
     # using ('YYYY-MM-DD HH:00 ZZ'). The string is used to create a timezone aware datetime object
@@ -24,8 +11,13 @@ class BookingForm(forms.ModelForm):
     start_date_time = forms.DateTimeField(input_formats=[DATETIMEFORMAT, ], label='Start')
     end_date_time = forms.DateTimeField(input_formats=[DATETIMEFORMAT, ], label='End')
 
-    # we need this to determine if we create a new booking or change an existing booking
-    booking_id = forms.IntegerField(widget=forms.HiddenInput, required=False)
+    purpose = forms.CharField(max_length=300)
+
+    repeat = forms.BooleanField(required=False)
+    repeat_interval = forms.ChoiceField(choices=(('1', 'Daily'), ('2', 'Weekly'), ('3', 'Monthly')),
+                                        required=False)
+    repeat_end = forms.DateTimeField(input_formats=[DATETIMEFORMAT, ], label='Repeat until',
+                                     required=False)
 
     def clean(self):
         cleaned_data = super(BookingForm, self).clean()
@@ -34,4 +26,7 @@ class BookingForm(forms.ModelForm):
         if cleaned_data['start_date_time'] >= cleaned_data['end_date_time']:
             raise forms.ValidationError(
                 'Start date is after end date', code='invalid_dates')
+        if cleaned_data['repeat']:
+            if cleaned_data['repeat_interval'] is None or cleaned_data['repeat_end'] is None:
+                raise forms.ValidationError('Repeat Interval/End missing', code='missing_repeat')
         return cleaned_data

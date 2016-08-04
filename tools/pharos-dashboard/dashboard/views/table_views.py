@@ -44,7 +44,8 @@ class DevelopmentPodsView(TemplateView):
         resources = Resource.objects.filter().values()  # get resources as a set of dicts
         dev_pods = []
 
-        current_bookings = Booking.objects.filter(start_date_time__lte=timezone.now())
+        current_bookings = Booking.objects.filter(deleted=False)
+        current_bookings = current_bookings.filter(start_date_time__lte=timezone.now())
         current_bookings = current_bookings.filter(end_date_time__gt=timezone.now())
 
         for resource in resources:

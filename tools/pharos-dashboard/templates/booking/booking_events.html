@@ -1,0 +1,25 @@
+{% load humanize %}
+{% load event_filters %}
+
+{% for event in events %}
+    <li class="left clearfix">
+        <small class="pull-left">
+            <i class="fa {{ event.action | action_icon }} fa-fw"></i>
+        </small>
+        <div class="chat-body clearfix">
+            <div class="header">
+                <strong class="primary-font"></strong>
+                <small class="pull-right text-muted">
+                    <i class="fa fa-clock-o fa-fw"></i> {{ event.timestamp | naturaltime }}
+                </small>
+            </div>
+            <p>
+                {{ event.user }}
+                {{ event.action }}d a booking
+            </p>
+            <p>
+                {{ event.description }}
+            </p>
+        </div>
+    </li>
+{% endfor %}

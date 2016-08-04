@@ -27,9 +27,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         {% if user.is_authenticated %}
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            <li><a href="{% url 'dashboard:account_settings' %}"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="{% url 'dashboard:logout' %}?next={{ request.path }}"><i
@@ -38,8 +36,11 @@
                             </li>
                         {% else %}
                             <li><a href="{% url 'dashboard:login' %}"><i
-                                class="fa fa-sign-out fa-fw"></i>
-                            Login</a>
+                                    class="fa fa-sign-in fa-fw"></i>
+                                Login</a>
+                            <li><a href="{% url 'dashboard:registration' %}"><i
+                                class="fa fa-edit fa-fw"></i>
+                            Register</a>
                         {% endif %}
                     </ul>
                     <!-- /.dropdown-user -->

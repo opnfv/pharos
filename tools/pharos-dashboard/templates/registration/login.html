@@ -1,4 +1,5 @@
 {% extends "layout/base.html" %}
+{% load bootstrap3 %}
 
 {% block basecontent %}
     <div class="container">
@@ -47,15 +48,21 @@
                                     <input class="form-control" placeholder="Password" name="password"
                                            type="password" value="">
                                 </div>
-                                <input type="submit" value="Login" class="btn btn-lg btn-success btn-block"/>
                                 <input type="hidden" name="next" value="{{ next }}"/>
                             </fieldset>
+                            {% buttons %}
+                                <button type="submit" class="btn btn btn-success" action="">
+                                    Login
+                                </button>
+                                <a href="{% url 'dashboard:registration' %}" class="btn btn-info" role="button">Register</a>
+                            {% endbuttons %}
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     {# Assumes you setup the password_reset view in your URLconf #}
     {# <p><a href="{% url 'password_reset' %}">Lost password?</a></p>#}
 {% endblock basecontent %}

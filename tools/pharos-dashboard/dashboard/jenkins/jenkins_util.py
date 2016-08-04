@@ -42,9 +42,9 @@ def get_job_color(job):
         return '#646F73'
     result = job['lastBuild']['result']
     if result == 'SUCCESS':
-        return '#33cc00'
+        return '#5cb85c'
     if result == 'FAILURE':
-        return '#FF5555'
+        return '#d9534f'
     if result == 'UNSTABLE':
         return '#EDD62B'
 
@@ -52,10 +52,10 @@ def get_job_color(job):
 # TODO: use css
 def get_status_color(slave):
     if not slave['offline'] and slave['idle']:
-        return '#C8D6C3'
+        return '#5bc0de'
     if not slave['offline']:
-        return '#BEFAAA'
-    return '#FAAAAB'
+        return '#5cb85c'
+    return '#d9534f'
 
 
 def get_slave_url(slave):

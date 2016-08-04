@@ -35,7 +35,7 @@
                 {{ pod.status }}
             </th>
             <th>
-                <a href='{% url 'dashboard:booking_calendar' %}{{ pod.resource_id }}' class="btn btn-primary">
+                <a href='/resource/{{ pod.resource_id }}/booking' class="btn btn-primary">
                     Book
                 </a>
             </th>

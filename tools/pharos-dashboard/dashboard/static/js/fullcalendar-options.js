@@ -3,16 +3,32 @@ function convertInputTime(time) {
     return moment(time).format('YYYY-MM-DD HH:00 ZZ');
 }
 
-function sendEventToForm(event) {
+function submitEventToForm(event) {
+    action = 'change';
+
     var start = convertInputTime(event.start);
     var end = convertInputTime(event.end);
     $('#starttimepicker').data("DateTimePicker").date(start);
     $('#endtimepicker').data("DateTimePicker").date(end);
-    $('#submitform').html("Change Booking");
-    $('#purposefield').val(event.title);
-    $('#id_booking_id').val(event.id); // create a new booking
-    $("#deletebutton").removeClass('hidden'); // show delete button
+
+    $('#id_purpose').val(event.title);
+    $("#deletebutton").removeClass('hidden');
+
+    booking_id = event.id;
+    repeat_id = event.repeat_id;
+
+    if (repeat_id != null) {
+        $("#deleterepeatbutton").removeClass('hidden');
+    } else {
+        $("#deleterepeatbutton").addClass('hidden');
+    }
 }
+
+function editEvent(event) {
+    submitEventToForm(event);
+    $("#bookingform").trigger('submit');
+}
+
 
 var calendarOptions = {
     height: 600,
@@ -37,29 +53,30 @@ var calendarOptions = {
     unselectAuto: false,
 
     select: function (start, end) {
+        action = 'create';
+
         var start = convertInputTime(start);
         var end = convertInputTime(end);
 
+        $('#id_purpose').val('');
+        $("#deletebutton").addClass('hidden'); // show delete button
+
         $('#starttimepicker').data("DateTimePicker").date(start);
         $('#endtimepicker').data("DateTimePicker").date(end);
-        $('#submitform').html("Book Pod");
-        $('#purposefield').val('');
-        $('#id_booking_id').val(''); // create a new booking
-        $("#deletebutton").addClass('hidden'); // hide delete button
     },
 
     eventClick: function (event, jsEvent, view) {
         $('#calendar').fullCalendar('unselect');
-        sendEventToForm(event);
+        submitEventToForm(event);
     },
 
     eventDrop: function (event) {
         $('#calendar').fullCalendar('unselect');
-        sendEventToForm(event);
+        editEvent(event);
     },
 
     eventResize: function (event) {
         $('#calendar').fullCalendar('unselect');
-        sendEventToForm(event);
+        editEvent(event);
     }
 };
