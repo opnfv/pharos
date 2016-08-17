@@ -1,0 +1,37 @@
+nodes:
+   - name: node-9
+     tags: control
+     arch: "x86_64"
+     mac_address: "90:1b:0e:6b:e8:a8"
+     power:
+       type: ipmi
+       address: n/a
+       user: n/a
+       pass: n/a
+   - name: node-10
+     tags: control
+     arch: "x86_64"
+     mac_address: "90:1b:0e:6b:e3:00"
+     power:
+       type: ipmi
+       address: n/a
+       user: n/a
+       pass: n/a
+   - name: node-11
+     tags: control
+     arch: "x86_64"
+     mac_address: "90:1b:0e:6b:e5:b4"
+     power:
+       type: ipmi
+       address: n/a
+       user: n/a
+       pass: n/a
+   - name: node-12
+     tags: compute
+     arch: "x86_64"
+     mac_address: "90:1b:0e:6b:e2:bc"
+     power:
+       type: ipmi
+       address: n/a
+       user: n/a
+       pass: n/a
