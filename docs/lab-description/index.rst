@@ -21,6 +21,7 @@ This is the "POD inventory" common format file.
 
 
 .. toctree::
+   :maxdepth: 2
 
    ./lab_description.rst
    ./pod_description.rst

@@ -2,13 +2,6 @@
 .. http://creativecommons.org/licenses/by/4.0
 .. (c) 2016 OPNFV.
 
-.. OPNFV Pharos Project Information file.
-
-.. _pharos_information:
-
-**************************
-Pharos Project Information
-**************************
 
 Introduction
 ------------
