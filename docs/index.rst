@@ -17,19 +17,12 @@ OPNFV Community Lab Infrastructure
    :maxdepth: 3
    :numbered: 3
 
-   ./information/pharos.rst
-   ./specification/pharosspec.rst
-   ./lab-description/templates.rst
-   ./configguide/pharosconfig.rst
-   ./labs/Dell.rst
-   ./labs/huawei-us-lab/huawei-us-lab.rst
-   ./labs/ool/ool.rst
-   ./labs/orange-paris-lab/orange_paris.rst
-   ./labs/spirent.rst
-   ./labs/zte-nj-lab/zte-nj.rst
-   ./labs/zte-sh-lab/zte-sh.rst
+   ./information/index.rst
+   ./specification/index.rst
+   ./lab-description/index.rst
+   ./configguide/index.rst
+   ./labs/index.rst
 
 Indices
 =======
 * :ref:`search`
-
