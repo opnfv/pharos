@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_de92e356",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "It might be good to explicitly state that not all the PODs are connected to Jenkins.",
+      "range": {
+        "startLine": 16,
+        "startChar": 81,
+        "endLine": 17,
+        "endChar": 39
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_5e8ed32f",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "We don\u0027t have latest and stable separation anymore so this could be updated like\n\n    resources can be used for and declared as either  *Development (bare-metal or virtual)* or *Production/CI (bare-metal)*.\n\nApart from this, I think it would be good to  mention the virtual Production/CI resources. If you agree, then the above sentence becomes\n\n    resources can be used for and declared as either  *Development (bare-metal or virtual)* or *Production/CI (bare-metal or virtual)*.\n\nOne last thing to state is; if a resource is used for and declared as development resource, it can not be used for and declared as Production/CI resource at the same time and vice versa. Changing the resource declation must be brought in to Infra WG.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 49
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_32d46b1f",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "I think this should be Automatic provisioning of resources instead of Deployment automation as deployment automation falls under installers.",
+      "range": {
+        "startLine": 26,
+        "startChar": 53,
+        "endLine": 26,
+        "endChar": 74
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_92177fed",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "focused on",
+      "range": {
+        "startLine": 26,
+        "startChar": 38,
+        "endLine": 26,
+        "endChar": 46
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_52d9e755",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "We now have bi-weekly pharos meeting and the link should point to that instead.\n\nSince Test meeting is mentioned below, we can mention Infra WG meeting as well.",
+      "range": {
+        "startLine": 37,
+        "startChar": 1,
+        "endLine": 37,
+        "endChar": 81
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_f2dd9343",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "This link shows changes (open/submitted, etc) and should be changed to https://gerrit.opnfv.org/gerrit/gitweb?p\u003dpharos.git in order to show the git repo.",
+      "range": {
+        "startLine": 45,
+        "startChar": 2,
+        "endLine": 45,
+        "endChar": 64
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_b2e71b12",
+        "filename": "docs/lab-description/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "troubleshooting",
+      "range": {
+        "startLine": 14,
+        "startChar": 21,
+        "endLine": 14,
+        "endChar": 36
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_12e36f08",
+        "filename": "docs/lab-description/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-19T20:15:10Z",
+      "side": 1,
+      "message": "publicly",
+      "range": {
+        "startLine": 15,
+        "startChar": 80,
+        "endLine": 15,
+        "endChar": 90
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
