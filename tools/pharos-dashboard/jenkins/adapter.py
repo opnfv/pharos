@@ -14,7 +14,7 @@ def get_json(url):
             response = requests.get(url)
             json = response.json()
             cache.set(url, json, 180)  # cache result for 180 seconds
-            return response.json()
+            return json
         except requests.exceptions.RequestException as e:
             logger.exception(e)
         except ValueError as e:
@@ -85,26 +85,22 @@ def is_dev_pod(slavename):
         return True
     return False
 
-def parse_slave_data(slave_dict, slave):
-    slave_dict['status'] = get_slave_status(slave)
-    slave_dict['status_color'] = get_status_color(slave)
-    slave_dict['slaveurl'] = get_slave_url(slave)
-    job = get_jenkins_job(slave['displayName'])
-    if job is not None:
-        slave_dict['last_job'] = parse_job(job)
-
 
 def parse_job(job):
     result = parse_job_string(job['lastBuild']['fullDisplayName'])
+    result['building'] = job['lastBuild']['building']
+    result['result'] = ''
+    if not job['lastBuild']['building']:
+        result['result'] = job['lastBuild']['result']
     result['url'] = job['url']
-    result['color'] = get_job_color(job)
-    if job['lastBuild']['building']:
-        result['blink'] = 'class=blink_me'
     return result
 
 
 def parse_job_string(full_displayname):
     job = {}
+    job['scenario'] = ''
+    job['installer'] = ''
+    job['branch'] = ''
     tokens = re.split(r'[ -]', full_displayname)
     for i in range(len(tokens)):
         if tokens[i] == 'os':
@@ -113,33 +109,9 @@ def parse_job_string(full_displayname):
             job['installer'] = tokens[i]
         elif tokens[i] in ['master', 'arno', 'brahmaputra', 'colorado']:
             job['branch'] = tokens[i]
-
     tokens = full_displayname.split(' ')
     job['name'] = tokens[0]
     return job
-
-
-# TODO: use css
-def get_job_color(job):
-    if job['lastBuild']['building'] is True:
-        return '#646F73'
-    result = job['lastBuild']['result']
-    if result == 'SUCCESS':
-        return '#5cb85c'
-    if result == 'FAILURE':
-        return '#d9534f'
-    if result == 'UNSTABLE':
-        return '#EDD62B'
-
-
-# TODO: use css
-def get_status_color(slave):
-    if not slave['offline'] and slave['idle']:
-        return '#5bc0de'
-    if not slave['offline']:
-        return '#5cb85c'
-    return '#d9534f'
-
 
 def get_slave_url(slave):
     return 'https://build.opnfv.org/ci/computer/' + slave['displayName']

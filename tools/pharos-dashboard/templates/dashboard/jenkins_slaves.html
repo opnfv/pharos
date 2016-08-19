@@ -1,6 +1,8 @@
 {% extends "dashboard/table.html" %}
 {% load staticfiles %}
 
+{% load jenkins_filters %}
+
 {% block table %}
     <thead>
     <tr>
@@ -13,14 +15,15 @@
     {% for slave in slaves %}
         <tr>
             <th><a target='_blank'
-                   href={{ slave.slaveurl }}>{{ slave.displayName }}</a>
+                   href={{ slave.url }}>{{ slave.name }}</a>
             </th>
-            <th style="background-color:{{ slave.status_color }}">
+            <th style="background-color:{{ slave.status | jenkins_status_color }}">
                 {{ slave.status }}
             </th>
-            <th><a {{ slave.last_job.blink }} style="color:{{ slave.last_job.color }}"
-                                              target="_blank" href={{ slave.last_job.url }}>
-                {{ slave.last_job.name }}</a>
+            <th><a {{ slave.last_job_result | jenkins_job_blink }}
+                    style="color:{{ slave.last_job_result | jenkins_job_color }}"
+                    target="_blank" href={{ slave.last_job_url }}>
+                {{ slave.last_job_name }}</a>
             </th>
         </tr>
     {% endfor %}
