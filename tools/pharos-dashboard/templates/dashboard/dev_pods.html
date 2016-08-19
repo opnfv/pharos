@@ -1,0 +1,58 @@
+{% extends "dashboard/table.html" %}
+{% load staticfiles %}
+
+{% block table %}
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Slave Name</th>
+        <th>Booked by</th>
+        <th>Booked until</th>
+        <th>Purpose</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for resource in dev_pods %}
+        <tr>
+            <th>
+                <a target='_blank' href={{ resource.url }}>{{ resource.name }}</a>
+            </th>
+            <th>
+                <a target='_blank' href={{ resource.slaveurl }}>{{ resource.slavename }}</a>
+            </th>
+            <th>
+                {{ resource.current_booking.user.username }}
+            </th>
+            <th>
+                {{ resource.current_booking.end }}
+            </th>
+            <th>
+                {{ resource.current_booking.purpose }}
+            </th>
+            <th style="background-color:{{ resource.status_color }}">
+                {{ resource.status }}
+            </th>
+            <th>
+                <a href="{% url 'booking:create' resource_id=resource.id %}" class="btn btn-primary">
+                    Book
+                </a>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+{% endblock table %}
+
+{% block tablejs %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable({
+                columnDefs: [
+                    {type: 'status', targets: 5}
+                ],
+                "order": [[5, "asc"]]
+            });
+        });
+    </script>
+{% endblock tablejs %}

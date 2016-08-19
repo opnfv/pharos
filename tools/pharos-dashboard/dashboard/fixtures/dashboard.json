@@ -1,0 +1,218 @@
+[
+{
+    "model": "dashboard.resource",
+    "pk": 1,
+    "fields": {
+        "name": "Linux Foundation POD 1",
+        "slavename": "lf-pod1",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Lf+Lab",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 2,
+    "fields": {
+        "name": "Linux Foundation POD 2",
+        "slavename": "lf-pod2",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Lf+Lab",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 3,
+    "fields": {
+        "name": "Ericsson  POD 2",
+        "slavename": "ericsson-pod2",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 4,
+    "fields": {
+        "name": "Intel POD 2",
+        "slavename": "intel-pod2",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod2",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 5,
+    "fields": {
+        "name": "Intel POD 5",
+        "slavename": "intel-pod5",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod5",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 6,
+    "fields": {
+        "name": "Intel POD 6",
+        "slavename": "intel-pod6",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod6",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 7,
+    "fields": {
+        "name": "Intel POD 8",
+        "slavename": "intel-pod8",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod8",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 8,
+    "fields": {
+        "name": "Huawei POD 1",
+        "slavename": "huawei-pod1",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
+        "bookable": false,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 9,
+    "fields": {
+        "name": "Intel POD 3",
+        "slavename": "intel-pod3",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod3",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 10,
+    "fields": {
+        "name": "Dell POD 1",
+        "slavename": "dell-pod1",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Dell+Hosting",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 11,
+    "fields": {
+        "name": "Dell POD 2",
+        "slavename": "dell-pod2",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Dell+Hosting",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 12,
+    "fields": {
+        "name": "Orange POD 2",
+        "slavename": "orange-pod2",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Opnfv-orange-pod2",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 13,
+    "fields": {
+        "name": "Arm POD 1",
+        "slavename": "arm-build1",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Enea-pharos-lab",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 14,
+    "fields": {
+        "name": "Ericsson POD 1",
+        "slavename": "ericsson-pod1",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 15,
+    "fields": {
+        "name": "Huawei POD 2",
+        "slavename": "huawei-pod2",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 16,
+    "fields": {
+        "name": "Huawei POD 3",
+        "slavename": "huawei-pod3",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 17,
+    "fields": {
+        "name": "Huawei POD 4",
+        "slavename": "huawei-pod4",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
+        "bookable": true,
+        "active": true
+    }
+},
+{
+    "model": "dashboard.resource",
+    "pk": 18,
+    "fields": {
+        "name": "Intel POD 9",
+        "slavename": "intel-pod9",
+        "description": "Some description",
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod9",
+        "bookable": true,
+        "active": true
+    }
+}
+]

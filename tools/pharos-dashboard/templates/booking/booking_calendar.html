@@ -1,0 +1,56 @@
+{% extends "dashboard/table.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+    <link href="{% static "bower_components/fullcalendar/dist/fullcalendar.css" %}"
+          rel='stylesheet'/>
+    <link href="{% static "bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" %}"
+          rel='stylesheet'/>
+{% endblock extrahead %}
+
+{% block content %}
+    <div class="row">
+    <div class="col-lg-8">
+        <div class="container-fluid">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-calendar fa-fw"></i>Calendar
+                </div>
+                <div class="panel-body">
+                    <div id='calendar'>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-edit fa-fw"></i>Booking
+            </div>
+            <div class="panel-body">
+                <div id="booking_form_div">
+                    {% include 'booking/booking_form.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block extrajs %}
+    <script type="text/javascript">
+        var bookings_url = "{% url 'booking:bookings_json' resource_id=resource.id %}"
+        var user_timezone = "{{ request.user.userprofile.timezone }}"
+    </script>
+
+    <script src={% static "bower_components/moment/moment.js" %}></script>
+    <script src={% static "bower_components/fullcalendar/dist/fullcalendar.js" %}></script>
+    <script type="text/javascript"
+            src={% static "bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" %}></script>
+    <script src={% static "js/fullcalendar-options.js" %}></script>
+    <script src={% static "js/datetimepicker-options.js" %}></script>
+    <script src={% static "js/booking-calendar.js" %}></script>
+{% endblock extrajs %}
