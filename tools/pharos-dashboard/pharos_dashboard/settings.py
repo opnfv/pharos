@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'account.middleware.TimezoneMiddleware',
 ]
 
+
 ROOT_URLCONF = 'pharos_dashboard.urls'
 
 TEMPLATES = [
@@ -144,3 +145,11 @@ djcelery.setup_loader()
 BROKER_URL = 'django://'
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
+JIRA_URL = 'http://localhost:8080'
+
+OAUTH_CONSUMER_KEY = 'oauth-pharos-dashboard-consumer'
+OAUTH_CONSUMER_SECRET = 'development_secret'
+
+OAUTH_REQUEST_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/request-token'
+OAUTH_ACCESS_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/access-token'
+OAUTH_AUTHORIZE_URL = JIRA_URL + '/plugins/servlet/oauth/authorize'

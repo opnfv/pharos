@@ -56,13 +56,8 @@ class BookingViewTestCase(TestCase):
         url = reverse('booking:create', kwargs={'resource_id': 0})
         self.assertEqual(self.client.get(url).status_code, 404)
 
-        # anonymous user
-        url = reverse('booking:create', kwargs={'resource_id': self.res1.id})
-        response = self.client.get(url, follow=True)
-        self.assertRedirects(response, reverse('account:login') + '?next=/booking/' + str(
-            self.res1.id) + '/')
-
         # authenticated user
+        url = reverse('booking:create', kwargs={'resource_id': self.res1.id})
         self.client.login(username='user1',password='user1')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)

@@ -39,11 +39,8 @@
                         {% else %}
                             <li><a href="{% url 'account:login' %}"><i
                                     class="fa fa-sign-in fa-fw"></i>
-                                Login</a>
+                                Login with Jira</a>
                             <li>
-                            <a href="{% url 'account:registration' %}"><i
-                                    class="fa fa-edit fa-fw"></i>
-                                Register</a>
                         {% endif %}
                     </ul>
                     <!-- /.dropdown-user -->
@@ -57,17 +54,22 @@
                     <ul class="nav" id="side-menu">
                         <li>
                             <a href="{% url 'dashboard:ci_pods' %}"><i
-                                    class="fa fa-table fa-fw"></i>CI-Pods</a>
+                                    class="fa fa-fw"></i>CI-Pods</a>
                         </li>
                         <li>
                             <a href="{% url 'dashboard:dev_pods' %}"><i
-                                    class="fa fa-table fa-fw"></i>Development
+                                    class="fa  fa-fw"></i>Development
                                 Pods</a>
                         </li>
                         <li>
                             <a href="{% url 'dashboard:jenkins_slaves' %}"><i
-                                    class="fa fa-table fa-fw"></i>Jenkins
+                                    class="fa fa-fw"></i>Jenkins
                                 Slaves</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'dashboard:resources' %}"><i
+                                    class="fa fa-fw"></i>Resources
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,8 @@
 {% extends "dashboard/table.html" %}
 {% load staticfiles %}
 
+{% load bootstrap3 %}
+
 {% block extrahead %}
     <link href="{% static "bower_components/fullcalendar/dist/fullcalendar.css" %}"
           rel='stylesheet'/>
@@ -33,7 +35,24 @@
             </div>
             <div class="panel-body">
                 <div id="booking_form_div">
-                    {% include 'booking/booking_form.html' %}
+                    {% bootstrap_form_errors form type='non_fields' %}
+                    <form method="post" action="" class="form" id="bookingform">
+                        {% csrf_token %}
+
+                        <div class='input-group' id='starttimepicker'>
+                            {% bootstrap_field form.start addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
+                        </div>
+                        <div class='input-group' id='endtimepicker'>
+                            {% bootstrap_field form.end addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
+                        </div>
+                        {% bootstrap_field form.purpose %}
+
+                        {% buttons %}
+                            <button type="submit" class="btn btn btn-success">
+                                Book
+                            </button>
+                        {% endbuttons %}
+                    </form>
                 </div>
             </div>
         </div>
