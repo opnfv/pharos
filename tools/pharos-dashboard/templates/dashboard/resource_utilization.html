@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+    <!-- Morris Charts CSS -->
+    <link href="{% static "bower_components/morrisjs/morris.css" %}" rel="stylesheet">
+
+{% endblock extrahead %}
+
+
+{% block content %}
+    <div class="row">
+        {% for resource, utilization in pods %}
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{ resource.name }}
+                    </div>
+                    <div class="panel-body">
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="{{ resource.slave.name }}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
+
+
+{% block extrajs %}
+
+    <!-- Flot Charts JavaScript -->
+    <script src="{% static "bower_components/flot/excanvas.min.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.pie.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.resize.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.time.js" %}"></script>
+    <script src="{% static "bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js" %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            {% for resource, utilization in pods %}
+                $(function () {
+                    var data = [{
+                        label: "Offline",
+                        data: {{ utilization.offline }},
+                        color: '#d9534f'
+                    }, {
+                        label: "Online",
+                        data: {{ utilization.online }},
+                        color: '#5cb85c'
+                    }, {
+                        label: "Idle",
+                        data: {{ utilization.idle }},
+                        color: '#5bc0de'
+                    }];
+
+                    var plotObj = $.plot($("#{{ resource.slave.name }}"), data, {
+                        series: {
+                            pie: {
+                                show: true
+                            }
+                        },
+                        grid: {
+                            hoverable: true
+                        },
+                        tooltip: true,
+                        tooltipOpts: {
+                            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                            shifts: {
+                                x: 20,
+                                y: 0
+                            },
+                            defaultTheme: false
+                        }
+                    });
+
+                });
+            {% endfor %}
+
+        });
+    </script>
+
+{% endblock extrajs %}
