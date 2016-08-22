@@ -16,5 +16,4 @@ PHAROS Community Labs
    ./ool/index.rst
    ./orange-paris-lab/index.rst
    ./spirent.rst
-   ./zte-nj-lab/index.rst
    ./zte-sh-lab/index.rst

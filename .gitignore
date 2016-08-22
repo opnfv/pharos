@@ -61,3 +61,6 @@ target/
 /docs_build/
 /docs_output/
 /releng/
+
+# macos preview
+.DS_Store
