@@ -48,3 +48,26 @@ class DevelopmentPodsView(TemplateView):
         context = super(DevelopmentPodsView, self).get_context_data(**kwargs)
         context.update({'title': "Development Pods", 'dev_pods': dev_pods})
         return context
+
+
+class ResourceUtilizationView(TemplateView):
+    template_name = "dashboard/resource_utilization.html"
+
+    def get_context_data(self, **kwargs):
+        resources = Resource.objects.all()
+        pods = []
+        for resource in resources:
+            utilization = {'idle': 0, 'online': 0, 'offline': 0}
+            # query measurement points for the last week
+            statistics = JenkinsStatistic.objects.filter(slave=resource.slave,
+                                                         timestamp__gte=timezone.now() - timedelta(
+                                                             days=7))
+            statistics_cnt = statistics.count()
+            if statistics_cnt != 0:
+                utilization['idle'] = statistics.filter(idle=True).count()
+                utilization['online'] = statistics.filter(online=True).count()
+                utilization['offline'] = statistics.filter(offline=True).count()
+            pods.append((resource, utilization))
+        context = super(ResourceUtilizationView, self).get_context_data(**kwargs)
+        context.update({'title': "Development Pods", 'pods': pods})
+        return context
