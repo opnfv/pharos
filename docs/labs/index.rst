@@ -12,6 +12,7 @@ PHAROS Community Labs
    :maxdepth: 2
 
    ./Dell.rst
+   ./ericsson/index.rst
    ./huawei-us-lab/huawei-us-lab.rst
    ./ool/index.rst
    ./orange-paris-lab/index.rst
