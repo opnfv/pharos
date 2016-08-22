@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_289cfcbf",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-22T07:46:29Z",
+      "side": 1,
+      "message": "We don\u0027t need to mention this as this is operational.",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 77
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_6862f4d9",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-22T07:46:29Z",
+      "side": 1,
+      "message": "Not all PODs are required to be connected to OPNFV Jenkins so the sentence could be adjusted like below.\n    PODs dedicated for Production/CI are required to be connected to OPNFV Jenkins and available on a 24/7 basis other than scheduled maintenance and troubleshooting.",
+      "range": {
+        "startLine": 16,
+        "startChar": 88,
+        "endLine": 18,
+        "endChar": 16
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_48a138f7",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-22T07:46:29Z",
+      "side": 1,
+      "message": "Jenkins slave status can be seen on `Jenkins Dashboard https://build.opnfv.org/ci/computer/`.",
+      "range": {
+        "startLine": 18,
+        "startChar": 78,
+        "endLine": 19,
+        "endChar": 73
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_e8a5a404",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-22T07:46:29Z",
+      "side": 1,
+      "message": "Automatic resource provisioning",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 32
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_08f900e9",
+        "filename": "docs/lab-description/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-08-22T07:46:29Z",
+      "side": 1,
+      "message": "This paragraph might be improved like\n\n    The goal of the Pharos Project is automation of resource provisioning. This requires machine readable inventory and network configuration files that follow common format.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 47
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
