@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_48661853",
+        "filename": "tools/pharos-dashboard/pharos_dashboard/settings.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T14:02:56Z",
+      "side": 1,
+      "message": "why call os.path.dirname two times?",
+      "range": {
+        "startLine": 16,
+        "startChar": 11,
+        "endLine": 16,
+        "endChar": 43
+      },
+      "revId": "ebaa05ab2b53634a7a3e738618a031fd1518d796",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
