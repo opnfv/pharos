@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_cb9302a2",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T13:35:50Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "1a76adc5_289cfcbf",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 77
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_8b8d0a7e",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T13:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_6862f4d9",
+      "range": {
+        "startLine": 16,
+        "startChar": 88,
+        "endLine": 18,
+        "endChar": 16
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_48a138f7",
         "filename": "docs/configguide/index.rst",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-08-22T07:46:29Z",
       "side": 1,
       "message": "Jenkins slave status can be seen on `Jenkins Dashboard https://build.opnfv.org/ci/computer/`.",
+      "range": {
+        "startLine": 18,
+        "startChar": 78,
+        "endLine": 19,
+        "endChar": 73
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_abdd6672",
+        "filename": "docs/configguide/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T13:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_48a138f7",
       "range": {
         "startLine": 18,
         "startChar": 78,
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_cbc1c281",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T13:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_e8a5a404",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 32
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_08f900e9",
         "filename": "docs/lab-description/index.rst",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2016-08-22T07:46:29Z",
       "side": 1,
       "message": "This paragraph might be improved like\n\n    The goal of the Pharos Project is automation of resource provisioning. This requires machine readable inventory and network configuration files that follow common format.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 47
+      },
+      "revId": "c3e6758e022429454132705df15bf49d400bc504",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_abc48692",
+        "filename": "docs/lab-description/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T13:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a76adc5_08f900e9",
       "range": {
         "startLine": 18,
         "startChar": 0,
