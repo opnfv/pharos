@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_75f16dcc",
+        "filename": "docs/information/pharos.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T00:48:43Z",
+      "side": 1,
+      "message": "agree",
+      "parentUuid": "1a76adc5_32d46b1f",
+      "range": {
+        "startLine": 26,
+        "startChar": 53,
+        "endLine": 26,
+        "endChar": 74
+      },
+      "revId": "e7ec79600d73f4df538e1e23e7320b3c1f78c2b2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_52d9e755",
         "filename": "docs/information/pharos.rst",
         "patchSetId": 2
