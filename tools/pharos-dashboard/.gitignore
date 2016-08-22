@@ -19,6 +19,7 @@ coverage.xml
 # Django:
 *.log
 *.pot
+migrations/
 
 # KDE:
 .directory
