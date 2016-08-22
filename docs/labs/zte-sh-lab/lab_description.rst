@@ -13,7 +13,7 @@ Introduction
 ------------
 
 ZTE SH Pharos lab currently has three PODs available in Shanghai. Each POD has 5 servers, 3
-controller nodes and 2 computer nodes. These PODs are dedicatedly used for Production/CI. These PODs
+controller nodes and 2 computer nodes. These PODs are dedicated for use by Production/CI. These PODs
 focus scenarios related with **test** projects, **installer** projects and performance enhancement
 projects, such as KVM, OVS, FDS, etc.
 
@@ -79,7 +79,7 @@ The following information should be provided in the request:
     Organization:
     Why is access needed:
     How long is access needed:
-    What sepcific Host will be accessed:
+    What specific Host will be accessed:
     What support is needed from zte admin:
 
 Once access requirment is approved, the instructions for setting up VPN access will be send to you by mail.

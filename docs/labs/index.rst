@@ -17,3 +17,4 @@ PHAROS Community Labs
    ./orange-paris-lab/index.rst
    ./spirent.rst
    ./zte-sh-lab/index.rst
+   ./ericsson
