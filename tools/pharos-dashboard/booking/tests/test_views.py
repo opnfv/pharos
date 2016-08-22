@@ -12,12 +12,14 @@ from registration.forms import User
 from account.models import UserProfile
 from booking.models import Booking
 from dashboard.models import Resource
+from jenkins.models import JenkinsSlave
 
 
 class BookingViewTestCase(TestCase):
     def setUp(self):
         self.client = Client()
-        self.res1 = Resource.objects.create(name='res1', slavename='s1', description='x', url='x')
+        self.slave = JenkinsSlave.objects.create(name='test', url='test')
+        self.res1 = Resource.objects.create(name='res1', slave=self.slave, description='x', url='x')
         self.user1 = User.objects.create(username='user1')
         self.user1.set_password('user1')
         self.user1profile = UserProfile.objects.create(user=self.user1)

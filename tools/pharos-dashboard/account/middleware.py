@@ -1,6 +1,7 @@
-from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 from django.utils.deprecation import MiddlewareMixin
+
+from account.models import UserProfile
 
 
 class TimezoneMiddleware(MiddlewareMixin):
@@ -10,6 +11,12 @@ class TimezoneMiddleware(MiddlewareMixin):
     """
     def process_request(self, request):
         if request.user.is_authenticated:
-            timezone.activate(request.user.userprofile.timezone)
+            try:
+                tz = request.user.userprofile.timezone
+                timezone.activate(tz)
+            except UserProfile.DoesNotExist:
+                UserProfile.objects.create(user=request.user)
+                tz = request.user.userprofile.timezone
+                timezone.activate(tz)
         else:
             timezone.deactivate()

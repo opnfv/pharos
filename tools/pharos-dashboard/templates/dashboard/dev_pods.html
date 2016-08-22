@@ -1,5 +1,6 @@
 {% extends "dashboard/table.html" %}
 {% load staticfiles %}
+{% load jenkins_filters %}
 
 {% block table %}
     <thead>
@@ -14,28 +15,28 @@
     </tr>
     </thead>
     <tbody>
-    {% for resource in dev_pods %}
+    {% for pod, booking in dev_pods %}
         <tr>
             <th>
-                <a target='_blank' href={{ resource.url }}>{{ resource.name }}</a>
+                <a target='_blank' href={{ pod.url }}>{{ pod.name }}</a>
             </th>
             <th>
-                <a target='_blank' href={{ resource.slaveurl }}>{{ resource.slavename }}</a>
+                <a target='_blank' href={{ pod.slave.url }}>{{ pod.slave.name }}</a>
             </th>
             <th>
-                {{ resource.current_booking.user.username }}
+                {{ booking.user.username }}
             </th>
             <th>
-                {{ resource.current_booking.end }}
+                {{ booking.end }}
             </th>
             <th>
-                {{ resource.current_booking.purpose }}
+                {{ booking.purpose }}
             </th>
-            <th style="background-color:{{ resource.status_color }}">
-                {{ resource.status }}
+            <th style="background-color:{{ pod.slave.status | jenkins_status_color }}">
+                {{ pod.slave.status }}
             </th>
             <th>
-                <a href="{% url 'booking:create' resource_id=resource.id %}" class="btn btn-primary">
+                <a href="{% url 'booking:create' resource_id=pod.id %}" class="btn btn-primary">
                     Book
                 </a>
             </th>

@@ -6,9 +6,7 @@
         "name": "Linux Foundation POD 1",
         "slavename": "lf-pod1",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Lf+Lab",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Lf+Lab"
     }
 },
 {
@@ -18,9 +16,7 @@
         "name": "Linux Foundation POD 2",
         "slavename": "lf-pod2",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Lf+Lab",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Lf+Lab"
     }
 },
 {
@@ -30,9 +26,7 @@
         "name": "Ericsson  POD 2",
         "slavename": "ericsson-pod2",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process"
     }
 },
 {
@@ -42,9 +36,7 @@
         "name": "Intel POD 2",
         "slavename": "intel-pod2",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod2",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod2"
     }
 },
 {
@@ -54,9 +46,7 @@
         "name": "Intel POD 5",
         "slavename": "intel-pod5",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod5",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod5"
     }
 },
 {
@@ -66,9 +56,7 @@
         "name": "Intel POD 6",
         "slavename": "intel-pod6",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod6",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod6"
     }
 },
 {
@@ -78,9 +66,7 @@
         "name": "Intel POD 8",
         "slavename": "intel-pod8",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod8",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod8"
     }
 },
 {
@@ -90,9 +76,7 @@
         "name": "Huawei POD 1",
         "slavename": "huawei-pod1",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
-        "bookable": false,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting"
     }
 },
 {
@@ -102,9 +86,7 @@
         "name": "Intel POD 3",
         "slavename": "intel-pod3",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod3",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod3"
     }
 },
 {
@@ -114,9 +96,7 @@
         "name": "Dell POD 1",
         "slavename": "dell-pod1",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Dell+Hosting",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Dell+Hosting"
     }
 },
 {
@@ -126,9 +106,7 @@
         "name": "Dell POD 2",
         "slavename": "dell-pod2",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Dell+Hosting",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Dell+Hosting"
     }
 },
 {
@@ -138,9 +116,7 @@
         "name": "Orange POD 2",
         "slavename": "orange-pod2",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Opnfv-orange-pod2",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Opnfv-orange-pod2"
     }
 },
 {
@@ -150,9 +126,7 @@
         "name": "Arm POD 1",
         "slavename": "arm-build1",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Enea-pharos-lab",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Enea-pharos-lab"
     }
 },
 {
@@ -162,9 +136,7 @@
         "name": "Ericsson POD 1",
         "slavename": "ericsson-pod1",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Ericsson+Hosting+and+Request+Process"
     }
 },
 {
@@ -174,9 +146,7 @@
         "name": "Huawei POD 2",
         "slavename": "huawei-pod2",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting"
     }
 },
 {
@@ -186,9 +156,7 @@
         "name": "Huawei POD 3",
         "slavename": "huawei-pod3",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting"
     }
 },
 {
@@ -198,9 +166,7 @@
         "name": "Huawei POD 4",
         "slavename": "huawei-pod4",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Huawei+Hosting"
     }
 },
 {
@@ -210,9 +176,7 @@
         "name": "Intel POD 9",
         "slavename": "intel-pod9",
         "description": "Some description",
-        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod9",
-        "bookable": true,
-        "active": true
+        "url": "https://wiki.opnfv.org/display/pharos/Intel+Pod9"
     }
 }
 ]
