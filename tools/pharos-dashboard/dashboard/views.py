@@ -4,7 +4,6 @@ from django.views.generic import TemplateView
 
 from booking.models import Booking
 from dashboard.models import Resource
-from jenkins import adapter as jenkins
 from jenkins.models import JenkinsSlave, JenkinsStatistic
 
 
@@ -50,11 +49,11 @@ class DevelopmentPodsView(TemplateView):
         return context
 
 
-class ResourceUtilizationView(TemplateView):
-    template_name = "dashboard/resource_utilization.html"
+class LabOwnerView(TemplateView):
+    template_name = "dashboard/lab_owner.html"
 
     def get_context_data(self, **kwargs):
-        resources = Resource.objects.all()
+        resources = Resource.objects.filter(slave__dev_pod=True)
         pods = []
         for resource in resources:
             utilization = {'idle': 0, 'online': 0, 'offline': 0}
@@ -62,12 +61,14 @@ class ResourceUtilizationView(TemplateView):
             statistics = JenkinsStatistic.objects.filter(slave=resource.slave,
                                                          timestamp__gte=timezone.now() - timedelta(
                                                              days=7))
-            statistics_cnt = statistics.count()
-            if statistics_cnt != 0:
-                utilization['idle'] = statistics.filter(idle=True).count()
-                utilization['online'] = statistics.filter(online=True).count()
-                utilization['offline'] = statistics.filter(offline=True).count()
-            pods.append((resource, utilization))
-        context = super(ResourceUtilizationView, self).get_context_data(**kwargs)
-        context.update({'title': "Development Pods", 'pods': pods})
+
+            utilization['idle'] = statistics.filter(idle=True).count()
+            utilization['online'] = statistics.filter(online=True).count()
+            utilization['offline'] = statistics.filter(offline=True).count()
+
+            bookings = Booking.objects.filter(resource=resource, end__gt=timezone.now())
+
+            pods.append((resource, utilization, bookings))
+        context = super(LabOwnerView, self).get_context_data(**kwargs)
+        context.update({'title': "Overview", 'pods': pods})
         return context

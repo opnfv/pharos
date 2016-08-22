@@ -18,15 +18,3 @@ class Resource(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class ResourceUtilization(models.Model):
-    POD_STATUS = {
-        'online': 1,
-        'idle': 2,
-        'offline': 3
-    }
-
-    id = models.AutoField(primary_key=True)
-    timestamp = models.DateTimeField(auto_created=True)
-    pod_status = models.IntegerField()

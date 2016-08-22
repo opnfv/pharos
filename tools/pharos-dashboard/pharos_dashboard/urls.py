@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^', include('dashboard.urls', namespace='dashboard')),
     url(r'^booking/', include('booking.urls', namespace='booking')),
     url(r'^account/', include('account.urls', namespace='account')),
+
     url(r'^admin/', admin.site.urls),
 ]

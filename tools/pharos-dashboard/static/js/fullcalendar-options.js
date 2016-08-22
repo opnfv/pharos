@@ -1,14 +1,8 @@
 var tmpevent;
 
-// converts a moment to a readable fomat for the backend
-function convertInputTime(time) {
-    return time;
-    //return moment(time).format('YYYY-MM-DD HH:00 ZZ');
-}
-
 function sendEventToForm(event) {
-    $('#starttimepicker').data("DateTimePicker").date(convertInputTime(event.start));
-    $('#endtimepicker').data("DateTimePicker").date(convertInputTime(event.end));
+    $('#starttimepicker').data("DateTimePicker").date(event.start);
+    $('#endtimepicker').data("DateTimePicker").date(event.end);
 }
 
 var calendarOptions = {
@@ -40,12 +34,13 @@ var calendarOptions = {
         if (tmpevent != undefined) {
             $('#calendar').fullCalendar('removeEvents', tmpevent.id);
             $('#calendar').fullCalendar('rerenderEvents');
+            tmpevent = undefined;
         }
         // the times need to be converted here to make them show up in the agendaWeek view if they
         // are created in the month view. If they are not converted, the tmpevent will only show
         // up in the (deactivated) allDaySlot
-        start = convertInputTime(start);
-        end = convertInputTime(end);
+        start = moment(start);
+        end = moment(end);
 
         tmpevent = {
             id: '537818f62bc63518ece15338fb86c8be',
@@ -64,6 +59,7 @@ var calendarOptions = {
             if (event.id != tmpevent.id) {
                 $('#calendar').fullCalendar('removeEvents', tmpevent.id);
                 $('#calendar').fullCalendar('rerenderEvents');
+                tmpevent = undefined;
             }
         }
     },

@@ -6,7 +6,6 @@ from django.core.cache import cache
 
 logger = logging.getLogger(__name__)
 
-
 # TODO: implement caching decorator, cache get_* functions
 def get_json(url):
     if cache.get(url) is None:
