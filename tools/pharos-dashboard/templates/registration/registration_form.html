@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load bootstrap3 %}
+
+{% block basecontent %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                {% bootstrap_messages %}
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            {{ title }}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn btn-success">
+                                    Submit
+                                </button>
+                            {% endbuttons %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock basecontent %}
