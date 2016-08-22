@@ -123,6 +123,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_ROOT = '/home/max/tmp/django_media/'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 

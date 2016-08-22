@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, Permission
 from django.test import TestCase
 from django.utils import timezone
 
+from account.models import UserProfile
 from booking.models import Booking
 from dashboard.models import Resource
 from jenkins.models import JenkinsSlave
@@ -12,9 +13,12 @@ from jenkins.models import JenkinsSlave
 class BookingModelTestCase(TestCase):
     def setUp(self):
         self.slave = JenkinsSlave.objects.create(name='test', url='test')
+        self.owner = User.objects.create(username='owner')
 
-        self.res1 = Resource.objects.create(name='res1', slave=self.slave, description='x', url='x')
-        self.res2 = Resource.objects.create(name='res2', slave=self.slave, description='x', url='x')
+        self.res1 = Resource.objects.create(name='res1', slave=self.slave, description='x',
+                                            url='x',owner=self.owner)
+        self.res2 = Resource.objects.create(name='res2', slave=self.slave, description='x',
+                                            url='x',owner=self.owner)
 
         self.user1 = User.objects.create(username='user1')
 
@@ -78,12 +82,14 @@ class BookingModelTestCase(TestCase):
 
     def test_authorization(self):
         user = User.objects.create(username='user')
+        user.userprofile = UserProfile.objects.create(user=user)
         self.assertRaises(PermissionError, Booking.objects.create, start=timezone.now(),
                           end=timezone.now() + timedelta(days=1), resource=self.res1, user=user)
-        self.res1.owners.add(user)
+        self.res1.owner = user
         self.assertTrue(
             Booking.objects.create(start=timezone.now(), end=timezone.now() + timedelta(days=1),
                                    resource=self.res1, user=user))
+        self.res1.owner = self.owner
         user.user_permissions.add(self.add_booking_perm)
         user = User.objects.get(pk=user.id)
         self.assertTrue(

@@ -21,6 +21,9 @@ class JenkinsSlave(models.Model):
     class Meta:
         db_table = 'jenkins_slave'
 
+    def __str__(self):
+        return self.name
+
 
 class JenkinsStatistic(models.Model):
     id = models.AutoField(primary_key=True)
