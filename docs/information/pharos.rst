@@ -23,28 +23,31 @@ federated lab infrastructure continues to be an objective. Virtual environments 
 provided by some labs. Jira is currently used for tracking lab operational issues as well as for
 Pharos project activities.
 
-Future lab capabilities are currently focussed on 1) Deployment automation 2) Dashboards (for
-capability and usage) 3) *Virtual Labs* for developer on-boarding.
+Future lab capabilities are currently focused on:
 
-* `Pharos page <https://www.opnfv.org/developers/pharos>`_
-* `Pharos project Wiki <https://wiki.opnfv.org/display/pharos>`_
-* `Pharos Planning <https://wiki.opnfv.org/display/pharos/Pharos+Colorado+Plan>`_
+1) Automatic resource provisioning
+2) Dashboards (for capability and usage)
+3) *Virtual Labs* for developer on-boarding
 
 Project Communication
 ---------------------
 
-* `Jira <https://jira.opnfv.org/projects/PHAROS/summary>`_
-* `Weekly Pharos meeting <https://wiki.opnfv.org/display/INF/Infra+Working+Group>`_
+* `Pharos page <https://www.opnfv.org/developers/pharos>`_
+* `Pharos project Wiki <https://wiki.opnfv.org/display/pharos>`_
+* `Pharos Planning <https://wiki.opnfv.org/display/pharos/Pharos+Colorado+Plan>`_
+* `Pharos Jira <https://jira.opnfv.org/projects/PHAROS/summary>`_
+* `Bi-weekly Pharos meeting <https://wiki.opnfv.org/display/pharos/Pharos+Meetings>`_
+* `Weekly INFRA WG meeting <https://wiki.opnfv.org/display/INF/Infra+Working+Group>`_
 * `Weekly coordination meeting for Test related projects <https://wiki.opnfv.org/meetings/test>`_
-* IRC: freenode.net #opnfv-pharos http://webchat.freenode.net/?channels=opnfv-pharos
+* `IRC: freenode.net #opnfv-pharos <http://webchat.freenode.net/?channels=opnfv-pharos>`_
 * Mailing List: use opnfv-tech-discuss and tag your emails with [Pharos] in the subject for filtering
 
 Project Release Artifacts
 -------------------------
 
-* Project Repository: https://gerrit.opnfv.org/gerrit/#/q/pharos
-* Continuous Integration https://build.opnfv.org/ci/view/pharos/
-* Documentation: http://artifacts.opnfv.org/pharos/docs/
+* `Project Repository <https://gerrit.opnfv.org/gerrit/gitweb?p=pharos.git>`_
+* `Continuous Integration <https://build.opnfv.org/ci/view/pharos/>`_
+* `Documentation <http://artifacts.opnfv.org/pharos/docs/>`_
 
 Pharos Lab Process
 ------------------
@@ -96,7 +99,7 @@ An interactive map of OPNFV lab locations, lab owners and other lab information 
 | 11 | Orange        | https://wiki.opnfv.org/display/pharos/Opnfv-orange                         | Paris, France     |
 |    |               |                                                                            |                   |
 +----+---------------+----------------------------------------------------------------------------+-------------------+
-| 12 | ZTE           | https://wiki.opnfv.org/display/pharos/ZTE+NJ+Testlab                       | Nan Jing, China   |
+| 12 | ZTE           | https://wiki.opnfv.org/display/pharos/ZTE+SH+Testlab                       | Shanghai, China   |
 |    |               |                                                                            |                   |
 +----+---------------+----------------------------------------------------------------------------+-------------------+
 | 13 | Okinawa       | https://wiki.opnfv.org/display/pharos/OOL+TestLab                          | Okinawa           |
@@ -110,6 +113,8 @@ Pharos project Key Facts
 
 **Key Project Facts are maintained in the Pharos INFO file in the project repo**
 
-  * Can be viewed on the project Wiki
-    `INFO <https://wiki.opnfv.org/pharos?&#pharos_project_-_key_facts>`_
-  * Project key facts in repo: pharos/INFO
+  * Can be viewed on the project
+    `wiki INFO <https://wiki.opnfv.org/pharos?&#pharos_project_-_key_facts>`_
+  * Project key facts in
+    `repo INFO <https://gerrit.opnfv.org/gerrit/gitweb?p=pharos.git;f=INFO;hb=refs/heads/master>`_
+

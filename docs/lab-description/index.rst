@@ -11,13 +11,12 @@ Pharos Templates and Configuration Files
 Lab and POD templates are provided to help lab owners document capabilities, configurations and
 network topologies. Compute, network and storage specifications with network topology details are
 required to help developers use lab resources efficiently while minimizing support needs. This also
-greatly assists with troubleshhoting. It is the responsibility of the lab owner to keep individual
-lab documents updated and determine appropriate level of detail that is exposed publically through
+greatly assists with troubleshoting. It is the responsibility of the lab owner to keep individual
+lab documents updated and determine appropriate level of detail that is exposed publicly through
 the Wiki or maintained in a secure Pharos repo with controlled access.
 
-While human readable configuration files are needed, the goal is for full automation of deployments.
-This requires a common machine readable format for POD configurations as input to every installer.
-This is the "POD inventory" common format file.
+The goal of the Pharos Project is automation of resource provisioning. This requires machine
+readable inventory and network configuration files that follow common format.
 
 
 .. toctree::
