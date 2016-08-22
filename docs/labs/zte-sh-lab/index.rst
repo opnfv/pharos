@@ -10,6 +10,9 @@ ZTE SH Pharos Lab Configuration Files
 
 
 .. toctree::
+   :maxdepth: 2
 
    ./lab_description.rst
+   ./pod1_description.rst
+   ./pod2_description.rst
    ./pod3_description.rst

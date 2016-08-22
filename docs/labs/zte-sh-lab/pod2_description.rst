@@ -24,21 +24,27 @@ Additional Requirements
 Server Specifications
 ---------------------
 
-
 **Jump Host**
 
-POD2 share the same **Jump Host** with POD1:
+POD2 share the same **Jump Host** in the lab.
 
-+----------+--------+-------+---------------+-----------+--------+-----------+-------------------+------------------+-------+
-|          |        |       |               |           | Memory | Local     | 1GbE: NIC#/IP     | 10GbE: NIC#/IP   |       |
-| Hostname | Vendor | Model | Serial Number | CPUs      | (GB)   | Storage   | MAC/VLAN/Network  | MAC/VLAN/Network | Notes |
-+----------+--------+-------+---------------+-----------+--------+-----------+-------------------+------------------+-------+
-| Frog     | ZTE    | R4300 | 277662500093  | E5-2620x2 | 32     | 600GB HDD | IF0: 10.20.0.1    |                  |       |
-|          |        |       |               |           |        |           | 98:F5:37:E1:B4:1C |                  |       |
-|          |        |       |               |           |        |           | VLAN 1            |                  |       |
-|          |        |       |               |           |        |           | PXE               |                  |       |
-+----------+--------+-------+---------------+-----------+--------+-----------+-------------------+------------------+-------+
+**Deploy Server**
 
+POD2 share the same **Deploy Server** with POD1.
+
++-----------+--------+-------+---------------+-----------+--------+-----------+--------------------+------------------+-------+
+|           |        |       |               |           | Memory | Local     | 1GbE: NIC#/IP      | 10GbE: NIC#/IP   |       |
+| Hostname  | Vendor | Model | Serial Number | CPUs      | (GB)   | Storage   | MAC/VLAN/Network   | MAC/VLAN/Network | Notes |
++-----------+--------+-------+---------------+-----------+--------+-----------+--------------------+------------------+-------+
+| Jellyfish | ZTE    | R5300 | 277662500093  | E5-2620x2 | 128    | 600GB SAS | IF0:               |                  |       |
+|           |        |       |               |           |        | 4 TB HDD  | 74:4a:a4:00:91:b3/ |                  |       |
+|           |        |       |               |           |        |           | 10.20.6.1/         |                  |       |
+|           |        |       |               |           |        |           | native vlan/PXE    |                  |       |
+|           |        |       |               |           |        |           | IF1:               |                  |       |
+|           |        |       |               |           |        |           | 74:4a:a4:00:91:b4/ |                  |       |
+|           |        |       |               |           |        |           | 10.20.7.1/         |                  |       |
+|           |        |       |               |           |        |           | native vlan/PXE    |                  |       |
++-----------+--------+-------+---------------+-----------+--------+-----------+--------------------+------------------+-------+
 
 
 **Compute Nodes**
@@ -126,5 +132,5 @@ Firewall Rules
 POD Topology
 ------------
 
-.. image:: ./zte_nj_pod2_topology.png
+.. image:: ./images/zte_sh_pod_topology.png
    :alt: POD diagram not found
