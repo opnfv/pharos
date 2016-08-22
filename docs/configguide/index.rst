@@ -12,13 +12,18 @@ OPNFV development, test and production activities rely on Pharos resources and s
 Pharos community. Lab owners and Pharos project committers/contributors will evolve the vision for
 Pharos as well as expand lab capabilities that are needed to help OPNFV be highly successful.
 
-Pharos configuration documents provide information on how to setup hardware and networks in a Pharos
-compliant lab. Jira is used to track Pharos activities including lab operations. PODs are connected
-to Jenkins and generally available 24/7 other than scheduled maintenance and troubleshooting. Lab
-resources are declared as either for *Development (bare-metal or virtual)*, *Production latest
-(bare-metal)* or *Production stable (bare-metal)*
+Pharos configuration documents provide information on how to setup hardware and networks in a
+Pharos compliant lab. Jira is used to track Pharos activities including lab operations. PODs are
+required to connect to Jenkins and generally available 24/7 other than scheduled maintenance and
+troubleshooting. Currently some of the Jenkins Slaves are **offline** status. Jenkins slave's
+status can be found in `Jenkins dashboard <https://build.opnfv.org/ci/>`_. Lab resources can be
+used for and declared as either *Development (bare-metal or virtual)* or *Production/CI (bare-metal
+or virtual)*. If a resource is used for and declared as *Development* resource, it can not be used
+for and declared as *Production/CI* resource at the same time and vice versa. Changing the resource
+declation must be brought in to Infra WG.
 
 .. toctree::
+   :maxdepth: 2
 
    ./configguide.rst
    ./lab_update_guide.rst
