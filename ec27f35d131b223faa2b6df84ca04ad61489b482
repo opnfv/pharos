@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_062c9146",
+        "filename": "docs/labs/ericsson/lab_description.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-22T23:09:52Z",
+      "side": 1,
+      "message": "the resources listed in the table bellow are not consistent with number here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 33,
+        "endLine": 15,
+        "endChar": 64
+      },
+      "revId": "ec27f35d131b223faa2b6df84ca04ad61489b482",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
