@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_2175f797",
+        "filename": "tools/pharos-dashboard/dashboard/fixtures/dashboard.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-23T08:33:59Z",
+      "side": 0,
+      "message": "why delete slave names here? or get the slavename from jenkins api?",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "7528d995257181b91c0d82dd82a2aa0f832ef63f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
