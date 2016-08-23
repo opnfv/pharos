@@ -13,12 +13,12 @@
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <form method="post" action="">
+                        <form enctype="multipart/form-data" method="post">
                             {% csrf_token %}
                             {% bootstrap_form form %}
                             {% buttons %}
                                 <button type="submit" class="btn btn btn-success">
-                                    Submit
+                                    Save
                                 </button>
                             {% endbuttons %}
                         </form>

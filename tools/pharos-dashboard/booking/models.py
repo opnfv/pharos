@@ -10,6 +10,7 @@ class Booking(models.Model):
     resource = models.ForeignKey(Resource, models.PROTECT)
     start = models.DateTimeField()
     end = models.DateTimeField()
+    jira_issue_id = models.IntegerField(null=True)
 
     purpose = models.CharField(max_length=300, blank=False)
 
@@ -25,10 +26,9 @@ class Booking(models.Model):
         if user.has_perm('booking.add_booking'):
             return True
         # Check if User owns this resource
-        if user in self.resource.owners.all():
+        if user == self.resource.owner:
             return True
         return False
-
 
     def save(self, *args, **kwargs):
         """

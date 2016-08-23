@@ -19,7 +19,9 @@ class BookingViewTestCase(TestCase):
     def setUp(self):
         self.client = Client()
         self.slave = JenkinsSlave.objects.create(name='test', url='test')
-        self.res1 = Resource.objects.create(name='res1', slave=self.slave, description='x', url='x')
+        self.owner = User.objects.create(username='owner')
+        self.res1 = Resource.objects.create(name='res1', slave=self.slave, description='x',
+                                            url='x',owner=self.owner)
         self.user1 = User.objects.create(username='user1')
         self.user1.set_password('user1')
         self.user1profile = UserProfile.objects.create(user=self.user1)

@@ -10,8 +10,8 @@ class Resource(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=300, blank=True, null=True)
     url = models.CharField(max_length=100, blank=True, null=True)
-    owners = models.ManyToManyField(User)
-    slave = models.ForeignKey(JenkinsSlave, on_delete=models.DO_NOTHING)
+    owner = models.ForeignKey(User)
+    slave = models.ForeignKey(JenkinsSlave, on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
         db_table = 'resource'

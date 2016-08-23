@@ -5,6 +5,8 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views import View
 from django.views.generic import FormView
+from django.shortcuts import redirect
+from jira import JIRAError
 
 from account.jira_util import get_jira
 from booking.forms import BookingForm
@@ -12,19 +14,25 @@ from booking.models import Booking
 from dashboard.models import Resource
 
 
+def create_jira_ticket(user, booking):
+    jira = get_jira(user)
+    issue_dict = {
+        'project': 'PHAROS',
+        'summary': str(booking.resource) + ': Access Request',
+        'description': booking.purpose,
+        'issuetype': {'name': 'Task'},
+        'components': [{'name': 'POD Access Request'}],
+        'assignee': {'name': booking.resource.owner.username}
+    }
+    issue = jira.create_issue(fields=issue_dict)
+    jira.add_attachment(issue, user.userprofile.pgp_public_key)
+    jira.add_attachment(issue, user.userprofile.ssh_public_key)
+    booking.jira_issue_id = issue.id
+
+
 class BookingFormView(LoginRequiredMixin, FormView):
     template_name = "booking/booking_calendar.html"
     form_class = BookingForm
-
-    def open_jira_issue(self,booking):
-        jira = get_jira(self.request.user)
-        issue_dict = {
-            'project': 'PHAROS',
-            'summary': 'Booking: ' + str(self.resource),
-            'description': str(booking),
-            'issuetype': {'name': 'Task'},
-        }
-        jira.create_issue(fields=issue_dict)
 
     def dispatch(self, request, *args, **kwargs):
         self.resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
@@ -40,9 +48,14 @@ class BookingFormView(LoginRequiredMixin, FormView):
         return reverse('booking:create', kwargs=self.kwargs)
 
     def form_valid(self, form):
+        user = self.request.user
+        if not user.userprofile.ssh_public_key or not user.userprofile.pgp_public_key:
+            messages.add_message(self.request, messages.INFO,
+                                 'Please upload your private keys before booking')
+            return redirect('account:settings')
         booking = Booking(start=form.cleaned_data['start'], end=form.cleaned_data['end'],
                           purpose=form.cleaned_data['purpose'], resource=self.resource,
-                          user=self.request.user)
+                          user=user)
         try:
             booking.save()
         except ValueError as err:
@@ -51,7 +64,14 @@ class BookingFormView(LoginRequiredMixin, FormView):
         except PermissionError as err:
             messages.add_message(self.request, messages.ERROR, err)
             return super(BookingFormView, self).form_invalid(form)
-        self.open_jira_issue(booking)
+        try:
+            create_jira_ticket(user, booking)
+        except JIRAError:
+            messages.add_message(self.request, messages.ERROR, 'Failed to create Jira Ticket. '
+                                                               'Please check your Jira '
+                                                               'permissions.')
+            booking.delete()
+            return super(BookingFormView, self).form_invalid(form)
         messages.add_message(self.request, messages.SUCCESS, 'Booking saved')
         return super(BookingFormView, self).form_valid(form)
 
