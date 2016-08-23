@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_9caf8ee3",
+        "filename": "tools/pharos-dashboard/booking/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3819
+      },
+      "writtenOn": "2016-08-23T14:53:21Z",
+      "side": 1,
+      "message": "This is accessing a model field via the django object relational mapper. I think it is the normal way to do this directly with django. I did however forget to call booking.save() afterwards, this will be fixed in the next commit. Also I will add a getter for the jira issue object, as a wrapper around the jira rest api.",
+      "parentUuid": "1a76adc5_bc37eae2",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 17
+      },
+      "revId": "6c993d9e3bd9a7c0fb94d7056e664648dd8d85cb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_c16523e2",
         "filename": "tools/pharos-dashboard/pharos_dashboard/settings.py",
         "patchSetId": 1
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "I think these code will be automatically deployed to the server if we plan to support CI/CD",
       "parentUuid": "1a76adc5_e1413f0c",
+      "range": {
+        "startLine": 126,
+        "startChar": 14,
+        "endLine": 126,
+        "endChar": 41
+      },
+      "revId": "6c993d9e3bd9a7c0fb94d7056e664648dd8d85cb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_fcaa42d3",
+        "filename": "tools/pharos-dashboard/pharos_dashboard/settings.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3819
+      },
+      "writtenOn": "2016-08-23T14:53:21Z",
+      "side": 1,
+      "message": "I have to write a seperate settings file for this purpose. This file contains debug settings that are only meant for development. I will remove the settings file in the next commit.",
+      "parentUuid": "1a76adc5_3c53da18",
       "range": {
         "startLine": 126,
         "startChar": 14,
