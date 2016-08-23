@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a76adc5_611a0f19",
+        "filename": "tools/pharos-dashboard/booking/models.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3819
+      },
+      "writtenOn": "2016-08-23T09:58:51Z",
+      "side": 1,
+      "message": "This is saved so that we can query the issue that was created for the booking. This will be useful to update the issue status in the dashboard and to know when a booking is confirmed.\nI think using the issue id is the right approach here, because it is immutable:\nhttps://answers.atlassian.com/questions/331327/issue-id-vs-issue-key\nI think finding the issues dynamically by searching issue titles would require a fixed naming scheme and would be likely to break.",
+      "parentUuid": "1a76adc5_a141073b",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 17
+      },
+      "revId": "6c993d9e3bd9a7c0fb94d7056e664648dd8d85cb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a76adc5_c16523e2",
         "filename": "tools/pharos-dashboard/pharos_dashboard/settings.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-23T08:33:59Z",
       "side": 1,
       "message": "what about /var/django_media ?",
+      "range": {
+        "startLine": 126,
+        "startChar": 14,
+        "endLine": 126,
+        "endChar": 41
+      },
+      "revId": "6c993d9e3bd9a7c0fb94d7056e664648dd8d85cb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_e1413f0c",
+        "filename": "tools/pharos-dashboard/pharos_dashboard/settings.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3819
+      },
+      "writtenOn": "2016-08-23T09:58:51Z",
+      "side": 1,
+      "message": "these are my development settings, they are not meant for production. So i will have to rewrite this before deploying. using /var/django_media is a good idea then, but i like to keep my development files in my home directory.",
+      "parentUuid": "1a76adc5_c16523e2",
       "range": {
         "startLine": 126,
         "startChar": 14,
