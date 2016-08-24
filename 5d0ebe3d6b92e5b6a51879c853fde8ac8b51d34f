@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_77a72d50",
+        "filename": "docs/labs/zte-sh-lab/pod2_description.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-24T08:21:51Z",
+      "side": 1,
+      "message": "not consistent with pod1_description",
+      "range": {
+        "startLine": 50,
+        "startChar": 2,
+        "endLine": 50,
+        "endChar": 14
+      },
+      "revId": "5d0ebe3d6b92e5b6a51879c853fde8ac8b51d34f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_b7adc533",
+        "filename": "docs/labs/zte-sh-lab/pod2_description.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-08-24T08:21:51Z",
+      "side": 1,
+      "message": "native vlan 170 not 1",
+      "range": {
+        "startLine": 58,
+        "startChar": 101,
+        "endLine": 58,
+        "endChar": 107
+      },
+      "revId": "5d0ebe3d6b92e5b6a51879c853fde8ac8b51d34f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
