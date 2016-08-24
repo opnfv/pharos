@@ -2,48 +2,45 @@ nodes:
    - name: node1
      tags: control      #optional param, other valid value "compute"
      arch: "x86_64"
-     mac_address: "3c:da:2a:e8:01:ed" #pxe boot interface mac
+     mac_address: "74:4A:A4:00:CD:72" #pxe boot interface mac
      power:
        type: ipmi
-       address: 129.5.1.9
+       address: 192.168.1.106
        user: zteroot
        pass: superuser
    - name: node2
      tags: control
      arch: "x86_64"
-     mac_address: "3c:da:2a:e8:02:4c"
+     mac_address: "74:4A:A4:00:CA:CC"
      power:
        type: ipmi
-       address: 129.5.1.10
+       address: 192.168.1.107
        user: zteroot
        pass: superuser
    - name: node3
      tags: control
      arch: "x86_64"
-     mac_address: "3c:da:2a:e8:01:a7"
+     mac_address: "74:4A:A4:00:CD:12"
      power:
        type: ipmi
-       address: 129.5.1.11
+       address: 192.168.1.108
        user: zteroot
        pass: superuser
-
    - name: node4
      tags: compute
      arch: "x86_64"
-     mac_address: "3c:da:2a:e8:01:ca"
+     mac_address: "74:4A:A4:00:CF:40"
      power:
        type: ipmi
-       address: 129.5.1.12
+       address: 192.168.1.109
        user: zteroot
        pass: superuser
-
    - name: node5
      tags: compute
      arch: "x86_64"
-     mac_address: "3c:da:2a:e8:01:b6"
+     mac_address: "74:4A:A4:00:CE:D4"
      power:
        type: ipmi
-       address: 129.5.1.13
+       address: 192.168.1.110
        user: zteroot
        pass: superuser
-
