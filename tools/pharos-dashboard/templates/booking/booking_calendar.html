@@ -11,7 +11,6 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <div class="row">
     <div class="col-lg-8">
         <div class="container-fluid">
             <div class="panel panel-default">
@@ -57,11 +56,31 @@
             </div>
         </div>
     </div>
+
+    <div id="booking_detail_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Booking Detail</h4>
+                </div>
+                <div class="modal-body" id="booking_detail_content">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 {% endblock content %}
 
 {% block extrajs %}
     <script type="text/javascript">
-        var bookings_url = "{% url 'booking:bookings_json' resource_id=resource.id %}"
+        var bookings_url = "{% url 'booking:bookings_json' resource_id=resource.id %}";
+        var booking_detail_prefix = "{% url 'booking:detail_prefix' %}";
         var user_timezone = "{{ request.user.userprofile.timezone }}"
     </script>
 
