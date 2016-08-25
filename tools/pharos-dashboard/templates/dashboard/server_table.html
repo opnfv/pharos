@@ -1,0 +1,30 @@
+<thead>
+<tr>
+    <th>Server</th>
+    <th>Model</th>
+    <th>CPU</th>
+    <th>RAM</th>
+    <th>Storage</th>
+</tr>
+</thead>
+<tbody>
+{% for server in resource.server_set.all %}
+    <tr>
+        <th>
+            {{ server.name }}
+        </th>
+        <th>
+            {{ server.model }}
+        </th>
+        <th>
+            {{ server.cpu }}
+        </th>
+        <th>
+            {{ server.ram }}
+        </th>
+        <th>
+            {{ server.storage }}
+        </th>
+    </tr>
+{% endfor %}`
+</tbody>

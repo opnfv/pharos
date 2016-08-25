@@ -9,7 +9,7 @@ def jenkins_job_color(job_result):
         return '#d9534f'
     if job_result == 'UNSTABLE':
         return '#EDD62B'
-    return '#646F73' # job is still building
+    return '#646F73'  # job is still building
 
 
 @register.filter
@@ -21,7 +21,8 @@ def jenkins_status_color(slave_status):
     if slave_status == 'online / idle':
         return '#5bc0de'
 
+
 @register.filter
 def jenkins_job_blink(job_result):
-    if job_result == '': # job is still building
+    if job_result == '':  # job is still building
         return 'class=blink_me'

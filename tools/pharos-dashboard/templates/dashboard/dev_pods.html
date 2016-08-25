@@ -18,7 +18,7 @@
     {% for pod, booking in dev_pods %}
         <tr>
             <th>
-                <a target='_blank' href={{ pod.url }}>{{ pod.name }}</a>
+                <a href={% url 'dashboard:resource' resource_id=pod.id %}>{{ pod.name }}</a>
             </th>
             <th>
                 <a target='_blank' href={{ pod.slave.url }}>{{ pod.slave.name }}</a>

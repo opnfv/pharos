@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Utilization
+            </div>
+            <div class="panel-body">
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="{{ resource.id }}_slave_utilization"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Servers
+            </div>
+            <div class="panel-body">
+                <div class="dataTables_wrapper">
+                    <table class="table table-striped table-bordered table-hover"
+                           id="{{ resource.id }}_server_table" cellspacing="0"
+                           width="100%">
+                        {% include "dashboard/server_table.html" %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Bookings
+            </div>
+            <div class="panel-body">
+                <div class="dataTables_wrapper">
+                    <table class="table table-striped table-bordered table-hover"
+                           id="{{ resource.id }}_bookings_table" cellspacing="0"
+                           width="100%">
+                        {% include "booking/booking_table.html" %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var data_{{ resource.id }} = [{
+        label: "Offline",
+        data: {{ utilization.offline }},
+        color: '#d9534f'
+    }, {
+        label: "Online",
+        data: {{ utilization.online }},
+        color: '#5cb85c'
+    }, {
+        label: "Idle",
+        data: {{ utilization.idle }},
+        color: '#5bc0de'
+    }];
+</script>

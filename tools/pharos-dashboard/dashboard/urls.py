@@ -21,8 +21,8 @@ urlpatterns = [
     url(r'^ci_pods/$', CIPodsView.as_view(), name='ci_pods'),
     url(r'^dev_pods/$', DevelopmentPodsView.as_view(), name='dev_pods'),
     url(r'^jenkins_slaves/$', JenkinsSlavesView.as_view(), name='jenkins_slaves'),
-    url(r'^resource/all/', LabOwnerView.as_view(),
-        name='resources'),
+    url(r'^resource/all/$', LabOwnerView.as_view(), name='resources'),
+    url(r'^resource/(?P<resource_id>[0-9]+)/$', ResourceView.as_view(), name='resource'),
 
     url(r'^$', DevelopmentPodsView.as_view(), name="index"),
 ]

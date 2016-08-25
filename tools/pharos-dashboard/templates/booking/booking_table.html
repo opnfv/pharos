@@ -1,0 +1,33 @@
+{% load jira_filters %}
+
+
+<thead>
+<tr>
+    <th>User</th>
+    <th>Purpose</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Jira</th>
+</tr>
+</thead>
+<tbody>
+{% for booking in bookings %}
+    <tr>
+        <th>
+            {{ booking.user.username }}
+        </th>
+        <th>
+            {{ booking.purpose }}
+        </th>
+        <th>
+            {{ booking.start }}
+        </th>
+        <th>
+            {{ booking.end }}
+        </th>
+        <th><a target='_blank'
+               href={{ booking.get_jira_issue | jira_issue_url }}>{{ booking.get_jira_issue }}</a>
+        </th>
+    </tr>
+{% endfor %}
+</tbody>
