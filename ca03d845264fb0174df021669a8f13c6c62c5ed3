@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_f5f25099",
+        "filename": "docs/labs/orange-lannion-lab/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1681
+      },
+      "writtenOn": "2016-08-29T12:33:28Z",
+      "side": 1,
+      "message": "Are you sure about \"fuel\" and \"foreman\" jumpserver ? Maybe you could change that by \"joid-jumphost server\"",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 15
+      },
+      "revId": "ca03d845264fb0174df021669a8f13c6c62c5ed3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
