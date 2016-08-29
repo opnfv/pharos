@@ -62,6 +62,23 @@ var calendarOptions = {
                 tmpevent = undefined;
             }
         }
+
+        // tmpevent is deleted if a real event is clicked, load event details
+        if (tmpevent == undefined) {
+            var booking_detail_url = booking_detail_prefix + event.id;
+
+            $.ajax({
+                url: booking_detail_url,
+                type: 'get',
+                success: function (data) {
+                    $('#booking_detail_content').html(data);
+                },
+                failure: function (data) {
+                    alert('Error loading booking details');
+                }
+            });
+            $('#booking_detail_modal').modal('show');
+        }
     },
 
     eventDrop: function (event) {

@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'^(?P<resource_id>[0-9]+)/$', BookingFormView.as_view(), name='create'),
     url(r'^(?P<resource_id>[0-9]+)/bookings_json/$', ResourceBookingsJSON.as_view(),
         name='bookings_json'),
+    url(r'^detail/$', BookingView.as_view(), name='detail_prefix'),
+    url(r'^detail/(?P<booking_id>[0-9]+)/$', BookingView.as_view(), name='detail'),
 ]

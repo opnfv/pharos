@@ -1,11 +1,12 @@
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import FormView
-from django.shortcuts import redirect
+from django.views.generic import TemplateView
 from jira import JIRAError
 
 from account.jira_util import get_jira
@@ -28,6 +29,7 @@ def create_jira_ticket(user, booking):
     jira.add_attachment(issue, user.userprofile.pgp_public_key)
     jira.add_attachment(issue, user.userprofile.ssh_public_key)
     booking.jira_issue_id = issue.id
+    booking.save()
 
 
 class BookingFormView(LoginRequiredMixin, FormView):
@@ -74,6 +76,18 @@ class BookingFormView(LoginRequiredMixin, FormView):
             return super(BookingFormView, self).form_invalid(form)
         messages.add_message(self.request, messages.SUCCESS, 'Booking saved')
         return super(BookingFormView, self).form_valid(form)
+
+
+class BookingView(TemplateView):
+    template_name = "booking/booking_detail.html"
+
+    def get_context_data(self, **kwargs):
+        booking = get_object_or_404(Booking, id=self.kwargs['booking_id'])
+        jira_issue = booking.get_jira_issue()
+        title = 'Booking Details'
+        context = super(BookingView, self).get_context_data(**kwargs)
+        context.update({'title': title, 'booking': booking, 'jira_issue': jira_issue})
+        return context
 
 
 class ResourceBookingsJSON(View):

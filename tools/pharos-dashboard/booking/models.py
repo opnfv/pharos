@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
+from jira import JIRA
 
 from dashboard.models import Resource
+from pharos_dashboard import settings
 
 
 class Booking(models.Model):
@@ -16,6 +18,11 @@ class Booking(models.Model):
 
     class Meta:
         db_table = 'booking'
+
+    def get_jira_issue(self):
+        jira = JIRA(server=settings.JIRA_URL, basic_auth=(settings.JIRA_USER_NAME, settings.JIRA_USER_PASSWORD))
+        issue = jira.issue(self.jira_issue_id)
+        return issue
 
     def authorization_test(self):
         """
@@ -41,13 +48,12 @@ class Booking(models.Model):
         if self.start >= self.end:
             raise ValueError('Start date is after end date')
         # conflicts end after booking starts, and start before booking ends
-        conflicting_dates = Booking.objects.filter(resource=self.resource)
+        conflicting_dates = Booking.objects.filter(resource=self.resource).exclude(id=self.id)
         conflicting_dates = conflicting_dates.filter(end__gt=self.start)
         conflicting_dates = conflicting_dates.filter(start__lt=self.end)
         if conflicting_dates.count() > 0:
             raise ValueError('This booking overlaps with another booking')
         return super(Booking, self).save(*args, **kwargs)
-
 
     def __str__(self):
         return str(self.resource) + ' from ' + str(self.start) + ' until ' + str(self.end)

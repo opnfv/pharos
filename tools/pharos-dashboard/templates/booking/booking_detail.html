@@ -1,0 +1,26 @@
+{% load jira_filters %}
+
+<p>
+    <b>Resource: </b>
+    <a href="{{ booking.resource.url }}">
+        {{ booking.resource.name }}
+    </a>
+</p>
+<p>
+    <b>User: </b> {{ booking.user.username }}
+</p>
+<p>
+    <b>Start: </b> {{ booking.start }}
+</p>
+<p>
+    <b>End: </b> {{ booking.end }}
+</p>
+<p>
+    <b>Purpose: </b> {{ booking.purpose }}
+</p>
+<p>
+    <b>Jira: </b>
+    <a href="{{ jira_issue | jira_issue_url }}">
+        {{ jira_issue }}
+    </a>
+</p>
