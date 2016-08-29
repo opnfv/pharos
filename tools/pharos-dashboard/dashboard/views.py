@@ -1,12 +1,12 @@
 from datetime import timedelta
 
-from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.views.generic import TemplateView
 
 from booking.models import Booking
 from dashboard.models import Resource
-from jenkins.models import JenkinsSlave, JenkinsStatistic
+from jenkins.models import JenkinsSlave
 
 
 class JenkinsSlavesView(TemplateView):
@@ -51,25 +51,27 @@ class DevelopmentPodsView(TemplateView):
         return context
 
 
+class ResourceView(TemplateView):
+    template_name = "dashboard/resource.html"
+
+    def get_context_data(self, **kwargs):
+        resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
+        utilization = resource.slave.get_utilization(timedelta(days=7))
+        bookings = Booking.objects.filter(resource=resource, end__gt=timezone.now())
+        context = super(ResourceView, self).get_context_data(**kwargs)
+        context.update({'title': str(resource), 'resource': resource, 'utilization': utilization, 'bookings': bookings})
+        return context
+
+
 class LabOwnerView(TemplateView):
-    template_name = "dashboard/lab_owner.html"
+    template_name = "dashboard/resource_all.html"
 
     def get_context_data(self, **kwargs):
         resources = Resource.objects.filter(slave__dev_pod=True)
         pods = []
         for resource in resources:
-            utilization = {'idle': 0, 'online': 0, 'offline': 0}
-            # query measurement points for the last week
-            statistics = JenkinsStatistic.objects.filter(slave=resource.slave,
-                                                         timestamp__gte=timezone.now() - timedelta(
-                                                             days=7))
-
-            utilization['idle'] = statistics.filter(idle=True).count()
-            utilization['online'] = statistics.filter(online=True).count()
-            utilization['offline'] = statistics.filter(offline=True).count()
-
+            utilization = resource.slave.get_utilization(timedelta(days=7))
             bookings = Booking.objects.filter(resource=resource, end__gt=timezone.now())
-
             pods.append((resource, utilization, bookings))
         context = super(LabOwnerView, self).get_context_data(**kwargs)
         context.update({'title': "Overview", 'pods': pods})

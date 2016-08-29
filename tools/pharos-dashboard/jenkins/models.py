@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class JenkinsSlave(models.Model):
@@ -17,6 +18,18 @@ class JenkinsSlave(models.Model):
     last_job_branch = models.CharField(max_length=50, default='')
     last_job_installer = models.CharField(max_length=50, default='')
     last_job_result = models.CharField(max_length=30, default='')
+
+    def get_utilization(self, timedelta):
+        """
+        Return a dictionary containing the count of idle, online and offline measurements in the time from
+        now-timedelta to now
+        """
+        utilization = {'idle': 0, 'online': 0, 'offline': 0}
+        statistics = self.jenkinsstatistic_set.filter(timestamp__gte=timezone.now() - timedelta)
+        utilization['idle'] = statistics.filter(idle=True).count()
+        utilization['online'] = statistics.filter(online=True).count()
+        utilization['offline'] = statistics.filter(offline=True).count()
+        return utilization
 
     class Meta:
         db_table = 'jenkins_slave'

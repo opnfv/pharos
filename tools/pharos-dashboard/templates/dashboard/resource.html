@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+    <!-- Morris Charts CSS -->
+    <link href="{% static "bower_components/morrisjs/morris.css" %}" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" %}"
+          rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{% static "bower_components/datatables-responsive/css/dataTables.responsive.css" %}"
+          rel="stylesheet">
+{% endblock extrahead %}
+
+
+{% block content %}
+    {% include "dashboard/resource_detail.html" %}
+{% endblock content %}
+
+
+{% block extrajs %}
+    <!-- DataTables JavaScript -->
+    <link href="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" %}"
+          rel="stylesheet">
+
+    <script src={% static "bower_components/datatables/media/js/jquery.dataTables.min.js" %}></script>
+    <script src={% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js" %}></script>
+
+
+
+    <!-- Flot Charts JavaScript -->
+    <script src="{% static "bower_components/flot/excanvas.min.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.pie.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.resize.js" %}"></script>
+    <script src="{% static "bower_components/flot/jquery.flot.time.js" %}"></script>
+    <script src="{% static "bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js" %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#{{ resource.id }}_server_table').DataTable({});
+            $('#{{ resource.id }}_bookings_table').DataTable({});
+
+            $(function () {
+                var plotObj = $.plot($("#{{ resource.id }}_slave_utilization"), data_{{ resource.id }}, {
+                    series: {
+                        pie: {
+                            show: true
+                        }
+                    }
+                });
+
+            });
+        });
+    </script>
+{% endblock extrajs %}

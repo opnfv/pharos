@@ -5,31 +5,43 @@
     <!-- Morris Charts CSS -->
     <link href="{% static "bower_components/morrisjs/morris.css" %}" rel="stylesheet">
 
+    <!-- DataTables CSS -->
+    <link href="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" %}"
+          rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{% static "bower_components/datatables-responsive/css/dataTables.responsive.css" %}"
+          rel="stylesheet">
 {% endblock extrahead %}
 
 
 {% block content %}
-    <div class="row">
-        {% for resource, utilization in pods %}
-            <div class="col-lg-3">
+    {% for resource, utilization, bookings in pods %}
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         {{ resource.name }}
                     </div>
                     <div class="panel-body">
-                        <div class="flot-chart">
-                            <div class="flot-chart-content" id="{{ resource.slave.name }}"></div>
-                        </div>
+                        {% include "dashboard/resource_detail.html" %}
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-
+        </div>
+    {% endfor %}
 {% endblock content %}
 
 
 {% block extrajs %}
+    <!-- DataTables JavaScript -->
+    <link href="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" %}"
+          rel="stylesheet">
+
+    <script src={% static "bower_components/datatables/media/js/jquery.dataTables.min.js" %}></script>
+    <script src={% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js" %}></script>
+
+
 
     <!-- Flot Charts JavaScript -->
     <script src="{% static "bower_components/flot/excanvas.min.js" %}"></script>
@@ -41,46 +53,22 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            {% for resource, utilization in pods %}
-                $(function () {
-                    var data = [{
-                        label: "Offline",
-                        data: {{ utilization.offline }},
-                        color: '#d9534f'
-                    }, {
-                        label: "Online",
-                        data: {{ utilization.online }},
-                        color: '#5cb85c'
-                    }, {
-                        label: "Idle",
-                        data: {{ utilization.idle }},
-                        color: '#5bc0de'
-                    }];
+            {% for resource, utilization, bookings in pods %}
 
-                    var plotObj = $.plot($("#{{ resource.slave.name }}"), data, {
+                $('#{{ resource.id }}_server_table').DataTable({});
+                $('#{{ resource.id }}_bookings_table').DataTable({});
+
+                $(function () {
+                    var plotObj = $.plot($("#{{ resource.id }}_slave_utilization"), data_{{ resource.id }}, {
                         series: {
                             pie: {
                                 show: true
                             }
-                        },
-                        grid: {
-                            hoverable: true
-                        },
-                        tooltip: true,
-                        tooltipOpts: {
-                            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-                            shifts: {
-                                x: 20,
-                                y: 0
-                            },
-                            defaultTheme: false
                         }
                     });
 
                 });
             {% endfor %}
-
         });
     </script>
-
 {% endblock extrajs %}
