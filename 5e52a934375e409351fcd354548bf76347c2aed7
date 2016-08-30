@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_70e96e7f",
+        "filename": "INFO",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-08-30T06:35:02Z",
+      "side": 1,
+      "message": "It should be Jack Morgan...",
+      "range": {
+        "startLine": 5,
+        "startChar": 24,
+        "endLine": 5,
+        "endChar": 30
+      },
+      "revId": "5e52a934375e409351fcd354548bf76347c2aed7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_90ec4a91",
+        "filename": "INFO",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-08-30T06:35:02Z",
+      "side": 1,
+      "message": "same Pharos PTL is no more Trevor",
+      "range": {
+        "startLine": 6,
+        "startChar": 21,
+        "endLine": 6,
+        "endChar": 27
+      },
+      "revId": "5e52a934375e409351fcd354548bf76347c2aed7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_3003f643",
+        "filename": "INFO",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-08-30T06:35:02Z",
+      "side": 1,
+      "message": "trailing space",
+      "range": {
+        "startLine": 26,
+        "startChar": 45,
+        "endLine": 26,
+        "endChar": 46
+      },
+      "revId": "5e52a934375e409351fcd354548bf76347c2aed7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
