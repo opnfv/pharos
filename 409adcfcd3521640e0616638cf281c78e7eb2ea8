@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_e9d7d421",
+        "filename": "docs/labs/orange-lannion-lab/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2827
+      },
+      "writtenOn": "2016-09-02T07:36:07Z",
+      "side": 1,
+      "message": "espace en trop",
+      "range": {
+        "startLine": 14,
+        "startChar": 26,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "409adcfcd3521640e0616638cf281c78e7eb2ea8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
