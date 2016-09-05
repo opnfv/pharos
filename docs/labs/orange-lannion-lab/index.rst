@@ -11,7 +11,7 @@ servers for the use of OPNFV community as part of the OPNFV Pharos Project
 The Orange Testlab consists of PODs
       * POD2 for Joid
 
-POD2 consists of 8 servers 
+POD2 consists of 8 servers
     * 1 Jump Server
     * 4 Servers for Control Nodes
     * 3 Servers for Compute Nodes
@@ -62,11 +62,12 @@ Networks
 POD2-Joid
 ^^^^^^^^^^^^
 
-.. image:: images/Orange_POD2.jpg
+.. image:: ../images/orange_pod2.png
    :height: 721
    :width: 785
    :alt: POD2-Joid Overview
    :align: left
+
 
 
 +--------------+--------------------------------------+-------+-------------------+-----+--------+
