@@ -62,11 +62,12 @@ Networks
 POD2-Joid
 ^^^^^^^^^^^^
 
-.. image:: images/Orange_POD2.jpg
+.. image:: ../images/orange_pod2.png
    :height: 721
    :width: 785
    :alt: POD2-Joid Overview
    :align: left
+
 
 
 +--------------+--------------------------------------+-------+-------------------+-----+--------+
