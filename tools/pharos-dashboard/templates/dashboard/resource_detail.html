@@ -29,7 +29,39 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Booking Utilization
+                <div class="pull-right">
+                    <div class="form-group">
+                        <select onchange="loadChartData('{{ resource.id }}_booking_utilization', this.value);">
+                            <option value="{% url 'dashboard:booking_utilization' resource_id=resource.id weeks=-4 %}">
+                                Last Month
+                            </option>
+                            <option value="{% url 'dashboard:booking_utilization' resource_id=resource.id weeks=-1 %}">
+                                Last Week
+                            </option>
+                            <option value="{% url 'dashboard:booking_utilization' resource_id=resource.id weeks=1 %}">
+                                Next Week
+                            </option>
+                            <option selected="selected"
+                                    value="{% url 'dashboard:booking_utilization' resource_id=resource.id weeks=4 %}">
+                                Next Month
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="flot-chart">
+                    <div class="flot-chart-content"
+                         id="{{ resource.id }}_booking_utilization"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Bookings

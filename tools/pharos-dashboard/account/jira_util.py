@@ -5,7 +5,7 @@ import oauth2 as oauth
 from jira import JIRA
 from tlslite.utils import keyfactory
 
-from pharos_dashboard import settings
+from django.conf import settings
 
 
 class SignatureMethod_RSA_SHA1(oauth.SignatureMethod):

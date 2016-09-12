@@ -50,6 +50,7 @@
     <script src="{% static "bower_components/flot/jquery.flot.resize.js" %}"></script>
     <script src="{% static "bower_components/flot/jquery.flot.time.js" %}"></script>
     <script src="{% static "bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js" %}"></script>
+    <script src="{% static "js/flot-pie-chart.js" %}"></script><
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -57,17 +58,15 @@
 
                 $('#{{ resource.id }}_server_table').DataTable({});
                 $('#{{ resource.id }}_bookings_table').DataTable({});
+                $('#{{ resource.id }}_vpn_user_table').DataTable({});
 
-                $(function () {
-                    var plotObj = $.plot($("#{{ resource.id }}_slave_utilization"), data_{{ resource.id }}, {
-                        series: {
-                            pie: {
-                                show: true
-                            }
-                        }
-                    });
+                var chart_id = "{{ resource.id }}_booking_utilization";
+                var utilization_url = "{% url 'dashboard:booking_utilization' resource_id=resource.id weeks=4 %}";
+                loadChartData(chart_id, utilization_url);
 
-                });
+                var chart_id = "{{ resource.id }}_jenkins_utilization";
+                var utilization_url = "{% url 'dashboard:jenkins_utilization' resource_id=resource.id weeks=1 %}";
+                loadChartData(chart_id, utilization_url);
             {% endfor %}
         });
     </script>

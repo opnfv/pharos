@@ -23,6 +23,9 @@ urlpatterns = [
     url(r'^jenkins_slaves/$', JenkinsSlavesView.as_view(), name='jenkins_slaves'),
     url(r'^resource/all/$', LabOwnerView.as_view(), name='resources'),
     url(r'^resource/(?P<resource_id>[0-9]+)/$', ResourceView.as_view(), name='resource'),
-
+    url(r'^resource/(?P<resource_id>[0-9]+)/booking_utilization/(?P<weeks>-?\d+)/$',
+        BookingUtilizationJSON.as_view(), name='booking_utilization'),
+    url(r'^resource/(?P<resource_id>[0-9]+)/jenkins_utilization/(?P<weeks>-?\d+)/$',
+        JenkinsUtilizationJSON.as_view(), name='jenkins_utilization'),
     url(r'^$', DevelopmentPodsView.as_view(), name="index"),
 ]

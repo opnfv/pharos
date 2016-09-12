@@ -59,7 +59,8 @@ class ResourceView(TemplateView):
         utilization = resource.slave.get_utilization(timedelta(days=7))
         bookings = Booking.objects.filter(resource=resource, end__gt=timezone.now())
         context = super(ResourceView, self).get_context_data(**kwargs)
-        context.update({'title': str(resource), 'resource': resource, 'utilization': utilization, 'bookings': bookings})
+        context.update({'title': str(resource), 'resource': resource, 'utilization': utilization,
+                        'bookings': bookings})
         return context
 
 
@@ -76,3 +77,22 @@ class LabOwnerView(TemplateView):
         context = super(LabOwnerView, self).get_context_data(**kwargs)
         context.update({'title': "Overview", 'pods': pods})
         return context
+
+
+class BookingUtilizationJSON(View):
+    def get(self, request, *args, **kwargs):
+        resource = get_object_or_404(Resource, id=kwargs['resource_id'])
+        utilization = resource.get_booking_utilization(int(kwargs['weeks']))
+        utilization = [
+            {
+                'label': 'Booked',
+                'data': utilization['booked_seconds'],
+                'color': '#d9534f'
+            },
+            {
+                'label': 'Available',
+                'data': utilization['available_seconds'],
+                'color': '#5cb85c'
+            },
+        ]
+        return JsonResponse({'data': utilization})

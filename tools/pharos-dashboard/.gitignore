@@ -20,6 +20,7 @@ coverage.xml
 *.log
 *.pot
 migrations/
+settings.py
 
 # KDE:
 .directory

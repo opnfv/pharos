@@ -1,6 +1,6 @@
 from django.template.defaultfilters import register
 
-from pharos_dashboard import settings
+from django.conf import settings
 
 
 @register.filter
