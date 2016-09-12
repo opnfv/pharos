@@ -40,10 +40,18 @@ class DevelopmentPodsView(TemplateView):
 
         dev_pods = []
         for resource in resources:
-            dev_pod = (resource, None)
+            booking_utilization = resource.get_booking_utilization(weeks=4)
+            total = booking_utilization['booked_seconds'] + booking_utilization['available_seconds']
+            try:
+               utilization_percentage =  "%d%%" % (float(booking_utilization['booked_seconds']) /
+                                                   total * 100)
+            except (ValueError, ZeroDivisionError):
+                return ""
+
+            dev_pod = (resource, None, utilization_percentage)
             for booking in bookings:
                 if booking.resource == resource:
-                    dev_pod = (resource, booking)
+                    dev_pod = (resource, booking, utilization_percentage)
             dev_pods.append(dev_pod)
 
         context = super(DevelopmentPodsView, self).get_context_data(**kwargs)

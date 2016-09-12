@@ -10,12 +10,14 @@
         <th>Booked by</th>
         <th>Booked until</th>
         <th>Purpose</th>
+        <th>Utilization</th>
         <th>Status</th>
+        <th></th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    {% for pod, booking in dev_pods %}
+    {% for pod, booking, utilization in dev_pods %}
         <tr>
             <th>
                 <a href={% url 'dashboard:resource' resource_id=pod.id %}>{{ pod.name }}</a>
@@ -32,12 +34,20 @@
             <th>
                 {{ booking.purpose }}
             </th>
+            <th>
+                {{ utilization }}
+            </th>
             <th style="background-color:{{ pod.slave.status | jenkins_status_color }}">
                 {{ pod.slave.status }}
             </th>
             <th>
                 <a href="{% url 'booking:create' resource_id=pod.id %}" class="btn btn-primary">
                     Book
+                </a>
+            </th>
+            <th>
+                <a href="{% url 'dashboard:resource' resource_id=pod.id %}" class="btn btn-primary">
+                    Info
                 </a>
             </th>
         </tr>
@@ -50,9 +60,9 @@
         $(document).ready(function () {
             $('#table').DataTable({
                 columnDefs: [
-                    {type: 'status', targets: 5}
+                    {type: 'status', targets: 6}
                 ],
-                "order": [[5, "asc"]]
+                "order": [[6, "asc"]]
             });
         });
     </script>
