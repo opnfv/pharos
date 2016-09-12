@@ -16,6 +16,24 @@
       "revId": "c684fe13cf6f3b4666a664bfdc638e446b2d123f",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_dfacf737",
+        "filename": "tools/pharos-dashboard/.gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 3819
+      },
+      "writtenOn": "2016-09-12T10:23:53Z",
+      "side": 1,
+      "message": "yes, these settings are specific to my development environment. The production settings are not supposed to be in version control for security reasons.",
+      "parentUuid": "1a76adc5_1fa4af55",
+      "revId": "c684fe13cf6f3b4666a664bfdc638e446b2d123f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
