@@ -10,13 +10,14 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import RedirectView
+from django.views.generic import TemplateView
 from django.views.generic import UpdateView
 from jira import JIRA
 
 from account.forms import AccountSettingsForm
 from account.jira_util import SignatureMethod_RSA_SHA1
 from account.models import UserProfile
-from pharos_dashboard import settings
+from django.conf import settings
 
 consumer = oauth.Consumer(settings.OAUTH_CONSUMER_KEY, settings.OAUTH_CONSUMER_SECRET)
 
@@ -50,7 +51,8 @@ class JiraLoginView(RedirectView):
         self.request.session['request_token'] = dict(urllib.parse.parse_qsl(content.decode()))
         # Step 3. Redirect the user to the authentication URL.
         url = settings.OAUTH_AUTHORIZE_URL + '?oauth_token=' + \
-              self.request.session['request_token']['oauth_token']
+                self.request.session['request_token']['oauth_token'] + \
+              '&oauth_callback=' + settings.OAUTH_CALLBACK_URL
         return url
 
 
@@ -109,3 +111,12 @@ class JiraAuthenticatedView(RedirectView):
         login(self.request, user)
         # redirect user to settings page to complete profile
         return url
+
+class UserListView(TemplateView):
+    template_name = "account/user_list.html"
+
+    def get_context_data(self, **kwargs):
+        users = User.objects.all()
+        context = super(UserListView, self).get_context_data(**kwargs)
+        context.update({'title': "Dashboard Users", 'users': users})
+        return context

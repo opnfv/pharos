@@ -1,0 +1,42 @@
+{% extends "dashboard/table.html" %}
+{% load staticfiles %}
+
+{% block table %}
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Company</th>
+        <th>SSH Key</th>
+        <th>GPG Key</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <th>
+                {{ user.username }}
+            </th>
+            <th>
+                {{ user.userprofile.company }}
+            </th>
+            <th>
+                <a href={{ user.userprofile.ssh_public_key.url }}>Download</a>
+            </th>
+            <th>
+                <a href={{ user.userprofile.pgp_public_key.url }}>Download</a>
+            </th>
+        </tr>
+    {% endfor %}
+    </tbody>
+{% endblock table %}
+
+
+{% block tablejs %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable({
+                "order": [[0, "asc"]]
+            });
+        });
+    </script>
+{% endblock tablejs %}

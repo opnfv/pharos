@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^settings/', AccountSettingsView.as_view(), name='settings'),
     url(r'^authenticated/$', JiraAuthenticatedView.as_view(), name='authenticated'),
     url(r'^login/$', JiraLoginView.as_view(), name='login'),
-    url(r'^logout/$', JiraLogoutView.as_view(), name='logout')
+    url(r'^logout/$', JiraLogoutView.as_view(), name='logout'),
+    url(r'^users/$', UserListView.as_view(), name='users'),
 ]
