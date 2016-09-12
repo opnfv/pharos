@@ -1,9 +1,13 @@
+from datetime import timedelta
+
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.utils import timezone
 from django.views import View
 from django.views.generic import FormView
 from django.views.generic import TemplateView
@@ -67,7 +71,8 @@ class BookingFormView(LoginRequiredMixin, FormView):
             messages.add_message(self.request, messages.ERROR, err)
             return super(BookingFormView, self).form_invalid(form)
         try:
-            create_jira_ticket(user, booking)
+            if settings.CREATE_JIRA_TICKET:
+                create_jira_ticket(user, booking)
         except JIRAError:
             messages.add_message(self.request, messages.ERROR, 'Failed to create Jira Ticket. '
                                                                'Please check your Jira '
@@ -93,5 +98,6 @@ class BookingView(TemplateView):
 class ResourceBookingsJSON(View):
     def get(self, request, *args, **kwargs):
         resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
-        bookings = resource.booking_set.get_queryset().values('id', 'start', 'end', 'purpose')
+        bookings = resource.booking_set.get_queryset().values('id', 'start', 'end', 'purpose',
+                                                              'jira_issue_status')
         return JsonResponse({'bookings': list(bookings)})

@@ -1,10 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
 from jira import JIRA
+from jira import JIRAError
 
 from dashboard.models import Resource
-from pharos_dashboard import settings
-
+from django.conf import settings
 
 class Booking(models.Model):
     id = models.AutoField(primary_key=True)
@@ -13,6 +13,7 @@ class Booking(models.Model):
     start = models.DateTimeField()
     end = models.DateTimeField()
     jira_issue_id = models.IntegerField(null=True)
+    jira_issue_status = models.CharField(max_length=50)
 
     purpose = models.CharField(max_length=300, blank=False)
 
@@ -20,9 +21,13 @@ class Booking(models.Model):
         db_table = 'booking'
 
     def get_jira_issue(self):
-        jira = JIRA(server=settings.JIRA_URL, basic_auth=(settings.JIRA_USER_NAME, settings.JIRA_USER_PASSWORD))
-        issue = jira.issue(self.jira_issue_id)
-        return issue
+        try:
+            jira = JIRA(server=settings.JIRA_URL,
+                        basic_auth=(settings.JIRA_USER_NAME, settings.JIRA_USER_PASSWORD))
+            issue = jira.issue(self.jira_issue_id)
+            return issue
+        except JIRAError:
+            return None
 
     def authorization_test(self):
         """
