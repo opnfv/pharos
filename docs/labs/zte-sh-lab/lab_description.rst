@@ -95,8 +95,8 @@ Lab Topology
 .. image:: ./images/zte_sh_lab_topology.png
    :alt: Lab diagram not found
 
-All the PODs share the same **Jump Host** for only one public IP address is allocated for the
-pharos lab. Deploy servers are separated from Jump Host. Every 2 PODs share one **Deploy Server**.
+All the PODs share the same **Jump Host** for only one public IP address is allocated for ZTE
+Pharos Lab. Deploy servers are separated from Jump Host. Each POD has itsown **Deploy Server**.
 
 **Jump Host**
 

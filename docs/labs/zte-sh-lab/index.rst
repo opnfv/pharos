@@ -13,6 +13,6 @@ ZTE SH Pharos Lab Configuration Files
    :maxdepth: 2
 
    ./lab_description.rst
-   ./pod1_description.rst
-   ./pod2_description.rst
-   ./pod3_description.rst
+   ./pod-1.rst
+   ./pod-2.rst
+   ./pod-3.rst
