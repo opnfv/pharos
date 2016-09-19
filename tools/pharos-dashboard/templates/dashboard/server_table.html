@@ -10,21 +10,21 @@
 <tbody>
 {% for server in resource.server_set.all %}
     <tr>
-        <th>
+        <td>
             {{ server.name }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ server.model }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ server.cpu }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ server.ram }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ server.storage }}
-        </th>
+        </td>
     </tr>
 {% endfor %}
 </tbody>

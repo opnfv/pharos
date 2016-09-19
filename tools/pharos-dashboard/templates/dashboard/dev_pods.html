@@ -19,37 +19,37 @@
     <tbody>
     {% for pod, booking, utilization in dev_pods %}
         <tr>
-            <th>
+            <td>
                 <a href={% url 'dashboard:resource' resource_id=pod.id %}>{{ pod.name }}</a>
-            </th>
-            <th>
+            </td>
+            <td>
                 <a target='_blank' href={{ pod.slave.url }}>{{ pod.slave.name }}</a>
-            </th>
-            <th>
+            </td>
+            <td>
                 {{ booking.user.username }}
-            </th>
-            <th>
+            </td>
+            <td>
                 {{ booking.end }}
-            </th>
-            <th>
+            </td>
+            <td>
                 {{ booking.purpose }}
-            </th>
-            <th>
+            </td>
+            <td>
                 {{ utilization }}
-            </th>
-            <th style="background-color:{{ pod.slave.status | jenkins_status_color }}">
+            </td>
+            <td style="background-color:{{ pod.slave.status | jenkins_status_color }}">
                 {{ pod.slave.status }}
-            </th>
-            <th>
+            </td>
+            <td>
                 <a href="{% url 'booking:create' resource_id=pod.id %}" class="btn btn-primary">
                     Book
                 </a>
-            </th>
-            <th>
+            </td>
+            <td>
                 <a href="{% url 'dashboard:resource' resource_id=pod.id %}" class="btn btn-primary">
                     Info
                 </a>
-            </th>
+            </td>
         </tr>
     {% endfor %}
     </tbody>

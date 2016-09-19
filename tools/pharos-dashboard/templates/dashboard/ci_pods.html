@@ -17,29 +17,29 @@
     <tbody>
     {% for pod in ci_pods %}
         <tr>
-            <th>
+            <td>
                 <a target='_blank' href={{ pod.url }}>{{ pod.name }}</a>
-            </th>
-            <th>
+            </td>
+            <td>
                 <a target='_blank' href={{ pod.slave.url }}>{{ pod.slave.name }}</a>
-            </th>
-            <th style="background-color:{{ pod.slave.status | jenkins_status_color }}">
+            </td>
+            <td style="background-color:{{ pod.slave.status | jenkins_status_color }}">
                 {{ pod.slave.status }}
-            </th>
-            <th {{ pod.slave.last_job_result | jenkins_job_blink }}>
+            </td>
+            <td {{ pod.slave.last_job_result | jenkins_job_blink }}>
                 {{ pod.slave.last_job_installer }}
-            </th>
-            <th {{ pod.slave.last_job_result | jenkins_job_blink }}>
+            </td>
+            <td {{ pod.slave.last_job_result | jenkins_job_blink }}>
                 {{ pod.slave.last_job_scenario }}
-            </th>
-            <th {{ pod.slave.last_job_result | jenkins_job_blink }}>
+            </td>
+            <td {{ pod.slave.last_job_result | jenkins_job_blink }}>
                 {{ pod.slave.last_job_branch }}
-            </th>
-            <th><a {{ pod.slave.last_job_result | jenkins_job_blink }}
+            </td>
+            <td><a {{ pod.slave.last_job_result | jenkins_job_blink }}
                     style="color:{{ pod.slave.last_job_result | jenkins_job_color }}"
                     target='_blank'
                     href={{ pod.slave.last_job_url }}>{{ pod.slave.last_job_name }}</a>
-            </th>
+            </td>
         </tr>
     {% endfor %}
     </tbody>
