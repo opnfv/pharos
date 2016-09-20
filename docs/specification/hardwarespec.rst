@@ -23,6 +23,11 @@ http://artifacts.opnfv.org/brahmaputra.1.0/docs/opnfv-jenkins-slave-connection.b
 **CPU:**
 
 * Intel Xeon E5-2600v2 Series or newer
+* AArch64 (64bit ARM architecture) compatible (ARMv8 or newer)
+
+**Firmware**
+* BIOS/EFI compatible for x86-family blades
+* EFI compatible for AArch64 blades
 
 **Local Storage:**
 
