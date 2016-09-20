@@ -13,7 +13,7 @@ PHAROS Community Labs
 
    ./Dell.rst
    ./ericsson/index.rst
-   ./huawei-us-lab/huawei-us-lab.rst
+   ./huawei-us-lab/index.rst
    ./ool/index.rst
    ./orange-paris-lab/index.rst
    ./spirent.rst
