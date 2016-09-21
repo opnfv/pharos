@@ -6,6 +6,7 @@ from jira import JIRAError
 from dashboard.models import Resource
 from django.conf import settings
 
+
 class Booking(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, models.CASCADE)  # delete if user is deleted
