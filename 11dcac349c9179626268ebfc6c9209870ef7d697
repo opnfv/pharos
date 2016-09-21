@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_bd5b2c86",
+        "filename": "docs/labs/huawei-us-lab/lab_specification.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T07:10:57Z",
+      "side": 1,
+      "message": "we need double [ ] here?",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 61,
+        "endChar": 26
+      },
+      "revId": "11dcac349c9179626268ebfc6c9209870ef7d697",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_3d4f1cbf",
+        "filename": "docs/labs/huawei-us-lab/pod_specification.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T07:10:57Z",
+      "side": 1,
+      "message": "or use \"Huawei PODs Specification\" as the title?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 37
+      },
+      "revId": "11dcac349c9179626268ebfc6c9209870ef7d697",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_3de63cb5",
+        "filename": "docs/labs/huawei-us-lab/pod_specification.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T07:10:57Z",
+      "side": 1,
+      "message": "two whitespace",
+      "range": {
+        "startLine": 13,
+        "startChar": 44,
+        "endLine": 13,
+        "endChar": 46
+      },
+      "revId": "11dcac349c9179626268ebfc6c9209870ef7d697",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
