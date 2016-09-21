@@ -164,15 +164,15 @@
                         <tbody>
                         {% for user in resource.vpn_users.all %}
                             <tr>
-                                <th>
+                                <td>
                                     {{ user.username }}
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     {{ user.email }}
-                                </th>
-                                <th>
+                                </td>
+                                <td>
                                     {{ user.userprofile.company }}
-                                </th>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>

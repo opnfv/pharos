@@ -13,21 +13,21 @@
 <tbody>
 {% for booking in bookings %}
     <tr>
-        <th>
+        <td>
             {{ booking.user.username }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ booking.purpose }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ booking.start }}
-        </th>
-        <th>
+        </td>
+        <td>
             {{ booking.end }}
-        </th>
-        <th><a target='_blank'
+        </td>
+        <td><a target='_blank'
                href={{ booking.get_jira_issue | jira_issue_url }}>{{ booking.get_jira_issue }}</a>
-        </th>
+        </td>
     </tr>
 {% endfor %}
 </tbody>

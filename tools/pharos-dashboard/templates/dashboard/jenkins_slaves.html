@@ -14,17 +14,17 @@
     <tbody>
     {% for slave in slaves %}
         <tr>
-            <th><a target='_blank'
+            <td><a target='_blank'
                    href={{ slave.url }}>{{ slave.name }}</a>
-            </th>
-            <th style="background-color:{{ slave.status | jenkins_status_color }}">
+            </td>
+            <td style="background-color:{{ slave.status | jenkins_status_color }}">
                 {{ slave.status }}
-            </th>
-            <th><a {{ slave.last_job_result | jenkins_job_blink }}
+            </td>
+            <td><a {{ slave.last_job_result | jenkins_job_blink }}
                     style="color:{{ slave.last_job_result | jenkins_job_color }}"
                     target="_blank" href={{ slave.last_job_url }}>
                 {{ slave.last_job_name }}</a>
-            </th>
+            </td>
         </tr>
     {% endfor %}
     </tbody>

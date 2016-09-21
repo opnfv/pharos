@@ -13,18 +13,22 @@
     <tbody>
     {% for user in users %}
         <tr>
-            <th>
+            <td>
                 {{ user.username }}
-            </th>
-            <th>
+            </td>
+            <td>
                 {{ user.userprofile.company }}
-            </th>
-            <th>
-                <a href={{ user.userprofile.ssh_public_key.url }}>Download</a>
-            </th>
-            <th>
-                <a href={{ user.userprofile.pgp_public_key.url }}>Download</a>
-            </th>
+            </td>
+            <td>
+		{% if user.userprofile.ssh_public_key %}
+                <a href={{ user.userprofile.ssh_public_key.url }}>SSH</a>
+		{% endif %}
+            </td>
+            <td>
+		{% if user.userprofile.pgp_public_key %}
+                <a href={{ user.userprofile.pgp_public_key.url }}>GPG</a>
+		{% endif %}
+            </td>
         </tr>
     {% endfor %}
     </tbody>
