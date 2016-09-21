@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_7d4cb442",
+        "filename": "docs/labs/huawei-us-lab/lab_specification.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T03:24:27Z",
+      "side": 1,
+      "message": "Huawei provides",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 14
+      },
+      "revId": "07fa44dd8f981286e7c73111ae6188d0b8df8afa",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_7ddef46e",
+        "filename": "docs/labs/huawei-us-lab/pod_specification.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T03:24:27Z",
+      "side": 1,
+      "message": "following",
+      "range": {
+        "startLine": 17,
+        "startChar": 42,
+        "endLine": 17,
+        "endChar": 50
+      },
+      "revId": "07fa44dd8f981286e7c73111ae6188d0b8df8afa",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_1deee022",
+        "filename": "docs/labs/huawei-us-lab/pod_specification.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T03:24:27Z",
+      "side": 1,
+      "message": "add a carriage return here would be better , same below",
+      "range": {
+        "startLine": 25,
+        "startChar": 62,
+        "endLine": 25,
+        "endChar": 63
+      },
+      "revId": "07fa44dd8f981286e7c73111ae6188d0b8df8afa",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_ddf708f4",
+        "filename": "docs/labs/huawei-us-lab/pod_specification.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 306
+      },
+      "writtenOn": "2016-09-21T03:24:27Z",
+      "side": 1,
+      "message": "delete this 1",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 3
+      },
+      "revId": "07fa44dd8f981286e7c73111ae6188d0b8df8afa",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
