@@ -19,8 +19,9 @@ coverage.xml
 # Django:
 *.log
 *.pot
-migrations/
-settings.py
+
+# Celery
+celerybeat-schedule.db
 
 # KDE:
 .directory
@@ -36,3 +37,10 @@ venv/
 
 # Bower Components:
 bower_components/
+
+# Production settings
+config.env
+
+# rsa key files
+rsa.pem
+rsa.pub
