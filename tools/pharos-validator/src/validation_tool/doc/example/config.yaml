@@ -1,0 +1,38 @@
+###################
+# Program arguments
+###################
+#
+# Define path of output file
+output: "yaml" # Values are ("yaml", )
+
+#################
+# Server settings
+#################
+
+# Address that the client should attempt to connect to. Has no effect on server
+server-addr: "0.0.0.0"
+# Server port, shouldn't need to change
+server-port: 12121
+
+#############################
+# Filepaths for program files
+#############################
+
+# Define directory for the program to monitor files pushed back by clients
+tmppath: "/tmp/pharosqa"
+# dhcpd configuration output filepath
+confpath: "/etc/pharosqa/"
+# Examplepath
+sharepath: "/usr/share/pharosqa/"
+# Path to inventory file
+inventoryfile: "/etc/pharosvalidator/inventory.yaml"
+# Path to network file
+networkfile: "/etc/pharosvalidator/network.yaml"
+# Path to logfile
+logfile: "/tmp/runtime_logs.txt"
+# Path to test logs
+test_log: "/tmp/results.yaml"
+# Path to dhcpd configuration file
+#dhcpdfile: "/etc/dhcp/dhcpd.conf"
+dhcpdfile: "/etc/dhcp/dhcpd.conf"
+

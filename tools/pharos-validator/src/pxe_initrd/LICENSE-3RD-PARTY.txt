@@ -1,0 +1,2 @@
+This module of the tool uses Alpine linux and various tools included with it. 
+For any questions regarding licenses please refer to https://alpinelinux.org/.

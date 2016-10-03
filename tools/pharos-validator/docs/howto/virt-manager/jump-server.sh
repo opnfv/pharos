@@ -1,0 +1,1 @@
+sudo virt-install -n jump-host-centos7_0 --graphics none --vcpus=2 --ram=512 --os-type=linux -l /iso/CentOS-7-x86_64-DVD-1511.iso --disk path=/vm/template/jump-host.img,cache=none --extra-args console=ttyS0

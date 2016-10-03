@@ -1,0 +1,49 @@
+##OPNFV - Pharos Qualification Tool Project Proposal
+
+Todd Gaunt
+
+May 20, 2016
+
+##Summary
+This proposal is for the project regarding developing a Pharos qualification tool over the course
+of 3 months, based in the requirements listed within the OPNFV Wiki (https://wiki.opnfv.org/display/DEV/Intern+Project%3A+Pharos+Qualification+Tool). I believe I am well suited for the job, as accomplishing the goal of developing a tool to probe for data on a machine is in line with my skill set. I work on linux-boxes daily, and have a good understanding of automating predictable and repeatable tasks such as probing for information and deploying the software to do the job. The tool for testing a
+POD to see if it meets the requirements for the Pharos specification could be a simple command-line suite of scripts written in a simple, ubiquitous language like sh, bash, or python and then be deployed onto a server using a container such as Docker, or even go with a simpler model of a tar.gz package using a tool like GNU stow to temporarily ”install” the package with symbolic links. Additional information for the validation of the pod, per the requirements list is included in the Proposed
+Design section below.
+
+##Proposed Design
+###Deployment of Test Tools to the POD
+Utilize a container solution such as Docker with a small base linux image of either alpine linux (5mb base image, 52mb with python3) or centOS 7 (The native system according to the pharos specification which would be around 197mb base image 334.5mb with python3) to allow for easy installation of the tool without pulling in any external dependencies. This will allow for ease of administration by allowing administrators to not worry about dependency resolution or having a proper package version installed. The base image will be built with a python3 interpreter and it’s dependencies to run the qualification tool. If a docker image approach is not feasible for some reason, a traditional package format such as rpm can be used.
+
+###Qualification of POD Resources
+Load the system configuration/Inventory files the pharos spec states the machines should have. Each machine should have an easily machine-readable file available with system configuration information. The tool will find as much hardware information as possible utilizing the linux filesystem and tools, and compare and or fallback to the inventory file.
+
+####Required Compute
+Poll /proc/cpuinfo for cpu specifications, Intel Xeon E5-2600v2 series or equivalent in processing power (Intel brand not a requirement):
+64-bit
+4 cores
+1.8ghz (maybe a softer requirement here like 1.5ghz or less as different architectures can perform equivalently at different speeds).
+
+####Required RAM
+Poll /proc/meminfo for memory specifications
+- 32G RAM Minimum, anything less than that and the test will fail. 
+- ECC memory nice to have but not required
+
+####Required Software
+The jump host requires centos7 and the opnfv/openstack virtualized inside of it so an initial connection can be established and further connections can be made to the nodes within the pod.
+
+####Required Storage
+Poll /sys/block/ for all block devices and their size. Properties of the storage can be discovered here as well. Eg. disk size would be in /sys/block/sdX/size, disk type would be in /sys/block/sdX/queue/rotational. The passing metric is the minimum requirements as defined here: http://artifacts.opnfv.org/pharos/docs/specification/hardwarespec.html
+- Disks: 2 x 1TB HDD + 1 x 100GB SSD (or greater capacity)
+- The first HDD should be used for OS & additional software/tool installation
+- The second HDD is configured for CEPH object storage
+- The SSD should be used as the CEPH journal
+- Performance testing requires a mix of compute nodes with CEPH (Swift+Cinder) and without CEPH storage
+- Virtual ISO boot capabilities or a separate PXE boot server (DHCP/tftp or Cobbler)
+
+####Required Network Connectivity
+Use a tool such as ifconfig/iproute2 to find network interfaces and attempt to connect back to the jump host/ other nodes. Check for valid gpg key certified by someone with administrative access to LF infrastructure for VPNs. This VPN information is laid out in the inventory file provided by the pod.
+
+####Inventory of System(s) via IPMI
+Utilize IPMI interfaces to manage the rebooting of POD’s the tool connects to. If available perhaps use this as a way to find system information/configuration needed for the report.
+Definition of Results (pass/fail evaluation)
+Utilize the Jenkins build automation server to build and deploy the test-tool and receive results. If the test fails describe at which step and why it failed.
