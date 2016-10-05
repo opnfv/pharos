@@ -11,6 +11,7 @@
 from django.db import models
 
 from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
 from dashboard.models import Resource
 
@@ -23,8 +24,15 @@ class UserProfile(models.Model):
     ssh_public_key = models.FileField(upload_to=upload_to, null=True, blank=True)
     pgp_public_key = models.FileField(upload_to=upload_to, null=True, blank=True)
     company = models.CharField(max_length=200, blank=False)
+
     oauth_token = models.CharField(max_length=1024, blank=False)
     oauth_secret = models.CharField(max_length=1024, blank=False)
 
+    jira_url = models.CharField(max_length=100, default='')
+    full_name = models.CharField(max_length=100, default='')
+
     class Meta:
         db_table = 'user_profile'
+
+    def __str__(self):
+        return self.user.username

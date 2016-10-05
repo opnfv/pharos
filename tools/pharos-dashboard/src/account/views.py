@@ -12,6 +12,7 @@ import os
 import urllib
 
 import oauth2 as oauth
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -19,17 +20,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import RedirectView
-from django.views.generic import TemplateView
-from django.views.generic import UpdateView
+from django.views.generic import RedirectView, TemplateView, UpdateView
+
 from jira import JIRA
+from rest_framework.authtoken.models import Token
 
 from account.forms import AccountSettingsForm
 from account.jira_util import SignatureMethod_RSA_SHA1
 from account.models import UserProfile
-from django.conf import settings
-
-consumer = oauth.Consumer(settings.OAUTH_CONSUMER_KEY, settings.OAUTH_CONSUMER_SECRET)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -46,9 +44,16 @@ class AccountSettingsView(UpdateView):
     def get_object(self, queryset=None):
         return self.request.user.userprofile
 
+    def get_context_data(self, **kwargs):
+        token, created = Token.objects.get_or_create(user=self.request.user)
+        context = super(AccountSettingsView, self).get_context_data(**kwargs)
+        context.update({'title': "Settings", 'token': token})
+        return context
+
 
 class JiraLoginView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
+        consumer = oauth.Consumer(settings.OAUTH_CONSUMER_KEY, settings.OAUTH_CONSUMER_SECRET)
         client = oauth.Client(consumer)
         client.set_signature_method(SignatureMethod_RSA_SHA1())
 
@@ -61,7 +66,7 @@ class JiraLoginView(RedirectView):
         self.request.session['request_token'] = dict(urllib.parse.parse_qsl(content.decode()))
         # Step 3. Redirect the user to the authentication URL.
         url = settings.OAUTH_AUTHORIZE_URL + '?oauth_token=' + \
-                self.request.session['request_token']['oauth_token'] + \
+              self.request.session['request_token']['oauth_token'] + \
               '&oauth_callback=' + settings.OAUTH_CALLBACK_URL
         return url
 
@@ -75,6 +80,7 @@ class JiraLogoutView(LoginRequiredMixin, RedirectView):
 class JiraAuthenticatedView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         # Step 1. Use the request token in the session to build a new client.
+        consumer = oauth.Consumer(settings.OAUTH_CONSUMER_KEY, settings.OAUTH_CONSUMER_SECRET)
         token = oauth.Token(self.request.session['request_token']['oauth_token'],
                             self.request.session['request_token']['oauth_token_secret'])
         client = oauth.Client(consumer, token)
@@ -122,6 +128,7 @@ class JiraAuthenticatedView(RedirectView):
         # redirect user to settings page to complete profile
         return url
 
+@method_decorator(login_required, name='dispatch')
 class UserListView(TemplateView):
     template_name = "account/user_list.html"
 

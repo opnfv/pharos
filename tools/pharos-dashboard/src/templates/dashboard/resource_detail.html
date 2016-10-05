@@ -106,6 +106,7 @@
                 </p>
                 <p>
                     <b>Email: </b>
+                    {{ resource.owner.email }}
                 </p>
                 <p>
                     <a href="{% url 'booking:create' resource_id=resource.id %}" class="btn

@@ -16,9 +16,17 @@
                         <form enctype="multipart/form-data" method="post">
                             {% csrf_token %}
                             {% bootstrap_form form %}
+                            <p><b>API Token</b>
+                                <a href="{% url 'generate_token' %}" class="btn btn-default">
+                                    Generate
+                                </a>
+                            </p>
+                            <p style="word-wrap: break-word;">{{ token.key }}</p>
+
+                            <p></p>
                             {% buttons %}
                                 <button type="submit" class="btn btn btn-success">
-                                    Save
+                                    Save Profile
                                 </button>
                             {% endbuttons %}
                         </form>
