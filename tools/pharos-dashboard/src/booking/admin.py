@@ -10,6 +10,8 @@
 
 from django.contrib import admin
 
-from booking.models import Booking
+from booking.models import *
 
 admin.site.register(Booking)
+admin.site.register(Installer)
+admin.site.register(Scenario)

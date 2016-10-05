@@ -15,7 +15,6 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils import timezone
 from django.views import View
@@ -65,13 +64,12 @@ class BookingFormView(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         user = self.request.user
-        if not user.userprofile.ssh_public_key or not user.userprofile.pgp_public_key:
-            messages.add_message(self.request, messages.INFO,
-                                 'Please upload your private keys before booking')
-            return redirect('account:settings')
-        booking = Booking(start=form.cleaned_data['start'], end=form.cleaned_data['end'],
-                          purpose=form.cleaned_data['purpose'], resource=self.resource,
-                          user=user)
+        booking = Booking(start=form.cleaned_data['start'],
+                          end=form.cleaned_data['end'],
+                          purpose=form.cleaned_data['purpose'],
+                          installer=form.cleaned_data['installer'],
+                          scenario=form.cleaned_data['scenario'],
+                          resource=self.resource, user=user)
         try:
             booking.save()
         except ValueError as err:
@@ -98,10 +96,19 @@ class BookingView(TemplateView):
 
     def get_context_data(self, **kwargs):
         booking = get_object_or_404(Booking, id=self.kwargs['booking_id'])
-        jira_issue = booking.get_jira_issue()
         title = 'Booking Details'
         context = super(BookingView, self).get_context_data(**kwargs)
-        context.update({'title': title, 'booking': booking, 'jira_issue': jira_issue})
+        context.update({'title': title, 'booking': booking})
+        return context
+
+class BookingListView(TemplateView):
+    template_name = "booking/booking_list.html"
+
+    def get_context_data(self, **kwargs):
+        bookings = Booking.objects.filter(end__gte=timezone.now())
+        title = 'Search Booking'
+        context = super(BookingListView, self).get_context_data(**kwargs)
+        context.update({'title': title, 'bookings': bookings})
         return context
 
 
@@ -109,5 +116,6 @@ class ResourceBookingsJSON(View):
     def get(self, request, *args, **kwargs):
         resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
         bookings = resource.booking_set.get_queryset().values('id', 'start', 'end', 'purpose',
-                                                              'jira_issue_status')
+                                                              'jira_issue_status',
+                                                              'installer__name', 'scenario__name')
         return JsonResponse({'bookings': list(bookings)})

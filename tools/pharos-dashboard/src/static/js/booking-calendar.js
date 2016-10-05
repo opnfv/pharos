@@ -1,11 +1,11 @@
 /*****************************************************************************
-* Copyright (c) 2016 Max Breitenfeldt and others.
-*
-* All rights reserved. This program and the accompanying materials
-* are made available under the terms of the Apache License, Version 2.0
-* which accompanies this distribution, and is available at
-* http://www.apache.org/licenses/LICENSE-2.0
-*****************************************************************************/
+ * Copyright (c) 2016 Max Breitenfeldt and others.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Apache License, Version 2.0
+ * which accompanies this distribution, and is available at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *****************************************************************************/
 
 
 function parseCalendarEvents(bookings) {
@@ -14,9 +14,21 @@ function parseCalendarEvents(bookings) {
         // convert ISO 8601 timestring to moment, needed for timezone handling
         start = moment(bookings[i]['start']);
         end = moment(bookings[i]['end']);
+
+        installer = bookings[i]['installer__name'];
+        if (installer === null) {
+            installer = '';
+        }
+
+        scenario = bookings[i]['scenario__name'];
+        if (scenario === null) {
+            scenario = '';
+        }
+        title = bookings[i]['purpose'] + ' ' + installer + ' ' + scenario;
+
         event = {
             id: bookings[i]['id'],
-            title: bookings[i]['purpose'],
+            title: title,
             start: start,
             end: end,
         };

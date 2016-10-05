@@ -7,7 +7,8 @@
     <th>Purpose</th>
     <th>Start</th>
     <th>End</th>
-    <th>Jira</th>
+    <th>Installer</th>
+    <th>Scenario</th>
 </tr>
 </thead>
 <tbody>
@@ -25,8 +26,11 @@
         <td>
             {{ booking.end }}
         </td>
-        <td><a target='_blank'
-               href={{ booking.get_jira_issue | jira_issue_url }}>{{ booking.get_jira_issue }}</a>
+        <td>
+            {{ booking.installer }}
+        </td>
+        <td>
+            {{ booking.scenario }}
         </td>
     </tr>
 {% endfor %}
