@@ -16,6 +16,20 @@ from jira import JIRAError
 from dashboard.models import Resource
 from django.conf import settings
 
+class Installer(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+class Scenario(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.name
+
 
 class Booking(models.Model):
     id = models.AutoField(primary_key=True)
@@ -26,6 +40,8 @@ class Booking(models.Model):
     jira_issue_id = models.IntegerField(null=True)
     jira_issue_status = models.CharField(max_length=50)
 
+    installer = models.ForeignKey(Installer, models.DO_NOTHING, null=True)
+    scenario = models.ForeignKey(Scenario, models.DO_NOTHING, null=True)
     purpose = models.CharField(max_length=300, blank=False)
 
     class Meta:
@@ -40,27 +56,12 @@ class Booking(models.Model):
         except JIRAError:
             return None
 
-    def authorization_test(self):
-        """
-        Return True if self.user is authorized to make this booking.
-        """
-        user = self.user
-        # Check if User is troubleshooter / admin
-        if user.has_perm('booking.add_booking'):
-            return True
-        # Check if User owns this resource
-        if user == self.resource.owner:
-            return True
-        return False
-
     def save(self, *args, **kwargs):
         """
         Save the booking if self.user is authorized and there is no overlapping booking.
         Raise PermissionError if the user is not authorized
         Raise ValueError if there is an overlapping booking
         """
-        if not self.authorization_test():
-            raise PermissionError('Insufficient permissions to save this booking.')
         if self.start >= self.end:
             raise ValueError('Start date is after end date')
         # conflicts end after booking starts, and start before booking ends

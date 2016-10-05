@@ -67,8 +67,15 @@
                                 Slaves</a>
                         </li>
                         <li>
+                            {% if user.is_authenticated %}
                             <a href="{% url 'account:users' %}"><i
-                                    class="fa fa-fw"></i>Users
+                                    class="fa fa-fw"></i>User List
+                            </a>
+                            {% endif %}
+                        </li>
+                        <li>
+                            <a href="{% url 'booking:list' %}"><i
+                                    class="fa fa-fw"></i>Booking List
                             </a>
                         </li>
                         <li>

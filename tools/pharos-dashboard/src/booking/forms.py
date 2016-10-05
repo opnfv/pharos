@@ -10,10 +10,14 @@
 
 import django.forms as forms
 
+from booking.models import Installer, Scenario
+
 
 class BookingForm(forms.Form):
-    fields = ['start', 'end', 'purpose']
+    fields = ['start', 'end', 'purpose', 'installer', 'scenario']
 
     start = forms.DateTimeField()
     end = forms.DateTimeField()
     purpose = forms.CharField(max_length=300)
+    installer = forms.ModelChoiceField(queryset=Installer.objects.all(), required=False)
+    scenario = forms.ModelChoiceField(queryset=Scenario.objects.all(), required=False)
