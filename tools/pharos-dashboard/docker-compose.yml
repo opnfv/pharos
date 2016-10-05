@@ -59,7 +59,7 @@ services:
     worker:
         restart: always
         build: ./worker/
-        command: bash -c "celery -A pharos_dashboard worker -l info -B"
+        command: bash -c "celery -A pharos_dashboard worker -l info -B --schedule=~/celerybeat-schedule""
         env_file: config.env
         links:
             - postgres

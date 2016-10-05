@@ -5,6 +5,8 @@
     <thead>
     <tr>
         <th>Username</th>
+        <th>Full Name</th>
+        <th>Email</th>
         <th>Company</th>
         <th>SSH Key</th>
         <th>GPG Key</th>
@@ -17,17 +19,23 @@
                 {{ user.username }}
             </td>
             <td>
+                {{ user.userprofile.full_name }}
+            </td>
+            <td>
+                {{ user.email }}
+            </td>
+            <td>
                 {{ user.userprofile.company }}
             </td>
             <td>
-		{% if user.userprofile.ssh_public_key %}
-                <a href={{ user.userprofile.ssh_public_key.url }}>SSH</a>
-		{% endif %}
+                {% if user.userprofile.ssh_public_key %}
+                    <a href={{ user.userprofile.ssh_public_key.url }}>SSH</a>
+                {% endif %}
             </td>
             <td>
-		{% if user.userprofile.pgp_public_key %}
-                <a href={{ user.userprofile.pgp_public_key.url }}>GPG</a>
-		{% endif %}
+                {% if user.userprofile.pgp_public_key %}
+                    <a href={{ user.userprofile.pgp_public_key.url }}>GPG</a>
+                {% endif %}
             </td>
         </tr>
     {% endfor %}

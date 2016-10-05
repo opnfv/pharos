@@ -10,9 +10,14 @@
 
 from rest_framework import viewsets
 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from api.serializers import ResourceSerializer, ServerSerializer, BookingSerializer
 from booking.models import Booking
 from dashboard.models import Resource, Server
+from django.views import View
+from rest_framework.authtoken.models import Token
+from django.shortcuts import redirect
 
 
 class BookingViewSet(viewsets.ModelViewSet):
@@ -31,3 +36,14 @@ class ResourceViewSet(viewsets.ModelViewSet):
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
     filter_fields = ('name',)
+
+
+@method_decorator(login_required, name='dispatch')
+class GenerateTokenView(View):
+    def get(self, request, *args, **kwargs):
+        user = self.request.user
+        token, created = Token.objects.get_or_create(user=user)
+        if not created:
+            token.delete()
+            Token.objects.create(user=user)
+        return redirect('account:settings')

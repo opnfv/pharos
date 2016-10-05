@@ -35,4 +35,5 @@ router.register(r'bookings', BookingViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^token$', GenerateTokenView.as_view(), name='generate_token'),
 ]
