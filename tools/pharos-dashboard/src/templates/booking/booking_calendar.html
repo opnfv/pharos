@@ -1,4 +1,4 @@
-{% extends "dashboard/table.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
 
 {% load bootstrap3 %}
@@ -45,7 +45,8 @@
                             {% bootstrap_field form.end addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
                         </div>
                         {% bootstrap_field form.purpose %}
-
+                        {% bootstrap_field form.installer %}
+                        {% bootstrap_field form.scenario %}
                         {% buttons %}
                             <button type="submit" class="btn btn btn-success">
                                 Book
@@ -69,7 +70,8 @@
                 <div class="modal-body" id="booking_detail_content">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                    </button>
                 </div>
             </div>
 

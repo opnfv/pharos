@@ -34,4 +34,6 @@ urlpatterns = [
 
     url(r'^detail/$', BookingView.as_view(), name='detail_prefix'),
     url(r'^detail/(?P<booking_id>[0-9]+)/$', BookingView.as_view(), name='detail'),
+
+    url(r'^list/$', BookingListView.as_view(), name='list')
 ]
