@@ -21,7 +21,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import RedirectView, TemplateView, UpdateView
-
 from jira import JIRA
 from rest_framework.authtoken.models import Token
 
@@ -58,9 +57,16 @@ class JiraLoginView(RedirectView):
         client.set_signature_method(SignatureMethod_RSA_SHA1())
 
         # Step 1. Get a request token from Jira.
-        resp, content = client.request(settings.OAUTH_REQUEST_TOKEN_URL, "POST")
+        try:
+            resp, content = client.request(settings.OAUTH_REQUEST_TOKEN_URL, "POST")
+        except Exception as e:
+            messages.add_message(self.request, messages.ERROR,
+                                 'Error: Connection to Jira failed. Please contact an Administrator')
+            return '/'
         if resp['status'] != '200':
-            raise Exception("Invalid response %s: %s" % (resp['status'], content))
+            messages.add_message(self.request, messages.ERROR,
+                                 'Error: Connection to Jira failed. Please contact an Administrator')
+            return '/'
 
         # Step 2. Store the request token in a session for later use.
         self.request.session['request_token'] = dict(urllib.parse.parse_qsl(content.decode()))
@@ -87,8 +93,15 @@ class JiraAuthenticatedView(RedirectView):
         client.set_signature_method(SignatureMethod_RSA_SHA1())
 
         # Step 2. Request the authorized access token from Jira.
-        resp, content = client.request(settings.OAUTH_ACCESS_TOKEN_URL, "POST")
+        try:
+            resp, content = client.request(settings.OAUTH_ACCESS_TOKEN_URL, "POST")
+        except Exception as e:
+            messages.add_message(self.request, messages.ERROR,
+                                 'Error: Connection to Jira failed. Please contact an Administrator')
+            return '/'
         if resp['status'] != '200':
+            messages.add_message(self.request, messages.ERROR,
+                                 'Error: Connection to Jira failed. Please contact an Administrator')
             return '/'
 
         access_token = dict(urllib.parse.parse_qsl(content.decode()))
@@ -127,6 +140,7 @@ class JiraAuthenticatedView(RedirectView):
         login(self.request, user)
         # redirect user to settings page to complete profile
         return url
+
 
 @method_decorator(login_required, name='dispatch')
 class UserListView(TemplateView):

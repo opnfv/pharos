@@ -25,7 +25,7 @@ class JenkinsSlavesView(TemplateView):
     template_name = "dashboard/jenkins_slaves.html"
 
     def get_context_data(self, **kwargs):
-        slaves = JenkinsSlave.objects.all()
+        slaves = JenkinsSlave.objects.filter(active=True)
         context = super(JenkinsSlavesView, self).get_context_data(**kwargs)
         context.update({'title': "Jenkins Slaves", 'slaves': slaves})
         return context
@@ -35,7 +35,7 @@ class CIPodsView(TemplateView):
     template_name = "dashboard/ci_pods.html"
 
     def get_context_data(self, **kwargs):
-        ci_pods = Resource.objects.filter(slave__ci_slave=True)
+        ci_pods = Resource.objects.filter(slave__ci_slave=True, slave__active=True)
         context = super(CIPodsView, self).get_context_data(**kwargs)
         context.update({'title': "CI Pods", 'ci_pods': ci_pods})
         return context
@@ -45,7 +45,7 @@ class DevelopmentPodsView(TemplateView):
     template_name = "dashboard/dev_pods.html"
 
     def get_context_data(self, **kwargs):
-        resources = Resource.objects.filter(slave__dev_pod=True)
+        resources = Resource.objects.filter(slave__dev_pod=True, slave__active=True)
 
         bookings = Booking.objects.filter(start__lte=timezone.now())
         bookings = bookings.filter(end__gt=timezone.now())
@@ -55,7 +55,7 @@ class DevelopmentPodsView(TemplateView):
             booking_utilization = resource.get_booking_utilization(weeks=4)
             total = booking_utilization['booked_seconds'] + booking_utilization['available_seconds']
             try:
-               utilization_percentage =  "%d%%" % (float(booking_utilization['booked_seconds']) /
+                utilization_percentage = "%d%%" % (float(booking_utilization['booked_seconds']) /
                                                    total * 100)
             except (ValueError, ZeroDivisionError):
                 return ""
@@ -88,7 +88,7 @@ class LabOwnerView(TemplateView):
     template_name = "dashboard/resource_all.html"
 
     def get_context_data(self, **kwargs):
-        resources = Resource.objects.filter(slave__dev_pod=True)
+        resources = Resource.objects.filter(slave__dev_pod=True, slave__active=True)
         pods = []
         for resource in resources:
             utilization = resource.slave.get_utilization(timedelta(days=7))

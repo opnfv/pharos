@@ -8,8 +8,6 @@
 ##############################################################################
 
 
-from datetime import timedelta
-
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -45,7 +43,7 @@ def create_jira_ticket(user, booking):
     booking.save()
 
 
-class BookingFormView(LoginRequiredMixin, FormView):
+class BookingFormView(FormView):
     template_name = "booking/booking_calendar.html"
     form_class = BookingForm
 
@@ -63,6 +61,11 @@ class BookingFormView(LoginRequiredMixin, FormView):
         return reverse('booking:create', kwargs=self.kwargs)
 
     def form_valid(self, form):
+        if not self.request.user.is_authenticated:
+            messages.add_message(self.request, messages.ERROR,
+                                 'You need to be logged in to book a Pod.')
+            return super(BookingFormView, self).form_invalid(form)
+
         user = self.request.user
         booking = Booking(start=form.cleaned_data['start'],
                           end=form.cleaned_data['end'],
@@ -73,9 +76,6 @@ class BookingFormView(LoginRequiredMixin, FormView):
         try:
             booking.save()
         except ValueError as err:
-            messages.add_message(self.request, messages.ERROR, err)
-            return super(BookingFormView, self).form_invalid(form)
-        except PermissionError as err:
             messages.add_message(self.request, messages.ERROR, err)
             return super(BookingFormView, self).form_invalid(form)
         try:
@@ -100,6 +100,7 @@ class BookingView(TemplateView):
         context = super(BookingView, self).get_context_data(**kwargs)
         context.update({'title': title, 'booking': booking})
         return context
+
 
 class BookingListView(TemplateView):
     template_name = "booking/booking_list.html"

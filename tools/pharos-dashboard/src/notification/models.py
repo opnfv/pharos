@@ -26,7 +26,8 @@ class BookingNotification(models.Model):
         }
 
     def save(self, *args, **kwargs):
-        notifications = self.booking.bookingnotification_set.filter(type=self.type)
-        if notifications.count() > 1:
+        notifications = self.booking.bookingnotification_set.filter(type=self.type).exclude(
+            id=self.id)
+        if notifications.count() > 0:
             raise ValueError('Doubled Notification')
         return super(BookingNotification, self).save(*args, **kwargs)

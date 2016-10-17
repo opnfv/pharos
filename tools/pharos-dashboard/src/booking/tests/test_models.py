@@ -10,12 +10,11 @@
 
 from datetime import timedelta
 
-from django.contrib.auth.models import User, Permission
+from django.contrib.auth.models import Permission
 from django.test import TestCase
 from django.utils import timezone
 
-from account.models import UserProfile
-from booking.models import Booking
+from booking.models import *
 from dashboard.models import Resource
 from jenkins.models import JenkinsSlave
 
@@ -37,7 +36,10 @@ class BookingModelTestCase(TestCase):
 
         self.user1 = User.objects.get(pk=self.user1.id)
 
-    def test_start__end(self):
+        self.installer = Installer.objects.create(name='TestInstaller')
+        self.scenario = Scenario.objects.create(name='TestScenario')
+
+    def test_start_end(self):
         """
         if the start of a booking is greater or equal then the end, saving should raise a
         ValueException
@@ -88,20 +90,5 @@ class BookingModelTestCase(TestCase):
                                    user=self.user1, resource=self.res1))
         self.assertTrue(
             Booking.objects.create(start=start, end=end,
-                                   user=self.user1, resource=self.res2))
-
-    def test_authorization(self):
-        user = User.objects.create(username='user')
-        user.userprofile = UserProfile.objects.create(user=user)
-        self.assertRaises(PermissionError, Booking.objects.create, start=timezone.now(),
-                          end=timezone.now() + timedelta(days=1), resource=self.res1, user=user)
-        self.res1.owner = user
-        self.assertTrue(
-            Booking.objects.create(start=timezone.now(), end=timezone.now() + timedelta(days=1),
-                                   resource=self.res1, user=user))
-        self.res1.owner = self.owner
-        user.user_permissions.add(self.add_booking_perm)
-        user = User.objects.get(pk=user.id)
-        self.assertTrue(
-            Booking.objects.create(start=timezone.now(), end=timezone.now() + timedelta(days=1),
-                                   resource=self.res2, user=user))
+                                   user=self.user1, resource=self.res2, scenario=self.scenario,
+                                   installer=self.installer))

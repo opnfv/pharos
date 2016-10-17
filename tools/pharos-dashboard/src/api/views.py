@@ -8,16 +8,16 @@
 ##############################################################################
 
 
-from rest_framework import viewsets
-
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
+from django.views import View
+from rest_framework import viewsets
+from rest_framework.authtoken.models import Token
+
 from api.serializers import ResourceSerializer, ServerSerializer, BookingSerializer
 from booking.models import Booking
 from dashboard.models import Resource, Server
-from django.views import View
-from rest_framework.authtoken.models import Token
-from django.shortcuts import redirect
 
 
 class BookingViewSet(viewsets.ModelViewSet):

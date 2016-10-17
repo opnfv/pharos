@@ -8,12 +8,9 @@
 ##############################################################################
 
 
+from django.contrib.auth.models import User
 from django.db import models
 
-from django.contrib.auth.models import User
-from rest_framework.authtoken.models import Token
-
-from dashboard.models import Resource
 
 def upload_to(object, filename):
     return object.user.username + '/' + filename

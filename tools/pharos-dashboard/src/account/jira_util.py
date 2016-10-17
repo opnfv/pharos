@@ -12,10 +12,9 @@ import base64
 import os
 
 import oauth2 as oauth
+from django.conf import settings
 from jira import JIRA
 from tlslite.utils import keyfactory
-
-from django.conf import settings
 
 
 class SignatureMethod_RSA_SHA1(oauth.SignatureMethod):

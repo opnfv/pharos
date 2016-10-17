@@ -10,12 +10,10 @@
 
 from datetime import timedelta
 
-from django.contrib import auth
 from django.test import Client
-from django.utils import timezone
-from django.contrib.auth.models import Permission
 from django.test import TestCase
 from django.urls import reverse
+from django.utils import timezone
 from django.utils.encoding import force_text
 from registration.forms import User
 
@@ -36,9 +34,6 @@ class BookingViewTestCase(TestCase):
         self.user1.set_password('user1')
         self.user1profile = UserProfile.objects.create(user=self.user1)
         self.user1.save()
-
-        self.add_booking_perm = Permission.objects.get(codename='add_booking')
-        self.user1.user_permissions.add(self.add_booking_perm)
 
         self.user1 = User.objects.get(pk=self.user1.id)
 
@@ -78,4 +73,34 @@ class BookingViewTestCase(TestCase):
         self.assertIn('resource', response.context)
 
 
+    def test_booking_view(self):
+        start = timezone.now()
+        end = start + timedelta(weeks=1)
+        booking = Booking.objects.create(start=start, end=end, user=self.user1, resource=self.res1)
 
+        url = reverse('booking:detail', kwargs={'booking_id':0})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
+
+        url = reverse('booking:detail', kwargs={'booking_id':booking.id})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed('booking/booking_detail.html')
+        self.assertIn('booking', response.context)
+
+    def test_booking_list_view(self):
+        start = timezone.now() - timedelta(weeks=2)
+        end = start + timedelta(weeks=1)
+        Booking.objects.create(start=start, end=end, user=self.user1, resource=self.res1)
+
+        url = reverse('booking:list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed('booking/booking_list.html')
+        self.assertTrue(len(response.context['bookings']) == 0)
+
+        start = timezone.now()
+        end = start + timedelta(weeks=1)
+        Booking.objects.create(start=start, end=end, user=self.user1, resource=self.res1)
+        response = self.client.get(url)
+        self.assertTrue(len(response.context['bookings']) == 1)

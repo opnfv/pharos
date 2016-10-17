@@ -29,6 +29,8 @@ class JenkinsSlave(models.Model):
     last_job_installer = models.CharField(max_length=50, default='')
     last_job_result = models.CharField(max_length=30, default='')
 
+    active = models.BooleanField(default=False)
+
     def get_utilization(self, timedelta):
         """
         Return a dictionary containing the count of idle, online and offline measurements in the time from

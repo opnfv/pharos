@@ -8,13 +8,14 @@
 ##############################################################################
 
 
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
 from jira import JIRA
 from jira import JIRAError
 
 from dashboard.models import Resource
-from django.conf import settings
+
 
 class Installer(models.Model):
     id = models.AutoField(primary_key=True)

@@ -33,27 +33,34 @@
                 <i class="fa fa-edit fa-fw"></i>Booking
             </div>
             <div class="panel-body">
-                <div id="booking_form_div">
-                    {% bootstrap_form_errors form type='non_fields' %}
-                    <form method="post" action="" class="form" id="bookingform">
-                        {% csrf_token %}
+                {% if user.is_authenticated %}
+                    <div id="booking_form_div">
+                        {% bootstrap_form_errors form type='non_fields' %}
+                        <form method="post" action="" class="form" id="bookingform">
+                            {% csrf_token %}
 
-                        <div class='input-group' id='starttimepicker'>
-                            {% bootstrap_field form.start addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
-                        </div>
-                        <div class='input-group' id='endtimepicker'>
-                            {% bootstrap_field form.end addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
-                        </div>
-                        {% bootstrap_field form.purpose %}
-                        {% bootstrap_field form.installer %}
-                        {% bootstrap_field form.scenario %}
-                        {% buttons %}
-                            <button type="submit" class="btn btn btn-success">
-                                Book
-                            </button>
-                        {% endbuttons %}
-                    </form>
-                </div>
+                            <div class='input-group' id='starttimepicker'>
+                                {% bootstrap_field form.start addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
+                            </div>
+                            <div class='input-group' id='endtimepicker'>
+                                {% bootstrap_field form.end addon_after='<span class="glyphicon glyphicon-calendar"></span>' %}
+                            </div>
+                            {% bootstrap_field form.purpose %}
+                            {% bootstrap_field form.installer %}
+                            {% bootstrap_field form.scenario %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn btn-success">
+                                    Book
+                                </button>
+                            {% endbuttons %}
+                        </form>
+                    </div>
+                {% else %}
+                    <p>Please
+                        <a href="{% url 'account:login' %}">
+                            login with Jira</a>
+                        to book this Pod</p>
+                {% endif %}
             </div>
         </div>
     </div>
