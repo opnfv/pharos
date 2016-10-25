@@ -1,0 +1,54 @@
+.TH pharoscmp 1 "2016-06-01" "version 0.1"
+.SH NAME
+pharoscmp - Testing tool for Pharos specification
+
+.SH SYNOPSIS
+.B pharoscmp [ options ] 
+
+.SH DESCRIPTION
+This tool uses the virtual Linux filesystems to determine a computer's hardware and evaluate it against the Pharos specification to see if said computer is sufficient for being a node as part of the pod.
+
+.SH OPTIONS
+.BR \-h ", " \-\-help
+Show a help message and exit
+.PP
+.BR \-\-version
+Show program version
+.PP
+.BR \-c ", " \-\-color
+Enable colored console output
+.PP
+.BR \-v ", " \-\-verbose
+Enable more verbose console output
+.PP
+.BR \-q ", " \-\-quiet
+Disable console output
+.PP
+.BR \-o ", " \-\-output
+Define path to output file for yaml file of results
+.PP
+.BR \-f ", " \-\-force
+Forcefully override file defined by --output
+.PP
+.BR \-P ", " \-\-path
+Path to the directory where the test should poll for the file called "nodeinfo.yaml" to arrive in. This file is usually sent via ssh to wherever the test is running
+.PP
+
+.SH BUGS
+Please report bugs to https://tommy.iol.unh.edu/redmine/projects/pharoscmp
+
+.SH AUTHOR
+AUTHOR INFO GOES HERE
+
+.SH LICENSE
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

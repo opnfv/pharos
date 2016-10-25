@@ -1,0 +1,50 @@
+Syntax guide:
+	1. [[ denotes commands / code ]]
+	2. <> denotes bullet, sub-bullets will have an extra > appended depending on their sub-level
+	3. ${denotes variables the the user is expected to fill out depending on their specific needs}
+
+Tutorials:
+	1. Configure host machine for virtualization
+	2. Make a Virtual Machine with storage
+	3. Make a blank virtual machine awaiting PXE
+	4. Install and save default VM image
+	5. Configure Networking with VMs
+;
+
+1 --
+  <> Install Host OS (CentOS7)
+  <> Use package manager (yum) to install qemu, kvm, virt-install, and virt-manager)
+  <> Edit kernel commandline option with "kvm-intel.nested=1" and or edit /etc/modprobe.d/kvm-intel.conf to contain "options kvm-intel nested=1". This will allow for nested performance to not be absolutely terrible and slow.
+	<>> A command to do this is [[ echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf ]]
+  <> 
+
+2 --
+  <> Creating new disks uses the command [[ qemu-img create -f raw ${image-name}.img ${size} ]], where image-name is the name of your vm's disk, and size is the size of the disk you want (e.g. 2G will be a 2 Gigabyte disk, 512M will be 512 Megabytes)
+  <> Download some installation media (e.g. CentOS7-DVD.iso)
+  <> Using those disks utilizing the virt-install tool [[ virt-install -n name_of_vm --graphics none --vcpus=2 -l /path/to/installation.iso --ram=512 --disk path=/path/to/disk.img,cache=none --extra-args="console=ttyS0" ]] don't use --extra-args="console=ttyS0" if you would rather have the VM use the X-display instead of a serial console. 
+  <> 
+
+3 --
+  <> TODO
+
+4 -- 
+  <> Either script the install or make a template of the VM
+
+5 --
+  <> [[ virsh attach-interface --domain ${name} --type network --source default --model virtio --mac ${mac-address} --config --live ]] Where name is the name of the virtual machine that virsh knows of, and ${mac-address} is any randomly generated MAC address.
+  <> Each node will require at least 3 variants of the above command to have 3 more NICs in addition to the one a virtual machine has by default as the pharos specification requires. 
+  <> You can verify the addition of the above NICs with [[ virsh domiflist ${name} ]] where ${name} is the virtual machine you would like to see the NICs of.
+  <> These NICs may be detached with the command [[ virsh detach-interface --domain ${name} --type network --mac ${mac-address} --config ]] where ${name} is the vm you're targeting and ${mac-address} is the NIC's specific MAC address.
+
+0 6 --                                                                            
+  <> Add a virtual interface to a bridge by editing the configuration file that qemu generates.
+  <> Change the line from this:                                                 
+       <interface type='network'>                                               
+         <mac address='00:11:22:33:44:55'/>                                     
+         <source network='default'/>                                            
+       </interface>                                                             
+  <> To this:                                                                   
+       <interface type='bridge'>                                                
+         <mac address='00:11:22:33:44:55'/>                                     
+         <source bridge='br0'/>                                                 
+       </interface> 

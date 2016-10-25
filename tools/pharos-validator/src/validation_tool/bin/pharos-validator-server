@@ -1,0 +1,183 @@
+#!/usr/bin/env/python3
+##############################################################################
+# Copyright (c) 2015 Todd Gaunt and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+
+import yaml
+import threading
+import queue
+import argparse
+import logging
+import os
+import sys
+
+from pharosvalidator import receiver
+from pharosvalidator import util 
+from pharosvalidator import dhcp
+from pharosvalidator import ipmi
+from pharosvalidator import config
+from pharosvalidator import server
+
+def main():
+    """PXE boot each nodes, then start up server to receive results"""
+    # The logger instance for this function
+    logger = logging.getLogger("pharosvalidator")
+    args = parse_args()
+
+    # Determine the logging level
+    loglevel = logging.INFO
+    if args["verbose"]:
+        loglevel = logging.DEBUG
+    if args["quiet"]:
+        loglevel = logging.CRITICAL
+
+    configure_root_logger(loglevel, args["logfile"])
+
+    # Create a new logger strictly for logging test results to a file
+    test_logger = logging.getLogger('test_logger')
+    test_logger.setLevel(logging.INFO)
+    tl_handler = logging.FileHandler(args["test_log"])
+    tl_handler.setFormatter(logging.Formatter("%(message)s"))
+    test_logger.addHandler(tl_handler)
+
+    # Open up the inventory file
+    invconf = config.Inventory(args["inventoryfile"])
+
+    # Open up the network configuration fil
+    netconf = config.Topology(args["networkfile"])
+
+    # Assign yourself an ip
+    #bring_up_admin_ip(netconf.networks["admin"].installer_ip)
+
+    # Start dhcp server
+    dhcp.gen_dhcpd_file(args["dhcpdfile"], invconf.nodes, netconf.networks["admin"])
+    if dhcp.start_server() != 0:
+        logger.error("Halting, cannot bring up dhcp server")
+        quit()
+
+
+    # Queue for holding test logs, makes program thread safe
+    logs_q = queue.Queue()
+
+    # Start a new thread for the server that receives results
+    threading.Thread(target=receiver.start, \
+            args=(invconf.nodecount(), args["server-port"], logs_q), \
+            daemon=True).start()
+
+    failed_nodes = ipmi.power_nodes(invconf.nodes, "on")
+
+    # If the failed nodes list is not empty, then fail
+    if failed_nodes != []:
+        logger.error("Halting, {} were unable to be powered on".format(", ".join(failed_nodes)))
+        quit()
+
+    admin_network = netconf.networks["admin"]
+
+    ip_range = util.gen_ip_range(admin_network.cidr, [admin_network.installer_ip], admin_network.usable_ip_range.minimum, \
+            admin_network.usable_ip_range.maximum)
+
+    logger.info(ip_range)
+
+    available_ips = server.ping_network(ip_range_list=ip_range, ipcnt=len(invconf.nodes), passes=20)
+
+    logger.info(available_ips)
+
+    # Start a thread to run tests on each different node, and setup
+    # their NICs
+    for ip in available_ips:
+        threading.Thread( \
+                target=server.ssh_thread, \
+                args=(str(ip), str(admin_network.installer_ip), str(args["port"]), 200), \
+                daemon=True).start()
+
+    while True: 
+        logger.info("Awaiting test result...")
+        test_logger.info(logs_q.get())
+        logger.info("Logging test result...")
+        if logs_q.empty():
+            break
+
+    logger.info("Finished test, check {} and {}".format(args["logfile"], args["test_log"]))
+
+
+def configure_root_logger(loglevel, logfile):
+    # Add a file handler to the default logger
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+
+    # Configure the root logger
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stdout_handler.setLevel(loglevel)
+    stdout_handler.setFormatter(formatter)
+    rl_handler = logging.FileHandler(logfile)
+    rl_handler.setFormatter(formatter)
+
+    root_logger = logging.getLogger()
+    root_logger.addHandler(rl_handler)
+    root_logger.addHandler(stdout_handler)
+    root_logger.setLevel(loglevel)
+
+def parse_args():
+    """
+    parse_args: parse the commandline arguments and configuration file into
+    a dictionary that can be easily passed and referenced by other functions
+
+    input: None
+
+    output: Dictionary of all commandline arguments and configuration file
+    settings
+    """
+    logger = logging.getLogger(__name__)
+
+    parser = argparse.ArgumentParser( \
+            description='evaluates a system against the pharos specification')
+
+    parser.add_argument('--version',
+                        action="store_true", default=False,
+                        help='display version then exit')
+
+    parser.add_argument('-q', '--quiet',
+                        action="store_true", default=False,
+                        help='disable console output')
+
+    parser.add_argument('-v', '--verbose',
+                        action="store_true", default=False,
+                        help='Enable debugging level output')
+
+    parser.add_argument('-o', '--output',
+                        type=str, default="yaml",
+                        help='Define which machine readable format to output')
+
+    # port that the client should connect to
+    parser.add_argument('-c', '--config',
+                        type=str, default="/etc/pharosvalidator/config.yaml",
+                        help='Configuration file to read')
+
+    # port that the server should use
+    parser.add_argument('-p', '--port',
+                        type=str, default=12121,
+                        help='flag to determine if server or client behavior \
+                                should be used')
+
+    args = vars(parser.parse_args())
+
+    # Read the configuration file first to get extra information
+    if os.path.isfile(args["config"]):
+        with open(args["config"], 'r') as fd:
+            conf = yaml.load(fd.read())
+    else:
+        logger.error("Halting, unable to load configuration file")
+        quit(1)
+
+    for field in args:
+        conf[field] = args[field]
+    args = conf
+
+    return args
+
+if __name__ == "__main__":
+    main()

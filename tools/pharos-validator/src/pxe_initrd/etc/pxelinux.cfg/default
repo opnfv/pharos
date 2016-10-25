@@ -1,0 +1,15 @@
+prompt 0
+display boot.msg
+F1 boot.msg
+timeout 20
+ontimeout test-tool
+
+DEFAULT test-tool
+
+LABEL test-tool
+	MENU LABEL test-tool 64 bit (pharos-livecd)
+	KERNEL vmlinuz
+	INITRD initrd.gz
+
+LABEL Local-Boot
+	localboot 0

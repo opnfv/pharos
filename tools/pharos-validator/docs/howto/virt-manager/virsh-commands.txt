@@ -1,0 +1,14 @@
+# Installing an OS on a new VM
+virt-install -n jump-host-centos7 --graphics none --vcpus=2 --ram=512 --os-type=linux -l /iso/CentOS-7-x86_64-DVD-1511.iso --disk path=/vm/template/jump-host.img,cache=none --extra-args="console=ttyS0"
+
+# PXE booting a new vm
+virt-install --name jump-host-centos7  --graphics none --vcpus 2 --ram=512 --os-type=linux --os-variant=centos7 --network=bridge:"network_birdge_name" --pxe 
+
+# Unused option for pxe
+#--disk path=/vm/template/jump-host.img,cache=none
+
+# Can't delete a VM? Here are some troubleshooting options
+Remember to login as root if needing to destroy virtual machines created by root
+
+# Command to add network interfaces to VM guest
+attach-interface jump-host-centos7_0 --type network  --source default --model virtio --mac DE:AD:BE:EF:B4:EF --config --live
