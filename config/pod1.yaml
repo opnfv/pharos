@@ -1,0 +1,216 @@
+### POD descriptor file ###
+
+- details:
+    pod owner: Lab Owner
+    contact: email@address.com
+    lab: Linux Foundation
+    location: Portland, Oregon, USA
+    type: {production|development}
+    link: http://wiki.opnfv.org/
+
+- jumphost:
+    name: pod1-jump
+    type: {baremetal|virtual}                   # can be virutal or baremetal
+    vendor: supermicro
+    model: S2600JF
+    arch: {x86_64|aarch64}
+    cpus: 2
+    cpu_cflags: {broadwell|hasewell|etc}        # add values based on CFLAGS in GCC
+    cores: 10
+    memory: 32G
+    disks:
+     - disk_capacity1: 10240M                   # first disk
+       disk_type1: {hdd|ssd|cdrom|tape}         # several disk types possible
+       disk_interface1: {sata|sas|ssd|nvme}     # several interface types possible
+       disk_rotation1: {5400|7200|10000|15000}  # define rotation speed of disk
+     - disk_capacity2: 5120M                    # second disk
+       disk_type2: {hdd|ssd|cdrom|tape}
+       disk_interface2: {sata|sas|ssd|nvme}
+       disk_rotation2: {5400|7200|10000|15000}
+    os: ubuntu-14.04
+    remote_mangement:
+        type: ipmi
+         - version: 2.0
+        address: 10.4.7.3/24
+        mac_address: "10:23:45:67:89:AC"
+        user: root
+        pass: root
+    interfaces:
+        if0:
+            type: {nic|vlan}
+            speed: {1gb|10gb|25gb|40gb}
+            address: 10.2.4.5/24                # specify either dhcp or static-ip
+            mac_address: "10:23:45:67:89:AC"
+            features: {dpdk|sriov}
+            networks:
+                network: public
+                routable: {yes|no}
+            vlan: 201
+        if1:
+            type: {nic|vlan}
+            speed: {1gb|10gb|25gb|40gb}
+            address: 10.2.4.6/24
+            mac_address: "10:23:45:67:89:5B"
+            features: {dpdk|sriov}
+            networks:
+                network: network1
+                routable: {yes|no}
+            vlan: 202
+        if2:
+            type: {nic|vlan}
+            speed: {1gb|10gb|25gb|40gb}
+            address: dhcp
+            mac_address: "00:1b:21:44:f1:b4"
+            features: {dpdk|sriov}
+            networks:
+                network: network2
+                routable: {yes|no}
+            vlan: 203
+        if3:
+            type: {nic|vlan}
+            speed: {1gb|10gb|25gb|40gb}
+            address: dhcp
+            mac_address: "00:1b:21:44:f1:b5"
+            features: {dpdk|sriov}
+            networks:
+                network: network3
+                routable: {yes|no}
+            vlan: 204
+-nodes:
+    node1:
+        name: pod1-node1
+        type: {baremetal|virtual}                   # can be virutal or baremetal
+        vendor: supermicro
+        model: S2600JF
+        arch: {x86_64|aarch64}
+        cpus: 2
+        cpu_cflags: {broadwell|hasewell|etc}        # add values based on CFLAGS in GCC
+        cores: 10
+        memory: 64G
+        disks:
+        disks:
+         - disk_capacity1: 10240M                   # first disk
+           disk_type1: {hdd|ssd|cdrom|tape}         # several disk types possible
+           disk_interface1: {sata|sas|ssd|nvme}     # several interface types possible
+           disk_rotation1: {5400|7200|10000|15000}  # define rotation speed of disk
+         - disk_capacity2: 5120M                    # second disk
+           disk_type2: {hdd|ssd|cdrom|tape}
+           disk_interface2: {sata|sas|ssd|nvme}
+           disk_rotation2: {5400|7200|10000|15000}
+        remote_mangement:
+            type: ipmi
+             - version: 2.0
+            address: 10.4.7.7/24
+            mac_address: "10:23:22:67:89:AC"
+            user: root
+            pass: root
+        interfaces:
+            if0:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: 10.2.4.7/24                # specify either dhcp or static-ip
+                mac_address: "10:23:22:67:89:AC"
+                features: {dpdk|sriov}
+                networks:
+                    network: public
+                    routable: {yes|no}
+                vlan: 201
+            if1:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: 10.2.4.8/24
+                mac_address: "10:23:22:67:89:5B"
+                features: {dpdk|sriov}
+                networks:
+                    network: network1
+                    routable: {yes|no}
+                vlan: 202
+            if2:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: dhcp
+                mac_address: "00:1b:21:22:f1:b4"
+                features: {dpdk|sriov}
+                networks:
+                    network: network2
+                    routable: {yes|no}
+                vlan: 203
+            if3:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: dhcp
+                mac_address: "00:1b:21:22:f1:b5"
+                features: {dpdk|sriov}
+                networks:
+                    network: network3
+                    routable: {yes|no}
+                vlan: 204
+    node2:
+        name: pod1-node2
+        type: {baremetal|virtual}                   # can be virutal or baremetal
+        vendor: supermicro
+        model: S2600JF
+        arch: {x86_64|aarch64}
+        cpus: 2
+        cpu_cflags: {broadwell|hasewell|etc}        # add values based on CFLAGS in GCC
+        cores: 10
+        memory: 64G
+        disks:
+        disks:
+         - disk_capacity1: 10240M                   # first disk
+           disk_type1: {hdd|ssd|cdrom|tape}         # several disk types possible
+           disk_interface1: {sata|sas|ssd|nvme}     # several interface types possible
+           disk_rotation1: {5400|7200|10000|15000}  # define rotation speed of disk
+         - disk_capacity2: 5120M                    # second disk
+           disk_type2: {hdd|ssd|cdrom|tape}
+           disk_interface2: {sata|sas|ssd|nvme}
+           disk_rotation2: {5400|7200|10000|15000}
+        remote_mangement:
+            type: ipmi
+             - version: 2.0
+            address: 10.4.7.8/24
+            mac_address: "10:23:22:67:88:AC"
+            user: root
+            pass: root
+        interfaces:
+            if0:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: 10.2.4.8/24                # specify either dhcp or static-ip
+                mac_address: "10:23:22:67:88:AC"
+                features: {dpdk|sriov}
+                networks:
+                    network: public
+                    routable: {yes|no}
+                vlan: 201
+            if1:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: 10.2.4.8/24
+                mac_address: "10:23:22:67:88:5B"
+                features: {dpdk|sriov}
+                networks:
+                    network: network1
+                    routable: {yes|no}
+                vlan: 202
+            if2:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: dhcp
+                mac_address: "00:1b:21:22:f8:b4"
+                features: {dpdk|sriov}
+                networks:
+                    network: network2
+                    routable: {yes|no}
+                vlan: 203
+            if3:
+                type: {nic|vlan}
+                speed: {1gb|10gb|25gb|40gb}
+                address: dhcp
+                mac_address: "00:1b:21:22:f8:b5"
+                features: {dpdk|sriov}
+                networks:
+                    network: network3
+                    routable: {yes|no}
+                vlan: 204
+
