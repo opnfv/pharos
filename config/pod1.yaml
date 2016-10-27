@@ -1,0 +1,133 @@
+### POD descriptor file ###
+
+details:
+  pod owner: Lab Owner
+  contact: email@address.com
+  lab: Linux Foundation
+  location: Portland, Oregon, USA
+  type: {production|development}
+  link: http://wiki.opnfv.org/
+
+jumphost:
+  name: pod1-jump
+  node: &nodeparas
+    type: {baremetal|virtual}               # can be virtual or baremetal
+    vendor: supermicro
+    model: S2600JF
+    arch: {x86_64|aarch64}
+    cpus: 2
+    cpu_cflags: {broadwell|hasewell|etc}    # add values based on CFLAGS in GCC
+    cores: 10
+    memory: 32G
+  diskparas: &diskparas
+    disk_capacity: 10240M                   # disk volume capability
+    disk_type: {hdd|ssd|cdrom|tape}         # several disk types possible
+    disk_interface: {sata|sas|ssd|nvme}     # several interface types possible
+    disk_rotation: {5400|7200|10000|15000}  # define rotation speed of disk
+  intparas: &intparas
+    type: {nic|vlan}
+    speed: {1gb|10gb|25gb|40gb}
+    address: dhcp                           # specify either dhcp or static-ip
+    mac_address:
+    features: {dpdk|sriov}
+    networks:
+      network: {public|local}
+      routable: {yes|no}
+    vlan:
+  disks:
+    - name: 'disk1'                         # first disk
+      <<: *diskparas
+      disk_capacity: 10240M
+    - name: 'disk2'                         # second disk
+      <<: *diskparas
+      disk_capacity: 5120M
+  os: ubuntu-14.04
+  remote_mangement: &remoteparas
+    type:
+      ipmi:
+        - version: 2.0
+    address: 10.4.7.3/24
+    mac_address: "10:23:45:67:89:AC"
+    user: root
+    pass: root
+  interfaces:
+    - name: 'if0'                           # first interface
+      <<: *intparas
+      address: 10.2.4.5/24
+      mac_address: "10:23:45:67:89:AC"
+      vlan: 201
+    - name: 'if1'
+      <<: *intparas
+      address: 10.2.4.6/24
+      mac_address: "10:23:45:67:89:5B"
+      vlan: 202
+    - name: 'if2'
+      <<: *intparas
+      mac_address: "00:1b:21:44:f1:b4"
+      vlan: 203
+    - name: 'if3'
+      <<: *intparas
+      mac_address: "00:1b:21:44:f1:b5"
+      networks:
+          network: network3
+          routable: no
+      vlan: 204
+nodes:
+  - name: pod1-node1
+    node: *nodeparas
+    disks: &disks
+      - name: 'disk 1'
+        <<: *diskparas
+        disk_capacity: 10240M
+      - name: 'disk 2'
+        <<: *diskparas
+        disk_capacity: 5120M
+    remote_mangement:
+      <<: *remoteparas
+      address: 10.4.7.7/24
+      mac_address: "10:23:22:67:89:AC"
+    interfaces:
+      - name: 'if0'
+        <<: *intparas
+        address: 10.2.4.7/24
+        mac_address: "10:23:22:67:89:AC"
+        vlan: 201
+      - name: 'if1'
+        <<: *intparas
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:89:5B"
+        vlan: 202
+      - name: 'if2'
+        <<: *intparas
+        mac_address: "00:1b:21:22:f1:b4"
+        vlan: 203
+      - name: 'if4'
+        <<: *intparas
+        mac_address: "00:1b:21:22:f1:b5"
+        vlan: 204
+  - name: pod1-node2
+    node: *nodeparas
+    disks: *disks
+    remote_mangement:
+      <<: *remoteparas
+      address: 10.4.7.8/24
+      mac_address: "10:23:22:67:88:AC"
+      interfaces:
+      - name: 'if0'
+        <<: *intparas
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:88:AC"
+        vlan: 201
+      - name: 'if1'
+        <<: *intparas
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:88:5B"
+        vlan: 202
+      - name: 'if2'
+        <<: *intparas
+        mac_address: "00:1b:21:22:f8:b4"
+        vlan: 203
+      - name: 'if4'
+        <<: *intparas
+        mac_address: "00:1b:21:22:f8:b5"
+
