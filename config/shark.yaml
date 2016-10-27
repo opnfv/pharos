@@ -1,0 +1,50 @@
+- scenario:
+    name: tuna, salmon, pike, catfish, jellyfish, trout
+    description: bla bla
+    owner: owner_name
+    version: danube.0.1
+
+- operating-system:
+    type: centos7 or ubuntu16.04 or suse
+    version: 7.1.0
+
+- vim:
+    type: openstack
+    configuration: ha or noha
+    version: ocata
+    submodules:
+        - neutron:
+            feature: ml2, bgpvpn or none
+        - congress:
+            feature: none
+
+- sdn-controller:
+
+    type: odl or onos or ocl or none
+
+    configuration: ha or noha
+
+    version: boron
+
+    feature: bgpvpn or nsh or l3
+
+
+- hypervisor:
+    type: kvm or lxd or none
+    feature: hugepages
+
+- virtual-switch:
+    type: ovs or vpp
+
+- accelerator:
+    type: fdio or dpdk
+
+- vnfm:
+    type: tacker or juju
+
+- orchestrator:
+    type: open-o or nfvo
+
+- storage:
+    type: ceph
+
