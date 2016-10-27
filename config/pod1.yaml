@@ -1,0 +1,106 @@
+### POD descriptor file - baremetal ###
+
+- details:
+    pod owner: Lab Owner
+    contact: email@address.com
+    location: Linux Foundation
+    type: {production|community|development}
+    link: http://wiki.opnfv.org/
+    status: {active|inactive|maintenance}
+
+- jumphost:
+    name: pod1-jump
+    type: baremetal
+    vendor: supermicro
+    model: S2600JF
+    serial_number: QSJP22308197
+    arch: {x86_64|aarch64}
+    cpus: 2
+    cores: 10
+    memory: 32G
+    disks:
+     - disk_capacity: 10240M
+       disk_type: sata
+     - disk_capacity: 5120M
+       disk_type: ssd
+    os: ubuntu-14.04
+    remote_mangement:
+        type: ipmi
+         - version: 2.0
+        address: 10.4.7.3/24
+        mac_address: "10:23:45:67:89:AC"
+        user: root
+        pass: root
+    if0:
+        type: {1gbe|vlan}
+        address: 10.2.4.5/24
+        mac_address: "10:23:45:67:89:AC"
+        network: public
+        vlan: 201
+    if1:
+        type: {1gbe|vlan}
+        address: 10.2.4.6/24
+        mac_address: "10:23:45:67:89:5B"
+        network: admin
+        vlan: 202
+    if2:
+        type: {1gbe|vlan}
+        address: dhcp
+        mac_address: "00:1b:21:44:f1:b4"
+        network:  private
+        vlan: 203
+    if3:
+        type: {10gbe|vlan}
+        address: dhcp
+        mac_address: "00:1b:21:44:f1:b5"
+        network: storage
+        vlan: 204
+
+- node1:
+    name: pod1-node1
+    type: baremetal
+    role: {controller|compute|storage}
+    vendor: supermicro
+    model: S2600JF
+    serial_number: QSJP22308197
+    arch: {x86_64|aarch64}
+    cpus: 2
+    cores: 10
+    memory: 64G
+    disks:
+     - disk_capacity: 10240M
+       disk_type: sata
+     - disk_capacity: 5120M
+       disk_type: ssd
+    remote_mangement:
+        type: ipmi
+         - version: 2.0
+        address: 10.4.7.7/24
+        mac_address: "10:23:22:67:89:AC"
+        user: root
+        pass: root
+    if0:
+        type: {1gbe|virtual}
+        address: 10.2.4.7/24
+        mac_address: "10:23:22:67:89:AC"
+        network: public
+        vlan: 201
+    if1:
+        type: {1gbe|virtual}
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:89:5B"
+        network: admin
+        vlan: 202
+    if2:
+        type: {10gbe|virtual}
+        address: dhcp
+        mac_address: "00:1b:21:22:f1:b4"
+        network:  private
+        vlan: 203
+    if3:
+        type: 10gbe
+        address: dhcp
+        mac_address: "00:1b:21:22:f1:b5"
+        network: storage
+        vlan: 204
+
