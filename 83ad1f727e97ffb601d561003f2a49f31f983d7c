@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_73cc7836",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:25:13Z",
+      "side": 1,
+      "message": "yes it can and will be.\n\nwe can perhaps have a virtual_kvm.yaml per lab listing single node in it.",
+      "parentUuid": "5ac10518_73947837",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_1399746e",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_d3da0ce9",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:25:13Z",
+      "side": 1,
+      "message": "exactly.\n\nthis type of information is spilled over many different places; in gerrit in lab description docs, on wiki, lab pages and so on.\n\nthe idea is to process this file and display the information on Jose/Max dashboard.",
+      "parentUuid": "5ac10518_1399746e",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_339ef057",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2016-10-28T07:55:37Z",
       "side": 1,
       "message": "for the moment we use POD as the atomic unity for resources\nwould it make sens in mid/long term to consider the machines so you can build distributed PODs and not the whole POD\nfor example a resource provider (e.g Intel) could put all the machines in 1 yaml file and it should be possible to build PODs and/or use the machine for virtual dev based on the pool of machines withouth prebooking complete pods",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_f3d708be",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:25:13Z",
+      "side": 1,
+      "message": "this is based on the pharos spec as you see to get things under control, expose the details of the pods in a homogeneous way to see what we have out there.\n\nthe dynamic allocation is related to what you ask and there are different use cases based on what we use the pods for on a daily bases such as CI, dev. I think our first target is to roll this out for CI PODs initially and expand it to cover more.",
+      "parentUuid": "5ac10518_339ef057",
       "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
