@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ac10518_b3a9807d",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T08:14:04Z",
+      "side": 1,
+      "message": "I assume the name must be unique and explicit....:)",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_73bb18c5",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T08:14:04Z",
+      "side": 1,
+      "message": "if for any reason some minor features are different from one installer to another \u003d\u003e it will lead to 2 scenarios?",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_33b590cd",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T08:14:04Z",
+      "side": 1,
+      "message": "currently for generic scenario, installer teams are used to be the owner of the scenarios\nit means that we have 4 owners for the same scenario today..\nhow do you reflect it?",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d3c9ac5b",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T08:14:04Z",
+      "side": 1,
+      "message": "one yaml per version, or several versions may be mentioned in this field\n\nnot easy to know if the field has constraint or is open\nDescription could be more prescriptive to avoid misunderstanding",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_73e238d7",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T08:14:04Z",
+      "side": 1,
+      "message": "we planned to introduce scenario tables in test result DB to track scenario scoring...\nwe could reference your yaml file\nBTW it would be interesting to put such yaml into a DB as well",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_53b61cde",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -13,6 +98,23 @@
       "writtenOn": "2016-10-28T08:11:03Z",
       "side": 1,
       "message": "Perhaps a dumb question, when we say or in this file, it means pick one of the options, or is it intended to express that this particular scenario works with any of the listed values?",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_13e734e6",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T08:14:04Z",
+      "side": 1,
+      "message": "How would you get the information? Static declaration of the scenario owner?",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
