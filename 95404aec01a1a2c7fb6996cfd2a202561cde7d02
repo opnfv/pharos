@@ -279,6 +279,24 @@
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_53ee1c8d",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2034
+      },
+      "writtenOn": "2016-10-28T10:39:25Z",
+      "side": 1,
+      "message": "Right, but this then goes back to my \u0027or\u0027 question.  If I list:\n- storage:\n   type: ceph, lvm\n\nDoes that mean this scenario gets run on a pod that has:\n1) LVM\n2) Ceph\n3) Both LVM and Ceph?\n\nAnd how does this scenario get selected?  Does something scan all the scenarios and run each one on compliant pods?  Or when I schedule this scenario, does it somehow scan all pods to find which pod matches my criteria?\n\nPerhaps I am reading too much into this proposal...?",
+      "parentUuid": "5ac10518_b34ae0aa",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
