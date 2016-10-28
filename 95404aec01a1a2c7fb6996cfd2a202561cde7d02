@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac10518_53b61cde",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2034
+      },
+      "writtenOn": "2016-10-28T08:11:03Z",
+      "side": 1,
+      "message": "Perhaps a dumb question, when we say or in this file, it means pick one of the options, or is it intended to express that this particular scenario works with any of the listed values?",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_13b094dc",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2034
+      },
+      "writtenOn": "2016-10-28T08:11:03Z",
+      "side": 1,
+      "message": "Yay :) Actually, it would be interesting to see LVM (or others) here as well.",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
