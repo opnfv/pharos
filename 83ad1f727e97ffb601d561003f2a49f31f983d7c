@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac10518_73947837",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T07:55:37Z",
+      "side": 1,
+      "message": "can it be virtual? \nwould be interesting to see a virtual example",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_1399746e",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T07:55:37Z",
+      "side": 1,
+      "message": "pod is described through the description of each nodes, does it make sense to add info related to the POD\n- pod owner\n- a contact address associated to the pod?\n- a location information\n- type of the POD (production, community,..)\n- url for further information",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_339ef057",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T07:55:37Z",
+      "side": 1,
+      "message": "for the moment we use POD as the atomic unity for resources\nwould it make sens in mid/long term to consider the machines so you can build distributed PODs and not the whole POD\nfor example a resource provider (e.g Intel) could put all the machines in 1 yaml file and it should be possible to build PODs and/or use the machine for virtual dev based on the pool of machines withouth prebooking complete pods",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d3a20c9a",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-10-28T07:55:37Z",
+      "side": 1,
+      "message": "shall we track bandwidth capabilities?\ninfo on hardware switches?",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
