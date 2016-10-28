@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_5674ca9b",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T17:24:25Z",
+      "side": 1,
+      "message": "\"status\" is another parameter that might be useful for the overall pod info. \nstatus: active|inactive|maintenance",
+      "parentUuid": "5ac10518_53bcdc6c",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_339ef057",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
