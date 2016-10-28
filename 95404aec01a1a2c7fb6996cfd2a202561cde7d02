@@ -297,6 +297,24 @@
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_13e8947b",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:52:03Z",
+      "side": 1,
+      "message": "About the first \u0027or\u0027 question; this is something we need to find out together as I don\u0027t have an answer for it yet. \n\nDoes that mean this scenario gets run on a pod that has this and that; Spot on. Our intention is to change the POD allocation model we use today. Currently, we allocate PODs based on installers mainly and this has some negative side effects such as certain features requiring certain PODs.\n\nWe will discuss and have a proposal to move to scenario based POD allocation model so the scenarios can be run on right PODs.\n\nWe will need to change our triggering model as well. Instead of triggering things per scenario, we will probably need to have a job per installer scanning the folder for available scenarios for that installer and kicks them on right/scenario POD.",
+      "parentUuid": "5ac10518_53ee1c8d",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
