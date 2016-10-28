@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_93056416",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T15:08:26Z",
+      "side": 1,
+      "message": "Must the name follow any template or it is 100% free? We should maybe suggest some example names with some structure that is understandable. Not so strict as today but in that direction maybe.\nThe reason is, imaginer I\u0027m a user who wants to deploy OPNFV and have no clue about scenarios. If I select \"shark\" I have no clue what it is about. If I name it \"onos_with_sfc\" or whatever, it gives me an idea.",
+      "parentUuid": "5ac10518_9376c405",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73bb18c5",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_f308682f",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T15:08:26Z",
+      "side": 1,
+      "message": "I guess it is still ok to have different scenarios with minor differences. We have that today. This way of handling scenarios can let different features deploy together. So, it won\u0027t get worse as it is today. On the contrary, it will help merging different existing scenarios when it makes sense.",
+      "parentUuid": "5ac10518_53605c35",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_33b590cd",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "list of owners is something we need to support but it would be good to have primary owner/contact who takes the responsibility of driving the work to get scenario realized, handling the coordination with the infra/test projects, release management and so on. secondary owners could be the ones who commit to the success of the scenario. An example to this could be the multisite scenario which is owned by the multisite PTL. The installer PTLs the multisite is going to be supported by can be additional owners.",
       "parentUuid": "5ac10518_33b590cd",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_b32bc093",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T15:08:26Z",
+      "side": 1,
+      "message": "If in the case we start merging different features into one scenario (i.e. sfc+bgpvpn), there might be 2 or more owners who are \"primary\" and none of them wants to become \"secondary\"",
+      "parentUuid": "5ac10518_73655844",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
