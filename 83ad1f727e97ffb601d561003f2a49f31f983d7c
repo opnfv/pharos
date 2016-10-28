@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_53bcdc6c",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3819
+      },
+      "writtenOn": "2016-10-28T13:06:59Z",
+      "side": 1,
+      "message": "+1 to add this.\nThe jenkins slave name for the pod would also be useful.",
+      "parentUuid": "5ac10518_139f3405",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_339ef057",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
