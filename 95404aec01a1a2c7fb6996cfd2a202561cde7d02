@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_9376c405",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "5ac10518_b3a9807d",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73bb18c5",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-10-28T08:14:04Z",
       "side": 1,
       "message": "if for any reason some minor features are different from one installer to another \u003d\u003e it will lead to 2 scenarios?",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_53605c35",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "This is one million dollar question; how to handle minor variances of the scenarios. For some, we might not need to create a separate scenario such as the operating system but for others we might.",
+      "parentUuid": "5ac10518_73bb18c5",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_73655844",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "list of owners is something we need to support but it would be good to have primary owner/contact who takes the responsibility of driving the work to get scenario realized, handling the coordination with the infra/test projects, release management and so on. secondary owners could be the ones who commit to the success of the scenario. An example to this could be the multisite scenario which is owned by the multisite PTL. The installer PTLs the multisite is going to be supported by can be additional owners.",
+      "parentUuid": "5ac10518_33b590cd",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_d3c9ac5b",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_135ad483",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "for master branch, we should have rolling versioning and always supporting the latest which is what we essentially do today. I don\u0027t think we should have multiple versions here.",
+      "parentUuid": "5ac10518_d3c9ac5b",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73e238d7",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2016-10-28T08:14:04Z",
       "side": 1,
       "message": "we planned to introduce scenario tables in test result DB to track scenario scoring...\nwe could reference your yaml file\nBTW it would be interesting to put such yaml into a DB as well",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_335fd074",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "this file can essentially be consumed by anyone for any purpose; put into a db to display it on a nice dashboard so people get more info, tools use it to do different things and so on.",
+      "parentUuid": "5ac10518_73e238d7",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -121,6 +211,42 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_f3506860",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "static declaration as the file will be passed by CI to installer/test frameworks for processing and deploying/testing.",
+      "parentUuid": "5ac10518_13e734e6",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d353ec6a",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "we will probably need to come up with a scheme to state what these key/value fields mean. we can do something like\ncomma separated list meaning that the scenario works with any of the listed values.",
+      "parentUuid": "5ac10518_53b61cde",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_13b094dc",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -132,6 +258,24 @@
       "writtenOn": "2016-10-28T08:11:03Z",
       "side": 1,
       "message": "Yay :) Actually, it would be interesting to see LVM (or others) here as well.",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_b34ae0aa",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2016-10-28T10:18:26Z",
+      "side": 1,
+      "message": "you need to create a scenario or variant of an existing scenario for it. :)",
+      "parentUuid": "5ac10518_13b094dc",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
