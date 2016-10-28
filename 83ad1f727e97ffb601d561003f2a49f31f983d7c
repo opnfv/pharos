@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ac10518_739a3816",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T12:27:06Z",
+      "side": 1,
+      "message": "I would use here the exact slave name, so it is aligned with Jenkins. This could be useful for things like the Pharos dashboard/booking tool and the dynamic pod allocation.",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73947837",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -72,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_139f3405",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T12:27:06Z",
+      "side": 1,
+      "message": "+1 to add that info. \npod owner \u003d lab owner with email address.\nThe type of pod (CI/Dev) is also an important parameter.",
+      "parentUuid": "5ac10518_1399746e",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_339ef057",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -118,6 +153,40 @@
       "writtenOn": "2016-10-28T07:55:37Z",
       "side": 1,
       "message": "shall we track bandwidth capabilities?\ninfo on hardware switches?",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_33a4b056",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T12:27:06Z",
+      "side": 1,
+      "message": "By listing all the nodes separately here I see the benefit of specifying the different IPs/MACs per each node. But in the other hand, most of the PODs contain the same type of servers, so most of this information will be duplicated (which is fine for 5-6 nodes pods). This might become tedious to maintain if we have larger PODs in the future (i.e. 10-20 nodes POD)",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d388ccc8",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-10-28T12:27:06Z",
+      "side": 1,
+      "message": "Maybe it is not so relevant, but it would be good to add basic information about the switches the POD is connected to.",
       "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
