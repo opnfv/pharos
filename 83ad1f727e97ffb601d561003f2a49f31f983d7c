@@ -143,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_f6693626",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-10-31T02:11:41Z",
+      "side": 1,
+      "message": "we can get the \"status\" information from the jenkins slave status(online/offline). we can also update these status such as maintenance directly in the dashboard.",
+      "parentUuid": "5ac10518_5674ca9b",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_339ef057",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -178,6 +196,29 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_9676b205",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-10-31T02:11:41Z",
+      "side": 1,
+      "message": "suggest to use 32768M or 32G",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_d3a20c9a",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -195,6 +236,29 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_36881ee7",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-10-31T02:11:41Z",
+      "side": 1,
+      "message": "shall use an array for interfaces, not the dedicated name, just like the disks? A NIC name can be added in the array.",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 8
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_33a4b056",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -206,6 +270,24 @@
       "writtenOn": "2016-10-28T12:27:06Z",
       "side": 1,
       "message": "By listing all the nodes separately here I see the benefit of specifying the different IPs/MACs per each node. But in the other hand, most of the PODs contain the same type of servers, so most of this information will be duplicated (which is fine for 5-6 nodes pods). This might become tedious to maintain if we have larger PODs in the future (i.e. 10-20 nodes POD)",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d66c3a39",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-10-31T02:11:41Z",
+      "side": 1,
+      "message": "agree,\n\ncan we define just like this to illuminate all the duplicated msgs:\n-node1:\n  xxx\n-node2:\n  type: same-as node1",
+      "parentUuid": "5ac10518_33a4b056",
       "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
