@@ -219,6 +219,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_dce69916",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-01T09:52:54Z",
+      "side": 1,
+      "message": "alternative:\n\nversion_start: danube-0.1\nversion_end: --optional, when it is valid, it means the final version supported.",
+      "parentUuid": "5ac10518_d3c9ac5b",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73e238d7",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -318,6 +336,52 @@
       "side": 1,
       "message": "we will probably need to come up with a scheme to state what these key/value fields mean. we can do something like\ncomma separated list meaning that the scenario works with any of the listed values.",
       "parentUuid": "5ac10518_53b61cde",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_dccd3988",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-01T09:52:54Z",
+      "side": 1,
+      "message": "Shall we just give a list of supported installer projects? Each version of the installer project represents all the specific parameters.\nor the scenario lists all the requirements, which will match appropriate PODs with any installers?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 6
+      },
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_bcedcdf1",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-01T09:52:54Z",
+      "side": 1,
+      "message": "configuration:\n  - ha: yes | no\n  - huge_page: no| 1GB |  2MB\n  - numa: yes|no\n  - etc",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 29
+      },
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
