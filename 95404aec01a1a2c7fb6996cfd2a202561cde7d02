@@ -196,6 +196,29 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_bcff0daa",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4469
+      },
+      "writtenOn": "2016-11-01T09:29:31Z",
+      "side": 1,
+      "message": "Numeric version string might be preferred. Danube is a release name to me. For example, the version number for ubuntu xenial is actually 16.04",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 19
+      },
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73e238d7",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -295,6 +318,23 @@
       "side": 1,
       "message": "we will probably need to come up with a scheme to state what these key/value fields mean. we can do something like\ncomma separated list meaning that the scenario works with any of the listed values.",
       "parentUuid": "5ac10518_53b61cde",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_5c2ce94a",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4469
+      },
+      "writtenOn": "2016-11-01T09:29:31Z",
+      "side": 1,
+      "message": "Will the customized configuration be embedded or included from separate files?",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
