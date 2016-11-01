@@ -294,6 +294,29 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_5c8f0924",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 602
+      },
+      "writtenOn": "2016-11-01T10:33:07Z",
+      "side": 1,
+      "message": "why are we making node information more complicated by providing ip address and other details which won\u0027t be needed by the installers. Most of the information mentioned below can be obtained by installer dueing pxe boot if needed. What we need is how to power manage it and pxe boot interface and what interfaces we have. JOID just uses  below. With this infromation we can construct any information about the node.\n    \n- name: rack-6-m5\n     architecture: x86_64\n     roles: [compute,storage]\n      nics:\n      - ifname: eth1\n         spaces: [admin]\n         mac: [\"00:1e:67:cf:bc:f8\"]\n      - ifname: eth4\n         spaces: [data]\n         mac: [\"90:E2:BA:84:08:F4\"]\n      power:\n        type: ipmi\n         address: 10.2.117.100\n        user: root\n         pass: root\n   spaces:\n   - type: admin\n     bridge: brAdm\n     cidr: 10.6.1.0/24\n     gateway: 10.6.1.1\n     vlan:\n\nWe uses the complete file as follows which is highly optimized for the lab and contain all information needed to deploy and configure the openstack in any environment.\n\nhttps://gerrit.opnfv.org/gerrit/gitweb?p\u003djoid.git;a\u003dblob;f\u003dlabconfig/labconfig.yaml;h\u003d0b9b266bc8fd137289ad994c32bf8a93d4806317;hb\u003da62ff379b0738e1ead64622813d99486f7acc912#l95",
+      "range": {
+        "startLine": 48,
+        "startChar": 2,
+        "endLine": 48,
+        "endChar": 8
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_f685b6ad",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
