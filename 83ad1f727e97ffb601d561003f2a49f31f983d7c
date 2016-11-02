@@ -219,6 +219,29 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_026fd893",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3543
+      },
+      "writtenOn": "2016-11-02T15:49:09Z",
+      "side": 1,
+      "message": "How do we address the virtual deployment scenario, i.e. Apex virtual deployment uses libVirt to spin up VMs, where the virtualization layer doesn\u0027t provide an actual IPMI implementation.",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 18
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_d3a20c9a",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -252,6 +275,52 @@
         "startChar": 4,
         "endLine": 23,
         "endChar": 8
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_e2f88cc6",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 3543
+      },
+      "writtenOn": "2016-11-02T15:49:09Z",
+      "side": 1,
+      "message": "Related to comment for line 28, should include a type VLAN, which might indicate a virtual network, running on top of the physical interface.",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 18
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_421400f5",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3543
+      },
+      "writtenOn": "2016-11-02T15:49:09Z",
+      "side": 1,
+      "message": "Need to indicate if this is a VLAN tagged interface, or if the VLAN is untagged and native on this interface.",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 17
       },
       "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -398,6 +467,24 @@
       "writtenOn": "2016-10-28T12:27:06Z",
       "side": 1,
       "message": "Maybe it is not so relevant, but it would be good to add basic information about the switches the POD is connected to.",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_a20284b2",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 3543
+      },
+      "writtenOn": "2016-11-02T15:49:09Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "5ac10518_d388ccc8",
       "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
