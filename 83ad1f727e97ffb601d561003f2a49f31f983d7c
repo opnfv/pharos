@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_565da5e8",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3543
+      },
+      "writtenOn": "2016-11-03T13:06:02Z",
+      "side": 1,
+      "message": "Should any of these names be FQDN?  Or support that option / suggestion?",
+      "parentUuid": "5ac10518_739a3816",
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_73947837",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
