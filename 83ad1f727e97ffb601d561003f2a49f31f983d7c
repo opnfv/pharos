@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ac10518_45aba589",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-11-08T15:58:41Z",
+      "side": 1,
+      "message": "why is this part of a list?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_739a3816",
         "filename": "config/pod1.yaml",
         "patchSetId": 1
@@ -467,6 +490,29 @@
         "startChar": 14,
         "endLine": 65,
         "endChar": 18
+      },
+      "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_05959d3f",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-11-08T15:58:41Z",
+      "side": 1,
+      "message": "these are network settings and should not be in the hardware inventory.  Interface order is also up to the OS.",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 17
       },
       "revId": "83ad1f727e97ffb601d561003f2a49f31f983d7c",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
