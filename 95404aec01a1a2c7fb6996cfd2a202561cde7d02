@@ -388,6 +388,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_fb127257",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "I think we need to be more fine granular than HA/no HA, we must be able to define the number of controllers. We must also have a way to define resources and roles separately. A resource being a host, a role being: OS controller, OS Compute, ODL controller, etc. Roles must be posible (with given limitations) to allocate/co-locate on a resource.\nEg an ODL controller cluster should be possible to colocate with OS controllers, compute-nodes, or on bare metal nodes.\nAny policies like memory/cache- or CPU interconnect/pinning shall refer to the resource and not the role, and it needs to be either arch independent, or state the prefered policy per arch.",
+      "parentUuid": "5ac10518_bcedcdf1",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_5c2ce94a",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -399,6 +423,75 @@
       "writtenOn": "2016-11-01T09:29:31Z",
       "side": 1,
       "message": "Will the customized configuration be embedded or included from separate files?",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_1b109e4d",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "What is a feature, is that an intermediate OPNFV interpretation which translates into semi-fixed OPENStack module configuration, or does it directly refer to the OpenStack module data model?",
+      "parentUuid": "5ac10518_5c2ce94a",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_bb1cea6b",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "HA or non HA is not enough, we need to be able to specify the cluster size and co-location policies!\nSee earlier comment on resource-, and role definitions!",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_db19b67a",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "There are so many more features, so again - will this refer to the actual config data-model of ODL or is it an intermediate sumarization defined by OPNFV.",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_3b20fa9a",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "Networking-, vSwitch-, attachment points- and bridge topology is missing, so is the topology for the different network roles. Mgmt, Admin, InternCom, Storage, Public and private!\nNetwork underlay tech and definitions as well as overlay segmentation and definitions are also missing.\nWhat about floating IP/NAT definitions and distribution.\nIm also missing the subnet definitions, DHCP pools, etc., etc.",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -446,6 +539,40 @@
         "endLine": 35,
         "endChar": 22
       },
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_7b2682bc",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "I would prefer a separate VNF Orchestration scenario handling from the VIM scenario handling. I propose those different scenario enteties gets stiched together by Jenkins, or an higher order scenario machine. Unless we divide the scenario handling for the different main areas (VIM, VNFM, Orchestration, Application), this defenition will grow arbitrarilly complex!",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_9b2b2e82",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-11-09T22:58:42Z",
+      "side": 1,
+      "message": "I would prefer a separate VNF Orchestration scenario handling from the VIM scenario handling. I propose those different scenario enteties gets stiched together by Jenkins, or an higher order scenario machine. Unless we divide the scenario handling for the different main areas (VIM, VNFM, Orchestration, Application), this defenition will grow arbitrarilly complex!",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
