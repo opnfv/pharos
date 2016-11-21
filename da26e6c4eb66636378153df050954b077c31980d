@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_1d1728ef",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-11-21T07:25:33Z",
+      "side": 1,
+      "message": "+1 with Lincoln comment, status shall be detected not statically defined. The risk is to become very quickly not consistent",
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_fae4a2ad",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
@@ -66,6 +83,23 @@
         "endLine": 21,
         "endChar": 10
       },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_fdf01ccb",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-11-21T07:25:33Z",
+      "side": 1,
+      "message": "no indication on network NIC on the uspport of DPDK/SR-IOV,...?",
       "revId": "da26e6c4eb66636378153df050954b077c31980d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
