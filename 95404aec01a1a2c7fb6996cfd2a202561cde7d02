@@ -498,6 +498,24 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_0e904ceb",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T07:30:59Z",
+      "side": 1,
+      "message": "Is it reasonable to get the the specific networking/nodes,etc are configured in the common files or POD hardware definitions?",
+      "parentUuid": "5ac10518_3b20fa9a",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_c268f089",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -545,6 +563,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_6eb6b08c",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T07:30:59Z",
+      "side": 1,
+      "message": "yes, we can use list here",
+      "parentUuid": "5ac10518_c268f089",
+      "range": {
+        "startLine": 35,
+        "startChar": 3,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_7b2682bc",
         "filename": "config/shark.yaml",
         "patchSetId": 2
@@ -556,6 +598,24 @@
       "writtenOn": "2016-11-09T22:58:42Z",
       "side": 1,
       "message": "I would prefer a separate VNF Orchestration scenario handling from the VIM scenario handling. I propose those different scenario enteties gets stiched together by Jenkins, or an higher order scenario machine. Unless we divide the scenario handling for the different main areas (VIM, VNFM, Orchestration, Application), this defenition will grow arbitrarilly complex!",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_aebc986d",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T07:30:59Z",
+      "side": 1,
+      "message": "+1,\n\nVNFO shall have the ability to integrate with any scenarios and VIM installers.",
+      "parentUuid": "5ac10518_7b2682bc",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -643,6 +703,24 @@
       "writtenOn": "2016-10-28T10:52:03Z",
       "side": 1,
       "message": "About the first \u0027or\u0027 question; this is something we need to find out together as I don\u0027t have an answer for it yet. \n\nDoes that mean this scenario gets run on a pod that has this and that; Spot on. Our intention is to change the POD allocation model we use today. Currently, we allocate PODs based on installers mainly and this has some negative side effects such as certain features requiring certain PODs.\n\nWe will discuss and have a proposal to move to scenario based POD allocation model so the scenarios can be run on right PODs.\n\nWe will need to change our triggering model as well. Instead of triggering things per scenario, we will probably need to have a job per installer scanning the folder for available scenarios for that installer and kicks them on right/scenario POD.",
+      "parentUuid": "5ac10518_53ee1c8d",
+      "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_cec1e4e5",
+        "filename": "config/shark.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T07:30:59Z",
+      "side": 1,
+      "message": "storage nearly is used for vm\u0027s image or volume.\nwe can list the requirement, such as,\n- image: lvm\n- volume: ceph\n\nof course, there many be other storage backends. but we can limit the use case.",
       "parentUuid": "5ac10518_53ee1c8d",
       "revId": "95404aec01a1a2c7fb6996cfd2a202561cde7d02",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
