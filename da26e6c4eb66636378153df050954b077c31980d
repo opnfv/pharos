@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_49ac0eee",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T09:07:24Z",
+      "side": 1,
+      "message": "+1, we shall track the status through ci slaves",
+      "parentUuid": "5ac10518_3adb0aef",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_1d1728ef",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
@@ -36,6 +60,29 @@
       "writtenOn": "2016-11-21T07:25:33Z",
       "side": 1,
       "message": "+1 with Lincoln comment, status shall be detected not statically defined. The risk is to become very quickly not consistent",
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_09b6063e",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T09:07:24Z",
+      "side": 1,
+      "message": "I think jump host is not necessary here.\nCI slaves can be run on the node or not, and the jumphost is not necessary to provide access.\nDifferent labs can use different network environment and we not limit the jumshost behavior.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
       "revId": "da26e6c4eb66636378153df050954b077c31980d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -100,6 +147,98 @@
       "writtenOn": "2016-11-21T07:25:33Z",
       "side": 1,
       "message": "no indication on network NIC on the uspport of DPDK/SR-IOV,...?",
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_a90572c3",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T09:07:24Z",
+      "side": 1,
+      "message": "can we add a common node information,\n- common\n  -desp: common info for all nodes\n  - arch\n  - cpu\n  - cores\n  - memory\n  - storage\n  ...",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 8
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_4993aea3",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T09:07:24Z",
+      "side": 1,
+      "message": "OPNFV is not an asset management, the SN is not necessary here.",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 31
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_891436f6",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T09:07:24Z",
+      "side": 1,
+      "message": "is it useful? the allocation of the network has been determined.",
+      "range": {
+        "startLine": 83,
+        "startChar": 15,
+        "endLine": 83,
+        "endChar": 27
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_e9193a23",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-11-23T09:07:24Z",
+      "side": 1,
+      "message": "which means the installer can allocate the dedicated ip to the node.",
+      "range": {
+        "startLine": 90,
+        "startChar": 17,
+        "endLine": 90,
+        "endChar": 28
+      },
       "revId": "da26e6c4eb66636378153df050954b077c31980d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
