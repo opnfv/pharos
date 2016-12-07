@@ -176,6 +176,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_08b6e8d9",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2016-12-07T15:45:07Z",
+      "side": 1,
+      "message": "This is something YAML already support through Anchors (\u0026):\nhttps://en.wikipedia.org/wiki/YAML#Advanced_components\n\n- node1: \u0026node1\n  name: pod1-node1\n  type: baremetal\n  ...\n\n- node2:\n  \u003c\u003c: *node1\n  name: pod1-node2",
+      "parentUuid": "5ac10518_a90572c3",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 8
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_4993aea3",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
