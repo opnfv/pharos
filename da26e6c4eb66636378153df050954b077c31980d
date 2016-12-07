@@ -208,6 +208,29 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_88ef38b0",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 332
+      },
+      "writtenOn": "2016-12-07T16:30:23Z",
+      "side": 1,
+      "message": "This highlights a problem. One disk is type \"sata\" and another is type \"ssd\". Types of disks are: hdd, ssd, cdrom, tape, etc. Interface types include: sata, sas, nvme, etc. Also, if the type is hdd, then rotational speed could be very important (e.g., 5400, 7200, 10000, 15000).",
+      "range": {
+        "startLine": 25,
+        "startChar": 18,
+        "endLine": 25,
+        "endChar": 21
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_28896426",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
