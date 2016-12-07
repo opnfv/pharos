@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_08e34808",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "Accept in F2F meeting: Drop the line.\nStatus will be kept in dashboard database",
+      "parentUuid": "5ac10518_49ac0eee",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_1d1728ef",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
@@ -77,6 +101,30 @@
       "writtenOn": "2016-11-23T09:07:24Z",
       "side": 1,
       "message": "I think jump host is not necessary here.\nCI slaves can be run on the node or not, and the jumphost is not necessary to provide access.\nDifferent labs can use different network environment and we not limit the jumshost behavior.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_48c07050",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "Jumphost is part of the  POD so it should be described here.\nPharos spec needs to be changed to allow virtual jump hosts.\n\nBut Jenkins slave is not part of the POD. SO they will not be mentioned here",
+      "parentUuid": "5ac10518_09b6063e",
       "range": {
         "startLine": 11,
         "startChar": 0,
@@ -129,6 +177,76 @@
         "startChar": 4,
         "endLine": 21,
         "endChar": 10
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_c8922057",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "Accept It should allow multiple disks.",
+      "parentUuid": "5ac10518_fae4a2ad",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_28896426",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "type should be nic|vlan\nspeed 1gb|10gb|25gb|40gb etc. as additional parameter",
+      "range": {
+        "startLine": 35,
+        "startChar": 7,
+        "endLine": 35,
+        "endChar": 25
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_c879c030",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "must allow multiple networks for an interface.\nnetworks:\n   network: public\n   ....",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 15
       },
       "revId": "da26e6c4eb66636378153df050954b077c31980d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -200,6 +318,48 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_4895d031",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "This can be achieved using yaml macros. So no need to define separate syntax.",
+      "parentUuid": "5ac10518_a90572c3",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 8
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_68768c40",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "Accept: Add to interface section, as supported features to NIC.",
+      "parentUuid": "5ac10518_fdf01ccb",
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_4993aea3",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
@@ -216,6 +376,76 @@
         "startChar": 4,
         "endLine": 65,
         "endChar": 31
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_a8a3149d",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "True. But the lab owner might like to have opportunity to save some private notes. so let\u0027s rename that to a field \"additional_information\"",
+      "parentUuid": "5ac10518_4993aea3",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 31
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_089fc853",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "add a new field for cpu-type",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 8
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_488e3030",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "add a subsection \"interfaces:\"",
+      "range": {
+        "startLine": 82,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 7
       },
       "revId": "da26e6c4eb66636378153df050954b077c31980d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
@@ -246,6 +476,53 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_c8a0e092",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "see previous.",
+      "parentUuid": "5ac10518_891436f6",
+      "range": {
+        "startLine": 83,
+        "startChar": 15,
+        "endLine": 83,
+        "endChar": 27
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_48bcf0bb",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "we need information whether public or not. Besides that the networks shouldn\u0027t be named here.\nnetwork: routable\u003dyes|no, number 1|2|3|...",
+      "range": {
+        "startLine": 86,
+        "startChar": 17,
+        "endLine": 86,
+        "endChar": 23
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_e9193a23",
         "filename": "config/pod1.yaml",
         "patchSetId": 2
@@ -257,6 +534,30 @@
       "writtenOn": "2016-11-23T09:07:24Z",
       "side": 1,
       "message": "which means the installer can allocate the dedicated ip to the node.",
+      "range": {
+        "startLine": 90,
+        "startChar": 17,
+        "endLine": 90,
+        "endChar": 28
+      },
+      "revId": "da26e6c4eb66636378153df050954b077c31980d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_88d8981e",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 402
+      },
+      "writtenOn": "2016-12-07T15:56:44Z",
+      "side": 1,
+      "message": "Yes. The installer MUST allocate that IP address.\nThis field can specify either dhcp or static-ip.",
+      "parentUuid": "5ac10518_e9193a23",
       "range": {
         "startLine": 90,
         "startChar": 17,
