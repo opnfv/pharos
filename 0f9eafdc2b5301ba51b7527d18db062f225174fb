@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_1cc86a21",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 332
+      },
+      "writtenOn": "2016-12-09T13:16:45Z",
+      "side": 1,
+      "message": "Previously, you were confusing disk type with disk interface type. These are very different things.",
+      "parentUuid": "5ac10518_fc2b1e2e",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 17
+      },
+      "revId": "0f9eafdc2b5301ba51b7527d18db062f225174fb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_7c172eee",
         "filename": "config/pod1.yaml",
         "patchSetId": 3
