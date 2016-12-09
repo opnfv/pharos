@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ac10518_37530119",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-12-09T15:50:39Z",
+      "side": 1,
+      "message": "virtual not virutal",
+      "revId": "0f9eafdc2b5301ba51b7527d18db062f225174fb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_3c3206a8",
         "filename": "config/pod1.yaml",
         "patchSetId": 3
@@ -66,6 +83,23 @@
         "endLine": 23,
         "endChar": 17
       },
+      "revId": "0f9eafdc2b5301ba51b7527d18db062f225174fb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d7571d01",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-12-09T15:50:39Z",
+      "side": 1,
+      "message": "could we not agree on default creds \ndoes it make sense to indicate them here?",
       "revId": "0f9eafdc2b5301ba51b7527d18db062f225174fb",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -227,6 +261,23 @@
         "endLine": 108,
         "endChar": 16
       },
+      "revId": "0f9eafdc2b5301ba51b7527d18db062f225174fb",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_f75c9927",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 335
+      },
+      "writtenOn": "2016-12-09T15:50:39Z",
+      "side": 1,
+      "message": "any misc section for exotic stuff? e.g. watercolling",
       "revId": "0f9eafdc2b5301ba51b7527d18db062f225174fb",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
