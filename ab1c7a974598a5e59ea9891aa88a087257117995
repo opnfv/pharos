@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac10518_ff01c706",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2016-12-15T15:27:15Z",
+      "side": 1,
+      "message": "I\u0027m not sure this fully describes a POD.\nDoes it refer to jumphost arch or target node pool arch (assuming all nodes in the POD are the same arch, which is true \u0027for now\u0027)?\nFor Armband, we currently use\n{x86 jump server, x86 jenkins slaves, x86 fuel master, but aarch64 target nodes}\nwith immediate plans to switch to\n{x86 jump server, aarch64 jenkins slaves, x86 fuel master, and aarch64 target nodes}",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 26
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
