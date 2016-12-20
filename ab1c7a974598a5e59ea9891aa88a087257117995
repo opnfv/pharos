@@ -22,6 +22,30 @@
       "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_38fa00be",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-12-20T14:46:11Z",
+      "side": 1,
+      "message": "it is only used for jumphost arch.\nif it is not the same with target node, you can have a customized value after line 77",
+      "parentUuid": "5ac10518_ff01c706",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 26
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
