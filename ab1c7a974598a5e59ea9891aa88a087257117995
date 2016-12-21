@@ -46,6 +46,190 @@
       "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_b62fe087",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "a vlan interface is a virtual interface and is not a physical property of a pod.  There could be a nic of eth1, which many vlan interfaces attached to it.  That type of configuration is a per deployment network setting, and should not be in this file imo.",
+      "range": {
+        "startLine": 28,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_564ebc70",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "network config",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_7651780d",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 9
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_16583431",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "no need to put pseudo disk names here",
+      "range": {
+        "startLine": 38,
+        "startChar": 5,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_d6414c3a",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "this formatting can just be:\ntype: ipmi\nversion: 2.0\n\nmaybe also list alternate values, like \"amt\"?",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 22
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_365bf02f",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "address and mac are already specified in the anchor.  they are not common attributes, so probably makes more sense to list them here and remove from anchor.",
+      "range": {
+        "startLine": 87,
+        "startChar": 5,
+        "endLine": 88,
+        "endChar": 38
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_963424df",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "the name here has no real significance.  Consider removing it and keep each interface in a list to maintain order.",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 19
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_f63568db",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-21T14:40:52Z",
+      "side": 1,
+      "message": "mac address is fine, but ip address and vlan tags are subject to change depending on deployment and are not static hardware properties of the pod.  These are better served in a separate network settings file.",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
