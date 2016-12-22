@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_bce25f2d",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2016-12-22T20:40:45Z",
+      "side": 1,
+      "message": "I think that is the best way to go.  We had come up with a somewhat agreed upon common format in Genesis.  We have implemented that in Apex for Danube: https://github.com/opnfv/apex/blob/master/config/network/network_settings.yaml",
+      "parentUuid": "5ac10518_f9aa39d1",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_7651780d",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
