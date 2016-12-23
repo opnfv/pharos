@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_dc72cb7b",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2016-12-23T00:47:02Z",
+      "side": 1,
+      "message": "Agree with you.\n\nIt is easier to maintain the hardware information from the network part. Hardware info is nearly not changed/updated after the POD is setup.\n\nI will update ZTE\u0027s yaml according to your suggestion in securedlab which is in review now.",
+      "parentUuid": "5ac10518_bce25f2d",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_7651780d",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
