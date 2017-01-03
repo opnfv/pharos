@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_5516a956",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2017-01-03T15:42:51Z",
+      "side": 1,
+      "message": "If the purpose here is to declare allowed tags on the interface, then should probably use:\nvlan_tags:\n - native\n - 101\n - 110\n - 150...160 #range",
+      "parentUuid": "5ac10518_b62fe087",
+      "range": {
+        "startLine": 28,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_564ebc70",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -284,6 +308,30 @@
     },
     {
       "key": {
+        "uuid": "5ac10518_7532c511",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2017-01-03T15:42:51Z",
+      "side": 1,
+      "message": "then i think it makes more sense to specify multiple versions as:\nversions:\n - 2.0\n - 2.1\n - 2.2",
+      "parentUuid": "5ac10518_3980c145",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 22
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_365bf02f",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -366,6 +414,30 @@
       "side": 1,
       "message": "it is the physical nic name.\nActually it may be different in different OS. we can get the same name using the same mechanism through OS and BIOS.",
       "parentUuid": "5ac10518_963424df",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 19
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_152101b4",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2017-01-03T15:42:51Z",
+      "side": 1,
+      "message": "Right the interface name is going to depend on OS, so this doesn\u0027t make much sense.",
+      "parentUuid": "5ac10518_f991d99a",
       "range": {
         "startLine": 116,
         "startChar": 9,
