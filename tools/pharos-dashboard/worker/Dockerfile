@@ -5,4 +5,4 @@ ADD ./requirements.txt /config/
 RUN pip install -r /config/requirements.txt
 RUN useradd -ms /bin/bash celery
 USER celery
-WORKDIR /src
+WORKDIR /pharos_dashboard/src

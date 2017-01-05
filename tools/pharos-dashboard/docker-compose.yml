@@ -34,7 +34,7 @@ services:
             - postgres
         env_file: config.env
         volumes:
-            - ./src:/src
+            - ./:/pharos_dashboard
             - /var/lib/pharos_dashboard/static:/static
             - /var/lib/pharos_dashboard/media:/media
         expose:
@@ -51,19 +51,20 @@ services:
 
     rabbitmq:
         restart: always
-        image: rabbitmq:latest
+        build: ./rabbitmq/
         container_name: rm01
-        expose:
-          - "5672"
-
+        env_file: config.env
+        ports:
+          - "5672:5672"
+          
     worker:
         restart: always
         build: ./worker/
-        command: bash -c "celery -A pharos_dashboard worker -l info -B --schedule=~/celerybeat-schedule""
+        command: bash -c "celery -A pharos_dashboard worker -l info -B --schedule=~/celerybeat-schedule"
         env_file: config.env
         links:
             - postgres
             - rabbitmq
         volumes:
-            - ./src:/src
+            - ./:/pharos_dashboard
      

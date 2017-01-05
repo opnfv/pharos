@@ -19,15 +19,15 @@ class BookingNotification(models.Model):
 
     def get_content(self):
         return {
-            'start': self.booking.start.isoformat(),
-            'end': self.booking.end.isoformat(),
+            'resource_id': self.booking.resource.id,
+            'booking_id': self.booking.id,
             'user': self.booking.user.username,
-            'purpose': self.booking.purpose
+            'user_id': self.booking.user.id,
         }
 
     def save(self, *args, **kwargs):
         notifications = self.booking.bookingnotification_set.filter(type=self.type).exclude(
             id=self.id)
-        if notifications.count() > 0:
-            raise ValueError('Doubled Notification')
+        #if notifications.count() > 0:
+        #    raise ValueError('Doubled Notification')
         return super(BookingNotification, self).save(*args, **kwargs)
