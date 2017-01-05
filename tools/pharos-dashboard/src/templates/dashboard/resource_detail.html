@@ -26,6 +26,26 @@
             </div>
         </div>
     </div>
+
+    <div class="col-lg-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Status
+            </div>
+            <div class="panel-body">
+                <div class="list-group pre-scrollable">
+                    {% for status in resource.resourcestatus_set.all %}
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-info fa-fw"></i> {{ status.title }}
+                            <span class="pull-right text-muted small">
+                                <em>{{ status.timestamp }}</em>
+                            </span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-9">
         <div class="panel panel-default">
             <div class="panel-heading">

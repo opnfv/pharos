@@ -64,7 +64,6 @@ class Resource(models.Model):
     def __str__(self):
         return self.name
 
-
 class Server(models.Model):
     id = models.AutoField(primary_key=True)
     resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
@@ -79,3 +78,17 @@ class Server(models.Model):
 
     def __str__(self):
         return self.name
+
+class ResourceStatus(models.Model):
+    id = models.AutoField(primary_key=True)
+    resource = models.ForeignKey(Resource, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    type = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
+    content = models.CharField(max_length=5000)
+
+    class Meta:
+        db_table = 'resource_status'
+
+    def __str__(self):
+        return self.resource.name + ': ' + self.title + ' ' + str(self.timestamp)
