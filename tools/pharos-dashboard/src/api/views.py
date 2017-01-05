@@ -15,15 +15,15 @@ from django.views import View
 from rest_framework import viewsets
 from rest_framework.authtoken.models import Token
 
-from api.serializers import ResourceSerializer, ServerSerializer, BookingSerializer
+from api.serializers import *
 from booking.models import Booking
-from dashboard.models import Resource, Server
+from dashboard.models import Resource, Server, ResourceStatus
 
 
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    filter_fields = ('resource', 'user')
+    filter_fields = ('resource', 'id')
 
 
 class ServerViewSet(viewsets.ModelViewSet):
@@ -35,7 +35,11 @@ class ServerViewSet(viewsets.ModelViewSet):
 class ResourceViewSet(viewsets.ModelViewSet):
     queryset = Resource.objects.all()
     serializer_class = ResourceSerializer
-    filter_fields = ('name',)
+    filter_fields = ('name', 'id')
+
+class ResourceStatusViewSet(viewsets.ModelViewSet):
+    queryset = ResourceStatus.objects.all()
+    serializer_class = ResourceStatusSerializer
 
 
 @method_decorator(login_required, name='dispatch')

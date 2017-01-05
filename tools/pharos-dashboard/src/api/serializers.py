@@ -11,22 +11,30 @@
 from rest_framework import serializers
 
 from booking.models import Booking
-from dashboard.models import Server, Resource
+from dashboard.models import Server, Resource, ResourceStatus
 
 
-class BookingSerializer(serializers.HyperlinkedModelSerializer):
+class BookingSerializer(serializers.ModelSerializer):
+    installer_name = serializers.RelatedField(source='installer', read_only=True)
+    scenario_name = serializers.RelatedField(source='scenario', read_only=True)
+
     class Meta:
         model = Booking
-        fields = ('id', 'resource', 'start', 'end', 'purpose')
+        fields = ('id', 'resource_id', 'start', 'end', 'installer_name', 'scenario_name', 'purpose')
 
 
-class ServerSerializer(serializers.HyperlinkedModelSerializer):
+class ServerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Server
-        fields = ('id', 'resource', 'name', 'model', 'cpu', 'ram', 'storage')
+        fields = ('id', 'resource_id', 'name', 'model', 'cpu', 'ram', 'storage')
 
 
-class ResourceSerializer(serializers.HyperlinkedModelSerializer):
+class ResourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Resource
         fields = ('id', 'name', 'description', 'url', 'server_set')
+
+class ResourceStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ResourceStatus
+        fields = ('id', 'resource', 'timestamp','type', 'title', 'content')
