@@ -1,0 +1,106 @@
+details:
+  pod owner: "Lincoln Lavoie"
+  contact: "lylavoie@iol.unh.edu"
+  lab: "IOL"
+  location: "Durham, NH, USA"
+  type: development
+  link: http://wiki.opnfv.org/
+
+jumphost:
+  name: Dell-jump
+  node: &nodeparas
+    type: baremetal # {virtual|baremetal}
+    vendor: Dell
+    model: S2600JF
+    arch: x86_64 # {x86_64|aarch64}
+    cpus: 2
+    cpu_cflags: {broadwell|hasewell|etc} # add values based on CFLAGS in GCC
+    cores: 4 
+    memory: 32G
+  diskparas: &diskparas
+    disk_capacity: 232400M  # disk volume capability
+    disk_type: hdd # {hdd|ssd|cdrom|tape}
+    disk_interface: sata # {sata|sas|ssd|nvme}
+    disk_rotation: # TBD 5400? # {5400|7200|10000|15000}
+  intparas: &intparas
+    type: vlan # {nic|vlan}
+    speed: 10gb {1gb|10gb|25gb|40gb}
+    address: static-ip # {static-ip|dhcp}
+    mac_address:
+    features: # NOT SURE # {dpdk|sriov} # NOT SURE
+    networks:
+      network: local # {public|local}
+      routable: # TBD # {yes|no}
+    vlan: 1256
+  disks:
+    - name: 'disk1'                         # first disk
+      <<: *diskparas
+      disk_capacity: 10240M
+    - name: 'disk2'                         # second disk
+      <<: *diskparas
+      disk_capacity: 5120M
+  os: Red Hat Enterprise Linux 7
+  remote_management: &remoteparas
+    type:
+      ipmi:
+        - version: 2.0
+    address: ""
+    mac_address: ""
+    user: "root"
+    pass: "<0nF0rmAnz"
+  interfaces:
+    - name: ''                           # first interface
+      <<: *intparas
+      address: 
+      mac_address: ""
+      vlan: 29
+    - name: ''
+      <<: *intparas
+      address: 
+      mac_address: ""
+      vlan: 29
+    - name: ''
+      <<: *intparas
+      mac_address: ""
+      vlan: 
+    - name: ''
+      <<: *intparas
+      mac_address: ""
+      vlan: 
+      networks:
+          network: network3
+          routable: no
+nodes:
+  - name: "Intel 1"
+    node: *nodeparas
+    disks: &disks
+      - name: 'disk 1'
+        <<: *diskparas
+        disk_capacity: 10240M
+      - name: 'disk 2'
+        <<: *diskparas
+        disk_capacity: 5120M
+    remote_management:
+      <<: *remoteparas
+      address: 10.10.29.11/24
+      mac_address: ""
+    interfaces:
+      - name: 'eno1'
+        <<: *intparas
+        address:
+        mac_address: "a4:bf:01:01:6a:e9"
+        vlan: 29
+      - name: 'enp4s0f3'
+        <<: *intparas
+        address:
+        mac_address: "a4:bf:01:01:6a:ea"
+        vlan: 29
+      - name: 'eno3'
+        <<: *intparas
+        address:
+        mac_address: "00:1e:67:f6:9b:6e"
+        vlan: 30
+      - name: 'eno4'
+        <<: *intparas
+        mac_address: "00:1e:67:f6:9b:6f"
+        vlan: 31 

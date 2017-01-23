@@ -1,0 +1,2 @@
+MAKE SURE SELINUX ISN'T screwing over your permissions.
+I've run into this a bunch, where tftp is able to dish out most files fine but for some reason 1 or more just won't be sent, even when it has 777 permissions. in this case to ls -alZ to check selinux permissions. If anything is screwed up, run restorecon -Rv filename to fix it. THis had lead to hours of headache. if this isn't working for you, use setenforce 0 to turn selinux off to see if it really is the problem.

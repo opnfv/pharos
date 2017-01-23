@@ -1,0 +1,77 @@
+.TH pharosvalidator 1 pharosvalidator\-1.0
+.SH NAME
+pharosvalidator \- Pharos specification validation tool
+.SH SYNOPSIS
+.B pharosvalidator [ options ] [ subcommand ]
+.SH DESCRIPTION
+pharosvalidator is a test tool for running on server pods aiming to be compliant with the pharos speicification. If a pod is able to pass the tests, it is pharos compliant.
+.PP
+The test is designed to be run within a virtual machine with a bridged connection to the admin network that will allow the pharosvalidator to have access to the PXE interfaces of the nodes in a pod.
+.SH REQUIREMENTS
+1. Virtual machine with brdiged connections to the admin network of the pod that is being tested.
+.PP
+2. Two configuration files, one is /etc/pharosvalidator/inventory.yaml, and the other /etc/pharosvalidator/network.yaml. These configuration files are INSIDE of the virtual machine. inventory.yaml is the common configuration file for opnfv pods defined here: 
+.PP
+3. No DHCP server must be running on the admin network the test is running on. The test script brings up a dhcp server using the information provided in inventory.yaml and network.yaml.
+.PP
+4. The nodes of a server must support PXE and IPMI for this test tool to work.
+.PP
+5. The nodes of the pod must be SHUT OFF before starting the test. The test does not send power-down signals
+automatically to avoid accidental shutdown of a node that could be in the middle of doing something.
+
+.SH OPTIONS
+.TP
+.BR \-h "," \-\-help
+Show a help message and exit
+.TP
+.BR \-q "," \-\-quiet
+Disable verbose output
+.TP
+.BR \-v "," \-\-verbose
+Enable verbose output
+.TP
+.BR \-o "," \-\-output =\fIdir\fR
+Specify a directory to output the test logs. This is where the outputs of the tests run on the pharos
+pod will be written to.
+.TP
+.BR \-p "," \-\-port
+Port the validation-server should use, defaults to 12121 arbitrarily.
+.TP
+.BR \-t "," \-\-test\-output
+Port the validation-server should use, defaults to 12121 arbitrarily.
+Path to where the program should write it's test logs
+
+.SH SERVER SUBCOMMAND
+.B server
+.PP
+.BR \-I "," \-\-inventory\-config =\fIdir\fR
+Pharos Inventory Configuration file path, usually "/etc/pharosvalidator/inventory.yaml"
+.TP
+.BR \-N "," \-\-network\-config =\fIdir\fR
+Pharos Network Configuration file path, usually "/etc/pharosvalidator/network.yaml"
+.TP
+.BR \-D "," \-\-dhcpfile =\fIdir\fR
+Path to where the system dhcpfile should be written, "/etc/dhcp/dhcpd.conf"
+.TP
+.BR \-d "," \-\-dhcp\-init =\fIdir\fR
+System command to start the dhcpd service, e.g. "systemctl start dhcpd.service"
+
+.SH NODE SUBCOMMAND
+.B node
+.PP
+Note: This command generally isn't needed to be called manually. It exists to run on the pharos pods
+themselves by being invoked by the server when the server subcommand is called.
+.PP
+.BR \-H "," \-\-host =\fIdir\fR
+Path to where the system dhcpfile should be written, "/etc/dhcp/dhcpd.conf"
+.TP
+.BR test ","
+Test that should be run. Right now "hardware" is the only functional and necessary test.
+
+.SH EXAMPLES
+Once the virtual machine is setup and network functionality is established, and all the configuration files
+are configured correctly, the tool can be run with the command:
+.RS
+.B pharosvalidator -v server
+.RE
+It will run with verbose output of what its doing. This could take a while, anywhere from 5-30 minutes depending on how long it takes the nodes to pxe-boot. Once the tests are done running it will display all the results onto the screen and a full test result file will be found as /tmp/pharos-tests.log (or whatever path you specify with \-\-test\-output).

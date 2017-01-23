@@ -1,5 +1,10 @@
 # Other gitignore files may be used in each directory under /src 
 
+# build directories
+##########
+*build/
+tmp/
+
 # Compiled #
 ############
 *.pyc
