@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_e095e888",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-03T05:38:46Z",
+      "side": 1,
+      "message": "+1 for this",
+      "parentUuid": "5ac10518_5516a956",
+      "range": {
+        "startLine": 28,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 20
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_564ebc70",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -332,6 +356,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_009354a4",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-03T05:38:46Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "5ac10518_7532c511",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 22
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_365bf02f",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -438,6 +486,30 @@
       "side": 1,
       "message": "Right the interface name is going to depend on OS, so this doesn\u0027t make much sense.",
       "parentUuid": "5ac10518_f991d99a",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 19
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_80ee6421",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-03T05:38:46Z",
+      "side": 1,
+      "message": "in https://github.com/opnfv/apex/blob/master/config/network/network_settings.yaml, nic1, nic2 and etc are be used for physical interface. what do they come from or where are these names defined?",
+      "parentUuid": "5ac10518_152101b4",
       "range": {
         "startLine": 116,
         "startChar": 9,
