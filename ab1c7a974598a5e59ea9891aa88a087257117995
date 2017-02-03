@@ -522,6 +522,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_b71c036c",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 334
+      },
+      "writtenOn": "2017-02-03T20:10:15Z",
+      "side": 1,
+      "message": "so with Apex you can specify either logical nic\u003cnumber\u003e or the real name of the interface (like eth1).  If you provide the logical nic, then an algorithm is used to map the \"first\" nic found by the algorithm to nic1 during deployment.",
+      "parentUuid": "1acb0d3e_80ee6421",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 19
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_f63568db",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
