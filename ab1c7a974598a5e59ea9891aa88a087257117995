@@ -215,6 +215,54 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_48441e74",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ac10518_bce25f2d",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_e87dcab2",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ac10518_564ebc70",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_7651780d",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -226,6 +274,30 @@
       "writtenOn": "2016-12-21T14:40:52Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 9
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_884a0682",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ac10518_7651780d",
       "range": {
         "startLine": 33,
         "startChar": 0,
@@ -380,6 +452,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_a84fc291",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ac10518_7532c511",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 22
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_365bf02f",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -414,6 +510,30 @@
       "writtenOn": "2016-12-22T05:10:36Z",
       "side": 1,
       "message": "good suggestion\n+1",
+      "parentUuid": "5ac10518_365bf02f",
+      "range": {
+        "startLine": 87,
+        "startChar": 5,
+        "endLine": 88,
+        "endChar": 38
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_6849da8a",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "5ac10518_365bf02f",
       "range": {
         "startLine": 87,
@@ -546,6 +666,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_285bd255",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1acb0d3e_b71c036c",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 19
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_f63568db",
         "filename": "config/pod1.yaml",
         "patchSetId": 5
@@ -580,6 +724,30 @@
       "writtenOn": "2016-12-22T05:10:36Z",
       "side": 1,
       "message": "agree if we decided to use a network.yml.\nthis is just an example.\n\nthere is another use case: one physical nic has multiple vlans.",
+      "parentUuid": "5ac10518_f63568db",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 17
+      },
+      "revId": "ab1c7a974598a5e59ea9891aa88a087257117995",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_085e1646",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-02-07T03:25:52Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "5ac10518_f63568db",
       "range": {
         "startLine": 118,
