@@ -198,12 +198,12 @@ The Orange OPNFV testlab is free to use for the OPNFV community.
 
 To access the Testlab, please contact bertrand.lelamer AT orange.com with
 the following details:
- * Name
- * Email
- * Designation
- * Organization
- * Purpose of using the lab
- * SSH public key
+* Name
+* Email
+* Designation
+* Organization
+* Purpose of using the lab
+* SSH public key
 
 
 

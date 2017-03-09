@@ -45,9 +45,9 @@ A VPN is used to provide access to the Orange Paris Testlab.
 To access the Testlab, please contact Auboin Cyril (cyril.auboin@orange.com) with the following
 details:
 * Name
- * Organization
- * Purpose of using the labs
- * Dates start / end
+* Organization
+* Purpose of using the labs
+* Dates start / end
 
 Processing the request can take 3-4 business days.
 
