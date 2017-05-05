@@ -45,7 +45,7 @@ class DevelopmentPodsView(TemplateView):
     template_name = "dashboard/dev_pods.html"
 
     def get_context_data(self, **kwargs):
-        resources = Resource.objects.filter(slave__dev_pod=True, slave__active=True)
+        resources = Resource.objects.filter(dev_pod=True)
 
         bookings = Booking.objects.filter(start__lte=timezone.now())
         bookings = bookings.filter(end__gt=timezone.now())
@@ -76,11 +76,9 @@ class ResourceView(TemplateView):
 
     def get_context_data(self, **kwargs):
         resource = get_object_or_404(Resource, id=self.kwargs['resource_id'])
-        utilization = resource.slave.get_utilization(timedelta(days=7))
         bookings = Booking.objects.filter(resource=resource, end__gt=timezone.now())
         context = super(ResourceView, self).get_context_data(**kwargs)
-        context.update({'title': str(resource), 'resource': resource, 'utilization': utilization,
-                        'bookings': bookings})
+        context.update({'title': str(resource), 'resource': resource, 'bookings': bookings})
         return context
 
 
