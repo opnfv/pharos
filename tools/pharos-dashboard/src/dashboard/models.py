@@ -22,9 +22,10 @@ class Resource(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=300, blank=True, null=True)
     url = models.CharField(max_length=100, blank=True, null=True)
-    owner = models.ForeignKey(User, related_name='user_lab_owner', null=True)
+    owner = models.ForeignKey(User, related_name='user_lab_owner', null=True, blank=True)
     vpn_users = models.ManyToManyField(User, related_name='user_vpn_users', blank=True)
-    slave = models.ForeignKey(JenkinsSlave, on_delete=models.DO_NOTHING, null=True)
+    slave = models.ForeignKey(JenkinsSlave, on_delete=models.DO_NOTHING, null=True, blank=True)
+    dev_pod = models.BooleanField(default=False)
 
     def get_booking_utilization(self, weeks):
         """

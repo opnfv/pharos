@@ -5,7 +5,7 @@ from datetime import timedelta
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Application definition
 
@@ -157,13 +157,16 @@ OAUTH_REQUEST_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/request-token'
 OAUTH_ACCESS_TOKEN_URL = JIRA_URL + '/plugins/servlet/oauth/access-token'
 OAUTH_AUTHORIZE_URL = JIRA_URL + '/plugins/servlet/oauth/authorize'
 
-OAUTH_CALLBACK_URL = JIRA_URL + '/accounts/authenticated'
+OAUTH_CALLBACK_URL = os.environ['DASHBOARD_URL'] + '/accounts/authenticated'
 
 # Celery Settings
 CELERY_TIMEZONE = 'UTC'
 
 RABBITMQ_URL = 'rabbitmq'
-BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+RABBITMQ_USER = os.environ['RABBITMQ_USER']
+RABBITMQ_PASSWORD = os.environ['RABBITMQ_PASSWORD']
+
+BROKER_URL = 'amqp://' + RABBITMQ_USER + ':' + RABBITMQ_PASSWORD + '@rabbitmq:5672//'
 
 CELERYBEAT_SCHEDULE = {
     'sync-jenkins': {

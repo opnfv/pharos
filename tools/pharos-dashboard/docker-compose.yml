@@ -27,7 +27,7 @@ services:
         restart: always
         build: ./web/
         container_name: dg01
-        command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && gunicorn pharos_dashboard.wsgi -b 0.0.0.0:8000"
+        command: bash -c "python manage.py migrate && python manage.py collectstatic --no-input && gunicorn pharos_dashboard.wsgi -b 0.0.0.0:8000"
         depends_on:
             - postgres
         links:
@@ -67,4 +67,3 @@ services:
             - rabbitmq
         volumes:
             - ./:/pharos_dashboard
-     

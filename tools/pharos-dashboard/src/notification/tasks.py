@@ -27,7 +27,7 @@ from dashboard_notification.notification import Notification, Message
 
 @shared_task
 def send_booking_notifications():
-    with Notification(dashboard_url=settings.RABBITMQ_URL) as messaging:
+    with Notification(dashboard_url=settings.RABBITMQ_URL, user=settings.RABBITMQ_USER, password=settings.RABBITMQ_PASSWORD) as messaging:
         now = timezone.now()
         notifications = BookingNotification.objects.filter(submitted=False,
                                                            submit_time__gt=now - timedelta(minutes=1),
