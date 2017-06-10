@@ -33,9 +33,9 @@ jumphost:
   os: ubuntu-14.04                          #operation system installed
   remote_para: &remoteparas
     type: {ipmi|amt}                        # hardware manggement tool
-      - ipmi:                               # for impi, there maybe a list versions
-        - 1.0
-        - 2.0
+    versions:
+      - 1.0
+      - 2.0
     user: root
     pass: root
   remote_mangement:
