@@ -1,3 +1,4 @@
+---
 ### POD descriptor file ###
 
 details:
@@ -17,20 +18,20 @@ jumphost:
     arch: {x86_64|aarch64}
     cpus: 2
     cpu_cflags: {broadwell|hasewell|etc}    # add values based on CFLAGS in GCC
-    cores: 10                               # physical cores, not including hyper-threads
+    cores: 10  # physical cores, not including hyper-threads
     memory: 32G
   disks:                                    # disk list
     - name: {disk#number}                   # first disk
       disk_capacity: {M|MB|G|GB|T|TB}       # volume
       disk_type: {hdd|ssd|cdrom|tape}       # several disk types possible
       disk_interface: {sata|sas|ssd|nvme}   # several interface types possible
-      disk_rotation: {5400|7200|10000|15000} # define rotation speed of disk
+      disk_rotation: {5400|7200|10000|15000}  # define rotation speed of disk
     - name: 'disk2'                         # second disk
       disk_capacity: 2048G
       disk_type: hdd
       disk_interface: sas
       disk_rotation: 15000
-  os: ubuntu-14.04                          #operation system installed
+  os: ubuntu-14.04                          # operation system installed
   remote_para: &remoteparas
     type: {ipmi|amt}                        # hardware manggement tool
     versions:
@@ -52,7 +53,8 @@ jumphost:
       mac_address: "10:23:45:67:89:5B"
 nodes:
   - name: pod1-node1
-    node: &nodeparas                        # for nodes in the same pod may have the same configuration
+    # for nodes in the same pod may have the same configuration
+    node: &nodeparas
       type: baremetal
       vendor: supermicro
       model: S2600JF
@@ -61,7 +63,8 @@ nodes:
       cpu_cflags: hasewell
       cores: 12
       memory: 128G
-    disks: &disks                           # for nodes in the same pod may have the same configuration
+    # for nodes in the same pod may have the same configuration
+    disks: &disks
       - name: 'disk1'
         disk_capacity: 4906G
         disk_type: hdd
@@ -133,4 +136,3 @@ nodes:
         speed: 10gb
         features: 'dpdk|sriov'
         mac_address: "00:1b:21:22:f8:b5"
-
