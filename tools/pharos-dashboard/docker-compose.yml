@@ -1,3 +1,4 @@
+---
 ##############################################################################
 # Copyright (c) 2016 Max Breitenfeldt and others.
 #
@@ -27,7 +28,9 @@ services:
         restart: always
         build: ./web/
         container_name: dg01
+        # yamllint disable rule:line-length
         command: bash -c "python manage.py migrate && python manage.py collectstatic --no-input && gunicorn pharos_dashboard.wsgi -b 0.0.0.0:8000"
+        # yamllint enable rule:line-length
         depends_on:
             - postgres
         links:
@@ -46,8 +49,8 @@ services:
         container_name: ps01
         env_file: config.env
         volumes:
-          - ./config/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
-          - /var/lib/pharos_dashboard/postgresql:/var/lib/postgresql
+            - ./config/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+            - /var/lib/pharos_dashboard/postgresql:/var/lib/postgresql
 
     rabbitmq:
         restart: always
@@ -55,12 +58,14 @@ services:
         container_name: rm01
         env_file: config.env
         ports:
-          - "5672:5672"
-          
+            - "5672:5672"
+
     worker:
         restart: always
         build: ./worker/
+        # yamllint disable rule:line-length
         command: bash -c "celery -A pharos_dashboard worker -l info -B --schedule=~/celerybeat-schedule"
+        # yamllint enable rule:line-length
         env_file: config.env
         links:
             - postgres

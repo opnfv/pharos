@@ -1,3 +1,4 @@
+---
 ##############################################################################
 ## Copyright (c) 2015 ZTE Corp. and others.
 ##
@@ -9,47 +10,47 @@
 
 nodes:
    - name: node1
-     tags: control      #optional param, other valid value "compute"
+     tags: control      # optional param, other valid value "compute"
      arch: "x86_64"
-     mac_address: "74:4A:A4:00:CF:DC" #pxe boot interface mac
+     mac_address: "74:4A:A4:00:CF:DC"  # pxe boot interface mac
      power:
-       type: ipmi
-       address: 192.168.1.101
-       user: zteroot
-       pass: superuser
+        type: ipmi
+        address: 192.168.1.101
+        user: zteroot
+        pass: superuser
    - name: node2
      tags: control
      arch: "x86_64"
      mac_address: "74:4A:A4:00:CE:CE"
      power:
-       type: ipmi
-       address: 192.168.1.102
-       user: zteroot
-       pass: superuser
+        type: ipmi
+        address: 192.168.1.102
+        user: zteroot
+        pass: superuser
    - name: node3
      tags: control
      arch: "x86_64"
      mac_address: "74:4A:A4:00:CF:58"
      power:
-       type: ipmi
-       address: 192.168.1.103
-       user: zteroot
-       pass: superuser
+        type: ipmi
+        address: 192.168.1.103
+        user: zteroot
+        pass: superuser
    - name: node4
      tags: compute
      arch: "x86_64"
      mac_address: "74:4A:A4:00:49:84"
      power:
-       type: ipmi
-       address: 192.168.1.104
-       user: zteroot
-       pass: superuser
+        type: ipmi
+        address: 192.168.1.104
+        user: zteroot
+        pass: superuser
    - name: node5
      tags: compute
      arch: "x86_64"
      mac_address: "74:4A:A4:00:CE:C2"
      power:
-       type: ipmi
-       address: 192.168.1.105
-       user: zteroot
-       pass: superuser
+        type: ipmi
+        address: 192.168.1.105
+        user: zteroot
+        pass: superuser

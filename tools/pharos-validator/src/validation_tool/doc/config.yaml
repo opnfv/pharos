@@ -1,9 +1,10 @@
+---
 ###################
 # Program arguments
 ###################
 #
 # Define path of output file
-output: "yaml" # Values are ("yaml", )
+output: "yaml"  # Values are ("yaml", )
 
 #################
 # Server settings
@@ -33,6 +34,4 @@ logfile: "/tmp/runtime_logs.txt"
 # Path to test logs
 test_log: "/tmp/results.yaml"
 # Path to dhcpd configuration file
-#dhcpdfile: "/etc/dhcp/dhcpd.conf"
 dhcpdfile: "/etc/dhcp/dhcpd.conf"
-

@@ -1,37 +1,38 @@
+---
 nodes:
-   - name: node0 
-     tags: control      #optional param, other valid value "compute"
+   - name: node0
+     tags: control      # optional param, other valid value "compute"
      arch: "x86_64"
-     mac_address: "de:ad:be:ef:11:11" #pxe boot interface mac
-     cpus: 2            #required only for virtual deployments
-     memory: 2048       #required only for virtual deployments
-     disk: 40           #required only for virtual deployments
+     mac_address: "de:ad:be:ef:11:11"  # pxe boot interface mac
+     cpus: 2            # required only for virtual deployments
+     memory: 2048       # required only for virtual deployments
+     disk: 40           # required only for virtual deployments
      power:
-       type: ipmi
-       address: 10.4.7.2
-       user: root
-       pass: root
+        type: ipmi
+        address: 10.4.7.2
+        user: root
+        pass: root
    - name: node1
-     tags: control      #optional param, other valid value "compute"
+     tags: control      # optional param, other valid value "compute"
      arch: "x86_64"
-     mac_address: "de:ad:be:ef:22:22" #pxe boot interface mac
-     cpus: 2            #required only for virtual deployments
-     memory: 2048       #required only for virtual deployments
-     disk: 40           #required only for virtual deployments
+     mac_address: "de:ad:be:ef:22:22"  # pxe boot interface mac
+     cpus: 2            # required only for virtual deployments
+     memory: 2048       # required only for virtual deployments
+     disk: 40           # required only for virtual deployments
      power:
-       type: ipmi
-       address: 10.4.7.3
-       user: root
-       pass: root
+        type: ipmi
+        address: 10.4.7.3
+        user: root
+        pass: root
    - name: node2
-     tags: control      #optional param, other valid value "compute"
+     tags: control      # optional param, other valid value "compute"
      arch: "x86_64"
-     mac_address: "de:ad:be:ef:33:33" #pxe boot interface mac
-     cpus: 2            #required only for virtual deployments
-     memory: 2048       #required only for virtual deployments
-     disk: 40           #required only for virtual deployments
+     mac_address: "de:ad:be:ef:33:33"  # pxe boot interface mac
+     cpus: 2            # required only for virtual deployments
+     memory: 2048       # required only for virtual deployments
+     disk: 40           # required only for virtual deployments
      power:
-       type: ipmi
-       address: 10.4.7.4
-       user: root
-       pass: root
+        type: ipmi
+        address: 10.4.7.4
+        user: root
+        pass: root
