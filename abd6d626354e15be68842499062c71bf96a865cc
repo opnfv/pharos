@@ -16,6 +16,24 @@
       "revId": "abd6d626354e15be68842499062c71bf96a865cc",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_8ceea621",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-06-27T22:29:01Z",
+      "side": 1,
+      "message": "This is a good question. I reserved not using `# yamllint  disable rule:line-length` over this whole block because it is the template, and the template was created to be copied.\n\nI think switching these comments to be one line above their respective fields to resolve that.",
+      "parentUuid": "1aa4ed85_a654e821",
+      "revId": "abd6d626354e15be68842499062c71bf96a865cc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
