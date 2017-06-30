@@ -34,6 +34,24 @@
       "revId": "abd6d626354e15be68842499062c71bf96a865cc",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_9168f7f6",
+        "filename": "config/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-06-30T23:51:38Z",
+      "side": 1,
+      "message": "Instead of wrapping comments, I rearranged them so they sit above their respective fields.",
+      "parentUuid": "1aa4ed85_8ceea621",
+      "revId": "abd6d626354e15be68842499062c71bf96a865cc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
