@@ -1,3 +1,5 @@
+.. _pharos-orange-lannion-lab:
+
 Orange OPNFV Testlab
 ==================================================
 
