@@ -18,6 +18,7 @@ Deployment:
 - install docker, docker-compose and bower
 - run 'bower install' in ./src/static/ to fetch javascript dependencies
 - run 'make build' to build the containers
+- run 'make data'
 - run 'make up' to run the dashboard
 
 Updating:

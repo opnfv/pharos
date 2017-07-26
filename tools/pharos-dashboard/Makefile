@@ -10,6 +10,9 @@ start:
 stop:
 	docker-compose stop
 
+data:
+	docker volume create --name=pharos-data
+
 shell-nginx:
 	docker exec -ti ng01 bash
 

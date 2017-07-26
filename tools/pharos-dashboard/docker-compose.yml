@@ -50,7 +50,7 @@ services:
         env_file: config.env
         volumes:
             - ./config/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
-            - /var/lib/pharos_dashboard/postgresql:/var/lib/postgresql
+            - pharos-data:/var/lib/postgresql/data
 
     rabbitmq:
         restart: always
@@ -72,3 +72,6 @@ services:
             - rabbitmq
         volumes:
             - ./:/pharos_dashboard
+volumes:
+    pharos-data:
+        external: true
