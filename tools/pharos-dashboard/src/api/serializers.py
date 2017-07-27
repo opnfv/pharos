@@ -13,10 +13,9 @@ from rest_framework import serializers
 from booking.models import Booking
 from dashboard.models import Server, Resource, ResourceStatus
 
-
 class BookingSerializer(serializers.ModelSerializer):
-    installer_name = serializers.RelatedField(source='installer', read_only=True)
-    scenario_name = serializers.RelatedField(source='scenario', read_only=True)
+    installer_name = serializers.CharField(source='installer.name')
+    scenario_name = serializers.CharField(source='scenario.name')
 
     class Meta:
         model = Booking
