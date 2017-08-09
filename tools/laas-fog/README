@@ -1,0 +1,85 @@
+This project aims to automate the process of installing and running an OPNFV installer, and deploying an instance of openstack on top of that.
+To run, execute (from the project root):
+    source/deploy.py
+
+To run the Pharos dahsboard listener, which will continualy poll the dashboard and run deployments in the background:
+    source/listen.py --config <conf/pharos.conf>
+
+
+For convenience, there is a bash script source/stop.sh which will stop the dashboard listener and all related scripts.
+
+
+NOTE: You will have to fill out the config file and initialize the host database before your first run.
+
+The config files are located at conf/   See more info below
+
+running:
+    source/resetDatabase.py --config <CONFIG_FILE>
+will create a database and populate it.
+WARNING: This will delete existing information if run on a previously initialized database
+
+CONFIGURATION:
+installers:
+network_config_file -   path to config file for the virtual networks between the vm's
+vm_config_file -        path to config file for the virtual machines
+run_in_foreground -     if true, when a deployment runs, it will print everything to stdout
+database -              path to host database file to store which of your hosts are available or in use
+logging_dir -           directory to create log files which are used if run_in_foreground is false
+fog_server -            the url of the fog web dashboard
+fog_api_key -           the api key used to authenticate in fog
+fog_user_key -          your user key for the fog api. 
+                            Make sure you have priviledges to create and delete tasks
+pharos_key -            your key to use the community pharos dashboard
+installer -             the installer this deployment will use. 
+                            Currently, the only valid options are 'Fuel' or null.
+                            null means that the host will be provisioned, but OPNFV will not be installed
+scenario -              the requested scenario of this deployment. Not currently used
+remote_scripts -        the directory on the host to store necessary scripts
+
+
+Pharos Configuration:
+dashboard -             url of the pharos dashboard. https://labs.opnfv.org is the public OPNFV Pharos dashboard
+token -                 your token to authenticate with the dashboard
+polling -               how many times a minute we will poll the dashboard
+database -              path to database to store booking information. May be the same or different file as the
+                            host database
+default_configs -       a mappping of installers and their configuration files.
+
+Pharos:
+
+dashboard -             url of the pharos dashboard
+token -                 your oath token for authentication. Not currently used.
+polling -               How many times per minute you will poll the dashboard
+logging_dir -           directory to put log files in
+database -              path to database for bookings. may be the same or different file as the host database
+fog_conf -              path to fog config file
+default_configs -       a mapping of installers and their config files (above)
+
+Fog:
+
+hosts -                 A mapping of resource id's from the pharos dashboard and the corresponding 
+                            host name on your fog server. for example:
+                            "hosts" : { 1 : "host1" } if the machine fog sees as "host1" is registered with
+                            the pharos dashboard with a resource id of 1
+
+
+FOG:
+At the IOL, our OPNFV infrastructure uses a FOG server to pxe boot, image, and otherwise control the hosts we have available for developers.
+FOG is an open source project, and you can view it here: https://fogproject.org/
+FOG provides an easy and scriptable way to completely wipe and write the disks of our hosts.
+    This makes it quick and simple for us to restore our hosts to a known, clean state after a developer has released control of it.
+
+To run the deploy script, you need to:
+    Have a FOG master running
+    Have your hosts registered to the FOG master
+    Have a 'clean' disk image of Centos accessible by the master and associated with the hosts
+    Edit the description of each fog host so that it contains the IP address of the bare metal server which contains this host
+
+
+If you choose to not implement FOG into your lab, then there are two main functions that you will have to edit:
+    flash_host() in the pod_manager class expects the target host to be in a clean and ready state when this function returns
+    resetDatabase.py relies on FOG to retrieve a list of all hosts available to developers
+
+
+To aid in visualization and understanding of the resulting topolgy after fully deploying OPNFV and Openstack in
+a development pod, you may review the LaaS_Diagram in this directory.

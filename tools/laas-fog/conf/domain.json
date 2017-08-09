@@ -1,0 +1,134 @@
+[
+{
+"name": "master",
+"memory": 8240000,
+"vcpus": 4,
+"disk": "/vm/master.qcow2",
+"iso": {
+    "used": "True",
+    "URL": "http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso",
+    "location": "/vm/fuel.iso"},
+"interfaces":[
+    {"type": "network",
+    "name": "admin"},
+
+    {"type": "network",
+    "name": "public"},
+
+    {"type": "network",
+    "name": "storage"},
+
+    {"type": "network",
+    "name": "management"}]
+},
+{
+"name": "slave1",
+"memory": 8240000,
+"vcpus": 4,
+"disk": "/vm/slave1.qcow2",
+"iso": {
+    "used": "False",
+    "URL": "http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso",
+    "location": "/vm/fuel.iso"},
+"interfaces":[
+    {"type": "network",
+    "name": "admin"},
+
+    {"type": "network",
+    "name": "public"},
+
+    {"type": "network",
+    "name": "storage"},
+
+    {"type": "network",
+    "name": "management"}]
+},
+{
+"name": "slave2",
+"memory": 8240000,
+"vcpus": 4,
+"disk": "/vm/slave2.qcow2",
+"iso": {
+    "used": "False",
+    "URL": "http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso",
+    "location": "/vm/fuel.iso"},
+"interfaces":[
+    {"type": "network",
+    "name": "admin"},
+
+    {"type": "network",
+    "name": "public"},
+
+    {"type": "network",
+    "name": "storage"},
+
+    {"type": "network",
+    "name": "management"}]
+},
+{
+"name": "slave3",
+"memory": 8240000,
+"vcpus": 4,
+"disk": "/vm/slave3.qcow2",
+"iso": {
+    "used": "False",
+    "URL": "http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso",
+    "location": "/vm/fuel.iso"},
+"interfaces":[
+    {"type": "network",
+    "name": "admin"},
+
+    {"type": "network",
+    "name": "public"},
+
+    {"type": "network",
+    "name": "storage"},
+
+    {"type": "network",
+    "name": "management"}]
+},
+{
+"name": "slave4",
+"memory": 8240000,
+"vcpus": 4,
+"disk": "/vm/slave4.qcow2",
+"iso": {
+    "used": "False",
+    "URL": "http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso",
+    "location": "/vm/fuel.iso"},
+"interfaces":[
+    {"type": "network",
+    "name": "admin"},
+
+    {"type": "network",
+    "name": "public"},
+
+    {"type": "network",
+    "name": "storage"},
+
+    {"type": "network",
+    "name": "management"}]
+},
+{
+"name": "slave5",
+"memory": 8240000,
+"vcpus": 4,
+"disk": "/vm/slave5.qcow2",
+"iso": {
+    "used": "False",
+    "URL": "http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso",
+    "location": "/vm/fuel.iso"},
+"interfaces":[
+    {"type": "network",
+    "name": "admin"},
+
+    {"type": "network",
+    "name": "public"},
+
+    {"type": "network",
+    "name": "storage"},
+
+    {"type": "network",
+    "name": "management"}]
+}
+]

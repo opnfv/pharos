@@ -1,0 +1,59 @@
+[
+{
+    "name": "admin",
+    "brName": "admin-br",
+    "brAddr": "10.20.0.1",
+    "netmask": "255.255.255.0",
+    "cidr": "10.20.0.0/24",
+    "forward":
+        {"used": "True",
+        "type": "nat"},
+    "dhcp":
+        {"used": "False",
+        "rangeStart": "10.20.0.15",
+        "rangeEnd": "10.20.0.250"}
+},
+{
+    "name": "public",
+    "brName": "public-br",
+    "brAddr": "10.20.1.1",
+    "netmask": "255.255.255.0",
+    "cidr": "10.20.1.0/24",
+    "forward":
+        {"used": "True",
+        "type": "nat"},
+    "dhcp":
+        {"used": "False",
+        "rangeStart": "10.20.1.15",
+        "rangeEnd": "10.20.1.250"}
+},
+{
+    "name": "management",
+    "brName": "management-br",
+    "brAddr": "10.20.2.1",
+    "netmask": "255.255.255.0",
+    "cidr": "10.20.2.0/24",
+    "forward":
+        {"used": "False",
+        "type": "nat"},
+    "dhcp":
+        {"used": "False",
+        "rangeStart": "10.20.2.15",
+        "rangeEnd": "10.20.2.250"}
+},
+{
+    "name": "storage",
+    "brName": "storage-br",
+    "brAddr": "10.20.3.1",
+    "netmask": "255.255.255.0",
+    "cidr": "10.20.3.0/24",
+    "forward":
+        {"used": "False",
+        "type": "nat"},
+    "dhcp":
+        {"used": "False",
+        "rangeStart": "10.20.3.15",
+        "rangeEnd": "10.20.3.250"}
+}
+
+]
