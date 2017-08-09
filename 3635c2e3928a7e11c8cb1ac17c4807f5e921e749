@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_c3265468",
+        "filename": "tools/laas-fog/conf/domain.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "JSON Formatting",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_a32b502f",
+        "filename": "tools/laas-fog/conf/fog.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Missing \u0027}\u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 0
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_03203c48",
+        "filename": "tools/laas-fog/hostScripts/expectKeygen.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Missing license header.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_63d82854",
+        "filename": "tools/laas-fog/source/api/fog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Missing license header.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 11
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_83d3ac37",
+        "filename": "tools/laas-fog/source/api/fog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Python class docstrings should be on first line after class and indented with 4 spaces like methods.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 3
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_c3ddb444",
+        "filename": "tools/laas-fog/source/api/libvirt_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "range": {
+        "startLine": 12,
+        "startChar": 98,
+        "endLine": 12,
+        "endChar": 100
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_a3e23001",
+        "filename": "tools/laas-fog/source/api/libvirt_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 4
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_43f1a4cc",
+        "filename": "tools/laas-fog/source/api/libvirt_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Dead code",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 48
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_23ee20ed",
+        "filename": "tools/laas-fog/source/api/libvirt_api.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-08-09T23:03:59Z",
+      "side": 1,
+      "message": "Method documentation should be in a docstring on the method:\n\ndef getXMLFiles(directory):\n    \"\"\"\n    Searches the given directory non-recursively and\n    returns a list of all XML files.\n    \"\"\"\n    ...",
+      "range": {
+        "startLine": 346,
+        "startChar": 4,
+        "endLine": 350,
+        "endChar": 31
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
