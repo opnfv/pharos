@@ -48,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "da33351e_09417b39",
+        "filename": "tools/laas-fog/hostScripts/expectKeyCopy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 423
+      },
+      "writtenOn": "2017-08-10T08:46:47Z",
+      "side": 1,
+      "message": "You can try sshpass, that is match easier.\ne.g.: sshpass -p \u003cpasswd\u003e ssh-copy-id \u003cuser\u003e@\u003chost\u003e",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_03203c48",
         "filename": "tools/laas-fog/hostScripts/expectKeygen.sh",
         "patchSetId": 1
@@ -64,6 +87,29 @@
         "startChar": 0,
         "endLine": 1,
         "endChar": 17
+      },
+      "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_e93d37bd",
+        "filename": "tools/laas-fog/hostScripts/expectKeygen.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 423
+      },
+      "writtenOn": "2017-08-10T08:46:47Z",
+      "side": 1,
+      "message": "The script equals to\nssh-keygen -f ~/.ssh/id_rsa -t rsa -N \u0027\u0027",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 16
       },
       "revId": "3635c2e3928a7e11c8cb1ac17c4807f5e921e749",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
