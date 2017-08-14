@@ -1,14 +1,14 @@
 - disk: /vm/master.qcow2
   interfaces:
-    - name: admin
-      type: network
-    - name: public
-      type: network
-    - name: storage
-      type: network
-    - name: management
-      type: network
-  iso: 
+  - name: admin
+    type: network
+  - name: public
+    type: network
+  - name: storage
+    type: network
+  - name: management
+    type: network
+  iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
     used: True
@@ -18,15 +18,15 @@
 
 - disk: /vm/slave1.qcow2
   interfaces:
-    - name: admin
-      type: network
-    - name: public
-      type: network
-    - name: storage
-      type: network
-    - name: management
-      type: network
-  iso: 
+  - name: admin
+    type: network
+  - name: public
+    type: network
+  - name: storage
+    type: network
+  - name: management
+    type: network
+  iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
     used: False
@@ -36,14 +36,14 @@
 
 - disk: /vm/slave2.qcow2
   interfaces:
-    - name: admin
-      type: network
-    - name: public
-      type: network
-    - name: storage
-      type: network
-    - name: management
-      type: network
+  - name: admin
+    type: network
+  - name: public
+    type: network
+  - name: storage
+    type: network
+  - name: management
+    type: network
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
@@ -54,14 +54,14 @@
 
 - disk: /vm/slave3.qcow2
   interfaces:
-    - name: admin
-      type: network
-    - name: public
-      type: network
-    - name: storage
-      type: network
-    - name: management
-      type: network
+  - name: admin
+    type: network
+  - name: public
+    type: network
+  - name: storage
+    type: network
+  - name: management
+    type: network
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
@@ -72,14 +72,14 @@
 
 - disk: /vm/slave4.qcow2
   interfaces:
-    - name: admin
-      type: network
-    - name: public
-      type: network
-    - name: storage
-      type: network
-    - name: management
-      type: network
+  - name: admin
+    type: network
+  - name: public
+    type: network
+  - name: storage
+    type: network
+  - name: management
+    type: network
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
@@ -90,14 +90,14 @@
 
 - disk: /vm/slave5.qcow2
   interfaces:
-    - name: admin
-      type: network
-    - name: public
-      type: network
-    - name: storage
-      type: network
-    - name: management
-      type: network
+  - name: admin
+    type: network
+  - name: public
+    type: network
+  - name: storage
+    type: network
+  - name: management
+    type: network
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso

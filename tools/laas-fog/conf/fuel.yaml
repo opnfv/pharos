@@ -2,9 +2,9 @@ database: /var/OPNFV/hosts.db
 dhcp_log: /var/log/messages
 dhcp_server: null
 fog:
-  api_key: ODc0YTY2ZWUxYTI1OTE5Y2E3NDdmOGUxZmIxOWJjMDE2OGFiZWQ0OTM1NjM4NDEzOTI3OTY3MTIwZWRjN2ZjNGYwMWI5ZDgxMjM1NTBjMzg1NTIwMmVkNDE0Y2UzNWYxNTMyYzYyYzAxMmM4OTJmZmJhNjQ3MjQ3NjM3ZTg0NDk=
-  server: http://10.10.30.8/fog/
-  user_key: NThhNGJjZjIwNTk5MWQyYmI2NmMzNzM4MzUxZDY1MTdkMjI2MmJmYmVhOGIyMzk5NTExZDRhNDI5NjliNmQ4YWY0NGFhNGE0M2Y2ZmJjNjlmNzM2ZjU3YjM3ODExMzAxNTg4ZWNhYmNlZmU3NTkzNTAwYzUwYTBiNmQ5M2YwNTk=
+  api_key:
+  server:
+  user_key:
 installer: Fuel
 logging_dir: /var/log/OPNFV/
 remote_scripts: /root/scripts/

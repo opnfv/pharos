@@ -1,10 +1,3 @@
-47: vm-1.1
-48: vm-1.2
-49: vm-2.1
-50: vm-2.2
-51: vm-3.1
-52: vm-3.2
-53: vm-4.1
-54: vm-4.2
-55: vm-5.1
-56: vm-5.2
+# pharos id : fog name
+# for example:
+# 3 : fog-host-3
