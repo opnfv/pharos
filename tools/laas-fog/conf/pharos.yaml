@@ -7,4 +7,4 @@ default_configs:
 inventory: /root/laas/conf/inventory.yaml
 logging_dir: /var/log/OPNFV
 polling: 3
-token:
+token: 492012dd4d0ae4e80096825186c96422c21bf86c
