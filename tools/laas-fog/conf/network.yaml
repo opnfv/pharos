@@ -1,13 +1,14 @@
+---
 - brAddr: 10.20.0.1
   brName: admin-br
   cidr: 10.20.0.0/24
   dhcp:
     rangeEnd: 10.20.0.250
     rangeStart: 10.20.0.15
-    used: False
+    used: "False"
   forward:
     type: nat
-    used: True
+    used: "True"
   name: admin
   netmask: 255.255.255.0
 
@@ -17,10 +18,10 @@
   dhcp:
     rangeEnd: 10.20.1.250
     rangeStart: 10.20.1.15
-    used: False
+    used: "False"
   forward:
     type: nat
-    used: True
+    used: "True"
   name: public
   netmask: 255.255.255.0
 
@@ -30,10 +31,10 @@
   dhcp:
     rangeEnd: 10.20.2.250
     rangeStart: 10.20.2.15
-    used: False
+    used: "False"
   forward:
     type: nat
-    used: False
+    used: "False"
   name: management
   netmask: 255.255.255.0
 
@@ -43,9 +44,9 @@
   dhcp:
     rangeEnd: 10.20.3.250
     rangeStart: 10.20.3.15
-    used: False
+    used: "False"
   forward:
     type: nat
-    used: False
+    used: "False"
   name: storage
   netmask: 255.255.255.0

@@ -1,3 +1,4 @@
+---
 dashboard: https://labs.opnfv.org
 database: /var/OPNFV/bookings.db
 default_configs:

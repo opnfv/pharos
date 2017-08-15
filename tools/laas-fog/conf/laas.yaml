@@ -1,3 +1,4 @@
+---
 database: /var/OPNFV/hosts.db
 dhcp_log: /var/log/messages
 dhcp_server: null

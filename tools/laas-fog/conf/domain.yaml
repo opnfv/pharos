@@ -1,3 +1,4 @@
+---
 - disk: /vm/master.qcow2
   interfaces:
     - name: admin
@@ -11,7 +12,7 @@
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
-    used: True
+    used: "True"
   memory: 8240000
   name: master
   vcpus: 4
@@ -29,7 +30,7 @@
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
-    used: False
+    used: "False"
   memory: 8240000
   name: slave1
   vcpus: 4
@@ -47,7 +48,7 @@
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
-    used: False
+    used: "False"
   memory: 8240000
   name: slave2
   vcpus: 4
@@ -65,7 +66,7 @@
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
-    used: False
+    used: "False"
   memory: 8240000
   name: slave3
   vcpus: 4
@@ -83,7 +84,7 @@
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
-    used: False
+    used: "False"
   memory: 8240000
   name: slave4
   vcpus: 4
@@ -101,7 +102,7 @@
   iso:
     URL: http://artifacts.opnfv.org/fuel/danube/opnfv-danube.2.0.iso
     location: /vm/fuel.iso
-    used: False
+    used: "False"
   memory: 8240000
   name: slave5
   vcpus: 4
