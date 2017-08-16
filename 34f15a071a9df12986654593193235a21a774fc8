@@ -1,0 +1,10 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Jose Lausuch <jose.lausuch@ericsson.com>
+Code-Review+1: Max Breitenfeldt <max.breitenfeldt@gmail.com>
+Code-Review+1: Dave Urschatz <dave.urschatz@cengn.ca>
+Code-Review+2: julien zhang <zhang.jun3g@zte.com.cn>
+Submitted-by: julien zhang <zhang.jun3g@zte.com.cn>
+Submitted-at: Wed, 16 Aug 2017 15:40:25 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/38235
+Project: pharos
+Branch: refs/heads/master
