@@ -51,11 +51,11 @@ Documented configuration to include:
 
 **Sample Network Drawings**
 
-.. image:: ../images/bridge2.png
+.. image:: ../../images/bridge2.png
 
-.. image:: ../images/opnfv-pharos-diagram-v01.jpg
+.. image:: ../../images/opnfv-pharos-diagram-v01.jpg
 
-.. image:: ../images/opnfv-example-lab-diagram.png
+.. image:: ../../images/opnfv-example-lab-diagram.png
 
 Download the visio zip file here:
 `opnfv-example-lab-diagram.vsdx.zip

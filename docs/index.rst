@@ -14,14 +14,14 @@ OPNFV Community Lab Infrastructure
 ==================================
 
 .. toctree::
-   :maxdepth: 3
-   :numbered: 3
+   :maxdepth: 5
+   :numbered: 5
 
-   ./information/index.rst
-   ./specification/index.rst
-   ./lab-description/index.rst
-   ./configguide/index.rst
-   ./labs/index.rst
+   ./release/information/index.rst
+   ./release/release-notes/specification/index.rst
+   ./release/release-notes/lab-description/index.rst
+   ./release/configguide/index.rst
+   ./release/release-notes/labs/index.rst
 
 Indices
 =======
