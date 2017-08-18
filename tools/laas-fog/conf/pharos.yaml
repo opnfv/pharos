@@ -1,0 +1,11 @@
+---
+dashboard: https://labs.opnfv.org
+database: /var/OPNFV/laas.db
+default_configs:
+  Fuel: /root/laas/conf/fuel.yaml
+  None: /root/laas/conf/laas.yaml
+  Joid: /rooot/laas/conf/joid.yaml
+inventory: /root/laas/conf/inventory.yaml
+logging_dir: /var/log/OPNFV
+polling: 3
+token: /root/laas/conf/pharos.key
