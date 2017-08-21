@@ -1,0 +1,15 @@
+---
+server: vpn.domain.com
+authentication:
+  pass: /path/to/keyfile  # you may also put the password directly here
+  user: cn=root,o=opnfv,dc=domain,dc=com
+directory:
+  root: o=opnfv,dc=domain,dc=com
+  user: ou=People  # relative to the root dir
+user:
+  objects:  # listed in ascending order of specificty
+    - top
+    - inetOrgPerson  # last object should be a class that only vpn users have
+database: /var/OPNFV/laas.db  # same as the pharos api booking db
+permanent_users:  # any users you want to be persistent
+  - pberberian
