@@ -1,0 +1,17 @@
+---
+database: /var/OPNFV/hosts.db
+dhcp_log: /var/log/messages
+dhcp_server: null
+fog:
+  api_key: /path/to/fog.key  # may also put the key directly here
+  server: http://fogserver.com/fog/
+  user_key: /path/to/fog_user.key
+  image_id: 12
+installer: Joid
+logging_dir: /var/log/OPNFV/
+scenario: os-nosdn-nofeature-noha
+hypervisor_config:
+  networks: /root/laas/conf/network.yaml
+  vms: /root/laas/conf/domain.yaml
+inventory: /root/laas/conf/inventory.yaml
+vpn_config: /root/laas/conf/vpn.yaml
