@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<domain type="kvm">
+    <name>{{name}}</name>
+    <memory>{{memory}}</memory>
+    <currentMemory>{{memory}}</currentMemory>
+    <vcpu>{{cpu}}</vcpu>
+	<os>
+		<type arch="x86_64">hvm</type>
+        {% if iso.used %}
+        <boot dev="hd"/>
+        <boot dev="cdrom"/>
+        {% else %}
+        <boot dev="network"/>
+        <boot dev="hd"/>
+        {% endif %}
+	</os>
+	<feature>
+		<acpi/>
+		<apic/>
+	</feature>
+	<cpu match="exact" mode="custom">
+		<model>Broadwell</model>
+	</cpu>
+	<clock offset="utc">
+		<timer name="rtc" tickpolicy="catchup"/>
+		<timer name="pit" tickpolicy="delay"/>
+		<timer name="hpet" present="no"/>
+	</clock>
+	<on_poweroff>destroy</on_poweroff>
+	<on_reboot>restart</on_reboot>
+	<on_reboot>restart</on_reboot>
+	<pm>
+		<suspend-to-mem enabled="no"/>
+		<suspend-to-disk enabled="no"/>
+	</pm>
+	<devices>
+		<emulator>/usr/libexec/qemu-kvm</emulator>
+		<disk device="disk" type="file">
+			<driver name="qemu" type="qcow2"/>
+            <source file="{{disk}}"/>
+			<target bus="ide" dev="hda"/>
+        </disk>
+        {% if iso.used %}
+		<disk device="cdrom" type="file">
+			<driver name="qemu" type="raw"/>
+            <source file="{{iso.location}}"/>
+			<target bus="ide" dev="hdb"/>
+			<readonly/>
+        </disk>
+        {% endif %}
+        {% for net in networks %}
+        <interface type="{{net.type}}">
+            <source {{net.type}}="{{net.name}}"/>
+			<model type="virtio"/>
+		</interface>
+        {% endfor %}
+        <graphics port="-1" type="vnc"/>
+		<console type="pty"/>
+	</devices>
+</domain>
