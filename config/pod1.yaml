@@ -8,7 +8,40 @@ details:
   location: Portland, Oregon, USA
   type: {production|development}
   link: http://wiki.opnfv.org/
-
+###################################################
+net_config:
+  oob:
+    interface: 0
+    ip-range: 172.30.8.83-172.30.8.88
+    vlan: 410
+  admin:
+    interface: 0
+    vlan: 0
+    network: 10.20.0.0
+    mask: 25
+    gateway: 10.20.0.1
+    dns: 10.20.0.1
+  mgmt:
+    interface: 1
+    vlan: 450
+    network: 192.168.0.0
+    mask: 25
+  storage:
+    interface: 2
+    vlan: 451
+    network: 192.168.1.0
+    mask: 25
+  private:
+    interface: 1
+    vlan: 452
+    network: 192.168.2.0
+    mask: 25
+  public:
+    interface: 2
+    vlan: 414
+    network: 172.30.12.64
+    mask: 26
+###################################################
 jumphost:
   name: pod1-jump
   node:
@@ -43,7 +76,7 @@ jumphost:
       disk_rotation: 15000
   # operation system installed
   os: ubuntu-14.04
-  remote_para: &remoteparas
+  remote_para: &remoteparams
     # hardware manggement tool
     type: {ipmi|amt}
     versions:
@@ -52,7 +85,7 @@ jumphost:
     user: root
     pass: root
   remote_mangement:
-    <<: *remoteparas
+    <<: *remoteparams
     address: 10.4.7.3/24
     mac_address: "10:23:45:67:89:AC"
   # physical interface list
@@ -71,7 +104,7 @@ jumphost:
 nodes:
   - name: pod1-node1
     # for nodes in the same pod may have the same configuration
-    node: &nodeparas
+    node: &nodeparams
       type: baremetal
       vendor: supermicro
       model: S2600JF
@@ -98,7 +131,7 @@ nodes:
         disk_interface: ssd
         disk_rotation: 15000
     remote_mangement:
-      <<: *remoteparas
+      <<: *remoteparams
       address: 10.4.7.7/24
       mac_address: "10:20:22:67:89:A2"
     interfaces:
@@ -125,11 +158,11 @@ nodes:
         mac_address: "00:1b:21:22:f1:b5"
         vlan: 204
   - name: pod1-node2
-    node: *nodeparas
+    node: *nodeparams
     # disks are same as pod1-node1
     disks: *disks
     remote_mangement:
-      <<: *remoteparas
+      <<: *remoteparams
       address: 10.4.7.8/24
       mac_address: "10:20:22:67:88:A3"
     interfaces:
