@@ -24,4 +24,4 @@ readable inventory and network configuration files that follow common format.
 
    ./lab_description.rst
    ./pod_description.rst
-   ./inventory.rst
+   ./pdf.rst
