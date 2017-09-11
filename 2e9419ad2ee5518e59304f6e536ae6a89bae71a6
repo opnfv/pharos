@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_77e36633",
+        "filename": "docs/release/release-notes/lab-description/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2017-09-11T19:17:03Z",
+      "side": 1,
+      "message": "if you are the owner of a community lab, please ask helpdesk to become a Pharos contributor in order to submit your PDF to the securedlab repo",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 13
+      },
+      "revId": "2e9419ad2ee5518e59304f6e536ae6a89bae71a6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
