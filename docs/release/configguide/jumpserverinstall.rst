@@ -7,8 +7,8 @@ Jump Server Configuration
 -------------------------
 
 Jump server install procedures are maintained by each installer project. Addional Jump server
-configuraton BKMs will be maintained here. The below install information was used for Fuel however
-may be outdated (please refer to Fuel Installer documents).
+configuraton BKMs will be maintained here. Let's take CentOS7 for example. The below install
+information was used for Fuel(up to Danube, and it is replaced by MCP since Euphrates).
 
 **Procedure**
 
