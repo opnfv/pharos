@@ -1,0 +1,7 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+2: Jose Lausuch <jalausuch@suse.com>
+Submitted-by: julien zhang <zhang.jun3g@zte.com.cn>
+Submitted-at: Mon, 11 Sep 2017 14:20:17 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/38267
+Project: pharos
+Branch: refs/heads/master
