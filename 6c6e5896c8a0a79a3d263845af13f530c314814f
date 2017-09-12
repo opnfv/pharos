@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_0f5abaf2",
+        "filename": "docs/release/release-notes/specification/hardwarespec.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2017-09-12T20:39:39Z",
+      "side": 1,
+      "message": "the jump server should also be an ARM server",
+      "range": {
+        "startLine": 12,
+        "startChar": 7,
+        "endLine": 12,
+        "endChar": 53
+      },
+      "revId": "6c6e5896c8a0a79a3d263845af13f530c314814f",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
