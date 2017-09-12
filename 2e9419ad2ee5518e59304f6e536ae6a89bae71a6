@@ -22,6 +22,30 @@
       "revId": "2e9419ad2ee5518e59304f6e536ae6a89bae71a6",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_3891cb52",
+        "filename": "docs/release/release-notes/lab-description/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-09-12T13:23:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da33351e_77e36633",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 13
+      },
+      "revId": "2e9419ad2ee5518e59304f6e536ae6a89bae71a6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
