@@ -13,7 +13,8 @@ When setting up an OPNFV community lab ...
 
 * Provide the Pharos community with details of the intended setup, including ...
 
-  * Overview of resources are being offered to the community, intended purpose and known limitations
+  * Overview of resources are being offered to the community, intended purpose and known
+    limitations
   * Lab owner name with contacts
   * Timelines for availablity for development, test, release production, ...
 
@@ -27,14 +28,18 @@ When setting up an OPNFV community lab ...
 
   * :ref:`pharos_information`
 
-* Create new Wiki pages for lab and POD specific information
+* Submit a patch using Pharos template for lab( :ref:`pharos_lab`) and POD( :ref:`pharos_pod`)
+  specific information in gerrit
 
   * Access procedures
   * Usage guidelines for developers
   * Update infomtation as PODs are re-assigned or usage/availability changes
 
-* Fill Lab and POD templates ... :ref:`pharos_lab` ... :ref:`pharos_pod`
-
-  * Note that security sensitive lab information should be stored in the secure Pharos repo
+* Create new Wiki pages and include the lab and POD content in the
+  `pharos git <https://git.opnfv.org/pharos/>`_
 
 * Connect PODs to Jenkins/CI
+
+* Note: if the POD will be used for dynamical deployment with community installers, some security
+  sensitive lab information should be stored in the secure Pharos repo :ref:`securedlab`
+
