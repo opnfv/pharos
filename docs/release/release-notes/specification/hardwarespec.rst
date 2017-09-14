@@ -9,7 +9,7 @@ Hardware
 A pharos compliant OPNFV test-bed provides:
 
 - One CentOS/Ubuntu jump server on which the virtualized Openstack/OPNFV installer runs. For an ARM
-  POD, the jump server is also should be an ARM server
+  POD, the jump server should also be an ARM server
 - 3 controller nodes
 - 2 compute nodes
 - A configured network topology allowing for LOM, Admin, Public, Private, and Storage Networks
