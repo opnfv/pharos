@@ -1,0 +1,167 @@
+---
+lab:
+  location: intel
+  racks:
+    - rack: pod5
+      nodes:
+    - name: {{ conf['nodes'][0]['name'] }}
+      architecture: {{ conf['nodes'][0]['node']['arch'] }}
+      roles: [network, control]
+      nics:
+        - ifname: {{ conf['nodes'][0]['interfaces'][0]['name'] }}
+          spaces: [data]
+          mac: ["{{ conf['nodes'][0]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][0]['interfaces'][0]['name'] }}.{{ conf['nodes'][0]['interfaces'][0]['vlan'] }}
+          spaces: [floating]
+          mac: ["{{ conf['nodes'][0]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][0]['interfaces'][1]['name'] }}.{{ conf['nodes'][0]['interfaces'][1]['vlan'] }}
+          spaces: [public]
+          mac: ["{{ conf['nodes'][0]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][0]['interfaces'][1]['name'] }}
+          spaces: [storage]
+          mac: ["{{ conf['nodes'][0]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][0]['interfaces'][2]['name'] }}
+          spaces: [admin]
+          mac: ["{{ conf['nodes'][0]['interfaces'][2]['mac_address'] }}"]
+      power:
+        type: {{ conf['jumphost']['remote_params']['type'] }}
+        address: {{ conf['nodes'][0]['remote_management']['address'] }}
+        user: {{ conf['jumphost']['remote_params']['user'] }}
+        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+    - name: {{ conf['nodes'][1]['name'] }}
+      architecture: {{ conf['nodes'][1]['node']['arch'] }}
+      roles: [compute, control, storage]
+      nics:
+        - ifname: {{ conf['nodes'][1]['interfaces'][0]['name'] }}
+          spaces: [data]
+          mac: ["{{ conf['nodes'][1]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][1]['interfaces'][0]['name'] }}.{{ conf['nodes'][1]['interfaces'][0]['vlan'] }}
+          spaces: [floating]
+          mac: ["{{ conf['nodes'][1]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][1]['interfaces'][1]['name'] }}.{{ conf['nodes'][1]['interfaces'][1]['vlan'] }}
+          spaces: [public]
+          mac: ["{{ conf['nodes'][1]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][1]['interfaces'][1]['name'] }}
+          spaces: [storage]
+          mac: ["{{ conf['nodes'][1]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][1]['interfaces'][2]['name'] }}
+          spaces: [admin]
+          mac: ["{{ conf['nodes'][1]['interfaces'][2]['mac_address'] }}"]
+      power:
+        type: {{ conf['jumphost']['remote_params']['type'] }}
+        address: {{ conf['nodes'][1]['remote_management']['address'] }}
+        user: {{ conf['jumphost']['remote_params']['user'] }}
+        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+    - name: {{ conf['nodes'][2]['name'] }}
+      architecture: {{ conf['nodes'][2]['node']['arch'] }}
+      roles: [compute, control, storage]
+      nics:
+        - ifname: {{ conf['nodes'][2]['interfaces'][0]['name'] }}
+          spaces: [data]
+          mac: ["{{ conf['nodes'][2]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][2]['interfaces'][0]['name'] }}.{{ conf['nodes'][2]['interfaces'][0]['vlan'] }}
+          spaces: [floating]
+          mac: ["{{ conf['nodes'][2]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][2]['interfaces'][1]['name'] }}.{{ conf['nodes'][2]['interfaces'][1]['vlan'] }}
+          spaces: [public]
+          mac: ["{{ conf['nodes'][2]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][2]['interfaces'][1]['name'] }}
+          spaces: [storage]
+          mac: ["{{ conf['nodes'][2]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][2]['interfaces'][2]['name'] }}
+      power:
+        type: {{ conf['jumphost']['remote_params']['type'] }}
+        address: {{ conf['nodes'][2]['remote_management']['address'] }}
+        user: {{ conf['jumphost']['remote_params']['user'] }}
+        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+    - name: {{ conf['nodes'][3]['name'] }}
+      architecture: {{ conf['nodes'][3]['node']['arch'] }}
+      roles: [compute, storage]
+      nics:
+        - ifname: {{ conf['nodes'][3]['interfaces'][0]['name'] }}
+          spaces: [data]
+          mac: ["{{ conf['nodes'][3]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][3]['interfaces'][0]['name'] }}.{{ conf['nodes'][3]['interfaces'][0]['vlan'] }}
+          spaces: [floating]
+          mac: ["{{ conf['nodes'][3]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][3]['interfaces'][1]['name'] }}.{{ conf['nodes'][3]['interfaces'][1]['vlan'] }}
+          spaces: [public]
+          mac: ["{{ conf['nodes'][3]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][3]['interfaces'][1]['name'] }}
+          spaces: [storage]
+          mac: ["{{ conf['nodes'][3]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][3]['interfaces'][2]['name'] }}
+      power:
+        type: ipmi
+        address: {{ conf['nodes'][3]['remote_management']['address'] }}
+        user: {{ conf['jumphost']['remote_params']['user'] }}
+        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+    - name: {{ conf['nodes'][4]['name'] }}
+      architecture: {{ conf['nodes'][4]['node']['arch'] }}
+      roles: [compute, storage]
+      nics:
+        - ifname: {{ conf['nodes'][4]['interfaces'][0]['name'] }}
+          spaces: [data]
+          mac: ["{{ conf['nodes'][4]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][4]['interfaces'][0]['name'] }}.{{ conf['nodes'][4]['interfaces'][0]['vlan'] }}
+          spaces: [floating]
+          mac: ["{{ conf['nodes'][4]['interfaces'][0]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][4]['interfaces'][1]['name'] }}.{{ conf['nodes'][4]['interfaces'][1]['vlan'] }}
+          spaces: [public]
+          mac: ["{{ conf['nodes'][4]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][4]['interfaces'][1]['name'] }}
+          spaces: [storage]
+          mac: ["{{ conf['nodes'][4]['interfaces'][1]['mac_address'] }}"]
+        - ifname: {{ conf['nodes'][1]['interfaces'][2]['name'] }}
+      power:
+        type: {{ conf['jumphost']['remote_params']['type'] }}
+        address: {{ conf['nodes'][4]['remote_management']['address'] }}
+        user: {{ conf['jumphost']['remote_params']['user'] }}
+        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+      floating-ip-range: 10.5.15.6,10.5.15.250,10.5.15.1,10.5.15.0/24
+      ext-port: "ens785f0.505"
+      dns: 8.8.8.8
+      osdomainname:
+opnfv:
+  release: c
+  distro: trusty
+  type: nonha
+  openstack: liberty
+  sdncontroller:
+    - type: nosdn
+  storage:
+    - type: ceph
+      disk: /dev/sdb
+  feature: odl_l2
+  spaces:
+    - type: admin
+      bridge: brAdm
+      cidr: 10.5.1.0/24
+      gateway: 10.5.1.1
+      vlan:
+    - type: data
+      bridge: brData
+      cidr: 10.5.12.0/24
+      gateway:
+      vlan:
+    - type: storage
+      bridge: brStor
+      cidr: 10.5.13.0/24
+      gateway:
+      vlan:
+    - type: public
+      bridge: brMgmt
+      cidr: 10.5.14.0/24
+      gateway:
+      vlan: 504
+    - type: floating
+      bridge: brPublic
+      cidr: 10.5.15.0/24
+      gateway:
+      vlan: 505
+    - type: external
+      bridge: brExt
+      cidr:
+      gateway:
+      ipaddress: 10.2.117.92
+      vlan:
