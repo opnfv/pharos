@@ -1,0 +1,51 @@
+adapter: {{ conf['jumphost']['remote_params']['type'] }}
+hosts:
+- name: 'controller01'
+  roles:
+    - 'CONTROLLER_LB'
+  ipmi_ip: {{ conf['nodes'][0]['remote_management']['address'] }}
+  ipmi_user: {{ conf['nodes'][0]['remote_management']['user'] }}
+  ipmi_pass: {{ conf['nodes'][0]['remote_management']['pass'] }}
+  mac_addresses:{% for nic in conf['nodes'][0]['interfaces'] %}
+    - {{ nic['mac_address'] }}{% endfor %}
+- name: 'controller02'
+  roles:
+    - 'CONTROLLER_LB'
+  ipmi_ip: {{ conf['nodes'][1]['remote_management']['address'] }}
+  ipmi_user: {{ conf['nodes'][1]['remote_management']['user'] }}
+  ipmi_pass: {{ conf['nodes'][1]['remote_management']['pass'] }}
+  mac_addresses:{% for nic in conf['nodes'][1]['interfaces'] %}
+    - {{ nic['mac_address'] }}{% endfor %}
+- name: 'controller03'
+  roles:
+    - 'CONTROLLER_LB'
+  ipmi_ip: {{ conf['nodes'][2]['remote_management']['address'] }}
+  ipmi_user: {{ conf['nodes'][2]['remote_management']['user'] }}
+  ipmi_pass: {{ conf['nodes'][2]['remote_management']['pass'] }}
+  mac_addresses:{% for nic in conf['nodes'][2]['interfaces'] %}
+    - {{ nic['mac_address'] }}{% endfor %}
+- name: 'computer01'
+  roles:
+    - 'COMPUTER'
+  ipmi_ip: {{ conf['nodes'][3]['remote_management']['address'] }}
+  ipmi_user: {{ conf['nodes'][3]['remote_management']['user'] }}
+  ipmi_pass: {{ conf['nodes'][3]['remote_management']['pass'] }}
+  mac_addresses:{% for nic in conf['nodes'][3]['interfaces'] %}
+    - {{ nic['mac_address'] }}{% endfor %}
+- name: 'computer02'
+  roles:
+    - 'COMPUTER'
+  ipmi_ip: {{ conf['nodes'][4]['remote_management']['address'] }}
+  ipmi_user: {{ conf['nodes'][4]['remote_management']['user'] }}
+  ipmi_pass: {{ conf['nodes'][4]['remote_management']['pass'] }}
+  mac_addresses:{% for nic in conf['nodes'][4]['interfaces'] %}
+    - {{ nic['mac_address'] }}{% endfor %}
+disks:
+  daisy: 50
+daisy_passwd: 'r00tme'
+{% if 'fixed_ips' in conf['jumphost'] -%}
+daisy_gateway: {{ conf['jumphost']['fixed_ips']['admin'] }}
+{%- else -%}
+daisy_gateway: {{ conf['jumphost']['interfaces'][0]['address'][0] }}
+{%- endif %}
+ceph_disk_name: '/dev/sdb'
