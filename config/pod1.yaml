@@ -2,7 +2,7 @@
 ### POD descriptor file ###
 
 details:
-  pod owner: Lab Owner
+  pod_owner: Lab Owner
   contact: email@address.com
   lab: Linux Foundation
   location: Portland, Oregon, USA
@@ -43,16 +43,16 @@ jumphost:
       disk_rotation: 15000
   # operation system installed
   os: ubuntu-14.04
-  remote_para: &remoteparas
-    # hardware manggement tool
+  remote_params: &remote_params
+    # hardware management tool
     type: {ipmi|amt}
     versions:
       - 1.0
       - 2.0
     user: root
     pass: root
-  remote_mangement:
-    <<: *remoteparas
+  remote_management:
+    <<: *remote_params
     address: 10.4.7.3/24
     mac_address: "10:23:45:67:89:AC"
   # physical interface list
@@ -97,8 +97,8 @@ nodes:
         disk_type: ssd
         disk_interface: ssd
         disk_rotation: 15000
-    remote_mangement:
-      <<: *remoteparas
+    remote_management:
+      <<: *remote_params
       address: 10.4.7.7/24
       mac_address: "10:20:22:67:89:A2"
     interfaces:
@@ -111,7 +111,7 @@ nodes:
       - name: 'nic2'
         speed: 1gb
         features: ''
-        address: 10.2.4.8/24
+        address: 10.2.4.7/24
         mac_address: "10:23:22:67:89:5B"
         vlan: 202
       - name: 'nic3'
@@ -128,8 +128,8 @@ nodes:
     node: *nodeparas
     # disks are same as pod1-node1
     disks: *disks
-    remote_mangement:
-      <<: *remoteparas
+    remote_management:
+      <<: *remote_params
       address: 10.4.7.8/24
       mac_address: "10:20:22:67:88:A3"
     interfaces:
@@ -154,3 +154,93 @@ nodes:
         speed: 10gb
         features: 'dpdk|sriov'
         mac_address: "00:1b:21:22:f8:b5"
+  - name: pod1-node3
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.9/24
+      mac_address: "10:30:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.9/24
+        mac_address: "10:33:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.9/24
+        mac_address: "10:33:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:3b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:3b:21:22:f8:b5"
+  - name: pod1-node4
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.10/24
+      mac_address: "10:40:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.10/24
+        mac_address: "10:43:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.10/24
+        mac_address: "10:43:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:4b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:4b:21:22:f8:b5"
+  - name: pod1-node5
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.11/24
+      mac_address: "10:50:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.11/24
+        mac_address: "10:53:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.11/24
+        mac_address: "10:53:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:5b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:5b:21:22:f8:b5"
