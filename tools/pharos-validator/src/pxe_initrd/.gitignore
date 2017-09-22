@@ -1,5 +1,0 @@
-tests/*.xml
-/tmp
-/initrd-build/
-/Linux*
-/linux*
