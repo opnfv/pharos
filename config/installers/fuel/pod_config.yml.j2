@@ -1,0 +1,70 @@
+{% macro node_address(network, i, has_vip, count, node_name, addr_type='') %}
+{# has_vip should be numeric (0 or 1) #}
+    {%- if has_vip == 1 %}
+    {{ node_name }}_{{ addr_type }}address: {{ network | ipaddr_index(i) }}
+    {%- endif -%}
+    {%- for j in range(has_vip, has_vip + count) %}
+    {{ node_name }}_node{{ '%02d' % loop.index }}_{{ addr_type }}address: {{ network | ipaddr_index(i + j) }}
+    {%- endfor -%}
+{% endmacro %}
+{#- TODO: Try to dynamically detect networks from PDF -#}
+{#- For now, we just provide some dummy default values -#}
+{%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] -%}
+{%- set netconfig = {
+    'admin':   { 'network': '192.168.11.0', 'vlan': '0'   },
+    'mgmt':    { 'network': '172.16.10.0',  'vlan': '300' },
+    'private': { 'network': '10.1.0.0',     'vlan': '302' },
+    'public':  { 'network': '172.30.10.0',  'vlan': '0'   },
+} -%}
+{%- if conf.net_config is defined -%}
+    {%- set netconfig = conf['net_config'] -%}
+    {%- if conf.net_config.public.dns is defined -%}
+        {%- set dns_public = conf['net_config']['public']['dns'] -%}
+    {%- endif -%}
+{%- endif -%}
+---
+parameters:
+  _param:
+    # infra service addresses
+    {{- node_address(netconfig['mgmt']['network'],    100, 1, 0, 'opnfv_infra_config') }}
+    {{- node_address(netconfig['mgmt']['network'],      3, 0, 1, 'opnfv_infra_maas') }}
+
+    # MaaS PXE network / DHCP range
+    {{- node_address(netconfig['admin']['network'],     0, 1, 0, 'opnfv_maas_pxe', 'network_') }}
+    {{- node_address(netconfig['admin']['network'],     3, 1, 0, 'opnfv_maas_pxe') }}
+    {{- node_address(netconfig['admin']['network'],     5, 1, 0, 'opnfv_maas_pxe', 'start_') }}
+    {{- node_address(netconfig['admin']['network'],   250, 1, 0, 'opnfv_maas_pxe', 'end_') }}
+
+    {{- node_address(netconfig['mgmt']['network'],    141, 0, 3, 'opnfv_infra_compute') }}
+    {{- node_address(netconfig['mgmt']['network'],    140, 1, 3, 'opnfv_infra_kvm') }}
+    {{- node_address(netconfig['mgmt']['network'],    124, 0, 3, 'opnfv_openstack_gateway') }}
+    {{- node_address(netconfig['private']['network'],   6, 0, 3, 'opnfv_openstack_gateway', 'tenant_') }}
+    {{- node_address(netconfig['mgmt']['network'],     80, 1, 2, 'opnfv_openstack_proxy') }}
+    {{- node_address(netconfig['mgmt']['network'],     10, 1, 3, 'opnfv_openstack_control') }}
+    {{- node_address(netconfig['mgmt']['network'],     50, 1, 3, 'opnfv_openstack_database') }}
+    {{- node_address(netconfig['mgmt']['network'],     40, 1, 3, 'opnfv_openstack_message_queue') }}
+    {{- node_address(netconfig['mgmt']['network'],     75, 1, 3, 'opnfv_openstack_telemetry') }}
+    {{- node_address(netconfig['mgmt']['network'],    101, 0, 3, 'opnfv_openstack_compute', 'single_') }}
+    {{- node_address(netconfig['mgmt']['network'],    101, 0, 3, 'opnfv_openstack_compute', 'control_') }}
+    {{- node_address(netconfig['private']['network'], 101, 0, 3, 'opnfv_openstack_compute', 'tenant_') }}
+    {{- node_address(netconfig['public']['network'],  101, 0, 3, 'opnfv_openstack_compute', 'external_') }}
+
+    opnfv_name_servers: {{ dns_public }}
+    opnfv_dns_server01: '{{ dns_public[0] }}'
+    opnfv_net_mgmt_vlan: {{ netconfig['mgmt']['vlan'] }}
+    opnfv_net_tenant_vlan: {{ netconfig['private']['vlan'] }}
+
+{%- for idx in conf['nodes'] %}
+{% set node_idx = 'opnfv_maas_node%02d' % loop.index %}
+    # Node {{ '%02d' % loop.index }} specific configuration
+    {{ node_idx }}_architecture: '{{ idx['node']['arch'] | dpkg_arch }}/generic'
+    {{ node_idx }}_power_address: {{ idx['remote_management']['address'] }}
+    {{ node_idx }}_power_type: {{ idx['remote_management']['type'] }}
+    {{ node_idx }}_power_user: {{ idx['remote_management']['user'] }}
+    {{ node_idx }}_power_password: {{ idx['remote_management']['pass'] }}
+{%- if idx['interfaces'][1]['mac_address'] is defined %}
+    {{ node_idx }}_interface_mac: '{{ idx['interfaces'][1]['mac_address'] }}'
+{%- else %}
+    {{ node_idx }}_interface_mac: '{{ idx['interfaces'][1] }}'
+{%- endif %}
+{%- endfor %}
