@@ -2,6 +2,7 @@
 """This module does blah blah."""
 import argparse
 import ipaddress
+import os
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -43,6 +44,13 @@ ENV.filters['dpkg_arch'] = dpkg_arch
 
 with open(ARGS.yaml) as _:
     DICT = yaml.safe_load(_)
+
+# If an installer descriptor file (IDF) exists, include it (temporary)
+IDF_PATH = '/idf-'.join(os.path.split(ARGS.yaml))
+if os.path.exists(IDF_PATH):
+    with open(IDF_PATH) as _:
+        IDF = yaml.safe_load(_)
+        DICT['idf'] = IDF['idf']
 
 # Print dictionary generated from yaml (uncomment for debug)
 # print(DICT)
