@@ -1,0 +1,8 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Aric Gardner <agardner@linuxfoundation.org>
+Code-Review+2: Jack Morgan <jack.morgan@intel.com>
+Submitted-by: Jack Morgan <jack.morgan@intel.com>
+Submitted-at: Tue, 26 Sep 2017 12:10:31 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/43167
+Project: pharos
+Branch: refs/heads/master
