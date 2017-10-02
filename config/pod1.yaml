@@ -1,5 +1,6 @@
 ---
 ### POD descriptor file ###
+version: '1'
 
 details:
   pod owner: Lab Owner
