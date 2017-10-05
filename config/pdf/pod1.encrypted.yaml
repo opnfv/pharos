@@ -1,0 +1,275 @@
+---
+### POD descriptor file ###
+
+details:
+  pod_owner: Lab Owner
+  contact: email@address.com
+  lab: Linux Foundation
+  location: Portland, Oregon, USA
+  type: {production|development}
+  link: http://wiki.opnfv.org/
+
+jumphost:
+  name: pod1-jump
+  node:
+    # type can be virtual or baremetal
+    type: {baremetal|virtual}
+    vendor: supermicro
+    model: S2600JF
+    arch: {x86_64|aarch64}
+    cpus: 2
+    # add values based on CFLAGS in GCC
+    cpu_cflags: {broadwell|hasewell|etc}
+    # physical cores, not including hyper-threads
+    cores: 10
+    memory: 32G
+  # disk list
+  disks:
+    # first disk
+    - name: {disk#number}
+      # volume
+      disk_capacity: {M|MB|G|GB|T|TB}
+      # several disk types possible
+      disk_type: {hdd|ssd|cdrom|tape}
+      # several interface types possible
+      disk_interface: {sata|sas|ssd|nvme}
+      # define rotation speed of disk
+      disk_rotation: {5400|7200|10000|15000}
+    # second disk
+    - name: 'disk2'
+      disk_capacity: 2048G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 15000
+  # operation system installed
+  os: ubuntu-14.04
+  remote_params: &remote_params
+    # hardware management tool
+    type: {ipmi|amt}
+    versions:
+      - 1.0
+      - 2.0
+    # sensitive data could be encrypted, see ../utils/README.eyaml.rst
+    user: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEAKn4rdxFJum3vgvpjT4c64gkXzbMog4LyrBb0
+        pHeASLqwiuJqCdELWl4e7d4SMp3QBzHqd6aGHJqywDt09L7axFaW9PmdUEVx
+        KxIZ8NUdDjl7HtuG8D9irU2n5VMHXVyDosMEZe9pRYhQTkuAggR7EDoDjdDj
+        0myGFy/UVH3/fxpdySWhyg9kqAYb1ReMgYBudVfm2gw4bjtjJviwASXi8hj6
+        8isdJPf25U6wrvbqQi5J5WVD4Q3PaGy8GACTZ8n+LFyPSwBl3QJ5jfMmzHmq
+        Po0cqa4MoKi3xQ8Y8z6DxhUrV0yoYWoHvIcpQBu3YCZVzpOqVPZwsapBl963
+        0d0kWzA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAoo59BSqp1DBCu05h+
+        /1BZgBDdOvlZ5JlDtpkh73ujYZXR]
+    pass: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEA4pnLYg4U/39mKdytYH1CJYJuJ/qjNrS+KoON
+        oPU6G9lMJ5U5J7NUuGyBD7O1NTt8VBE+LaBEqmXK5/SQ6mAdns9qs5QLOVSm
+        r3WKroZdqH3hmW26LuPsXNUfTaCVNOqWPAf6U6Q1fHr1vi09n3mIV/Ph03Kv
+        /aNeeRsJbBPAtHgCL6aRs+4WoxxYS0eUAVCo4yPDiSN5UFmSg6O304NM2qzi
+        av2b/gmNFN8AxE5CVi+C/fVGBhdpwmmdC0KmtkY38pYa/hf8Pks4jsFtKNDw
+        3KW+pP+BTsgKs/o/WrwCFm4LIJj/E6Pf9qZ/mZ8bAxKlVf+gQj2bgxzT3aa1
+        hHhD0TA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAx3f5XDjWzYJA4Jn5H
+        KJOBgBDq/YBNdEeyT+dCuH59ZE6L]
+  remote_management:
+    <<: *remote_params
+    address: 10.4.7.3/24
+    mac_address: "10:23:45:67:89:AC"
+  # physical interface list
+  interfaces:
+    # first interface
+    - nic: {nic#number}
+      # ip address of nic
+      address: 192.168.100.1
+      mac_address: "10:23:45:67:89:AC"
+      # vlan tag, may have multiple tags
+      vlan: {native|1-4095}
+    # second interface
+    - nic: 'nic2'
+      address: 10.20.0.1/24
+      mac_address: "10:23:45:67:89:5B"
+nodes:
+  - name: pod1-node1
+    # for nodes in the same pod may have the same configuration
+    node: &nodeparas
+      type: baremetal
+      vendor: supermicro
+      model: S2600JF
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: hasewell
+      cores: 12
+      memory: 128G
+    # for nodes in the same pod may have the same configuration
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 4906G
+        disk_type: hdd
+        disk_interface: sata
+        disk_rotation: 7200
+      - name: 'disk2'
+        disk_capacity: 2048G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 15000
+      - name: 'disk3'
+        disk_capacity: 600G
+        disk_type: ssd
+        disk_interface: ssd
+        disk_rotation: 15000
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.7/24
+      mac_address: "10:20:22:67:89:A2"
+    interfaces:
+      - name: 'nic1'
+        speed: {1gb|10gb|25gb|40gb}
+        features: {dpdk|sriov}
+        address: 10.2.4.7/24
+        mac_address: "10:23:22:67:89:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        # sensitive data could be encrypted, see ../utils/README.eyaml.rst
+        address: >
+            ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+            DQYJKoZIhvcNAQEBBQAEggEAlOui3RhZJZsowEAzRgnLlbneCi7mtqAAXKGY
+            tP9kjfew7nXDWtDRlJrPk+cLmAzHotKYbMoDTr4LxwKatxG7rYTcalOhJvje
+            r3lkvMxHzgJtzoNP0fsl+ZaqfsHR87j8i/bJ3I7Rd+jxIVHRRQ0FDblhAltB
+            BGEwr7j8bgS1ekHTFzGPsR/wEJxB9ui5rS6nHxpLQrbcu/0AnLra71k1askw
+            r0xV3glINp9NdCO47uPTVLIR9aNPbtI6tSzapIwrhd1EWIY0CC1x+KFEVHG/
+            J9+lcu4EMzH29PKFIFci3qrR+mHGO7XsQfIcH49YJi8FxM6LT8NHfWka2i/W
+            PjGIQjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCbj3JraYjos/V6WeKv
+            YAOzgBAnn2fbh9w/TBSSwXZQux2d]
+        mac_address: "10:23:22:67:89:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f1:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f1:b5"
+        vlan: 204
+  - name: pod1-node2
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.8/24
+      mac_address: "10:20:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f8:b5"
+  - name: pod1-node3
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.9/24
+      mac_address: "10:30:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.9/24
+        mac_address: "10:33:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.9/24
+        mac_address: "10:33:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:3b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:3b:21:22:f8:b5"
+  - name: pod1-node4
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.10/24
+      mac_address: "10:40:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.10/24
+        mac_address: "10:43:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.10/24
+        mac_address: "10:43:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:4b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:4b:21:22:f8:b5"
+  - name: pod1-node5
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.11/24
+      mac_address: "10:50:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.11/24
+        mac_address: "10:53:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.11/24
+        mac_address: "10:53:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:5b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:5b:21:22:f8:b5"
