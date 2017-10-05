@@ -1,8 +1,10 @@
 #!/usr/bin/python
 """This module does blah blah."""
-import argparse
-import ipaddress
 import os
+import re
+import argparse
+from pathlib import Path
+import ipaddress
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -54,6 +56,26 @@ if os.path.exists(IDF_PATH):
 
 # Print dictionary generated from yaml (uncomment for debug)
 # print(DICT)
+
+
+#If key exists, look for encrypted values and swap them out
+my_file = Path("./keys/private_key.pkcs7.pem")
+if my_file.is_file():
+    print "Key Found, Checking if there are encrypted values"
+    regex_txt = r"ENC*"
+    User = DICT["jumphost"]["remote_params"]["user"]
+    Password = DICT["jumphost"]["remote_params"]["pass"]
+    if re.match(regex_txt, User) is not None:
+        User = os.popen('eyaml decrypt -s %s' % User).read()
+        #print "User: %s " % User
+        DICT["jumphost"]["remote_params"]["user"] = User.rstrip()
+    if re.match(regex_txt, Password) is not None:
+        Password = os.popen('eyaml decrypt -s %s' % Password).read()
+        #print "Password: %s " % Password
+        DICT["jumphost"]["remote_params"]["pass"] = Password.rstrip()
+
+
+
 
 # Render template and print generated conf to console
 TEMPLATE = ENV.get_template(ARGS.jinja2)
