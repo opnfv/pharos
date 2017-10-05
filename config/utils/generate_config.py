@@ -1,10 +1,20 @@
 #!/usr/bin/python
+##############################################################################
+# Copyright (c) 2017 OPNFV and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
 """This module does blah blah."""
 import argparse
 import ipaddress
+import logging
 import os
 import yaml
 from jinja2 import Environment, FileSystemLoader
+from subprocess import CalledProcessError, check_output
 
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument("--yaml", "-y", type=str, required=True)
@@ -38,12 +48,20 @@ def dpkg_arch(arch, to_dpkg=True):
     else:
         return ARCH_DPKG_TABLE[arch]
 
-ENV = Environment(loader=FileSystemLoader('./'))
+ENV = Environment(loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)))
 ENV.filters['ipaddr_index'] = ipaddr_index
 ENV.filters['dpkg_arch'] = dpkg_arch
 
-with open(ARGS.yaml) as _:
-    DICT = yaml.safe_load(_)
+# Run `eyaml decrypt` on the whole file, in case any PDF data is encrypted
+# Note: eyaml return code is 0 even if keys are not available
+try:
+    DICT = yaml.safe_load(check_output(['eyaml', 'decrypt', '-f', ARGS.yaml]))
+except CalledProcessError as ex:
+    pass
+if not DICT:
+    logging.warn('PDF decryption failed, fallback to using raw data.')
+    with open(ARGS.yaml) as _:
+        DICT = yaml.safe_load(_)
 
 # If an installer descriptor file (IDF) exists, include it (temporary)
 IDF_PATH = '/idf-'.join(os.path.split(ARGS.yaml))
@@ -56,6 +74,7 @@ if os.path.exists(IDF_PATH):
 # print(DICT)
 
 # Render template and print generated conf to console
-TEMPLATE = ENV.get_template(ARGS.jinja2)
+TEMPLATE = ENV.get_template(os.path.basename(ARGS.jinja2))
+
 #pylint: disable=superfluous-parens
 print(TEMPLATE.render(conf=DICT))
