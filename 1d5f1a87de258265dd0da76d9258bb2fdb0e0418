@@ -22,6 +22,30 @@
       "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_c36b4283",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2017-10-06T15:04:27Z",
+      "side": 1,
+      "message": "nope :)",
+      "parentUuid": "da33351e_ddc203e8",
+      "range": {
+        "startLine": 58,
+        "startChar": 61,
+        "endLine": 58,
+        "endChar": 63
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
