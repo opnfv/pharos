@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3d3df0_a5ab6ad5",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-10-09T23:11:56Z",
+      "side": 1,
+      "message": "Does this encryption need to happen on the same server the secrets will be decrypted on? If so, should a note be added regarding moving the keys to the server, or specifying the encryption must happen on the server?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_ddc203e8",
         "filename": "config/utils/generate_config.py",
         "patchSetId": 10
