@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2eee1723",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2017-10-10T15:56:14Z",
+      "side": 1,
+      "message": "Very good point, the keys should be copied to the servers used for decryption too.\nAric, will you add that note (so you take the credit back while pushing a new revision), or should I add it?",
+      "parentUuid": "9a3d3df0_a5ab6ad5",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 34
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_ddc203e8",
         "filename": "config/utils/generate_config.py",
         "patchSetId": 10
