@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3d3df0_0b8d007c",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-10-11T16:16:03Z",
+      "side": 1,
+      "message": "it only works for CentOS, can you add the installation steps for Ubuntu.",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 36
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2bf1e4cd",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-10-11T16:16:03Z",
+      "side": 1,
+      "message": "chmod +r /etc/eyaml_keys/*\n\nif current user can not read files esp private_key.pkcs7.pem in /etc/eyaml_keys/, the decrypt will fail.",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_a5ab6ad5",
         "filename": "config/utils/README.eyaml.rst",
         "patchSetId": 10
@@ -49,6 +95,29 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0beea0ec",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-10-11T16:16:03Z",
+      "side": 1,
+      "message": "suggest to directly use eyaml for decryption\n\neyaml decrypt -f test.yaml",
+      "range": {
+        "startLine": 62,
+        "startChar": 10,
+        "endLine": 62,
+        "endChar": 84
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_ddc203e8",
         "filename": "config/utils/generate_config.py",
         "patchSetId": 10
@@ -89,6 +158,29 @@
         "startChar": 61,
         "endLine": 58,
         "endChar": 63
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6bbacce2",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-10-11T16:16:03Z",
+      "side": 1,
+      "message": "when encrypt yaml can not be decrypt, DICT is not defined here.",
+      "range": {
+        "startLine": 61,
+        "startChar": 7,
+        "endLine": 61,
+        "endChar": 11
       },
       "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
