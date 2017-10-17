@@ -38,7 +38,7 @@ def dpkg_arch(arch, to_dpkg=True):
     else:
         return ARCH_DPKG_TABLE[arch]
 
-ENV = Environment(loader=FileSystemLoader('./'))
+ENV = Environment(loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)))
 ENV.filters['ipaddr_index'] = ipaddr_index
 ENV.filters['dpkg_arch'] = dpkg_arch
 
@@ -56,6 +56,6 @@ if os.path.exists(IDF_PATH):
 # print(DICT)
 
 # Render template and print generated conf to console
-TEMPLATE = ENV.get_template(ARGS.jinja2)
+TEMPLATE = ENV.get_template(os.path.basename(ARGS.jinja2))
 #pylint: disable=superfluous-parens
 print(TEMPLATE.render(conf=DICT))
