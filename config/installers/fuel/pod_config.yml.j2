@@ -43,9 +43,9 @@ parameters:
     opnfv_openstack_gateway_node01_tenant_address: {{ net_private | ipaddr_index('6') }}
     opnfv_openstack_gateway_node02_tenant_address: {{ net_private | ipaddr_index('7') }}
     opnfv_openstack_gateway_node03_tenant_address: {{ net_private | ipaddr_index('9') }}
-    opnfv_openstack_proxy_address: {{ net_mgmt | ipaddr_index('80') }}
-    opnfv_openstack_proxy_node01_address: {{ net_mgmt | ipaddr_index('81') }}
-    opnfv_openstack_proxy_node02_address: {{ net_mgmt | ipaddr_index('82') }}
+    opnfv_openstack_proxy_address: {{ net_public | ipaddr_index('103') }}
+    opnfv_openstack_proxy_node01_address: {{ net_public | ipaddr_index('104') }}
+    opnfv_openstack_proxy_node02_address: {{ net_public | ipaddr_index('105') }}
     opnfv_openstack_control_address: {{ net_mgmt | ipaddr_index('10') }}
     opnfv_openstack_control_node01_address: {{ net_mgmt | ipaddr_index('11') }}
     opnfv_openstack_control_node02_address: {{ net_mgmt | ipaddr_index('12') }}
