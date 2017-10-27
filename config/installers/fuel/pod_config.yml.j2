@@ -8,6 +8,7 @@
     {%- if conf.net_config.public.dns is defined -%}
         {%- set dns_public = conf['net_config']['public']['dns'] -%}
     {%- endif -%}
+    {%- set pxe_interface = conf['net_config']['admin']['interface'] -%}
 {%- else -%}
     {%- set net_admin = '192.168.11.0' -%}
     {%- set net_mgmt = '172.16.10.0' -%}
@@ -15,13 +16,12 @@
     {%- set net_public = '172.30.10.0' -%}
     {%- set vlan_mgmt = '300' -%}
     {%- set vlan_private = '1000' -%}
+    {%- set pxe_interface = 0 -%}
 {%- endif -%}
 
 {%- if dns_public is not defined -%}
     {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] -%}
 {%- endif -%}
-
-{%- set pxe_interface = 0 -%}
 ---
 parameters:
   _param:
