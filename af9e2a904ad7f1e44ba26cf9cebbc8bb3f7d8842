@@ -1,0 +1,8 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Code-Review+2: Jose Lausuch <jalausuch@suse.com>
+Submitted-by: Jose Lausuch <jalausuch@suse.com>
+Submitted-at: Tue, 31 Oct 2017 09:28:44 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/46207
+Project: pharos
+Branch: refs/heads/master
