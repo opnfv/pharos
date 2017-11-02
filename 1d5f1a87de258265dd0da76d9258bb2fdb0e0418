@@ -166,6 +166,52 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_85138b5b",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-11-02T20:03:16Z",
+      "side": 1,
+      "message": "This can be simplified to:\n\nDPKG_ARCH_TABLE \u003d {\n  \u0027aarch64\u0027: \u0027arm64\u0027,\n  \u0027arm64\u0027: \u0027aarch64\u0027,\n  \u0027x86_64\u0027: \u0027amd64\u0027,\n  \u0027amd64\u0027: \u0027x86_64\u0027,\n}",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 77
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c51d9368",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-11-02T20:03:16Z",
+      "side": 1,
+      "message": "Which will simplify this to just a dictionary lookup, and reduce the arguments to 1:\n\ndef dpkg_arch(arch):\n    return DPKG_ARCH_TABLE[arch]",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 36
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_ddc203e8",
         "filename": "config/utils/generate_config.py",
         "patchSetId": 10
