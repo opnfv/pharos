@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_853a6bcb",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-11-02T20:27:57Z",
+      "side": 1,
+      "message": "The only difference I found w/Ubuntu is this line should be \u0027sudo apt-get install ruby\u0027 as the gem command comes bundled with the install.",
+      "parentUuid": "9a3d3df0_0b8d007c",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 36
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_2bf1e4cd",
         "filename": "config/utils/README.eyaml.rst",
         "patchSetId": 10
@@ -65,6 +89,29 @@
         "startChar": 8,
         "endLine": 24,
         "endChar": 43
+      },
+      "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e5525712",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1451
+      },
+      "writtenOn": "2017-11-02T20:27:57Z",
+      "side": 1,
+      "message": "This should be a separate section `Setup and Configuration` that explains where these keys should exist (server or workstation) and include these steps to generate them along with a note that they\u0027ll need to be copied to the server decrypting eyaml files.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 53
       },
       "revId": "1d5f1a87de258265dd0da76d9258bb2fdb0e0418",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
