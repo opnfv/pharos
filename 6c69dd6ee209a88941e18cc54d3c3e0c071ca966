@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_38056b7a",
+        "filename": "config/utils/README.eyaml.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2017-11-18T00:04:23Z",
+      "side": 1,
+      "message": "code-block won\u0027t work in all rst parsers without an empty line right after it",
+      "revId": "6c69dd6ee209a88941e18cc54d3c3e0c071ca966",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
