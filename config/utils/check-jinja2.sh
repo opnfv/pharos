@@ -10,6 +10,7 @@
 
 set +x
 set +o errexit
+export PATH=$PATH:/usr/local/bin/
 
 GEN_CFG='./config/utils/generate_config.py'
 INSTALLER_ADAPTERS='./config/installers/*'
