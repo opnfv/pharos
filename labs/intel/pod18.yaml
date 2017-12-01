@@ -1,0 +1,294 @@
+---
+
+### POD descriptor file ###
+
+details:
+  pod_owner: Jack Morgan
+  contact: jack.morgan@intel.com
+  lab: Intel Pharos Lab
+  location: Portland, Oregon, USA
+  type: {production|development}
+  link: http://wiki.opnfv.org/display/pharos/Intel+Hosting
+
+jumphost:
+  name: pod18-jump
+  node:
+    type: baremetal
+    vendor: Intel
+    model: S2600WT
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: broadwell
+    cores: 88
+    memory: 128G
+  disks:
+    - name: 'disk1'
+      disk_capacity: 480GB
+      disk_type: ssd
+      disk_interface: ssd
+      disk_rotation:
+    - name: 'disk2'
+      disk_capacity: 1TB
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 15000
+  os: centos-7.2.1611
+  remote_params: &remoteparas
+    type: ipmi
+    versions:
+      - 1.0
+      - 2.0
+    user:
+    pass:
+  remote_management:
+    <<: *remoteparas
+    address: 10.10.180.10
+    mac_address: "A4:BF:01:16:31:98"
+  interfaces:
+    - nic: 'nic1'
+      address: 10.10.180.20/24
+      mac_address: "A4:BF:01:16:31:96"
+      vlan: native
+    - nic: 'nic2'
+      address: 10.10.181.20/24
+      mac_address: "A4:BF:01:16:31:97"
+      vlan: native
+nodes:
+  - name: pod18-node1
+    node: &nodeparas
+      type: baremetal
+      vendor: Intel
+      model: S2600WT
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: broadwell
+      cores: 88
+      memory: 128G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 480GB
+        disk_type: ssd
+        disk_interface: ssd
+        disk_rotation:
+      - name: 'disk2'
+        disk_capacity: 1TB
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 15000
+    remote_management:
+      <<: *remoteparas
+      address: 10.10.180.11/24
+      mac_address: "A4:BF:01:14:40:18"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features:
+        address: 10.10.180.21/24
+        mac_address: "A4:BF:01:14:40:16"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features:
+        address: 10.10.181.21/24
+        mac_address: "A4:BF:01:14:40:17"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.182.21/24
+        mac_address: "3C:FD:FE:A4:9F:A0"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.183.21/24
+        mac_address: "3C:FD:FE:A4:9F:A1"
+        vlan: native
+      - name: 'nic5'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.184.21/24
+        mac_address: "3C:FD:FE:A4:9F:A2"
+        vlan: native
+      - name: 'nic6'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.185.21/24
+        mac_address: "3C:FD:FE:A4:9F:A3"
+        vlan: native
+  - name: pod18-node2
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 10.10.180.12/24
+      mac_address: "A4:BF:01:16:31:1G"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features:
+        address: 10.10.180.22/24
+        mac_address: "A4:BF:01:16:31:1E"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features:
+        address: 10.10.181.22/24
+        mac_address: "A4:BF:01:16:31:1F"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.182.22/24
+        mac_address: "3C:FD:FE:A4:A0:30"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.183.22/24
+        mac_address: "3C:FD:FE:A4:A0:31"
+        vlan: native
+      - name: 'nic5'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.184.22/24
+        mac_address: "3C:FD:FE:A4:A0:32"
+        vlan: native
+      - name: 'nic6'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.185.22/24
+        mac_address: "3C:FD:FE:A4:A0:33"
+        vlan: native
+  - name: pod18-node3
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 10.10.180.13/24
+      mac_address: "A4:BF:01:16:30:F8"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features:
+        address: 10.10.180.23/24
+        mac_address: "A4:BF:01:16:30:F6"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features:
+        address: 10.10.181.23/24
+        mac_address: "A4:BF:01:16:30:F7"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.182.23/24
+        mac_address: "3C:FD:FE:A4:9E:48"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.183.23/24
+        mac_address: "3C:FD:FE:A4:9E:49"
+        vlan: native
+      - name: 'nic5'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.184.23/24
+        mac_address: "3C:FD:FE:A4:9E:4A"
+        vlan: native
+      - name: 'nic6'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.185.23/24
+        mac_address: "3C:FD:FE:A4:9E:4B"
+        vlan: native
+  - name: pod18-node4
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 10.10.180.14/24
+      mac_address: "A4:BF:01:14:72:0F"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features:
+        address: 10.10.180.24/24
+        mac_address: "A4:BF:01:14:72:0D"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features:
+        address: 10.10.181.24/24
+        mac_address: "A4:BF:01:14:72:0E"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.182.24/24
+        mac_address: "3C:FD:FE:A4:9D:E8"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.183.24/24
+        mac_address: "3C:FD:FE:A4:9D:E9"
+        vlan: native
+      - name: 'nic5'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.184.24/24
+        mac_address: "3C:FD:FE:A4:9D:EA"
+        vlan: native
+      - name: 'nic6'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.185.24/24
+        mac_address: "3C:FD:FE:A4:9D:EB"
+        vlan: native
+  - name: pod18-node5
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 10.10.180.15/24
+      mac_address: "A4:BF:01:14:71:70"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features:
+        address: 10.10.180.25/24
+        mac_address: "A4:BF:01:14:71:68"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features:
+        address: 10.10.181.25/24
+        mac_address: "A4:BF:01:14:71:69"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.182.25/24
+        mac_address: "3C:FD:FE:A4:A1:08"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.183.25/24
+        mac_address: "3C:FD:FE:A4:A1:09"
+        vlan: native
+      - name: 'nic5'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.184.25/24
+        mac_address: "3C:FD:FE:A4:A1:0A"
+        vlan: native
+      - name: 'nic6'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        address: 10.10.185.25/24
+        mac_address: "3C:FD:FE:A4:A1:0B"
+        vlan: native
