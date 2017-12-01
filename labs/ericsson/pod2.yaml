@@ -1,0 +1,211 @@
+---
+### POD descriptor file ###
+
+details:
+  pod_owner: Jose Lausuch
+  contact: jose.lausuch@ericsson.com
+  lab: Ericsson
+  location: Rosersberg, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/CI-ERICSSON-POD2
+##############################################################################
+jumphost:
+  name: CI-POD2-HOST
+  node: &nodeparams
+    type: baremetal
+    vendor: HP
+    model: ProLiant BL460c Gen9
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: haswell
+    cores: 12
+    memory: 128G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 1200G
+      disk_type: hdd
+      disk_interface: scsi
+      disk_rotation: 15000
+  os: ubuntu-16.04
+  remote_params: &remoteparas
+    type: ipmi
+    versions:
+      - 1.0
+      - 2.0
+    user:
+    pass:
+  remote_management:
+    <<: *remoteparas
+    address: 172.16.2.11/24
+    mac_address: "58:20:B1:01:8A:F2"
+  interfaces:
+    - nic: 'nic1'
+      speed: 10gb
+      features: 'dpdk,sriov'
+      address: 100.64.201.5/24
+      mac_address: "5c:b9:01:8b:9f:e8"
+      vlan: 84
+    - nic: 'nic2'
+      speed: 10gb
+      features: 'dpdk,sriov'
+      address: 100.64.201.5/24
+      mac_address: "5c:b9:01:8b:9f:e9"
+      vlan: native
+    - nic: 'nic3'
+      speed: 10gb
+      features: 'dpdk,sriov'
+      address: 172.16.0.248/16
+      mac_address: "5c:b9:01:8b:9f:ec"
+      vlan: native
+    - nic: 'nic4'
+      speed: 10gb
+      features: 'dpdk,sriov'
+      address: 172.16.0.248/16
+      mac_address: "5c:b9:01:8b:9f:ed"
+      vlan: native
+##############################################################################
+nodes:
+  - name: CI-ERICSSON-POD2-NODE1
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.12/24
+      mac_address: "58:20:B1:01:8B:F0"
+    interfaces:
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:94"
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:95"
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:80"
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:81"
+  ############################################################################
+  - name: CI-ERICSSON-POD2-NODE2
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.13/24
+      mac_address: "58:20:B1:01:8E:FC"
+    interfaces:
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:30"
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:31"
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:99:64"
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:99:65"   # second port, no connection
+  ############################################################################
+  - name: CI-ERICSSON-POD2-NODE3
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.14/24
+      mac_address: "58:20:B1:01:8D:32"
+    interfaces:
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:9d:4c"
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:9d:4d"
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:9d:6c"
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:9d:6d"
+  ############################################################################
+  - name: CI-ERICSSON-POD2-NODE4
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.15/24
+      mac_address: "58:20:B1:01:8B:FC"
+    interfaces:
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a5:fc"
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a5:fd"
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:08"
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:09"
+  ############################################################################
+  - name: CI-ERICSSON-POD2-NODE5
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.16/24
+      mac_address: "58:20:B1:01:8F:EA"
+    interfaces:
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:e8"
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:a6:e9"
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:97:14"
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk,sriov'
+        address:
+        mac_address: "5c:b9:01:8b:97:15"
