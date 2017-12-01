@@ -1,0 +1,210 @@
+---
+### ZTE POD 3 descriptor file ###
+# refering to https://gerrit.opnfv.org/gerrit/#/c/23727/9/config/pod1.yaml
+
+details:
+  pod_owner: Alex Yang
+  contact: yangyang1@zte.com.cn
+  lab: ZTE Pharos Lab
+  location: Shanghai, China
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/ZTE+SH+Testlab
+##############################################################################
+net_config:
+  # NOTE: Network names are likely to change after the PDF spec is updated
+  oob:
+    interface: 0
+    ip-range: 192.168.1.32-192.168.1.36
+    vlan: null
+  admin:
+    interface: 0
+    vlan: native
+    network: 10.20.0.0
+    mask: 24
+  mgmt:
+    interface: 1
+    vlan: 101
+    network: 192.168.11.0
+    mask: 24
+  storage:
+    interface: 2
+    vlan: 102
+    network: 192.168.12.0
+    mask: 24
+  private:
+    interface: 3
+    vlan: 1030
+    network: 192.168.13.0
+    mask: 24
+  public:
+    interface: 3
+    vlan: 103
+    network: 172.10.0.0
+    mask: 24
+    gateway: 172.10.0.1
+    dns:
+      - 172.10.0.1
+##############################################################################
+jumphost:
+  name: pod3-jump
+  node:
+    type: baremetal
+    vendor: ZTE
+    model: R5300
+    arch: x86_64
+    cpus: 1
+    cpu_cflags: hasewell
+    cores: 6
+    memory: 80G
+  disks:
+    - name: 'disk1'
+      disk_capacity: 300G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 10000
+    - name: 'disk2'
+      disk_capacity: 300G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 10000
+    - name: 'disk3'
+      disk_capacity: 1200G
+      disk_type: hdd
+      disk_interface: iscsi
+      disk_rotation: 10000
+  os: CentOS-7
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user:
+    pass:
+  remote_management:
+    <<: *remote_params
+    address:
+    mac_address:
+  interfaces:
+    - mac_address: "74:4a:a4:00:21:0c"
+      speed: 1gb
+  fixed_ips:
+    admin: 10.20.0.1
+    public: 172.10.0.240
+nodes:
+  - name: pod3-node1
+    node: &nodeparas
+      type: baremetal
+      vendor: ZTE
+      model: E9000
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: ivybridge
+      cores: 10
+      memory: 64G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 600G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 10000
+      - name: 'disk2'
+        disk_capacity: 600G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 10000
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.32
+      mac_address: "0c:12:62:e4:bf:de"
+    interfaces:
+      - mac_address: "74:4a:a4:00:0b:85"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:0b:86"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:0b:87"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:0b:88"
+        speed: 10gb
+        features: dpdk|sriov
+  - name: pod3-node2
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.33
+      mac_address: "00:12:62:e4:c0:33"
+    interfaces:
+      - mac_address: "74:4a:a4:00:5c:5d"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:5e"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:5f"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:60"
+        speed: 10gb
+        features: dpdk|sriov
+  - name: pod3-node3
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.34
+      mac_address: "74:4a:a4:00:30:93"
+    interfaces:
+      - mac_address: "74:4a:a4:00:5c:35"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:36"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:37"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:38"
+        speed: 10gb
+        features: dpdk|sriov
+  - name: pod3-node4
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.35
+      mac_address: "00:12:62:e4:c0:42"
+    interfaces:
+      - mac_address: "74:4a:a4:00:5c:69"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:6a"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:6b"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:6c"
+        speed: 10gb
+        features: dpdk|sriov
+  - name: pod3-node5
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.36
+      mac_address: "74:4a:a4:00:30:43"
+    interfaces:
+      - mac_address: "74:4a:a4:00:5c:6d"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:6e"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:6f"
+        speed: 10gb
+        features: dpdk|sriov
+      - mac_address: "74:4a:a4:00:5c:70"
+        speed: 10gb
+        features: dpdk|sriov

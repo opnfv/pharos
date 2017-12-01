@@ -1,0 +1,85 @@
+##############################################################################
+# Copyright (c) 2017 ZTE Corporation and others.
+# hu.zhijiang@zte.com.cn
+# sun.jing22@zte.com.cn
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+
+##############################################################################
+# Description
+# MANAGEMENT: used for PXE, vlan used
+# SOTRAGE: used for storage access
+# EXTERNAL: tenant public/floating IP associated network,
+#     requires a dedicated interface
+# PUBLICAPI: used for horizon access, openstack API access
+# TENANT: used for tenant access, vlan and VxLan supported, default VxLan
+##############################################################################
+---
+network-config-metadata:
+  title: 'Deployment Adapter for baremetal POD'
+  version: '0.1'
+  created: 'Feb 2 2017'
+  comment: 'For Daisy initial'
+networks:
+  - cidr: '192.168.71.0/24'
+    gateway: '192.168.71.1'
+    ip_ranges:
+      - 'start': '192.168.71.2'
+        'end': '192.168.71.254'
+    vlan_id: 171
+    name: 'MANAGEMENT'
+  - cidr: '192.168.72.0/24'
+    gateway: '192.168.72.1'
+    ip_ranges:
+      - 'start': '192.168.72.2'
+        'end': '192.168.72.254'
+    vlan_id: 172
+    name: 'STORAGE'
+  - cidr: '172.70.0.0/24'
+    gateway: '172.70.0.1'
+    ip_ranges:
+      - 'start': '172.70.0.2'
+        'end': '172.70.0.100'
+    vlan_id: 173
+    'name': 'EXTERNAL'
+    network_name: 'admin_external'
+    mapping: 'physnet1'
+  - cidr: '192.168.71.0/24'
+    gateway: '192.168.71.1'
+    ip_ranges:
+      - 'start': '192.168.71.2'
+        'end': '192.168.71.254'
+    vlan_id: 171
+    name: 'PUBLICAPI'
+  - cidr: '192.168.73.0/24'
+    gateway: '192.168.73.1'
+    ip_ranges:
+      - 'start': '192.168.73.2'
+        'end': '192.168.73.254'
+    vlan_id: 1130
+    name: 'TENANT'
+  - cidr: '10.20.7.0/24'
+    gateway: '10.20.7.1'
+    ip_ranges:
+      - 'start': '10.20.7.20'
+        'end': '10.20.7.200'
+    vlan_id: null
+    name: 'HEARTBEAT'
+interfaces:
+  - name: 'EXTERNAL'
+    interface: 'ens44f1'
+  - name: 'MANAGEMENT'
+    interface: 'ens12f0'
+  - name: 'PUBLICAPI'
+    interface: 'ens12f0'
+  - name: 'STORAGE'
+    interface: 'ens12f1'
+  - name: 'TENANT'
+    interface: 'ens44f0'
+  - name: 'HEARTBEAT'
+    interface: 'ens4f0'
+internal_vip: '192.168.71.10'
+public_vip: '10.20.7.11'

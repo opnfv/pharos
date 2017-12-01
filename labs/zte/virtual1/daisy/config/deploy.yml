@@ -1,0 +1,32 @@
+---
+adapter: libvirt
+hosts:
+  - name: 'controller01'
+    roles:
+      - 'CONTROLLER_LB'
+    template: 'templates/virtual_environment/vms/controller.xml'
+  - name: 'controller02'
+    roles:
+      - 'CONTROLLER_LB'
+    template: 'templates/virtual_environment/vms/controller.xml'
+  - name: 'controller03'
+    roles:
+      - 'CONTROLLER_LB'
+    template: 'templates/virtual_environment/vms/controller.xml'
+  - name: 'computer01'
+    roles:
+      - 'COMPUTER'
+    template: 'templates/virtual_environment/vms/computer.xml'
+  - name: 'computer02'
+    roles:
+      - 'COMPUTER'
+    template: 'templates/virtual_environment/vms/computer.xml'
+disks:
+  daisy: 50
+  controller: 110
+  compute: 110
+  ceph: 110
+daisy_passwd: ''
+daisy_ip: '10.20.11.2'
+daisy_gateway: '10.20.11.1'
+ceph_disk_name: '/dev/sdb'
