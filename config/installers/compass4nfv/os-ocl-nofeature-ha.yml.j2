@@ -1,0 +1,76 @@
+##############################################################################
+# Copyright (c) 2017 HUAWEI TECHNOLOGIES CO.,LTD and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+
+---
+TYPE: baremetal
+FLAVOR: cluster
+POWER_TOOL: '{{ conf['jumphost']['remote_params']['type'] }}tool'  #expects string ipmitool
+
+ipmiUser: {{ conf['jumphost']['remote_params']['user'] }}
+ipmiPass: {{ conf['jumphost']['remote_params']['pass'] }}
+ipmiVer: '{{ conf['jumphost']['remote_params']['versions'][0] }}'
+
+hosts:
+  - name: {{ conf['nodes'][0]['name'] }}
+    mac: '{{ conf['nodes'][0]['remote_management']['mac_address'] }}' #is this the ipmi mac address?
+    interfaces:
+      - eth1: '{{ conf['nodes'][0]['interfaces'][0]['mac_address'] }}'
+      - eth2: '{{ conf['nodes'][0]['interfaces'][1]['mac_address'] }}'
+      - eth3: '{{ conf['nodes'][0]['interfaces'][2]['mac_address'] }}'
+    ipmiIp: {{ conf['nodes'][0]['remote_management']['address'] }}
+    roles:
+      - controller
+      - ha
+      - opencontrail
+      - ceph-adm
+      - ceph-mon
+
+  - name: {{ conf['nodes'][1]['name'] }}
+    mac: '{{ conf['nodes'][1]['remote_management']['mac_address'] }}' #is this the ipmi mac address?
+    interfaces:
+      - eth1: '{{ conf['nodes'][1]['interfaces'][0]['mac_address'] }}'
+      - eth2: '{{ conf['nodes'][1]['interfaces'][1]['mac_address'] }}'
+      - eth3: '{{ conf['nodes'][1]['interfaces'][2]['mac_address'] }}'
+    ipmiIp: {{ conf['nodes'][1]['remote_management']['address'] }}
+    roles:
+      - compute
+      - ceph-osd
+
+  - name: {{ conf['nodes'][2]['name'] }}
+    mac: '{{ conf['nodes'][2]['remote_management']['mac_address'] }}' #is this the ipmi mac address?
+    interfaces:
+      - eth1: '{{ conf['nodes'][2]['interfaces'][0]['mac_address'] }}'
+      - eth2: '{{ conf['nodes'][2]['interfaces'][1]['mac_address'] }}'
+      - eth3: '{{ conf['nodes'][2]['interfaces'][2]['mac_address'] }}'
+    ipmiIp: {{ conf['nodes'][2]['remote_management']['address'] }}
+    roles:
+      - compute
+      - ceph-osd
+
+  - name: {{ conf['nodes'][3]['name'] }}
+    mac: '{{ conf['nodes'][3]['remote_management']['mac_address'] }}' #is this the ipmi mac address?
+    interfaces:
+      - eth1: '{{ conf['nodes'][3]['interfaces'][0]['mac_address'] }}'
+      - eth2: '{{ conf['nodes'][3]['interfaces'][1]['mac_address'] }}'
+      - eth3: '{{ conf['nodes'][3]['interfaces'][2]['mac_address'] }}'
+    ipmiIp: {{ conf['nodes'][3]['remote_management']['address'] }}
+    roles:
+      - compute
+      - ceph-osd
+
+  - name: {{ conf['nodes'][4]['name'] }}
+    mac: '{{ conf['nodes'][4]['remote_management']['mac_address'] }}' #is this the ipmi mac address?
+    interfaces:
+      - eth1: '{{ conf['nodes'][4]['interfaces'][0]['mac_address'] }}'
+      - eth2: '{{ conf['nodes'][4]['interfaces'][1]['mac_address'] }}'
+      - eth3: '{{ conf['nodes'][4]['interfaces'][2]['mac_address'] }}'
+    ipmiIp: {{ conf['nodes'][4]['remote_management']['address'] }}
+		roles:
+      - compute
+      - ceph-osd
