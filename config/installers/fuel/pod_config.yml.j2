@@ -37,6 +37,11 @@ parameters:
     opnfv_infra_kvm_node02_address: {{ net_mgmt | ipaddr_index('142') }}
     opnfv_infra_kvm_node03_address: {{ net_mgmt | ipaddr_index('143') }}
 
+    opnfv_infra_maas_pxe_network_address: {{ net_admin }}
+    opnfv_infra_maas_pxe_address: {{ net_admin | ipaddr_index('3') }}
+    opnfv_infra_maas_pxe_start_address: {{ net_admin | ipaddr_index('5') }}
+    opnfv_infra_maas_pxe_end_address: {{ net_admin | ipaddr_index('250') }}
+
     opnfv_openstack_gateway_node01_address: {{ net_mgmt | ipaddr_index('124') }}
     opnfv_openstack_gateway_node02_address: {{ net_mgmt | ipaddr_index('125') }}
     opnfv_openstack_gateway_node03_address: {{ net_mgmt | ipaddr_index('126') }}
