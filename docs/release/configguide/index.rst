@@ -26,5 +26,6 @@ https://build.opnfv.org/ci/computer/`.
    :maxdepth: 2
 
    ./configguide.rst
+   ./create_a_lab.rst
    ./lab_update_guide.rst
    ./jumpserverinstall.rst
