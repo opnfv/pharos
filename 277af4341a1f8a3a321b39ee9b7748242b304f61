@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_b82792b5",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2017-12-13T00:13:01Z",
+      "side": 1,
+      "message": "I think it would be important to include labs donated for dev or some other internal purposes as well such as getting things deployed via Jenkins for whatever member company would like to try.",
+      "range": {
+        "startLine": 12,
+        "startChar": 14,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_982a8e7c",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2017-12-13T00:13:01Z",
+      "side": 1,
+      "message": "should we have a section similar to this like Plan the Usage and list possible uses for created/donated lab?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f8211aa0",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2017-12-13T00:13:01Z",
+      "side": 1,
+      "message": "I think this should be singular as we only need jumphost provisioned.\n\nAlso, we shouldn\u0027t forget to mention all 3 distros on jumphost. As far as I know, people put Centos or Ubuntu on jumphosts even though the spec says Centos - which might be something we need to incorporate into refreshed Pharos spec.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 30
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
