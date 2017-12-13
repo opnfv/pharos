@@ -12,14 +12,14 @@ Repository: pharos
 
 Committers:
 
-trevor.cooper@intel.com
-fuqiao@chinamobile.com
-Wenjing.Chu@huawei.com
-morgan.richomme@orange.com
-jack.morgan@intel.com
-jose.lausuch@ericsson.com
-fatih.degirmenci@ericsson.com
-zhang.jun3g@zte.com.cn
+
+Fatih Degirmenci <fatih.degirmenci@ericsson.com>
+Jack Morgan <jack.morgan@intel.com>
+Jose Lausuch <jalausuch@suse.com>
+Julien Zhang <zhang.jun3g@zte.com.cn>
+Morgan Richomme <morgan.richomme@orange.com>
+Trevor Cooper <trevor.cooper@intel.com>
+Wenjing Chu <wenjing.chu@huawei.com>
 
 Link to TSC approval of the project: http://meetbot.opnfv.org/meetings/opnfv-meeting/
 Link(s) to approval of additional committers:
