@@ -1,0 +1,10 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Alex Yang <yangyang1@zte.com.cn>
+Code-Review+1: Jun Zhong <zhong.jun@zte.com.cn>
+Code-Review+1: Zhijiang Hu <hu.zhijiang@zte.com.cn>
+Code-Review+2: Jack Morgan <jack.morgan@intel.com>
+Submitted-by: Jack Morgan <jack.morgan@intel.com>
+Submitted-at: Thu, 14 Dec 2017 14:25:12 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/48283
+Project: pharos
+Branch: refs/heads/master
