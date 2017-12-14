@@ -1,0 +1,280 @@
+---
+### Enea ARM POD 6 descriptor file ###
+
+details:
+  pod_owner: ENEA AB
+  contact: dan.lilliehorn@enea.com
+  lab: ENEA lab
+  location: Stockholm, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/Enea+Hosting
+##############################################################################
+net_config:
+  oob:
+    ip-range: 10.0.1.54-10.0.1.58
+    vlan: native
+  admin:
+    interface: 0
+    vlan: native
+    network: 192.168.11.0
+    mask: 24
+  mgmt:
+    interface: 1
+    vlan: 2323
+    network: 172.16.10.0
+    mask: 24
+  storage:
+    interface: 1
+    vlan: 2324
+    network: 10.2.0.0
+    mask: 24
+  private:
+    interface: 1
+    vlan: 2325
+    network: 10.1.0.0
+    mask: 24
+  public:
+    interface: 1
+    vlan: native
+    network: 10.0.15.0
+    mask: 24
+    gateway: 10.0.15.254
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+##############################################################################
+jumphost:
+  name: jenkins-slave-arm-pod6
+  node:
+    type: baremetal
+    vendor: AppliedMicro
+    model: XGene 1
+    arch: aarch64
+    cpus: 1
+    cpu_cflags: fp asimd evtstrm
+    cores: 8
+    memory: 32G
+  disks:
+    ## /dev/sda
+    - name: disk1
+      disk_capacity: 120G
+      disk_type: ssd
+      disk_interface: sata
+    ## /dev/sdb
+    - name: disk2
+      disk_capacity: 1T
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+    ## /dev/sdc
+    - name: disk3
+      disk_capacity: 1T
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+  os: ubuntu-16.04
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: ADMIN
+    pass: ADMIN
+  remote_management:
+    <<: *remote_params
+    address: 0.0.0.0
+    mac_address: "00:00:00:00:00:00"
+  interfaces:
+    ## eth0, Not connected for now
+    - mac_address: "00:01:73:02:36:d4"
+      speed: 1gb
+      features: ''
+    ## eth1, Connected, used only for admin/PXE
+    - mac_address: "00:01:73:02:36:d5"
+      speed: 1gb
+      features: ''
+    ## eth2, Not connected for now
+    - mac_address: "00:01:73:02:36:d6"
+      speed: 1gb
+      features: ''
+    ## eth3, Connected, trunk for all other VLANs
+    - mac_address: "00:01:73:02:36:d7"
+      speed: 10gb
+      features: ''
+  fixed_ips:
+    admin: 192.168.11.1
+    mgmt: 172.16.10.1
+    public: 10.0.15.9
+##############################################################################
+nodes:
+  - name: cn8890-24
+    node: &nodeparams
+      type: baremetal
+      vendor: Cavium
+      model: ThunderX
+      arch: aarch64
+      cpus: 1
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+      cores: 48
+      memory: 62G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 480G
+        disk_type: ssd
+        disk_interface: sata
+    remote_management:
+      <<: *remote_params
+      address: 10.0.1.54
+      mac_address: "1c:1b:0d:e8:fa:8b"
+    interfaces:
+      ## enP5p144s0, Connected, used only for admin/PXE
+      - mac_address: "68:05:ca:5a:c3:a7"
+        speed: 1gb
+        features: ''
+      ## enP2p1s0f1, Connected, trunk for all other VLANs
+      - mac_address: "1c:1b:0d:e8:fa:83"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      ## enP2p1s0f2, Not connected for now
+      - mac_address: "1c:1b:0d:e8:fa:84"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      ## enP2p1s0f3, Not connected for now
+      - mac_address: "1c:1b:0d:e8:fa:85"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      ## enP2p1s0f4, Not connected for now
+      - mac_address: "1c:1b:0d:e8:fa:86"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      ## enP2p1s0f5, Not connected for now
+      - mac_address: "1c:1b:0d:e8:fa:87"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 192.168.11.2
+      mgmt: 172.16.10.142
+      public: 10.0.15.142
+  ############################################################################
+  - name: cn8890-25
+    node: *nodeparams
+    disk: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.1.55
+      mac_address: "1c:1b:0d:e8:fa:ad"
+    interfaces:
+      - mac_address: "68:05:ca:5a:c3:bc"
+        speed: 1gb
+        features: ''
+      - mac_address: "1c:1b:0d:e8:fb:a5"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:a6"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:a7"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:a8"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:a9"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 192.168.11.3
+      mgmt: 172.16.10.143
+      public: 10.0.15.143
+  ############################################################################
+  - name: cn8890-26
+    node: *nodeparams
+    disk: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.1.56
+      mac_address: "1c:1b:0d:e8:fa:6d"
+    interfaces:
+      - mac_address: "68:05:ca:61:b9:00"
+        speed: 1gb
+        features: ''
+      - mac_address: "1c:1b:0d:e8:fa:65"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fa:66"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fa:67"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fa:68"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fa:69"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 192.168.11.4
+      mgmt: 172.16.10.144
+      public: 10.0.15.144
+  ############################################################################
+  - name: cn8890-27
+    node: *nodeparams
+    disk: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.1.57
+      mac_address: "1c:1b:0d:e8:fb:21"
+    interfaces:
+      - mac_address: "68:05:ca:57:f7:16"
+        speed: 1gb
+        features: ''
+      - mac_address: "1c:1b:0d:e8:fb:19"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:1a"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:1b"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:1c"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:1d"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 192.168.11.5
+      mgmt: 172.16.10.145
+      public: 10.0.15.145
+  ############################################################################
+  - name: cn8890-28
+    node: *nodeparams
+    disk: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.1.58
+      mac_address: "1c:1b:0d:e8:fb:85"
+    interfaces:
+      - mac_address: "68:05:ca:61:97:5a"
+        speed: 1gb
+        features: ''
+      - mac_address: "1c:1b:0d:e8:fb:7d"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:7e"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:7f"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:80"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "1c:1b:0d:e8:fb:81"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 192.168.11.6
+      mgmt: 172.16.10.146
+      public: 10.0.15.146
