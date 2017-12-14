@@ -1,0 +1,16 @@
+---
+adapter: libvirt
+hosts:
+  - name: 'all_in_one'
+    roles:
+      - 'CONTROLLER_LB'
+      - 'COMPUTER'
+    template: 'templates/virtual_environment/vms/all_in_one.xml'
+disks:
+  daisy: 50
+  controller: 110
+  compute: 110
+daisy_passwd: ''
+daisy_ip: '10.20.11.2'
+daisy_gateway: '10.20.11.1'
+ceph_disk_name: ''

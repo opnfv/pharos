@@ -1,0 +1,73 @@
+##############################################################################
+# Copyright (c) 2017 ZTE Corporation and others.
+# hu.zhijiang@zte.com.cn
+# sun.jing22@zte.com.cn
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+adapter: ipmi
+hosts:
+  - name: 'controller01'
+    roles:
+      - 'CONTROLLER_LB'
+    ipmi_ip: 192.168.1.32
+    ipmi_user:
+    ipmi_pass:
+    mac_addresses:
+      - 74:4a:a4:00:0b:85
+      - 74:4a:a4:00:0b:86
+      - 74:4a:a4:00:0b:87
+      - 74:4a:a4:00:0b:88
+  - name: 'controller02'
+    roles:
+      - 'CONTROLLER_LB'
+    ipmi_ip: 192.168.1.33
+    ipmi_user:
+    ipmi_pass:
+    mac_addresses:
+      - 74:4a:a4:00:5c:5d
+      - 74:4a:a4:00:5c:5e
+      - 74:4a:a4:00:5c:5f
+      - 74:4a:a4:00:5c:60
+  - name: 'controller03'
+    roles:
+      - 'CONTROLLER_LB'
+    ipmi_ip: 192.168.1.34
+    ipmi_user:
+    ipmi_pass:
+    mac_addresses:
+      - 74:4a:a4:00:5c:35
+      - 74:4a:a4:00:5c:36
+      - 74:4a:a4:00:5c:37
+      - 74:4a:a4:00:5c:38
+  - name: 'computer01'
+    roles:
+      - 'COMPUTER'
+    ipmi_ip: 192.168.1.35
+    ipmi_user:
+    ipmi_pass:
+    mac_addresses:
+      - 74:4a:a4:00:5c:69
+      - 74:4a:a4:00:5c:6a
+      - 74:4a:a4:00:5c:6b
+      - 74:4a:a4:00:5c:6c
+  - name: 'computer02'
+    roles:
+      - 'COMPUTER'
+    ipmi_ip: 192.168.1.36
+    ipmi_user:
+    ipmi_pass:
+    mac_addresses:
+      - 74:4a:a4:00:5c:6d
+      - 74:4a:a4:00:5c:6e
+      - 74:4a:a4:00:5c:6f
+      - 74:4a:a4:00:5c:70
+disks:
+  daisy: 50
+daisy_passwd: ''
+daisy_ip: '10.20.0.2'
+daisy_gateway: '10.20.0.1'
+ceph_disk_name: '/dev/sdb'
