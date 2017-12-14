@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_d25b52f4",
+        "filename": "labs/lf/pod5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2017-12-14T00:06:46Z",
+      "side": 1,
+      "message": "we need to do something about this, either move it as-is to idf, or propose an even better format.\nWithout net_config, we can\u0027t configure multiple vlans on the same interface (or at least 1 native + 1 vlan on an interface).\nWith this version of net_config, we hardcode some network names, and we still can\u0027t support (easily) mixed nodes (e.g. with different network-to-NIC mapping).",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 12
+      },
+      "revId": "2ea27fef47942fbd1ade7e735f73a683969a9324",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
