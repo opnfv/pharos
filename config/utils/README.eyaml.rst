@@ -12,7 +12,7 @@ Prerequisites
 
     .. code-block:: bash
 
-        $ sudo yum install ruby-gems || sudo apt-get install ruby
+        $ sudo yum install rubygems || sudo apt-get install ruby
         $ sudo gem install hiera-eyaml
         $ eyaml createkeys
 
@@ -22,6 +22,7 @@ Prerequisites
 
         $ sudo mkdir -p /etc/eyaml_keys/
         $ sudo mv ./keys/* /etc/eyaml_keys/
+        $ sudo rmdir ./keys
 
 #. Set up eyaml config.yaml
 
