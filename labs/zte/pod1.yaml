@@ -77,8 +77,26 @@ jumphost:
     type: ipmi
     versions:
       - 2.0
-    user:
-    pass:
+    user: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAV6BaFHBOwnf4GkZaHcoBjUi97U+68ossDNM1
+      fRRvw+whiNZ/UMkEheasAW2/sP//W+B8cIMLrFpA6vqYpn5wzFSWOsnXRDOW
+      hz1746p600c9TjsGbpMPtbNGgi68t3nB8VQoW7e57bM+yWVvJzLSI2my8bEw
+      a6FNuICymRAeXeyZjXSJ7w71F1XA8stuDSXm4/kAvigNTmS4kdvm6NYSNSZ9
+      +DtNJjcVQtXBpzNIB8sf+y9yTt1d58ZaSBtCLBIRoG+vSpFzJjUyPOdv01rP
+      pMleQ7IJHrucl8p35/pQ2nUOErrSBwNLq+XMIusIRySW1gAbxFn/I+d1aYsK
+      Txv0nDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAq1Y9d1AWsRxLIGNXE
+      1zJGgBCXqWtf5xcL5n9/YtpHtmA0]
+    pass: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAhnPH8p1YJQDJ3wS/0+KZemgS4oTX2gNKMJsf
+      TDmJzQNAcGnuORSEoowdTGUq65QFlb3yUi5B7mHaer2mN/4v12rEKc7TYRfB
+      PBNzpudCwB1UtMJTDBjrKtpVv4iWclAKZmreV4VKCFAFWHeQEzQhBQGBoykk
+      UKRdNCKcuBhoNa5d9QEjgpTse5PtEgPZxPQsKFh4RDQJRpL+JUHw05Cs8rv0
+      PR6UAnvrbd/pcYnUZUkNZc9x7bfedG6274A88DQ6sGFAbLjH2YvnJrNbUvy5
+      Le7bUT5G1V1ymtVpxg30ECDaSX4zKMeFgcHdU+dPAqSHfCkD1wLI7Cn5o7j2
+      uZZORTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAGF9iDD5dBZN8p2qbS
+      4IoqgBAYdFlBw90sTOBqrhoHmRbr]
   remote_management:
     <<: *remote_params
     address:
