@@ -29,7 +29,7 @@ Prerequisites
     .. code-block:: bash
 
         $ mkdir ~/.eyaml/
-        $ cp config.yaml.example ~/.eyaml/config.yaml
+        $ cp config.example.yaml ~/.eyaml/config.yaml
 
 Encryption
 ----------
