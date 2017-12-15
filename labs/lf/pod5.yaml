@@ -1,0 +1,210 @@
+---
+### LF POD 5 descriptor file ###
+
+details:
+  pod_owner: Trevor Bramwell
+  contact: tbramwell@linuxfoundation.org
+  lab: Linux Foundation
+  location: Portland, Oregon, USA
+  type: development
+  link: https://wiki.opnfv.org/display/pharos/LF+POD+5
+
+net_config:
+  oob:
+    interface: 0
+    ip-range: 172.30.8.89-172.30.8.94
+    vlan: 410
+  admin:
+    interface: 0
+    vlan: native
+    network: 10.20.0.128
+    mask: 25
+    gateway: 10.20.0.129
+    dns: 10.20.0.129
+  mgmt:
+    interface: 1
+    vlan: 450
+    network: 192.168.0.128
+    mask: 25
+  storage:
+    interface: 2
+    vlan: 451
+    network: 192.168.1.128
+    mask: 25
+  private:
+    interface: 1
+    vlan: 452
+    network: 192.168.2.128
+    mask: 25
+  public:
+    interface: 2
+    vlan: 415
+    network: 172.30.13.64
+    mask: 26
+
+jumphost:
+  name: pod5-jump
+  node: &nodeparas
+    type: baremetal
+    vendor: Intel Corporation
+    model: S2600WT2R
+    arch: x86_64
+    cpus: 88
+    cpu_cflags: haswell
+    cores: 22
+    memory: 62G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 480G
+      disk_type: ssd
+      disk_interface: sata
+      disk_rotation:
+  os: centos-7
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEAR9BS+HE2rTstFbsIQBPMWkmza7bcE+g+6jJG
+        luOe/dNPi5Ez/ut7fZ28rb4+3cUgvXDLLVDNiBSjUpKa0QbJrybfSNoEuX+f
+        Sjaxom36hjHDn7J8wTG2T9KAPTxL1Kmc16T2i6cdpv8NUMOKhgwnhgqtYDco
+        MnOTDJve0tNh4kLDSWo26+KbnQ1HejfGLfNtG6R1fjg6BQMYp8lFo3q7ZRq4
+        nR34/mXW39eeiySmMoMmAQg2t21LW5GiHEBSphrUcoPchU6nl/oWOvc2agxb
+        Tf3hN75vumxN+3PpW8B7hj6TdaNCfmm1OL2WhrSTW1EpQEO0UXxAq7oLAF0D
+        K62KaTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBbeaV0wWXX3M668Mh1
+        CN+igBBApURxRAFMWQXtgAnbxlhr]
+    pass: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEAFwQbOO4grEw452H7WOAwXN2sb566gisUNhNk
+        oOPdae4QLTD8Yu/pAjKIoQjyBgtmPwRJlocioIFJ2SpZfjlrVC4fIMULvmFJ
+        0CfuG77o950+XIFLdDrxqlEfOg7GetlByi6FdE+x4Cd4bc3SS4o1BIMFFn5R
+        NP/QeCJGS5RkEi+AcRLzS04Jq+CM0YCbeK0/M5EDBtgSpcQqNSxG9uARKVHy
+        bXaPso5/1RLwyEMXyMDtTSSJK6etjk4MxZjvMcKDCzSXq1SnrPS+VgjRhI2R
+        4Nx1aTm+0mRPtfwsXaaU6YZQLClS93QBQMHb3YsBO7/KqGL5jTpoT6K8AMyc
+        Q7r/JzA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBO116CsJoAZzgnxo0Q
+        R8HRgBBYArsrg4jLeOnZNJP4/yOK]
+  remote_management:
+    <<: *remote_params
+    address: 172.30.8.89
+    mac_address: "a4:bf:01:01:ad:73"
+  interfaces:
+    - mac_address: "00:1e:67:fd:ad:71"
+      speed: 1gb
+      features: 'dpdk|sriov'
+    - mac_address: "00:1e:67:fd:9c:c2"
+      speed: 10gb
+      features: 'dpdk|sriov'
+    - mac_address: "00:1e:67:fd:9c:c3"
+      speed: 10gb
+      features: 'dpdk|sriov'
+  fixed_ips:
+    admin: 10.20.0.129
+    mgmt: 192.168.0.130
+    public: 172.30.13.89
+nodes:
+  - name: pod5-node1
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.90
+      mac_address: "a4:bf:01:01:a9:fe"
+    interfaces:
+      - mac_address: "a4:bf:01:01:a9:fc"
+        speed: 1gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:f6:9b:34"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:f6:9b:35"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 10.20.0.130
+      mgmt: 192.168.0.131
+      public: 172.30.13.90
+  - name: pod5-node2
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.91
+      mac_address: "a4:bf:01:01:a9:d6"
+    interfaces:
+      - mac_address: "a4:bf:01:01:a9:d4"
+        speed: 1gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:f6:9b:36"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:f6:9b:37"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 10.20.0.131
+      mgmt: 192.168.0.132
+      public: 172.30.13.91
+  - name: pod5-node3
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.92
+      mac_address: "a4:bf:01:00:97:a4"
+    interfaces:
+      - mac_address: "a4:bf:01:00:97:a2"
+        speed: 1gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:fd:9c:b0"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:fd:9c:b1"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 10.20.0.132
+      mgmt: 192.168.0.133
+      public: 172.30.13.92
+  - name: pod5-node4
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.93
+      mac_address: "a4:bf:01:01:72:75"
+    interfaces:
+      - mac_address: "a4:bf:01:01:72:73"
+        speed: 1gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:fd:99:24"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:fd:99:25"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 10.20.0.133
+      mgmt: 192.168.0.134
+      public: 172.30.13.93
+  - name: pod5-node5
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.94
+      mac_address: "a4:bf:01:01:74:32"
+    interfaces:
+      - mac_address: "a4:bf:01:01:74:30"
+        speed: 1gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:f6:9b:96"
+        speed: 10gb
+        features: 'dpdk|sriov'
+      - mac_address: "00:1e:67:f6:9b:97"
+        speed: 10gb
+        features: 'dpdk|sriov'
+    fixed_ips:
+      admin: 10.20.0.134
+      mgmt: 192.168.0.135
+      public: 172.30.13.94
