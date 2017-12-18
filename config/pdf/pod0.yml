@@ -1,0 +1,161 @@
+---
+### POD 0 descriptor file ###
+
+details:
+  pod_owner: Guillermo Herrero
+  contact: guillermo.herrero@enea.com
+  lab: Pharos Lab
+  location: Stockholm
+  type: prototype
+   #Paste full file here to see the expanded output without &refs
+  link: http://www.yamllint.com/
+  pod_name: pod0 poc
+  version: poc 2.3
+##############################################################################
+
+network:
+  # ToR swich info describes physical topology and supported vlans
+  tor_switch:
+    # Trunks are physical network segments with groups of vlans
+    # Node servers are attached to one trunk per port.
+    # Vlan tags can be reused on any trunk.
+    network_trunks:
+      0: &oob  #Just an alias but adds meaning to the topology and helps later
+        vlan0_0: native
+        # With no other vlans trunk 0 represents a dedicated LAN for OOB & IMPI
+        # Just for the example. Could be anything else, any set of vlans
+      1: &admin
+        vlan1_0: native  # A network to handle PXE boot
+        vlan1_1000: 1000 # A list of other supported vlans here
+        vlan1_1001: 1001 # Installers may or may not use all
+        vlan1_1002: 1002 # but all are available and configured in the ToR
+      2: &traffic
+        vlan2_0: native  # Chosen in this PoC for public traffic routing
+        vlan2_2000: 2000 # Other traffic vlans here
+        vlan2_2001: 2001
+        vlan2_2002: 2002
+      #3: &storage        #Extensible to any other segregated traffic trunks
+        # vlan3_301: 301
+      #4: &special_use
+        #vlan4_1-300: 1-300 #UNTESTED: Ranges could look like this.
+
+    # port_vlan_config maps which server ports are used and their configured vlans
+    # By refering to a trunk alias vlan list is expanded after.
+    # Vlan list can also be explicited and fully customized per node and port.
+    # After this there is no need to add more vlan info on the nodes section
+    # (Just interface mac_address and features, inherent to the node)
+    port_vlan_config:
+      jumphost: &jumphost_port_config
+        - port0: *oob
+        - port1: *admin
+        - port2: *traffic
+        - port3: unused
+        - port4: unused
+      node1: &common_node_port_config
+        - port0: *oob
+        - port1: *admin
+        - port2: *traffic
+        - port3: unused
+        - port4: unused
+      node2: *common_node_port_config
+      node3: *common_node_port_config
+      node4: *common_node_port_config
+      node5: *common_node_port_config
+
+##############################################################################
+jumphost:
+  name: pod0-jump
+  node:
+    type: baremetal
+    vendor: Cisco Systems Inc
+    model: UCSB-B200-M4
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: haswell
+    cores: 8
+    memory: 128G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 2400G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation:
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: aaaa
+    pass: bbbb
+  remote_management:
+    <<: *remote_params
+    mac_address: "a8:9d:21:c9:c4:9e"
+    ip_address: 172.30.8.83
+    #Adding the board port will settle the OOB ports confusion
+    #around PODs that dont have a dedicated management port.
+    port: port0
+  interfaces:
+    - mac_address: "00:25:b5:a0:00:1a"
+      speed: 40gb
+      features: 'dpdk|sriov'
+      port: port1
+    - mac_address: "00:25:b5:a0:00:1b"
+      speed: 40gb
+      features: 'dpdk|sriov'
+      port: port2
+    - mac_address: "00:25:b5:a0:00:1c"
+      speed: 40gb
+      features: 'dpdk|sriov'
+      port: port3
+    - mac_address: "00:25:b5:a0:00:1d"
+      speed: 40gb
+      features: 'dpdk|sriov'
+      port: port4
+  # Full port and vlan list is expanded here after the ToR section label.
+  # This simple reference adds the list where is needed and saves script code
+  # to cross reference the ToR info
+  port_vlans: *jumphost_port_config
+
+##############################################################################
+nodes:
+  - name: pod0-node1
+    node: &nodeparams
+      type: baremetal
+      vendor: Cisco Systems Inc
+      model: UCSB-B200-M4
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: haswell
+      cores: 8
+      memory: 32G
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      port: port0
+      mac_address: "a8:9d:21:c9:8b:56"
+      ip_address: 172.30.8.75
+    interfaces:
+      - port: port1
+        mac_address: "00:25:b5:a0:00:2a"
+        speed: 40gb
+        features: 'dpdk|sriov'
+      - port: port2
+        mac_address: "00:25:b5:a0:00:2b"
+        speed: 40gb
+        features: 'dpdk|sriov'
+      - port: port3
+        mac_address: "00:25:b5:a0:00:2c"
+        speed: 40gb
+        features: 'dpdk|sriov'
+      - port: port4
+        mac_address: "00:25:b5:a0:00:2d"
+        speed: 40gb
+        features: 'dpdk|sriov'
+    vlan_config: *common_node_port_config
+  ############################################################################
+  - name: pod0-node2  # Removed for PoC. Same as Node 1
+  ############################################################################
+  - name: pod0-node3  # Removed for PoC
+  ############################################################################
+  - name: pod0-node4  # Removed for PoC
+  ############################################################################
+  - name: pod0-node5  # Removed for PoC
