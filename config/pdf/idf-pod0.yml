@@ -1,0 +1,98 @@
+
+---
+### PoC POD 0 installer descriptor file ###
+
+idf:
+  version: poc 2.3
+  pod_name: pod0 poc
+  common:
+    net_config:
+    # Only L3 network config. Server node vlan config on PDF
+    # IP Networks must be paired with previously defined vlan labels on PDF
+      oob:
+        vlan: vlan0_0
+        network: 172.30.10.0
+        mask: 24
+      admin:
+        vlan: vlan1_0
+        network: 192.168.11.0
+        mask: 24
+      mgmt:
+        vlan: vlan1_1000
+        network: 10.167.4.0
+        mask: 24
+      private:
+        vlan: vlan2_2000
+        network: 10.1.0.0
+        mask: 24
+      storage:
+        vlan: vlan2_2001
+        network: 10.2.0.0
+        mask: 24
+      public:
+        vlan: vlan2_0
+        network: 172.30.10.0
+        mask: 24
+        gateway: 172.30.10.1
+        dns:
+          - 8.8.8.8
+          - 8.8.4.4
+
+    node_config:
+      jumphost:
+        fixed_ips:
+          admin: 192.168.11.100
+          mgmt: 10.167.4.100
+          public: 172.30.10.100
+      nodes:
+        - fixed_ips:
+            admin: 192.168.11.101
+            mgmt: 10.167.4.101
+            public: 172.30.10.101
+        - fixed_ips:
+            admin: 192.168.11.102
+            mgmt: 10.167.4.102
+            public: 172.30.10.102
+        - fixed_ips:
+            admin: 192.168.11.103
+            mgmt: 10.167.4.103
+            public: 172.30.10.103
+        - fixed_ips:
+            admin: 192.168.11.104
+            mgmt: 10.167.4.104
+            public: 172.30.10.104
+        - fixed_ips:
+            admin: 192.168.11.105
+            mgmt: 10.167.4.105
+            public: 172.30.10.105
+  fuel:
+    version: 5.11 # Independent versioning for each installer may be helpful.
+    jumphost:
+      bridges:
+        admin: 'pxebr'
+        mgmt: 'br-ctl'
+        private: ''
+        public: ''
+    network:
+      node:
+        # Ordered-list, index should be in sync with node index in PDF
+        - interfaces: &interfaces
+            # Ordered-list, index should be in sync with interface index in PDF
+            - 'enp6s0'
+            - 'enp7s0'
+            - 'enp8s0'
+            - 'enp9s0'
+          busaddr: &busaddr
+            # Bus-info reported by `ethtool -i ethX`
+            - '0000:06:00.0'
+            - '0000:07:00.0'
+            - '0000:08:00.0'
+            - '0000:09:00.0'
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
