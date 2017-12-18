@@ -1,0 +1,7 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+2: Jack Morgan <jack.morgan@intel.com>
+Submitted-by: Jack Morgan <jack.morgan@intel.com>
+Submitted-at: Mon, 18 Dec 2017 15:12:27 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/49087
+Project: pharos
+Branch: refs/heads/stable/euphrates
