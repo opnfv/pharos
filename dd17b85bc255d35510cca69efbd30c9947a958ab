@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_c7bd49b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2017-12-19T15:28:31Z",
+      "side": 1,
+      "message": "shorter subject line please...\n\n\u003c\u003d 50 chars or so.",
+      "revId": "dd17b85bc255d35510cca69efbd30c9947a958ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
