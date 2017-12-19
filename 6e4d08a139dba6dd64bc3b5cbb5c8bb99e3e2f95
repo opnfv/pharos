@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4753f96a",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7107
+      },
+      "writtenOn": "2017-12-19T16:26:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_c73ee98b",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_07ce11b4",
         "filename": "config/pdf/pod0.yml",
         "patchSetId": 2
@@ -42,6 +66,23 @@
         "endLine": 30,
         "endChar": 24
       },
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0771f1df",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7107
+      },
+      "writtenOn": "2017-12-19T16:26:12Z",
+      "side": 1,
+      "message": "Question: does this mean that the order that ports are listed in the node structure below will no longer indicate things like which port is intended to be the PXE boot port?  If so, that\u0027s nice.",
       "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
