@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_670efd3c",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2017-12-19T23:40:16Z",
+      "side": 1,
+      "message": "Agreed. Groups were given names here to help understanding the concept. \u0026trunk_N references will be simpler and generic",
+      "parentUuid": "9a3d3df0_4753f96a",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_07ce11b4",
         "filename": "config/pdf/pod0.yml",
         "patchSetId": 2
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_dd84f65f",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2017-12-19T23:40:16Z",
+      "side": 1,
+      "message": "That was the initial intention. However vlan id re-usability -specially the native ones- limited a simple list. The key vlanNtrunk_tag was added together with the tag value to have unique identifiers*. \n\nIDF file can leverage on them later. For instance, in this pod example when the final configuration is expanded to the nodes, they get 3 different native vlans on 3 different ports.  \n\nport_vlans: \n - port0: \n     vlan0_0: native\n - port1: \n     vlan1_0: native\n     ...\n -  port2: \n     vlan2_0: native\n\n*Vlan notation was proposed at https://gerrit.opnfv.org/gerrit/#/c/42893/3/labs/lf/pod4.yaml@22",
+      "parentUuid": "9a3d3df0_07ce11b4",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_0771f1df",
         "filename": "config/pdf/pod0.yml",
         "patchSetId": 2
@@ -83,6 +131,24 @@
       "writtenOn": "2017-12-19T16:26:12Z",
       "side": 1,
       "message": "Question: does this mean that the order that ports are listed in the node structure below will no longer indicate things like which port is intended to be the PXE boot port?  If so, that\u0027s nice.",
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e2767ba3",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2017-12-19T23:40:16Z",
+      "side": 1,
+      "message": "Port order or amount is free. You just need to refer to the portN ID on each interface at the node sets.",
+      "parentUuid": "9a3d3df0_0771f1df",
       "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
