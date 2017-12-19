@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_c73ee98b",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2017-12-19T14:20:17Z",
+      "side": 1,
+      "message": "It is confusing to name this admin, when the admin network is only on vlan1_0 (from idf). Perhaps a name like \"trunk_1\" would be clearer.",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_07ce11b4",
+        "filename": "config/pdf/pod0.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6929
+      },
+      "writtenOn": "2017-12-19T14:20:17Z",
+      "side": 1,
+      "message": "I think it be cleaner and/or clearer to define the vlan tags in the idf where we name these vlans and have this section just be a list.",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "6e4d08a139dba6dd64bc3b5cbb5c8bb99e3e2f95",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
