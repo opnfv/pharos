@@ -19,7 +19,7 @@ net_config:
   admin:
     interface: 0
     vlan: native
-    network: 10.20.6.0
+    network: 10.10.6.0
     mask: 24
   mgmt:
     interface: 1
