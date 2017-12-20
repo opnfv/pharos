@@ -28,6 +28,8 @@ DPKG_ARCH_TABLE = {
 }
 ARCH_DPKG_TABLE = dict(zip(DPKG_ARCH_TABLE.values(), DPKG_ARCH_TABLE.keys()))
 
+
+
 # Custom filter to allow simple IP address operations returning
 # a new address from an upper or lower (negative) index
 def ipaddr_index(base_address, index):
@@ -54,18 +56,21 @@ ENV.filters['dpkg_arch'] = dpkg_arch
 
 # Run `eyaml decrypt` on the whole file, in case any PDF data is encrypted
 # Note: eyaml return code is 0 even if keys are not available
-try:
-    DICT = yaml.safe_load(check_output(['eyaml', 'decrypt', '-f', ARGS.yaml]))
-except CalledProcessError as ex:
-    logging.error('eyaml decryption failed, keys might be missing')
-except OSError as ex:
-    logging.warn('eyaml not found, skipping decryption')
-try:
-    DICT
-except NameError as ex:
-    logging.warn('PDF decryption skipped, fallback to using raw data.')
-    with open(ARGS.yaml) as _:
-        DICT = yaml.safe_load(_)
+
+if os.path.isfile('/etc/eyaml_keys/private_key.pkcs7.pem'):
+    try:
+        DICT = yaml.safe_load(check_output(['eyaml', 'decrypt', '-f', ARGS.yaml]))
+    except CalledProcessError as ex:
+        logging.error('eyaml decryption failed, keys might be missing')
+    except OSError as ex:
+        logging.warn('eyaml not found, skipping decryption')
+else:
+    try:
+        DICT
+    except NameError as ex:
+        logging.warn('PDF decryption skipped, fallback to using raw data.')
+        with open(ARGS.yaml) as _:
+            DICT = yaml.safe_load(_)
 
 # If an installer descriptor file (IDF) exists, include it (temporary)
 IDF_PATH = '/idf-'.join(os.path.split(ARGS.yaml))
