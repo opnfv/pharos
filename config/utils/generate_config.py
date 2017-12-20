@@ -57,12 +57,12 @@ ENV.filters['dpkg_arch'] = dpkg_arch
 try:
     DICT = yaml.safe_load(check_output(['eyaml', 'decrypt', '-f', ARGS.yaml]))
 except CalledProcessError as ex:
-    logging.error('eyaml decryption failed, keys might be missing')
+    logging.error('eyaml decryption failed!')
 except OSError as ex:
     logging.warn('eyaml not found, skipping decryption')
 try:
-    DICT
-except NameError as ex:
+    DICT['details']
+except (NameError, TypeError) as ex:
     logging.warn('PDF decryption skipped, fallback to using raw data.')
     with open(ARGS.yaml) as _:
         DICT = yaml.safe_load(_)

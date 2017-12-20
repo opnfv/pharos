@@ -61,7 +61,7 @@ To troubleshoot PDF parsing against a specific installer adapter,
 execute the following commands locally (e.g. for zte-pod2/joid):
 $ ./config/utils/generate_config.py \\
     -y labs/zte/pod2.yaml \\
-    -j ./pharos/config/installers/joid/pod_config.yaml.j2
+    -j config/installers/joid/pod_config.yaml.j2
 
 EOF
 exit "${RC}"
