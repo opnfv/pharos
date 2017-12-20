@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3d3df0_84433a41",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2017-12-20T19:25:30Z",
+      "side": 1,
+      "message": "2017",
+      "range": {
+        "startLine": 3,
+        "startChar": 7,
+        "endLine": 3,
+        "endChar": 11
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b82792b5",
         "filename": "docs/release/configguide/create_a_lab.rst",
         "patchSetId": 1
@@ -142,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6440b634",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2017-12-20T19:25:30Z",
+      "side": 1,
+      "message": "I suggest adding a jump server networking section.\nMost installers *assume* some things are already configured on the jumphost, like:\n- bridges (most of the jump server I saw already have the bridges manually set up);\n- NAT? (I\u0027d really love to ban NAT from jumpservers, unless explicitly required by installers);\n- IPs (for debugging purposes, it is useful to have a static IP on PXE/admin, mgmt or even public - but this usually creates confusion and conflicts if not properly documented - we saw a conflict between a static PXE/admin IP on jumpserver vs DHCP IPs allocated by MaaS);\netc.",
+      "parentUuid": "9a3d3df0_5dc6269b",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 30
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_3dc3628a",
         "filename": "docs/release/configguide/create_a_lab.rst",
         "patchSetId": 1
@@ -176,6 +223,30 @@
       "writtenOn": "2017-12-20T00:49:50Z",
       "side": 1,
       "message": "if we choose use PDF to describe Labs, maybe in the future the wiki can consume the contents of PDF without maintain the duplicated information.",
+      "range": {
+        "startLine": 62,
+        "startChar": 24,
+        "endLine": 62,
+        "endChar": 53
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c449c261",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2017-12-20T19:25:30Z",
+      "side": 1,
+      "message": "+1 to that, maybe eventually with automatically generated networking diagrams (based on IDF)?",
+      "parentUuid": "9a3d3df0_9dbc2e08",
       "range": {
         "startLine": 62,
         "startChar": 24,
