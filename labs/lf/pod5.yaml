@@ -8,40 +8,6 @@ details:
   location: Portland, Oregon, USA
   type: development
   link: https://wiki.opnfv.org/display/pharos/LF+POD+5
-
-net_config:
-  oob:
-    interface: 0
-    ip-range: 172.30.8.89-172.30.8.94
-    vlan: 410
-  admin:
-    interface: 0
-    vlan: native
-    network: 10.20.0.128
-    mask: 25
-    gateway: 10.20.0.129
-    dns: 10.20.0.129
-  mgmt:
-    interface: 1
-    vlan: 450
-    network: 192.168.0.128
-    mask: 25
-  storage:
-    interface: 2
-    vlan: 451
-    network: 192.168.1.128
-    mask: 25
-  private:
-    interface: 1
-    vlan: 452
-    network: 192.168.2.128
-    mask: 25
-  public:
-    interface: 2
-    vlan: 415
-    network: 172.30.13.64
-    mask: 26
-
 jumphost:
   name: pod5-jump
   node: &nodeparas
