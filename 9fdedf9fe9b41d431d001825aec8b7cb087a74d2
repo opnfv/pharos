@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_ddeb5611",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2017-12-20T00:30:14Z",
+      "side": 1,
+      "message": "Hi Jack, I think +2/-2 is better than +1/-1, only committers involve the votes.",
+      "range": {
+        "startLine": 12,
+        "startChar": 17,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "9fdedf9fe9b41d431d001825aec8b7cb087a74d2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
