@@ -1,0 +1,213 @@
+##############################################################################
+# Copyright (c) 2017 HUAWEI TECHNOLOGIES CO.,LTD and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### POD descriptor file ###
+
+details:
+  pod_owner: Tianwei Wu
+  contact: wutianwei1@hauwei.com
+  lab: Huawei Lab
+  location: Shanghai, China
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/Huawei+Hosting
+
+# jumphost
+jumphost:
+  name: huawei-pod1-jump
+  node: &nodeparams
+    type: baremetal
+    vendor: huawei
+    model: Intel(R) Xeon(R)
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: haswell
+    cores: 16
+    memory: 188G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 1.8T
+      disk_type: hdd
+      disk_interface: scsi
+      disk_rotation: 7200
+  os: ubuntu-14.04
+  remote_params: &remoteparas
+    type: ipmi
+    versions:
+      - 2.0
+    user: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEAOv/AsqePJWJjzf30Lwzo2FezlXwM43uvGqSV
+        yt79ut92tDsPsfb3SkV9biTT1/VELCB/1AqZnxpwNwERv0D7YLy5fmkYLsWo
+        SgOYlgQ5CmTPIBw7A67Vz6bCXjlplnHbhqR+3dYreH4ijHQgBWTvhTi8w584
+        9Z8e0+fSJfruV+UBTF9n0dEWK9nqRQqWlDWasztxwyNpTPp4gVQs0gs2SkeP
+        XtHFfwIBJtopNuWsIhLtu/Hs5ljttL354RYF1PIVrsi1Xobl7O/I/ykq8PGg
+        qkFveh4c9nRe/LQ+u8ggWKDSHJodvAcJm+YQTW1CcATA04cuc6bKq6Xaf1Fn
+        kHKB5zA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCKEo4HTTLDwyIixgCk
+        cHijgBA5aj2kBfsBvi99bXiDmet8]
+    pass: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEAhb8LIGPlO3PUXwUS4zpOOmg3Wu35ZcdKUaMh
+        dFaW30bPBsle6V7N+2p8kLtpkvTQHyo3X1vOwhrEKwBvRHJ+XmgQCvYLqLXN
+        qZgNXWwAa2iJz6PjNs/rmvmoLx1pC3smRJeLGCpVSG6cLKXI02clDmnWxjKB
+        3Sdhf/JKTLQgbsoTZYRSBGLM9/UC/Ox/n0kl8afuRfC88CytttnpyNWRBWZ6
+        VV41hxCqshHhBvXnskMS/NEWfYWS972FOZ7FFYid7ZV3h6SbO4JOR7+haMbM
+        ublE8m1abmm1T5SYE245avYj94miYTaPIjq0mkI66xo+6haAlTPqq3/QeUGf
+        e0X2YjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCpodDnNWoVIL6jIRiP
+        6O85gBByiatZ0M0qtpNScQXGCRC5]
+  remote_management:
+    <<: *remoteparas
+    address: 172.16.130.28/24
+    mac_address: "E0:24:7F:02:15:A5"
+  interfaces:
+    - nic: 'nic1'
+      speed: 1gb
+      address: 192.168.10.6/24
+      mac_address: "e0:24:7f:02:15:a3"
+      vlan: native
+    - nic: 'nic2'
+      speed: 1gb
+      address: 10.1.0.1/24
+      mac_address: "e0:24:7f:02:15:a4"
+      vlan: native
+    - nic: 'nic3'
+      speed: 1gb
+      address:
+      mac_address: "90:e2:ba:06:47:04"
+      vlan: native
+    - nic: 'nic4'
+      speed: 1gb
+      address: 172.16.130.50/24
+      mac_address: "90:e2:ba:06:47:05"
+      vlan: native
+# host1
+nodes:
+  - name: host1
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.130.26/24
+      mac_address: "F8:4A:BF:55:A2:91"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        address:
+        mac_address: "f8:4a:bf:55:a2:8d"
+      - name: 'nic2'
+        speed: 1gb
+        address:
+        mac_address: "f8:4a:bf:55:a2:8e"
+      - name: 'nic3'
+        speed: 1gb
+        address:
+        mac_address: "f8:4a:bf:55:a2:8f"
+      - name: 'nic4'
+        speed: 1gb
+        address:
+        mac_address: "f8:4a:bf:55:a2:90"
+  # host2
+  - name: host2
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.130.27/24
+      mac_address: "D8:49:0B:DA:5A:BB"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5a:b7"
+      - name: 'nic2'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5a:b8"
+      - name: 'nic3'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5a:b9"
+      - name: 'nic4'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5a:ba"
+  # host3
+  - name: host3
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.130.29/24
+      mac_address: "78:D7:52:A0:B1:9D"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        address:
+        mac_address: "78:d7:52:a0:b1:99"
+      - name: 'nic2'
+        speed: 1gb
+        address:
+        mac_address: "78:d7:52:a0:b1:9a"
+      - name: 'nic3'
+        speed: 1gb
+        address:
+        mac_address: "78:d7:52:a0:b1:9b"
+      - name: 'nic4'
+        speed: 1gb
+        address:
+        mac_address: "78:d7:52:a0:b1:9c"
+  # host4
+  - name: host4
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.130.30/24
+      mac_address: "D8:49:0B:DA:5B:61"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5b:5d"
+      - name: 'nic2'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5b:5e"
+      - name: 'nic3'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5b:5f"
+      - name: 'nic4'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:5b:60"
+  # host5
+  - name: host5
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.130.31/24
+      mac_address: "D8:49:0B:DA:56:89"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:56:85"
+      - name: 'nic2'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:56:86"
+      - name: 'nic3'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:56:87"
+      - name: 'nic4'
+        speed: 1gb
+        address:
+        mac_address: "d8:49:0b:da:56:88"
