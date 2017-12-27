@@ -53,7 +53,7 @@ jumphost:
     model: R5300
     arch: x86_64
     cpus: 2
-    cpu_cflags: hasewell
+    cpu_cflags: haswell
     cores: 12
     memory: 128G
   disks:
@@ -116,7 +116,7 @@ nodes:
       model: E9000
       arch: x86_64
       cpus: 2
-      cpu_cflags: hasewell
+      cpu_cflags: haswell
       cores: 10
       memory: 128G
     disks: &disks
