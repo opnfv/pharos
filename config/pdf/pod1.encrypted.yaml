@@ -19,7 +19,7 @@ jumphost:
     arch: {x86_64|aarch64}
     cpus: 2
     # add values based on CFLAGS in GCC
-    cpu_cflags: {broadwell|hasewell|etc}
+    cpu_cflags: {broadwell|haswell|etc}
     # physical cores, not including hyper-threads
     cores: 10
     memory: 32G
@@ -96,7 +96,7 @@ nodes:
       model: S2600JF
       arch: x86_64
       cpus: 2
-      cpu_cflags: hasewell
+      cpu_cflags: haswell
       cores: 12
       memory: 128G
     # for nodes in the same pod may have the same configuration

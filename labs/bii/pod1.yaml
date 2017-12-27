@@ -45,7 +45,7 @@ jumphost:
     model: powerEdge 720
     arch: x86_64
     cpus: 2
-    cpu_cflags: hasewell    # add values based on CFLAGS in GCC
+    cpu_cflags: haswell    # add values based on CFLAGS in GCC
     cores: 8                # physical cores, not including hyper-threads
     memory: 16G
   disks:                    # disk list
@@ -100,7 +100,7 @@ nodes:
       model: powerEdge 720
       arch: x86_64
       cpus: 2
-      cpu_cflags: hasewell   # add values based on CFLAGS in GCC
+      cpu_cflags: haswell   # add values based on CFLAGS in GCC
       cores: 8               # physical cores, not including hyper-threads
       memory: 32G
     disks: &disk_A                           # disk list
