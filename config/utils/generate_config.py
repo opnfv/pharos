@@ -76,7 +76,7 @@ try:
     DICT['details']
 except (NameError, TypeError) as ex:
     with open(ARGS.yaml) as _:
-        DICT = yaml.safe_load(_)
+        DICT = yaml.safe_load(_.read().replace('/', '__slash__'))
 
 # If an installer descriptor file (IDF) exists, include it (temporary)
 IDF_PATH = '/idf-'.join(os.path.split(ARGS.yaml))
@@ -92,4 +92,4 @@ if os.path.exists(IDF_PATH):
 TEMPLATE = ENV.get_template(os.path.basename(ARGS.jinja2))
 
 #pylint: disable=superfluous-parens
-print(TEMPLATE.render(conf=DICT))
+print(TEMPLATE.render(conf=DICT).replace('__slash__', '/'))
