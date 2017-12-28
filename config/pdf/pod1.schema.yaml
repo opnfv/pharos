@@ -69,25 +69,45 @@ definitions:
         additionalProperties: false
   remote_management:
     v1.0:
-      type: 'object'
       properties:
-        type:
-          type: 'string'
-          enum: ['ipmi', 'amt']
-        versions:
-          type: 'array'
-          items:
-            type: 'number'
-            enum: [1.0, 2.0]
         user:
           type: 'string'
         pass:
           type: 'string'
+        type:
+          type: 'string'
+        versions:
+          type: 'array'
         address:
-          $ref: '#/definitions/ip_address'
+          type: 'string'
         mac_address:
-          $ref: '#/definitions/mac_address'
-      required: ['type', 'versions', 'user', 'pass', 'address', 'mac_address']
+          type: 'string'
+      # These subsections are best validated separately for baremetal/virtual
+      oneOf:
+        - type: 'object'
+          properties:
+            type:
+              type: 'string'
+              enum: ['ipmi', 'amt']
+            versions:
+              type: 'array'
+              items:
+                type: 'number'
+                enum: [1.0, 2.0]
+            address:
+              $ref: '#/definitions/ip_address'
+            mac_address:
+              $ref: '#/definitions/mac_address'
+          required: ['type', 'versions', 'address', 'mac_address']
+        - type: 'object'
+          properties:
+            type:
+              type: 'string'
+              enum: ['libvirt']
+            address:
+              type: 'string'  # Loose validation of libvirt URI for now
+          required: ['type', 'address']
+      required: ['user', 'pass']
       additionalProperties: false
   interfaces:
     v1.0:
