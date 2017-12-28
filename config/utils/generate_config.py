@@ -55,7 +55,7 @@ try:
     DICT['details']
 except (NameError, TypeError) as ex:
     with open(ARGS.yaml) as _:
-        DICT = yaml.load(_, Loader=LOADER)
+        DICT = yaml.load(_.read().replace('/', '__slash__'), Loader=LOADER)
 
 # If an installer descriptor file (IDF) exists, include it (temporary)
 IDF_PATH = '/idf-'.join(split(ARGS.yaml))
@@ -69,7 +69,7 @@ if exists(IDF_PATH):
 
 for _j2 in ARGS.jinja2:
     TEMPLATE = ENV.get_template(_j2)
-    OUTPUT = TEMPLATE.render(conf=DICT)
+    OUTPUT = TEMPLATE.render(conf=DICT).replace('__slash__', '/')
     # Render template and write generated conf to file or stdout
     if ARGS.batch:
         if _j2.endswith('.j2'):
