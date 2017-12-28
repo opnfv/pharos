@@ -52,7 +52,7 @@ while IFS= read -r lab_config; do
         done < <(find "${adapter}" -name '*.j2')
         SUMMARY+="${pdf_yaml_pass}/${pdf_inst_pass}/${pdf_inst};"
     done
-done < <(find 'labs' -name 'pod*.yaml')
+done < <(find 'labs' -name 'pod*.yaml' -or -name 'virtual*.yaml')
 rm -f "${TMPF}"
 
 cat <<EOF

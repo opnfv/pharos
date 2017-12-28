@@ -47,7 +47,8 @@ jumphost:
   os: ubuntu-14.04
   remote_params: &remote_params
     # hardware management tool
-    type: {ipmi|amt}
+    type: {ipmi|amt|libvirt}
+    # array of supported versions, mandatory for all but 'libvirt'
     versions:
       - 1.0
       - 2.0
@@ -56,6 +57,7 @@ jumphost:
   remote_management:
     <<: *remote_params
     address: 10.4.7.3/24
+    # MAC address is mandatory for all BMC types but 'libvirt'
     mac_address: "10:23:45:67:89:AC"
   # physical interface list
   interfaces:

@@ -16,8 +16,9 @@ RC=0
 
 SUMMARY+=";;PDF;IDF;\n"
 while IFS= read -r lab_config; do
+    idf_config="$(dirname "${lab_config}")/idf-$(basename "${lab_config}")"
     pdf_cmd="${VALIDATE_SCHEMA} -s ${PDF_SCHEMA} -y ${lab_config}"
-    idf_cmd="${VALIDATE_SCHEMA} -s ${IDF_SCHEMA} -y ${lab_config/pod/idf-pod}"
+    idf_cmd="${VALIDATE_SCHEMA} -s ${IDF_SCHEMA} -y ${idf_config}"
     echo "###################### ${lab_config} ######################"
     pdf_out=$(${pdf_cmd} 2>&1 | sed 's|ENC\[PKCS.*\][\\n]*|opnfv|g')
     if [ -z "${pdf_out}" ]; then
@@ -29,7 +30,7 @@ while IFS= read -r lab_config; do
         echo "${pdf_out}"
         echo "[PDF] [ERROR] ${pdf_cmd}"
     fi
-    if [ ! -f "${lab_config/pod/idf-pod}" ]; then
+    if [ ! -f "${idf_config}" ]; then
         SUMMARY+="-;\n"
     elif ${idf_cmd}; then
         SUMMARY+="OK;\n"
@@ -40,7 +41,7 @@ while IFS= read -r lab_config; do
         echo "[IDF] [ERROR] ${idf_cmd}"
     fi
     echo ''
-done < <(find 'labs' -name 'pod*.yaml')
+done < <(find 'labs' -name 'pod*.yaml' -or -name 'virtual*.yaml')
 
 cat <<EOF
 ###################### Schema Validation Matrix ######################
