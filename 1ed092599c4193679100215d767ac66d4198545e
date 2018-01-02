@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_3e022e6f",
+        "filename": "labs/huawei/idf-pod2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5391
+      },
+      "writtenOn": "2018-01-02T01:42:28Z",
+      "side": 1,
+      "message": "there are different network config in different installer. it is  necessary to reactor IDF to match every installer.",
+      "parentUuid": "9a3d3df0_a343cb40",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 12
+      },
+      "revId": "1ed092599c4193679100215d767ac66d4198545e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_435bdf2d",
         "filename": "labs/huawei/idf-pod2.yaml",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_7ef7968b",
+        "filename": "labs/huawei/idf-pod2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5391
+      },
+      "writtenOn": "2018-01-02T01:42:28Z",
+      "side": 1,
+      "message": "compass does not use this section, I though this is required by the IDF before. I will add other information if compass needs",
+      "parentUuid": "9a3d3df0_435bdf2d",
+      "range": {
+        "startLine": 40,
+        "startChar": 2,
+        "endLine": 40,
+        "endChar": 9
+      },
+      "revId": "1ed092599c4193679100215d767ac66d4198545e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_83404735",
         "filename": "labs/huawei/pod1.yaml",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2017-12-29T12:49:51Z",
       "side": 1,
       "message": "No IPMI user/pass for any node configured?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 9
+      },
+      "revId": "1ed092599c4193679100215d767ac66d4198545e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_beed9eb9",
+        "filename": "labs/huawei/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5391
+      },
+      "writtenOn": "2018-01-02T01:42:28Z",
+      "side": 1,
+      "message": "we are not sure to write the password public or encrypted. if we need encrypt, could you tell me what should I do?",
+      "parentUuid": "9a3d3df0_83404735",
       "range": {
         "startLine": 43,
         "startChar": 0,
