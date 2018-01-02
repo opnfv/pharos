@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_393fe8d7",
+        "filename": "labs/huawei/idf-pod2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-02T16:53:01Z",
+      "side": 1,
+      "message": "Totally agree. If you have some time, please take a look at https://gerrit.opnfv.org/gerrit/#/c/49213/ and comment if you think we should make any changes to the IDF format.",
+      "parentUuid": "9a3d3df0_3e022e6f",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 12
+      },
+      "revId": "1ed092599c4193679100215d767ac66d4198545e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_435bdf2d",
         "filename": "labs/huawei/idf-pod2.yaml",
         "patchSetId": 3
@@ -131,6 +155,30 @@
       "side": 1,
       "message": "we are not sure to write the password public or encrypted. if we need encrypt, could you tell me what should I do?",
       "parentUuid": "9a3d3df0_83404735",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 9
+      },
+      "revId": "1ed092599c4193679100215d767ac66d4198545e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7924d0c4",
+        "filename": "labs/huawei/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-02T16:53:01Z",
+      "side": 1,
+      "message": "See [1, 2].\n[1] https://github.com/opnfv/pharos/blob/master/config/utils/README.eyaml.rst\n[2] https://github.com/opnfv/pharos/blob/master/config/pdf/pod1.encrypted.yaml",
+      "parentUuid": "9a3d3df0_beed9eb9",
       "range": {
         "startLine": 43,
         "startChar": 0,
