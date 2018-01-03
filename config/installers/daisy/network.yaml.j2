@@ -88,6 +88,10 @@ networks:
         'end': '{{ end }}'
     vlan_id: {{ vlan }}
     name: '{{ key }}'
+    {%- if key == 'EXTERNAL' %}
+    network_name: 'admin_external'
+    mapping: 'physnet1'
+    {%- endif -%}
   {%- endfor %}
 
 interfaces:
