@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_34388aee",
+        "filename": "labs/zte/pod9/daisy/config/network_dpdk.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3195
+      },
+      "writtenOn": "2018-01-05T08:59:34Z",
+      "side": 1,
+      "message": "update it according to https://gerrit.opnfv.org/gerrit/#/c/46627/24",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 36
+      },
+      "revId": "fc3320d793c8288975fd27bf4fe544f39989a1cc",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
