@@ -41,6 +41,7 @@ network-config-metadata:
 
 networks:
 
+  {%- set nodes_num = conf['nodes'] | length -%}
   {%- set networks = {} -%}
   {%- for key in mapping -%}
     {%- set net_data = conf['net_config'][mapping[key]] -%}
@@ -61,7 +62,9 @@ networks:
       {%- set start = ".".join([ips[0], ips[1], ips[2], "10"]) -%}
       {%- set end = ".".join([ips[0], ips[1], ips[2], "200"]) -%}
     {%- endif -%}
-    {%- set vip = start -%}
+    {%- set vip = start.split(".")[3] | int -%}
+    {%- set vip = vip + nodes_num + 10 - (vip + nodes_num) % 10 -%}
+    {%- set vip = ".".join([ips[0], ips[1], ips[2], vip | string]) -%}
 
     {%- if 'gateway' in net_data -%}
       {%- set gateway = net_data.gateway -%}
