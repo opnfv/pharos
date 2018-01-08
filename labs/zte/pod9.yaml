@@ -1,0 +1,164 @@
+---
+### ZTE POD 9 descriptor file ###
+
+details:
+  pod_owner: Zhiijang Hu
+  contact: huzhijiang@zte.com.cn
+  lab: ZTE Pharos Lab
+  location: Nanjing, China
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/ZTE+SH+Testlab
+##############################################################################
+net_config:
+  # NOTE: Network names are likely to change after the PDF spec is updated
+  oob:
+    interface: 0
+    ip-range: 192.168.176.166-192.168.176.168
+    vlan: null
+  admin:
+    interface: 0
+    vlan: null
+    network: 10.20.7.0
+    mask: 24
+  mgmt:
+    interface: 1
+    vlan: null
+    network: 10.20.7.0
+    mask: 24
+  storage:
+    interface: 2
+    vlan: null
+    network: 10.20.7.0
+    mask: 24
+  private:
+    interface: 3
+    vlan: null
+    network: 172.70.0.0
+    mask: 24
+  public:
+    interface: 4
+    vlan: null
+    network: 172.71.0.0
+    mask: 24
+    gateway: 172.71.0.1
+    dns:
+      - 172.71.0.1
+##############################################################################
+jumphost:
+  name: pod9-jump
+  node:
+    type: baremetal
+    vendor: ZTE
+    model: R5300
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: hasewell
+    cores: 12
+    memory: 35G
+  disks:
+    - name: 'disk1'
+      disk_capacity: 107G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 10500
+  os: CentOS-7
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAIX8TfBkmSFZEE/44AXRKK8ATlkqmfMBcDHM5
+      IrDbb8KXzyuKXK82u4KPaCxS1dmQehyba6WHih9euMrDFVTobZ/EIW4cKEvx
+      oS7DoFRDh3j9+lAE35ggHPWQnkGhgERUuMUtyia4xk+EURG/wO0iQhxrNoUg
+      fKe1jbuKq4Tr1ldunYJqmxtZn/SwVWiJfoGRIdFGJ0iO6ApVnqDIC+5IeBVv
+      gm9BLT39o7M37rY/5AQt0SoTRtnQo2kKhjUsp+46LL3/tQBlzZBLCsGwskru
+      qcZmWlg9SsLePSkqrLBiNeL1EJVu7VRdikKWu43qRLZSMhEQsu6rqkeCviYu
+      QOkh+TA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCRBGGIXFDcQnOO1MjU
+      36+DgBB7IJHcJciyO0PTGqIs58OH]
+    pass: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAOnq6dIeck0YPh1OiXSU+gsUKG5cmIlqCB7ks
+      Jj0F524a8mojWB3GGSi0tdy+ZcBotTgMFm5yV4JaSmUi7f+w+3T5y7e7meKB
+      MmnuGq8AOKOfSxnI8+sUOcY8zLgNaztZk0dv/PzLydoSc5k+1uqHkakcPBHy
+      dJW9rWLSKcbFUHSOWI+tcKxx5UYY26BdqNy77YRu5ZnbW1z+xHmpcXuU4XHY
+      +Dt1qb1EkkOQ9p0wuBRNsn+xCLFNHv5tKod3nsQk0fkPsMSRGY57rSkPs8HI
+      bmkmoII5biA02bTjtb3jATPoH5mMa7hU8aaZM1qkXCejP2QIDikAgyWeiMp8
+      /kt2bjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDehpNTtsY3HlqAGCLe
+      WSgUgBDYj5D5l/12XoUNXxGDebYT]
+  remote_management:
+    <<: *remote_params
+    address:
+    mac_address:
+  interfaces:
+    - mac_address: "00:1b:21:89:30:87"
+      speed: ixgbe
+  fixed_ips:
+    admin: 10.20.7.1
+    public: 192.168.21.195
+nodes:
+  - name: pod9-node1
+    node: &nodeparas
+      type: baremetal
+      vendor: ZTE
+      model: E9000
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: hasewell
+      cores: 14
+      memory: 128G
+    disks:
+      - name: 'disk1'
+        disk_capacity: 1198G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 10000
+    remote_management:
+      <<: *remote_params
+      address: 192.168.176.166
+      mac_address: "74:4a:a4:03:bf:93"
+    interfaces:
+      - mac_address: "74:4a:a4:03:bf:96"
+        speed: 1gb
+        features: null
+      - mac_address: "74:4a:a4:05:ee:86"
+        speed: 10gb
+        features: dpdk|sriov
+  - name: pod9-node2
+    node: *nodeparas
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 600G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 10000
+      - name: 'disk2'
+        disk_capacity: 600G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 10000
+    remote_management:
+      <<: *remote_params
+      address: 192.168.176.167
+      mac_address: "74:4a:a4:03:bf:c3"
+    interfaces:
+      - mac_address: "74:4a:a4:03:bf:c6"
+        speed: 1gb
+        features: null
+      - mac_address: "74:4a:a4:05:ee:9a"
+        speed: 10gb
+        features: dpdk|sriov
+  - name: pod9-node3
+    node: *nodeparas
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.176.168
+      mac_address: "74:4a:a4:03:bf:fb"
+    interfaces:
+      - mac_address: "74:4a:a4:03:bf:fe"
+        speed: 1gb
+        features: null
+      - mac_address: "74:4a:a4:05:ee:7e"
+        speed: 10gb
+        features: dpdk|sriov

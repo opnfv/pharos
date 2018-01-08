@@ -11,6 +11,8 @@
 
 adapter: {{ conf['jumphost']['remote_params']['type'] }}
 hosts:
+  {%- set nodes_num = conf['nodes'] | length -%}
+  {%- if nodes_num == 5 -%}
   - name: 'controller01'
     roles:
       - 'CONTROLLER_LB'
@@ -51,6 +53,33 @@ hosts:
     ipmi_pass: {{ conf['nodes'][4]['remote_management']['pass'] }}
     mac_addresses:{% for nic in conf['nodes'][4]['interfaces'] %}
       - {{ nic['mac_address'] }}{% endfor %}
+  {%- endif -%}
+  {%- if nodes_num == 3 -%}
+  - name: 'controller01'
+    roles:
+      - 'CONTROLLER_LB'
+    ipmi_ip: {{ conf['nodes'][0]['remote_management']['address'] }}
+    ipmi_user: {{ conf['nodes'][0]['remote_management']['user'] }}
+    ipmi_pass: {{ conf['nodes'][0]['remote_management']['pass'] }}
+    mac_addresses:{% for nic in conf['nodes'][0]['interfaces'] %}
+      - {{ nic['mac_address'] }}{% endfor %}
+  - name: 'computer01'
+    roles:
+      - 'COMPUTER'
+    ipmi_ip: {{ conf['nodes'][1]['remote_management']['address'] }}
+    ipmi_user: {{ conf['nodes'][1]['remote_management']['user'] }}
+    ipmi_pass: {{ conf['nodes'][1]['remote_management']['pass'] }}
+    mac_addresses:{% for nic in conf['nodes'][1]['interfaces'] %}
+      - {{ nic['mac_address'] }}{% endfor %}
+  - name: 'computer02'
+    roles:
+      - 'COMPUTER'
+    ipmi_ip: {{ conf['nodes'][2]['remote_management']['address'] }}
+    ipmi_user: {{ conf['nodes'][2]['remote_management']['user'] }}
+    ipmi_pass: {{ conf['nodes'][2]['remote_management']['pass'] }}
+    mac_addresses:{% for nic in conf['nodes'][2]['interfaces'] %}
+      - {{ nic['mac_address'] }}{% endfor %}
+  {%- endif -%}
 disks:
   daisy: 50
 daisy_passwd: 'r00tme'
