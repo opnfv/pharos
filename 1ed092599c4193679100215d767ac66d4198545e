@@ -188,6 +188,30 @@
       "revId": "1ed092599c4193679100215d767ac66d4198545e",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_05e2722e",
+        "filename": "labs/huawei/pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5391
+      },
+      "writtenOn": "2018-01-08T04:17:56Z",
+      "side": 1,
+      "message": "thank you, I have updated the user and passwd for IPMI",
+      "parentUuid": "9a3d3df0_7924d0c4",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 9
+      },
+      "revId": "1ed092599c4193679100215d767ac66d4198545e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
