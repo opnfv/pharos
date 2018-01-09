@@ -1,0 +1,12 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Fatih Degirmenci <fdegir@gmail.com>
+Code-Review+1: Wenjing Chu <chu.wenjing@gmail.com>
+Code-Review+1: julien zhang <zhang.jun3g@zte.com.cn>
+Code-Review+1: Morgan Richomme <morgan.richomme@orange.com>
+Code-Review+1: Jose Lausuch <jalausuch@suse.com>
+Code-Review+2: Jack Morgan <jack.morgan@intel.com>
+Submitted-by: Jack Morgan <jack.morgan@intel.com>
+Submitted-at: Tue, 09 Jan 2018 00:16:35 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/49311
+Project: pharos
+Branch: refs/heads/master
