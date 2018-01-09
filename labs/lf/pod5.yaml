@@ -89,7 +89,7 @@ jumphost:
     address: 172.30.8.89
     mac_address: "a4:bf:01:01:ad:73"
   interfaces:
-    - mac_address: "00:1e:67:fd:ad:71"
+    - mac_address: "a4:bf:01:01:ad:71"
       speed: 1gb
       features: 'dpdk|sriov'
     - mac_address: "00:1e:67:fd:9c:c2"
