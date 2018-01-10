@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_6847ce77",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-10T03:10:24Z",
+      "side": 1,
+      "message": "a bit misleading, since the whole idea is to return a 0 exit code in check-jinja.sh for PODs that don\u0027t support Fuel",
+      "range": {
+        "startLine": 7,
+        "startChar": 35,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "85d6e1daf4bf3c6b450b8a8c1feef87a512a99e2",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
