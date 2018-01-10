@@ -1,0 +1,9 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: zhihui wu <wu.zhihui1@zte.com.cn>
+Code-Review+1: Michael Polenchuk <mpolenchuk@mirantis.com>
+Code-Review+2: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Submitted-by: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Submitted-at: Wed, 10 Jan 2018 03:02:13 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/49377
+Project: pharos
+Branch: refs/heads/master
