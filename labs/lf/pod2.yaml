@@ -9,42 +9,6 @@ details:
   type: production
   link: https://wiki.opnfv.org/display/pharos/LF+POD+2
 ##############################################################################
-net_config:
-  # NOTE: Network names are likely to change after the PDF spec is updated
-  oob:
-    interface: 0
-    ip-range: 172.30.8.65-172.30.8.75
-    vlan: 410
-  admin:
-    interface: 0
-    vlan: native
-    network: 192.168.11.0  # Untagged, 'PXE/Admin' on wiki, different IP
-    mask: 24
-  mgmt:
-    interface: 0
-    vlan: 300
-    network: 10.167.4.0    # Tagged, 'vlan 300' on wiki
-    mask: 24
-  storage:
-    interface: 3
-    vlan: 301
-    network: 10.2.0.0      # Tagged, not the same with 'storage' on wiki
-    mask: 24
-  private:
-    interface: 1
-    vlan: 1000
-    network: 10.1.0.0      # Tagged, not the same with 'private' on wiki
-    mask: 24
-  public:
-    interface: 2
-    vlan: native
-    network: 172.30.10.0   # Untagged, 'public' on wiki
-    mask: 24
-    gateway: 172.30.10.1
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
-##############################################################################
 jumphost:
   name: pod2-jump
   node:
