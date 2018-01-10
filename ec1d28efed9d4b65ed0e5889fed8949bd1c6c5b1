@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_3edfbc0e",
+        "filename": "config/installers/daisy/pod_config.yaml.j2",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-10T16:53:44Z",
+      "side": 1,
+      "message": "No problem, we can do that later, it was just a thought.\nAfaik, all installers hardcode the node number right now, so making it dynamic is not trivial ...",
+      "parentUuid": "9a3d3df0_0349c55f",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "ec1d28efed9d4b65ed0e5889fed8949bd1c6c5b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_c8c53a8f",
         "filename": "labs/zte/idf-pod9.yaml",
         "patchSetId": 6
