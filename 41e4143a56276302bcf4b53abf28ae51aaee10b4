@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9f6aa5c",
+        "filename": "INFO.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5391
+      },
+      "writtenOn": "2018-01-11T03:34:09Z",
+      "side": 1,
+      "message": "could you add which day have the meeting?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 30
+      },
+      "revId": "41e4143a56276302bcf4b53abf28ae51aaee10b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
