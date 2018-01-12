@@ -103,8 +103,8 @@ nodes:
       cpu_cflags: haswell    # add values based on CFLAGS in GCC
       cores: 8               # physical cores, not including hyper-threads
       memory: 32G
-    disks: &disk_A                           # disk list
-      - name: 'disk1'                           # first disk
+    disks: &disks_A                           # disk list
+      - name: 'disk1'                         # first disk
         disk_capacity: 128G                   # volume
         disk_type: ssd                        # several disk types possible
         disk_interface: sas                   # several interface types possible

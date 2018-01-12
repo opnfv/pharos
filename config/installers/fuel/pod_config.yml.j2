@@ -5,6 +5,7 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
+---
 {%- if conf.idf is defined and conf.idf.fuel is defined -%}
   {%- if conf.net_config is defined -%}
       {%- set net_admin = conf.net_config.admin.network -%}
@@ -35,8 +36,7 @@
   {%- endif -%}
   {%- if net_public_gw is not defined -%}
       {%- set net_public_gw =  net_public | ipaddr_index('1')  -%}
-  {%- endif -%}
----
+  {%- endif %}
 parameters:
   _param:
 
