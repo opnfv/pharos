@@ -45,21 +45,21 @@ idf:
   fuel:
     jumphost:
       bridges:
-        admin: ''
-        mgmt: ''
-        private: ''
-        public: ''
+        admin: ~
+        mgmt: ~
+        private: ~
+        public: ~
     network:
       node:
         # Ordered-list, index should be in sync with node index in PDF
         - interfaces: &interfaces
             # Ordered-list, index should be in sync with interface index in PDF
-            - ''
-            - ''
+            - ~
+            - ~
           busaddr: &busaddr
             # Bus-info reported by `ethtool -i ethX`
-            - ''
-            - ''
+            - ~
+            - ~
         - interfaces: *interfaces
           busaddr: *busaddr
         - interfaces: *interfaces
