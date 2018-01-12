@@ -43,7 +43,9 @@ while IFS= read -r lab_config; do
                 echo 'Result: PASS'
                 ((pdf_inst_pass+=1))
                 echo -e "\nyamllint -s ${jinja_template%.j2}"
-                if yamllint -s "${TMPF}"; then ((pdf_yaml_pass+=1)); fi
+                if yamllint -s <(sed 's|ENC\[PKCS.*\]|opnfv|g' "${TMPF}"); then
+                    ((pdf_yaml_pass+=1));
+                fi
             else
                 echo 'Result: FAIL'
                 RC=1
