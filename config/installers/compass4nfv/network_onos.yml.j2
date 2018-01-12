@@ -23,7 +23,7 @@ provider_net_mappings:
 sys_intf_mappings:
   - name: mgmt
     interface: eth3
-    vlan_tag: {{ conf['nodes'][0]['interfaces'][2]['vlan'] }} #not a good fit
+    vlan_tag: {{ conf['nodes'][0]['interfaces'][2]['vlan'] }}  # not a good fit
     type: vlan
     role:
       - controller
@@ -31,7 +31,7 @@ sys_intf_mappings:
 
   - name: storage
     interface: eth2
-    vlan_tag: {{ conf['nodes'][0]['interfaces'][1]['vlan'] }} #not a good fit
+    vlan_tag: {{ conf['nodes'][0]['interfaces'][1]['vlan'] }}  # not a good fit
     type: vlan
     role:
       - controller
