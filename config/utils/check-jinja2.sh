@@ -17,6 +17,8 @@ INSTALLER_ADAPTERS='./config/installers/*'
 TMPF='/tmp/out.yml' # should be outside Jenkins WS to prevent data leakage
 RC=0
 
+echo "Using $(yamllint --version)"
+
 # Build a table header, using ';' as column sep
 SUMMARY='PDF Verify Matrix;YAML Lint;'
 for adapter in ${INSTALLER_ADAPTERS}; do
@@ -26,6 +28,7 @@ done
 # Iterate all PDFs, check with each installer adapter, log results
 while IFS= read -r lab_config; do
     valid_yaml='OK'
+    echo -e "\n###################### ${lab_config} ######################\n"
     echo -e "\n\nyamllint -s ${lab_config}"
     if ! yamllint -s "${lab_config}"; then valid_yaml='FAIL'; fi
     SUMMARY+="\n${lab_config#labs/};${valid_yaml};"
