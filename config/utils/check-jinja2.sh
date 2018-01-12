@@ -17,6 +17,8 @@ INSTALLER_ADAPTERS='./config/installers/*'
 TMPF='/tmp/out.yml' # should be outside Jenkins WS to prevent data leakage
 RC=0
 
+echo "Using $(yamllint --version)"
+
 # Build a table header, using ';' as column sep
 SUMMARY='PDF Verify Matrix;YAML Lint;'
 for adapter in ${INSTALLER_ADAPTERS}; do
