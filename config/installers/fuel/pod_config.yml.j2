@@ -1,4 +1,4 @@
-{%- if conf.idf.fuel is defined -%}
+{%- if conf.idf is defined and conf.idf.fuel is defined -%}
   {%- if conf.net_config is defined -%}
       {%- set net_admin = conf.net_config.admin.network -%}
       {%- set net_mgmt = conf.net_config.mgmt.network -%}
