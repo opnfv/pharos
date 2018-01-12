@@ -15,7 +15,7 @@ idf:
       bridges:
         admin: 'admin7_br0'
         mgmt: 'mgmt7_br0'
-        private: ''
+        private: ~
         public: 'public7_br0'
     network:
       node:
