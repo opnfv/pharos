@@ -15,7 +15,7 @@ idf:
       bridges:
         admin: 'pxebr'
         mgmt: 'br-mgmt'
-        private: ''
+        private: ~
         public: 'br-external'
     network:
       node:
