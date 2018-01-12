@@ -52,7 +52,7 @@ while IFS= read -r lab_config; do
         done < <(find "${adapter}" -name '*.j2')
         SUMMARY+="${pdf_yaml_pass}/${pdf_inst_pass}/${pdf_inst};"
     done
-done < <(find 'config' 'labs' -name 'pod*.yaml')
+done < <(find 'labs' -name 'pod*.yaml')
 
 rm -f "${TMPF}"
 echo -e '\n\nNOTE: tuple fmt: (valid YAML output/sucessful parse/templates).\n'
