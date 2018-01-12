@@ -31,26 +31,8 @@ jumphost:
     type: ipmi
     versions:
       - 2.0
-    user: >
-        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
-        DQYJKoZIhvcNAQEBBQAEggEAKn4rdxFJum3vgvpjT4c64gkXzbMog4LyrBb0
-        pHeASLqwiuJqCdELWl4e7d4SMp3QBzHqd6aGHJqywDt09L7axFaW9PmdUEVx
-        KxIZ8NUdDjl7HtuG8D9irU2n5VMHXVyDosMEZe9pRYhQTkuAggR7EDoDjdDj
-        0myGFy/UVH3/fxpdySWhyg9kqAYb1ReMgYBudVfm2gw4bjtjJviwASXi8hj6
-        8isdJPf25U6wrvbqQi5J5WVD4Q3PaGy8GACTZ8n+LFyPSwBl3QJ5jfMmzHmq
-        Po0cqa4MoKi3xQ8Y8z6DxhUrV0yoYWoHvIcpQBu3YCZVzpOqVPZwsapBl963
-        0d0kWzA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAoo59BSqp1DBCu05h+
-        /1BZgBDdOvlZ5JlDtpkh73ujYZXR]
-    pass: >
-        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
-        DQYJKoZIhvcNAQEBBQAEggEA4pnLYg4U/39mKdytYH1CJYJuJ/qjNrS+KoON
-        oPU6G9lMJ5U5J7NUuGyBD7O1NTt8VBE+LaBEqmXK5/SQ6mAdns9qs5QLOVSm
-        r3WKroZdqH3hmW26LuPsXNUfTaCVNOqWPAf6U6Q1fHr1vi09n3mIV/Ph03Kv
-        /aNeeRsJbBPAtHgCL6aRs+4WoxxYS0eUAVCo4yPDiSN5UFmSg6O304NM2qzi
-        av2b/gmNFN8AxE5CVi+C/fVGBhdpwmmdC0KmtkY38pYa/hf8Pks4jsFtKNDw
-        3KW+pP+BTsgKs/o/WrwCFm4LIJj/E6Pf9qZ/mZ8bAxKlVf+gQj2bgxzT3aa1
-        hHhD0TA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAx3f5XDjWzYJA4Jn5H
-        KJOBgBDq/YBNdEeyT+dCuH59ZE6L]
+    user: admin
+    pass: octopus
   remote_management:
     <<: *remote_params
     address: 172.30.8.83
