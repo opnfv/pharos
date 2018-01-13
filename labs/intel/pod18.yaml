@@ -7,7 +7,7 @@ details:
   contact: jack.morgan@intel.com
   lab: Intel Pharos Lab
   location: Portland, Oregon, USA
-  type: {production|development}
+  type: production
   link: http://wiki.opnfv.org/display/pharos/Intel+Hosting
 
 jumphost:
@@ -26,7 +26,7 @@ jumphost:
       disk_capacity: 480GB
       disk_type: ssd
       disk_interface: ssd
-      disk_rotation:
+      disk_rotation: 0
     - name: 'disk2'
       disk_capacity: 1TB
       disk_type: hdd
@@ -45,11 +45,11 @@ jumphost:
     address: 10.10.180.10
     mac_address: "A4:BF:01:16:31:98"
   interfaces:
-    - nic: 'nic1'
+    - name: 'nic1'
       address: 10.10.180.20/24
       mac_address: "A4:BF:01:16:31:96"
       vlan: native
-    - nic: 'nic2'
+    - name: 'nic2'
       address: 10.10.181.20/24
       mac_address: "A4:BF:01:16:31:97"
       vlan: native
@@ -69,7 +69,7 @@ nodes:
         disk_capacity: 480GB
         disk_type: ssd
         disk_interface: ssd
-        disk_rotation:
+        disk_rotation: 0
       - name: 'disk2'
         disk_capacity: 1TB
         disk_type: hdd
