@@ -1,5 +1,5 @@
 ##############################################################################
-# Copyright (c) 2017 Ericsson AB, Mirantis Inc., Enea AB and others.
+# Copyright (c) 2018 Ericsson AB, Mirantis Inc., Enea AB and others.
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Apache License, Version 2.0
 # which accompanies this distribution, and is available at
@@ -15,44 +15,6 @@ details:
   location: Rosersberg, Sweden
   type: production
   link: https://wiki.opnfv.org/display/pharos/CI-ERICSSON-POD1
-##############################################################################
-net_config:
-  # NOTE: Network names are likely to change after the PDF spec is updated
-  # NOTE: Some networks (e.g. admin) are created by the installer
-  # NOTE: Network-to-interface mapping will be reworked after PDF update
-  oob:
-    interface: 0
-    ip-range: 172.16.1.16-172.16.1.21
-    vlan: native
-  admin:
-    interface: 4
-    vlan: native
-    network: 192.168.11.0  # Untagged, 'PXE/Admin' for MaaS (no IP on JP)
-    mask: 24
-  mgmt:
-    interface: 2
-    vlan: 81
-    network: 192.168.10.0
-    mask: 24
-  storage:
-    interface: 2
-    vlan: 82
-    network: 192.168.20.0
-    mask: 24
-  private:
-    interface: 3
-    vlan: 1000
-    network: 192.168.2.0
-    mask: 24
-  public:
-    interface: 2
-    vlan: 80
-    network: 100.64.200.0
-    mask: 24
-    gateway: 100.64.200.1
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
 ##############################################################################
 jumphost:
   name: CI-POD1-HOST
