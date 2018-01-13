@@ -49,18 +49,22 @@ jumphost:
     - mac_address: "68:05:ca:34:60:e3"
       speed: 1gb
       features: ''
+      name: 'nic1'
     # Not connected for now
     - mac_address: "00:0f:b7:04:00:c1"
       speed: 40gb
       features: 'dpdk|sriov'
+      name: 'nic2'
     # Not connected for now
     - mac_address: "00:0f:b7:04:00:c2"
       speed: 40gb
       features: 'dpdk|sriov'
+      name: 'nic3'
     # Connected, trunk for all other VLANs
     - mac_address: "00:0f:b7:04:00:c0"
       speed: 10gb
       features: ''
+      name: 'nic4'
 ##############################################################################
 nodes:
   - name: softiron-3
@@ -78,6 +82,7 @@ nodes:
         disk_capacity: 128G
         disk_type: ssd
         disk_interface: sata
+        disk_rotation: 0
       - name: 'disk2'
         disk_capacity: 2048G
         disk_type: hdd
@@ -92,14 +97,16 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:ae"
         speed: 10gb
         features: ''
+        name: 'nic1'
       # Connected, trunk for all other VLANs
       - mac_address: "e0:ff:f7:00:08:af"
         speed: 10gb
         features: ''
+        name: 'nic2'
   ############################################################################
   - name: softiron-4
     node: *nodeparams
-    disk: *disks
+    disks: *disks
     remote_management:
       <<: *remote_params
       address: 10.0.8.4
@@ -108,13 +115,15 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:b1"
         speed: 10gb
         features: ''
+        name: 'nic1'
       - mac_address: "e0:ff:f7:00:08:b2"
         speed: 10gb
         features: ''
+        name: 'nic2'
   ############################################################################
   - name: softiron-5
     node: *nodeparams
-    disk: *disks
+    disks: *disks
     remote_management:
       <<: *remote_params
       address: 10.0.8.5
@@ -123,13 +132,15 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:bd"
         speed: 10gb
         features: ''
+        name: 'nic1'
       - mac_address: "e0:ff:f7:00:08:be"
         speed: 10gb
         features: ''
+        name: 'nic2'
   ############################################################################
   - name: softiron-6
     node: *nodeparams
-    disk: *disks
+    disks: *disks
     remote_management:
       <<: *remote_params
       address: 10.0.8.6
@@ -138,13 +149,15 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:c6"
         speed: 10gb
         features: ''
+        name: 'nic1'
       - mac_address: "e0:ff:f7:00:08:c7"
         speed: 10gb
         features: ''
+        name: 'nic2'
   ############################################################################
   - name: softiron-7
     node: *nodeparams
-    disk: *disks
+    disks: *disks
     remote_management:
       <<: *remote_params
       address: 10.0.8.7
@@ -153,6 +166,8 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:cf"
         speed: 10gb
         features: ''
+        name: 'nic1'
       - mac_address: "e0:ff:f7:00:08:d0"
         speed: 10gb
         features: ''
+        name: 'nic2'
