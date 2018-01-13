@@ -1,0 +1,182 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+$schema: 'http://json-schema.org/schema#'
+$id: 'https://github.com/opnfv/pharos/blob/master/config/pdf/pod1.yaml'
+
+definitions:
+  ip_address:
+    type: 'string'  # NOTE: we don't validate this is a valid addr (yet)
+  mac_address:
+    type: 'string'
+    pattern: '^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$'
+  # Common node schema for jumpserver, cluster nodes
+  node:
+    type: 'object'
+    properties:
+      type:
+        type: 'string'
+        enum: ['baremetal', 'virtual']
+      vendor:
+        type: 'string'
+      model:
+        type: 'string'
+      arch:
+        type: 'string'
+        enum: ['aarch64', 'x86_64']
+      cpus:
+        type: 'number'
+      cpu_cflags:
+        type: 'string'
+      cores:
+        type: 'number'
+      memory:
+        type: 'string'
+        pattern: '^[0-9]+[GT]B?$'
+    required: ['type', 'vendor', 'model', 'arch', 'cpus', 'cpu_cflags', 'cores', 'memory']
+    additionalProperties: false
+  disks:
+    type: 'array'
+    items:
+      type: 'object'
+      properties:
+        name:
+          type: 'string'
+          pattern: '^disk[0-9]+$'
+        disk_capacity:
+          type: 'string'
+          pattern: '^[0-9]+[MGT]B?$'
+        disk_type:
+          type: 'string'
+          enum: ['hdd', 'ssd', 'cdrom', 'tape']
+        disk_interface:
+          type: 'string'
+          enum: ['sata', 'sas', 'ssd', 'nvme']
+        disk_rotation:
+          type: 'number'
+          enum: [5400, 7200, 10000, 15000]
+      required: ['name', 'disk_capacity', 'disk_type', 'disk_interface', 'disk_rotation']
+      additionalProperties: false
+  remote_management:
+    type: 'object'
+    properties:
+      type:
+        type: 'string'
+        enum: ['ipmi', 'amt']
+      versions:
+        type: 'array'
+        items:
+          type: 'number'
+          enum: [1.0, 2.0]
+      user:
+        type: 'string'
+      pass:
+        type: 'string'
+      address:
+        $ref: '#/definitions/ip_address'
+      mac_address:
+        $ref: '#/definitions/mac_address'
+    required: ['type', 'versions', 'user', 'pass', 'address', 'mac_address']
+    additionalProperties: false
+  interfaces:
+    type: 'array'
+    items:
+      type: 'object'
+      properties:
+        name:
+          type: 'string'
+          pattern: '^nic[0-9]+$'
+        mac_address:
+          $ref: '#/definitions/mac_address'
+        # Optional
+        address:
+          $ref: '#/definitions/ip_address'
+        # Optional
+        vlan:
+          oneOf:
+            - type: 'string'
+              pattern: '^(native|[1-9][0-9]{0,3})(\|(native|[1-9][0-9]{0,3}))*$'
+            - type: 'integer'
+              mininum: 1
+              maximum: 4095
+        # Optional
+        speed:
+          type: 'string'
+          enum: ['1gb', '10gb', '25gb', '40gb']
+          # FIXME: mandatory for nodes?
+        # Optional
+        features:
+          type: ['string', 'null']
+          pattern: '^((dpdk|sriov)\|?)*$'
+          # FIXME: mandatory for nodes?
+      required: ['name', 'mac_address']
+      additionalProperties: false
+
+# Do not allow any properties not defined here. This lets us catch typos.
+additionalProperties: false
+
+properties:
+  details:
+    type: 'object'
+    properties:
+      type:
+        type: 'string'
+        enum: ['production', 'development']
+      pod_owner:
+        type: 'string'
+      contact:
+        type: 'string'
+        pattern: '^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+[,; ]*)+$'
+      lab:
+        type: 'string'
+      location:
+        type: 'string'
+      link:
+        type: 'string'
+    required: ['type', 'pod_owner', 'contact', 'lab', 'location', 'link']
+    additionalProperties: false
+  jumphost:
+    type: 'object'
+    properties:
+      name:
+        type: 'string'
+      node:
+        $ref: '#/definitions/node'
+      disks:
+        $ref: '#/definitions/disks'
+      os:
+        type: 'string'
+      remote_params:  # Optional YAML anchor, contents will be validated below
+        type: 'object'
+      remote_management:
+        $ref: '#/definitions/remote_management'
+      interfaces:
+        $ref: '#/definitions/interfaces'
+    required: ['name', 'node', 'disks', 'os', 'remote_management', 'interfaces']
+    additionalProperties: false
+  nodes:
+    type: 'array'
+    items:
+      type: 'object'
+      properties:
+        name:
+          type: 'string'
+        node:
+          $ref: '#/definitions/node'
+        disks:
+          $ref: '#/definitions/disks'
+        os:
+          type: 'string'
+        remote_params:  # Optional YAML anchor, contents will be validated after inject
+          type: 'object'
+        remote_management:
+          $ref: '#/definitions/remote_management'
+        interfaces:
+          $ref: '#/definitions/interfaces'
+      required: ['name', 'node', 'disks', 'remote_management', 'interfaces']
+      additionalProperties: false
