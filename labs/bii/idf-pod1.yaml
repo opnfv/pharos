@@ -1,0 +1,33 @@
+---
+### This is a BII POD1 Installer descriptor file ###
+
+idf:
+  version: 0.1
+  net_config:
+    admin:
+      interface: 0
+      vlan: 0
+      network: 10.20.0.0
+      mask: 24
+      gateway: 10.20.0.1
+      dns: 10.20.0.1
+    mgmt:
+      interface: 0
+      vlan: 102
+      network: 192.168.102.0
+      mask: 24
+    storage:
+      interface: 0
+      vlan: 101
+      network: 192.168.101.0
+      mask: 24
+    private:
+      interface: 0
+      vlan: 103
+      network: 192.168.103.0
+      mask: 24
+    public:
+      interface: 1
+      vlan: 0
+      network: 192.168.20.0
+      mask: 24
