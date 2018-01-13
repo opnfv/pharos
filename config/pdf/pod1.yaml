@@ -41,7 +41,7 @@ jumphost:
       # several interface types possible
       disk_interface: {sata|sas|ssd|nvme}
       # define rotation speed of disk
-      disk_rotation: {5400|7200|10000|15000}
+      disk_rotation: {0|5400|7200|10000|15000}
     # second disk
     - name: 'disk2'
       disk_capacity: 2048G
