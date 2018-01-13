@@ -59,7 +59,7 @@ definitions:
           enum: ['sata', 'sas', 'ssd', 'nvme']
         disk_rotation:
           type: 'number'
-          enum: [5400, 7200, 10000, 15000]
+          enum: [0, 5400, 7200, 10000, 15000]
       required: ['name', 'disk_capacity', 'disk_type', 'disk_interface', 'disk_rotation']
       additionalProperties: false
   remote_management:
