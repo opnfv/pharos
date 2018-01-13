@@ -77,14 +77,14 @@ jumphost:
   # physical interface list
   interfaces:
     # first interface
-    - nic: {nic#number}
+    - name: {nic#number}
       # ip address of nic
       address: 192.168.100.1
       mac_address: "10:23:45:67:89:AC"
       # vlan tag, may have multiple tags
       vlan: {native|1-4095}
     # second interface
-    - nic: 'nic2'
+    - name: 'nic2'
       address: 10.20.0.1/24
       mac_address: "10:23:45:67:89:5B"
 nodes:
