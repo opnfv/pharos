@@ -46,40 +46,36 @@ jumphost:
     address: 172.16.1.21/24
     mac_address: "9C:B6:54:8E:C5:76"
   interfaces:
-    - nic: 'nic1'
+    - name: 'nic1'
       speed: 10gb
       features: 'dpdk|sriov'
       address: 100.64.200.5/24
       mac_address: "38:ea:a7:8f:53:00"
       vlan: 80
-    - nic: 'nic2'
+    - name: 'nic2'
       speed: 10gb
       features: 'dpdk|sriov'
-      address:
       mac_address: "38:ea:a7:8f:53:01"
       vlan: native
-    - nic: 'nic3'
+    - name: 'nic3'
       speed: 10gb
       features: 'dpdk|sriov'
       address: 172.16.0.250/16
       mac_address: "38:ea:a7:8f:06:00"
       vlan: native
-    - nic: 'nic4'
+    - name: 'nic4'
       speed: 10gb
       features: 'dpdk|sriov'
-      address:
       mac_address: "38:ea:a7:8f:06:01"
       vlan: native
-    - nic: 'nic5'
+    - name: 'nic5'
       speed: 10gb
       features: 'dpdk|sriov'
-      address:
       mac_address: "9c:b6:54:8a:05:70"
       vlan: native
-    - nic: 'nic6'
+    - name: 'nic6'
       speed: 10gb
       features: 'dpdk|sriov'
-      address:
       mac_address: "9c:b6:54:8a:05:74"
       vlan: native
 ##############################################################################
@@ -95,33 +91,27 @@ nodes:
       - name: 'nic1'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:98"
       - name: 'nic2'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:99"
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:84"
       - name: 'nic4'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:85"
-      - nic: 'nic5'
+      - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "14:58:d0:54:e7:88"
         vlan: native
-      - nic: 'nic6'
+      - name: 'nic6'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "00:00:00:00:00:00"
         vlan: native
   ############################################################################
@@ -136,33 +126,27 @@ nodes:
       - name: 'nic1'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:7c"
       - name: 'nic2'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:7d"
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:6c"
       - name: 'nic4'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6b:6d"
-      - nic: 'nic5'
+      - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "14:58:d0:54:6a:60"
         vlan: native
-      - nic: 'nic6'
+      - name: 'nic6'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "00:00:00:00:00:00"
         vlan: native
   ############################################################################
@@ -177,33 +161,27 @@ nodes:
       - name: 'nic1'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6a:38"
       - name: 'nic2'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6a:39"
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6a:3c"
       - name: 'nic4'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:17:6a:3d"
-      - nic: 'nic5'
+      - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "14:58:d0:54:7a:28"
         vlan: native
-      - nic: 'nic6'
+      - name: 'nic6'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "00:00:00:00:00:00"
         vlan: native
   ############################################################################
@@ -218,33 +196,27 @@ nodes:
       - name: 'nic1'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:1f:d4"
       - name: 'nic2'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:1f:d5"
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:52:cc"
       - name: 'nic4'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:52:cd"
-      - nic: 'nic5'
+      - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "9c:b6:54:8a:95:a0"
         vlan: native
-      - nic: 'nic6'
+      - name: 'nic6'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "00:00:00:00:00:00"
         vlan: native
   ############################################################################
@@ -259,32 +231,26 @@ nodes:
       - name: 'nic1'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:07:50"
       - name: 'nic2'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:07:51"
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:12:48"
       - name: 'nic4'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "38:ea:a7:8f:12:49"
-      - nic: 'nic5'
+      - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "9c:b6:54:8a:10:18"
         vlan: native
-      - nic: 'nic6'
+      - name: 'nic6'
         speed: 10gb
         features: 'dpdk|sriov'
-        address:
         mac_address: "00:00:00:00:00:00"
         vlan: native
