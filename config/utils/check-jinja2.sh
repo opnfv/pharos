@@ -20,47 +20,47 @@ RC=0
 echo "Using $(yamllint --version)"
 
 # Build a table header, using ';' as column sep
-SUMMARY='PDF Verify Matrix;YAML Lint;'
-for adapter in ${INSTALLER_ADAPTERS}; do
+for adapter in 'PDF Verify Matrix' ${INSTALLER_ADAPTERS}; do
     SUMMARY+="$(basename "${adapter}");"
 done
 
 # Iterate all PDFs, check with each installer adapter, log results
 while IFS= read -r lab_config; do
-    valid_yaml='OK'
-    echo -e "\n###################### ${lab_config} ######################\n"
-    echo -e "\n\nyamllint -s ${lab_config}"
-    if ! yamllint -s "${lab_config}"; then valid_yaml='FAIL'; fi
-    SUMMARY+="\n${lab_config#labs/};${valid_yaml};"
+    SUMMARY+="\n${lab_config#labs/};"
+    echo "###################### ${lab_config} ######################"
     for adapter in ${INSTALLER_ADAPTERS}; do
         pdf_inst=0
         pdf_inst_pass=0
         pdf_yaml_pass=0
         while IFS= read -r jinja_template; do
-            echo -e "\n${GEN_CFG} -y ${lab_config} -j ${jinja_template}"
-            if "${GEN_CFG}" -y "${lab_config}" \
-                            -j "${jinja_template}" > "${TMPF}"; then
-                echo 'Result: PASS'
+            pdf_gen_cmd="${GEN_CFG} -y ${lab_config} -j ${jinja_template}"
+            if ${pdf_gen_cmd} > "${TMPF}"; then
                 ((pdf_inst_pass+=1))
-                echo -e "\nyamllint -s ${jinja_template%.j2}"
+                echo "[GENERATE] [OK] ${pdf_gen_cmd}"
                 if yamllint -s <(sed 's|ENC\[PKCS.*\]|opnfv|g' "${TMPF}"); then
                     ((pdf_yaml_pass+=1));
+                    echo "[YAMLLINT] [OK] yamllint -s ${jinja_template%.j2}"
+                else
+                    echo "[YAMLLINT] [ERROR] yamllint -s ${jinja_template%.j2}"
                 fi
             else
-                echo 'Result: FAIL'
+                echo "[GENERATE] [ERROR] ${pdf_gen_cmd}"
                 RC=1
             fi
             ((pdf_inst+=1))
+            echo ''
         done < <(find "${adapter}" -name '*.j2')
         SUMMARY+="${pdf_yaml_pass}/${pdf_inst_pass}/${pdf_inst};"
     done
 done < <(find 'labs' -name 'pod*.yaml')
-
 rm -f "${TMPF}"
-echo -e '\n\nNOTE: tuple fmt: (valid YAML output/sucessful parse/templates).\n'
-echo -e "${SUMMARY}" | sed -e 's/^/;/g' -e 's/;/;| /g' | column -t -s ';'
 
 cat <<EOF
+###################### Result Matrix ######################
+
+NOTE: tuple fmt: (valid YAML output/sucessful parse/templates).
+
+$(echo -e "${SUMMARY}" | sed -e 's/^/;/g' -e 's/;/;| /g' | column -t -s ';')
 
 To troubleshoot PDF parsing against a specific installer adapter,
 execute the following commands locally (e.g. for zte-pod2/joid):
