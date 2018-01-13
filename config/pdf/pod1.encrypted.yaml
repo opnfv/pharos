@@ -39,7 +39,7 @@ jumphost:
       # several disk types possible
       disk_type: {hdd|ssd|cdrom|tape}
       # several interface types possible
-      disk_interface: {sata|sas|ssd|nvme}
+      disk_interface: {sata|sas|ssd|nvme|scsi|iscsi}
       # define rotation speed of disk
       disk_rotation: {5400|7200|10000|15000}
     # second disk
