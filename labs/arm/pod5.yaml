@@ -1,3 +1,10 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
 ---
 ### Enea ARM POD 5 descriptor file ###
 
@@ -8,40 +15,6 @@ details:
   location: Stockholm, Sweden
   type: production
   link: https://wiki.opnfv.org/display/pharos/Enea+Hosting
-##############################################################################
-net_config:
-  oob:
-    ip-range: 10.0.8.3-10.0.8.10
-    vlan: native
-  admin:
-    interface: 0
-    vlan: native
-    network: 192.168.11.0
-    mask: 24
-  mgmt:
-    interface: 1
-    vlan: 2183
-    network: 172.16.10.0
-    mask: 24
-  storage:
-    interface: 1
-    vlan: 2184
-    network: 10.2.0.0
-    mask: 24
-  private:
-    interface: 1
-    vlan: 2185
-    network: 10.1.0.0
-    mask: 24
-  public:
-    interface: 1
-    vlan: native
-    network: 10.0.8.0
-    mask: 24
-    gateway: 10.0.8.254
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
 ##############################################################################
 jumphost:
   name: jenkins-slave-arm-pod5
@@ -88,10 +61,6 @@ jumphost:
     - mac_address: "00:0f:b7:04:00:c0"
       speed: 10gb
       features: ''
-  fixed_ips:
-    admin: 192.168.11.1
-    mgmt: 172.16.10.1
-    public: 10.0.8.9
 ##############################################################################
 nodes:
   - name: softiron-3
@@ -127,10 +96,6 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:af"
         speed: 10gb
         features: ''
-    fixed_ips:
-      admin: 192.168.11.2
-      mgmt: 172.16.10.141
-      public: 10.0.8.141
   ############################################################################
   - name: softiron-4
     node: *nodeparams
@@ -146,10 +111,6 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:b2"
         speed: 10gb
         features: ''
-    fixed_ips:
-      admin: 192.168.11.3
-      mgmt: 172.16.10.142
-      public: 10.0.8.142
   ############################################################################
   - name: softiron-5
     node: *nodeparams
@@ -165,10 +126,6 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:be"
         speed: 10gb
         features: ''
-    fixed_ips:
-      admin: 192.168.11.4
-      mgmt: 172.16.10.143
-      public: 10.0.8.143
   ############################################################################
   - name: softiron-6
     node: *nodeparams
@@ -184,10 +141,6 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:c7"
         speed: 10gb
         features: ''
-    fixed_ips:
-      admin: 192.168.11.5
-      mgmt: 172.16.10.101
-      public: 10.0.8.101
   ############################################################################
   - name: softiron-7
     node: *nodeparams
@@ -203,7 +156,3 @@ nodes:
       - mac_address: "e0:ff:f7:00:08:d0"
         speed: 10gb
         features: ''
-    fixed_ips:
-      admin: 192.168.11.6
-      mgmt: 172.16.10.102
-      public: 10.0.8.102
