@@ -71,12 +71,14 @@ jumphost:
       ZIpvgBCa0QYVwRsEcqVofk2pmPKq]
   remote_management:
     <<: *remote_params
-    address:
-    mac_address:
+    # Not used, fill in with dummy values
+    address: 0.0.0.0
+    mac_address: "00:00:00:00:00:00"
   interfaces:
     - mac_address: "74:4a:a4:00:21:0c"
       speed: 1gb
       address: 10.20.0.1
+      name: 'nic1'
 nodes:
   - name: pod3-node1
     node: &nodeparas
@@ -107,15 +109,19 @@ nodes:
       - mac_address: "74:4a:a4:00:0b:85"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic1'
       - mac_address: "74:4a:a4:00:0b:86"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
       - mac_address: "74:4a:a4:00:0b:87"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic3'
       - mac_address: "74:4a:a4:00:0b:88"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic4'
   - name: pod3-node2
     node: *nodeparas
     disks: *disks
@@ -127,15 +133,19 @@ nodes:
       - mac_address: "74:4a:a4:00:5c:5d"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic1'
       - mac_address: "74:4a:a4:00:5c:5e"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
       - mac_address: "74:4a:a4:00:5c:5f"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic3'
       - mac_address: "74:4a:a4:00:5c:60"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic4'
   - name: pod3-node3
     node: *nodeparas
     disks: *disks
@@ -147,15 +157,19 @@ nodes:
       - mac_address: "74:4a:a4:00:5c:35"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic1'
       - mac_address: "74:4a:a4:00:5c:36"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
       - mac_address: "74:4a:a4:00:5c:37"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic3'
       - mac_address: "74:4a:a4:00:5c:38"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic4'
   - name: pod3-node4
     node: *nodeparas
     disks: *disks
@@ -167,15 +181,19 @@ nodes:
       - mac_address: "74:4a:a4:00:5c:69"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic1'
       - mac_address: "74:4a:a4:00:5c:6a"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
       - mac_address: "74:4a:a4:00:5c:6b"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic3'
       - mac_address: "74:4a:a4:00:5c:6c"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic4'
   - name: pod3-node5
     node: *nodeparas
     disks: *disks
@@ -187,12 +205,16 @@ nodes:
       - mac_address: "74:4a:a4:00:5c:6d"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic1'
       - mac_address: "74:4a:a4:00:5c:6e"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
       - mac_address: "74:4a:a4:00:5c:6f"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic3'
       - mac_address: "74:4a:a4:00:5c:70"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic4'
