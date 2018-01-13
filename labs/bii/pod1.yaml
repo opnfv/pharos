@@ -1,7 +1,7 @@
 ### This is a BII POD1 descriptor file ###
 ---
 details:
-  pod owner: ylong@BII
+  pod_owner: ylong@BII
   contact: ylong@biigroup.cn, zjtang@biigroup.cn
   lab: BII Pharos LAB
   location: BDA, Beijing, China
@@ -59,8 +59,10 @@ jumphost:
   interfaces:                               # physical interface list
     - mac_address: "44:a8:42:15:10:03"
       address: 10.20.0.2
+      name: 'nic1'
     - mac_address: "44:a8:42:15:10:04"
       address: 192.168.20.5
+      name: 'nic2'
 ###################################################
 nodes:
   - name: compute1
@@ -106,6 +108,7 @@ nodes:
     interfaces:                               # physical interface list
       - mac_address: "44:a8:42:14:ee:64"
         address: 10.20.0.4
+        name: 'nic1'
   ########################################
   - name: compute2
     node: *nodeparas
@@ -117,6 +120,7 @@ nodes:
     interfaces:
       - mac_address: "44:a8:42:14:cb:31"
         address: 10.20.0.5
+        name: 'nic1'
   ########################################
   - name: controller1
     node: *nodeparas
@@ -128,8 +132,10 @@ nodes:
     interfaces:
       - mac_address: "44:a8:42:14:cd:0d"
         address: 10.20.0.6
+        name: 'nic1'
       - mac_address: "44:a8:42:14:cd:0e"
         address: 192.168.20.12
+        name: 'nic2'
   ########################################
   - name: controller2
     node: *nodeparas
@@ -141,8 +147,10 @@ nodes:
     interfaces:
       - mac_address: "44:a8:42:15:1b:e6"
         address: 10.20.0.7
+        name: 'nic1'
       - mac_address: "44:a8:42:15:1b:e7"
         address: 192.168.20.13
+        name: 'nic2'
   ########################################
   - name: controller3
     node: *nodeparas
@@ -154,5 +162,7 @@ nodes:
     interfaces:
       - mac_address: "44:a8:42:14:fc:1a"
         address: 10.20.0.8
+        name: 'nic1'
       - mac_address: "44:a8:42:14:fc:1b"
         address: 192.168.20.14
+        name: 'nic2'
