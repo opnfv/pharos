@@ -1,18 +1,23 @@
 ---
 {%- if conf.idf is defined and conf.idf.fuel is defined -%}
   {%- if conf.net_config is defined -%}
-      {%- set net_admin = conf.net_config.admin.network -%}
-      {%- set net_mgmt = conf.net_config.mgmt.network -%}
-      {%- set net_private = conf.net_config.private.network -%}
-      {%- set net_public = conf.net_config.public.network -%}
-      {%- set vlan_mgmt = conf.net_config.mgmt.vlan -%}
-      {%- set vlan_private = conf.net_config.private.vlan -%}
-      {%- if conf.net_config.public.dns is defined -%}
-          {%- set dns_public = conf.net_config.public.dns -%}
+      {%- set conf_net_config = conf.net_config -%}
+  {%- elif conf.idf.net_config is defined -%}
+      {%- set conf_net_config = conf.idf.net_config -%}
+  {%- endif -%}
+  {%- if conf_net_config is defined -%}
+      {%- set net_admin = conf_net_config.admin.network -%}
+      {%- set net_mgmt = conf_net_config.mgmt.network -%}
+      {%- set net_private = conf_net_config.private.network -%}
+      {%- set net_public = conf_net_config.public.network -%}
+      {%- set vlan_mgmt = conf_net_config.mgmt.vlan -%}
+      {%- set vlan_private = conf_net_config.private.vlan -%}
+      {%- if conf_net_config.public.dns is defined -%}
+          {%- set dns_public = conf_net_config.public.dns -%}
       {%- endif -%}
-      {%- set pxe_interface = conf.net_config.admin.interface -%}
-      {%- if conf.net_config.public.gateway is defined -%}
-          {%- set net_public_gw = conf.net_config.public.gateway -%}
+      {%- set pxe_interface = conf_net_config.admin.interface -%}
+      {%- if conf_net_config.public.gateway is defined -%}
+          {%- set net_public_gw = conf_net_config.public.gateway -%}
       {%- endif -%}
   {%- else -%}
       {%- set net_admin = '192.168.11.0' -%}
