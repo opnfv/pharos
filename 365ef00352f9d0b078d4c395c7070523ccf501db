@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_ecae492d",
+        "filename": "labs/zte/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-01-14T00:52:12Z",
+      "side": 1,
+      "message": "hi Aric, in which patch introduces this parameter, and mac_address of the OOB?",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 20
+      },
+      "revId": "365ef00352f9d0b078d4c395c7070523ccf501db",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
