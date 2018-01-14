@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_2c2af18f",
+        "filename": "config/utils/check-schema.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-01-14T01:30:59Z",
+      "side": 1,
+      "message": "sed/encrypted strings/simple texts/g, like \"opnfv\" in one of your patches.",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "c7e0c54803fa2e93a8148f4cd1d3b51fd4b4ecc4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4c2db5a7",
+        "filename": "config/utils/check-schema.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-01-14T01:30:59Z",
+      "side": 1,
+      "message": "config",
+      "range": {
+        "startLine": 32,
+        "startChar": 15,
+        "endLine": 32,
+        "endChar": 19
+      },
+      "revId": "c7e0c54803fa2e93a8148f4cd1d3b51fd4b4ecc4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
