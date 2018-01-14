@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_2c53113a",
+        "filename": "labs/intel/pod18.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-01-14T01:20:11Z",
+      "side": 1,
+      "message": "in some patch, I think you suggest to use ~ instead of \u0027\u0027",
+      "range": {
+        "startLine": 85,
+        "startChar": 18,
+        "endLine": 85,
+        "endChar": 20
+      },
+      "revId": "490f1a660882c832fdb3b56d9299dab4063be09e",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
