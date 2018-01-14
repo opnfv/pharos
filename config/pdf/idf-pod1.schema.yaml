@@ -1,0 +1,76 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+$schema: 'http://json-schema.org/schema#'
+$id: 'https://github.com/opnfv/pharos/blob/master/config/pdf/pod1.yaml'
+
+# Do not allow any properties not defined here. This lets us catch typos.
+additionalProperties: false
+
+properties:
+  idf:
+    type: 'object'
+    required: ['version', 'net_config']
+    additionalProperties: false
+    properties:
+      version:
+        type: 'number'
+        enum: [0.1]
+      net_config:
+        # NOTE: I hope this is going away soon, so I won't model it yet
+        type: 'object'
+      ########################################################################
+      # Fuel specific configuration (Optional)
+      fuel:
+        type: 'object'
+        properties:
+          jumphost:
+            type: 'object'
+            properties:
+              bridges:
+                type: 'object'
+                properties:
+                  admin:
+                    type: ['string', 'null']
+                  mgmt:
+                    type: ['string', 'null']
+                  private:
+                    type: ['string', 'null']
+                  public:
+                    type: ['string', 'null']
+                required: ['admin', 'mgmt', 'private', 'public']
+                additionalProperties: false
+            required: ['bridges']
+            additionalProperties: false
+          network:
+            type: 'object'
+            properties:
+              node:
+                type: 'array'
+                items:
+                  type: 'object'
+                  properties:
+                    interfaces:
+                      type: 'array'
+                      items:
+                        type: ['string', 'null']
+                    busaddr:
+                      type: 'array'
+                      items:
+                        type: ['string', 'null']
+                  required: ['interfaces', 'busaddr']
+                  additionalProperties: false
+            required: ['node']
+            additionalProperties: false
+        required: ['jumphost', 'network']
+        additionalProperties: false
+      ########################################################################
+      # Daisy specific configuration (Optional)
+      daisy:
+        type: 'object'
+        # NOTE: To be properly modeled by Daisy maintainers
