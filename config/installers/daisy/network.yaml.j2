@@ -39,18 +39,12 @@ network-config-metadata:
     {%- set installer = "fuel" -%}
   {%- endif %}
 
-{%- if conf.net_config is defined -%}
-    {%- set conf_net_config = conf.net_config -%}
-{%- elif conf.idf.net_config is defined -%}
-    {%- set conf_net_config = conf.idf.net_config -%}
-{%- endif %}
-
 networks:
 
   {%- set nodes_num = conf['nodes'] | length -%}
   {%- set networks = {} -%}
   {%- for key in mapping -%}
-    {%- set net_data = conf_net_config[mapping[key]] -%}
+    {%- set net_data = conf.idf.net_config[mapping[key]] -%}
     {%- set interface = net_data['interface'] -%}
     {%- set interface_name = conf.idf[installer].network.node[0].interfaces[interface] -%}
     {%- set bus_addr = conf.idf[installer].network.node[0].busaddr[interface] -%}
