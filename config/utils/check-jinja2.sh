@@ -12,7 +12,7 @@ set +x
 set +o errexit
 export PATH=$PATH:/usr/local/bin/
 
-GEN_CFG='./config/utils/generate_config.py'
+GEN_CFG='python ./config/utils/generate_config.py'
 INSTALLER_ADAPTERS='./config/installers/*'
 TMPF='/tmp/out.yml' # should be outside Jenkins WS to prevent data leakage
 RC=0
