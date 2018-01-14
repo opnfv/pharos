@@ -45,6 +45,30 @@
       "revId": "365ef00352f9d0b078d4c395c7070523ccf501db",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_17d0d61d",
+        "filename": "labs/zte/pod1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-14T19:24:18Z",
+      "side": 1,
+      "message": "This was introduced by the first PDF specification commit [1].\nIf I\u0027m reading the spec right, this is restriced to \u0027nicN\u0027, where N is an integer. If I\u0027m not right, please correct me, as I enforced the same format in the PDF schema change.\n\n[1] https://github.com/opnfv/pharos/commit/bfc8380897472516e7c0302a506b115ebb905aec#diff-c039a05d409a30f7cee794ae4eab44f6R46",
+      "parentUuid": "9a3d3df0_2ca5d146",
+      "range": {
+        "startLine": 112,
+        "startChar": 8,
+        "endLine": 112,
+        "endChar": 20
+      },
+      "revId": "365ef00352f9d0b078d4c395c7070523ccf501db",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
