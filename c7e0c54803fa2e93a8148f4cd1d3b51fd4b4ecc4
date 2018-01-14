@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_d7a30efe",
+        "filename": "config/utils/check-schema.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-14T02:25:53Z",
+      "side": 1,
+      "message": "I tried, but that doesn\u0027t works that easily here.\nIn that other patch, we sed a YAML that was parsed and has a single line for \"user: ENC[PK...\", while here we might have the user-friendly format\n\"user: \u003e\n  ENC[PK...\n  ...]\"\nThis is not a security risk, as we only print encrypted strings, but it is annoying to debug when schema validation fails.",
+      "parentUuid": "9a3d3df0_2c2af18f",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 6
+      },
+      "revId": "c7e0c54803fa2e93a8148f4cd1d3b51fd4b4ecc4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_4c2db5a7",
         "filename": "config/utils/check-schema.sh",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-14T01:30:59Z",
       "side": 1,
       "message": "config",
+      "range": {
+        "startLine": 32,
+        "startChar": 15,
+        "endLine": 32,
+        "endChar": 19
+      },
+      "revId": "c7e0c54803fa2e93a8148f4cd1d3b51fd4b4ecc4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_77a202fe",
+        "filename": "config/utils/check-schema.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-14T02:25:53Z",
+      "side": 1,
+      "message": "this iterates all lab PDFs. we can\u0027t parse config/pdf/pod1.yaml against the schema, as that is already a semi-template (half the stuff is expressed as \"{possible val1| possible val2}\", while the rest is regular PDF syntax).",
+      "parentUuid": "9a3d3df0_4c2db5a7",
       "range": {
         "startLine": 32,
         "startChar": 15,
