@@ -34,6 +34,8 @@ def schema_version_workaround(node):
         if type(item) is dict:
             schema_version_workaround(item)
 schema_version_workaround(_DICT)
+if 'idf' in _DICT:
+  schema_version_workaround(_DICT['idf'])
 
 _VALIDATOR = jsonschema.Draft4Validator(_SCHEMA)
 for error in _VALIDATOR.iter_errors(_DICT):

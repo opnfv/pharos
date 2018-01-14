@@ -19,7 +19,7 @@ FILTER_LAB=${1:-*}                           # e.g. 'zte'  (glob)
 FILTER_POD=${2:-(pod|virtual)[[:digit:]]+}   # e.g. 'pod1' (regex)
 FILTER_IA=${3:-*}                            # e.g. 'fuel' (glob)
 
-GEN_CFG='./config/utils/generate_config.py'
+GEN_CFG='python ./config/utils/generate_config.py'
 INSTALLER_ADAPTERS="./config/installers/${FILTER_IA}"
 TMPF='/tmp/out.yml' # should be outside Jenkins WS to prevent data leakage
 RC=0
