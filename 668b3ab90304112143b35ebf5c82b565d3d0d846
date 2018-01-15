@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3d3df0_d2db1c4d",
+        "filename": "labs/huawei/idf-pod1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-01-15T16:21:54Z",
+      "side": 1,
+      "message": "in some of the patches, Alex change 2017 to 2018? I don\u0027t know shall we keep it up to date?",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "668b3ab90304112143b35ebf5c82b565d3d0d846",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d27afc75",
         "filename": "labs/huawei/pod1.yaml",
         "patchSetId": 6
