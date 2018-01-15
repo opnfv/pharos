@@ -52,18 +52,19 @@ ENV = Environment(loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)))
 ENV.filters['ipaddr_index'] = ipaddr_index
 ENV.filters['dpkg_arch'] = dpkg_arch
 
-# Run `eyaml decrypt` on the whole file, in case any PDF data is encrypted
+# Run `eyaml decrypt` on the whole file, but only if PDF data is encrypted
 # Note: eyaml return code is 0 even if keys are not available
 try:
-    DICT = yaml.safe_load(check_output(['eyaml', 'decrypt', '-f', ARGS.yaml]))
+    if 'ENC[PKCS7' in open(ARGS.yaml).read():
+        DICT = yaml.safe_load(check_output(['eyaml', 'decrypt',
+                                            '-f', ARGS.yaml]))
 except CalledProcessError as ex:
-    logging.error('eyaml decryption failed!')
+    logging.error('eyaml decryption failed! Fallback to raw data.')
 except OSError as ex:
-    logging.warn('eyaml not found, skipping decryption')
+    logging.warn('eyaml not found, skipping decryption. Fallback to raw data.')
 try:
     DICT['details']
 except (NameError, TypeError) as ex:
-    logging.warn('PDF decryption skipped, fallback to using raw data.')
     with open(ARGS.yaml) as _:
         DICT = yaml.safe_load(_)
 
