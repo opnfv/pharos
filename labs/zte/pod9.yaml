@@ -32,7 +32,7 @@ jumphost:
       disk_capacity: 107G
       disk_type: hdd
       disk_interface: sas
-      disk_rotation: 10500
+      disk_rotation: 10000
   os: CentOS-7
   remote_params: &remote_params
     type: ipmi
@@ -60,12 +60,14 @@ jumphost:
       WSgUgBDYj5D5l/12XoUNXxGDebYT]
   remote_management:
     <<: *remote_params
-    address:
-    mac_address:
+    # Not used, fill in with dummy values
+    address: 0.0.0.0
+    mac_address: "00:00:00:00:00:00"
   interfaces:
     - mac_address: "00:1b:21:89:30:87"
       speed: 10gb
       address: 10.20.7.1
+      name: 'nic1'
 nodes:
   - name: pod9-node1
     node: &nodeparas
@@ -91,9 +93,11 @@ nodes:
       - mac_address: "74:4a:a4:03:bf:96"
         speed: 1gb
         features: null
+        name: 'nic1'
       - mac_address: "74:4a:a4:05:ee:86"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
   - name: pod9-node2
     node: *nodeparas
     disks: &disks
@@ -115,9 +119,11 @@ nodes:
       - mac_address: "74:4a:a4:03:bf:c6"
         speed: 1gb
         features: null
+        name: 'nic1'
       - mac_address: "74:4a:a4:05:ee:9a"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
   - name: pod9-node3
     node: *nodeparas
     disks: *disks
@@ -129,6 +135,8 @@ nodes:
       - mac_address: "74:4a:a4:03:bf:fe"
         speed: 1gb
         features: null
+        name: 'nic1'
       - mac_address: "74:4a:a4:05:ee:7e"
         speed: 10gb
         features: dpdk|sriov
+        name: 'nic2'
