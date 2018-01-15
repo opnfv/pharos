@@ -8,6 +8,7 @@
 ---
 ### LF POD 5 descriptor file ###
 
+version: 1.0
 details:
   pod_owner: Trevor Bramwell
   contact: tbramwell@linuxfoundation.org

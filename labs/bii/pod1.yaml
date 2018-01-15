@@ -1,5 +1,6 @@
 ### This is a BII POD1 descriptor file ###
 ---
+version: 1.0
 details:
   pod_owner: ylong@BII
   contact: ylong@biigroup.cn, zjtang@biigroup.cn
