@@ -1,6 +1,8 @@
 ---
 ### POD descriptor file ###
 
+version: 1.0
+
 details:
   pod_owner: Lab Owner
   contact: email@address.com

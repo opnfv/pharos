@@ -9,6 +9,7 @@
 ### ZTE POD 1 descriptor file ###
 # refering to https://gerrit.opnfv.org/gerrit/#/c/23727/9/config/pod1.yaml
 
+version: 1.0
 details:
   pod_owner: Alex Yang
   contact: yangyang1@zte.com.cn
