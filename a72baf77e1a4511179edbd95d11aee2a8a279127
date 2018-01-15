@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_69a226fe",
+        "filename": "config/pdf/idf-pod1.schema.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-15T19:52:15Z",
+      "side": 1,
+      "message": "This works as expected, but when there\u0027s a validation error, `anyOf` dumps the whole json instead of just the conflicting subsection, making debugging simply impossible.\njsonschema draft V4 does not support decisions based on key value (\u0027version\u0027: 0.1), but does support decisions based on key existence (\u0027v0.1\u0027: true).\nI will test whether we can use jsonschema V5 draft, or propose something based on the above, because `anyOf` is just terrible here.\nWhen we\u0027re happy with the version handling for IDF, I will propose something similar for the PDF.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 44
+      },
+      "revId": "a72baf77e1a4511179edbd95d11aee2a8a279127",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
