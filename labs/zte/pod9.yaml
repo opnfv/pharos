@@ -65,9 +65,7 @@ jumphost:
   interfaces:
     - mac_address: "00:1b:21:89:30:87"
       speed: 10gb
-  fixed_ips:
-    admin: 10.20.7.1
-    public: 192.168.21.195
+      address: 10.20.7.1
 nodes:
   - name: pod9-node1
     node: &nodeparas

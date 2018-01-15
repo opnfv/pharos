@@ -44,7 +44,7 @@ networks:
   {%- set nodes_num = conf['nodes'] | length -%}
   {%- set networks = {} -%}
   {%- for key in mapping -%}
-    {%- set net_data = conf['net_config'][mapping[key]] -%}
+    {%- set net_data = conf.idf.net_config[mapping[key]] -%}
     {%- set interface = net_data['interface'] -%}
     {%- set interface_name = conf.idf[installer].network.node[0].interfaces[interface] -%}
     {%- set bus_addr = conf.idf[installer].network.node[0].busaddr[interface] -%}

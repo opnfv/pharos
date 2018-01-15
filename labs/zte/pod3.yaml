@@ -1,3 +1,10 @@
+##############################################################################
+# Copyright (c) 2018 ZTE, Mirantis Inc., Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
 ---
 ### ZTE POD 3 descriptor file ###
 # refering to https://gerrit.opnfv.org/gerrit/#/c/23727/9/config/pod1.yaml
@@ -9,41 +16,6 @@ details:
   location: Shanghai, China
   type: production
   link: https://wiki.opnfv.org/display/pharos/ZTE+SH+Testlab
-##############################################################################
-net_config:
-  # NOTE: Network names are likely to change after the PDF spec is updated
-  oob:
-    interface: 0
-    ip-range: 192.168.1.32-192.168.1.36
-    vlan: null
-  admin:
-    interface: 0
-    vlan: native
-    network: 10.20.0.0
-    mask: 24
-  mgmt:
-    interface: 1
-    vlan: 101
-    network: 192.168.11.0
-    mask: 24
-  storage:
-    interface: 2
-    vlan: 102
-    network: 192.168.12.0
-    mask: 24
-  private:
-    interface: 3
-    vlan: 1030
-    network: 192.168.13.0
-    mask: 24
-  public:
-    interface: 3
-    vlan: 103
-    network: 172.10.0.0
-    mask: 24
-    gateway: 172.10.0.1
-    dns:
-      - 172.10.0.1
 ##############################################################################
 jumphost:
   name: pod3-jump
@@ -104,9 +76,7 @@ jumphost:
   interfaces:
     - mac_address: "74:4a:a4:00:21:0c"
       speed: 1gb
-  fixed_ips:
-    admin: 10.20.0.1
-    public: 172.10.0.240
+      address: 10.20.0.1
 nodes:
   - name: pod3-node1
     node: &nodeparas

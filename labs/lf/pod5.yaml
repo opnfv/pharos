@@ -1,3 +1,10 @@
+##############################################################################
+# Copyright (c) 2018 Linux Foundation, Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
 ---
 ### LF POD 5 descriptor file ###
 
@@ -40,16 +47,13 @@ jumphost:
     - mac_address: "a4:bf:01:01:ad:71"
       speed: 1gb
       features: 'dpdk|sriov'
+      address: 10.20.0.129
     - mac_address: "00:1e:67:fd:9c:c2"
       speed: 10gb
       features: 'dpdk|sriov'
     - mac_address: "00:1e:67:fd:9c:c3"
       speed: 10gb
       features: 'dpdk|sriov'
-  fixed_ips:
-    admin: 10.20.0.129
-    mgmt: 192.168.0.130
-    public: 172.30.13.89
 nodes:
   - name: pod5-node1
     node: *nodeparas
@@ -68,10 +72,6 @@ nodes:
       - mac_address: "00:1e:67:f6:9b:35"
         speed: 10gb
         features: 'dpdk|sriov'
-    fixed_ips:
-      admin: 10.20.0.130
-      mgmt: 192.168.0.131
-      public: 172.30.13.90
   - name: pod5-node2
     node: *nodeparas
     disks: *disks
@@ -89,10 +89,6 @@ nodes:
       - mac_address: "00:1e:67:f6:9b:37"
         speed: 10gb
         features: 'dpdk|sriov'
-    fixed_ips:
-      admin: 10.20.0.131
-      mgmt: 192.168.0.132
-      public: 172.30.13.91
   - name: pod5-node3
     node: *nodeparas
     disks: *disks
@@ -110,10 +106,6 @@ nodes:
       - mac_address: "00:1e:67:fd:9c:b1"
         speed: 10gb
         features: 'dpdk|sriov'
-    fixed_ips:
-      admin: 10.20.0.132
-      mgmt: 192.168.0.133
-      public: 172.30.13.92
   - name: pod5-node4
     node: *nodeparas
     disks: *disks
@@ -131,10 +123,6 @@ nodes:
       - mac_address: "00:1e:67:fd:99:25"
         speed: 10gb
         features: 'dpdk|sriov'
-    fixed_ips:
-      admin: 10.20.0.133
-      mgmt: 192.168.0.134
-      public: 172.30.13.93
   - name: pod5-node5
     node: *nodeparas
     disks: *disks
@@ -152,7 +140,3 @@ nodes:
       - mac_address: "00:1e:67:f6:9b:97"
         speed: 10gb
         features: 'dpdk|sriov'
-    fixed_ips:
-      admin: 10.20.0.134
-      mgmt: 192.168.0.135
-      public: 172.30.13.94

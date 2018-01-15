@@ -1,5 +1,5 @@
 ##############################################################################
-# Copyright (c) 2017 ZTE, Mirantis Inc., Enea AB and others.
+# Copyright (c) 2018 ZTE, Mirantis Inc., Enea AB and others.
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Apache License, Version 2.0
 # which accompanies this distribution, and is available at
@@ -10,6 +10,39 @@
 
 idf:
   version: 0.1
+  net_config:
+    oob:
+      interface: 0
+      ip-range: 192.168.1.101-192.168.1.105
+      vlan: null
+    admin:
+      interface: 0
+      vlan: native
+      network: 10.10.6.0
+      mask: 24
+    mgmt:
+      interface: 1
+      vlan: 161
+      network: 192.168.61.0
+      mask: 24
+    storage:
+      interface: 2
+      vlan: 162
+      network: 192.168.62.0
+      mask: 24
+    private:
+      interface: 3
+      vlan: 1120
+      network: 192.168.63.0
+      mask: 24
+    public:
+      interface: 4
+      vlan: 163
+      network: 172.60.0.0
+      mask: 24
+      gateway: 172.60.0.1
+      dns:
+        - 172.10.0.1
   fuel:
     jumphost:
       bridges:

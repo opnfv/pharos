@@ -8,35 +8,6 @@ details:
   type: development
   link: https://wiki.opnfv.org/display/pharos/BII
 ###################################################
-net_config:
-  admin:
-    interface: 0
-    vlan: 0
-    network: 10.20.0.0
-    mask: 24
-    gateway: 10.20.0.1
-    dns: 10.20.0.1
-  mgmt:
-    interface: 0
-    vlan: 102
-    network: 192.168.102.0
-    mask: 24
-  storage:
-    interface: 0
-    vlan: 101
-    network: 192.168.101.0
-    mask: 24
-  private:
-    interface: 0
-    vlan: 103
-    network: 192.168.103.0
-    mask: 24
-  public:
-    interface: 1
-    vlan: 0
-    network: 192.168.20.0
-    mask: 24
-###################################################
 jumphost:
   name: fuel
   node:
@@ -86,11 +57,10 @@ jumphost:
     address: 192.168.20.200
     mac_address: "44:A8:42:1A:68:78"
   interfaces:                               # physical interface list
-    - "44:a8:42:15:10:03"
-    - "44:a8:42:15:10:04"
-  fixed_ips:
-    admin: 10.20.0.2
-    public: 192.168.20.5
+    - mac_address: "44:a8:42:15:10:03"
+      address: 10.20.0.2
+    - mac_address: "44:a8:42:15:10:04"
+      address: 192.168.20.5
 ###################################################
 nodes:
   - name: compute1
@@ -134,9 +104,8 @@ nodes:
       address: 192.168.20.201
       mac_address: "44:A8:42:1A:70:BE"
     interfaces:                               # physical interface list
-      - "44:a8:42:14:ee:64"
-    fixed_ips:
-      admin: 10.20.0.4
+      - mac_address: "44:a8:42:14:ee:64"
+        address: 10.20.0.4
   ########################################
   - name: compute2
     node: *nodeparas
@@ -146,9 +115,8 @@ nodes:
       address: 192.168.20.202
       mac_address: "44:A8:42:1A:76:26"
     interfaces:
-      - "44:a8:42:14:cb:31"
-    fixed_ips:
-      admin: 10.20.0.5
+      - mac_address: "44:a8:42:14:cb:31"
+        address: 10.20.0.5
   ########################################
   - name: controller1
     node: *nodeparas
@@ -158,11 +126,10 @@ nodes:
       address: 192.168.20.203
       mac_address: "44:A8:42:1A:49:A5"
     interfaces:
-      - "44:a8:42:14:cd:0d"
-      - "44:a8:42:14:cd:0e"
-    fixed_ips:
-      admin: 10.20.0.6
-      public: 192.168.20.12
+      - mac_address: "44:a8:42:14:cd:0d"
+        address: 10.20.0.6
+      - mac_address: "44:a8:42:14:cd:0e"
+        address: 192.168.20.12
   ########################################
   - name: controller2
     node: *nodeparas
@@ -172,11 +139,10 @@ nodes:
       address: 192.168.20.204
       mac_address: "44:A8:42:1A:76:2C"
     interfaces:
-      - "44:a8:42:15:1b:e6"
-      - "44:a8:42:15:1b:e7"
-    fixed_ips:
-      admin: 10.20.0.7
-      public: 192.168.20.13
+      - mac_address: "44:a8:42:15:1b:e6"
+        address: 10.20.0.7
+      - mac_address: "44:a8:42:15:1b:e7"
+        address: 192.168.20.13
   ########################################
   - name: controller3
     node: *nodeparas
@@ -186,8 +152,7 @@ nodes:
       address: 192.168.20.205
       mac_address: "44:A8:42:13:D5:1B"
     interfaces:
-      - "44:a8:42:14:fc:1a"
-      - "44:a8:42:14:fc:1b"
-    fixed_ips:
-      admin: 10.20.0.8
-      public: 192.168.20.14
+      - mac_address: "44:a8:42:14:fc:1a"
+        address: 10.20.0.8
+      - mac_address: "44:a8:42:14:fc:1b"
+        address: 192.168.20.14
