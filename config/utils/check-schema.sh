@@ -16,7 +16,7 @@ RC=0
 while IFS= read -r lab_config; do
     pdf_cmd="${VALIDATE_SCHEMA} -s ${PDF_SCHEMA} -y ${lab_config}"
     echo "###################### ${lab_config} ######################"
-    pdf_out=$(${pdf_cmd} |& sed 's|ENC\[PKCS.*\]|opnfv|g')
+    pdf_out=$(${pdf_cmd} |& sed 's|ENC\[PKCS.*\][\\n]*|opnfv|g')
     if [ -z "${pdf_out}" ]; then
         SUMMARY+=";${lab_config#labs/};OK;\n"
         echo "[PDF] [OK] ${pdf_cmd}"

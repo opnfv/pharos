@@ -8,6 +8,7 @@
 ---
 ### ZTE POD 9 descriptor file ###
 
+version: 1.0
 details:
   pod_owner: Zhiijang Hu
   contact: huzhijiang@zte.com.cn
