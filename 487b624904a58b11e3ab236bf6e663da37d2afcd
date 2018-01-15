@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_46e59136",
+        "filename": "config/pdf/pod1.schema.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-01-15T11:19:55Z",
+      "side": 1,
+      "message": "I think we should aim to get every IP address under IDF eventually (except maybe the IPMI one, which is board configuration). The networks defined net_config on IDF would be aligned with the chosen IPs all under the same file, leaving a simpler PDF. But thats another step further. This evolution is a good improvement",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 42
+      },
+      "revId": "487b624904a58b11e3ab236bf6e663da37d2afcd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
