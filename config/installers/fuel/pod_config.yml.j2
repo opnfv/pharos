@@ -5,6 +5,7 @@
       {%- set net_mgmt = conf.idf.net_config.mgmt.network -%}
       {%- set net_private = conf.idf.net_config.private.network -%}
       {%- set net_public = conf.idf.net_config.public.network -%}
+      {%- set net_public_mask = conf.idf.net_config.public.mask -%}
       {%- set vlan_mgmt = conf.idf.net_config.mgmt.vlan -%}
       {%- set vlan_private = conf.idf.net_config.private.vlan -%}
       {%- if conf.idf.net_config.public.dns is defined -%}
@@ -19,6 +20,7 @@
       {%- set net_mgmt = '172.16.10.0' -%}
       {%- set net_private = '10.1.0.0' -%}
       {%- set net_public = '172.30.10.0' -%}
+      {%- set net_public_mask = '24' -%}
       {%- set vlan_mgmt = '300' -%}
       {%- set vlan_private = '1000' -%}
       {%- set pxe_interface = 0 -%}
@@ -29,7 +31,7 @@
   {%- endif -%}
   {%- if net_public_gw is not defined -%}
       {%- set net_public_gw =  net_public | ipaddr_index('1')  -%}
-  {%- endif %}
+  {%- endif -%}
 parameters:
   _param:
 
@@ -92,7 +94,11 @@ parameters:
 
     opnfv_opendaylight_server_node01_single_address: {{ net_mgmt | ipaddr_index(111) }}
 
+    opnfv_net_public: {{ net_public }}/{{ net_public_mask }}
+    opnfv_net_public_mask: {{ net_public_mask | netmask }}
     opnfv_net_public_gw: {{ net_public_gw }}
+    opnfv_net_public_pool_start: {{ net_public | ipaddr_index(80) }}
+    opnfv_net_public_pool_end: {{ net_public | ipaddr_index(100) }}
     opnfv_name_servers: {{ dns_public }}
     opnfv_dns_server01: '{{ dns_public[0] }}'
 
