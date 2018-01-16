@@ -1,0 +1,46 @@
+##############################################################################
+# Copyright (c) 2017 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### ARM POD 6 installer descriptor file ###
+
+idf:
+  version: 0.1
+  fuel:
+    jumphost:
+      bridges:
+        admin: 'admin14_br0'
+        mgmt: 'mgmt14_br0'
+        private: ''
+        public: 'public14_br0'
+    network:
+      node:
+        # Ordered-list, index should be in sync with node index in PDF
+        - interfaces: &interfaces
+            # Ordered-list, index should be in sync with interface index in PDF
+            - 'enP5p144s0'
+            - 'enP2p1s0f1'
+            - 'enP2p1s0f2'
+            - 'enP2p1s0f3'
+            - 'enP2p1s0f4'
+            - 'enP2p1s0f5'
+          busaddr: &busaddr
+            # Bus-info reported by `ethtool -i ethX`
+            - '0005:90:00.0'
+            - '0002:01:00.1'
+            - '0002:01:00.2'
+            - '0002:01:00.3'
+            - '0002:01:00.4'
+            - '0002:01:00.5'
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr

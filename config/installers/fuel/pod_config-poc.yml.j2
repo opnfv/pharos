@@ -1,26 +1,24 @@
----
-{%- if conf.idf is defined and conf.idf.fuel is defined -%}
-  {%- if conf.idf.net_config is defined -%}
-      {%- set net_admin = conf.idf.net_config.admin.network -%}
-      {%- set net_mgmt = conf.idf.net_config.mgmt.network -%}
-      {%- set net_private = conf.idf.net_config.private.network -%}
-      {%- set net_public = conf.idf.net_config.public.network -%}
-      {%- set net_public_mask = conf.idf.net_config.public.mask -%}
-      {%- set vlan_mgmt = conf.idf.net_config.mgmt.vlan -%}
-      {%- set vlan_private = conf.idf.net_config.private.vlan -%}
-      {%- if conf.idf.net_config.public.dns is defined -%}
-          {%- set dns_public = conf.idf.net_config.public.dns -%}
+{%- import 'poc-macros.j2' as macros -%}
+{%- if conf.idf.fuel is defined -%}
+  {%- if conf.idf.common.net_config is defined -%}
+      {%- set net_admin = conf.idf.common.net_config.admin.network -%}
+      {%- set net_mgmt = conf.idf.common.net_config.mgmt.network -%}
+      {%- set net_private = conf.idf.common.net_config.private.network -%}
+      {%- set net_public = conf.idf.common.net_config.public.network -%}
+      {%- set vlan_mgmt = conf.idf.common.net_config.mgmt.vlan -%}
+      {%- set vlan_private = conf.idf.common.net_config.private.vlan -%}
+      {%- if conf.idf.common.net_config.public.dns is defined -%}
+          {%- set dns_public = conf.idf.common.net_config.public.dns -%}
       {%- endif -%}
-      {%- set pxe_interface = conf.idf.net_config.admin.interface -%}
-      {%- if conf.idf.net_config.public.gateway is defined -%}
-          {%- set net_public_gw = conf.idf.net_config.public.gateway -%}
+      {# set pxe_interface = conf.common.net_config.admin.interface #}
+      {%- if conf.idf.common.net_config.public.gateway is defined -%}
+          {%- set net_public_gw = conf.idf.common.net_config.public.gateway -%}
       {%- endif -%}
   {%- else -%}
       {%- set net_admin = '192.168.11.0' -%}
       {%- set net_mgmt = '172.16.10.0' -%}
       {%- set net_private = '10.1.0.0' -%}
       {%- set net_public = '172.30.10.0' -%}
-      {%- set net_public_mask = '24' -%}
       {%- set vlan_mgmt = '300' -%}
       {%- set vlan_private = '1000' -%}
       {%- set pxe_interface = 0 -%}
@@ -32,6 +30,7 @@
   {%- if net_public_gw is not defined -%}
       {%- set net_public_gw =  net_public | ipaddr_index('1')  -%}
   {%- endif -%}
+---
 parameters:
   _param:
 
@@ -59,9 +58,9 @@ parameters:
     opnfv_openstack_gateway_node01_tenant_address: {{ net_private | ipaddr_index(6) }}
     opnfv_openstack_gateway_node02_tenant_address: {{ net_private | ipaddr_index(7) }}
     opnfv_openstack_gateway_node03_tenant_address: {{ net_private | ipaddr_index(9) }}
-    opnfv_openstack_proxy_address: {{ net_public | ipaddr_index(13) }}
-    opnfv_openstack_proxy_node01_address: {{ net_public | ipaddr_index(14) }}
-    opnfv_openstack_proxy_node02_address: {{ net_public | ipaddr_index(15) }}
+    opnfv_openstack_proxy_address: {{ net_public | ipaddr_index(103) }}
+    opnfv_openstack_proxy_node01_address: {{ net_public | ipaddr_index(104) }}
+    opnfv_openstack_proxy_node02_address: {{ net_public | ipaddr_index(105) }}
     opnfv_openstack_proxy_node01_control_address: {{ net_mgmt | ipaddr_index(104) }}
     opnfv_openstack_proxy_node02_control_address: {{ net_mgmt | ipaddr_index(105) }}
     opnfv_openstack_control_address: {{ net_mgmt | ipaddr_index(10) }}
@@ -89,52 +88,62 @@ parameters:
     opnfv_openstack_compute_node01_tenant_address: {{ net_private | ipaddr_index(101) }}
     opnfv_openstack_compute_node02_tenant_address: {{ net_private | ipaddr_index(102) }}
     opnfv_openstack_compute_node03_tenant_address: {{ net_private | ipaddr_index(103) }}
-    opnfv_openstack_compute_node01_external_address: {{ net_public | ipaddr_index(11) }}
-    opnfv_openstack_compute_node02_external_address: {{ net_public | ipaddr_index(12) }}
+    opnfv_openstack_compute_node01_external_address: {{ net_public | ipaddr_index(101) }}
+    opnfv_openstack_compute_node02_external_address: {{ net_public | ipaddr_index(102) }}
 
     opnfv_opendaylight_server_node01_single_address: {{ net_mgmt | ipaddr_index(111) }}
 
-    opnfv_net_public: {{ net_public/net_public_mask }}
-    opnfv_net_public_mask: {{ net_public_mask | netmask}}
     opnfv_net_public_gw: {{ net_public_gw }}
-    opnfv_net_public_pool_start: {{ net_public | ipaddr_index(20) }}
-    opnfv_net_public_pool_end: {{ net_public | ipaddr_index(60) }}
     opnfv_name_servers: {{ dns_public }}
     opnfv_dns_server01: '{{ dns_public[0] }}'
 
     opnfv_net_mgmt_vlan: {{ vlan_mgmt }}
     opnfv_net_tenant_vlan: {{ vlan_private }}
 
+
+    {%- set admin_vlanid = 'vlan1_0' -%}
+    {%- set pxe_vlanid = admin_vlanid -%}
+    {%- set pxe_port = 'port1' -%}
+    {%- set pxe_interface =  0 -%}
+
+
     opnfv_maas_node01_architecture: '{{ conf.nodes.0.node.arch | dpkg_arch }}/generic'
-    opnfv_maas_node01_power_address: {{ conf.nodes.0.remote_management.address.rsplit('/')[0] }}
+    opnfv_maas_node01_power_address: {{ conf.nodes.0.remote_management.ip_address.rsplit('/')[0]}}
     opnfv_maas_node01_power_type: {{ conf.nodes.0.remote_management.type }}
     opnfv_maas_node01_power_user: {{ conf.nodes.0.remote_management.user }}
     opnfv_maas_node01_power_password: {{ conf.nodes.0.remote_management.pass }}
     opnfv_maas_node01_interface_mac: '{{ conf.nodes.0.interfaces[pxe_interface].mac_address }}'
+    node01_used_interfaces: {{ macros.get_node_connected_interfaces_ids(conf.nodes.0) }}
+    node01_port01_vlans: {{ macros.get_node_port_vlan_tags(conf.nodes.0, 'port1') }}
+    node01_interface0_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 0) }}
+    node01_interface1_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 1) }}
+    node01_interface2_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 2) }}
+    node01_interface3_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 3) }}
+    node01_admin_vlanid_interface: {{ macros.select_interface_with_vlanid(conf.nodes.0, admin_vlanid) }}
 
     opnfv_maas_node02_architecture: '{{ conf.nodes.1.node.arch | dpkg_arch }}/generic'
-    opnfv_maas_node02_power_address: {{ conf.nodes.1.remote_management.address.rsplit('/')[0] }}
+    opnfv_maas_node02_power_address: {{ conf.nodes.1.remote_management.ip_address.rsplit('/')[0] }}
     opnfv_maas_node02_power_type: {{ conf.nodes.1.remote_management.type }}
     opnfv_maas_node02_power_user: {{ conf.nodes.1.remote_management.user }}
     opnfv_maas_node02_power_password: {{ conf.nodes.1.remote_management.pass }}
     opnfv_maas_node02_interface_mac: '{{ conf.nodes.1.interfaces[pxe_interface].mac_address }}'
 
     opnfv_maas_node03_architecture: '{{ conf.nodes.2.node.arch | dpkg_arch }}/generic'
-    opnfv_maas_node03_power_address: {{ conf.nodes.2.remote_management.address.rsplit('/')[0] }}
+    opnfv_maas_node03_power_address: {{ conf.nodes.2.remote_management.ip_address.rsplit('/')[0] }}
     opnfv_maas_node03_power_type: {{ conf.nodes.2.remote_management.type }}
     opnfv_maas_node03_power_user: {{ conf.nodes.2.remote_management.user }}
     opnfv_maas_node03_power_password: {{ conf.nodes.2.remote_management.pass }}
     opnfv_maas_node03_interface_mac: '{{ conf.nodes.2.interfaces[pxe_interface].mac_address }}'
 
     opnfv_maas_node04_architecture: '{{ conf.nodes.3.node.arch | dpkg_arch }}/generic'
-    opnfv_maas_node04_power_address: {{ conf.nodes.3.remote_management.address.rsplit('/')[0] }}
+    opnfv_maas_node04_power_address: {{ conf.nodes.3.remote_management.ip_address.rsplit('/')[0] }}
     opnfv_maas_node04_power_type: {{ conf.nodes.3.remote_management.type }}
     opnfv_maas_node04_power_user: {{ conf.nodes.3.remote_management.user }}
     opnfv_maas_node04_power_password: {{ conf.nodes.3.remote_management.pass }}
     opnfv_maas_node04_interface_mac: '{{ conf.nodes.3.interfaces[pxe_interface].mac_address }}'
 
     opnfv_maas_node05_architecture: '{{ conf.nodes.4.node.arch | dpkg_arch }}/generic'
-    opnfv_maas_node05_power_address: {{ conf.nodes.4.remote_management.address.rsplit('/')[0] }}
+    opnfv_maas_node05_power_address: {{ conf.nodes.4.remote_management.ip_address.rsplit('/')[0] }}
     opnfv_maas_node05_power_type: {{ conf.nodes.4.remote_management.type }}
     opnfv_maas_node05_power_user: {{ conf.nodes.4.remote_management.user }}
     opnfv_maas_node05_power_password: {{ conf.nodes.4.remote_management.pass }}

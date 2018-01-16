@@ -1,0 +1,97 @@
+{# Macro library to simplify descriptor file read operations (PoC)
+
+Place import on top of template file (tested only with same path as template):
+{%- import 'poc-macros.j2' as macros -%}
+
+Usage example:
+node01_used_interfaces: {{ macros.get_node_connected_interfaces_ids(conf.nodes.0) }}
+node01_interface0_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 0) }}
+node01_interface1_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 1) }}
+node01_interface2_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 2) }}
+node01_interface3_vlans: {{ macros.get_node_interface_vlan_tags(conf.nodes.0, 3) }}
+
+Results example:
+node01_used_interfaces: '[0, 1]'
+node01_interface0_vlans: '[1002, 1000, 1001, 'native']'
+node01_interface1_vlans: '['native', 2002, 2000, 2001]'
+node01_interface2_vlans: 'unused'
+node01_interface3_vlans: 'unused'
+#}
+
+
+{# get_node_connected_interfaces_ids(node)
+   args:    Node object yaml reference
+   returns: Integer list of used interfaces of the passed node
+   info:    From a given node, get the indexes of its connected interfaces
+   example: Node has 3 interfaces, 3rd is not connected. Result is [0, 1] #}
+{% macro get_node_connected_interfaces_ids(node) -%}
+  {%- set connected_interfaces = [] -%}
+  {%- for interface in node.interfaces  -%}
+    {%- if  node.vlan_config[interface.port] != 'unused' -%}
+      {%- set connected_interfaces = connected_interfaces.append(loop.index0) -%}
+    {%- endif -%}
+  {%- endfor -%}
+  '{{ connected_interfaces }}'
+{%- endmacro %}
+
+{# get_node_connected_interfaces_set(node)
+   args:    Node object yaml reference
+   returns: Object set of used interfaces of the passed node
+   info:    From a given node, get only the connected interfaces info
+   example: Node has 3 interfaces, 3rd is not connected. Result is the
+            yalm set of 1st and 2nd interface from the passed node.
+   #}
+{% macro get_node_connected_interfaces_set(node) -%}
+  {%- set connected_interfaces = [] -%}
+  {%- for interface in node.interfaces  -%}
+    {%- if  node.vlan_config[interface.port] != 'unused' -%}
+      {%- set connected_interfaces = connected_interfaces.append(interface) -%}
+    {%- endif -%}
+  {%- endfor -%}
+  '{{ connected_interfaces }}'
+{%- endmacro %}
+
+{# get_node_port_vlan_tags(node, port_name)
+   args:    Node object yaml reference
+            Port name string (port<n>)
+   returns: VLAN tag string list
+   info:    From a given node, get all the vlan tags on one of its ports
+   example: Node has 2 ports, selecting 'port0' returns ['native', 1000, 1001]
+#}
+{% macro get_node_port_vlan_tags(node, port_name) -%}
+  {%- if node.vlan_config[port_name] != 'unused' -%}
+    '{{ node.vlan_config[port_name].values() }}'
+  {%- endif -%}
+{%- endmacro %}
+
+{# get_node_interface_vlan_tags(node, interface_id)
+   args:    Node object yaml reference
+            Interface id integer
+   returns: VLAN tag string list
+   info:    From a given node, get all the vlan tags for an interface
+   example: Node has 2 interfaces, selecting interface 0 returns ['native', 1000, 1001]
+#}
+{% macro get_node_interface_vlan_tags(node, interface_id) -%}
+  {%- if  node.vlan_config[node.interfaces[interface_id].port] != 'unused' -%}
+    '{{ node.vlan_config[node.interfaces[interface_id].port].values() }}'
+  {%- else -%} 'unused' {%- endif -%}
+{%- endmacro %}
+
+
+{# select_interface_with_vlanid(node, vlanid)
+   args:    Node object yaml reference
+            VLAN id (vlan_nTRUNK_mTAG)
+   returns: Interface id integer
+   info:    From a given node, get which of its interfaces is connected to a vlan id
+            Works only for unique vlan ids like vlan0_1 vlan2_2000 and not simple int tags
+   example: Node has 2 interfaces, 'vlan1_0' is on second, selecting 'vlan1_0' returns 1
+#}
+{% macro select_interface_with_vlanid(node, vlanid) -%}
+  {%- for interface in node.interfaces -%}
+      {%- if node.vlan_config[interface.port] != 'unused' -%}
+        {%- if node.vlan_config[interface.port][vlanid] is defined -%}
+          '{{ loop.index0 }}'
+        {%- endif -%}
+      {%- endif -%}
+  {%- endfor -%}
+{%- endmacro %}
