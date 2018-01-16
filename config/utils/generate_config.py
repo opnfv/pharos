@@ -39,6 +39,15 @@ def ipaddr_index(base_address, index):
         base_address_str = str(base_address)
     return ipaddress.ip_address(base_address_str) + int(index)
 
+# Custom filter to transform a prefix netmask to IP address format netmask
+def netmask(prefix):
+    """Get netmask from prefix length integer"""
+    try:
+        prefix_str = unicode(prefix)
+    except NameError as ex:
+        prefix_str = str(prefix)
+    return ipaddress.IPv4Network("10.0.0.0/"+prefix_str).netmask
+
 # Custom filter to convert between processor architecture
 # (as reported by $(uname -m)) and DPKG-style architecture
 def dpkg_arch(arch, to_dpkg=True):
@@ -50,6 +59,7 @@ def dpkg_arch(arch, to_dpkg=True):
 
 ENV = Environment(loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)))
 ENV.filters['ipaddr_index'] = ipaddr_index
+ENV.filters['netmask'] = netmask
 ENV.filters['dpkg_arch'] = dpkg_arch
 
 # Run `eyaml decrypt` on the whole file, but only if PDF data is encrypted
