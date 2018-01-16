@@ -86,6 +86,6 @@ daisy_passwd: 'r00tme'
 {% if 'fixed_ips' in conf['jumphost'] -%}
 daisy_gateway: {{ conf['jumphost']['fixed_ips']['admin'] }}
 {%- else -%}
-daisy_gateway: {{ conf['jumphost']['interfaces'][0]['address'][0] }}
+daisy_gateway: {{ conf['jumphost']['interfaces'][0]['address'] }}
 {%- endif %}
 ceph_disk_name: '/dev/sdb'
