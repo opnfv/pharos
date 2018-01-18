@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_70dfa30d",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-01-18T13:02:41Z",
+      "side": 1,
+      "message": "Changed to remove jenkins-ci warning:\nMatched Regular Exp: 0.0.0.0 Rationale: Interface listening on all addresses - may break security zones\n\nAlthough IP value is never used (Just there to create a network and extract its mask)",
+      "range": {
+        "startLine": 49,
+        "startChar": 34,
+        "endLine": 49,
+        "endChar": 42
+      },
+      "revId": "11b0875fc87bc5c3694f725948816d40e87de104",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
