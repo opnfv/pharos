@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_b5811dc5",
+        "filename": "config/utils/check-schema.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-18T03:09:08Z",
+      "side": 1,
+      "message": "good idea, I\u0027ll fix in the next revision",
+      "parentUuid": "9a3d3df0_3a605ace",
+      "range": {
+        "startLine": 12,
+        "startChar": 17,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "013d03843a81a5793966a88e3f504da3cfcb4809",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_1a5d9615",
         "filename": "config/utils/check-schema.sh",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-17T07:47:43Z",
       "side": 1,
       "message": "in my localtest, \u0026 causes the issue and ignore the test\n\nconfig/utils/check-schema.sh: command substitution: line 22: `${pdf_cmd} |\u0026 sed \u0027s|ENC\\[PKCS.*\\][\\\\n]*|opnfv|g\u0027\u0027\n[PDF] [OK] python ./config/utils/validate_schema.py -s ./config/pdf/pod1.schema.yaml -y labs/lf/pod5.yaml\n[IDF] [OK] python ./config/utils/validate_schema.py -s ./config/pdf/idf-pod1.schema.yaml -y labs/lf/idf-pod5.yaml\nconfig/utils/check-schema.sh: command substitution: line 22: syntax error near unexpected token `\u0026\u0027",
+      "range": {
+        "startLine": 22,
+        "startChar": 26,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "013d03843a81a5793966a88e3f504da3cfcb4809",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_958699d9",
+        "filename": "config/utils/check-schema.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-18T03:09:08Z",
+      "side": 1,
+      "message": "huh, I will write it the old way (2\u003e\u00261)\nSorry, I thought that construct worked on all versions of bash.",
+      "parentUuid": "9a3d3df0_1a5d9615",
       "range": {
         "startLine": 22,
         "startChar": 26,
