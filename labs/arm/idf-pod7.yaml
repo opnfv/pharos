@@ -1,0 +1,79 @@
+##############################################################################
+# Copyright (c) 2017 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### ARM POD 7 installer descriptor file ###
+
+idf:
+  version: 0.1
+  net_config:
+    oob:
+      ip-range: 10.0.16.2-10.0.16.6
+      vlan: native
+    admin:
+      interface: 0
+      vlan: native
+      network: 192.168.11.0
+      mask: 24
+    mgmt:
+      interface: 1
+      vlan: 2343
+      network: 172.16.10.0
+      mask: 24
+    storage:
+      interface: 1
+      vlan: 2344
+      network: 10.2.0.0
+      mask: 24
+    private:
+      interface: 1
+      vlan: 2345
+      network: 10.1.0.0
+      mask: 24
+    public:
+      interface: 1
+      vlan: native
+      network: 10.0.16.0
+      mask: 24
+      gateway: 10.0.16.254
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
+  fuel:
+    jumphost:
+      bridges:
+        admin: 'admin15_br0'
+        mgmt: 'mgmt15_br0'
+        private: ''
+        public: 'public15_br0'
+    network:
+      node:
+        # Ordered-list, index should be in sync with node index in PDF
+        - interfaces: &interfaces_a
+            # Ordered-list, index should be in sync with interface index in PDF
+            - 'enP5s3'
+            - 'enP2p1s0f2'
+            - 'enP2p1s0f1'
+            - 'enP2p1s0f3'
+          busaddr: &busaddr_a
+            # Bus-info reported by `ethtool -i ethX`
+            - '0005:90:00.0'
+            - '0002:01:00.2'
+            - '0002:01:00.1'
+            - '0002:01:00.3'
+        - interfaces: *interfaces_a
+          busaddr: *busaddr_a
+        - interfaces: *interfaces_a
+          busaddr: *busaddr_a
+        - interfaces: &interfaces_b
+            - 'eth0'
+            - 'eth1'
+          busaddr: &busaddr_b
+            - 'e0700000.xgmac'
+            - 'e0900000.xgmac'
+        - interfaces: *interfaces_b
+          busaddr: *busaddr_b
