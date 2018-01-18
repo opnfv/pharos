@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_75067587",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-18T02:11:42Z",
+      "side": 1,
+      "message": "please add an empty line after the 1st one, recommended by:\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "512048bd2cb90c200efb24eb6f24b1fc26908279",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b5fc7d73",
+        "filename": "labs/nokia/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-18T02:11:42Z",
+      "side": 1,
+      "message": "pod_owner, caught by running `./config/utils/check-schema.sh` (or just `./config/utils/validate_schema.py -y labs/nokia/pod1.yaml -s config/pdf/pod1.schema.yaml`)",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 11
+      },
+      "revId": "512048bd2cb90c200efb24eb6f24b1fc26908279",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_550b718d",
+        "filename": "labs/nokia/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-18T02:11:42Z",
+      "side": 1,
+      "message": "My understanding is we can only have one value here, so the recently added schema also enforces that.\nIf \u0027production|development\u0027 is ok, we need to update the schema too.",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "512048bd2cb90c200efb24eb6f24b1fc26908279",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9501796c",
+        "filename": "labs/nokia/pod1.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-18T02:11:42Z",
+      "side": 1,
+      "message": "please add an os property\nos: ...",
+      "revId": "512048bd2cb90c200efb24eb6f24b1fc26908279",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
