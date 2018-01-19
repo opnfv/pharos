@@ -22,6 +22,30 @@
       "revId": "2cbe883d633df388ad102d08902f85fd0cf6ff22",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_27fe826b",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-01-19T13:12:44Z",
+      "side": 1,
+      "message": "Yes, I will take your IDF suggestion as a new change.\n\nAs for this change, after checking on LF pod5 public net ranges [1][2] I think we should get back to the prx and cmp IPs we had an leave a compatible pool range with both LF pod2 and pod5. Until we set it on IDF\n\n           172.30.13.64/26 \nHostMin:   172.30.13.65 \nHostMax:   172.30.13.126\n\n[1] https://github.com/opnfv/pharos/blob/master/labs/lf/idf-pod5.yaml#L43\n\n[2] http://jodies.de/ipcalc?host\u003d172.30.13.64\u0026mask1\u003d26",
+      "parentUuid": "9a3d3df0_f0dc53e6",
+      "range": {
+        "startLine": 100,
+        "startChar": 49,
+        "endLine": 100,
+        "endChar": 65
+      },
+      "revId": "2cbe883d633df388ad102d08902f85fd0cf6ff22",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
