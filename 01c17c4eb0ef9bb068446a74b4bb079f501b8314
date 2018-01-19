@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_aac37736",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-19T17:42:51Z",
+      "side": 1,
+      "message": "let\u0027s change this to ~, which will fix a yamllint warn for Fuel PDF output YAML",
+      "range": {
+        "startLine": 51,
+        "startChar": 17,
+        "endLine": 51,
+        "endChar": 19
+      },
+      "revId": "01c17c4eb0ef9bb068446a74b4bb079f501b8314",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
