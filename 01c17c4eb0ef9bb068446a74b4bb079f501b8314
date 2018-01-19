@@ -22,6 +22,46 @@
       "revId": "01c17c4eb0ef9bb068446a74b4bb079f501b8314",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_eae0dfce",
+        "filename": "labs/arm/pod7.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-19T17:54:01Z",
+      "side": 1,
+      "message": "recent schema validation requires another line here:\nversion: 1.0",
+      "revId": "01c17c4eb0ef9bb068446a74b4bb079f501b8314",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cae35bd7",
+        "filename": "labs/arm/pod7.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-19T17:54:01Z",
+      "side": 1,
+      "message": "check-schema.sh caught this",
+      "range": {
+        "startLine": 97,
+        "startChar": 19,
+        "endLine": 97,
+        "endChar": 22
+      },
+      "revId": "01c17c4eb0ef9bb068446a74b4bb079f501b8314",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
