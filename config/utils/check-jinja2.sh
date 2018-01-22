@@ -35,11 +35,29 @@ done
 # shellcheck disable=SC2086
 while IFS= read -r lab_config; do
     SUMMARY+="\n${lab_config#labs/};"
+    lab_nodes=$(grep -ce 'node:' "${lab_config}")
+    lab_tmacs=$(grep -ce 'mac_address:' "${lab_config}")
+    ((lab_amacs=lab_tmacs/lab_nodes)); ((lab_nodes-=1))
     echo "###################### ${lab_config} ######################"
     for adapter in ${INSTALLER_ADAPTERS}; do
         pdf_inst=0
         pdf_inst_pass=0
         pdf_yaml_pass=0
+        ia_nodes=$(grep -hPo 'nodes\W+\K\d+' -R "${adapter}" | tail -1)
+        ia_rmacs=$(grep -hPo 'interfaces\W+\K\d+' -R "${adapter}" | sort | tail -1)
+        ((ia_nodes+=1)); ((ia_rmacs+=1))
+        if [[ ${ia_nodes} -gt ${lab_nodes} ]]; then
+            SUMMARY+='-;'
+            echo -n "[GENERATE] [SKIP] $(basename "${adapter}") requires at least"
+            echo -e " ${ia_nodes} nodes, but found only ${lab_nodes}, skipping.\n"
+            continue
+        fi
+        if [[ ${ia_rmacs} -ge ${lab_amacs} ]]; then
+            SUMMARY+='-;'
+            echo -n "[GENERATE] [SKIP] $(basename "${adapter}") requires at least"
+            echo -e " ${ia_rmacs} nics, but found ~ ${lab_amacs}, skipping.\n"
+            continue
+        fi
         while IFS= read -r jinja_template; do
             pdf_gen_cmd="${GEN_CFG} -y ${lab_config} -j ${jinja_template}"
             if ${pdf_gen_cmd} > "${TMPF}"; then
