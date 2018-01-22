@@ -1,0 +1,241 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### Enea ARM POD 7 descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: ENEA AB
+  contact: dan.lilliehorn@enea.com
+  lab: ENEA lab
+  location: Stockholm, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/Enea+Hosting
+##############################################################################
+jumphost:
+  name: jenkins-slave-arm-pod7
+  node:
+    type: baremetal
+    vendor: AppliedMicro
+    model: XGene 1
+    arch: aarch64
+    cpus: 1
+    cpu_cflags: fp asimd evtstrm cpuid
+    cores: 8
+    memory: 32G
+  disks:
+    # /dev/sda
+    - name: disk1
+      disk_capacity: 120G
+      disk_type: ssd
+      disk_interface: sata
+      disk_rotation: 0
+    # /dev/sdb
+    - name: disk2
+      disk_capacity: 1T
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+    # /dev/sdc
+    - name: disk3
+      disk_capacity: 1T
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+  os: ubuntu-16.04
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: admin
+    pass: admin
+  remote_management:
+    <<: *remote_params
+    address: 0.0.0.0
+    mac_address: "00:00:00:00:00:00"
+  interfaces:
+    # eth0, Not connected
+    - mac_address: "00:01:73:02:3b:28"
+      address: 192.168.11.1
+      speed: 1gb
+      features: ''
+      name: 'nic1'
+    # eth1, Connected for PXE
+    - mac_address: "00:01:73:02:3b:29"
+      speed: 1gb
+      features: ''
+      name: 'nic2'
+    # eth2, Not connected
+    - mac_address: "00:01:73:02:3b:2a"
+      speed: 1gb
+      features: ''
+      name: 'nic3'
+    # eth3, Connected for truck traffic
+    - mac_address: "00:01:73:02:3b:2b"
+      speed: 10gb
+      features: ''
+      name: 'nic4'
+##############################################################################
+nodes:
+  - name: cn8890-6
+    node: &nodeparams_a
+      type: baremetal
+      vendor: Cavium
+      model: ThunderX
+      arch: aarch64
+      cpus: 1
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+      cores: 48
+      memory: 128G
+    disks: &disks_a
+      - name: 'disk1'
+        disk_capacity: 500G
+        disk_type: hdd
+        disk_interface: sata
+        disk_rotation: 7200
+    remote_management:
+      <<: *remote_params
+      address: 10.0.16.2
+      mac_address: "40:8D:5C:BA:D2:32"
+    interfaces:
+      # enP5s3, Connected, used only for admin/PXE
+      - mac_address: "68:05:ca:3d:93:14"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      # enP2p1s0f2, Connected, trunk for all other VLANs
+      - mac_address: "00:0f:b7:03:00:c1"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      # enP2p1s0f1, Not connected
+      - mac_address: "00:0f:b7:03:00:c0"
+        speed: 1gb
+        features: ''
+        name: 'nic3'
+      # enP2p1s0f3, Not connected
+      - mac_address: "00:0f:b7:03:00:c2"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+  ############################################################################
+  - name: cn8890-8
+    node: *nodeparams_a
+    disks: *disks_a
+    remote_management:
+      <<: *remote_params
+      address: 10.0.16.3
+      mac_address: "40:8D:5C:BA:B9:60"
+    interfaces:
+      # enP5s3, Connected, used only for admin/PXE
+      - mac_address: "68:05:ca:3f:7f:f3"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      # enP2p1s0f2, Connected, trunk for all other VLANs
+      - mac_address: "00:0f:b7:05:00:c1"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      # enP2p1s0f1, Not connected
+      - mac_address: "00:0f:b7:05:00:c0"
+        speed: 1gb
+        features: ''
+        name: 'nic3'
+      # enP2p1s0f3, Not connected
+      - mac_address: "00:0f:b7:05:00:c2"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+  ############################################################################
+  - name: cn8890-10
+    node: *nodeparams_a
+    disks: *disks_a
+    remote_management:
+      <<: *remote_params
+      address: 10.0.16.4
+      mac_address: "40:8D:5C:BA:B9:65"
+    interfaces:
+      # enP5s3, Connected, used only for admin/PXE
+      - mac_address: "68:05:ca:3d:93:0f"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      # enP2p1s0f2, Connected, trunk for all other VLANs
+      - mac_address: "00:0f:b7:07:00:c1"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      # enP2p1s0f1, Not connected
+      - mac_address: "00:0f:b7:07:00:c0"
+        speed: 1gb
+        features: ''
+        name: 'nic3'
+      # enP2p1s0f3, Not connected
+      - mac_address: "00:0f:b7:07:00:c2"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+  ############################################################################
+  - name: softiron-1
+    node: &nodeparams_b
+      type: baremetal
+      vendor: American Megatrends Inc
+      model: Overdrive/Supercharger
+      arch: aarch64
+      cpus: 1
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+      cores: 8
+      memory: 32G
+    disks: &disks_b
+      # dev/sda
+      - name: 'disk1'
+        disk_capacity: 128G
+        disk_type: ssd
+        disk_interface: sata
+        disk_rotation: 0
+      # /dev/sdb
+      - name: 'disk2'
+        disk_capacity: 2T
+        disk_type: hdd
+        disk_interface: sata
+        disk_rotation: 7200
+    remote_management:
+      <<: *remote_params
+      address: 10.0.16.5
+      mac_address: "E0:FF:F7:00:04:21"
+    interfaces:
+      # eth0, Connected, used only for admin/PXE
+      - mac_address: "e0:ff:f7:00:05:96"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      # eth1, Connected, trunk for all other VLANs
+      - mac_address: "e0:ff:f7:00:05:97"
+        speed: 1gb
+        features: ''
+        name: 'nic2'
+  ############################################################################
+  - name: softiron-2
+    node: *nodeparams_b
+    disks: *disks_b
+    remote_management:
+      <<: *remote_params
+      address: 10.0.16.6
+      mac_address: "E0:FF:F7:00:04:29"
+    interfaces:
+      # eth0, Connected, used only for admin/PXE
+      - mac_address: "e0:ff:f7:00:05:93"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      # eth1, Connected, trunk for all other VLANs
+      - mac_address: "e0:ff:f7:00:05:94"
+        speed: 1gb
+        features: ''
+        name: 'nic2'
