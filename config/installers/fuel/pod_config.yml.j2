@@ -38,7 +38,7 @@
   {%- endif -%}
   {%- if net_public_gw is not defined -%}
       {%- set net_public_gw =  net_public | ipaddr_index('1')  -%}
-  {%- endif -%}
+  {%- endif %}
 parameters:
   _param:
 
