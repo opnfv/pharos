@@ -22,6 +22,10 @@
       {%- if conf.idf.net_config.public.gateway is defined -%}
           {%- set net_public_gw = conf.idf.net_config.public.gateway -%}
       {%- endif -%}
+      {%- if conf.idf.fuel.network.public_pool is defined -%}
+          {%- set net_public_pool_start = conf.idf.fuel.network.public_pool.start_ip -%}
+          {%- set net_public_pool_end = conf.idf.fuel.network.public_pool.end_ip -%}
+      {%- endif -%}
   {%- else -%}
       {%- set net_admin = '192.168.11.0' -%}
       {%- set net_mgmt = '172.16.10.0' -%}
@@ -38,7 +42,11 @@
   {%- endif -%}
   {%- if net_public_gw is not defined -%}
       {%- set net_public_gw =  net_public | ipaddr_index('1')  -%}
-  {%- endif %}
+  {%- endif -%}
+  {%- if net_public_pool_start is not defined or net_public_pool_end is not defined -%}
+      {%- set net_public_pool_start = net_public | ipaddr_index('80') -%}
+      {%- set net_public_pool_end = net_public | ipaddr_index('100') -%}
+  {%- endif -%}
 parameters:
   _param:
 
@@ -105,8 +113,8 @@ parameters:
     opnfv_net_public: {{ net_public }}/{{ net_public_mask }}
     opnfv_net_public_mask: {{ net_public_mask | netmask }}
     opnfv_net_public_gw: {{ net_public_gw }}
-    opnfv_net_public_pool_start: {{ net_public | ipaddr_index(80) }}
-    opnfv_net_public_pool_end: {{ net_public | ipaddr_index(100) }}
+    opnfv_net_public_pool_start: {{ net_public_pool_start) }}
+    opnfv_net_public_pool_end: {{ net_public_pool_end }}
     opnfv_name_servers: {{ dns_public }}
     opnfv_dns_server01: '{{ dns_public[0] }}'
 
