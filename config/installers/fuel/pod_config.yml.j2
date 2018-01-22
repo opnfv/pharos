@@ -6,7 +6,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 ---
-{%- if conf.idf is defined and conf.idf.fuel is defined -%}
+{%- if conf.idf is defined and conf.idf.fuel is defined %}
   {%- if conf.idf.net_config is defined -%}
       {%- set net_admin = conf.idf.net_config.admin.network -%}
       {%- set net_mgmt = conf.idf.net_config.mgmt.network -%}
@@ -21,6 +21,10 @@
       {%- set pxe_interface = conf.idf.net_config.admin.interface -%}
       {%- if conf.idf.net_config.public.gateway is defined -%}
           {%- set net_public_gw = conf.idf.net_config.public.gateway -%}
+      {%- endif -%}
+      {%- if conf.idf.fuel.network.public_pool is defined -%}
+          {%- set net_public_pool_start = conf.idf.fuel.network.public_pool.start_ip -%}
+          {%- set net_public_pool_end = conf.idf.fuel.network.public_pool.end_ip -%}
       {%- endif -%}
   {%- else -%}
       {%- set net_admin = '192.168.11.0' -%}
@@ -37,7 +41,11 @@
       {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] -%}
   {%- endif -%}
   {%- if net_public_gw is not defined -%}
-      {%- set net_public_gw =  net_public | ipaddr_index('1')  -%}
+      {%- set net_public_gw =  net_public | ipaddr_index('1') -%}
+  {%- endif -%}
+  {%- if net_public_pool_start is not defined or net_public_pool_end is not defined -%}
+      {%- set net_public_pool_start = net_public | ipaddr_index('80') -%}
+      {%- set net_public_pool_end = net_public | ipaddr_index('100') -%}
   {%- endif %}
 parameters:
   _param:
@@ -105,8 +113,8 @@ parameters:
     opnfv_net_public: {{ net_public }}/{{ net_public_mask }}
     opnfv_net_public_mask: {{ net_public_mask | netmask }}
     opnfv_net_public_gw: {{ net_public_gw }}
-    opnfv_net_public_pool_start: {{ net_public | ipaddr_index(80) }}
-    opnfv_net_public_pool_end: {{ net_public | ipaddr_index(100) }}
+    opnfv_net_public_pool_start: {{ net_public_pool_start }}
+    opnfv_net_public_pool_end: {{ net_public_pool_end }}
     opnfv_name_servers: {{ dns_public }}
     opnfv_dns_server01: '{{ dns_public[0] }}'
 
