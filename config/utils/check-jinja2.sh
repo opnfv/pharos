@@ -12,8 +12,15 @@ set +x
 set +o errexit
 export PATH=$PATH:/usr/local/bin/
 
+# Optional filtering of test matrix: per-lab, per-pod, per-installer
+# e.g. To check zte-pod{2,3} against all installer adapters:
+# ./config/utils/check-jinja2.sh zte 'pod(2|3)'
+FILTER_LAB=${1:-*}                           # e.g. 'zte'  (glob)
+FILTER_POD=${2:-(pod|virtual)[[:digit:]]+}   # e.g. 'pod1' (regex)
+FILTER_IA=${3:-*}                            # e.g. 'fuel' (glob)
+
 GEN_CFG='./config/utils/generate_config.py'
-INSTALLER_ADAPTERS='./config/installers/*'
+INSTALLER_ADAPTERS="./config/installers/${FILTER_IA}"
 TMPF='/tmp/out.yml' # should be outside Jenkins WS to prevent data leakage
 RC=0
 
@@ -25,6 +32,7 @@ for adapter in 'PDF Verify Matrix' ${INSTALLER_ADAPTERS}; do
 done
 
 # Iterate all PDFs, check with each installer adapter, log results
+# shellcheck disable=SC2086
 while IFS= read -r lab_config; do
     SUMMARY+="\n${lab_config#labs/};"
     echo "###################### ${lab_config} ######################"
@@ -52,7 +60,8 @@ while IFS= read -r lab_config; do
         done < <(find "${adapter}" -name '*.j2')
         SUMMARY+="${pdf_yaml_pass}/${pdf_inst_pass}/${pdf_inst};"
     done
-done < <(find 'labs' -name 'pod*.yaml')
+done < <(find labs/${FILTER_LAB} -regextype egrep \
+                                 -regex "labs/.+/${FILTER_POD}.yaml")
 rm -f "${TMPF}"
 
 cat <<EOF
