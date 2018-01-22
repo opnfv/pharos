@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_5b243b0c",
+        "filename": "labs/nokia/pod1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-22T16:28:37Z",
+      "side": 1,
+      "message": "Guillermo pointed out we don\u0027t have a \u0027version: 1.0\u0027 here.\nWe will add it in another change so we don\u0027t have to respin this just for that.",
+      "revId": "18e0dbb068879611d3b2252ad84c4fd580fd3bd1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
