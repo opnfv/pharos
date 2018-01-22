@@ -1,7 +1,15 @@
-### This is a BII POD1 descriptor file ###
+##############################################################################
+# Copyright (c) 2018 BII-CFIEC and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
 ---
+### This is a BII POD1 descriptor file ###
+
 details:
-  pod_owner: ylong@BII
+  pod_owner: ylong
   contact: ylong@biigroup.cn, zjtang@biigroup.cn
   lab: BII Pharos LAB
   location: BDA, Beijing, China
@@ -11,158 +19,232 @@ details:
 jumphost:
   name: fuel
   node:
-    type: baremetal         # can be virtual or baremetal
+    type: baremetal
     vendor: Dell Inc.
     model: powerEdge 720
     arch: x86_64
     cpus: 2
-    cpu_cflags: haswell     # add values based on CFLAGS in GCC
-    cores: 8                # physical cores, not including hyper-threads
+    cpu_cflags: haswell
+    cores: 4
     memory: 16G
-  disks:                    # disk list
-    - name: 'disk1'         # first disk
-      disk_capacity: 300G   # volume
-      disk_type: hdd        # several disk types possible
-      disk_interface: sas   # several interface types possible
-      disk_rotation: 15000  # define rotation speed of disk
-    - name: 'disk2'         # second disk
-      disk_capacity: 300G
+  disks:
+    - name: 'disk1'
+      disk_capacity: 1100G
       disk_type: hdd
       disk_interface: sas
       disk_rotation: 15000
-    - name: 'disk3'         # third disk
-      disk_capacity: 300G
-      disk_type: hdd
-      disk_interface: sas
-      disk_rotation: 15000
-    - name: 'disk4'         # fourth disk
-      disk_capacity: 300G
-      disk_type: hdd
-      disk_interface: sas
-      disk_rotation: 15000
-    - name: 'disk5'         # fifth disk
-      disk_capacity: 300G
-      disk_type: hdd
-      disk_interface: sas
-      disk_rotation: 15000
-  os: centos-7.3            # operation system installed
+  os: ubuntu-16.04
   remote_params: &remote_params
     type: ipmi
     versions:
       - 2.0
-    user:
-    pass:
+    user: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAUnK7YuVSij4ALxIM+562DzeMEk0TaCoAOAcq
+      vHfnXEGI6IVpLtA/5d8y+tcmy82azpcNAIRvIGT08iEPwxo/Sa8MIIB1QFd5
+      mC2I+pMhbowXmCUlU3m7gxDvsOYVkUYfxswtQoKUFSnG2mAZQA8L2Vpfbc2V
+      fWOOQlsNuJ4g7eN22bpODUDi5XzdFuBNUhRYNGQwGre4OUM6Qb+5QyXN8hKA
+      rHo7bI+36WWQSTdZHKXr9sJviQsWqAYXDRNIthdUbb8FlkAUdtV65eUB36hB
+      7KEjbjK8aMpsQIIOjCmc/LONIFzkrKC2nGWP83iG++aWnoXW+hHSO9bGhfrt
+      41I3JjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBC+t7WDS6WRtLT3UTTx
+      wXGCgBBrhvF5qjnbDl55TN2fhb2k]
+    pass: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAtsyAgyyRp3U3uMkyG0tHSW0e1y7Qq3LCpIRs
+      E0K6745xTmVPMLzbL+8OpgBIieLFukZnWNoLtdoEfZlYbw4En5DSMpkkmWgi
+      35329Bs2eIU4lNUtjFi6UvHMB+j+gvVpObRgn1EfC2ngbgognw94+aA2LBiZ
+      oWKIk7iRmtLTguZLd72mdV+a/Ukk7lMeYz4OF4c4myMZzk4c1F9L3VLYux0+
+      xcbZw/WRZHgYg1YHONX2WNHTf91cyd282BG7rLNaY4mO7XWU9mpmqeWHjJ7N
+      fpwPEfwt8dJq2b+p0o1FDRyAEF375AmMfwqupDk33fecFj6elr4EMzeusrFh
+      RiV9wjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBABjHF90Ke9WX+NZGzZ
+      MUPLgBDJhm3lONPvX22d5DFMpoXy]
   remote_management:
     <<: *remote_params
-    address: 192.168.20.200
+    address: 192.168.20.200/24
     mac_address: "44:A8:42:1A:68:78"
-  interfaces:                               # physical interface list
-    - mac_address: "44:a8:42:15:10:03"
-      address: 10.20.0.2
-      name: 'nic1'
-    - mac_address: "44:a8:42:15:10:04"
-      address: 192.168.20.5
-      name: 'nic2'
-###################################################
+  interfaces:
+    - name: 'nic1'
+      address: 10.10.0.2/24
+      mac_address: "44:a8:42:15:10:03"
+      vlan: native
+    - name: 'nic2'
+      address: 192.168.20.5/24
+      mac_address: "44:a8:42:15:10:04"
+      vlan: native
+    - name: 'nic3'
+      address: 192.168.101.2/24
+      mac_address: "44:a8:42:15:10:05"
+      vlan: 101
+    - name: 'nic4'
+      mac_address: "44:a8:42:15:10:06"
 nodes:
-  - name: compute1
+  - name: pod1-ctl01
     node: &nodeparas
       type: baremetal
       vendor: Dell Inc.
       model: powerEdge 720
       arch: x86_64
       cpus: 2
-      cpu_cflags: haswell    # add values based on CFLAGS in GCC
-      cores: 8               # physical cores, not including hyper-threads
+      cpu_cflags: haswell
+      cores: 4
       memory: 32G
-    disks: &disks_A                           # disk list
-      - name: 'disk1'                         # first disk
-        disk_capacity: 128G                   # volume
-        disk_type: ssd                        # several disk types possible
-        disk_interface: sas                   # several interface types possible
-        disk_rotation: 15000                  # define rotation speed of disk
-      - name: 'disk2'                         # second disk
-        disk_capacity: 600G
-        disk_type: hdd
+    disks: &disks_A
+      - name: 'disk1'
+        disk_capacity: 128G
+        disk_type: ssd
         disk_interface: sas
         disk_rotation: 15000
-      - name: 'disk3'                         # third disk
-        disk_capacity: 600G
-        disk_type: hdd
-        disk_interface: sas
-        disk_rotation: 15000
-      - name: 'disk4'                         # fourth disk
-        disk_capacity: 600G
-        disk_type: hdd
-        disk_interface: sas
-        disk_rotation: 15000
-      - name: 'disk5'                         # fifth disk
-        disk_capacity: 600G
+      - name: 'disk2'
+        disk_capacity: 2400G
         disk_type: hdd
         disk_interface: sas
         disk_rotation: 15000
     remote_management:
       <<: *remote_params
-      address: 192.168.20.201
-      mac_address: "44:A8:42:1A:70:BE"
-    interfaces:                               # physical interface list
-      - mac_address: "44:a8:42:14:ee:64"
-        address: 10.20.0.4
-        name: 'nic1'
-  ########################################
-  - name: compute2
-    node: *nodeparas
-    disks: *disks_A
-    remote_management:
-      <<: *remote_params
-      address: 192.168.20.202
-      mac_address: "44:A8:42:1A:76:26"
-    interfaces:
-      - mac_address: "44:a8:42:14:cb:31"
-        address: 10.20.0.5
-        name: 'nic1'
-  ########################################
-  - name: controller1
-    node: *nodeparas
-    disks: *disks_A
-    remote_management:
-      <<: *remote_params
-      address: 192.168.20.203
+      address: 192.168.20.203/24
       mac_address: "44:A8:42:1A:49:A5"
     interfaces:
-      - mac_address: "44:a8:42:14:cd:0d"
-        address: 10.20.0.6
-        name: 'nic1'
-      - mac_address: "44:a8:42:14:cd:0e"
-        address: 192.168.20.12
-        name: 'nic2'
-  ########################################
-  - name: controller2
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.20.0.16/24
+        mac_address: "44:a8:42:14:cd:0d"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 192.168.20.16/24
+        mac_address: "44:a8:42:14:cd:0e"
+        vlan: native
+      - name: 'nic3'
+        speed: 1gb
+        features: ''
+        address: 192.168.101.16/24
+        mac_address: "44:a8:42:14:cd:0f"
+        vlan: 101
+      - name: 'nic4'
+        speed: 1gb
+        features: ''
+        mac_address: "44:a8:42:14:cd:10"
+  - name: pod1-ctl02
     node: *nodeparas
     disks: *disks_A
     remote_management:
       <<: *remote_params
-      address: 192.168.20.204
+      address: 192.168.20.204/24
       mac_address: "44:A8:42:1A:76:2C"
     interfaces:
-      - mac_address: "44:a8:42:15:1b:e6"
-        address: 10.20.0.7
-        name: 'nic1'
-      - mac_address: "44:a8:42:15:1b:e7"
-        address: 192.168.20.13
-        name: 'nic2'
-  ########################################
-  - name: controller3
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.20.0.17/24
+        mac_address: "44:a8:42:15:1b:e6"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 192.168.20.17/24
+        mac_address: "44:a8:42:15:1b:e7"
+        vlan: native
+      - name: 'nic3'
+        speed: 1gb
+        features: ''
+        address: 192.168.101.16/24
+        mac_address: "44:a8:42:15:1b:e8"
+        vlan: 101
+      - name: 'nic4'
+        speed: 1gb
+        features: ''
+        mac_address: "44:a8:42:15:1b:e9"
+  - name: pod1-ctl03
     node: *nodeparas
     disks: *disks_A
     remote_management:
       <<: *remote_params
-      address: 192.168.20.205
+      address: 192.168.20.205/24
       mac_address: "44:A8:42:13:D5:1B"
     interfaces:
-      - mac_address: "44:a8:42:14:fc:1a"
-        address: 10.20.0.8
-        name: 'nic1'
-      - mac_address: "44:a8:42:14:fc:1b"
-        address: 192.168.20.14
-        name: 'nic2'
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.20.0.18/24
+        mac_address: "44:a8:42:14:fc:1a"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 192.168.20.18/24
+        mac_address: "44:a8:42:14:fc:1b"
+        vlan: native
+      - name: 'nic3'
+        speed: 1gb
+        features: ''
+        address: 192.168.101.18/24
+        mac_address: "44:a8:42:14:fc:1c"
+        vlan: 101
+      - name: 'nic4'
+        speed: 1gb
+        features: ''
+        mac_address: "44:a8:42:14:fc:1d"
+  - name: pod1-cmp01
+    node: *nodeparas
+    disks: *disks_A
+    remote_management:
+      <<: *remote_params
+      address: 192.168.20.201/24
+      mac_address: "44:A8:42:1A:70:BE"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.20.0.14/24
+        mac_address: "44:a8:42:14:ee:64"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 192.168.20.14/24
+        mac_address: "44:a8:42:14:ee:65"
+        vlan: native
+      - name: 'nic3'
+        speed: 1gb
+        features: ''
+        address: 192.168.101.14/24
+        mac_address: "44:a8:42:14:ee:66"
+        vlan: 101
+      - name: 'nic4'
+        speed: 1gb
+        features: ''
+        mac_address: "44:a8:42:14:ee:67"
+        vlan: 102
+  - name: pod1-cmp02
+    node: *nodeparas
+    disks: *disks_A
+    remote_management:
+      <<: *remote_params
+      address: 192.168.20.202/24
+      mac_address: "44:A8:42:1A:76:26"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.20.0.13/24
+        mac_address: "44:a8:42:14:cb:31"
+        vlan: native
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 192.168.20.13/24
+        mac_address: "44:a8:42:14:cb:32"
+        vlan: native
+      - name: 'nic3'
+        speed: 1gb
+        features: ''
+        address: 192.168.101.13/24
+        mac_address: "44:a8:42:14:cb:33"
+        vlan: 101
+      - name: 'nic4'
+        speed: 1gb
+        features: ''
+        mac_address: "44:a8:42:14:cb:34"
+        vlan: 102
