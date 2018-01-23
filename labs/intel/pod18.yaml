@@ -39,8 +39,8 @@ jumphost:
     versions:
       - 1.0
       - 2.0
-    user:
-    pass:
+    user: changeme
+    pass: changeme
   remote_management:
     <<: *remoteparas
     address: 10.10.180.10
@@ -123,7 +123,7 @@ nodes:
     remote_management:
       <<: *remoteparas
       address: 10.10.180.12/24
-      mac_address: "A4:BF:01:16:31:1G"
+      mac_address: "A4:BF:01:16:31:1F"
     interfaces:
       - name: 'nic1'
         speed: 1gb
