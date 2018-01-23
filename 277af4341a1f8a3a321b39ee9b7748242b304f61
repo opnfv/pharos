@@ -189,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4759348d",
+        "filename": "docs/release/configguide/create_a_lab.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-01-23T16:09:06Z",
+      "side": 1,
+      "message": "+1\n\nit is not easy as we expected to prepare a jumpserver.",
+      "parentUuid": "9a3d3df0_6440b634",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 30
+      },
+      "revId": "277af4341a1f8a3a321b39ee9b7748242b304f61",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_3dc3628a",
         "filename": "docs/release/configguide/create_a_lab.rst",
         "patchSetId": 1
