@@ -8,6 +8,7 @@
 ---
 ### Nokia POD descriptor file ###
 
+version: 1.0
 details:
   pod_owner: Mika Rautakumpu
   contact: opnfv-public-lab-admin@list.nokia.com
