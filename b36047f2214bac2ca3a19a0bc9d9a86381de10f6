@@ -22,6 +22,30 @@
       "revId": "b36047f2214bac2ca3a19a0bc9d9a86381de10f6",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_1c0c693a",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-01-23T15:39:59Z",
+      "side": 1,
+      "message": "I will revise all these at some point... Leave only the ones that make sense.\n\nhttp://jinja.pocoo.org/docs/2.10/templates/#whitespace-control",
+      "parentUuid": "9a3d3df0_c1da1e16",
+      "range": {
+        "startLine": 49,
+        "startChar": 12,
+        "endLine": 49,
+        "endChar": 15
+      },
+      "revId": "b36047f2214bac2ca3a19a0bc9d9a86381de10f6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
