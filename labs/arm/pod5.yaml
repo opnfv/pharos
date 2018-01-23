@@ -8,6 +8,7 @@
 ---
 ### Enea ARM POD 5 descriptor file ###
 
+version: 1.0
 details:
   pod_owner: ENEA AB
   contact: dan.lilliehorn@enea.com

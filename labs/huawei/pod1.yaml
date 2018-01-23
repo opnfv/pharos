@@ -9,6 +9,7 @@
 ---
 ### POD descriptor file ###
 
+version: 1.0
 details:
   pod_owner: Tianwei Wu
   contact: wutianwei1@hauwei.com

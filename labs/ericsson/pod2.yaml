@@ -1,6 +1,7 @@
 ---
 ### POD descriptor file ###
 
+version: 1.0
 details:
   pod_owner: Jose Lausuch
   contact: jose.lausuch@ericsson.com
