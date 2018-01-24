@@ -35,27 +35,19 @@ done
 # shellcheck disable=SC2086
 while IFS= read -r lab_config; do
     SUMMARY+="\n${lab_config#labs/};"
-    lab_nodes=$(grep -ce 'node:' "${lab_config}")
-    lab_tmacs=$(grep -ce 'mac_address:' "${lab_config}")
-    ((lab_amacs=lab_tmacs/lab_nodes)); ((lab_nodes-=1))
+    idf_config="$(dirname "${lab_config}")/idf-$(basename "${lab_config}")"
+    idf_installer=$(grep 'installer:' "${idf_config}" 2>/dev/null || echo)
     echo "###################### ${lab_config} ######################"
     for adapter in ${INSTALLER_ADAPTERS}; do
         pdf_inst=0
         pdf_inst_pass=0
         pdf_yaml_pass=0
-        ia_nodes=$(grep -hPo 'nodes\W+\K\d+' -R "${adapter}" | tail -1)
-        ia_rmacs=$(grep -hPo 'interfaces\W+\K\d+' -R "${adapter}" | sort | tail -1)
-        ((ia_nodes+=1)); ((ia_rmacs+=1))
-        if [[ ${ia_nodes} -gt ${lab_nodes} ]]; then
+        installer_name=$(basename "${adapter}")
+        if [ -n "${idf_installer}" ] && echo "${idf_installer}" | \
+                grep -vq "${installer_name}"; then
             SUMMARY+='-;'
-            echo -n "[GENERATE] [SKIP] $(basename "${adapter}") requires at least"
-            echo -e " ${ia_nodes} nodes, but found only ${lab_nodes}, skipping.\n"
-            continue
-        fi
-        if [[ ${ia_rmacs} -ge ${lab_amacs} ]]; then
-            SUMMARY+='-;'
-            echo -n "[GENERATE] [SKIP] $(basename "${adapter}") requires at least"
-            echo -e " ${ia_rmacs} nics, but found ~ ${lab_amacs}, skipping.\n"
+            echo -n "[GENERATE] [SKIP] idf.installer defined and "
+            echo -e "${installer_name} not listed, skipping.\n"
             continue
         fi
         while IFS= read -r jinja_template; do

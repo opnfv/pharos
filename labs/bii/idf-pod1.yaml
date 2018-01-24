@@ -10,6 +10,9 @@
 
 idf:
   version: 0.1
+  # NOTE: Temporarily disable Daisy check, since it requires 'storage' network
+  # to be defined in 'idf.net_config' below.
+  installer: ['apex', 'compass4nfv', 'fuel', 'joid']
   net_config:
     oob:                     # IPMI management network
       interface: 0

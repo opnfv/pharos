@@ -81,6 +81,11 @@ properties:
       version:
         type: 'number'
         enum: [0.1]
+      installer:
+        type: 'array'
+        items:
+          type: 'string'
+          enum: ['apex', 'compass4nfv', 'daisy', 'fuel', 'joid']
       net_config:
         type: 'object'
       fuel:

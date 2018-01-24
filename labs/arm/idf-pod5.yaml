@@ -10,6 +10,9 @@
 
 idf:
   version: 0.1
+  # NOTE: Compass & Joid are not supported on this POD since they require at
+  # least 3 network ports on all nodes.
+  installer: ['apex', 'daisy', 'fuel']
   net_config:
     oob:
       ip-range: 10.0.8.3-10.0.8.10
