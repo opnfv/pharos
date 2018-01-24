@@ -9,11 +9,11 @@
 ---
 TYPE: baremetal
 FLAVOR: cluster
-POWER_TOOL: '{{ conf['jumphost']['remote_params']['type'] }}tool'  # expects string ipmitool
+POWER_TOOL: '{{ conf['jumphost']['remote_management']['type'] }}tool'  # expects string ipmitool
 
-ipmiUser: {{ conf['jumphost']['remote_params']['user'] }}
-ipmiPass: {{ conf['jumphost']['remote_params']['pass'] }}
-ipmiVer: '{{ conf['jumphost']['remote_params']['versions'][0] }}'
+ipmiUser: {{ conf['jumphost']['remote_management']['user'] }}
+ipmiPass: {{ conf['jumphost']['remote_management']['pass'] }}
+ipmiVer: '{{ conf['jumphost']['remote_management']['versions'][0] }}'
 
 odl_l3_agent: "Enable"
 
