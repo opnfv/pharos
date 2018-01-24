@@ -9,7 +9,7 @@
 
 ---
 
-adapter: {{ conf['jumphost']['remote_params']['type'] }}
+adapter: {{ conf['jumphost']['remote_management']['type'] }}
 hosts:
   {%- set nodes_num = conf['nodes'] | length -%}
   {%- if nodes_num == 5 %}
