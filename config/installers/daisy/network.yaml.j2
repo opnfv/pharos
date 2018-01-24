@@ -72,7 +72,7 @@ networks:
       {%- set gateway = ".".join([ips[0], ips[1], ips[2], "1"]) -%}
     {%- endif -%}
 
-    {%- set networks = networks.update({key: {'interface_name': interface_name,
+    {%- set _ = networks.update({key: {'interface_name': interface_name,
                                               'bus_addr': bus_addr,
                                               'vlan': vlan,
                                               'network': network,
