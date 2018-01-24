@@ -1,0 +1,113 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+$schema: 'http://json-schema.org/schema#'
+$id: 'https://github.com/opnfv/pharos/blob/master/config/pdf/pod1.yaml'
+
+definitions:
+  net_config:
+    v0.1:
+      # NOTE: I hope this is going away soon, so I won't model it yet
+      type: 'object'
+  daisy:
+    v0.1:
+      type: 'object'
+      # NOTE: To be properly modeled by Daisy maintainers
+  compass:
+    v0.1:
+      type: 'object'
+      # NOTE: To be properly modeled by Compass4NFV maintainers
+  fuel:
+    v0.1:
+      type: 'object'
+      properties:
+        jumphost:
+          type: 'object'
+          properties:
+            bridges:
+              type: 'object'
+              properties:
+                admin:
+                  type: ['string', 'null']
+                mgmt:
+                  type: ['string', 'null']
+                private:
+                  type: ['string', 'null']
+                public:
+                  type: ['string', 'null']
+              required: ['admin', 'mgmt', 'private', 'public']
+              additionalProperties: false
+          required: ['bridges']
+          additionalProperties: false
+        network:
+          type: 'object'
+          properties:
+            node:
+              type: 'array'
+              items:
+                type: 'object'
+                properties:
+                  interfaces:
+                    type: 'array'
+                    items:
+                      type: ['string', 'null']
+                  busaddr:
+                    type: 'array'
+                    items:
+                      type: ['string', 'null']
+                required: ['interfaces', 'busaddr']
+                additionalProperties: false
+          required: ['node']
+          additionalProperties: false
+      required: ['jumphost', 'network']
+      additionalProperties: false
+
+##############################################################################
+# Top-level structure:
+# - define all possible top-level and second-level keys, without enforcing a
+#   schema for second-level, just so we can disallow additional properties;
+# - require 'version' and allow dynamically generated 'version_x.y' key;
+properties:
+  idf:
+    properties:
+      # version_x.y keys are auto-added by `validate_schema.py` based on 'version'
+      version_0.1:
+        type: 'boolean'
+      version:
+        type: 'number'
+        enum: [0.1]
+      net_config:
+        type: 'object'
+      fuel:
+        type: 'object'
+      daisy:
+        type: 'object'
+      compass:
+        type: 'object'
+    required: ['version']
+    additionalProperties: false
+    ############################################################################
+    # Schema versioning
+    # - based on dynamically added 'version_x.y', require additional IDF blocks
+    #   and validate them against the proper schema version;
+    dependencies:
+      version_0.1:
+        properties:
+          net_config:
+            $ref: '#/definitions/net_config/v0.1'
+          fuel:
+            $ref: '#/definitions/fuel/v0.1'
+          daisy:
+            $ref: '#/definitions/daisy/v0.1'
+          compass:
+            $ref: '#/definitions/compass/v0.1'
+        required: ['net_config']
+
+# Do not allow any properties not defined here. This lets us catch typos.
+additionalProperties: false
+required: ['idf']
