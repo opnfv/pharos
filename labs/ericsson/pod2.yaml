@@ -33,8 +33,26 @@ jumphost:
     versions:
       - 1.0
       - 2.0
-    user:
-    pass:
+    user: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAZ+KIpufJFbXv6vcsevPYdhO2lBkYCnmoMKNa
+      lwDsynavzbIDeZmUlpf8xCOu/f7/VQfQdJCd6aZSScALlPSYgr39b0SPPfnr
+      Kx3jfOZnu8SEK+UJIalvebApmMdKM/vaKTWENV5PXyGcYwf8Q2lVxyXpxLVs
+      /FkDg1kB2VpdYaVfseY98LgLkP06uyfBPXH189BlQrxZcw3Af64BYgWfpDDt
+      w3RzIGCxAOMMZ8lEOnY4ofrsWaQA5YH12ezOT3Mwd/wkOuqcU19fOYaeS9Ou
+      050m6H9DJDnR5btjLIrjjKINp5Nf6hHG5mngUc5JVdRKNvD0ONBi6Bj0cvGF
+      STfaXTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDSD+x9ybRnBdCQaY7n
+      aDlygBA4t2kc8UOwZYE6ZZaFUgl1]
+    pass: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAkHaGqpTmg+YSLPS5AwhB1N6MBA9cXTA1oacT
+      8bY1aLBi7HKbacJQjHOfr2FoIAABkgV7N+BXKfebMighfcDC9XtKGYnV3tCD
+      XpreNZgX8NmVaYOLP6sFkAk53oYljswKOVVUrAqXplZx4kBXYm0Az2beGg5J
+      5LRNwu9Eh4SRYN4dFN/XKQMtsQzKjMWTBLde9snrbhYfOxSsAR0B4FD7WWik
+      viKQY82C6C3KbcBeESMPE/lgBj7KIPbYkpzk9N5GafK+XkUS2aopAAkQFGll
+      60Y0/9LOwPzItCB1q/kEENgz1aw/nHeH3xQsErwepuZiW3SkMncPQ9L5Q5PR
+      hlricTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBB8T/wzhjtvtwZ+Iz2Y
+      SKM7gBBWbUmwjBdGX6aurCiyVGv2]
   remote_management:
     <<: *remoteparas
     address: 172.16.2.11/24
