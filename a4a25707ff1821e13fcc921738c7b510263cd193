@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_69497430",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-25T01:19:58Z",
+      "side": 1,
+      "message": "This change only addresses the remote_params, to keep it easy to review.\nI suggest we handle these in a separate change.",
+      "parentUuid": "9a3d3df0_4941100a",
+      "range": {
+        "startLine": 129,
+        "startChar": 17,
+        "endLine": 129,
+        "endChar": 29
+      },
+      "revId": "a4a25707ff1821e13fcc921738c7b510263cd193",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_093b889d",
         "filename": "config/installers/joid/pod_config.yaml.j2",
         "patchSetId": 1
