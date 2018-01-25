@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_4941100a",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 602
+      },
+      "writtenOn": "2018-01-25T00:55:35Z",
+      "side": 1,
+      "message": "this value should be from floating ip network.",
+      "range": {
+        "startLine": 129,
+        "startChar": 17,
+        "endLine": 129,
+        "endChar": 29
+      },
+      "revId": "a4a25707ff1821e13fcc921738c7b510263cd193",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_093b889d",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 602
+      },
+      "writtenOn": "2018-01-25T00:55:35Z",
+      "side": 1,
+      "message": "f",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 12
+      },
+      "revId": "a4a25707ff1821e13fcc921738c7b510263cd193",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c9bd2004",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 602
+      },
+      "writtenOn": "2018-01-25T00:55:35Z",
+      "side": 1,
+      "message": "change it go xenial",
+      "range": {
+        "startLine": 134,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 16
+      },
+      "revId": "a4a25707ff1821e13fcc921738c7b510263cd193",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e93d8490",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 602
+      },
+      "writtenOn": "2018-01-25T00:55:35Z",
+      "side": 1,
+      "message": "ha",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 13
+      },
+      "revId": "a4a25707ff1821e13fcc921738c7b510263cd193",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a9b89c11",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 602
+      },
+      "writtenOn": "2018-01-25T00:55:35Z",
+      "side": 1,
+      "message": "change it to pike",
+      "range": {
+        "startLine": 136,
+        "startChar": 13,
+        "endLine": 136,
+        "endChar": 20
+      },
+      "revId": "a4a25707ff1821e13fcc921738c7b510263cd193",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
