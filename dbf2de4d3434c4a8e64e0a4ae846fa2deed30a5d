@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_4470d7db",
+        "filename": "config/installers/joid/pod_config.yaml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-25T18:42:59Z",
+      "side": 1,
+      "message": "I\u0027m not sure how to handle this yet.\nI assume it is the same as the \u0027public\u0027 network info for Fuel, but I\u0027m not confident I know enough about this to change it ...\nThe same applies to floating-ip-range, which also appears in spaces below - it should be properly parameterized based on PDF/IDF.",
+      "range": {
+        "startLine": 129,
+        "startChar": 6,
+        "endLine": 129,
+        "endChar": 30
+      },
+      "revId": "dbf2de4d3434c4a8e64e0a4ae846fa2deed30a5d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
