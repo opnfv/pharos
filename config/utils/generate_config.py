@@ -65,7 +65,7 @@ ENV.filters['dpkg_arch'] = dpkg_arch
 # Run `eyaml decrypt` on the whole file, but only if PDF data is encrypted
 # Note: eyaml return code is 0 even if keys are not available
 try:
-    if 'ENC[PKCS7' in open(ARGS.yaml).read():
+    if os.path.isfile(ARGS.yaml) and 'ENC[PKCS7' in open(ARGS.yaml).read():
         DICT = yaml.safe_load(check_output(['eyaml', 'decrypt',
                                             '-f', ARGS.yaml]))
 except CalledProcessError as ex:
