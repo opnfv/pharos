@@ -5,48 +5,36 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
----
-{%- if conf.idf is defined and conf.idf.fuel is defined %}
-  {%- if conf.idf.net_config is defined -%}
-      {%- set net_admin = conf.idf.net_config.admin.network -%}
-      {%- set net_mgmt = conf.idf.net_config.mgmt.network -%}
-      {%- set net_private = conf.idf.net_config.private.network -%}
-      {%- set net_public = conf.idf.net_config.public.network -%}
-      {%- set net_public_mask = conf.idf.net_config.public.mask -%}
-      {%- set vlan_mgmt = conf.idf.net_config.mgmt.vlan -%}
-      {%- set vlan_private = conf.idf.net_config.private.vlan -%}
-      {%- if conf.idf.net_config.public.dns is defined -%}
-          {%- set dns_public = conf.idf.net_config.public.dns -%}
-      {%- endif -%}
-      {%- set pxe_interface = conf.idf.net_config.admin.interface -%}
-      {%- if conf.idf.net_config.public.gateway is defined -%}
-          {%- set net_public_gw = conf.idf.net_config.public.gateway -%}
-      {%- endif -%}
-      {%- if conf.idf.fuel.network.public_pool is defined -%}
-          {%- set net_public_pool_start = conf.idf.fuel.network.public_pool.start_ip -%}
-          {%- set net_public_pool_end = conf.idf.fuel.network.public_pool.end_ip -%}
-      {%- endif -%}
-  {%- else -%}
-      {%- set net_admin = '192.168.11.0' -%}
-      {%- set net_mgmt = '172.16.10.0' -%}
-      {%- set net_private = '10.1.0.0' -%}
-      {%- set net_public = '172.30.10.0' -%}
-      {%- set net_public_mask = '24' -%}
-      {%- set vlan_mgmt = '300' -%}
-      {%- set vlan_private = '1000' -%}
-      {%- set pxe_interface = 0 -%}
-  {%- endif -%}
+{%- set net_admin = conf.idf.net_config.admin.network %}
+{%- set net_mgmt = conf.idf.net_config.mgmt.network %}
+{%- set net_private = conf.idf.net_config.private.network %}
+{%- set net_public = conf.idf.net_config.public.network %}
+{%- set net_public_mask = conf.idf.net_config.public.mask %}
+{%- set vlan_mgmt = conf.idf.net_config.mgmt.vlan %}
+{%- set vlan_private = conf.idf.net_config.private.vlan %}
+{%- if conf.idf.net_config.public.dns is defined %}
+    {%- set dns_public = conf.idf.net_config.public.dns %}
+{%- endif %}
+{%- set pxe_interface = conf.idf.net_config.admin.interface %}
+{%- if conf.idf.net_config.public.gateway is defined %}
+    {%- set net_public_gw = conf.idf.net_config.public.gateway %}
+{%- endif %}
+{%- if conf.idf.fuel.network.public_pool is defined %}
+    {%- set net_public_pool_start = conf.idf.fuel.network.public_pool.start_ip %}
+    {%- set net_public_pool_end = conf.idf.fuel.network.public_pool.end_ip %}
+{%- endif %}
 
-  {%- if dns_public is not defined -%}
-      {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] -%}
-  {%- endif -%}
-  {%- if net_public_gw is not defined -%}
-      {%- set net_public_gw =  net_public | ipaddr_index('1') -%}
-  {%- endif -%}
-  {%- if net_public_pool_start is not defined or net_public_pool_end is not defined -%}
-      {%- set net_public_pool_start = net_public | ipaddr_index('80') -%}
-      {%- set net_public_pool_end = net_public | ipaddr_index('100') -%}
-  {%- endif %}
+{%- if dns_public is not defined %}
+    {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] %}
+{%- endif %}
+{%- if net_public_gw is not defined %}
+    {%- set net_public_gw =  net_public | ipaddr_index('1') %}
+{%- endif %}
+{%- if net_public_pool_start is not defined or net_public_pool_end is not defined %}
+    {%- set net_public_pool_start = net_public | ipaddr_index('80') %}
+    {%- set net_public_pool_end = net_public | ipaddr_index('100') %}
+{%- endif %}
+---
 parameters:
   _param:
 
@@ -155,4 +143,3 @@ parameters:
     opnfv_maas_node05_power_user: {{ conf.nodes.4.remote_management.user }}
     opnfv_maas_node05_power_password: {{ conf.nodes.4.remote_management.pass }}
     opnfv_maas_node05_interface_mac: '{{ conf.nodes.4.interfaces[pxe_interface].mac_address }}'
-{%- endif -%}

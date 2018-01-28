@@ -10,6 +10,8 @@
 
 idf:
   version: 0.1
+  # NOTE: Fuel checking is disabled until 'idf.fuel' is defined below
+  installer: ['apex', 'compass4nfv', 'daisy', 'joid']
   net_config:
     oob:
       interface: 0
