@@ -31,10 +31,10 @@ lab:
           spaces: [admin]
           mac: ["{{ conf['nodes'][0]['interfaces'][2]['mac_address'] }}"]
       power:
-        type: {{ conf['jumphost']['remote_params']['type'] }}
+        type: {{ conf['nodes'][0]['remote_management']['type'] }}
         address: {{ conf['nodes'][0]['remote_management']['address'] }}
-        user: {{ conf['jumphost']['remote_params']['user'] }}
-        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+        user: {{ conf['nodes'][0]['remote_management']['user'] }}
+        pass: {{ conf['nodes'][0]['remote_management']['pass'] }}
     - name: {{ conf['nodes'][1]['name'] }}
       architecture: {{ conf['nodes'][1]['node']['arch'] }}
       roles: [compute, control, storage]
@@ -55,10 +55,10 @@ lab:
           spaces: [admin]
           mac: ["{{ conf['nodes'][1]['interfaces'][2]['mac_address'] }}"]
       power:
-        type: {{ conf['jumphost']['remote_params']['type'] }}
+        type: {{ conf['nodes'][1]['remote_management']['type'] }}
         address: {{ conf['nodes'][1]['remote_management']['address'] }}
-        user: {{ conf['jumphost']['remote_params']['user'] }}
-        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+        user: {{ conf['nodes'][1]['remote_management']['user'] }}
+        pass: {{ conf['nodes'][1]['remote_management']['pass'] }}
     - name: {{ conf['nodes'][2]['name'] }}
       architecture: {{ conf['nodes'][2]['node']['arch'] }}
       roles: [compute, control, storage]
@@ -77,10 +77,10 @@ lab:
           mac: ["{{ conf['nodes'][2]['interfaces'][1]['mac_address'] }}"]
         - ifname: {{ conf['nodes'][2]['interfaces'][2]['name'] }}
       power:
-        type: {{ conf['jumphost']['remote_params']['type'] }}
+        type: {{ conf['nodes'][2]['remote_management']['type'] }}
         address: {{ conf['nodes'][2]['remote_management']['address'] }}
-        user: {{ conf['jumphost']['remote_params']['user'] }}
-        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+        user: {{ conf['nodes'][2]['remote_management']['user'] }}
+        pass: {{ conf['nodes'][2]['remote_management']['pass'] }}
     - name: {{ conf['nodes'][3]['name'] }}
       architecture: {{ conf['nodes'][3]['node']['arch'] }}
       roles: [compute, storage]
@@ -99,10 +99,10 @@ lab:
           mac: ["{{ conf['nodes'][3]['interfaces'][1]['mac_address'] }}"]
         - ifname: {{ conf['nodes'][3]['interfaces'][2]['name'] }}
       power:
-        type: ipmi
+        type: {{ conf['nodes'][3]['remote_management']['type'] }}
         address: {{ conf['nodes'][3]['remote_management']['address'] }}
-        user: {{ conf['jumphost']['remote_params']['user'] }}
-        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+        user: {{ conf['nodes'][3]['remote_management']['user'] }}
+        pass: {{ conf['nodes'][3]['remote_management']['pass'] }}
     - name: {{ conf['nodes'][4]['name'] }}
       architecture: {{ conf['nodes'][4]['node']['arch'] }}
       roles: [compute, storage]
@@ -121,10 +121,10 @@ lab:
           mac: ["{{ conf['nodes'][4]['interfaces'][1]['mac_address'] }}"]
         - ifname: {{ conf['nodes'][1]['interfaces'][2]['name'] }}
       power:
-        type: {{ conf['jumphost']['remote_params']['type'] }}
+        type: {{ conf['nodes'][4]['remote_management']['type'] }}
         address: {{ conf['nodes'][4]['remote_management']['address'] }}
-        user: {{ conf['jumphost']['remote_params']['user'] }}
-        pass: {{ conf['jumphost']['remote_params']['pass'] }}
+        user: {{ conf['nodes'][4]['remote_management']['user'] }}
+        pass: {{ conf['nodes'][4]['remote_management']['pass'] }}
       floating-ip-range: 10.5.15.6,10.5.15.250,10.5.15.1,10.5.15.0/24
       ext-port: "ens785f0.505"
       dns: 8.8.8.8
