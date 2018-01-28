@@ -46,7 +46,7 @@ idf:
   fuel:
     jumphost:
       bridges:
-        admin: 'pxebr'
+        admin: 'br6'
         mgmt: 'br-mgmt'
         private: ~
         public: 'br-external'
