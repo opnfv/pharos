@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_c8a19147",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-30T19:23:16Z",
+      "side": 1,
+      "message": "without this, PDF values like `address: \u0027qemu:///system\u0027` will be trimmed to `address: qemu:`, breaking both the value and yamllint check",
+      "range": {
+        "startLine": 79,
+        "startChar": 15,
+        "endLine": 79,
+        "endChar": 65
+      },
+      "revId": "ab8fed30e41efda7a0d5c7a2401c4fed2f37deab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
