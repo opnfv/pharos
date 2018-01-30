@@ -81,6 +81,11 @@ properties:
       version:
         type: 'number'
         enum: [0.1]
+      installer:
+        type: 'array'
+        items:
+          type: 'string'
+          enum: ['apex', 'compass4nfv', 'daisy', 'fuel', 'joid']
       net_config:
         type: 'object'
       fuel:
@@ -106,6 +111,9 @@ properties:
             $ref: '#/definitions/daisy/v0.1'
           compass:
             $ref: '#/definitions/compass/v0.1'
+      fuel:
+        required: ['net_config']
+      daisy:
         required: ['net_config']
 
 # Do not allow any properties not defined here. This lets us catch typos.

@@ -10,6 +10,8 @@
 
 idf:
   version: 0.1
+  # NOTE: For now, only Daisy supports 3-node clusters
+  installer: ['daisy']
   net_config:
     # NOTE: Network names are likely to change after the PDF spec is updated
     oob:
