@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_022355a7",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-31T16:52:37Z",
+      "side": 1,
+      "message": "This is indeed what it was thought for, but I also use it to generate virsh network definitions based on IDF :)",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 73
+      },
+      "revId": "5325a34e28f77a33143b384facb3c72121750e39",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_623d01c4",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-01-31T16:52:37Z",
+      "side": 1,
+      "message": "I\u0027d recommend a more specific name",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 10
+      },
+      "revId": "5325a34e28f77a33143b384facb3c72121750e39",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
