@@ -7,9 +7,10 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
-"""This module does blah blah."""
+"""Generates POD configuration from PDF/IDF and jinja2 installer template"""
+
 import argparse
-import ipaddress
+import lib
 import logging
 import os
 import yaml
@@ -21,46 +22,8 @@ PARSER.add_argument("--yaml", "-y", type=str, required=True)
 PARSER.add_argument("--jinja2", "-j", type=str, required=True)
 ARGS = PARSER.parse_args()
 
-# Processor architecture vs DPKG architecture mapping
-DPKG_ARCH_TABLE = {
-    'aarch64': 'arm64',
-    'x86_64': 'amd64',
-}
-ARCH_DPKG_TABLE = dict(zip(DPKG_ARCH_TABLE.values(), DPKG_ARCH_TABLE.keys()))
-
-# Custom filter to allow simple IP address operations returning
-# a new address from an upper or lower (negative) index
-def ipaddr_index(base_address, index):
-    """Return IP address in given network at given index"""
-    try:
-        base_address_str = unicode(base_address)
-    #pylint: disable=unused-variable
-    except NameError as ex:
-        base_address_str = str(base_address)
-    return ipaddress.ip_address(base_address_str) + int(index)
-
-# Custom filter to transform a prefix netmask to IP address format netmask
-def netmask(prefix):
-    """Get netmask from prefix length integer"""
-    try:
-        prefix_str = unicode(prefix)
-    except NameError as ex:
-        prefix_str = str(prefix)
-    return ipaddress.IPv4Network("1.0.0.0/"+prefix_str).netmask
-
-# Custom filter to convert between processor architecture
-# (as reported by $(uname -m)) and DPKG-style architecture
-def dpkg_arch(arch, to_dpkg=True):
-    """Return DPKG-compatible from processor arch and vice-versa"""
-    if to_dpkg:
-        return DPKG_ARCH_TABLE[arch]
-    else:
-        return ARCH_DPKG_TABLE[arch]
-
 ENV = Environment(loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)))
-ENV.filters['ipaddr_index'] = ipaddr_index
-ENV.filters['netmask'] = netmask
-ENV.filters['dpkg_arch'] = dpkg_arch
+lib.load_custom_filters(ENV)
 
 # Run `eyaml decrypt` on the whole file, but only if PDF data is encrypted
 # Note: eyaml return code is 0 even if keys are not available
