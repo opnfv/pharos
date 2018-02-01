@@ -16,6 +16,24 @@
       "revId": "6c30de9e4553141e99131bf0f0583719945ef6ca",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f8f53eed",
+        "filename": "config/utils/gen_config_lib.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-01T16:25:29Z",
+      "side": 1,
+      "message": "Libraries are not executed by the shell, so no need.",
+      "parentUuid": "9a3d3df0_383fa6b5",
+      "revId": "6c30de9e4553141e99131bf0f0583719945ef6ca",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
