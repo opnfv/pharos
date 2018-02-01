@@ -23,6 +23,10 @@
     {%- set net_public_pool_start = conf.idf.fuel.network.public_pool.start_ip %}
     {%- set net_public_pool_end = conf.idf.fuel.network.public_pool.end_ip %}
 {%- endif %}
+{%- if conf.idf.fuel.maas is defined %}
+    {%- set maas_timeout_comissioning = conf.idf.fuel.maas.timeout_comissioning %}
+    {%- set maas_timeout_deploying = conf.idf.fuel.maas.timeout_deploying %}
+{%- endif %}
 
 {%- if dns_public is not defined %}
     {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] %}
@@ -33,6 +37,10 @@
 {%- if net_public_pool_start is not defined or net_public_pool_end is not defined %}
     {%- set net_public_pool_start = net_public | ipaddr_index('80') %}
     {%- set net_public_pool_end = net_public | ipaddr_index('100') %}
+{%- endif %}
+{%- if maas_timeout_comissioning is not defined or maas_timeout_deploying is not defined%}
+    {%- set maas_timeout_comissioning = 10 %}
+    {%- set maas_timeout_deploying = 15 %}
 {%- endif %}
 ---
 parameters:
@@ -114,6 +122,9 @@ parameters:
 
     opnfv_net_mgmt_vlan: {{ vlan_mgmt }}
     opnfv_net_tenant_vlan: {{ vlan_private }}
+
+    opnfv_maas_timeout_comissioning: {{ maas_timeout_comissioning }}
+    opnfv_maas_timeout_deploying: {{ maas_timeout_deploying }}
 
     opnfv_maas_node01_architecture: '{{ conf.nodes.0.node.arch | dpkg_arch }}/generic'
     opnfv_maas_node01_power_address: {{ conf.nodes.0.remote_management.address.rsplit('/')[0] }}
