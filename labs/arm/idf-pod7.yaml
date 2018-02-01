@@ -53,6 +53,10 @@ idf:
         mgmt: 'mgmt15_br0'
         private: ~
         public: 'public15_br0'
+    maas:
+      # MaaS timeouts (in minutes)
+      timeout_comissioning: 10
+      timeout_deploying: 15
     network:
       node:
         # Ordered-list, index should be in sync with node index in PDF

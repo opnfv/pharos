@@ -44,6 +44,15 @@ definitions:
               additionalProperties: false
           required: ['bridges']
           additionalProperties: false
+        maas:
+          type: 'object'
+          properties:
+            timeout_comissioning:
+              type: 'number'
+            timeout_deploying:
+              type: 'number'
+          required: ['timeout_comissioning', 'timeout_deploying']
+          additionalProperties: false
         network:
           type: 'object'
           properties:
