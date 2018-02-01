@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_e5d63b27",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-01T11:14:54Z",
+      "side": 1,
+      "message": "Still better than the old one",
+      "parentUuid": "9a3d3df0_022355a7",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 73
+      },
+      "revId": "5325a34e28f77a33143b384facb3c72121750e39",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_623d01c4",
         "filename": "config/utils/generate_config.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-31T16:52:37Z",
       "side": 1,
       "message": "I\u0027d recommend a more specific name",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 10
+      },
+      "revId": "5325a34e28f77a33143b384facb3c72121750e39",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a519d323",
+        "filename": "config/utils/generate_config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-01T11:14:54Z",
+      "side": 1,
+      "message": "This library may get more functions other than filters so I avoided filter on the name. I will relate the name to the main script",
+      "parentUuid": "9a3d3df0_623d01c4",
       "range": {
         "startLine": 13,
         "startChar": 7,
