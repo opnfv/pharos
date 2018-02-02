@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_5bdee4dd",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-02T16:32:05Z",
+      "side": 1,
+      "message": "this will definitely not work for /25\nI thing going forward we should allow (optional) parameterization of these fixed IPs via IDF",
+      "range": {
+        "startLine": 61,
+        "startChar": 73,
+        "endLine": 61,
+        "endChar": 76
+      },
+      "revId": "d712d0f12dd3762abb91dbe46a129dcdce0c16ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
