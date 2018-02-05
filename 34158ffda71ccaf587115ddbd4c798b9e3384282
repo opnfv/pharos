@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_47fba778",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 361
+      },
+      "writtenOn": "2018-02-05T13:05:41Z",
+      "side": 1,
+      "message": "the infra management i wrote already use this syntax, but it is possible.\n\nBut to be honest i would prefer to share data as much as possible between installers used by xci. Moreover except nodes roles with a specific name between OpenStack and K8s what can be specific to an installer ? With the background using idf for OSA/KOLLA/K8S in Orange we do not have installer specific parameter.\n\nI would prefer to use idf.xci.[osa,kolla,k8s] or even idf.xci.installer.[osa,kolla,k8s]",
+      "parentUuid": "9a3d3df0_271e630c",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 5
+      },
+      "revId": "34158ffda71ccaf587115ddbd4c798b9e3384282",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_6714ebe8",
         "filename": "labs/lf/idf-pod4.yaml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_27f6638f",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 361
+      },
+      "writtenOn": "2018-02-05T13:05:41Z",
+      "side": 1,
+      "message": "This would impact xci infra_manager patches",
+      "parentUuid": "9a3d3df0_6714ebe8",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "34158ffda71ccaf587115ddbd4c798b9e3384282",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_87192f24",
         "filename": "labs/lf/idf-pod4.yaml",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2018-02-05T11:06:08Z",
       "side": 1,
       "message": "do we have all the nodes as storage nodes?\n\nwe use compute nodes as storage nodes for virtual deployment if I\u0027m not mistaken.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 39
+      },
+      "revId": "34158ffda71ccaf587115ddbd4c798b9e3384282",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_87f12f97",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 361
+      },
+      "writtenOn": "2018-02-05T13:05:41Z",
+      "side": 1,
+      "message": "Today it is not used, this is more for information. In my opinion, it would be bad to only use 3/5 of storage ressources.",
+      "parentUuid": "9a3d3df0_87192f24",
       "range": {
         "startLine": 44,
         "startChar": 0,
