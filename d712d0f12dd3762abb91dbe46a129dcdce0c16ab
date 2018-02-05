@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3d3df0_47b2874c",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-05T09:21:44Z",
+      "side": 1,
+      "message": "I just realized about a possible, better implementation of the ipnet filters that we have not merged yet on pharos. A way to avoid passing the mask as variable when the network is taken from the \"pipe\". Using CIDR notation\n\nInstead of:\nset net_public_gw \u003d  net_public | ipnet_hostmin(net_public_mask)\n\nset net_public_gw \u003d  net_public_cidr | ipnet_hostmin()\n\nWith net_public_cidr \u003d idf IP + \"/\" + idf mask\n\nHow do you see this?",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 72
+      },
+      "revId": "d712d0f12dd3762abb91dbe46a129dcdce0c16ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_5bdee4dd",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 2
