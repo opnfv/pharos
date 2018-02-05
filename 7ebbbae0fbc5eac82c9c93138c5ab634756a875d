@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_83d64226",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-05T17:52:09Z",
+      "side": 1,
+      "message": "xci is not (yet?) a valid installer option - we should update the IDF schema [1] with it.\nwe can do that in this change or better yet in a separate one, then rebase this on top of that.\n\n[1] https://github.com/opnfv/pharos/blob/master/config/pdf/idf-pod1.schema.yaml#L97",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "7ebbbae0fbc5eac82c9c93138c5ab634756a875d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
