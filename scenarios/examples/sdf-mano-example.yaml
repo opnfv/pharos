@@ -1,0 +1,128 @@
+---
+##############################################################################
+# Copyright (c) 2017 Huawei and others.
+# ulrich.kleber@huawei.com
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+
+##############################################################################
+# Description:
+# This is an example for a MANO scenario
+# It illustrates how MANO components can test orchestration capabilities
+# together with various infrastructure scenarios.
+# This way, the SDF describes the MANO components (NFVO and VNFM) only. For
+# the infrastructure (NFVI and VIM) part another scenario is just referenced;
+# that scenario is deployed independently in a separate deployment step, and
+# can be deployed even using a different installer tool.
+#
+# More details can be found in the scenario lifecycle document.
+# http://artifacts.opnfv.org/octopus/docs/scenario-lifecycle/index.html
+##############################################################################
+
+##############################################################################
+# scenario meta-data: Metadata describing this sdf.yaml file and the
+# scenario history and purpose, like in any other scenario descriptor
+scenario-metadata:
+  name: orchestra-example
+  title: "orchestra main scenario"
+  generic-scenario: false
+  version: 1.0.3
+  creation-date: 2017-07-13
+  # This scenario integrates the main open-baton NFVO components to OPNFV
+  # infrastructure.
+  # In the first step, no sdn controller scenarios are supported, but only
+  # os-nosdn-nofeature and os-nosdn-ovs, installed by compass.
+  opnfv-release: euphrates
+  opnfv-version:
+    - begins: 5.1.0
+  owner: Ulrich Kleber, ulrich.kleber@huawei.com
+
+##############################################################################
+
+##############################################################################
+# components
+components:
+  - nfvo:
+      type: open-baton
+      version: 3.0
+      # here a list of optional features or artifacts to deploy could follow
+
+  - vnfm:
+      type: juju
+      # juju doesn't have release name
+      version: 2.2
+
+  - opnfv-infrastructure:
+      release: euphrates    # this determines also ocata as openstack version
+      version: 5.0.0
+      scenarios:
+        - os-nosdn-nofeature:
+          options:
+            - availability: [HA, NOHA]
+            - tools: [compass, joid]
+            # this is for the example. In first step only joid will work
+        - os-nosdn-ovs:
+          options:
+            - availability: [HA, NOHA]
+            - tools: compass
+
+##############################################################################
+
+##############################################################################
+# deployment options
+
+deployment-options:
+  deployment-types:
+    - baremetal:
+      architecture: x86_64
+
+  # $$$$ following proposal 2 from the template (patchset 6)
+  roles:
+    - jump-host:
+        components:
+          - open-baton
+          - juju-controller
+    - controller-node:
+        components:
+          - juju-client
+          # this is in addition to the components defined in the
+          # opnfv-infrastructure scenario.
+    - compute-node:     # no additional component to be deployed here
+
+  role-distribution:
+    - ha:
+        controller-node: 3
+        compute-node: 2
+        jump-host: 1
+    - noha:
+        controller-node: 1
+        compute-node: 4
+        jump-host: 1
+
+  deployment-tools:
+    # Please note that the component "opnfv-infrastructure" specified their
+    # own deployment tools and options. Definition here is related only
+    # for the nfvo and vnfm components specified above.
+
+    - joid:
+        cpu: intel
+        pod: baremetal
+        availability: HA
+    - joid:
+        cpu: intel
+        pod: baremetal
+        availability: NOHA
+    - joid:
+        cpu: intel
+        pod: virtual
+        availability: NOHA
+
+##############################################################################
+
+##############################################################################
+# Prerequisites
+prerequisites:
+  RAM: 128GB

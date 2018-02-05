@@ -1,0 +1,303 @@
+---
+##############################################################################
+# Copyright (c) 2017 Huawei and others.
+# ulrich.kleber@huawei.com
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+
+##############################################################################
+# Description:
+# This is the template for all scenario descriptor files (sdf)
+# Every OPNFV scenario is described in an sdf.yaml located in the
+# scenarios folder in Octopus repo.
+# The sdf is provided by the scenario owner and consumed by CI, deployment
+# tools and test frameworks.
+#
+# Main sections:
+#
+# metadata (owner, history, description)
+# list of components (names, versions, submodules)
+# deployment options (HA/NOHA, hardware&virtualization, installers,
+#                     configurations)
+# other prerequisites (e.g. memory requirement more than pharos spec)
+#
+# More details can be found in the scenario lifecycle document.
+##############################################################################
+
+##############################################################################
+# scenario meta-data    # Metadata describing this sdf.yaml file and the
+#                         scenario history and purpose.
+scenario-metadata:
+  name: SDF-Template            # mandatory
+  # This is a free name.
+  # For Generic scenarios, the main distiguishing components can be included in
+  # the name. The name will be approved by TSC when the generic scenario is
+  # established. Examples: OS-ODL-OVSNSH, OS-ONOS, OS-ODL-FDIO,
+  # OS-OVSBasic, OS-FDIOBasic, ...
+  # For specific scenarios, the name should characterize the main
+  # feature that is implemented here. Examples: Bgpvpn, Netvirt-gbp-vpp,
+  # Dpdk-bar, Onos-sfc, ...
+  # Final rules for naming will be set by the lifecycle document and TSC
+  # approval.
+  title: "SDF template"         # mandatory
+  # descriptive text title maximum 10-12 words telling the main purpose
+  generic-scenario: false       # optional, default = false
+  version: 1.0.6                # mandatory
+  # version number of the sdf, three digits separated with dots
+  creation-date: 2017-05-09    # mandatory
+  # creation of this sdf file version
+  # Please add a clear description of the purpose of the scenario, including
+  # the main benefits and major features (mandatory).
+  # If applicable, the parent scenario should be mentioned.
+  opnfv-release: euphrates      # mandatory
+  # the first opnfv release, the scenario was introduced
+  opnfv-version:
+    - begins: 5.1.0             # mandatory
+    # the first opnfv version, the scenario was released with
+    - ends: 7.3.0               # optional
+    # the last opnfv version that supports this scenario. Typically the features
+    # of the scenario should have been merged to generic scenarios then
+  owner: Ulrich Kleber, ulrich.kleber@huawei.com  # mandatory
+# author of this file and thus owner of the scenario
+# Add additional contact persons e.g. from installers or major components
+
+##############################################################################
+
+##############################################################################
+# components
+# All components/submodules/features in the list shall be deployed
+components:                     # mandatory section
+  # In this section all components are listed together with their version.
+  # For some components in addtion submodules or optional features can
+  # be listed.
+  - sdn-controller:             # optional, default = no sdn controller
+    # most important categories here are: sdn-controller, cloud-controller,
+    # storage, virtual-switching, dataplane, nfvo, vnfm, but new categories
+    # can be introduced any time.
+    # Every component to be deployed should be listed with such a section.
+    # If the component has submodules or optional features, they also need
+    # to be listed.
+    type: opendaylight        # mandatory, other options e.g.onos, ocl, ovn
+    release: boron            # either release or version or both must be given
+    # upstream version, human readable release name
+    version: 5.0.1
+    # exact semantic version including patch level
+    # Normally installers will not be able to pick exact semantic versions, but
+    # if the scenario requires specific versions, this can be checked offline.
+    # Following syntax variants can be allowed as well:
+    #     version: 5.*.*
+    #     version: ">5.0.3"
+    features:                 # optional
+      # additional feature configurations as recognized by the installers.
+      - odl_l2
+      - sfc
+      - bgpvpn
+
+  - storage:                 # optional
+      type: ceph
+
+  - cloud-controller:        # seems to me mandatory
+      type: openstack        # other option could be kubernetes
+      release: ocata         # either release or version or both must be given
+      version: 15.0.0
+      # An OPNFV version can go only with one openstack version.
+      # Typically installers cannot pick different openstack version,
+      # but this can be checked offline.
+      modules:                  # optional
+        # Installers have a basic set of modules that are deployed by
+        # default. Those can be listed optional. Scenario owners can
+        # list additional optional modules with their name as on
+        # https://wiki.openstack.org/software/project-navigator, but
+        # with lower case and dashes, Examples: tacker, kuryr, horizon,
+        # vitrage, chef-openstack, openstack-charms, etc.
+        # Independent of big tent, modules can be used if installers
+        # support their deployment.
+        - nova
+        - cinder
+        - horizon
+        - glance
+        - heat
+        - neutron:
+            features:   # In some cases features need to be listed specifically
+              - bgpvpn  # listing service plugins as neutron features makes
+        # it easier for installers, they don't need to take this
+        # information from the features field in the sdn-controller.
+        - aodh
+        - tacker
+        - congress
+
+  - virtual-switching:      # optional
+      # showing with this example how to include a separate
+      # configuration file for this
+      type: ovs
+      release: xx           # either release or version or both must be given
+      version: 2.6.1
+      features:             # optional
+        - vsperf:
+            file: scenarios/ovs-config.yaml
+# this file then should contain additional configurations to use like
+# hugepage-size, iommu, ...
+# it will be treated like a C #include statement.
+# Please note, the template cannot show all possible options here. There will be
+# more in an additional document.
+# Correct usage of the keywords/options will be enforced by a schema.
+# Also note that some component related deployment information will be
+# in the options section.
+##############################################################################
+
+##############################################################################
+# deployment options
+# In this section, CI will select one of the listed options and needs to pass
+# the information to the installer via a parameter or environment.
+deployment-options:             # mandatory
+  deployment-types:             # at least one section must be provided
+    - baremetal:
+      architecture: x86_64
+      features:                 # optional
+        - dpdk
+        - other
+    # $$$$ Discussion open whether we need features here after adding
+    # them in roles section
+    - baremetal:
+      architecture: arm64
+    - virtual:
+      # $$$$ Discussion open whether this is necessary here.
+      architecture: x86_64
+      features:
+        - xyz
+
+  # $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  # Discussion open how to specify the distribution of components on nodes.
+  # Three proposals:
+  # 1. specify availability options ha, noha by placing functions on nodes
+  # 2. specify roles like compute-node, controller-node and only their number,
+  #    thus avoid coupling with hostnames and more flexible mapping to different
+  #    sizes of PODs.
+  # 3. Leave it to installers and just specify whether ha or noha are supported
+  # $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  # Proposal 1:
+  availability:                 # mandatory
+    # here the configuration for a HA and NONHA deployment is described.
+    # It is similar to what compass has in host section (minus the POD info),
+    # or fuel in the dea-override-config or dha-override-config
+    - ha:                       # minimum one of ha or noha must be specified
+        nodes:                  # a description like this is mandatory
+          - name: [host1, host2, host3]  # avoid to list the same multiple times
+            roles:
+              # took this from compass. Is it sufficient?
+              - openstack-controller
+              - odl
+              - ceph-adm
+              - ceph-mon
+          - name: [host4, host 5]
+            roles:
+              - openstack-compute
+              - ceph-osd
+    - noha:
+        hosts:
+          - name: host1
+            roles:
+              - openstack-controller
+              - odl
+              - ceph-adm
+              - ceph-mon
+          - name: host2
+            roles:
+              - openstack-compute
+              - ceph-osd
+          - name: host3
+            roles:
+              - openstack-compute
+              - ceph-osd
+
+  # $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  # Proposal 2:
+  roles:              # mandatory
+    - controller-node:
+        components:   # list all components that are deployed here.
+          - openstack: control
+          - opendaylight
+          - ceph: [ceph-adm, ceph-mon]
+          - ovs
+    - compute-node:
+        components:
+          - openstack: compute
+          - ceph: ceph-osd
+          - ovs
+        hardware-features:
+          - dpdk
+    - jump-host:      # some scenarios, e.g. MANO might deploy components here
+
+  role-distribution:  # mandatory
+    - ha:
+        controller-node: 3
+        compute-node: 2
+        jump-host: 1
+    - noha:
+        controller-node: 1
+        compute-node: 4
+        jump-host: 1
+
+  # $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  # Proposal 3:
+  # no specification of nodes/roles here. ha, noha are defined by installers
+
+  deployment-tools:             # mandatory
+    # In the section for each deployment tool, the combinations of the
+    # first three options have to be listed. CI can pick any of the sections.
+    - fuel:                     # at least one section
+        cpu: intel             # optional, default = intel
+        pod: baremetal
+        availability: ha
+    - fuel:
+        cpu: intel
+        pod: virtual
+        availability: ha
+    - fuel:
+        cpu: intel
+        pod: virtual
+        availability: noha
+    - fuel:
+        cpu: arm
+        pod: baremetal
+        availability: noha
+    - compass:
+        cpu: intel
+        pod: baremetal
+        availability: ha
+    - joid:
+        cpu: intel
+        pod: baremetal
+        availability: ha
+
+##############################################################################
+
+##############################################################################
+# Prerequisites
+# This section will list additional prerequisites. Currently there is only
+# one case where a scenario has additional prerequisites to the Pharos spec.
+# Open-O deployment requires 64GB of memory while Pharos spec requires 32GB.
+# In general it should be preferred to issue such requirements to pharos
+# using the pharos change request process, but in some cases in might be
+# better to specify additional prerequisites.
+# Another use case for these prerequisites will be usage of specilized
+# hardware, e.g. for acceleration. This needs further study.
+
+prerequisites:                  # The section can be empty or omitted.
+  - controller-node:            # Prerequisites might be different
+      RAM: 128GB                # optional, just to give examples
+      cpu: dual-core
+      features:                 # optional, see example below
+  - compute-node:
+      RAM: 128GB
+      cpu: dual-core
+      features:
+        - dpdk
+  - jumphost:                   # Prerequisites can be given also for jumphost
+      RAM: 128GB
+      cpu: dual-core
+
+##############################################################################

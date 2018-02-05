@@ -1,0 +1,134 @@
+---
+##############################################################################
+# Copyright (c) 2017 Huawei others.
+# ulrich.kleber@huawei.com
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+
+##############################################################################
+# Description:
+# This an example for a specific scenario.
+# It is derived from:
+# apex/config/deploy/os-odl_l2-fdio-ha
+##############################################################################
+
+##############################################################################
+# scenario meta-data
+scenario-metadata:
+  name: odl-fdio-devops
+  title: fdio odl basic for devops
+  generic-scenario: false
+  version: 1.0.0
+  creation-date: 2017-03-16
+  # This scenario introduces fd.io with odl and a basic feature set.
+  # It is derived from parent odl_l2 nofeature. In a next step, odl_l2 and
+  # old_l3 functionality shall be merged and provide sfc as well as other
+  # features.
+  # This scenario will use newer versions of ODL and other upstream components
+  # than used in Euphrates. It is planned to release it or DevOps use more
+  # often than regular OPNFV release cycle.
+  opnfv-release: colorado
+  opnfv-version: 3.1.0  # the first opnfv version, the scenario was introduced
+  owner: Frank Brockners, frank.brockners@cisco.com
+  # Add additional contact persons e.g. from installers or major components
+
+##############################################################################
+
+##############################################################################
+# components
+components:
+  - sdn-controller:
+      component-type: opendaylight
+      release: carbon
+      version: ">6.0.1"
+      features:
+        - odl_l2
+        - vpp
+  - storage:
+      component-type: ceph
+      # $$$$ Should we add num-replicas 3 here?
+
+  - cloud-controller:
+      type: openstack
+      release: ocata
+      modules:
+        - nova
+        - cinder
+        - dashboard
+        - glance
+        - heat
+        - neutron
+        - tacker
+        - congress
+  - dataplane:
+      type: fdio
+      release: xx
+      version: 9.9.9
+      features:
+        - performance:
+            controller-nodes:
+              kernel:
+                hugepages: 1024   # decimal number
+                hugepagesz: 2M    # values like 2M, 1G
+                intel_iommu: 'on'
+                iommu: pt
+                isolcpus: 1,2
+              vpp:
+                main-core: 1
+                corelist-workers: 2
+                uio-driver: uio_pci_generic
+            compute-nodes:
+              kernel:
+                hugepagesz: 2M
+                hugepages: 2048
+                intel_iommu: 'on'
+                iommu: pt
+                isolcpus: 1,2
+              vpp:
+                main-core: 1
+                corelist-workers: 2
+                uio-driver: uio_pci_generic
+##############################################################################
+
+##############################################################################
+# deployment options
+deployment-options:
+  deployment-types:     # only intel baremetal is supported
+    - baremetal:
+      architecture: x86_64
+  availability:
+    - ha:               # We support only HA
+        nodes:
+          - name: host1
+            roles:
+              - openstack-controller  # need to add fd.io?
+              - odl
+          - name: host2
+            roles:
+              - openstack-controller
+              - odl
+          - name: host3
+            roles:
+              - openstack-controller
+              - odl
+          - name: host4              # need to add fd.io?
+            roles:
+              - openstack-compute
+          - name: host5
+            roles:
+              - openstack-compute
+  deployment-tools:
+    # fuel support shall be added soon
+    - apex:
+        cpu: intel
+        pod: baremetal
+        availability: ha
+##############################################################################
+
+##############################################################################
+# Prerequisites
+# No other prerequisites
+##############################################################################
