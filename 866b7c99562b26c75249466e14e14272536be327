@@ -46,6 +46,30 @@
       "revId": "866b7c99562b26c75249466e14e14272536be327",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e3f62ed6",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-05T17:33:41Z",
+      "side": 1,
+      "message": "Since IDF is not officially out and we don\u0027t (yet!) enforce a specific format on net_config, keeping it like this will work, or at least it won\u0027t be blocked by verify.\nAs you probably noticed, the current patch revision failed verify because Fuel installer adapter can\u0027t work with non-numeric interface here.\nTo work around that, we can safely blacklist \u0027fuel\u0027 installer adapter (see my other comment below), as this POD won\u0027t be used with Fuel for now.",
+      "parentUuid": "9a3d3df0_034eb23a",
+      "range": {
+        "startLine": 15,
+        "startChar": 17,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "866b7c99562b26c75249466e14e14272536be327",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
