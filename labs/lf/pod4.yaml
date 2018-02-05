@@ -1,0 +1,212 @@
+##############################################################################
+# Copyright (c) 2018 Linux Foundation, Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### LF POD 2 descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: Trevor Bramwell
+  contact: tbramwell@linuxfoundation.org
+  lab: LF Pharos Lab
+  location: Portland
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/LF+POD+2
+##############################################################################
+jumphost:
+  name: pod4-jump
+  node:
+    type: baremetal
+    vendor: Cisco Systems Inc
+    model: UCSB-B200-M4
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: haswell
+    cores: 8
+    memory: 128G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 2400G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 0
+  os: centos-7
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: admin
+    pass: octopus
+  remote_management:
+    <<: *remote_params
+    address: 172.30.8.83
+    mac_address: "a4:bf:01:01:b0:bb"
+  interfaces:
+    - &interface_common_nic1  # admin
+      name: nic1
+      speed: 1gb
+      features: 'dpdk|sriov'
+      vlan: native
+      mac_address: "a4:bf:01:01:b0:b9"
+      address: 10.20.0.2
+    - &interface_common_nic2  # mgmt
+      name: nic2
+      speed: 10gb
+      features: 'dpdk|sriov'
+      vlan: 450
+      mac_address: "00:1e:67:fd:9a:04"
+      address: 192.168.0.2
+    - &interface_common_nic3  # private
+      name: nic3
+      speed: 10gb
+      features: 'dpdk|sriov'
+      vlan: 452
+      mac_address: "00:1e:67:fd:9a:04"
+      address: 192.168.2.2
+    - &interface_common_nic4  # storage
+      name: nic4
+      speed: 10gb
+      features: 'dpdk|sriov'
+      vlan: 451
+      mac_address: "00:1e:67:fd:9a:05"
+      address: 192.168.1.2
+    - &interface_common_nic5  # public
+      name: nic5
+      speed: 10gb
+      features: 'dpdk|sriov'
+      vlan: 414
+      mac_address: "00:1e:67:fd:9a:05"
+      address: 172.30.12.83
+##############################################################################
+nodes:
+  - name: pod4-node1
+    node: &nodeparams
+      type: baremetal
+      vendor: Cisco Systems Inc
+      model: UCSB-B200-M4
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: haswell
+      cores: 8
+      memory: 32G
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.84
+      mac_address: "a4:bf:01:01:ab:b6"
+    interfaces:
+      - mac_address: "a4:bf:01:01:ab:b4"
+        address: 10.20.0.4
+        <<: *interface_common_nic1
+      - mac_address: "00:1e:67:fd:9b:32"
+        address: 192.168.0.4
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:9b:32"
+        address: 192.168.2.4
+        <<: *interface_common_nic3
+      - mac_address: "00:1e:67:fd:9b:33"
+        address: 192.168.1.4
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:9b:33"
+        address: 172.30.12.84
+        <<: *interface_common_nic5
+  ############################################################################
+  - name: pod4-node2
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.85
+      mac_address: "a4:bf:01:01:b6:97"
+    interfaces:
+      - mac_address: "a4:bf:01:01:b6:95"
+        address: 10.20.0.5
+        <<: *interface_common_nic1
+      - mac_address: "00:1e:67:fd:98:e2"
+        address: 192.168.0.5
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:98:e2"
+        address: 192.168.2.5
+        <<: *interface_common_nic3
+      - mac_address: "00:1e:67:fd:98:e3"
+        address: 192.168.1.5
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:98:e3"
+        address: 172.30.12.85
+        <<: *interface_common_nic5
+  ############################################################################
+  - name: pod4-node3
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.86
+      mac_address: "a4:bf:01:01:66:fe"
+    interfaces:
+      - mac_address: "a4:bf:01:01:66:fc"
+        address: 10.20.0.6
+        <<: *interface_common_nic1
+      - mac_address: "00:1e:67:fd:9c:c8"
+        address: 192.168.0.6
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:9c:c8"
+        address: 192.168.2.6
+        <<: *interface_common_nic3
+      - mac_address: "00:1e:67:fd:9c:c9"
+        address: 192.168.1.6
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:9c:c9"
+        address: 172.30.12.86
+        <<: *interface_common_nic5
+  ############################################################################
+  - name: pod4-node4
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.87
+      mac_address: "a4:bf:01:01:b2:f5"
+    interfaces:
+      - mac_address: "a4:bf:01:01:b2:f3"
+        address: 10.20.0.7
+        <<: *interface_common_nic1
+      - mac_address: "00:1e:67:fd:9b:38"
+        address: 192.168.0.7
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:9b:38"
+        address: 192.168.2.7
+        <<: *interface_common_nic3
+      - mac_address: "00:1e:67:fd:9b:39"
+        address: 192.168.1.7
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:9b:39"
+        address: 172.30.12.87
+        <<: *interface_common_nic5
+  ############################################################################
+  - name: pod4-node5
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.88
+      mac_address: "a4:bf:01:01:b5:11"
+    interfaces:
+      - mac_address: "a4:bf:01:01:b5:0f"
+        address: 10.20.0.8
+        <<: *interface_common_nic1
+      - mac_address: "00:1e:67:fd:99:40"
+        address: 192.168.0.8
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:99:40"
+        address: 192.168.2.8
+        <<: *interface_common_nic3
+      - mac_address: "00:1e:67:fd:99:41"
+        address: 192.168.1.8
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:99:41"
+        address: 172.30.12.88
+        <<: *interface_common_nic5
