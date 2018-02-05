@@ -45,19 +45,42 @@ jumphost:
     address: 172.30.8.83
     mac_address: "a4:bf:01:01:b0:bb"
   interfaces:
-    - mac_address: "a4:bf:01:01:b0:b9"
+    - &interface_common_nic1  # admin
+      name: nic1
       speed: 1gb
+      features: 'dpdk|sriov'
+      vlan: native
+      mac_address: "a4:bf:01:01:b0:b9"
       address: 192.168.12.1
-      name: 'nic1'
-      features: 'dpdk|sriov'
-    - mac_address: "00:1e:67:fd:9a:04"
+    - &interface_common_nic2  # mgmt
+      name: nic2
       speed: 10gb
       features: 'dpdk|sriov'
-      name: 'nic2'
-    - mac_address: "00:1e:67:fd:9a:05"
+      vlan: 450
+      mac_address: "00:1e:67:fd:9a:04"
+      address: 192.168.0.2
+    - &interface_common_nic3  # private
+      name: nic3
       speed: 10gb
       features: 'dpdk|sriov'
-      name: 'nic3'
+      vlan: 452
+      mac_address: "00:1e:67:fd:9a:04"
+      address: 192.168.2.2
+    - &interface_common_nic4  # storage
+      name: nic4
+      speed: 10gb
+      features: 'dpdk|sriov'
+      vlan: 451
+      mac_address: "00:1e:67:fd:9a:05"
+      address: 192.168.1.2
+    - &interface_common_nic5  # public
+      name: nic5
+      speed: 10gb
+      features: 'dpdk|sriov'
+      vlan: 414
+      mac_address: "00:1e:67:fd:9a:05"
+      address: 172.30.12.83
+##############################################################################
 nodes:
   - name: pod4-node1
     node: *nodeparams
@@ -68,17 +91,21 @@ nodes:
       mac_address: "a4:bf:01:01:ab:b6"
     interfaces:
       - mac_address: "a4:bf:01:01:ab:b4"
-        speed: 1gb
-        features: 'dpdk|sriov'
-        name: 'nic1'
+        address: 192.168.12.4
+        <<: *interface_common_nic1
       - mac_address: "00:1e:67:fd:9b:32"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic2'
+        address: 192.168.0.4
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:9b:32"
+        address: 192.168.2.4
+        <<: *interface_common_nic3
       - mac_address: "00:1e:67:fd:9b:33"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic3'
+        address: 192.168.1.4
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:9b:33"
+        address: 172.30.12.84
+        <<: *interface_common_nic5
+  ############################################################################
   - name: pod4-node2
     node: *nodeparams
     disks: *disks
@@ -88,17 +115,21 @@ nodes:
       mac_address: "a4:bf:01:01:b6:97"
     interfaces:
       - mac_address: "a4:bf:01:01:b6:95"
-        speed: 1gb
-        features: 'dpdk|sriov'
-        name: 'nic1'
+        address: 192.168.12.5
+        <<: *interface_common_nic1
       - mac_address: "00:1e:67:fd:98:e2"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic2'
+        address: 192.168.0.5
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:98:e2"
+        address: 192.168.2.5
+        <<: *interface_common_nic3
       - mac_address: "00:1e:67:fd:98:e3"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic3'
+        address: 192.168.1.5
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:98:e3"
+        address: 172.30.12.85
+        <<: *interface_common_nic5
+  ############################################################################
   - name: pod4-node3
     node: *nodeparams
     disks: *disks
@@ -108,17 +139,21 @@ nodes:
       mac_address: "a4:bf:01:01:66:fe"
     interfaces:
       - mac_address: "a4:bf:01:01:66:fc"
-        speed: 1gb
-        features: 'dpdk|sriov'
-        name: 'nic1'
+        address: 192.168.12.6
+        <<: *interface_common_nic1
       - mac_address: "00:1e:67:fd:9c:c8"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic2'
+        address: 192.168.0.6
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:9c:c8"
+        address: 192.168.2.6
+        <<: *interface_common_nic3
       - mac_address: "00:1e:67:fd:9c:c9"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic3'
+        address: 192.168.1.6
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:9c:c9"
+        address: 172.30.12.86
+        <<: *interface_common_nic5
+  ############################################################################
   - name: pod4-node4
     node: *nodeparams
     disks: *disks
@@ -128,17 +163,21 @@ nodes:
       mac_address: "a4:bf:01:01:b2:f5"
     interfaces:
       - mac_address: "a4:bf:01:01:b2:f3"
-        speed: 1gb
-        features: 'dpdk|sriov'
-        name: 'nic1'
+        address: 192.168.12.7
+        <<: *interface_common_nic1
       - mac_address: "00:1e:67:fd:9b:38"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic2'
+        address: 192.168.0.7
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:9b:38"
+        address: 192.168.2.7
+        <<: *interface_common_nic3
       - mac_address: "00:1e:67:fd:9b:39"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic3'
+        address: 192.168.1.7
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:9b:39"
+        address: 172.30.12.87
+        <<: *interface_common_nic5
+  ############################################################################
   - name: pod4-node5
     node: *nodeparams
     disks: *disks
@@ -148,14 +187,17 @@ nodes:
       mac_address: "a4:bf:01:01:b5:11"
     interfaces:
       - mac_address: "a4:bf:01:01:b5:0f"
-        speed: 1gb
-        features: 'dpdk|sriov'
-        name: 'nic1'
+        address: 192.168.12.8
+        <<: *interface_common_nic1
       - mac_address: "00:1e:67:fd:99:40"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic2'
+        address: 192.168.0.8
+        <<: *interface_common_nic2
+      - mac_address: "00:1e:67:fd:99:40"
+        address: 192.168.2.8
+        <<: *interface_common_nic3
       - mac_address: "00:1e:67:fd:99:41"
-        speed: 10gb
-        features: 'dpdk|sriov'
-        name: 'nic3'
+        address: 192.168.1.8
+        <<: *interface_common_nic4
+      - mac_address: "00:1e:67:fd:99:41"
+        address: 172.30.12.88
+        <<: *interface_common_nic5

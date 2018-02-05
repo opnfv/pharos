@@ -132,7 +132,7 @@ definitions:
       additionalProperties: false
   osa:
     v0.1:
-      type: 'object'
+      type: ['object', 'null']
       # NOTE: To be properly modeled by XCI maintainers
 
 ##############################################################################
@@ -163,7 +163,7 @@ properties:
       fuel:
         type: 'object'
       osa:
-        type: 'object'
+        type: ['object', 'null']
     required: ['version']
     additionalProperties: false
     ############################################################################
@@ -189,6 +189,9 @@ properties:
         required: ['net_config']
       osa:
         required: ['net_config']
+  xci:
+    type: 'object'
+    # NOTE: To be properly modeled by XCI maintainers
 
 # Do not allow any properties not defined here. This lets us catch typos.
 additionalProperties: false
