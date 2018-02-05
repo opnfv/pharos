@@ -22,6 +22,30 @@
       "revId": "d712d0f12dd3762abb91dbe46a129dcdce0c16ab",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a77a7385",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-05T08:54:42Z",
+      "side": 1,
+      "message": "True. On this first draft I wanted to share how the new code and logic will look like. I made the changes around public_net but we need to look into the rest of networks.\n\nRegarding your suggestion, to parametrize this we could relay on an specified range for the given networks and then assign from it. The only requirement should be that it has to be large enough to provide IPs for the N required assignments, small enough to fit on the associated network/prefix and to avoid the external wateway, in case of public_net. To make sure this is known by the users it could be either well documented, checked against schema or more likely, have a smart filter to check if range is inside a network and large enough, throwing an error otherwise",
+      "parentUuid": "9a3d3df0_5bdee4dd",
+      "range": {
+        "startLine": 61,
+        "startChar": 73,
+        "endLine": 61,
+        "endChar": 76
+      },
+      "revId": "d712d0f12dd3762abb91dbe46a129dcdce0c16ab",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
