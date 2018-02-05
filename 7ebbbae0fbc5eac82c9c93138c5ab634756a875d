@@ -22,6 +22,53 @@
       "revId": "7ebbbae0fbc5eac82c9c93138c5ab634756a875d",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e392ae55",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-05T18:37:57Z",
+      "side": 1,
+      "message": "I proposed a change adding \u0027osa\u0027 as a valid installer, see:\nhttps://gerrit.opnfv.org/gerrit/#/c/51693",
+      "parentUuid": "9a3d3df0_83d64226",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "7ebbbae0fbc5eac82c9c93138c5ab634756a875d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3b32a08",
+        "filename": "labs/lf/pod4.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-05T18:37:57Z",
+      "side": 1,
+      "message": "PDF schema rejects these as unknown properties.\nTo achieve the same goal, you could do it like this:\nhttp://paste.ubuntu.com/26525851/",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 13
+      },
+      "revId": "7ebbbae0fbc5eac82c9c93138c5ab634756a875d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
