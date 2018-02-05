@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_838be21d",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 254
+      },
+      "writtenOn": "2018-02-05T18:41:37Z",
+      "side": 1,
+      "message": "i understand but it is important to make the distinction clear between the installers used by xci and explicitly state them here as well. \n\napart from above, xci is not an installer.",
+      "parentUuid": "9a3d3df0_47fba778",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 5
+      },
+      "revId": "34158ffda71ccaf587115ddbd4c798b9e3384282",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_6714ebe8",
         "filename": "labs/lf/idf-pod4.yaml",
         "patchSetId": 1
