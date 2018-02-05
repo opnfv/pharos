@@ -22,6 +22,30 @@
       "revId": "866b7c99562b26c75249466e14e14272536be327",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_034eb23a",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 361
+      },
+      "writtenOn": "2018-02-05T16:50:26Z",
+      "side": 1,
+      "message": "that was my initial intention, but jack asked me to use official pdf, including index...\nI will correct that in our code when possible, until that i would like to keep it as it",
+      "parentUuid": "9a3d3df0_87576f25",
+      "range": {
+        "startLine": 15,
+        "startChar": 17,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "866b7c99562b26c75249466e14e14272536be327",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
