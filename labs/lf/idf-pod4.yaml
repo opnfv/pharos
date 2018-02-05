@@ -10,7 +10,8 @@
 
 idf:
   version: 0.1
-  net_config:
+  installer: ['xci']
+  net_config: &net_config
     oob:
       interface: 0
       ip-range: 172.30.8.83-172.30.8.88
@@ -19,6 +20,8 @@ idf:
       interface: 0
       vlan: native
       network: 192.168.12.0
+      gateway: 192.168.12.1
+      dns: 8.8.8.8
       mask: 24
     mgmt:
       interface: 1
@@ -26,17 +29,17 @@ idf:
       network: 192.168.3.0
       mask: 24
     storage:
-      interface: 2
+      interface: 3
       vlan: 451
       network: 192.168.4.0
       mask: 24
     private:
-      interface: 1
+      interface: 2
       vlan: 452
       network: 192.168.5.0
       mask: 24
     public:
-      interface: 2
+      interface: 4
       vlan: 414
       network: 172.30.12.64
       mask: 26
@@ -72,3 +75,35 @@ idf:
           busaddr: *busaddr
         - interfaces: *interfaces
           busaddr: *busaddr
+  xci:
+    pod_name: lf-pod4
+    net_config: *net_config
+    nodes_roles:
+      opnfv_host: [opnfv_host]
+      pod4-node1: [compute, storage]
+      pod4-node2: [compute, storage]
+      pod4-node3: [controller, storage]
+      pod4-node4: [controller, storage]
+      pod4-node5: [controller, storage]
+
+    # net_config network to be used by the PXE
+    pxe_network: admin
+
+    # As the MAC of generated bridges are generated, we use a list of local
+    # bridges to create libvirt networks
+    jumphost_interfaces_bridges:
+      - name: br_admin
+        ip:
+
+    extra_addresses:
+      opnfv_host: 192.168.12.2
+
+    # network mapping
+    network_mapping:
+      net-mgmt: admin
+      net-storage: storage
+      net-internal: private
+      net-vnf: public
+
+    installer:
+      osa:
