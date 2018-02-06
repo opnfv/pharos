@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_462e08a6",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-06T10:19:36Z",
+      "side": 1,
+      "message": "This could allow for a more compact addressing, avoiding unused host IPs in between and relaxing IP network size requirements.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 50
+      },
+      "revId": "a04281ac4b4b41a3494957443ca8f2994ba09622",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
