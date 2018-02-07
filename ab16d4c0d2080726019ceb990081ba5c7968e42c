@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_9277a69f",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-07T08:51:45Z",
+      "side": 1,
+      "message": "To keep simper code I think they are OK with short names. These four declarations at the beginning are clear enough to see that the mask is included.",
+      "parentUuid": "9a3d3df0_832f623e",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "ab16d4c0d2080726019ceb990081ba5c7968e42c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_c325ea5c",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-06T23:54:34Z",
       "side": 1,
       "message": "are () needed?",
+      "range": {
+        "startLine": 35,
+        "startChar": 55,
+        "endLine": 35,
+        "endChar": 57
+      },
+      "revId": "ab16d4c0d2080726019ceb990081ba5c7968e42c",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_524a3e55",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-07T08:51:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_c325ea5c",
       "range": {
         "startLine": 35,
         "startChar": 55,
