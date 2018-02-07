@@ -46,6 +46,30 @@
       "revId": "a04281ac4b4b41a3494957443ca8f2994ba09622",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f23ef2b6",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-07T08:51:45Z",
+      "side": 1,
+      "message": "I agree with every point. I already dropped this idea from the draft and went back to the aim of this change: fixing the overflow problem with out of range IPs. \n\nNot sure either how to handle this yet. But I will think of it as an independent improvement, adding dynamic number of nodes in it. \n\nThere are simpler solutions, like having an increasing iterator each time an IP is required. One for each network could work.",
+      "parentUuid": "9a3d3df0_ec229bb7",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 50
+      },
+      "revId": "a04281ac4b4b41a3494957443ca8f2994ba09622",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
