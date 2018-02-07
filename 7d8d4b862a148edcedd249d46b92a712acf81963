@@ -22,6 +22,30 @@
       "revId": "7d8d4b862a148edcedd249d46b92a712acf81963",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_727ae288",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-07T08:51:45Z",
+      "side": 1,
+      "message": "Agree. You cant just guess where the gw is.\nLets leave this until mandatory",
+      "parentUuid": "9a3d3df0_cc3a37e6",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 60
+      },
+      "revId": "7d8d4b862a148edcedd249d46b92a712acf81963",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
