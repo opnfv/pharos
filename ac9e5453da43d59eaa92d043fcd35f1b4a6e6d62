@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_bdb8bb75",
+        "filename": "config/utils/gen_config_lib.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-08T08:32:49Z",
+      "side": 1,
+      "message": "The way filters receive parameters makes it a bit confusing work with optional variables. I tried to make a very consistent set of them with the same naming, usage and logic. \nI will consider making a new one. You can also pass a fake network + desired mask",
+      "parentUuid": "9a3d3df0_52923ef6",
+      "range": {
+        "startLine": 111,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 24
+      },
+      "revId": "ac9e5453da43d59eaa92d043fcd35f1b4a6e6d62",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_f286f2b7",
         "filename": "config/utils/gen_config_lib.py",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-07T17:45:47Z",
       "side": 1,
       "message": "what do you think about adding a deprecation warning that goes to stderr?",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 41
+      },
+      "revId": "ac9e5453da43d59eaa92d043fcd35f1b4a6e6d62",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7dc2b3e9",
+        "filename": "config/utils/gen_config_lib.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-08T08:32:49Z",
+      "side": 1,
+      "message": "My idea was to merge this new library, switch the installer templates to the advanced ipnet functions after and finally remove these old filters from the lib. Fuel was the only one using them",
+      "parentUuid": "9a3d3df0_f286f2b7",
       "range": {
         "startLine": 198,
         "startChar": 0,
