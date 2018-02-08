@@ -2,8 +2,8 @@ Project: Testbed infrastructure (Pharos)
 Project Creation Date: January 8, 2015
 Project Category: Integration & Testing
 Lifecycle State: Mature
-Primary Contact: Jack Morgan (jack.morgan@intel.com)
-Project Lead: Jack Morgan (jack.morgan@intel.com)
+Primary Contact: Julien Zhang (zhang.jun3g@zte.com.cn)
+Project Lead: Julien Zhang (zhang.jun3g@zte.com.cn)
 Jira Project Name: Testbed infrastructure project
 Jira Project Prefix: PHAROS
 Mailing list tag: [pharos]
@@ -25,4 +25,5 @@ Trevor Cooper <trevor.cooper@intel.com>
 Link to TSC approval of the project: http://meetbot.opnfv.org/meetings/opnfv-meeting/
 Link(s) to approval of additional committers:
 http://lists.opnfv.org/pipermail/opnfv-tech-discuss/2016-May/010567.html
+https://lists.opnfv.org/pipermail/opnfv-tsc/2018-February/004105.html
 Via email, RT Ticket: 23593
