@@ -1,0 +1,343 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_4c53c216",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "What\u0027s the purpose of \u0027generic-scenario\u0027?",
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ac56ce03",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "This + `opnfv-version` are confusing:\n- is this scenario file *only* applicable for E release, BUT starting with 5.1.0?\n- does this scenario work as-is with 7.3.0 (G release)?\n- if different scenarios are required for 5/6/7, will they co-exist in the git tree as different files or will there be a single YAML that changes over time?",
+      "range": {
+        "startLine": 55,
+        "startChar": 2,
+        "endLine": 55,
+        "endChar": 26
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0c453a42",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "I commented below about using lists, I think this would be simpler to parse:\nopnfv-version:\n  begins: 5.1.0 # I would use \u0027begin\u0027/\u0027end\u0027\n  ends: 7.3.0",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 42
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8c594a37",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "How about a more classic format:\nUlrich Kleber \u003culrich.kleber@huawei.com\u003e",
+      "range": {
+        "startLine": 63,
+        "startChar": 9,
+        "endLine": 63,
+        "endChar": 48
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cc3eb2b7",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "why are these list items and not YAML properties? i.e.:\ncomponents:\n  sdn-controller:\n    type: ...\nWith ^ we can parse it via j2 using \u0027components.sdn-controller.type\u0027, while the current format implies \u0027components.0.sdn-controller.type\u0027, \u0027components.1.storage...\u0027",
+      "range": {
+        "startLine": 76,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 19
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6c77a6a0",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "Imo, this should be mandatory, but I don\u0027t have a strong feeling about it.",
+      "range": {
+        "startLine": 99,
+        "startChar": 29,
+        "endLine": 99,
+        "endChar": 39
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ac6d2ece",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "This will make parsing this list very ugly. As an installer contributor, I\u0027d rather look up the features in the sdn-controller section.",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 75
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8c702aa5",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 139,
+        "startChar": 8,
+        "endLine": 139,
+        "endChar": 17
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6c9e86ba",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "Architecture is not a per-pod global variable. One could have x86_64 controllers with aarch64 computes.\nThe same applies to baremetal vs. virtual - one could have 3 virtual nodes and 2 baremetal.",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 13
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0cb37a4d",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "I like the current implementation, it\u0027s compact and self-explanatory, plus it seems to map well to existing installer configuration.\nBut the \u0027availability\u0027 name might be a bit misleading.",
+      "range": {
+        "startLine": 182,
+        "startChar": 2,
+        "endLine": 182,
+        "endChar": 14
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ccacf2ef",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 186,
+        "startChar": 4,
+        "endLine": 186,
+        "endChar": 9
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2cb8fe28",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "[host1] to make parsing easier",
+      "range": {
+        "startLine": 201,
+        "startChar": 18,
+        "endLine": 201,
+        "endChar": 23
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6c85e658",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "this one doesn\u0027t resolve the mapping between nodes in PDF and roles, unless I\u0027m missing something, so -1 for proposal 2",
+      "range": {
+        "startLine": 217,
+        "startChar": 4,
+        "endLine": 217,
+        "endChar": 15
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4c88e270",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "-1 for this one",
+      "range": {
+        "startLine": 245,
+        "startChar": 4,
+        "endLine": 245,
+        "endChar": 15
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2c8f5e76",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-08T19:15:56Z",
+      "side": 1,
+      "message": "This would be extremely ugly to parse, plus I don\u0027t think anybody is using single core systems for jumphost ...",
+      "range": {
+        "startLine": 292,
+        "startChar": 6,
+        "endLine": 292,
+        "endChar": 20
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
