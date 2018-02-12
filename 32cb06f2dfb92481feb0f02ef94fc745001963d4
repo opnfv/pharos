@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_e0ba7c09",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "generic-scenario is the mother/template scenario of other scenarios. generic-scenario is released and stable. there is some discussion about this before.",
+      "parentUuid": "9a3d3df0_4c53c216",
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_ac56ce03",
         "filename": "scenarios/templates/sdf-template.yaml",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-02-08T19:15:56Z",
       "side": 1,
       "message": "This + `opnfv-version` are confusing:\n- is this scenario file *only* applicable for E release, BUT starting with 5.1.0?\n- does this scenario work as-is with 7.3.0 (G release)?\n- if different scenarios are required for 5/6/7, will they co-exist in the git tree as different files or will there be a single YAML that changes over time?",
+      "range": {
+        "startLine": 55,
+        "startChar": 2,
+        "endLine": 55,
+        "endChar": 26
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_c04ae026",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "I think opnfv-version covers the SUT, and opnfv-release is used for the template itself. actually, it is confusing.",
+      "parentUuid": "9a3d3df0_ac56ce03",
       "range": {
         "startLine": 55,
         "startChar": 2,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_a047d41c",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "9a3d3df0_0c453a42",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 42
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_8c594a37",
         "filename": "scenarios/templates/sdf-template.yaml",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2018-02-08T19:15:56Z",
       "side": 1,
       "message": "How about a more classic format:\nUlrich Kleber \u003culrich.kleber@huawei.com\u003e",
+      "range": {
+        "startLine": 63,
+        "startChar": 9,
+        "endLine": 63,
+        "endChar": 48
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_0055e8c5",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "reasonable",
+      "parentUuid": "9a3d3df0_8c594a37",
       "range": {
         "startLine": 63,
         "startChar": 9,
@@ -134,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_e051dcd9",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "according to OpenStack, storage necessary, but not for Kubernetes.",
+      "parentUuid": "9a3d3df0_6c77a6a0",
+      "range": {
+        "startLine": 99,
+        "startChar": 29,
+        "endLine": 99,
+        "endChar": 39
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_ac6d2ece",
         "filename": "scenarios/templates/sdf-template.yaml",
         "patchSetId": 1
@@ -145,6 +259,30 @@
       "writtenOn": "2018-02-08T19:15:56Z",
       "side": 1,
       "message": "This will make parsing this list very ugly. As an installer contributor, I\u0027d rather look up the features in the sdn-controller section.",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 75
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_8058d8fb",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "the basic opinion is to list all the feature projects enhanced or required by OPNFV. bgpvpn is another feature, which is not under SDN scenanio.\nI don\u0027t know why to add to sdn-controller section?",
+      "parentUuid": "9a3d3df0_ac6d2ece",
       "range": {
         "startLine": 123,
         "startChar": 0,
@@ -203,6 +341,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_a06eb494",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "I think it\u0027s the target of the feature. Currently no installer support this type of configuration. Esp. in edge scenanio, it is correct that they are mixed used.",
+      "parentUuid": "9a3d3df0_6c9e86ba",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 13
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_0cb37a4d",
         "filename": "scenarios/templates/sdf-template.yaml",
         "patchSetId": 1
@@ -214,6 +376,30 @@
       "writtenOn": "2018-02-08T19:15:56Z",
       "side": 1,
       "message": "I like the current implementation, it\u0027s compact and self-explanatory, plus it seems to map well to existing installer configuration.\nBut the \u0027availability\u0027 name might be a bit misleading.",
+      "range": {
+        "startLine": 182,
+        "startChar": 2,
+        "endLine": 182,
+        "endChar": 14
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_006cc89b",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "\"availability\" is the name of HA project.",
+      "parentUuid": "9a3d3df0_0cb37a4d",
       "range": {
         "startLine": 182,
         "startChar": 2,
@@ -272,6 +458,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_800f38e1",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "Can you give more description for this change?",
+      "parentUuid": "9a3d3df0_2cb8fe28",
+      "range": {
+        "startLine": 201,
+        "startChar": 18,
+        "endLine": 201,
+        "endChar": 23
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_6c85e658",
         "filename": "scenarios/templates/sdf-template.yaml",
         "patchSetId": 1
@@ -283,6 +493,30 @@
       "writtenOn": "2018-02-08T19:15:56Z",
       "side": 1,
       "message": "this one doesn\u0027t resolve the mapping between nodes in PDF and roles, unless I\u0027m missing something, so -1 for proposal 2",
+      "range": {
+        "startLine": 217,
+        "startChar": 4,
+        "endLine": 217,
+        "endChar": 15
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_e0ff1ca9",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "PDF/IDF is not finished yet when the sdf-template is submitted. We can update according to current progress.",
+      "parentUuid": "9a3d3df0_6c85e658",
       "range": {
         "startLine": 217,
         "startChar": 4,
@@ -329,6 +563,30 @@
       "writtenOn": "2018-02-08T19:15:56Z",
       "side": 1,
       "message": "This would be extremely ugly to parse, plus I don\u0027t think anybody is using single core systems for jumphost ...",
+      "range": {
+        "startLine": 292,
+        "startChar": 6,
+        "endLine": 292,
+        "endChar": 20
+      },
+      "revId": "32cb06f2dfb92481feb0f02ef94fc745001963d4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_203104a3",
+        "filename": "scenarios/templates/sdf-template.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-02-12T11:07:52Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "9a3d3df0_2c8f5e76",
       "range": {
         "startLine": 292,
         "startChar": 6,
