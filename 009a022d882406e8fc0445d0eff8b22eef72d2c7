@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_5226a2bb",
+        "filename": "labs/lf/idf-pod5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-14T21:31:43Z",
+      "side": 1,
+      "message": "this one is the biggest problem right now.\n/26 won\u0027t work for stable/euphrates, BUT it should work w/ Fuel master (if it doesn\u0027t, we\u0027ll fix it within 1w)",
+      "range": {
+        "startLine": 42,
+        "startChar": 12,
+        "endLine": 42,
+        "endChar": 14
+      },
+      "revId": "009a022d882406e8fc0445d0eff8b22eef72d2c7",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
