@@ -18,7 +18,7 @@ details:
   link: https://wiki.opnfv.org/display/pharos/LF+POD+5
 jumphost:
   name: pod5-jump
-  node: &nodeparas
+  node: &nodeparams
     type: baremetal
     vendor: Intel Corporation
     model: S2600WT2R
@@ -48,7 +48,7 @@ jumphost:
     - mac_address: "a4:bf:01:01:ad:71"
       speed: 1gb
       features: 'dpdk|sriov'
-      address: 10.20.0.129
+      address: 192.168.11.1
       name: 'nic1'
     - mac_address: "00:1e:67:fd:9c:c2"
       speed: 10gb
@@ -60,7 +60,7 @@ jumphost:
       name: 'nic3'
 nodes:
   - name: pod5-node1
-    node: *nodeparas
+    node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remote_params
@@ -80,7 +80,7 @@ nodes:
         features: 'dpdk|sriov'
         name: 'nic3'
   - name: pod5-node2
-    node: *nodeparas
+    node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remote_params
@@ -100,7 +100,7 @@ nodes:
         features: 'dpdk|sriov'
         name: 'nic3'
   - name: pod5-node3
-    node: *nodeparas
+    node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remote_params
@@ -120,7 +120,7 @@ nodes:
         features: 'dpdk|sriov'
         name: 'nic3'
   - name: pod5-node4
-    node: *nodeparas
+    node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remote_params
@@ -140,7 +140,7 @@ nodes:
         features: 'dpdk|sriov'
         name: 'nic3'
   - name: pod5-node5
-    node: *nodeparas
+    node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remote_params

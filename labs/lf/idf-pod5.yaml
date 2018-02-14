@@ -18,30 +18,32 @@ idf:
     admin:
       interface: 0
       vlan: native
-      network: 10.20.0.128
-      mask: 25
-      gateway: 10.20.0.129
-      dns: 10.20.0.129
+      network: 192.168.11.0
+      mask: 24
     mgmt:
       interface: 1
       vlan: 450
-      network: 192.168.0.128
-      mask: 25
+      network: 192.168.0.0
+      mask: 24
     storage:
       interface: 2
       vlan: 451
-      network: 192.168.1.128
-      mask: 25
+      network: 192.168.1.0
+      mask: 24
     private:
       interface: 1
       vlan: 452
-      network: 192.168.2.128
-      mask: 25
+      network: 192.168.2.0
+      mask: 24
     public:
       interface: 2
       vlan: 415
       network: 172.30.13.64
       mask: 26
+      gateway: 172.30.13.1
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
   fuel:
     jumphost:
       bridges:
