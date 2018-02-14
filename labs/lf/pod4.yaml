@@ -1,0 +1,161 @@
+##############################################################################
+# Copyright (c) 2018 Linux Foundation, Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### LF POD 4 descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: Trevor Bramwell
+  contact: tbramwell@linuxfoundation.org
+  lab: Linux Foundation
+  location: Portland, Oregon, USA
+  type: development
+  link: https://wiki.opnfv.org/display/pharos/LF+POD+4
+jumphost:
+  name: pod4-jump
+  node: &nodeparams
+    type: baremetal
+    vendor: Intel Corporation
+    model: S2600WT2R
+    arch: x86_64
+    cpus: 88
+    cpu_cflags: haswell
+    cores: 22
+    memory: 62G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 480G
+      disk_type: ssd
+      disk_interface: sata
+      disk_rotation: 0
+  os: centos-7
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: admin
+    pass: octopus
+  remote_management:
+    <<: *remote_params
+    address: 172.30.8.83
+    mac_address: "a4:bf:01:01:b0:bb"
+  interfaces:
+    - mac_address: "a4:bf:01:01:b0:b9"
+      speed: 1gb
+      address: 192.168.12.1
+      name: 'nic1'
+      features: 'dpdk|sriov'
+    - mac_address: "00:1e:67:fd:9a:04"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic2'
+    - mac_address: "00:1e:67:fd:9a:05"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic3'
+nodes:
+  - name: pod4-node1
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.84
+      mac_address: "a4:bf:01:01:ab:b6"
+    interfaces:
+      - mac_address: "a4:bf:01:01:ab:b4"
+        speed: 1gb
+        features: 'dpdk|sriov'
+        name: 'nic1'
+      - mac_address: "00:1e:67:fd:9b:32"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "00:1e:67:fd:9b:33"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+  - name: pod4-node2
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.85
+      mac_address: "a4:bf:01:01:b6:97"
+    interfaces:
+      - mac_address: "a4:bf:01:01:b6:95"
+        speed: 1gb
+        features: 'dpdk|sriov'
+        name: 'nic1'
+      - mac_address: "00:1e:67:fd:98:e2"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "00:1e:67:fd:98:e3"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+  - name: pod4-node3
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.86
+      mac_address: "a4:bf:01:01:66:fe"
+    interfaces:
+      - mac_address: "a4:bf:01:01:66:fc"
+        speed: 1gb
+        features: 'dpdk|sriov'
+        name: 'nic1'
+      - mac_address: "00:1e:67:fd:9c:c8"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "00:1e:67:fd:9c:c9"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+  - name: pod4-node4
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.87
+      mac_address: "a4:bf:01:01:b2:f5"
+    interfaces:
+      - mac_address: "a4:bf:01:01:b2:f3"
+        speed: 1gb
+        features: 'dpdk|sriov'
+        name: 'nic1'
+      - mac_address: "00:1e:67:fd:9b:38"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "00:1e:67:fd:9b:39"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+  - name: pod4-node5
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 172.30.8.88
+      mac_address: "a4:bf:01:01:b5:11"
+    interfaces:
+      - mac_address: "a4:bf:01:01:b5:0f"
+        speed: 1gb
+        features: 'dpdk|sriov'
+        name: 'nic1'
+      - mac_address: "00:1e:67:fd:99:40"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "00:1e:67:fd:99:41"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
