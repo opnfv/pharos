@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_92202a9d",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-14T21:34:40Z",
+      "side": 1,
+      "message": "if this is here for Fuel, we usually go with 11 on all PODs.\nAnyway, it should work.",
+      "range": {
+        "startLine": 21,
+        "startChar": 23,
+        "endLine": 21,
+        "endChar": 25
+      },
+      "revId": "0c9e5603a57d0f7ecc8bf2caf0aa10dea2914928",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_72259eaa",
+        "filename": "labs/lf/idf-pod4.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-14T21:34:40Z",
+      "side": 1,
+      "message": "unrelated to this patch, but it\u0027d be a good idea to have a Linux bridge for public going forware (e.g. when configuring new PODs).",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 17
+      },
+      "revId": "0c9e5603a57d0f7ecc8bf2caf0aa10dea2914928",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
