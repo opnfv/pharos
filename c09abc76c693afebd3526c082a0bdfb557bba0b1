@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_263477dd",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-15T15:28:46Z",
+      "side": 1,
+      "message": "Fully agree. But it is also difficult to skip whichever IP is chosen for it. I say we skip first and last IP of public net.",
+      "parentUuid": "5a3f45e8_122ffaa2",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 12
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_b208c62e",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-15T14:56:31Z",
       "side": 1,
       "message": "this is way too few IPs for the testing suites or any real life application",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_664ddf72",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-15T15:28:46Z",
+      "side": 1,
+      "message": "True, larger will be better. But there is another issue. When these defaults are not used it is difficult to control which values the user has chosen and avoid collisions on the template IP arrangement. I am thinking that removing this choice and simply  make this range to whatever is left from first free IP to last on network -1 could be safer",
+      "parentUuid": "5a3f45e8_b208c62e",
       "range": {
         "startLine": 38,
         "startChar": 0,
@@ -105,6 +153,30 @@
       "writtenOn": "2018-02-15T14:56:31Z",
       "side": 1,
       "message": "I\u0027d put cmp at the higher end, so we can scale up the cmp count later.\nAlso, this should be a for loop so we can accomodate that dynamic cmp count.",
+      "range": {
+        "startLine": 107,
+        "startChar": 4,
+        "endLine": 107,
+        "endChar": 29
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_c63673e7",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-15T15:28:46Z",
+      "side": 1,
+      "message": "I should have commented it: All elements with ips on public_net have been placed first. This is to make sure its use is optimal with no addresses left unused. I think is important to keep it like this.\n\nWe can have that for loop and keep the count after the loop exits for the next elements",
+      "parentUuid": "5a3f45e8_66267fbc",
       "range": {
         "startLine": 107,
         "startChar": 4,
