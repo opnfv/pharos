@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_122ffaa2",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-15T14:56:31Z",
+      "side": 1,
+      "message": "I know it\u0027s not exactly in the scope of this change, but let\u0027s start removing defaults.\nI spent way too much time chasing problems caused by wrong defaults kicking in, so let\u0027s force the user to define things instead of trying to guess them.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 12
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_b208c62e",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-15T14:56:31Z",
+      "side": 1,
+      "message": "this is way too few IPs for the testing suites or any real life application",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 68
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_c60f932d",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-15T14:56:31Z",
+      "side": 1,
+      "message": "These are ok, no need to make them more parametric than this, but the rest should be configurable via IDF.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 69
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_261d9767",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-15T14:56:31Z",
+      "side": 1,
+      "message": "I would like to add a new IDF optional param for all these, so people can juggle the IPs easily.",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 28
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_66267fbc",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-15T14:56:31Z",
+      "side": 1,
+      "message": "I\u0027d put cmp at the higher end, so we can scale up the cmp count later.\nAlso, this should be a for loop so we can accomodate that dynamic cmp count.",
+      "range": {
+        "startLine": 107,
+        "startChar": 4,
+        "endLine": 107,
+        "endChar": 29
+      },
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_462b8382",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 11
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-15T14:56:31Z",
+      "side": 1,
+      "message": "to future proof this, I\u0027d add stub definitions for the stacklight nodes as well. Delia has a few patches pending review that should give you an idea of that to expect.",
+      "revId": "c09abc76c693afebd3526c082a0bdfb557bba0b1",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
