@@ -109,6 +109,18 @@ parameters:
     opnfv_openstack_compute_node03_tenant_address: {{ net_private | ipaddr_index(103) }}
     opnfv_openstack_compute_node01_external_address: {{ net_public | ipaddr_index(101) }}
     opnfv_openstack_compute_node02_external_address: {{ net_public | ipaddr_index(102) }}
+    opnfv_stacklight_monitor_address: {{ net_mgmt | ipaddr_index(70) }}
+    opnfv_stacklight_monitor_node01_address: {{ net_mgmt | ipaddr_index(71) }}
+    opnfv_stacklight_monitor_node02_address: {{ net_mgmt | ipaddr_index(72) }}
+    opnfv_stacklight_monitor_node03_address: {{ net_mgmt | ipaddr_index(73) }}
+    opnfv_stacklight_log_address: {{ net_mgmt | ipaddr_index(60) }}
+    opnfv_stacklight_log_node01_address: {{ net_mgmt | ipaddr_index(61) }}
+    opnfv_stacklight_log_node02_address: {{ net_mgmt | ipaddr_index(62) }}
+    opnfv_stacklight_log_node03_address: {{ net_mgmt | ipaddr_index(63) }}
+    opnfv_stacklight_telemetry_address: {{ net_mgmt | ipaddr_index(85) }}
+    opnfv_stacklight_telemetry_node01_address: {{ net_mgmt | ipaddr_index(86) }}
+    opnfv_stacklight_telemetry_node02_address: {{ net_mgmt | ipaddr_index(87) }}
+    opnfv_stacklight_telemetry_node03_address: {{ net_mgmt | ipaddr_index(88) }}
 
     opnfv_opendaylight_server_node01_single_address: {{ net_mgmt | ipaddr_index(111) }}
 
