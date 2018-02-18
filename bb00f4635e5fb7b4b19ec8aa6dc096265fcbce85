@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_5f0506c1",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-18T20:24:24Z",
+      "side": 1,
+      "message": "When I first saw this, I didn\u0027t like it, but now I know why - it should have an \u0027end\u0027 counterpart for symmetry :)\nSimilar to a DHCP pool, a static range should have well-defined limits (with network segment end being a good default for the upper limit).\nHowever, I would take it one step further and define this per-network for more flexbility.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 12
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_3f0abad2",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-18T20:24:24Z",
+      "side": 1,
+      "message": "let\u0027s drop the magic default of 3. cmp count should be determined dynamically. when SDF lands, each node in PDF will have 1 or more \u0027roles\u0027, similar to old Fuel, so we should be able to count how many nodes have the compute role.\nuntil SDF lands, we can make assumptions on the kvm count only - 1 for noHA and 3 HA - so the computes should be the nodes left. I know it\u0027s not ideal ...",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_9f0f8ee1",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-18T20:24:24Z",
+      "side": 1,
+      "message": "I don\u0027t like magic increments like this one, especially when they apply to 3 different networks.\nHow about a per-network ever-incrementing current_IP++?\nThen at the end, we check per-net current_IP vs its upper limit and decide whether we generated something valid or not?",
+      "range": {
+        "startLine": 67,
+        "startChar": 31,
+        "endLine": 67,
+        "endChar": 33
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_7f1442f5",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-18T20:24:24Z",
+      "side": 1,
+      "message": "if we add the optional upper-limit per-network, this could be easier to configure so that it leaves room for static IPs outside MaaS DHCP but inside the network segment.",
+      "range": {
+        "startLine": 72,
+        "startChar": 53,
+        "endLine": 72,
+        "endChar": 66
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_dff8f6c6",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-18T20:24:24Z",
+      "side": 1,
+      "message": "rm, now handled in Fuel repo",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 186,
+        "endChar": 13
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
