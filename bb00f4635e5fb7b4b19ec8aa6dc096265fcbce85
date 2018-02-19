@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_9f830ecc",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-19T11:03:51Z",
+      "side": 1,
+      "message": "Jinja lacks a straight way to increment a variable. That it is why this code has so many integer additions. Otherwise it requires an extra \"set\" line per operation.\n\nAs for the increment being applied on all networks, the reason behind was to maintain consistency and alignment of address on each node. Compute 1 to have x.10 y.10 z.10 and so on",
+      "parentUuid": "5a3f45e8_9f0f8ee1",
+      "range": {
+        "startLine": 67,
+        "startChar": 31,
+        "endLine": 67,
+        "endChar": 33
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_7f1442f5",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 13
