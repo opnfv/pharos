@@ -1,0 +1,8 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+2: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Code-Review+2: Trevor Bramwell <tbramwell@linuxfoundation.org>
+Submitted-by: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Submitted-at: Tue, 20 Feb 2018 16:45:53 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/51403
+Project: pharos
+Branch: refs/heads/master
