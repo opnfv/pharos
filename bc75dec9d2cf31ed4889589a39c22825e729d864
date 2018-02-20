@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_905dbdec",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-20T16:13:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3f45e8_d092a59e",
+      "range": {
+        "startLine": 54,
+        "startChar": 36,
+        "endLine": 54,
+        "endChar": 37
+      },
+      "revId": "bc75dec9d2cf31ed4889589a39c22825e729d864",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_b0f39909",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 15
@@ -59,6 +83,30 @@
       "writtenOn": "2018-02-20T15:31:42Z",
       "side": 1,
       "message": "I will look again at the order here after we agree this format is what we\u0027ll use going forward.\nPlease add stacklight IPs.",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 22
+      },
+      "revId": "bc75dec9d2cf31ed4889589a39c22825e729d864",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_10eecdec",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-20T16:13:27Z",
+      "side": 1,
+      "message": "A lot of entries were wrong. Fixed",
+      "parentUuid": "5a3f45e8_b0f39909",
       "range": {
         "startLine": 66,
         "startChar": 8,
