@@ -30,7 +30,7 @@ idf:
       network: 10.2.0.0
       mask: 24
     private:
-      interface: 1
+      interface: 2
       vlan: 2325
       network: 10.1.0.0
       mask: 24
@@ -81,3 +81,23 @@ idf:
           busaddr: *busaddr
         - interfaces: *interfaces
           busaddr: *busaddr
+  dpdk:
+    neutron:
+      tenant_network_types: "flat,vxlan"
+      tenant_vlan_range: "1000:1030"
+    nova:
+      cpu_pinning: "5-7,13-15"
+    compute:
+      hugepages_size: 2M
+      hugepages_count: 8192
+      hugepages_mount: /mnt/hugepages_2M
+      kernel_isolcpu: 2,3,5,6,7,10,11,13,14,15
+      dpdk_driver: uio
+      ovs:
+        pmd_cpu_mask: "0xc04"
+        dpdk_socket_mem: "2048"
+        dpdk_lcore_mask: "0x8"
+        memory_channels: "2"
+    interface:
+      driver: vfio-pci
+      n_rxq: 2

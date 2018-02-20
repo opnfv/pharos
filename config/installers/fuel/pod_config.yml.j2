@@ -173,3 +173,18 @@ parameters:
     opnfv_maas_node05_power_user: {{ conf.nodes.4.remote_management.user }}
     opnfv_maas_node05_power_password: {{ conf.nodes.4.remote_management.pass }}
     opnfv_maas_node05_interface_mac: '{{ conf.nodes.4.interfaces[pxe_interface].mac_address }}'
+
+    opnfv_dpdk_neutron_tenant_network_types: '{{ conf.idf.dpdk.neutron.tenant_network_types }}'
+    opnfv_dpdk_neutron_tenant_vlan_range: '{{ conf.idf.dpdk.neutron.tenant_vlan_range }}'
+    opnfv_dpdk_nova_cpu_pinning: '{{ conf.idf.dpdk.nova.cpu_pinning }}'
+    opnfv_dpdk_compute_hugepages_size: {{ conf.idf.dpdk.compute.hugepages_size }}
+    opnfv_dpdk_compute_hugepages_count: {{ conf.idf.dpdk.compute.hugepages_count }}
+    opnfv_dpdk_compute_hugepages_mount: {{ conf.idf.dpdk.compute.hugepages_mount }}
+    opnfv_dpdk_compute_kernel_isolcpu: {{ conf.idf.dpdk.compute.kernel_isolcpu }}
+    opnfv_dpdk_compute_dpdk_driver: {{ conf.idf.dpdk.compute.dpdk_driver }}
+    opnfv_dpdk_compute_ovs_pmd_cpu_mask: '{{ conf.idf.dpdk.compute.ovs.pmd_cpu_mask }}'
+    opnfv_dpdk_compute_ovs_dpdk_socket_mem: '{{ conf.idf.dpdk.compute.ovs.dpdk_socket_mem }}'
+    opnfv_dpdk_compute_ovs_dpdk_lcore_mask: '{{ conf.idf.dpdk.compute.ovs.dpdk_lcore_mask }}'
+    opnfv_dpdk_compute_ovs_memory_channels: '{{ conf.idf.dpdk.compute.ovs.memory_channels }}'
+    opnfv_dpdk_interface_driver: {{ conf.idf.dpdk.interface.driver }}
+    opnfv_dpdk_interface_n_rxq: {{ conf.idf.dpdk.interface.n_rxq }}
