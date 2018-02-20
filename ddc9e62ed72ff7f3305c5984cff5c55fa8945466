@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_f0940146",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-20T16:27:28Z",
+      "side": 1,
+      "message": "this is misleading, let\u0027s add a comment somewhere stating that first and last available IPs are always reserved (for external gw or whatever), then we can hardcode the same logic (start + 1, end -1) for all networks.\nAlso, I would use a dict, something like net[\u0027admin\u0027].start\nso we can do a for in for below.",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 32
+      },
+      "revId": "ddc9e62ed72ff7f3305c5984cff5c55fa8945466",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
