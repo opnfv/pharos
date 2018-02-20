@@ -75,6 +75,9 @@ definitions:
           additionalProperties: false
       required: ['jumphost', 'network']
       additionalProperties: false
+  dpdk:
+   v0.1:
+      type: 'object'
   osa:
     v0.1:
       type: 'object'
@@ -109,6 +112,8 @@ properties:
         type: 'object'
       osa:
         type: 'object'
+      dpdk:
+        type: 'object'
     required: ['version']
     additionalProperties: false
     ############################################################################
@@ -126,6 +131,8 @@ properties:
             $ref: '#/definitions/daisy/v0.1'
           fuel:
             $ref: '#/definitions/fuel/v0.1'
+          dpdk:
+            $ref: '#/definitions/dpdk/v0.1'
           osa:
             $ref: '#/definitions/osa/v0.1'
       fuel:
