@@ -73,6 +73,61 @@ definitions:
                 additionalProperties: false
           required: ['node']
           additionalProperties: false
+        reclass:  # Optional
+          type: 'object'
+          properties:
+            node:
+              type: 'array'
+              items:
+                type: 'object'
+                properties:
+                  compute_params:
+                    type: 'object'
+                    properties:
+                      common:  # Optional
+                        type: 'object'
+                        properties: &compute_params_common_properties
+                          nova_cpu_pinning:  # Optional
+                            type: 'string'
+                          compute_hugepages_size:
+                            type: 'string'
+                            enum: ['2M', '1G']
+                          compute_hugepages_count:
+                            type: 'number'
+                          compute_hugepages_mount:
+                            type: 'string'
+                          compute_kernel_isolcpu:  # Optional
+                            type: 'string'
+                          compute_ovs_pmd_cpu_mask:  # Optional
+                            type: ['string', 'number']
+                          compute_ovs_memory_channels:  # Optional
+                            type: ['string', 'number']
+                        required: ['compute_hugepages_size', 'compute_hugepages_count',
+                                   'compute_hugepages_mount']
+                        additionalProperties: false
+                      dpdk:  # Optional
+                        type: 'object'
+                        properties:
+                          <<: *compute_params_common_properties
+                          compute_dpdk_driver:
+                            type: 'string'
+                          compute_ovs_dpdk_socket_mem:
+                            type: ['string', 'number']
+                          compute_ovs_dpdk_lcore_mask:
+                            type: ['string', 'number']
+                          dpdk0_driver:
+                            type: 'string'
+                          dpdk0_n_rxq:
+                            type: 'number'
+                        required: ['compute_dpdk_driver', 'dpdk0_driver', 'dpdk0_n_rxq',
+                                   'compute_ovs_dpdk_socket_mem',
+                                   'compute_ovs_dpdk_lcore_mask']
+                        additionalProperties: false
+                    additionalProperties: false
+                required: ['compute_params']
+                additionalProperties: false
+          required: ['node']
+          additionalProperties: false
       required: ['jumphost', 'network']
       additionalProperties: false
   osa:
