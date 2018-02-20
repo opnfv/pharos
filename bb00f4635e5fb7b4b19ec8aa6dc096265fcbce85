@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_f067e1e8",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-20T15:38:11Z",
+      "side": 1,
+      "message": "I think for the sake of simplicity on both the user and the code is better to remove this option.\nI just left a safety offset of start+1 top-1 on the public_net to leave those ips for possible gateways.",
+      "parentUuid": "5a3f45e8_5f0506c1",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 12
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_3f0abad2",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 13
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-18T20:24:24Z",
       "side": 1,
       "message": "let\u0027s drop the magic default of 3. cmp count should be determined dynamically. when SDF lands, each node in PDF will have 1 or more \u0027roles\u0027, similar to old Fuel, so we should be able to count how many nodes have the compute role.\nuntil SDF lands, we can make assumptions on the kvm count only - 1 for noHA and 3 HA - so the computes should be the nodes left. I know it\u0027s not ideal ...",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_503cd593",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-20T15:38:11Z",
+      "side": 1,
+      "message": "Deciding HA/noHA happens after the pdf and idf are generated. I see no way to check that from here. \nBut we could generate a file that supports both cases with computes \u003d total nodes - noHA case",
+      "parentUuid": "5a3f45e8_3f0abad2",
       "range": {
         "startLine": 45,
         "startChar": 0,
@@ -106,6 +154,30 @@
       "writtenOn": "2018-02-18T20:24:24Z",
       "side": 1,
       "message": "if we add the optional upper-limit per-network, this could be easier to configure so that it leaves room for static IPs outside MaaS DHCP but inside the network segment.",
+      "range": {
+        "startLine": 72,
+        "startChar": 53,
+        "endLine": 72,
+        "endChar": 66
+      },
+      "revId": "bb00f4635e5fb7b4b19ec8aa6dc096265fcbce85",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_3055c9c6",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 13
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-20T15:38:11Z",
+      "side": 1,
+      "message": "If we discard the limiters, would it still be convenient to cap this? Again, its not easy to decide an arbitrary amount, 100, since then there could be problems with smaller networks. I would leave like this for full compatibility and simplicity. Unless you foresee a limitation or need for static IPs soon",
+      "parentUuid": "5a3f45e8_7f1442f5",
       "range": {
         "startLine": 72,
         "startChar": 53,
