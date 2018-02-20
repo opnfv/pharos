@@ -27,6 +27,22 @@
     {%- set maas_timeout_comissioning = conf.idf.fuel.maas.timeout_comissioning %}
     {%- set maas_timeout_deploying = conf.idf.fuel.maas.timeout_deploying %}
 {%- endif %}
+{%- if conf.idf.fuel.dpdk is defined %}
+    {%- set dpdk_neutron_tenant_network_types = conf.idf.fuel.dpdk.neutron.tenant_network_types %}
+    {%- set dpdk_neutron_tenant_vlan_range = conf.idf.fuel.dpdk.neutron.tenant_vlan_range %}
+    {%- set dpdk_nova_cpu_pinning = conf.idf.fuel.dpdk.nova.cpu_pinning %}
+    {%- set dpdk_compute_hugepages_size = conf.idf.fuel.dpdk.compute.hugepages_size %}
+    {%- set dpdk_compute_hugepages_count = conf.idf.fuel.dpdk.compute.hugepages_count %}
+    {%- set dpdk_compute_hugepages_mount = conf.idf.fuel.dpdk.compute.hugepages_mount %}
+    {%- set dpdk_compute_kernel_isolcpu = conf.idf.fuel.dpdk.compute.kernel_isolcpu %}
+    {%- set dpdk_compute_dpdk_driver = conf.idf.fuel.dpdk.compute.dpdk_driver %}
+    {%- set dpdk_compute_ovs_pmd_cpu_mask = conf.idf.fuel.dpdk.compute.ovs.pmd_cpu_mask %}
+    {%- set dpdk_compute_ovs_dpdk_socket_mem = conf.idf.fuel.dpdk.compute.ovs.dpdk_socket_mem %}
+    {%- set dpdk_compute_ovs_dpdk_lcore_mask = conf.idf.fuel.dpdk.compute.ovs.dpdk_lcore_mask %}
+    {%- set dpdk_compute_ovs_memory_channels = conf.idf.fuel.dpdk.compute.ovs.memory_channels %}
+    {%- set dpdk_interface_driver = conf.idf.fuel.dpdk.interface.driver %}
+    {%- set dpdk_interface_n_rxq = conf.idf.fuel.dpdk.interface.n_rxq  %}
+{%- endif %}
 
 {%- if dns_public is not defined %}
     {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] %}
@@ -41,6 +57,22 @@
 {%- if maas_timeout_comissioning is not defined or maas_timeout_deploying is not defined %}
     {%- set maas_timeout_comissioning = 10 %}
     {%- set maas_timeout_deploying = 15 %}
+{%- endif %}
+{%- if conf.idf.fuel.dpdk is not defined %}
+    {%- set dpdk_neutron_tenant_network_types = 'flat,vxlan' %}
+    {%- set dpdk_neutron_tenant_vlan_range = '1000:1030' %}
+    {%- set dpdk_nova_cpu_pinning = '5-7,13-15' %}
+    {%- set dpdk_compute_hugepages_size = '2M' %}
+    {%- set dpdk_compute_hugepages_count = '8192' %}
+    {%- set dpdk_compute_hugepages_mount = '/mnt/hugepages_2M' %}
+    {%- set dpdk_compute_kernel_isolcpu = '2,3,5,6,7,10,11,13,14,15' %}
+    {%- set dpdk_compute_dpdk_driver = 'uio' %}
+    {%- set dpdk_compute_ovs_pmd_cpu_mask = '0xc04' %}
+    {%- set dpdk_compute_ovs_dpdk_socket_mem = '2048,2048' %}
+    {%- set dpdk_compute_ovs_dpdk_lcore_mask = '0x8' %}
+    {%- set dpdk_compute_ovs_memory_channels = '2' %}
+    {%- set dpdk_interface_driver = 'igb_uio' %}
+    {%- set dpdk_interface_n_rxq = '2' %}
 {%- endif %}
 ---
 parameters:
@@ -173,3 +205,18 @@ parameters:
     opnfv_maas_node05_power_user: {{ conf.nodes.4.remote_management.user }}
     opnfv_maas_node05_power_password: {{ conf.nodes.4.remote_management.pass }}
     opnfv_maas_node05_interface_mac: '{{ conf.nodes.4.interfaces[pxe_interface].mac_address }}'
+
+    opnfv_dpdk_neutron_tenant_network_types: '{{ dpdk_neutron_tenant_network_types }}'
+    opnfv_dpdk_neutron_tenant_vlan_range: '{{ dpdk_neutron_tenant_vlan_range }}'
+    opnfv_dpdk_nova_cpu_pinning: '{{ dpdk_nova_cpu_pinning }}'
+    opnfv_dpdk_compute_hugepages_size: {{ dpdk_compute_hugepages_size }}
+    opnfv_dpdk_compute_hugepages_count: {{ dpdk_compute_hugepages_count }}
+    opnfv_dpdk_compute_hugepages_mount: {{ dpdk_compute_hugepages_mount }}
+    opnfv_dpdk_compute_kernel_isolcpu: {{ dpdk_compute_kernel_isolcpu }}
+    opnfv_dpdk_compute_dpdk_driver: {{ dpdk_compute_dpdk_driver }}
+    opnfv_dpdk_compute_ovs_pmd_cpu_mask: '{{ dpdk_compute_ovs_pmd_cpu_mask }}'
+    opnfv_dpdk_compute_ovs_dpdk_socket_mem: '{{ dpdk_compute_ovs_dpdk_socket_mem }}'
+    opnfv_dpdk_compute_ovs_dpdk_lcore_mask: '{{ dpdk_compute_ovs_dpdk_lcore_mask }}'
+    opnfv_dpdk_compute_ovs_memory_channels: '{{ dpdk_compute_ovs_memory_channels }}'
+    opnfv_dpdk_interface_driver: {{ dpdk_interface_driver }}
+    opnfv_dpdk_interface_n_rxq: {{ dpdk_interface_n_rxq }}

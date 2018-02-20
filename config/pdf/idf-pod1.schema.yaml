@@ -73,6 +73,8 @@ definitions:
                 additionalProperties: false
           required: ['node']
           additionalProperties: false
+        dpdk:
+            type: 'object'
       required: ['jumphost', 'network']
       additionalProperties: false
   osa:
