@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_cb579301",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-21T12:05:07Z",
+      "side": 1,
+      "message": "Ideally, compute hosts could have been appended to the network hosts lists before going trough this loop  but jinja2 has not been very friendly with appending lists.\n\nIn the meantime we will generate them after",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 13
+      },
+      "revId": "3a7e840d9c24ec7c80b449df982374ca9d1ca02d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
