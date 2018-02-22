@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_341db8be",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-22T19:09:49Z",
+      "side": 1,
+      "message": "This just adds another layer of variables that we later re-expand to the original contents of the dpdk block.\nSince we add the dpdk block in IDF as-is in current reclass (hence we don\u0027t need to process it in any way and can be taken as-is from IDF and put directly in reclass), I don\u0027t see the point of this block.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 12
+      },
+      "revId": "262bc70ee8632cc48be66959c8892a0e3267c20d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_747e20e6",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-22T19:09:49Z",
+      "side": 1,
+      "message": "defaults are nice until you forget to fill in one single param and chase it 2h, just to find out a wrong default kicked in.\nMaking the dpdk block mandatory is not cool either, as people trying out Fuel for a simple scenario would be forced to fill in all this data that is not obvious and needs careful tuning ...\nThis is something I\u0027ll have to think about some more.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 12
+      },
+      "revId": "262bc70ee8632cc48be66959c8892a0e3267c20d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_94792cff",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 4
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-22T19:09:49Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 222,
+        "endChar": 58
+      },
+      "revId": "262bc70ee8632cc48be66959c8892a0e3267c20d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_1426bc16",
+        "filename": "labs/arm/idf-pod6.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-02-22T19:09:49Z",
+      "side": 1,
+      "message": "Although we currently only support uniform configuration across all compute nodes (i.e. you can\u0027t tweak these settings per-node via reclass in Fuel), defining this in the root of idf.fuel is not a good idea for future development.\nInstead, we should be able to define it for each cmp node, which leads to another issue - we don\u0027t know (based on PDF/IDF) which of the nodes in PDF are computes ...\nSo until SDF lands, I suggest we do the same we did for interfaces (a global optional, which should be defined for each node, no matter the role) and busaddr (a cmp specific option, also only required for dpdk) and define the new \u0027dpdk\u0027 config block on each node that supports dpdk (i.e. all nodes in our case).\nAs for the contents of the \u0027dpdk\u0027 block, neutron settings can probably be determined based on current PDF/IDF values and don\u0027t need to be explicitly covered here, but let\u0027s leave it like this for now ...",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 16
+      },
+      "revId": "262bc70ee8632cc48be66959c8892a0e3267c20d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
