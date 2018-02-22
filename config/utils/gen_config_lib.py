@@ -18,6 +18,7 @@ def load_custom_filters(environment):
     # TODO deprecate ipaddr_index and netmask for the better ipnet ones
     filter_list = {
         'dpkg_arch': filter_dpkg_arch,
+        'storage_size_num': filter_storage_size_num,
         'ipnet_hostaddr': filter_ipnet_hostaddr,
         'ipnet_hostmin': filter_ipnet_hostmin,
         'ipnet_hostmax': filter_ipnet_hostmax,
@@ -50,6 +51,24 @@ def filter_dpkg_arch(arch, to_dpkg=True):
         return dpkg_arch_table[arch]
     else:
         return arch_dpkg_table[arch]
+
+
+def filter_storage_size_num(size_str):
+    """Convert human-readable size string to a string convertible to float"""
+
+    # pattern: '^[1-9][\d\.]*[MGT]B?$', multiplier=1000 (not KiB)
+    if size_str.endswith('B'):
+        size_str = size_str[:-1]
+    try:
+        size_num = 1000000
+        for multiplier in ['M', 'G', 'T']:
+            if size_str.endswith(multiplier):
+                return '{:.2f}'.format(size_num * float(size_str[:-1]))
+            size_num = size_num * 1000
+        return '{:.2f}'.format(float(size_str))
+    except ValueError as ex:
+        logging.error(size_str + " is not a valid size string")
+        raise
 
 
 def filter_ipnet_hostaddr(network_cidr, index):
