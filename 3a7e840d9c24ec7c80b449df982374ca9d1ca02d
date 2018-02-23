@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_31aaea70",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-23T09:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3f45e8_ee3d3dbd",
+      "range": {
+        "startLine": 41,
+        "startChar": 23,
+        "endLine": 41,
+        "endChar": 59
+      },
+      "revId": "3a7e840d9c24ec7c80b449df982374ca9d1ca02d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_cb12f361",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 17
@@ -36,6 +60,30 @@
       "writtenOn": "2018-02-21T17:53:41Z",
       "side": 1,
       "message": "-3 ? we only have HA on baremetal for now",
+      "range": {
+        "startLine": 43,
+        "startChar": 45,
+        "endLine": 43,
+        "endChar": 48
+      },
+      "revId": "3a7e840d9c24ec7c80b449df982374ca9d1ca02d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_51adf687",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-23T09:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3f45e8_cb12f361",
       "range": {
         "startLine": 43,
         "startChar": 45,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_11a36e9f",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-23T09:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3f45e8_6e048d15",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 23
+      },
+      "revId": "3a7e840d9c24ec7c80b449df982374ca9d1ca02d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_8eff5901",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 17
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_b19efa54",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-23T09:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3f45e8_8eff5901",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 4
+      },
+      "revId": "3a7e840d9c24ec7c80b449df982374ca9d1ca02d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_ce57a101",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 17
@@ -105,6 +201,30 @@
       "writtenOn": "2018-02-21T17:53:41Z",
       "side": 1,
       "message": "this is miseading, name suggest we are dealing with a node count, but we add a start IP offset.\nI\u0027d move the \u0027+start_ip[]\u0027 to below computations.",
+      "range": {
+        "startLine": 125,
+        "startChar": 3,
+        "endLine": 125,
+        "endChar": 89
+      },
+      "revId": "3a7e840d9c24ec7c80b449df982374ca9d1ca02d",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_f19fe24e",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 17
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-02-23T09:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a3f45e8_ce57a101",
       "range": {
         "startLine": 125,
         "startChar": 3,
