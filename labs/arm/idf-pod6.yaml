@@ -85,11 +85,11 @@ idf:
       node:
         - compute_params: &compute_params
             common:
-              nova_cpu_pinning: "1,2,3,4,5,7,8,9,10,11"
+              nova_cpu_pinning: &nova_cpu_pinning_common "1,2,3,4,5,7,8,9,10,11"
               compute_hugepages_size: 1G
               compute_hugepages_count: 16
               compute_hugepages_mount: /mnt/hugepages_1G
-              compute_kernel_isolcpu: ${_param:nova_cpu_pinning}
+              compute_kernel_isolcpu: *nova_cpu_pinning_common
             dpdk:
               nova_cpu_pinning: "5-7,13-15"
               compute_hugepages_size: 2M
