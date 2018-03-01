@@ -21,10 +21,11 @@ from jinja2 import Environment, FileSystemLoader
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument("--yaml", "-y", type=str, required=True)
 PARSER.add_argument("--jinja2", "-j", type=str, required=True)
+PARSER.add_argument("--includesdir", "-i", type=str, action='append')
 ARGS = PARSER.parse_args()
 
 ENV = Environment(
-    loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)),
+    loader=FileSystemLoader([os.path.dirname(ARGS.jinja2)] + ARGS.includesdir),
     extensions=['jinja2.ext.do']
 )
 gen_config_lib.load_custom_filters(ENV)
