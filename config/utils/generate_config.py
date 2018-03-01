@@ -23,7 +23,10 @@ PARSER.add_argument("--yaml", "-y", type=str, required=True)
 PARSER.add_argument("--jinja2", "-j", type=str, required=True)
 ARGS = PARSER.parse_args()
 
-ENV = Environment(loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)))
+ENV = Environment(
+    loader=FileSystemLoader(os.path.dirname(ARGS.jinja2)),
+    extensions=['jinja2.ext.do']
+)
 gen_config_lib.load_custom_filters(ENV)
 
 # Run `eyaml decrypt` on the whole file, but only if PDF data is encrypted
