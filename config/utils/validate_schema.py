@@ -11,16 +11,18 @@ import argparse
 import jsonschema
 import yaml
 
+
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument("--yaml", "-y", type=str, required=True)
 PARSER.add_argument("--schema", "-s", type=str, required=True)
 ARGS = PARSER.parse_args()
+LOADER = yaml.CSafeLoader if yaml.__with_libyaml__ else yaml.SafeLoader
 
 with open(ARGS.yaml) as _:
-    _DICT = yaml.safe_load(_)
+    _DICT = yaml.load(_, Loader=LOADER)
 
 with open(ARGS.schema) as _:
-    _SCHEMA = yaml.safe_load(_)
+    _SCHEMA = yaml.load(_, Loader=LOADER)
 
 # Draft 4 (latest supported by py-jsonschema) does not support value-based
 # decisions properly, see related github issue:
@@ -35,7 +37,7 @@ def schema_version_workaround(node):
             schema_version_workaround(item)
 schema_version_workaround(_DICT)
 if 'idf' in _DICT:
-  schema_version_workaround(_DICT['idf'])
+    schema_version_workaround(_DICT['idf'])
 
 _VALIDATOR = jsonschema.Draft4Validator(_SCHEMA)
 for error in _VALIDATOR.iter_errors(_DICT):
