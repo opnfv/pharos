@@ -149,7 +149,7 @@ parameters:
 {%- for network in networks %}
 {%- for key in hosts[network] %}
 {%- set i = loop.index  + start_ip[network] %}
-    {{key}}:{{ network | ipnet_hostaddr(i) }}
+    {{key}}: {{ network | ipnet_hostaddr(i) }}
 {%- endfor %}
 {%- endfor %}
 
