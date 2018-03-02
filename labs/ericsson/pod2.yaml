@@ -11,7 +11,7 @@ details:
   link: https://wiki.opnfv.org/display/pharos/CI-ERICSSON-POD2
 ##############################################################################
 jumphost:
-  name: CI-POD2-HOST
+  name: ci-pod2-blade01
   node: &nodeparams
     type: baremetal
     vendor: HP
@@ -56,155 +56,161 @@ jumphost:
   remote_management:
     <<: *remoteparas
     address: 172.16.2.11/24
-    mac_address: "58:20:B1:01:8A:F2"
+    mac_address: "58:20:b1:01:8a:f2"
   interfaces:
-    - name: 'nic1'
+    - &interface_common_nic1  # pxe
+      name: 'nic1'
+      address: 100.64.233.5
       speed: 10gb
       features: 'dpdk|sriov'
-      address: 100.64.201.5/24
-      mac_address: "5c:b9:01:8b:9f:e8"
+      mac_address: "5c:b9:01:8b:9f:e9"  # ens1f1
+      vlan: native
+    - &interface_common_nic2  # mgmt
+      name: 'nic2'
+      address: 192.168.10.253
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "5c:b9:01:8b:9f:ec"  # ens2f0
+      vlan: 85
+    - &interface_common_nic3  # public
+      name: 'nic3'
+      address: 100.64.201.5
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "5c:b9:01:8b:9f:ec"  # ens2f0
       vlan: 84
-    - name: 'nic2'
+    - &interface_common_nic4  # storage
+      name: 'nic4'
+      address:
       speed: 10gb
       features: 'dpdk|sriov'
-      address: 100.64.201.5/24
-      mac_address: "5c:b9:01:8b:9f:e9"
-      vlan: native
-    - name: 'nic3'
+      mac_address: "5c:b9:01:8b:9f:ec"  # ens2f0
+      vlan: 86
+    - &interface_common_nic5  # priv
+      name: 'nic5'
+      address:
       speed: 10gb
       features: 'dpdk|sriov'
-      address: 172.16.0.248/16
-      mac_address: "5c:b9:01:8b:9f:ec"
-      vlan: native
-    - name: 'nic4'
-      speed: 10gb
-      features: 'dpdk|sriov'
-      address: 172.16.0.248/16
-      mac_address: "5c:b9:01:8b:9f:ed"
-      vlan: native
+      mac_address: "5c:b9:01:8b:9f:ed"  # ens2f1
+      vlan: 87
 ##############################################################################
 nodes:
-  - name: CI-ERICSSON-POD2-NODE1
+  - name: ci-pod2-blade02
     node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remoteparas
       address: 172.16.2.12/24
-      mac_address: "58:20:B1:01:8B:F0"
+      mac_address: "58:20:b1:01:8b:f0"
     interfaces:
-      - name: 'nic1'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:94"
-      - name: 'nic2'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:95"
-      - name: 'nic3'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:80"
-      - name: 'nic4'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:81"
+      - mac_address: "5c:b9:01:8b:a6:95"  # ens1f1
+        address: 100.64.233.11
+        <<: *interface_common_nic1
+      - mac_address: "5c:b9:01:8b:a6:80"  # ens2f0
+        address: 192.168.10.11
+        <<: *interface_common_nic2
+      - mac_address: "5c:b9:01:8b:a6:80"  # ens2f0
+        address:
+        <<: *interface_common_nic3
+      - mac_address: "5c:b9:01:8b:a6:80"  # ens2f0
+        address: 192.168.1.11
+        <<: *interface_common_nic4
+      - mac_address: "5c:b9:01:8b:a6:81"  # ens2f1
+        address: 192.168.2.11
+        <<: *interface_common_nic5
   ############################################################################
-  - name: CI-ERICSSON-POD2-NODE2
+  - name: ci-pod2-blade03
     node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remoteparas
       address: 172.16.2.13/24
-      mac_address: "58:20:B1:01:8E:FC"
+      mac_address: "58:20:b1:01:8e:fc"
     interfaces:
-      - name: 'nic1'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:30"
-      - name: 'nic2'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:31"
-      - name: 'nic3'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:99:64"
-      - name: 'nic4'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:99:65"   # second port, no connection
+      - mac_address: "5c:b9:01:8b:a6:31"  # ens1f1
+        address: 100.64.233.12
+        <<: *interface_common_nic1
+      - mac_address: "5c:b9:01:8b:99:64"  # ens2f0
+        address: 192.168.10.12
+        <<: *interface_common_nic2
+      - mac_address: "5c:b9:01:8b:99:64"  # ens2f0
+        address:
+        <<: *interface_common_nic3
+      - mac_address: "5c:b9:01:8b:99:65"  # ens2f0
+        address: 192.168.1.12
+        <<: *interface_common_nic4
+      - mac_address: "5c:b9:01:8b:99:65"  # ens2f1
+        address: 192.168.2.12
+        <<: *interface_common_nic5
   ############################################################################
-  - name: CI-ERICSSON-POD2-NODE3
+  - name: ci-pod2-blade04
     node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remoteparas
       address: 172.16.2.14/24
-      mac_address: "58:20:B1:01:8D:32"
+      mac_address: "58:20:b1:01:8d:32"
     interfaces:
-      - name: 'nic1'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:9d:4c"
-      - name: 'nic2'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:9d:4d"
-      - name: 'nic3'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:9d:6c"
-      - name: 'nic4'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:9d:6d"
+      - mac_address: "5c:b9:01:8b:9d:4d"  # ens1f1
+        address: 100.64.233.14
+        <<: *interface_common_nic1
+      - mac_address: "5c:b9:01:8b:9d:6c"  # ens2f0
+        address: 192.168.10.14
+        <<: *interface_common_nic2
+      - mac_address: "5c:b9:01:8b:9d:6c"  # ens2f0
+        address:
+        <<: *interface_common_nic3
+      - mac_address: "5c:b9:01:8b:9d:6c"  # ens2f0
+        address: 192.168.1.14
+        <<: *interface_common_nic4
+      - mac_address: "5c:b9:01:8b:9d:6d"  # ens2f1
+        address: 192.168.2.14
+        <<: *interface_common_nic5
   ############################################################################
-  - name: CI-ERICSSON-POD2-NODE4
+  - name: ci-pod2-blade05
     node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remoteparas
       address: 172.16.2.15/24
-      mac_address: "58:20:B1:01:8B:FC"
+      mac_address: "58:20:b1:01:8b:fc"
     interfaces:
-      - name: 'nic1'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a5:fc"
-      - name: 'nic2'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a5:fd"
-      - name: 'nic3'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:08"
-      - name: 'nic4'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:09"
+      - mac_address: "5c:b9:01:8b:a5:fd"  # ens1f1
+        address: 100.64.233.14
+        <<: *interface_common_nic1
+      - mac_address: "5c:b9:01:8b:a6:08"  # ens2f0
+        address: 192.168.10.14
+        <<: *interface_common_nic2
+      - mac_address: "5c:b9:01:8b:a6:08"  # ens2f0
+        address:
+        <<: *interface_common_nic3
+      - mac_address: "5c:b9:01:8b:a6:08"  # ens2f0
+        address: 192.168.1.14
+        <<: *interface_common_nic4
+      - mac_address: "5c:b9:01:8b:a6:09"  # ens2f1
+        address: 192.168.2.14
+        <<: *interface_common_nic5
   ############################################################################
-  - name: CI-ERICSSON-POD2-NODE5
+  - name: ci-pod2-blade06
     node: *nodeparams
     disks: *disks
     remote_management:
       <<: *remoteparas
       address: 172.16.2.16/24
-      mac_address: "58:20:B1:01:8F:EA"
+      mac_address: "58:20:b1:01:8f:ea"
     interfaces:
-      - name: 'nic1'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:e8"
-      - name: 'nic2'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:a6:e9"
-      - name: 'nic3'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:97:14"
-      - name: 'nic4'
-        speed: 10gb
-        features: 'dpdk|sriov'
-        mac_address: "5c:b9:01:8b:97:15"
+      - mac_address: "5c:b9:01:8b:a6:e9"  # ens1f1
+        address: 100.64.233.15
+        <<: *interface_common_nic1
+      - mac_address: "5c:b9:01:8b:97:14"  # ens2f0
+        address: 192.168.10.15
+        <<: *interface_common_nic2
+      - mac_address: "5c:b9:01:8b:97:14"  # ens2f0
+        address:
+        <<: *interface_common_nic3
+      - mac_address: "5c:b9:01:8b:97:14"  # ens2f0
+        address: 192.168.1.15
+        <<: *interface_common_nic4
+      - mac_address: "5c:b9:01:8b:97:15"  # ens2f1
+        address: 192.168.2.15
+        <<: *interface_common_nic5

@@ -1,5 +1,5 @@
 ##############################################################################
-# Copyright (c) 2018 Ericsson AB, Mirantis Inc., Enea AB and others.
+# Copyright (c) 2018 Orange
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Apache License, Version 2.0
 # which accompanies this distribution, and is available at
@@ -8,5 +8,61 @@
 ---
 idf:
   version: 0.1
-  # NOTE: Fuel checking is disabled until 'idf.fuel' is defined below
-  installer: ['apex', 'compass4nfv', 'daisy', 'joid']
+  installer: ['xci']
+  net_config: &net_config
+    pxe:
+      interface: 0
+      network: 100.64.233.0
+      mask: 24
+      gateway: 100.64.233.1
+      dns: 192.168.1.200
+    mgmt:
+      interface: 1
+      network: 192.168.10.0
+      mask: 24
+    public:
+      interface: 2
+      network: 100.64.201.0
+      gateway: 100.64.201.1
+      mask: 24
+      dns: 192.168.1.200
+    storage:
+      interface: 3
+      network: 192.168.1.0
+      mask: 24
+    private:
+      interface: 4
+      network: 192.168.2.0
+      mask: 24
+  xci:
+    pod_name: ericsson-pod2
+    net_config: *net_config
+    nodes_roles:
+      opnfv_host: [opnfv_host]
+      ci-pod2-blade02: [compute, storage]
+      ci-pod2-blade03: [compute, storage]
+      ci-pod2-blade04: [controller, storage]
+      ci-pod2-blade05: [controller, storage]
+      ci-pod2-blade06: [controller, storage]
+
+    # net_config network to be used by the PXE
+    pxe_network: pxe
+
+    # As the MAC of generated bridges are generated, we use a list of local
+    # bridges to create libvirt networks
+    jumphost_interfaces_bridges:
+      - name: pxebr
+        ip:
+
+    extra_addresses:
+      opnfv_host: 100.64.233.5
+
+    installer:
+      osa:
+
+    # network mapping
+    network_mapping:
+      net-mgmt: admin
+      net-storage: storage
+      net-vxlan: private
+      net-vlan: public
