@@ -36,7 +36,7 @@
 {#- Physical interface OS name for each network (e.g. em1, enp1s0f1) #}
 {%- for role in [ctl01, cmp001] %}
     {%- set node = conf.idf.fuel.network.node[role.idx] %}
-    {%- set _ = role.update({
+    {%- do role.update({
         'nic_mcp': node.interfaces[idx_mcp],
         'nic_admin': node.interfaces[idx_admin],
         'nic_mgmt': node.interfaces[idx_mgmt],
