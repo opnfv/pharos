@@ -18,6 +18,8 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 
+LOADER = yaml.CSafeLoader if yaml.__with_libyaml__ else yaml.SafeLoader
+
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument("--yaml", "-y", type=str, required=True)
 PARSER.add_argument("--jinja2", "-j", type=str, required=True, action='append')
@@ -26,7 +28,6 @@ PARSER.add_argument("--batch", "-b", action='store_true')
 PARSER.add_argument("--verbose", "-v", action='count')
 ARGS = PARSER.parse_args()
 
-LOADER = yaml.CSafeLoader if yaml.__with_libyaml__ else yaml.SafeLoader
 ARGS.jinja2 = [abspath(x) for x in ARGS.jinja2]
 
 logging.basicConfig()
@@ -72,8 +73,9 @@ for _j2 in ARGS.jinja2:
     # Render template and write generated conf to file or stdout
     if ARGS.batch:
         if _j2.endswith('.j2'):
+            destination_file = _j2[:-3]  # Trim '.j2' suffix
             LOGGER.info('Parsing {}'.format(_j2))
-            with open(_j2[:-3], 'w') as _:
+            with open(destination_file, 'w') as _:
                 _.write(OUTPUT)
         else:
             LOGGER.warn('Skipping {}, name does not end in ".j2"'.format(_j2))
