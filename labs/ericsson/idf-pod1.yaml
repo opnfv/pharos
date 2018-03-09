@@ -40,7 +40,7 @@ idf:
       interface: 2
       vlan: 80
       network: 100.64.200.0
-      ip-range: 100.64.200.10-100.64.200.254  # Some IPs are in use by lab infra
+      ip-range: 100.64.200.100-100.64.200.254  # Some IPs are in use by lab infra
       mask: 24
       gateway: 100.64.200.1
       dns:
