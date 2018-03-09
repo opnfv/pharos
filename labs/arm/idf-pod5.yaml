@@ -26,6 +26,7 @@ idf:
       interface: 1
       vlan: 2183
       network: 172.16.10.0
+      ip-range: 172.16.10.10-172.16.10.254  # Some IPs are in use by lab infra
       mask: 24
     storage:
       interface: 1
@@ -41,6 +42,7 @@ idf:
       interface: 1
       vlan: native
       network: 10.0.8.0
+      ip-range: 10.0.8.10-10.0.8.253  # Some IPs are in use by lab infra
       mask: 24
       gateway: 10.0.8.254
       dns:
