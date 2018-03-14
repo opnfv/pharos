@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a3f45e8_eaccd363",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-03-14T15:55:54Z",
+      "side": 1,
+      "message": "if you use *nova_cpu_pinning_common, it will set the value \"2,3,4,5,6,7\". is it the correct value?",
+      "range": {
+        "startLine": 103,
+        "startChar": 39,
+        "endLine": 103,
+        "endChar": 62
+      },
+      "revId": "f52931ae794cec51506fee2a214e656f08e4c6b6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_8aa26fac",
         "filename": "labs/arm/idf-pod7.yaml",
         "patchSetId": 4
