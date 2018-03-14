@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_ea3cd3c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3859
+      },
+      "writtenOn": "2018-03-14T13:56:31Z",
+      "side": 1,
+      "message": "in fact this is for DPDK as well, dpdk-lcore-mask, it\u0027s not OvS specific",
+      "revId": "b6e1ec27b47ef85434851c6237c8969342896146",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
