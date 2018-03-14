@@ -39,6 +39,24 @@
       "revId": "f52931ae794cec51506fee2a214e656f08e4c6b6",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_feaad8d0",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-03-14T21:31:52Z",
+      "side": 1,
+      "message": "These make the full node set, replicated five times. \nBut pod7 has different boards of two kinds (3 + 2).\nCheck you configuration for the last two nodes. \nIn case you need different parameters you could use two anchor references: compute_params_a compute_params_b",
+      "parentUuid": "5a3f45e8_8aa26fac",
+      "revId": "f52931ae794cec51506fee2a214e656f08e4c6b6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
