@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_8aa26fac",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-03-14T15:17:45Z",
+      "side": 1,
+      "message": "@Herrero What are these extra compute_params ?\nI just copied them from the idf from pod6.",
+      "revId": "f52931ae794cec51506fee2a214e656f08e4c6b6",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
