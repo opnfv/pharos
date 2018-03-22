@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_402af57e",
+        "filename": "labs/arm/idf-pod5.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-03-22T11:36:46Z",
+      "side": 1,
+      "message": "this is half the RAM, do we really want that for non-dpdk?",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 43
+      },
+      "revId": "b5e9f5d1ca2ac369e03f5ca9e0bacdf292455145",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
