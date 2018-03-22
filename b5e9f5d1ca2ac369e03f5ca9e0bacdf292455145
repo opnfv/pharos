@@ -22,6 +22,30 @@
       "revId": "b5e9f5d1ca2ac369e03f5ca9e0bacdf292455145",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_e05ea144",
+        "filename": "labs/arm/idf-pod5.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-03-22T15:36:54Z",
+      "side": 1,
+      "message": "That is a good question. And the answer is I dont know. \nHowever I think that this commit is more about having an idf which is correct than for one which is the best (in terms of config) and so I left it as it is. \n\nThat being said It could be related to horizon working much better. If we decide That we can need to reduce the ram then we can make another commit",
+      "parentUuid": "5a3f45e8_402af57e",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 43
+      },
+      "revId": "b5e9f5d1ca2ac369e03f5ca9e0bacdf292455145",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
