@@ -22,6 +22,30 @@
       "revId": "66f3c2dd5237a86f8341bb48782e33105c8c8b62",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_60057179",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-03-22T13:09:42Z",
+      "side": 1,
+      "message": "Is this even relevant for the KVM nodes?\nAll this mostly affects the computes.",
+      "parentUuid": "5a3f45e8_80eb5daf",
+      "range": {
+        "startLine": 97,
+        "startChar": 39,
+        "endLine": 97,
+        "endChar": 62
+      },
+      "revId": "66f3c2dd5237a86f8341bb48782e33105c8c8b62",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
