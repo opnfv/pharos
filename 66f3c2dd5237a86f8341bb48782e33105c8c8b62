@@ -70,6 +70,30 @@
       "revId": "66f3c2dd5237a86f8341bb48782e33105c8c8b62",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_404e7597",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-03-22T15:23:01Z",
+      "side": 1,
+      "message": "Ok i edited it. Btw I dont get why would somebody split the cpus like that. Not that it really matters but in my config I went for a simple split. Of course many values are correct",
+      "parentUuid": "5a3f45e8_00ee2db4",
+      "range": {
+        "startLine": 97,
+        "startChar": 39,
+        "endLine": 97,
+        "endChar": 62
+      },
+      "revId": "66f3c2dd5237a86f8341bb48782e33105c8c8b62",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
