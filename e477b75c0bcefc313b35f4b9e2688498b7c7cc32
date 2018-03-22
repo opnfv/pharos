@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_00190d79",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-03-22T11:32:44Z",
+      "side": 1,
+      "message": "these are the first 3 nodes, which are different than the last 2 nodes for this pod.\nAlthough we never use these params since the first 3 nodes are controllers (hardcoded for now), it\u0027d be nice to reflect here the difference (similar to interfaces_a/interfaces_b above) to reduce confusion for whoever looks at this.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 41
+      },
+      "revId": "e477b75c0bcefc313b35f4b9e2688498b7c7cc32",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
