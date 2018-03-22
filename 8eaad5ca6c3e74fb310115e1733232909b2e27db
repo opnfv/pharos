@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_5b9ca8c0",
+        "filename": "labs/arm/idf-pod7.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-03-22T17:35:44Z",
+      "side": 1,
+      "message": "idf-pod6 has weird partitioning because it was copy-pasted from x86 and just slightly changed, yet it should work fine.\n2-47 is extreme and would give terrible performance, but I guess it serves the purpose of showing different config ...",
+      "range": {
+        "startLine": 93,
+        "startChar": 60,
+        "endLine": 93,
+        "endChar": 65
+      },
+      "revId": "8eaad5ca6c3e74fb310115e1733232909b2e27db",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
