@@ -33,14 +33,14 @@ jumphost:
       disk_type: hdd
       disk_interface: sas
       disk_rotation: 15000
-  os: centos-7.2.1611
+  os: ubuntu-16.04
   remote_params: &remoteparas
     type: ipmi
     versions:
       - 1.0
       - 2.0
-    user: changeme
-    pass: changeme
+    user: root
+    pass: root
   remote_management:
     <<: *remoteparas
     address: 10.10.180.10
@@ -78,7 +78,7 @@ nodes:
         disk_rotation: 15000
     remote_management:
       <<: *remoteparas
-      address: 10.10.180.11/24
+      address: 10.10.180.11
       mac_address: "A4:BF:01:14:40:18"
     interfaces:
       - name: 'nic1'
@@ -104,7 +104,7 @@ nodes:
         features: 'dpdk|sriov'
         address: 10.10.183.21/24
         mac_address: "3C:FD:FE:A4:9F:A1"
-        vlan: native
+        vlan: 1183
       - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -122,7 +122,7 @@ nodes:
     disks: *disks
     remote_management:
       <<: *remoteparas
-      address: 10.10.180.12/24
+      address: 10.10.180.12
       mac_address: "A4:BF:01:16:31:1F"
     interfaces:
       - name: 'nic1'
@@ -148,7 +148,7 @@ nodes:
         features: 'dpdk|sriov'
         address: 10.10.183.22/24
         mac_address: "3C:FD:FE:A4:A0:31"
-        vlan: native
+        vlan: 1183
       - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -166,7 +166,7 @@ nodes:
     disks: *disks
     remote_management:
       <<: *remoteparas
-      address: 10.10.180.13/24
+      address: 10.10.180.13
       mac_address: "A4:BF:01:16:30:F8"
     interfaces:
       - name: 'nic1'
@@ -192,7 +192,7 @@ nodes:
         features: 'dpdk|sriov'
         address: 10.10.183.23/24
         mac_address: "3C:FD:FE:A4:9E:49"
-        vlan: native
+        vlan: 1183
       - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -210,7 +210,7 @@ nodes:
     disks: *disks
     remote_management:
       <<: *remoteparas
-      address: 10.10.180.14/24
+      address: 10.10.180.14
       mac_address: "A4:BF:01:14:72:0F"
     interfaces:
       - name: 'nic1'
@@ -236,7 +236,7 @@ nodes:
         features: 'dpdk|sriov'
         address: 10.10.183.24/24
         mac_address: "3C:FD:FE:A4:9D:E9"
-        vlan: native
+        vlan: 1183
       - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -254,7 +254,7 @@ nodes:
     disks: *disks
     remote_management:
       <<: *remoteparas
-      address: 10.10.180.15/24
+      address: 10.10.180.15
       mac_address: "A4:BF:01:14:71:70"
     interfaces:
       - name: 'nic1'
@@ -280,7 +280,7 @@ nodes:
         features: 'dpdk|sriov'
         address: 10.10.183.25/24
         mac_address: "3C:FD:FE:A4:A1:09"
-        vlan: native
+        vlan: 1183
       - name: 'nic5'
         speed: 10gb
         features: 'dpdk|sriov'
