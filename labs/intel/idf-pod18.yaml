@@ -8,5 +8,42 @@
 ---
 idf:
   version: 0.1
-  # NOTE: Fuel checking is disabled until 'idf.fuel' is defined below
-  installer: ['apex', 'compass4nfv', 'daisy', 'joid']
+  installer: ['joid']
+  net_config:
+    # NOTE: Network names are likely to change after the PDF spec is updated
+    oob:
+      interface: 0
+      ip-range:
+      vlan:
+    admin:  # admin
+      interface: 1
+      vlan: native
+      network: 10.10.181.0
+      mask: 24
+      gateway: 10.10.181.2
+      bridge: brAdm
+    mgmt:  # data
+      interface: 2
+      vlan:
+      network: 10.10.182.0
+      mask: 24
+    storage:  # storage
+      interface: 3
+      vlan:
+      network: 10.10.182.0
+      mask: 24
+    private:  # floating
+      interface:
+      vlan:
+      network: 10.10.180.0
+      mask: 24
+      bridge: brExt
+    public:  # public
+      interface:
+      vlan: 1183
+      network: 10.10.185.0
+      mask: 24
+      gateway: 10.10.185.1
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
