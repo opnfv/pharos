@@ -10,6 +10,7 @@
 
 idf:
   version: 0.1
+  installer: ['apex', 'compass4nfv', 'daisy', 'fuel']
   net_config:
     oob:
       interface: 0
