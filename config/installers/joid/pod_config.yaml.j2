@@ -9,166 +9,163 @@
 lab:
   location: intel
   racks:
-    - rack: pod5
+    - rack: pod18
       nodes:
-    - name: {{ conf['nodes'][0]['name'] }}
-      architecture: {{ conf['nodes'][0]['node']['arch'] }}
+    - name: {{ conf.nodes[0].name }}
+      architecture: {{ conf.nodes[0].node.arch }}
       roles: [network, control]
       nics:
-        - ifname: {{ conf['nodes'][0]['interfaces'][0]['name'] }}
-          spaces: [data]
-          mac: ["{{ conf['nodes'][0]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][0]['interfaces'][0]['name'] }}.{{ conf['nodes'][0]['interfaces'][0]['vlan'] }}
-          spaces: [floating]
-          mac: ["{{ conf['nodes'][0]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][0]['interfaces'][1]['name'] }}.{{ conf['nodes'][0]['interfaces'][1]['vlan'] }}
-          spaces: [public]
-          mac: ["{{ conf['nodes'][0]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][0]['interfaces'][1]['name'] }}
-          spaces: [storage]
-          mac: ["{{ conf['nodes'][0]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][0]['interfaces'][2]['name'] }}
+        - ifname: {{ conf.nodes[0].interfaces[1].name }}{% if conf.nodes[0].interfaces[1].vlan | int > 0 %}.{{conf.nodes[0].interfaces[1].vlan}}{% endif %}
           spaces: [admin]
-          mac: ["{{ conf['nodes'][0]['interfaces'][2]['mac_address'] }}"]
+          mac: ["{{ conf.nodes[0].interfaces[1].mac_address }}"]
+        - ifname: {{ conf.nodes[0].interfaces[2].name }}{% if conf.nodes[0].interfaces[2].vlan | int > 0 %}.{{conf.nodes[0].interfaces[2].vlan}}{% endif %}
+          spaces: [data]
+          mac: ["{{ conf.nodes[0].interfaces[2].mac_address }}"]
+        - ifname: {{ conf.nodes[0].interfaces[0].name }}{% if conf.nodes[0].interfaces[0].vlan | int > 0 %}.{{conf.nodes[0].interfaces[0].vlan}}{% endif %}
+          spaces: [floating]
+          mac: ["{{ conf.nodes[0].interfaces[0].mac_address }}"]
+        - ifname: {{ conf.nodes[0].interfaces[3].name }}{% if conf.nodes[0].interfaces[3].vlan | int > 0 %}.{{conf.nodes[0].interfaces[3].vlan}}{% endif %}
+          spaces: [public]
+          mac: ["{{ conf.nodes[0].interfaces[3].mac_address }}"]
+        - ifname: {{ conf.nodes[0].interfaces[3].name }}
+          spaces: [storage]
+          mac: ["{{ conf.nodes[0].interfaces[3].mac_address }}"]
       power:
-        type: {{ conf['nodes'][0]['remote_management']['type'] }}
-        address: {{ conf['nodes'][0]['remote_management']['address'] }}
-        user: {{ conf['nodes'][0]['remote_management']['user'] }}
-        pass: {{ conf['nodes'][0]['remote_management']['pass'] }}
-    - name: {{ conf['nodes'][1]['name'] }}
-      architecture: {{ conf['nodes'][1]['node']['arch'] }}
+        type: {{ conf.nodes[0].remote_management.type }}
+        address: {{ conf.nodes[0].remote_management.address }}
+        user: {{ conf.nodes[0].remote_management.user }}
+        pass: {{ conf.nodes[0].remote_management.pass }}
+    - name: {{ conf.nodes[1].name }}
+      architecture: {{ conf.nodes[1].node.arch }}
       roles: [compute, control, storage]
       nics:
-        - ifname: {{ conf['nodes'][1]['interfaces'][0]['name'] }}
-          spaces: [data]
-          mac: ["{{ conf['nodes'][1]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][1]['interfaces'][0]['name'] }}.{{ conf['nodes'][1]['interfaces'][0]['vlan'] }}
-          spaces: [floating]
-          mac: ["{{ conf['nodes'][1]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][1]['interfaces'][1]['name'] }}.{{ conf['nodes'][1]['interfaces'][1]['vlan'] }}
-          spaces: [public]
-          mac: ["{{ conf['nodes'][1]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][1]['interfaces'][1]['name'] }}
-          spaces: [storage]
-          mac: ["{{ conf['nodes'][1]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][1]['interfaces'][2]['name'] }}
+        - ifname: {{ conf.nodes[1].interfaces[1].name }}{% if conf.nodes[1].interfaces[1].vlan | int > 0 %}.{{conf.nodes[1].interfaces[1].vlan}}{% endif %}
           spaces: [admin]
-          mac: ["{{ conf['nodes'][1]['interfaces'][2]['mac_address'] }}"]
+          mac: ["{{ conf.nodes[1].interfaces[1].mac_address }}"]
+        - ifname: {{ conf.nodes[1].interfaces[2].name }}{% if conf.nodes[1].interfaces[2].vlan | int > 0 %}.{{conf.nodes[1].interfaces[2].vlan}}{% endif %}
+          spaces: [data]
+          mac: ["{{ conf.nodes[1].interfaces[2].mac_address }}"]
+        - ifname: {{ conf.nodes[1].interfaces[0].name }}{% if conf.nodes[1].interfaces[0].vlan | int > 0 %}.{{conf.nodes[1].interfaces[0].vlan}}{% endif %}
+          spaces: [floating]
+          mac: ["{{ conf.nodes[1].interfaces[0].mac_address }}"]
+        - ifname: {{ conf.nodes[1].interfaces[3].name }}{% if conf.nodes[1].interfaces[3].vlan | int > 0 %}.{{conf.nodes[1].interfaces[3].vlan}}{% endif %}
+          spaces: [public]
+          mac: ["{{ conf.nodes[1].interfaces[3].mac_address }}"]
+        - ifname: {{ conf.nodes[1].interfaces[3].name }}
+          spaces: [storage]
+          mac: ["{{ conf.nodes[1].interfaces[3].mac_address }}"]
       power:
-        type: {{ conf['nodes'][1]['remote_management']['type'] }}
-        address: {{ conf['nodes'][1]['remote_management']['address'] }}
-        user: {{ conf['nodes'][1]['remote_management']['user'] }}
-        pass: {{ conf['nodes'][1]['remote_management']['pass'] }}
-    - name: {{ conf['nodes'][2]['name'] }}
-      architecture: {{ conf['nodes'][2]['node']['arch'] }}
+        type: {{ conf.nodes[1].remote_management.type }}
+        address: {{ conf.nodes[1].remote_management.address }}
+        user: {{ conf.nodes[1].remote_management.user }}
+        pass: {{ conf.nodes[1].remote_management.pass }}
+    - name: {{ conf.nodes[2].name }}
+      architecture: {{ conf.nodes[2].node.arch }}
       roles: [compute, control, storage]
       nics:
-        - ifname: {{ conf['nodes'][2]['interfaces'][0]['name'] }}
-          spaces: [data]
-          mac: ["{{ conf['nodes'][2]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][2]['interfaces'][0]['name'] }}.{{ conf['nodes'][2]['interfaces'][0]['vlan'] }}
+        - ifname: {{ conf.nodes[2].interfaces[1].name }}{% if conf.nodes[2].interfaces[1].vlan | int > 0 %}.{{conf.nodes[2].interfaces[1].vlan}}{% endif %}
+          spaces: [admin]
+          mac: ["{{ conf.nodes[2].interfaces[1].mac_address }}"]
+        - ifname: {{ conf.nodes[2].interfaces[2].name }}{% if conf.nodes[2].interfaces[2].vlan | int > 0 %}.{{conf.nodes[2].interfaces[2].vlan}}{% endif %}
           spaces: [floating]
-          mac: ["{{ conf['nodes'][2]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][2]['interfaces'][1]['name'] }}.{{ conf['nodes'][2]['interfaces'][1]['vlan'] }}
+          mac: ["{{ conf.nodes[2].interfaces[2].mac_address }}"]
+        - ifname: {{ conf.nodes[2].interfaces[0].name }}{% if conf.nodes[2].interfaces[0].vlan | int > 0 %}.{{conf.nodes[2].interfaces[0].vlan}}{% endif %}
           spaces: [public]
-          mac: ["{{ conf['nodes'][2]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][2]['interfaces'][1]['name'] }}
+          mac: ["{{ conf.nodes[2].interfaces[0].mac_address }}"]
+        - ifname: {{ conf.nodes[2].interfaces[3].name }}{% if conf.nodes[2].interfaces[3].vlan | int > 0 %}.{{conf.nodes[2].interfaces[3].vlan}}{% endif %}
           spaces: [storage]
-          mac: ["{{ conf['nodes'][2]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][2]['interfaces'][2]['name'] }}
+          mac: ["{{ conf.nodes[2].interfaces[3].mac_address }}"]
+        - ifname: {{ conf.nodes[2].interfaces[3].name }}
+          spaces: [storage]
+          mac: ["{{ conf.nodes[2].interfaces[3].mac_address }}"]
       power:
-        type: {{ conf['nodes'][2]['remote_management']['type'] }}
-        address: {{ conf['nodes'][2]['remote_management']['address'] }}
-        user: {{ conf['nodes'][2]['remote_management']['user'] }}
-        pass: {{ conf['nodes'][2]['remote_management']['pass'] }}
-    - name: {{ conf['nodes'][3]['name'] }}
-      architecture: {{ conf['nodes'][3]['node']['arch'] }}
+        type: {{ conf.nodes[2].remote_management.type }}
+        address: {{ conf.nodes[2].remote_management.address }}
+        user: {{ conf.nodes[2].remote_management.user }}
+        pass: {{ conf.nodes[2].remote_management.pass }}
+    - name: {{ conf.nodes[3].name }}
+      architecture: {{ conf.nodes[3].node.arch }}
       roles: [compute, storage]
       nics:
-        - ifname: {{ conf['nodes'][3]['interfaces'][0]['name'] }}
+        - ifname: {{ conf.nodes[3].interfaces[1].name }}{% if conf.nodes[3].interfaces[1].vlan | int > 0 %}.{{conf.nodes[3].interfaces[1].vlan}}{% endif %}
+          spaces: [admin]
+          mac: ["{{ conf.nodes[3].interfaces[1].mac_address }}"]
+        - ifname: {{ conf.nodes[3].interfaces[2].name }}{% if conf.nodes[3].interfaces[2].vlan | int > 0 %}.{{conf.nodes[3].interfaces[2].vlan}}{% endif %}
           spaces: [data]
-          mac: ["{{ conf['nodes'][3]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][3]['interfaces'][0]['name'] }}.{{ conf['nodes'][3]['interfaces'][0]['vlan'] }}
+          mac: ["{{ conf.nodes[3].interfaces[2].mac_address }}"]
+        - ifname: {{ conf.nodes[3].interfaces[0].name }}{% if conf.nodes[3].interfaces[0].vlan | int > 0 %}.{{conf.nodes[3].interfaces[0].vlan}}{% endif %}
           spaces: [floating]
-          mac: ["{{ conf['nodes'][3]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][3]['interfaces'][1]['name'] }}.{{ conf['nodes'][3]['interfaces'][1]['vlan'] }}
+          mac: ["{{ conf.nodes[3].interfaces[0].mac_address }}"]
+        - ifname: {{ conf.nodes[3].interfaces[3].name }}{% if conf.nodes[3].interfaces[3].vlan | int > 0 %}.{{conf.nodes[3].interfaces[3].vlan}}{% endif %}
           spaces: [public]
-          mac: ["{{ conf['nodes'][3]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][3]['interfaces'][1]['name'] }}
+          mac: ["{{ conf.nodes[3].interfaces[3].mac_address }}"]
+        - ifname: {{ conf.nodes[3].interfaces[3].name }}
           spaces: [storage]
-          mac: ["{{ conf['nodes'][3]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][3]['interfaces'][2]['name'] }}
+          mac: ["{{ conf.nodes[3].interfaces[3].mac_address }}"]
       power:
-        type: {{ conf['nodes'][3]['remote_management']['type'] }}
-        address: {{ conf['nodes'][3]['remote_management']['address'] }}
-        user: {{ conf['nodes'][3]['remote_management']['user'] }}
-        pass: {{ conf['nodes'][3]['remote_management']['pass'] }}
-    - name: {{ conf['nodes'][4]['name'] }}
-      architecture: {{ conf['nodes'][4]['node']['arch'] }}
+        type: {{ conf.nodes[3].remote_management.type }}
+        address: {{ conf.nodes[3].remote_management.address }}
+        user: {{ conf.nodes[3].remote_management.user }}
+        pass: {{ conf.nodes[3].remote_management.pass }}
+    - name: {{ conf.nodes[4].name }}
+      architecture: {{ conf.nodes[4].node.arch }}
       roles: [compute, storage]
       nics:
-        - ifname: {{ conf['nodes'][4]['interfaces'][0]['name'] }}
+        - ifname: {{ conf.nodes[4].interfaces[1].name }}{% if conf.nodes[4].interfaces[1].vlan | int > 0 %}.{{conf.nodes[4].interfaces[1].vlan}}{% endif %}
+          spaces: [admin]
+          mac: ["{{ conf.nodes[4].interfaces[1].mac_address }}"]
+        - ifname: {{ conf.nodes[4].interfaces[2].name }}{% if conf.nodes[4].interfaces[2].vlan | int > 0 %}.{{conf.nodes[4].interfaces[2].vlan}}{% endif %}
           spaces: [data]
-          mac: ["{{ conf['nodes'][4]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][4]['interfaces'][0]['name'] }}.{{ conf['nodes'][4]['interfaces'][0]['vlan'] }}
+          mac: ["{{ conf.nodes[4].interfaces[2].mac_address }}"]
+        - ifname: {{ conf.nodes[4].interfaces[0].name }}{% if conf.nodes[4].interfaces[0].vlan | int > 0 %}.{{conf.nodes[4].interfaces[0].vlan}}{% endif %}
           spaces: [floating]
-          mac: ["{{ conf['nodes'][4]['interfaces'][0]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][4]['interfaces'][1]['name'] }}.{{ conf['nodes'][4]['interfaces'][1]['vlan'] }}
+          mac: ["{{ conf.nodes[4].interfaces[0].mac_address }}"]
+        - ifname: {{ conf.nodes[4].interfaces[3].name }}{% if conf.nodes[4].interfaces[3].vlan | int > 0 %}.{{conf.nodes[4].interfaces[3].vlan}}{% endif %}
           spaces: [public]
-          mac: ["{{ conf['nodes'][4]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][4]['interfaces'][1]['name'] }}
+          mac: ["{{ conf.nodes[4].interfaces[3].mac_address }}"]
+        - ifname: {{ conf.nodes[1].interfaces[2].name }}
           spaces: [storage]
-          mac: ["{{ conf['nodes'][4]['interfaces'][1]['mac_address'] }}"]
-        - ifname: {{ conf['nodes'][1]['interfaces'][2]['name'] }}
+          mac: ["{{ conf.nodes[4].interfaces[3].mac_address }}"]
       power:
-        type: {{ conf['nodes'][4]['remote_management']['type'] }}
-        address: {{ conf['nodes'][4]['remote_management']['address'] }}
-        user: {{ conf['nodes'][4]['remote_management']['user'] }}
-        pass: {{ conf['nodes'][4]['remote_management']['pass'] }}
+        type: {{ conf.nodes[4].remote_management.type }}
+        address: {{ conf.nodes[4].remote_management.address }}
+        user: {{ conf.nodes[4].remote_management.user }}
+        pass: {{ conf.nodes[4].remote_management.pass }}
       floating-ip-range: 10.5.15.6,10.5.15.250,10.5.15.1,10.5.15.0/24
-      ext-port: "ens785f0.505"
-      dns: 8.8.8.8
+      ext-port: "nic1"
+      dns: {{ conf.idf.net_config.public.dns[0] }}
       osdomainname:
-opnfv:
-  release: f
-  distro: xenial
-  type: ha
-  openstack: pike
-  sdncontroller:
-    - type: nosdn
-  storage:
-    - type: ceph
-      disk: /dev/sdb
-  feature: odl_l2
-  spaces:
-    - type: admin
-      bridge: brAdm
-      cidr: 10.5.1.0/24
-      gateway: 10.5.1.1
-      vlan:
-    - type: data
-      bridge: brData
-      cidr: 10.5.12.0/24
-      gateway:
-      vlan:
-    - type: storage
-      bridge: brStor
-      cidr: 10.5.13.0/24
-      gateway:
-      vlan:
-    - type: public
-      bridge: brMgmt
-      cidr: 10.5.14.0/24
-      gateway:
-      vlan: 504
-    - type: floating
-      bridge: brPublic
-      cidr: 10.5.15.0/24
-      gateway:
-      vlan: 505
-    - type: external
-      bridge: brExt
-      cidr:
-      gateway:
-      ipaddress: 10.2.117.92
-      vlan:
+  opnfv:
+    release: f
+    distro: xenial
+    type: noha
+    openstack: pike
+    sdncontroller:
+      - type: nosdn
+    storage:
+      - type: ceph
+        disk: /dev/sdb
+    feature: odl_l2
+    spaces:
+      - type: admin  # admin
+        bridge: {{ conf.idf.net_config.admin.bridge }}
+        cidr: {{ conf.idf.net_config.admin.network }}/{{ conf.idf.net_config.admin.mask }}
+        gateway: {{ conf.idf.net_config.admin.gateway }}
+        vlan:
+      - type: data  # mgmt
+        cidr: {{ conf.idf.net_config.mgmt.network }}/{{ conf.idf.net_config.mgmt.mask }}
+        gateway:
+        vlan:
+      - type: storage  # storage
+        cidr: {{ conf.idf.net_config.storage.network }}/{{ conf.idf.net_config.storage.mask }}
+        gateway:
+        vlan:
+      - type: floating  # private
+        bridge: {{ conf.idf.net_config.private.bridge }}
+        cidr: {{ conf.idf.net_config.private.network }}/{{ conf.idf.net_config.private.mask }}
+        gateway:
+        vlan:
+      - type: public  # public
+        cidr: {{ conf.idf.net_config.public.network }}/{{ conf.idf.net_config.public.mask }}
+        gateway: {{ conf.idf.net_config.public.gateway }}
+        vlan: {{ conf.idf.net_config.public.vlan }}
