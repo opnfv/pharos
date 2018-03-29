@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_08e2cbd4",
+        "filename": "labs/intel/pod18.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 3201
+      },
+      "writtenOn": "2018-03-29T00:18:14Z",
+      "side": 1,
+      "message": "the switch this interface does not have tagged vlan 1183 configured. This is an OS configuration.",
+      "range": {
+        "startLine": 107,
+        "startChar": 14,
+        "endLine": 107,
+        "endChar": 18
+      },
+      "revId": "da8fd8487ac5bcde4643600721a21e2aa9605410",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
