@@ -34,12 +34,12 @@ idf:
       mask: 24
     private:
       interface: 3
-      vlan: 1030
+      vlan: native
       network: 192.168.13.0
       mask: 24
     public:
       interface: 3
-      vlan: 103
+      vlan: native
       network: 172.10.0.0
       mask: 24
       gateway: 172.10.0.1
