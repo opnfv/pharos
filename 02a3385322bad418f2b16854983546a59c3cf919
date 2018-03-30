@@ -22,6 +22,30 @@
       "revId": "02a3385322bad418f2b16854983546a59c3cf919",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_2ed50f1c",
+        "filename": "labs/zte/idf-pod3.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 3195
+      },
+      "writtenOn": "2018-03-30T00:35:35Z",
+      "side": 1,
+      "message": "Only one untagged vlan.",
+      "parentUuid": "5a3f45e8_f3fdd43b",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "02a3385322bad418f2b16854983546a59c3cf919",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
