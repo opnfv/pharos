@@ -51,7 +51,8 @@ while IFS= read -r lab_config; do
             continue
         fi
         while IFS= read -r jinja_template; do
-            pdf_gen_cmd="${GEN_CFG} -y ${lab_config} -j ${jinja_template}"
+            pdf_gen_cmd="${GEN_CFG} -y ${lab_config} -j ${jinja_template}" \
+		        "-i $(dirname "${jinja_template}")"
             if ${pdf_gen_cmd} > "${TMPF}"; then
                 ((pdf_inst_pass+=1))
                 echo "[GENERATE] [OK] ${pdf_gen_cmd}"

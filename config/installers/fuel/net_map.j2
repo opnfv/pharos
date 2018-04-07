@@ -5,7 +5,8 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
-{#- NOTE: All same role (e.g. compute) roles will share the same mapping #}
+{%- set net = conf.idf.net_config %}
+{#- NOTE: All nodes sharing a role (e.g. compute) will use the same mapping #}
 
 {#- Until we support per-node configuration, we only collect data for the
     first node in each role. Currently, there's no role mapping in PDF/IDF,
@@ -20,18 +21,18 @@
     This can be worked around by tweaking the NIC definition order in PDF.
     The same observation applies to vlan tags, at least for now. #}
 
-{#- Determine interface index for each network (plumbing vars) #}
+{#- Determine interface index for each network #}
 {%- set idx_mcp = 0 %} {#- mcpcontrol network is hard set on first interface #}
-{%- set idx_admin = conf.idf.net_config.admin.interface %}
-{%- set idx_mgmt = conf.idf.net_config.mgmt.interface %}
-{%- set idx_private = conf.idf.net_config.private.interface %}
-{%- set idx_public = conf.idf.net_config.public.interface %}
+{%- set idx_admin = net.admin.interface %}
+{%- set idx_mgmt = net.mgmt.interface %}
+{%- set idx_private = net.private.interface %}
+{%- set idx_public = net.public.interface %}
 
 {#- VLAN for each network (only untagged 'admin' is supported by MaaS config!) #}
-{%- set vlan_admin = conf.idf.net_config.admin.vlan %}
-{%- set vlan_mgmt = conf.idf.net_config.mgmt.vlan %}
-{%- set vlan_private = conf.idf.net_config.private.vlan %}
-{%- set vlan_public = conf.idf.net_config.public.vlan %}
+{%- set vlan_admin = net.admin.vlan %}
+{%- set vlan_mgmt = net.mgmt.vlan %}
+{%- set vlan_private = net.private.vlan %}
+{%- set vlan_public = net.public.vlan %}
 
 {#- Physical interface OS name for each network (e.g. em1, enp1s0f1) #}
 {%- for role in [ctl01, cmp001] %}
@@ -44,4 +45,171 @@
         'nic_public': node.interfaces[idx_public],
         'bus_private': node.busaddr[idx_private]}) %}
     {#- PCI addresses are only used on computes for DPDK on private net #}
+{%- endfor %}
+
+{%- set net_admin = [net.admin.network, net.admin.mask] | join("/") %}
+{%- set net_mgmt = [net.mgmt.network, net.mgmt.mask] | join("/") %}
+{%- set net_private = [net.private.network, net.private.mask] | join("/") %}
+{%- set net_public =  [net.public.network, net.public.mask] | join("/") %}
+{%- set networks = [net_admin, net_mgmt, net_private, net_public] %}
+
+{%- if net.public.dns is defined %}
+    {%- set dns_public = net.public.dns %}
+{%- else %}
+    {%- set dns_public = [ '8.8.8.8', '8.8.4.4' ] %}
+{%- endif %}
+
+{%- if net.public.gateway is defined %}
+    {%- set net_public_gw = net.public.gateway %}
+{%- endif %}
+{%- if conf.idf.fuel.network.public_pool is defined %}
+    {%- set net_public_pool_start = conf.idf.fuel.network.public_pool.start_ip %}
+    {%- set net_public_pool_end = conf.idf.fuel.network.public_pool.end_ip %}
+{%- endif %}
+
+{%- if conf.idf.fuel.maas is defined %}
+    {%- set maas_timeout_comissioning = conf.idf.fuel.maas.timeout_comissioning %}
+    {%- set maas_timeout_deploying = conf.idf.fuel.maas.timeout_deploying %}
+{%- else %}
+    {%- set maas_timeout_comissioning = 10 %}
+    {%- set maas_timeout_deploying = 15 %}
+{%- endif %}
+
+{%- set cmp_nodes = conf.nodes | length - cmp001.idx %}
+
+{%- set net_admin_hosts = [
+    'opnfv_infra_config_pxe_admin_address',
+    'opnfv_infra_maas_node01_deploy_address',
+    'opnfv_openstack_proxy_node01_pxe_admin_address',
+    'opnfv_openstack_proxy_node02_pxe_admin_address',
+    'opnfv_openstack_gateway_node01_pxe_admin_address',
+    'opnfv_openstack_gateway_node02_pxe_admin_address',
+    'opnfv_openstack_gateway_node03_pxe_admin_address',
+    'opnfv_infra_kvm_node01_pxe_admin_address',
+    'opnfv_infra_kvm_node02_pxe_admin_address',
+    'opnfv_infra_kvm_node03_pxe_admin_address',
+    'opnfv_openstack_database_node01_pxe_admin_address',
+    'opnfv_openstack_database_node02_pxe_admin_address',
+    'opnfv_openstack_database_node03_pxe_admin_address',
+    'opnfv_openstack_message_queue_node01_pxe_admin_address',
+    'opnfv_openstack_message_queue_node02_pxe_admin_address',
+    'opnfv_openstack_message_queue_node03_pxe_admin_address',
+    'opnfv_openstack_telemetry_node01_pxe_admin_address',
+    'opnfv_openstack_telemetry_node02_pxe_admin_address',
+    'opnfv_openstack_telemetry_node03_pxe_admin_address',
+    'opnfv_openstack_control_node01_pxe_admin_address',
+    'opnfv_openstack_control_node02_pxe_admin_address',
+    'opnfv_openstack_control_node03_pxe_admin_address',
+    'opnfv_opendaylight_server_node01_pxe_admin_address',
+    'opnfv_stacklight_monitor_node01_pxe_admin_address',
+    'opnfv_stacklight_monitor_node02_pxe_admin_address',
+    'opnfv_stacklight_monitor_node03_pxe_admin_address',
+    'opnfv_stacklight_log_node01_pxe_admin_address',
+    'opnfv_stacklight_log_node02_pxe_admin_address',
+    'opnfv_stacklight_log_node03_pxe_admin_address',
+    'opnfv_stacklight_telemetry_node01_pxe_admin_address',
+    'opnfv_stacklight_telemetry_node02_pxe_admin_address',
+    'opnfv_stacklight_telemetry_node03_pxe_admin_address'] %}
+
+{%- set net_mgmt_hosts = [
+    'opnfv_infra_config_address',
+    'opnfv_infra_maas_node01_address',
+    'opnfv_openstack_proxy_control_address',
+    'opnfv_openstack_proxy_node01_control_address',
+    'opnfv_openstack_proxy_node02_control_address',
+    'opnfv_openstack_gateway_node01_address',
+    'opnfv_openstack_gateway_node02_address',
+    'opnfv_openstack_gateway_node03_address',
+    'opnfv_infra_kvm_address',
+    'opnfv_infra_kvm_node01_address',
+    'opnfv_infra_kvm_node02_address',
+    'opnfv_infra_kvm_node03_address',
+    'opnfv_openstack_database_address',
+    'opnfv_openstack_database_node01_address',
+    'opnfv_openstack_database_node02_address',
+    'opnfv_openstack_database_node03_address',
+    'opnfv_openstack_message_queue_address',
+    'opnfv_openstack_message_queue_node01_address',
+    'opnfv_openstack_message_queue_node02_address',
+    'opnfv_openstack_message_queue_node03_address',
+    'opnfv_openstack_telemetry_address',
+    'opnfv_openstack_telemetry_node01_address',
+    'opnfv_openstack_telemetry_node02_address',
+    'opnfv_openstack_telemetry_node03_address',
+    'opnfv_openstack_control_address',
+    'opnfv_openstack_control_node01_address',
+    'opnfv_openstack_control_node02_address',
+    'opnfv_openstack_control_node03_address',
+    'opnfv_opendaylight_server_node01_single_address',
+    'opnfv_stacklight_monitor_address',
+    'opnfv_stacklight_monitor_node01_address',
+    'opnfv_stacklight_monitor_node02_address',
+    'opnfv_stacklight_monitor_node03_address',
+    'opnfv_stacklight_log_address',
+    'opnfv_stacklight_log_node01_address',
+    'opnfv_stacklight_log_node02_address',
+    'opnfv_stacklight_log_node03_address',
+    'opnfv_stacklight_telemetry_address',
+    'opnfv_stacklight_telemetry_node01_address',
+    'opnfv_stacklight_telemetry_node02_address',
+    'opnfv_stacklight_telemetry_node03_address'] %}
+
+{%- set net_public_hosts = [
+    'opnfv_openstack_proxy_address',
+    'opnfv_openstack_proxy_node01_address',
+    'opnfv_openstack_proxy_node02_address',
+    'opnfv_openstack_gateway_node01_external_address',
+    'opnfv_openstack_gateway_node02_external_address',
+    'opnfv_openstack_gateway_node03_external_address',
+    'opnfv_openstack_control_node01_external_address',
+    'opnfv_openstack_control_node02_external_address',
+    'opnfv_openstack_control_node03_external_address'] %}
+
+{%- set net_private_hosts = [
+    'opnfv_openstack_gateway_node01_tenant_address',
+    'opnfv_openstack_gateway_node02_tenant_address',
+    'opnfv_openstack_gateway_node03_tenant_address'] %}
+
+{%- set hosts = {
+    net_admin: net_admin_hosts,
+    net_mgmt: net_mgmt_hosts,
+    net_private: net_private_hosts,
+    net_public: net_public_hosts } %}
+
+{%- set start_ip = {
+    net_admin: 1,
+    net_mgmt: 1,
+    net_private: 1,
+    net_public: 1 } %}
+
+{%- for nn, nd in net.items() %}
+  {%- if 'ip-range' in nd and 'network' in nd and 'mask' in nd %}
+    {%- set net_nd = [nd.network, nd.mask] | join('/') %}
+    {%- if net_nd in start_ip %}
+      {%- set nd_start_ip = nd['ip-range'].split('-')[0] %}
+      {%- set nd_start = net_nd | ipnet_range_size(net_nd | ipnet_hostmin, nd_start_ip) %}
+      {%- do start_ip.update({net_nd: nd_start}) %}
+    {%- endif %}
+  {%- endif %}
+{%- endfor %}
+
+{%- set total_admin_hosts = net_admin_hosts | length + cmp_nodes %}
+{%- set net_admin_pool_start = net_admin | ipnet_hostaddr(total_admin_hosts + start_ip[net_admin] +1) %}
+{%- set net_admin_pool_end = net_admin | ipnet_hostmax %}
+{#- PXE/admin gateway is mas01 when present / jumpserver via virsh otherwise #}
+{%- set net_admin_gw = net_admin | ipnet_hostaddr(start_ip[net_admin] + net_admin_hosts.index('opnfv_infra_maas_node01_deploy_address') +1) %}
+
+{%- set total_public_hosts = net_public_hosts | length + cmp_nodes %}
+{%- if net_public_pool_start is not defined or net_public_pool_end is not defined %}
+    {%- set net_public_pool_start = net_public | ipnet_hostaddr(total_public_hosts + start_ip[net_public] +1) %}
+    {%- set net_public_pool_end = net_public | ipnet_hostmax -1 %}
+{%- endif %}
+
+{%- set cluster = {'has_virtual_nodes': False, 'has_baremetal_nodes': False} %}
+{%- for node in conf.nodes %}
+  {%- if node.node.type == 'virtual' %}
+    {%- do cluster.update({'has_virtual_nodes': True}) %}
+  {%- else %}
+    {%- do cluster.update({'has_baremetal_nodes': True}) %}
+  {%- endif %}
 {%- endfor %}
