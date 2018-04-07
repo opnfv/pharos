@@ -1,0 +1,36 @@
+##############################################################################
+# Copyright (c) 2018 Mirantis Inc., Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+{%- macro linux_network_interfaces_nic(nics) -%}
+{%- for nic in nics %}
+        {{ nic }}:
+          enabled: true
+          type: eth
+          proto: manual
+          mtu: ${_param:interface_mtu}
+          name: {{ nic }}
+          noifupdown: true
+{%- endfor %}
+{%- endmacro -%}
+
+{%- macro linux_network_interfaces_vlan(vlans) -%}
+{%- for vlan in vlans %}
+    {%- if vlan | int > 0 %}
+        {{ vlans[vlan] }}.{{ vlan }}:
+          enabled: true
+          proto: manual
+          type: vlan
+          name: {{ vlans[vlan] }}.{{ vlan }}
+          use_interfaces:
+            - {{ vlans[vlan] }}
+    {%- endif %}
+{%- endfor %}
+{%- endmacro -%}
+
+{%- macro interface_str(nic, vlan = 0) -%}
+    {{ nic }}{% if vlan | int > 0 %}.{{ vlan }}{% endif %}
+{%- endmacro -%}
