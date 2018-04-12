@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_939c3411",
+        "filename": "labs/arm/idf-pod6.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-04-12T08:05:13Z",
+      "side": 1,
+      "message": "This should work for both nova_cpu and kernel params isolcpus\n\nhttps://www.kernel.org/doc/html/v4.14/admin-guide/kernel-parameters.html#cpu-lists",
+      "range": {
+        "startLine": 90,
+        "startChar": 58,
+        "endLine": 90,
+        "endChar": 62
+      },
+      "revId": "7f5c9b1933fc5302578a8f03c3f55795812820b4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
