@@ -1,0 +1,204 @@
+##############################################################################
+# Copyright (c) 2018 Okinawa Open Labratory Inc.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### Okinawa Open Labratory POD descriptor file ###
+version: 1.0
+details:
+  pod_owner: Hideayasu Hayashi
+  contact: opnfv-ool-member@okinawaopenlabs.org
+  lab: Okinawa Open Lab Testlab
+  location: Okinawa, Japan
+  type: development
+  link: https://wiki.opnfv.org/display/pharos/OOL+Hosting
+###########################################################
+
+jumphost:
+  name: OPNFV-Jump
+  node:
+    type: baremetal
+    vendor: SuperMicro
+    model: SYS-5018R-WR
+    arch: x86_64
+    cpus: 1
+    cpu_cflags: Haswell
+    cores: 16
+    memory: 32GB
+  disks:
+    - name: 'disk1'
+      disk_capacity: 2TB
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+  os: ubuntu-16.04
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 1.0
+      - 2.0
+    user: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEAF2ppKLPzAigPgVqFhC0wnAJPImX04Ql5kKr7
+        cq3G8eiDIm4AfTOwW3iJf8srdChaVnseriher6cdietFwr3xoVYe/r1qD/Bp
+        IrmD79lNrbPMTwA8ESRmroKhxpxvRDziOUc5T9ev942n6BGs0iBjHMl96ZcN
+        UscPrV6iHtUfEN1ZaEx0kv217vSv5JWUp4gf10ZHJEN12gAxZBuuKRr59dbw
+        kGtn5QRjEQ1g7PKDTa3HIKUkxN9snPzAIrXtXsG4O/HmUl0UEUlJ4O5/+wBN
+        kE/a9/OqMs9+KWmFZ1PRw35WIFpk7vS2HI7HfLab3AHKRySBnTAoGIdnqd+I
+        se5pQzA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBXF6x8Rg0xNCGXOUio
+        2oqhgBCQ0jBbqpN9e904KFAjRZWA]
+    pass: >
+        ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+        DQYJKoZIhvcNAQEBBQAEggEARKDnZBM1SMOd3e/dxlRV21TGiIs5ezpHqG7f
+        CbKlOim5KW/siiHGN9S5JnTY62CDGLrSgen5Sstk7LzAOPNRJKxf3sjhE2jT
+        1AlyQ7TuYYSeyOzgaV0Us5okOP3BcAZwM5Dvb4HLyg2S48Auy7Vx34DpWrTr
+        yxh6v3VJbLYyD2G5bhU4lHzNfaTifiYoV16lmCD4ZlCfQVqjVcKIqztQUGJ4
+        NpoJhjAwE07+M3jQWYNdHKoHBTNqe3ZVT3w5ee80zQHZ8yhwISHYB5RWUwzG
+        FKGBBBl0LuxXJBGv7KorRso9v5TBB1m9V8Yl+k/4YHrOfeZBkU1kTjQ2WnNx
+        jbzBQzA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBA6Ipn6y8ilwzbgu3Xa
+        2N/VgBBn8rx1meQwP0Wc7lYkqn/5]
+  remote_management:
+    <<: *remote_params
+    address: 192.168.25.10
+    mac_address: "0c:c4:7a:6c:a2:b2"
+  interfaces:
+    - mac_address: "0c:c4:7a:6c:a2:b2"
+      speed: 1gb
+      features: null
+      name: 'nic1'
+    - mac_address: "0c:c4:7a:6c:a2:b3"
+      speed: 1gb
+      features: null
+      name: 'nic2'
+
+####################################################
+nodes:
+  - name: node-9
+    node: &nodeparams
+      type: baremetal
+      vendor: FUJITSU
+      model: RX2530 M1
+      arch: x86_64
+      cpus: 1
+      cpu_cflags: Haswell
+      cores: 16
+      memory: 32GB
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 2TB
+        disk_type: hdd
+        disk_interface: sata
+        disk_rotation: 7200
+      - name: 'disk2'
+        disk_capacity: 100GB
+        disk_type: ssd
+        disk_interface: sata
+        disk_rotation: 0
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.20"
+      mac_address: "90:1b:0e:6b:e8:a8"
+    interfaces:
+      - mac_address: "90:1b:0e:6b:e8:a9"
+        speed: 1gb
+        features: null
+        name: 'nic2'
+      - mac_address: "90:1b:0e:6b:e8:aa"
+        speed: 1gb
+        features: null
+        name: 'nic3'
+      - mac_address: "90:1b:0e:6b:e8:ab"
+        speed: 1gb
+        features: null
+        name: 'nic4'
+
+  ####################################################
+  - name: node-10
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.21"
+      mac_address: "90:1b:0e:6b:e3:00"
+    interfaces:
+      - mac_address: "90:1b:0e:6b:e3:01"
+        speed: 1gb
+        features: null
+        name: 'nic2'
+      - mac_address: "90:1b:0e:6b:e3:02"
+        speed: 1gb
+        features: null
+        name: 'nic3'
+      - mac_address: "90:1b:0e:6b:e3:03"
+        speed: 1gb
+        features: null
+        name: 'nic4'
+
+  ####################################################
+  - name: node-11
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.22
+      mac_address: "90:1b:0e:6b:e5:b4"
+    interfaces:
+      - mac_address: "90:1b:0e:6b:e5:b5"
+        speed: 1gb
+        features: null
+        name: 'nic2'
+      - mac_address: "90:1b:0e:6b:e5:b6"
+        speed: 1gb
+        features: null
+        name: 'nic3'
+      - mac_address: "90:1b:0e:6b:e5:b7"
+        speed: 1gb
+        features: null
+        name: 'nic4'
+
+  ####################################################
+  - name: node-12
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.23
+      mac_address: "90:1b:0e:6b:e8:a8"
+    interfaces:
+      - mac_address: "90:1b:0e:6b:e8:a9"
+        speed: 1gb
+        features: null
+        name: 'nic2'
+      - mac_address: "90:1b:0e:6b:e8:aa"
+        speed: 1gb
+        features: null
+        name: 'nic3'
+      - mac_address: "90:1b:0e:6b:e8:ab"
+        speed: 1gb
+        features: null
+        name: 'nic4'
+
+  ####################################################
+  - name: node-13
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 192.168.1.24
+      mac_address: "90:1b:0e:6b:e3:00"
+    interfaces:
+      - mac_address: "90:1b:0e:6b:e3:01"
+        speed: 1gb
+        features: null
+        name: 'nic2'
+      - mac_address: "90:1b:0e:6b:e3:02"
+        speed: 1gb
+        features: null
+        name: 'nic3'
+      - mac_address: "90:1b:0e:6b:e3:03"
+        speed: 1gb
+        features: null
+        name: 'nic4'
