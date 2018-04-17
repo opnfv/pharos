@@ -1,0 +1,153 @@
+##############################################################################
+# Copyright (c) 2018 Ericsson AB, Mirantis Inc., Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### ericsson-virtual5 POD descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: Dianfeng Du
+  contact: dianfeng.du@ericsson.com
+  lab: Ericsson
+  location: Rosersberg, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/Ericsson+Hosting
+##############################################################################
+jumphost:
+  name: ericsson-virtual5
+  node: &jumpparams
+    type: baremetal
+    vendor: HP
+    model: ProLiant BL460c Gen9
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: haswell
+    cores: 12
+    memory: 128G
+  disks:
+    - name: 'disk1'
+      disk_capacity: 1200G
+      disk_type: hdd
+      disk_interface: scsi
+      disk_rotation: &diskrotation 15000
+  os: ubuntu-16.04
+  remote_params: &remoteparas
+    type: ipmi
+    versions:
+      - 1.0
+      - 2.0
+    user: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEAFISXqW+J4fwIdnolsHMTtlecdX0jiXpL+PsO
+      trAO6QViFl96nBuV7TqVc2JKkHwEN7hpwd7EnD/UEHf8Bb1vmfHRdo9NG18w
+      wtwxpw2hxq66u3wWbe3VYCO11aWJqUgEc+xcR8AHNRXpLpIIU1SeEtHW6pRc
+      4P5lQnH4PH/4NDfc2B7i9Snhku/YMB/WXuOoRXmu7/d3ALHj9LPdAPwUe8fa
+      AZoStmdj17uNl+8i9B0hPHcIt+++PSVDunTlCC23lbL8ZumJl6TqobQHH40Q
+      O5lPFJQrisqR3fI1m3FNiLHX2iQ+izKxbuPCoeyVeTVCUJzeb9kJfC+NNeb+
+      DLx1ozA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBCYhkIxgVTaW7bYpvXp
+      eIn+gBDmBObxaNDpPqa4fF7VbiL/]
+    pass: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEANbnWOLMbgCt8fCT+gYHqSRglnL/cfICb6FMY
+      oOqw08FEmyi03Im3O/Ct9z7ZnYMuC1tivTo8fVriuVDK9LqGH3riFFkabkax
+      Z3Qmn9/ej6zeJH93NglmurbN2uyNF4YBThmma8s6esi1RCarj5M+KSZuvTNv
+      ByMwoAcK2Z+DGNxDO7QFM08pxvzjPU2cpBfvLL1gKweJWFla3kRYu/i/DWM3
+      7y0f6K1R/8CkUeiMqxdlRAIV+iFiQZwFrigLvjr2vN7mh0GtyzmXacP2882b
+      /XMoy57aSu6wm6Pb/Z8Hr8Yhs+nJKh1btk3Lgvb+UFmCvC46kLmZwHfU5C6+
+      yRGugDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBOffpyurEo1+BNsdXI
+      HstDgBDpJ5nBblIOUA6lywX0TqSi]
+  remote_management:
+    <<: *remoteparas
+    address: 172.16.2.21/24
+    mac_address: "58:20:B1:01:8E:F8"
+  interfaces:
+    - name: 'nic1'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      address: 100.64.207.10/24
+      mac_address: "5c:b9:01:8b:a6:50"
+    - name: 'nic2'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "5c:b9:01:8b:a6:51"
+    - name: 'nic3'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "5c:b9:01:8b:99:38"
+    - name: 'nic4'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "5c:b9:01:8b:99:39"
+##############################################################################
+nodes:
+  - name: node-1
+    node: &nodeparams
+      <<: *jumpparams
+      # Fuel overrides certain params (e.g. cpus, mem) based on node role later
+      type: virtual
+      vendor: libvirt
+      model: virt
+      cpus: 1
+      cores: 8
+      memory: 6G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 100G
+        disk_type: hdd
+        disk_interface: scsi  # virtio-scsi
+        disk_rotation: *diskrotation
+    remote_management: &remotemgmt
+      type: libvirt
+      user: changeme
+      pass: changeme
+      address: 'qemu:///system'
+    interfaces: &interfaces
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"  # MACs will be assigned by libvirt
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"
+        vlan: native
+  ############################################################################
+  - name: node-2
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+  ############################################################################
+  - name: node-3
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+  ############################################################################
+  - name: node-4
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+  ############################################################################
+  - name: node-5
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+##############################################################################
