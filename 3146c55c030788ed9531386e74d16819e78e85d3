@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_7b27b1ca",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "this is an index of interfaces in PDF, you only list 3 NICs there and value is valid from 0-2.",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_bb2db9aa",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "I think public must be existed in Fuel.",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 17
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_9b2a7d8e",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "you should list #number of times of #number of your nodes.",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 33
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_5b2475c4",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "\u0027eno1\u0027 does not exist in PDF.",
+      "range": {
+        "startLine": 52,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_fb33c111",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "not used",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_9b539d38",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "please encrypt \u0027user\u0027 and \u0027pass\u0027 according to https://git.opnfv.org/pharos/tree/config/pdf/pod1.encrypted.yaml",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 15
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_db3885f1",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "node: *nodeparams",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 18
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_3b3a49e7",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "disks: *diskscont",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 24
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_1b3f8dd7",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T23:02:19Z",
+      "side": 1,
+      "message": "the same",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 24
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
