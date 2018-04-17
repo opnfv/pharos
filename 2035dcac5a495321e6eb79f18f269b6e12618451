@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_5b5d9546",
+        "filename": "labs/ericsson/ericsson-virtual-pod1bl01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T22:50:41Z",
+      "side": 1,
+      "message": "Please update all the other files according to this PDF file.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 27
+      },
+      "revId": "2035dcac5a495321e6eb79f18f269b6e12618451",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_7b605101",
+        "filename": "labs/ericsson/ericsson-virtual-pod1bl01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T22:50:41Z",
+      "side": 1,
+      "message": "Please remove all the red trails.",
+      "range": {
+        "startLine": 13,
+        "startChar": 24,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "2035dcac5a495321e6eb79f18f269b6e12618451",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_db51a537",
+        "filename": "labs/ericsson/ericsson-virtual-pod1bl01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T22:50:41Z",
+      "side": 1,
+      "message": "I\u0027m not sure that we shall list the nodes here.\n\n@Aric and Alex, what about your opinions?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "2035dcac5a495321e6eb79f18f269b6e12618451",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_3b43696d",
+        "filename": "labs/ericsson/ericsson-virtual-pod1bl01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T22:50:41Z",
+      "side": 1,
+      "message": "two header spaces",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 7
+      },
+      "revId": "2035dcac5a495321e6eb79f18f269b6e12618451",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_9b7c3db7",
+        "filename": "labs/ericsson/ericsson-virtual-pod1bl01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T22:50:41Z",
+      "side": 1,
+      "message": "vlan is in net_config of idf file.\nAlthough vPOD PDF is not releaesd, you can refer to physical POD.",
+      "range": {
+        "startLine": 73,
+        "startChar": 6,
+        "endLine": 73,
+        "endChar": 18
+      },
+      "revId": "2035dcac5a495321e6eb79f18f269b6e12618451",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_1b482d86",
+        "filename": "labs/ericsson/ericsson-virtual1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-17T22:50:41Z",
+      "side": 1,
+      "message": "Is this correct?",
+      "range": {
+        "startLine": 18,
+        "startChar": 46,
+        "endLine": 18,
+        "endChar": 62
+      },
+      "revId": "2035dcac5a495321e6eb79f18f269b6e12618451",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
