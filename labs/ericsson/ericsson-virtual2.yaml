@@ -1,0 +1,99 @@
+##############################################################################
+# Copyright (c) 2018 Ericsson AB, Mirantis Inc., Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### POD descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: Dianfeng Du 
+  contact: dianfeng.du@ericsson.com
+  lab: Ericsson
+  location: Rosersberg, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/CI-ERICSSON-POD1
+##############################################################################
+jumphost:
+  name: ericsson-virtual2
+  node: &nodeparams
+    type: baremetal
+    vendor: HP
+    model: ProLiant BL460c Gen8
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: ivybridge
+    cores: 10
+    memory: 64G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 800G
+      disk_type: hdd
+      disk_interface: scsi
+      disk_rotation: 15000
+  os: ubuntu-16.04
+  remote_params: &remoteparas
+    type: ipmi
+    versions:
+      - 1.0
+      - 2.0
+    user: >
+    ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAAroWc9yjyHzrNX53MKycctdvYntD/EQoA6x6
+    hOFcyQZp8Kkeu164EZ3XxFN2uJ59oSj4YRXXGamEe7CBDZn+QugArGc2tt3h
+    Ujsad9FW9WRBO+AqF2ZrWBA5bj0ArflnBBsdLQywNrnDnco4H7XbTTl5MtTQ
+    XJllUBve9Jly918mHA86Dsi3BlOn/M3iE8TeOWcQ8Ip83mgq1MlIERr0kIy9
+    pVpsi87Xap+Sxebc83dn8BsZ6vl01QLLoPRAqgOtkrjvDp09XLB2MGZaOx7t
+    fEtJcdauRXjL/pnw4lqxaIK9TLoPewzVK7u5joOiTGGD6wtyd6/G4z2ujcQJ
+    bU2ZiDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBQVQ9dnzBdnwa1m2Kr
+    bmESgBC2/rlVIctf0KcSFZE9xFY1]
+    pass: >
+    ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
+    DQYJKoZIhvcNAQEBBQAEggEAceABHBxWIAfLtPeNf3a5RCbjgoIm34Rgbfh4
+    9Ch272ahZpT4USuoxG1jMTCMA+dukSlsMo04cK6j1g6Epupszr1qGCJYpg2E
+    OENsC1GLokWPufe2rskUF7gZxd1XoUBq7J+ga7Grz167MAOez0aE3AgftadQ
+    8I3QNI/YX8q4s6xWZxe7r2gF+iFVaRatS0yUgex0rX9qOcG7VTNGc+vPKfIQ
+    XRF/xJi1nkmxde3haHYirXHHUbXHnm2/WrDYrALTLPGPU0W+BTUs4F4lfhDb
+    n1Vx94NtV+u43luxIRSkekaZCuH+/s/poxqu8jButheEqEZMfZ34vu0vdKMK
+    iXyUBDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDBOx/+ZJsIIcMMefgU
+    xK/6gBBorR0SDEFAyb4p0pd7SfnD]
+  remote_management:
+    <<: *remoteparas
+    address: 172.16.1.23/24
+    mac_address: "9C:B6:54:8E:B7:09"
+  interfaces:
+    - name: 'nic1'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      address: 100.64.203.5/24
+      mac_address: "38:ea:a7:8f:53:74"
+      vlan: 91
+    - name: 'nic2'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "38:ea:a7:8f:53:75"
+      vlan: native
+    - name: 'nic3'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "38:ea:a7:8f:53:6c"
+      vlan: native
+    - name: 'nic4'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "38:ea:a7:8f:53:6d"
+      vlan: native
+    - name: 'nic5'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "9C:B6:54:8A:04:C8"
+      vlan: native
+    - name: 'nic6'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      mac_address: "9C:B6:54:8A:04:CC"
+      vlan: native
+##############################################################################
