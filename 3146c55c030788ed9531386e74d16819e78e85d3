@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_1ee13bfe",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4115
+      },
+      "writtenOn": "2018-04-18T08:55:05Z",
+      "side": 1,
+      "message": "Thanks I delete the third NIC",
+      "parentUuid": "5a3f45e8_7b27b1ca",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_bb2db9aa",
         "filename": "labs/ool/idf-pod1.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-17T23:02:19Z",
       "side": 1,
       "message": "I think public must be existed in Fuel.",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 17
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_7ee95fe5",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4115
+      },
+      "writtenOn": "2018-04-18T08:55:05Z",
+      "side": 1,
+      "message": "Thanks I will add pubic bridge name",
+      "parentUuid": "5a3f45e8_bb2db9aa",
       "range": {
         "startLine": 46,
         "startChar": 8,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_beef67e8",
+        "filename": "labs/ool/idf-pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4115
+      },
+      "writtenOn": "2018-04-18T08:55:05Z",
+      "side": 1,
+      "message": "thanks I delete one",
+      "parentUuid": "5a3f45e8_5b2475c4",
+      "range": {
+        "startLine": 52,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_fb33c111",
         "filename": "labs/ool/pod1.yaml",
         "patchSetId": 2
@@ -105,6 +177,30 @@
       "writtenOn": "2018-04-17T23:02:19Z",
       "side": 1,
       "message": "not used",
+      "range": {
+        "startLine": 22,
+        "startChar": 8,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_9eec2bf5",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4115
+      },
+      "writtenOn": "2018-04-18T08:55:05Z",
+      "side": 1,
+      "message": "thanks I delete one",
+      "parentUuid": "5a3f45e8_fb33c111",
       "range": {
         "startLine": 22,
         "startChar": 8,
@@ -163,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_5ec90358",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4115
+      },
+      "writtenOn": "2018-04-18T08:55:05Z",
+      "side": 1,
+      "message": "thanks I change one",
+      "parentUuid": "5a3f45e8_db3885f1",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 18
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_3b3a49e7",
         "filename": "labs/ool/pod1.yaml",
         "patchSetId": 2
@@ -174,6 +294,30 @@
       "writtenOn": "2018-04-17T23:02:19Z",
       "side": 1,
       "message": "disks: *diskscont",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 24
+      },
+      "revId": "3146c55c030788ed9531386e74d16819e78e85d3",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_bec2c731",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4115
+      },
+      "writtenOn": "2018-04-18T08:55:05Z",
+      "side": 1,
+      "message": "thanks I change one",
+      "parentUuid": "5a3f45e8_3b3a49e7",
       "range": {
         "startLine": 111,
         "startChar": 0,
