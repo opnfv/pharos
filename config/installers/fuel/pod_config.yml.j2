@@ -155,7 +155,7 @@ parameters:
     opnfv_name_servers: {{ dns_public }}
     opnfv_dns_server01: '{{ dns_public[0] }}'
     opnfv_net_mgmt_vlan: {{ vlan_mgmt }}
-    opnfv_net_tenant_vlan: {{ vlan_private }}
+    opnfv_net_tenant_vlan: {{ vlan_private.split('-') | join(':') }}
 
 {%- for network in networks %}
 {%- for key in hosts[network] %}

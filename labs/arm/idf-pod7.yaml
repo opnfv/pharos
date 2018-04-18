@@ -35,7 +35,7 @@ idf:
       mask: 24
     private:
       interface: 1
-      vlan: 2345
+      vlan: 2345-2360
       network: 10.1.0.0
       mask: 24
     public:
