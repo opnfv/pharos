@@ -33,7 +33,7 @@ idf:
       mask: 24
     private:
       interface: 3
-      vlan: 1000
+      vlan: 1000-1030
       network: 192.168.2.0
       mask: 24
     public:

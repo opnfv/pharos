@@ -34,7 +34,7 @@ idf:
       mask: 24
     private:
       interface: 1
-      vlan: 1000
+      vlan: 1000-1030
       network: 10.1.0.0      # Tagged, not the same with 'private' on wiki
       mask: 24
     public:
