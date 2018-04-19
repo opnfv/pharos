@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_ca32695e",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-19T14:19:48Z",
+      "side": 1,
+      "message": "you can use the same node infor as node-9\n\nnode: *nodeparams",
+      "range": {
+        "startLine": 120,
+        "startChar": 4,
+        "endLine": 120,
+        "endChar": 8
+      },
+      "revId": "46330e5815c654e8211f7bdfba8d48612ec48dbd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_2a34ad48",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-19T14:19:48Z",
+      "side": 1,
+      "message": "the same for disks",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 9
+      },
+      "revId": "46330e5815c654e8211f7bdfba8d48612ec48dbd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_4af7798b",
+        "filename": "labs/ool/pod1.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 483
+      },
+      "writtenOn": "2018-04-19T14:19:48Z",
+      "side": 1,
+      "message": "add 2 more nodes.",
+      "range": {
+        "startLine": 158,
+        "startChar": 4,
+        "endLine": 158,
+        "endChar": 17
+      },
+      "revId": "46330e5815c654e8211f7bdfba8d48612ec48dbd",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
