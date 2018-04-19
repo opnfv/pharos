@@ -1,0 +1,9 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+2: Guillermo Herrero <guillermo.herrero@enea.com>
+Code-Review+1: Charalampos Kominos <charalampos.kominos@enea.com>
+Code-Review+1: Delia Popescu <delia.popescu@enea.com>
+Submitted-by: Guillermo Herrero <guillermo.herrero@enea.com>
+Submitted-at: Thu, 19 Apr 2018 13:23:04 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/56015
+Project: pharos
+Branch: refs/heads/stable/fraser
