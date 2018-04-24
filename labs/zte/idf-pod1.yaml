@@ -48,7 +48,7 @@ idf:
     jumphost:
       bridges:
         admin: 'br6'
-        mgmt: ~
+        mgmt: 'br-mgmt'
         private: ~
         public: 'br-external'
     network:
