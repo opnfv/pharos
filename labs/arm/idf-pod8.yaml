@@ -1,0 +1,112 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### ARM POD 8 installer descriptor file ###
+
+idf:
+  version: 0.1
+  installer: ['apex', 'compass4nfv', 'daisy', 'fuel']
+  net_config:
+    oob:
+      ip-range: 10.0.19.2-10.0.19.7
+      vlan: native
+    admin:
+      interface: 0
+      vlan: native
+      network: 192.168.11.0
+      mask: 24
+    mgmt:
+      interface: 1
+      vlan: 2403
+      network: 172.16.10.0
+      ip-range: 172.16.10.10-172.16.10.254  # Some IPs are in use by lab infra
+      mask: 24
+    storage:
+      interface: 1
+      vlan: 2404
+      network: 10.2.0.0
+      mask: 24
+    private:
+      interface: 2
+      vlan: 2405-2420
+      network: 10.1.0.0
+      mask: 24
+    public:
+      interface: 1
+      vlan: native
+      network: 10.0.19.0
+      ip-range: 10.0.19.100-10.0.19.253  # Some IPs are in use by lab infra
+      mask: 24
+      gateway: 10.0.19.254
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
+  fuel:
+    jumphost:
+      bridges:
+        admin: 'admin19_br0'
+        mgmt: 'mgmt19_br0'
+        private: ~
+        public: 'public19_br0'
+    maas:
+      # MaaS timeouts (in minutes)
+      timeout_comissioning: 10
+      timeout_deploying: 15
+    network:
+      node:
+        # Ordered-list, index should be in sync with node index in PDF
+        - interfaces: &interfaces
+            # Ordered-list, index should be in sync with interface index in PDF
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+          busaddr: &busaddr
+            # Bus-info reported by `ethtool -i ethX`
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+            - 'TBD'
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+    reclass:
+      node:
+        - compute_params: &compute_params
+            common:
+              nova_cpu_pinning: &nova_cpu_pinning_common "8-47"
+              compute_hugepages_size: 2M
+              compute_hugepages_count: 8192
+              compute_hugepages_mount: /mnt/hugepages_2M
+              compute_kernel_isolcpu: *nova_cpu_pinning_common
+            dpdk:
+              nova_cpu_pinning: "12-47"
+              compute_hugepages_size: 2M
+              compute_hugepages_count: 8192
+              compute_hugepages_mount: /mnt/hugepages_2M
+              compute_kernel_isolcpu: *nova_cpu_pinning_common
+              compute_dpdk_driver: vfio
+              compute_ovs_pmd_cpu_mask: "0x300"
+              compute_ovs_dpdk_socket_mem: "2048"
+              compute_ovs_dpdk_lcore_mask: "0xC00"
+              compute_ovs_memory_channels: "2"
+              dpdk0_driver: vfio-pci
+              dpdk0_n_rxq: 2
+        - compute_params: *compute_params
+        - compute_params: *compute_params
+        - compute_params: *compute_params
+        - compute_params: *compute_params
