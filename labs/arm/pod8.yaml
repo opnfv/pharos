@@ -1,0 +1,263 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### Enea ARM POD 8 descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: ENEA AB
+  contact: dan.lilliehorn@enea.com
+  lab: ENEA lab
+  location: Stockholm, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/Enea+Hosting
+##############################################################################
+jumphost:
+  name: jenkins-slave-arm-pod8
+  node:
+    type: baremetal
+    vendor: Cavium
+    model: ThunderX
+    arch: aarch64
+    cpus: 1
+    cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+    cores: 48
+    memory: 256G
+  disks:
+    ## /dev/sda
+    - name: disk1
+      disk_capacity: 480G
+      disk_type: ssd
+      disk_interface: sata
+      disk_rotation: 0
+    ## /dev/sdb
+    - name: disk2
+      disk_capacity: 2T
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+  os: ubuntu-16.04
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: ADMIN
+    pass: ADMIN
+  remote_management:
+    <<: *remote_params
+    address: 10.0.19.2
+    mac_address: "1C:1B:0D:E7:49:E7"
+  interfaces:
+    - mac_address: "68:05:CA:62:44:BE"
+      speed: 1gb
+      features: ''
+      name: 'nic1'
+    - mac_address: "1C:1B:0D:E7:49:DF"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic2'
+    - mac_address: "1C:1B:0D:E7:49:E0"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic3'
+    - mac_address: "1C:1B:0D:E7:49:E1"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic4'
+    - mac_address: "1C:1B:0D:E7:49:E2"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic5'
+    - mac_address: "1C:1B:0D:E7:49:E3"
+      speed: 40gb
+      features: 'dpdk|sriov'
+      name: 'nic6'
+##############################################################################
+nodes:
+  - name: cn8890-35
+    node: &nodeparams
+      type: baremetal
+      vendor: Cavium
+      model: ThunderX
+      arch: aarch64
+      cpus: 1
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+      cores: 48
+      memory: 256G
+    disks: &disks
+      - name: disk1
+        disk_capacity: 480G
+        disk_type: ssd
+        disk_interface: sata
+        disk_rotation: 0
+      - name: disk2
+        disk_capacity: 2T
+        disk_type: hdd
+        disk_interface: sata
+        disk_rotation: 7200
+    remote_management:
+      <<: *remote_params
+      address: 10.0.19.3
+      mac_address: "1C:1B:0D:E8:FB:7B"
+    interfaces:
+      - mac_address: "68:05:CA:7B:3A:36"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      - mac_address: "1C:1B:0D:E8:FB:73"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "1C:1B:0D:E8:FB:74"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "1C:1B:0D:E8:FB:75"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      - mac_address: "1C:1B:0D:E8:FB:76"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic5'
+      - mac_address: "1C:1B:0D:E8:FB:77"
+        speed: 40gb
+        features: 'dpdk|sriov'
+        name: 'nic6'
+  ############################################################################
+  - name: cn8890-36
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.19.4
+      mac_address: "1C:1B:0D:EF:75:6A"
+    interfaces:
+      - mac_address: "68:05:CA:7B:3A:D5"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      - mac_address: "1C:1B:0D:EF:75:62"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "1C:1B:0D:EF:75:63"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "1C:1B:0D:EF:75:64"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      - mac_address: "1C:1B:0D:EF:75:65"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic5'
+      - mac_address: "1C:1B:0D:EF:75:66"
+        speed: 40gb
+        features: 'dpdk|sriov'
+        name: 'nic6'
+  ############################################################################
+  - name: cn8890-37
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.19.5
+      mac_address: "1C:1B:0D:EF:74:DE"
+    interfaces:
+      - mac_address: "68:05:CA:62:44:96"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      - mac_address: "1C:1B:0D:EF:74:D6"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "1C:1B:0D:EF:74:D7"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "1C:1B:0D:EF:74:D8"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      - mac_address: "1C:1B:0D:EF:74:D9"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic5'
+      - mac_address: "1C:1B:0D:EF:74:DA"
+        speed: 40gb
+        features: 'dpdk|sriov'
+        name: 'nic6'
+  ############################################################################
+  - name: cn8890-38
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.19.6
+      mac_address: "1C:1B:0D:EF:74:CA"
+    interfaces:
+      - mac_address: "68:05:CA:62:44:FB"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      - mac_address: "1C:1B:0D:EF:74:C2"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "1C:1B:0D:EF:74:C3"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "1C:1B:0D:EF:74:C4"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      - mac_address: "1C:1B:0D:EF:74:C5"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic5'
+      - mac_address: "1C:1B:0D:EF:74:C6"
+        speed: 40gb
+        features: 'dpdk|sriov'
+        name: 'nic6'
+  ############################################################################
+  - name: cn8890-39
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.0.19.7
+      mac_address: "1C:1B:0D:EF:74:8E"
+    interfaces:
+      - mac_address: "68:05:CA:62:44:56"
+        speed: 1gb
+        features: ''
+        name: 'nic1'
+      - mac_address: "1C:1B:0D:EF:74:86"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic2'
+      - mac_address: "1C:1B:0D:EF:74:87"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "1C:1B:0D:EF:74:88"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      - mac_address: "1C:1B:0D:EF:74:89"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic5'
+      - mac_address: "1C:1B:0D:EF:74:8A"
+        speed: 40gb
+        features: 'dpdk|sriov'
+        name: 'nic6'
