@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_442e3744",
+        "filename": "labs/arm/idf-pod8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-04-30T13:38:40Z",
+      "side": 1,
+      "message": "apex?",
+      "range": {
+        "startLine": 49,
+        "startChar": 2,
+        "endLine": 49,
+        "endChar": 7
+      },
+      "revId": "13751f5499d31d9cda1db6b3fb06582082083761",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_a4f73bd2",
+        "filename": "labs/arm/pod8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-04-30T13:38:40Z",
+      "side": 1,
+      "message": "os: centos, not ubuntu",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "13751f5499d31d9cda1db6b3fb06582082083761",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
