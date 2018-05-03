@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_e8c8f1a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "typo",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_88968d3d",
+        "filename": "config/installers/fuel/net_map.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "role roles",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_c8d415bf",
+        "filename": "config/installers/fuel/net_map.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "What is \"plumbing vars\"?",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_888fad29",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "Identation",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_e8b2b104",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "This loop is a bit hard to follow. Cant we somehow rewrite this ip addressing ?",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_6874e135",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "identation",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_a88a6918",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:49:26Z",
+      "side": 1,
+      "message": "1) node.arch or node.node.arch ?\n\n2) Will this work as string manipulation properly ??\nI mean what are you trying to output here?",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
