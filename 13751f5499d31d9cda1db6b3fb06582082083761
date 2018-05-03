@@ -69,6 +69,23 @@
       "revId": "13751f5499d31d9cda1db6b3fb06582082083761",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_a8d26959",
+        "filename": "labs/arm/pod8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6947
+      },
+      "writtenOn": "2018-05-03T08:12:05Z",
+      "side": 1,
+      "message": "I think this should",
+      "revId": "13751f5499d31d9cda1db6b3fb06582082083761",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
