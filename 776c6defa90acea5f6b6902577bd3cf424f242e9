@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_b4b9247b",
+        "filename": "config/installers/fuel/net_map.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-07T03:45:27Z",
+      "side": 1,
+      "message": "internal variables (like loop iterators). no longer applicable here anyway",
+      "parentUuid": "5a3f45e8_c8d415bf",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_888fad29",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 1
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "5a3f45e8_14b29893",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-07T03:45:27Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the recommended style for this is. In some places it\u0027s identend, but not everywhere.\nI\u0027ll look at it again in the next revision.",
+      "parentUuid": "5a3f45e8_888fad29",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_e8b2b104",
         "filename": "config/installers/fuel/pod_config.yml.j2",
         "patchSetId": 1
@@ -81,6 +117,24 @@
       "writtenOn": "2018-05-03T08:49:26Z",
       "side": 1,
       "message": "This loop is a bit hard to follow. Cant we somehow rewrite this ip addressing ?",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_f4ae0c2d",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-07T03:45:27Z",
+      "side": 1,
+      "message": "This loop is as simple as it can be imo. If you have something in mind, maybe we can try that in a different change.",
+      "parentUuid": "5a3f45e8_e8b2b104",
       "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
@@ -115,6 +169,24 @@
       "writtenOn": "2018-05-03T08:49:26Z",
       "side": 1,
       "message": "1) node.arch or node.node.arch ?\n\n2) Will this work as string manipulation properly ??\nI mean what are you trying to output here?",
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_54a8a01f",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-07T03:45:27Z",
+      "side": 1,
+      "message": "node.node.arch (first node is the iterator, second node is the yaml block name)\nyes, e.g. amd64/generic",
+      "parentUuid": "5a3f45e8_a88a6918",
       "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
