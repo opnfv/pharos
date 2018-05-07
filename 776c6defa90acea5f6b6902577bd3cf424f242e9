@@ -249,6 +249,30 @@
       "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_4be59a36",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-07T17:02:00Z",
+      "side": 1,
+      "message": "This is left for later interpolation. The alternative (if we didn\u0027t put it here) would be to do another loop in reclass, just to add this to each cmp node ... a lot uglier imo.\nI think we could avoid this if we made sure the MaaS defaults point to the kernel we want and that\u0027s respected.\nEither way, PDF/IDF are not that well decoupled from reclass model in the installer ...",
+      "parentUuid": "5a3f45e8_8807a8c9",
+      "range": {
+        "startLine": 69,
+        "startChar": 10,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
