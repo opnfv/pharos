@@ -273,6 +273,30 @@
       "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_1eec72f2",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-05-08T08:12:03Z",
+      "side": 1,
+      "message": "On a second thought, this file is just for fuel. Lets keep the variable as it is. See if we end up liking other implementations later.",
+      "parentUuid": "5a3f45e8_4be59a36",
+      "range": {
+        "startLine": 69,
+        "startChar": 10,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "776c6defa90acea5f6b6902577bd3cf424f242e9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
