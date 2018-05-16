@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_0f6235d8",
+        "filename": "labs/arm/idf-virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-05-16T08:37:13Z",
+      "side": 1,
+      "message": "does it need \u0027installer: [...]\u0027 as e.g idf-pod5.yaml?",
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_cfae8de7",
+        "filename": "labs/arm/idf-virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-05-16T08:37:13Z",
+      "side": 1,
+      "message": "only 4 nic defined in virtual2.yaml. \ninterface:4 need to define one more nic, nic5?\nor make it vlan taged on existing nic",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 18
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_0f4b555a",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-05-16T08:37:13Z",
+      "side": 1,
+      "message": "should it be a real mac address?",
+      "range": {
+        "startLine": 47,
+        "startChar": 17,
+        "endLine": 47,
+        "endChar": 36
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_ef47094a",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-05-16T08:37:13Z",
+      "side": 1,
+      "message": "usually on pxe nic, the feature is empty.e.g features: \u0027\u0027",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 28
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_6faad9d5",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-05-16T08:37:13Z",
+      "side": 1,
+      "message": "to follow the definaitionin in idf-virtual2.yaml, maybe add comment for each nic, like:\nnic1: for admin/PXE\nnic2: for mgmt\nnic3: for private\nnic4: for public",
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_2f79f193",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 7053
+      },
+      "writtenOn": "2018-05-16T08:37:13Z",
+      "side": 1,
+      "message": "is this specific to virutal pod? on pod5.yaml, there is no vlan tag per interface",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 20
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
