@@ -1,0 +1,268 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### UNH ARM POD 1 descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: University of New Hampshire
+  contact: lincoln.lavoie@iol.unh.edu
+  lab: UNH lab
+  location: New Hampshire, USA
+  type: development
+  link: https://wiki.opnfv.org/pages/viewpage.action?pageId=12389095
+#############################################
+jumphost:
+  name: jump-unh-pod1
+  node:
+    type: baremetal
+    vendor: cavium
+    model: thunderx
+    arch: aarch64
+    cpus: 1
+    cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+    cores: 48
+    memory: 64G
+  disks:
+    ## /dev/sda
+    - name: disk1
+      disk_capacity: 447G
+      disk_type: ssd
+      disk_interface: sata
+      disk_rotation: 0
+  os: ubuntu-16.04
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: admin
+    pass: password
+  remote_management:
+    <<: *remote_params
+    address: 10.10.52.12
+    mac_address: "1c:1b:0d:e8:fb:8f"
+  interfaces:
+    ## enp2p1s0f1, not connected for now
+    - mac_address: "1c:1b:0d:e8:fb:87"
+      features: ''
+      name: 'nic1'
+    ## enp2p1s0f2, not connected for now
+    - mac_address: "1c:1b:0d:e8:fb:88"
+      speed: 10gb
+      features: ''
+      name: 'nic2'
+    ## enp2p1s0f3, not connected for now
+    - mac_address: "1c:1b:0d:e8:fb:89"
+      speed: 10gb
+      features: ''
+      name: 'nic3'
+    ## enp2p1s0f4, not connected for now
+    - mac_address: "1c:1b:0d:e8:fb:8a"
+      speed: 10gb
+      features: ''
+      name: 'nic4'
+    ## enp2p1s0f5, not connected for now
+    - mac_address: "1c:1b:0d:e8:fb:8b"
+      speed: 10gb
+      features: ''
+      name: 'nic5'
+##########################################
+nodes:
+  - name: small-cavium-2
+    node: &nodeparams
+      type: baremetal
+      vendor: cavium
+      model: thunderx
+      arch: aarch64
+      cpus: 1
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+      cores: 48
+      memory: 64G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 447G
+        disk_type: ssd
+        disk_interface: sata
+        disk_rotation: 0
+    remote_management:
+      <<: *remote_params
+      address: 10.10.52.13
+      mac_address: "1c:1b:0d:e7:49:f1"
+    interfaces:
+      ## enp2p1s0f1
+      - mac_address: "1c:1b:0d:e7:49:e9"
+        speed: 10gb
+        features: ''
+        name: 'nic1'
+      ## enp2p1s0f2
+      - mac_address: "1c:1b:0d:e7:49:ea"
+        speed: 10gb
+        features: ''
+        name: 'nic2'
+      ## enp2p1s0f3
+      - mac_address: "1c:1b:0d:e7:49:eb"
+        features: ''
+        name: 'nic3'
+      ## enp2p1s0f4
+      - mac_address: "1c:1b:0d:e7:49:ec"
+        features: ''
+        name: 'nic4'
+      ## enp2p1s0f5
+      - mac_address: "1c:1b:0d:e7:49:ed"
+        features: ''
+        name: 'nic5'
+  ##########################################
+  - name: small-cavium-3
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.10.52.14
+      mac_address: "1c:1b:0d:e8:fb:2b"
+    interfaces:
+      ## enp2p1s0f1
+      - mac_address: "1c:1b:0d:e8:fb:23"
+        speed: 10gb
+        features: ''
+        name: 'nic1'
+      ## enp2p1s0f2
+      - mac_address: "1c:1b:0d:e8:fb:24"
+        speed: 10gb
+        features: ''
+        name: 'nic2'
+      ## enp2p1s0f3
+      - mac_address: "1c:1b:0d:e8:fb:25"
+        features: ''
+        name: 'nic3'
+      ## enp2p1s0f4
+      - mac_address: "1c:1b:0d:e8:fb:26"
+        features: ''
+        name: 'nic4'
+      ## enp2p1s0f5
+      - mac_address: "1c:1b:0d:e8:fb:27"
+        features: ''
+        name: 'nic5'
+  ##########################################
+  - name: small-cavium-4
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.10.52.15
+      mac_address: "1c:1b:0d:e8:fb:99"
+    interfaces:
+      ## enp2p1s0f1
+      - mac_address: "1c:1b:0d:e8:fb:91"
+        speed: 10gb
+        features: ''
+        name: 'nic1'
+      ## enp2p1s0f2
+      - mac_address: "1c:1b:0d:e8:fb:92"
+        speed: 10gb
+        features: ''
+        name: 'nic2'
+      ## enp2p1s0f3
+      - mac_address: "1c:1b:0d:e8:fb:93"
+        features: ''
+        name: 'nic3'
+      ## enp2p1s0f4
+      - mac_address: "1c:1b:0d:e8:fb:94"
+        features: ''
+        name: 'nic4'
+      ## enp2p1s0f5
+      - mac_address: "1c:1b:0d:e8:fb:95"
+        features: ''
+        name: 'nic5'
+  #################################################
+  - name: big-cavium-1
+    node: &bignodeparams
+      type: baremetal
+      vendor: cavium
+      model: thunderx
+      arch: aarch64
+      cpus: 2
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+      cores: 96
+      memory: 128G
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.10.52.10
+      mac_address: "40:8d:5c:e0:9f:cb"
+    interfaces:
+      ## enp2p1s0f1
+      - mac_address: "40:8d:5c:e0:9f:c4"
+        speed: 10gb
+        features: ''
+        name: 'nic1'
+      ## enp6p1s0f1
+      - mac_address: "40:8d:5c:e0:9f:c9"
+        speed: 40gb
+        features: ''
+        name: 'nic2'
+      ## enp2p1s0f2
+      - mac_address: "40:8d:5c:e0:9f:c5"
+        features: ''
+        name: 'nic3'
+      ## enp2p1s0f3
+      - mac_address: "40:8d:5c:e0:9f:c6"
+        features: ''
+        name: 'nic4'
+      ## enp2p1s0f4
+      - mac_address: "40:8d:5c:e0:9f:c7"
+        features: ''
+        name: 'nic5'
+      ## enp2p1s0f5
+      - mac_address: "40:8d:5c:e0:9f:c8"
+        speed: 40gb
+        features: ''
+        name: 'nic6'
+      ## enp6p1s0f2
+      - mac_address: "40:8d:5c:e0:9f:ca"
+        features: ''
+        name: 'nic7'
+  ##########################################
+  - name: big-cavium-2
+    node: *bignodeparams
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.10.52.11
+      mac_address: "40:8d:5c:e0:9f:e6"
+    interfaces:
+      ## enp2p1s0f1
+      - mac_address: "40:8d:5c:e0:9f:df"
+        speed: 10gb
+        features: ''
+        name: 'nic1'
+      ## enp6p1s0f1
+      - mac_address: "40:8d:5c:e0:9f:e4"
+        speed: 40gb
+        features: ''
+        name: 'nic2'
+      ## enp2p1s0f2
+      - mac_address: "40:8d:5c:e0:9f:e0"
+        features: ''
+        name: 'nic3'
+      ## enp2p1s0f3
+      - mac_address: "40:8d:5c:e0:9f:e1"
+        features: ''
+        name: 'nic4'
+      ## enp2p1s0f4
+      - mac_address: "40:8d:5c:e0:9f:e2"
+        features: ''
+        name: 'nic5'
+      ## enp2p1s0f5
+      - mac_address: "40:8d:5c:e0:9f:e3"
+        speed: 40gb
+        features: ''
+        name: 'nic6'
+      ## enp6p1s0f2
+      - mac_address: "40:8d:5c:e0:9f:e5"
+        features: ''
+        name: 'nic7'
