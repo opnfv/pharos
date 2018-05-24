@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_13953240",
+        "filename": "labs/unh/idf-pod1.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-24T16:06:33Z",
+      "side": 1,
+      "message": "if I remember right, this pod had issues with MaaS timeouts, so it might be a good idea to override those here to some bigger values",
+      "revId": "e73fc1ca702cc296059a6ce5bb32b0a30bf16421",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_d3b46af4",
+        "filename": "labs/unh/pod1.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-24T16:06:33Z",
+      "side": 1,
+      "message": "shouldn\u0027t the contact be someone from UNH?",
+      "range": {
+        "startLine": 14,
+        "startChar": 10,
+        "endLine": 14,
+        "endChar": 31
+      },
+      "revId": "e73fc1ca702cc296059a6ce5bb32b0a30bf16421",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_53c85a74",
+        "filename": "labs/unh/pod1.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-05-24T16:06:33Z",
+      "side": 1,
+      "message": "1 cpu with 96 cores?",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 15
+      },
+      "revId": "e73fc1ca702cc296059a6ce5bb32b0a30bf16421",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
