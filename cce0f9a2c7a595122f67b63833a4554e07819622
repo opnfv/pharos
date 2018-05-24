@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_732bd682",
+        "filename": "config/installers/fuel/pod_config.yml.j2",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-05-24T12:51:30Z",
+      "side": 1,
+      "message": "nice to see an evolution towards objects instead of one line key-values. much easier to consume after",
+      "range": {
+        "startLine": 48,
+        "startChar": 10,
+        "endLine": 52,
+        "endChar": 57
+      },
+      "revId": "cce0f9a2c7a595122f67b63833a4554e07819622",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
