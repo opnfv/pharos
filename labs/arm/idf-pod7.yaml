@@ -60,6 +60,8 @@ idf:
       timeout_comissioning: 10
       timeout_deploying: 15
     network:
+      ntp_strata_host1: 1.se.pool.ntp.org
+      ntp_strata_host2: 0.se.pool.ntp.org
       node:
         # Ordered-list, index should be in sync with node index in PDF
         - interfaces: &interfaces_a
