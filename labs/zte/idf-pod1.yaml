@@ -52,6 +52,8 @@ idf:
         private: ~
         public: 'br-external'
     network:
+      ntp_strata_host1: 1.pool.ntp.org
+      ntp_strata_host2: 0.pool.ntp.org
       node:
         # Ordered-list, index should be in sync with node index in PDF
         - interfaces: &interfaces
