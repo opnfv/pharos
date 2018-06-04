@@ -56,6 +56,10 @@ definitions:
         network:
           type: 'object'
           properties:
+            ntp_strata_host1:
+              type: 'string'
+            ntp_strata_host2:
+              type: 'string'
             node:
               type: 'array'
               items:
