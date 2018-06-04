@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da5c1566_fc8fc573",
+        "filename": "labs/arm/idf-virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-06-04T14:32:20Z",
+      "side": 1,
+      "message": "as long as verify job for Pharos passes, no.\nidf.installer is only used to whitelist certain installers in case not all of them work. in this case, it doesn\u0027t seem to be needed",
+      "parentUuid": "1a494da4_0f6235d8",
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a494da4_cfae8de7",
         "filename": "labs/arm/idf-virtual2.yaml",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2018-05-16T08:37:13Z",
       "side": 1,
       "message": "only 4 nic defined in virtual2.yaml. \ninterface:4 need to define one more nic, nic5?\nor make it vlan taged on existing nic",
+      "range": {
+        "startLine": 31,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 18
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_3ce93d1b",
+        "filename": "labs/arm/idf-virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-06-04T14:32:20Z",
+      "side": 1,
+      "message": "we don\u0027t use dedicated storage with current fuel, so I did not care about this ...\nalthough your observation is correct, if there are no other reasons for a new patch revision, I\u0027ll leave fixing this for later",
+      "parentUuid": "1a494da4_cfae8de7",
       "range": {
         "startLine": 31,
         "startChar": 6,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "da5c1566_1ceef922",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-06-04T14:32:20Z",
+      "side": 1,
+      "message": "no, there is no remote management MAC for libvirt ... this is just a dummy value to pass field validation, so it should be clear that it is not used",
+      "parentUuid": "1a494da4_0f4b555a",
+      "range": {
+        "startLine": 47,
+        "startChar": 17,
+        "endLine": 47,
+        "endChar": 36
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a494da4_ef47094a",
         "filename": "labs/arm/virtual2.yaml",
         "patchSetId": 2
@@ -76,6 +142,30 @@
       "writtenOn": "2018-05-16T08:37:13Z",
       "side": 1,
       "message": "usually on pxe nic, the feature is empty.e.g features: \u0027\u0027",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 28
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_7cf3b50a",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-06-04T14:32:20Z",
+      "side": 1,
+      "message": "yes, and that\u0027s a mistake for other pods :)\ndpdk|sriov makes sense for any interface, no matter its role",
+      "parentUuid": "1a494da4_ef47094a",
       "range": {
         "startLine": 52,
         "startChar": 16,
@@ -105,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "da5c1566_bcc38d89",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-06-04T14:32:20Z",
+      "side": 1,
+      "message": "this is fuel-specific ... we can do it in another change, although it\u0027s not that important; the important part is getting idf.net_config.*.interface right",
+      "parentUuid": "1a494da4_6faad9d5",
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a494da4_2f79f193",
         "filename": "labs/arm/virtual2.yaml",
         "patchSetId": 2
@@ -116,6 +224,30 @@
       "writtenOn": "2018-05-16T08:37:13Z",
       "side": 1,
       "message": "is this specific to virutal pod? on pod5.yaml, there is no vlan tag per interface",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 20
+      },
+      "revId": "5ac8923af5d75c13744a426be0fb88491ff16c48",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_7cca95a2",
+        "filename": "labs/arm/virtual2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-06-04T14:32:20Z",
+      "side": 1,
+      "message": "this is not consumed by fuel, only by other installers.\njust to make it clear that we don\u0027t do trunk vlans in these vms ...",
+      "parentUuid": "1a494da4_2f79f193",
       "range": {
         "startLine": 98,
         "startChar": 8,
