@@ -210,7 +210,7 @@ nodes:
     remote_management:
       <<: *remoteparas
       address: 172.16.1.19/24
-      mac_address: "9C:B6:54:8E:C7:F0"
+      mac_address: "FC:15:B4:12:97:64"
     interfaces:
       - name: 'nic1'
         speed: 10gb
