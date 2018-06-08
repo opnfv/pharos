@@ -1,0 +1,137 @@
+##############################################################################
+# Copyright (c) 2018 Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### Enea ARM VIRTUAL 2 descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: ENEA AB
+  contact: dan.lilliehorn@enea.com
+  lab: ENEA lab
+  location: Stockholm, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/Enea+Hosting
+##############################################################################
+jumphost:
+  name: jenkins-slave-arm-virtual2
+  node:
+    type: baremetal
+    vendor: Cavium
+    model: ThunderX
+    arch: aarch64
+    cpus: 1
+    cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32
+    cores: 48
+    memory: 128G
+  disks:
+    - name: disk1
+      disk_capacity: 500G
+      disk_type: hdd
+      disk_interface: sata
+      disk_rotation: 7200
+  os: ubuntu-16.04
+  remote_params: &remote_params
+    type: ipmi
+    versions:
+      - 2.0
+    user: admin
+    pass: admin
+  remote_management:
+    <<: *remote_params
+    address: 10.0.1.34
+    mac_address: "00:00:00:00:00:00"
+  interfaces:
+    # Connected, used only for admin/PXE, enm5p144s0
+    - mac_address: "68:05:ca:3d:93:0c"
+      speed: 1gb
+      features: 'dpdk|sriov'
+      name: 'nic1'
+    # Not connected for now, enm2p1s0f1
+    - mac_address: "00:0f:b7:06:00:c0"
+      speed: 40gb
+      features: 'dpdk|sriov'
+      name: 'nic2'
+    # Connected, trunk for public, enm2p1s0f2
+    - mac_address: "00:0f:b7:06:00:c1"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic3'
+    # Connected, enm2p1s0f3
+    - mac_address: "00:0f:b7:06:00:c2"
+      speed: 10gb
+      features: 'dpdk|sriov'
+      name: 'nic4'
+##############################################################################
+nodes:
+  - name: node-1
+    node: &nodeparams
+      # Fuel overrides certain params (e.g. cpus, mem) based on node role later
+      type: virtual
+      vendor: libvirt
+      model: virt
+      arch: aarch64
+      cpus: 1
+      cpu_cflags: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid
+      cores: 8
+      memory: 6G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 100G
+        disk_type: hdd
+        disk_interface: scsi  # virtio-scsi
+        disk_rotation: 7200
+    remote_management: &remotemgmt
+      type: libvirt
+      user: changeme
+      pass: changeme
+      address: 'qemu:///system'
+    interfaces: &interfaces
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"  # MACs will be assigned by libvirt
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"
+        vlan: native
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:00:00:00:00:00"
+        vlan: native
+  ############################################################################
+  - name: node-2
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+  ############################################################################
+  - name: node-3
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+  ############################################################################
+  - name: node-4
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
+  ############################################################################
+  - name: node-5
+    node: *nodeparams
+    disks: *disks
+    remote_management: *remotemgmt
+    interfaces: *interfaces
