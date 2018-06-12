@@ -56,6 +56,8 @@ idf:
       timeout_comissioning: 10
       timeout_deploying: 15
     network:
+      ntp_strata_host1: 1.se.pool.ntp.org
+      ntp_strata_host2: 0.se.pool.ntp.org
       node:
         # Ordered list, index should be in sync with node index in PDF
         - interfaces: &interfaces
@@ -80,3 +82,29 @@ idf:
           busaddr: *busaddr
         - interfaces: *interfaces
           busaddr: *busaddr
+    reclass:
+      node:
+        - compute_params: &compute_params
+            common:
+              nova_cpu_pinning: &nova_cpu_pinning_common "8-47"
+              compute_hugepages_size: 2M
+              compute_hugepages_count: 8192
+              compute_hugepages_mount: /mnt/hugepages_2M
+              compute_kernel_isolcpu: *nova_cpu_pinning_common
+            dpdk:
+              nova_cpu_pinning: "12-47"
+              compute_hugepages_size: 2M
+              compute_hugepages_count: 8192
+              compute_hugepages_mount: /mnt/hugepages_2M
+              compute_kernel_isolcpu: *nova_cpu_pinning_common
+              compute_dpdk_driver: vfio
+              compute_ovs_pmd_cpu_mask: "0x300"
+              compute_ovs_dpdk_socket_mem: "2048"
+              compute_ovs_dpdk_lcore_mask: "0xC00"
+              compute_ovs_memory_channels: "2"
+              dpdk0_driver: vfio-pci
+              dpdk0_n_rxq: 2
+        - compute_params: *compute_params
+        - compute_params: *compute_params
+        - compute_params: *compute_params
+        - compute_params: *compute_params
