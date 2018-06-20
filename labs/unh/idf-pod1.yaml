@@ -55,8 +55,8 @@ idf:
         public: 'public1_br0'
     maas:
       # MaaS timeouts (in minutes)
-      timeout_comissioning: 10
-      timeout_deploying: 15
+      timeout_comissioning: 15
+      timeout_deploying: 25
     network:
       ntp_strata_host1: 1.pool.ntp.org
       ntp_strata_host2: 0.pool.ntp.org
