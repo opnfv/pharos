@@ -42,6 +42,13 @@ definitions:
                   type: ['string', 'null']
               required: ['admin', 'mgmt', 'private', 'public']
               additionalProperties: false
+            trunks:
+              type: 'object'
+              properties:
+                mgmt:
+                  type: 'boolean'
+              required: ['mgmt']
+              additionalProperties: false
           required: ['bridges']
           additionalProperties: false
         maas:
