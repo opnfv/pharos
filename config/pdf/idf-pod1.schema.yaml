@@ -143,8 +143,23 @@ definitions:
       additionalProperties: false
   osa:
     v0.1:
+      type: 'object'
+      properties:
+        nodes_roles:
+          type: 'object'
+        groups:
+          type: 'object'
+        hostnames:
+          type: 'object'
+        network:
+          type: 'object'
+      required: ['nodes_roles', 'groups', 'hostnames', 'network']
+      additionalProperties: false
+  kubespray:
+    v0.1:
       type: ['object', 'null']
       # NOTE: To be properly modeled by XCI maintainers
+
 
 ##############################################################################
 # Top-level structure:
@@ -164,7 +179,7 @@ properties:
         type: 'array'
         items:
           type: 'string'
-          enum: ['apex', 'compass4nfv', 'daisy', 'fuel', 'joid', 'osa']
+          enum: ['apex', 'compass4nfv', 'daisy', 'fuel', 'joid', 'osa', 'kubespray']
       net_config:
         type: 'object'
       compass:
@@ -175,7 +190,9 @@ properties:
         type: 'object'
       osa:
         type: ['object', 'null']
-    required: ['version']
+      kubespray:
+        type: ['object', 'null']
+     required: ['version']
     additionalProperties: false
     ############################################################################
     # Schema versioning
@@ -194,13 +211,17 @@ properties:
             $ref: '#/definitions/fuel/v0.1'
           osa:
             $ref: '#/definitions/osa/v0.1'
+          kubespray:
+            $ref: '#/definitions/kubespray/v0.1'
       fuel:
         required: ['net_config']
       daisy:
         required: ['net_config']
       osa:
         required: ['net_config']
-  xci:
+      kubespray:
+        required: ['net_config']
+   xci:
     type: 'object'
     # NOTE: To be properly modeled by XCI maintainers
 
