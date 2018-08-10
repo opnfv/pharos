@@ -1,0 +1,269 @@
+---
+### POD descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: Jose Lausuch
+  contact: jose.lausuch@ericsson.com
+  lab: Ericsson
+  location: Rosersberg, Sweden
+  type: production
+  link: https://wiki.opnfv.org/display/pharos/CI-ERICSSON-POD2
+##############################################################################
+jumphost:
+  name: CI-POD2-HOST
+  node: &nodeparams
+    type: baremetal
+    vendor: HP
+    model: ProLiant BL460c Gen9
+    arch: x86_64
+    cpus: 2
+    cpu_cflags: haswell
+    cores: 12
+    memory: 128G
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 1200G
+      disk_type: hdd
+      disk_interface: scsi
+      disk_rotation: 15000
+  os: ubuntu-16.04
+  remote_params: &remoteparas
+    type: ipmi
+    versions:
+      - 1.0
+      - 2.0
+    user: opnfv
+    pass: Winter2017
+  remote_management:
+    <<: *remoteparas
+    address: 172.16.2.11
+    mac_address: "58:20:B1:01:8A:F2"
+  interfaces:
+    - name: 'nic0'
+      speed: 1gb
+      features: 'dpdk|sriov'
+      address:
+      mac_address: "ec:b1:d7:a1:a1:10"
+      vlan: native
+    - name: 'nic1'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      address: 100.64.201.5
+      mac_address: "5c:b9:01:8b:9f:e8"
+      vlan: native
+    - name: 'nic2'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      address: 100.64.201.5
+      mac_address: "5c:b9:01:8b:9f:e9"
+      vlan: native
+    - name: 'nic3'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      address: 172.16.0.248
+      mac_address: "5c:b9:01:8b:9f:ec"
+      vlan: 3010
+    - name: 'nic4'
+      speed: 10gb
+      features: 'dpdk|sriov'
+      address: 172.16.0.248
+      mac_address: "5c:b9:01:8b:9f:ed"
+      vlan: 3010
+##############################################################################
+nodes:
+  - name: node1
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.12
+      mac_address: "58:20:B1:01:8B:F0"
+    interfaces:
+      - name: 'nic0'
+        speed: 1gb
+        features: 'dpdk|sriov'
+        mac_address: "ec:b1:d7:a2:44:a0"
+        address: "192.168.122.3"
+        vlan: native
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:94"
+        address: "172.29.236.11"
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:95"
+        address: "192.168.122.3"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:80"
+        address: "172.29.240.11"
+        vlan: 3010
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:81"
+        address: "172.29.242.11"
+        vlan: 3010
+  ############################################################################
+  - name: node2
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.13
+      mac_address: "58:20:B1:01:8E:FC"
+    interfaces:
+      - name: 'nic0'
+        speed: 1gb
+        features: 'dpdk|sriov'
+        mac_address: "ec:b1:d7:a2:44:80"
+        address: "192.168.122.4"
+        vlan: native
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:30"
+        address: "172.29.236.12"
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:31"
+        address: "192.168.122.4"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:99:64"
+        address: "172.29.240.12"
+        vlan: 3010
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:99:65"   # second port, no connection
+        address: "172.29.242.12"
+        vlan: 3010
+  ############################################################################
+  - name: node3
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.14
+      mac_address: "58:20:B1:01:8D:32"
+    interfaces:
+      - name: 'nic0'
+        speed: 1gb
+        features: 'dpdk|sriov'
+        mac_address: "ec:b1:d7:a2:43:c0"
+        address: "192.168.122.5"
+        vlan: native
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:9d:4c"
+        address: "172.29.236.13"
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:9d:4d"
+        address: "172.29.238.13"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:9d:6c"
+        address: "172.29.240.13"
+        vlan: 3010
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:9d:6d"
+        address: "172.29.242.13"
+        vlan: 3010
+  ############################################################################
+  - name: node4
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.15
+      mac_address: "58:20:B1:01:8B:FC"
+    interfaces:
+      - name: 'nic0'
+        speed: 1gb
+        features: 'dpdk|sriov'
+        mac_address: "ec:b1:d7:a1:8b:d0"
+        address: "192.168.122.6"
+        vlan: native
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a5:fc"
+        address: "172.29.236.14"
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a5:fd"
+        address: "172.29.238.14"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:08"
+        address: "172.29.240.14"
+        vlan: 3010
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:09"
+        address: "172.29.242.14"
+        vlan: 3010
+  ############################################################################
+  - name: node5
+    node: *nodeparams
+    disks: *disks
+    remote_management:
+      <<: *remoteparas
+      address: 172.16.2.16
+      mac_address: "58:20:B1:01:8F:EA"
+    interfaces:
+      - name: 'nic0'
+        speed: 1gb
+        features: 'dpdk|sriov'
+        mac_address: "ec:b1:d7:a1:bd:60"
+        address: "192.168.122.7"
+        vlan: native
+      - name: 'nic1'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:e8"
+        address: "172.29.236.15"
+        vlan: native
+      - name: 'nic2'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:a6:e9"
+        address: "172.29.238.15"
+        vlan: native
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:97:14"
+        address: "172.29.240.15"
+        vlan: 3010
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "5c:b9:01:8b:97:15"
+        address: "172.29.242.15"
+        vlan: 3010
+

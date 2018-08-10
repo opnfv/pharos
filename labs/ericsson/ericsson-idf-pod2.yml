@@ -1,0 +1,122 @@
+##############################################################################
+# Copyright (c) 2018 Ericsson AB, Mirantis Inc., Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### ERICSSON POD 2 installer descriptor file ###
+idf:
+  version: 0.1
+  installer: ['apex', 'compass4nfv', 'daisy', 'fuel']
+  net_config: &net_config
+    pxe:
+      interface: 2
+      network: 192.168.122.0    # Untagged, 'PXE/Admin' on wiki, different IP
+      mask: 24
+    admin:
+      interface: 1
+      network: 172.29.236.0
+      mask: 22
+    storage:
+      interface: 3
+      network: 172.29.240.0      # Tagged, not the same with 'storage' on wiki
+      mask: 22
+    private:
+      interface: 4
+      network: 172.29.242.0      # Tagged, not the same with 'private' on wiki
+      mask: 22
+    public:
+      interface: 2
+      network: 192.168.122.0     # Untagged, 'public' on wiki
+      mask: 24
+      gateway: 192.168.122.1
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
+
+xci:
+  pod_name: pod1
+  net_config: *net_config
+  flavors:
+    mini:
+      - opnfv
+      - node1
+      - node2
+    noha:
+      - opnfv
+      - node1
+      - node2
+      - node3
+    ha:
+      - opnfv
+      - node1
+      - node2
+      - node3
+      - node4
+      - node5
+
+  osa:
+    nodes_roles:
+      opnfv: [deployment]
+      node1: [controller]
+      node2: [compute, storage]
+      node3: [compute, storage]
+      node4: [controller]
+      node5: [controller]
+    groups:
+      openstack:
+        - controller
+        - compute
+        - storage
+    hostnames:
+      opnfv: opnfv
+      node1: controller00
+      node2: compute00
+      node3: compute01
+      node4: controller01
+      node5: controller02
+  kubespray:
+    nodes_roles:
+      opnvf: [opnfv]
+      node1: [kube-master, etcd, vault]
+      node2: [kube-node]
+      node3: [kube-node]
+      node4: [kube-master, etcd, vault]
+      node5: [kube-master, etcd, vault]
+    groups:
+      k8s-cluster:
+        - kube-node
+        - kube-master
+    hostnames:
+      opnfv: opnfv
+      node1: master1
+      node2: node1
+      node3: node2
+      node4: master2
+      node5: master3
+
+  # net_config network to be used by the PXE
+  pxe_network: public
+
+  # As the MAC of generated bridges are generated, we use a list of local
+  # bridges to create libvirt networks
+  jumphost_interfaces_bridges:
+    - name: virbr0
+      ip: 192.168.122.1
+
+  extra_addresses:
+    opnfv: 192.168.122.2
+
+  # network mapping
+  network_mapping:
+    # Management network used by installer components to communicate
+    net-mgmt: admin
+    # Storage Network
+    net-storage: storage
+    # Internal network for communication between VNF
+    net-internal: private
+    # Public network for VNF remote acces (ext-net in Openstack)
+    net-vnf: public
+
