@@ -143,8 +143,23 @@ definitions:
       additionalProperties: false
   osa:
     v0.1:
+      type: 'object'
+      properties:
+        nodes_roles:
+          type: 'object'
+        groups:
+          type: 'object'
+        hostnames:
+          type: 'object'
+        network:
+          type: 'object'
+      required: ['nodes_roles', 'groups', 'hostnames', 'network']
+      additionalProperties: false
+  kubespray:
+    v0.1:
       type: ['object', 'null']
       # NOTE: To be properly modeled by XCI maintainers
+
 
 ##############################################################################
 # Top-level structure:
