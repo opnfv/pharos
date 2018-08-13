@@ -48,6 +48,43 @@ idf:
         - 8.8.8.8
         - 8.8.4.4
   osa: &idf_osa
+    nodes_roles:
+      opnfv: [deployment]
+      node1: [controller]
+      node2: [compute, storage]
+      node3: [compute, storage]
+      node4: [controller]
+      node5: [controller]
+    groups:
+      openstack:
+        - controller
+        - compute
+        - storage
+    hostnames:
+      opnfv: opnfv
+      node1: controller00
+      node2: compute00
+      node3: compute01
+      node4: controller01
+      node5: controller02
+    network:
+      # network mapping
+      network_mapping:
+        # Management network used by installer components to communicate
+        net-mgmt: mgmt
+        # Storage Network
+        net-storage: storage
+        # Internal network for communication between VNF
+        net-internal: private
+        # Public network for VNF remote acces (ext-net in Openstack)
+        net-vnf: public
+      deployment_host_interfaces:
+        # Ordered-list, index should be in sync with interface index in PDF
+        - 'eno1'
+        - 'eno3.450'
+        - 'eno3.452'
+        - 'eno4.451'
+        - 'eno4.414'
   fuel:
     jumphost:
       bridges:
