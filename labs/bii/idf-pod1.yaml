@@ -18,6 +18,7 @@ idf:
       interface: 0
       ip-range: 192.168.20.200-192.168.20.205
       vlan: native
+      mask: 29
     admin:
       interface: 0
       vlan: native

@@ -17,6 +17,7 @@ idf:
       interface: 0
       ip-range: 172.30.8.65-172.30.8.75
       vlan: 410
+      mask: 28
     admin:
       interface: 0
       vlan: native
