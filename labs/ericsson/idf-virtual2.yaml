@@ -16,6 +16,7 @@ idf:
       interface: 0
       ip-range: ~
       vlan: native
+      mask: 24
     # All networks (except OOB) are virtual networks managed by `libvirt`
     # Interface indexes are based on Fuel installer defaults
     admin:
