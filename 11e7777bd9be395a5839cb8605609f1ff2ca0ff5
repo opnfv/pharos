@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_483c0730",
+        "filename": "labs/bii/idf-pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-08-16T15:17:29Z",
+      "side": 1,
+      "message": "where\u0027s this value coming from?",
+      "range": {
+        "startLine": 21,
+        "startChar": 12,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "11e7777bd9be395a5839cb8605609f1ff2ca0ff5",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_a84963d2",
+        "filename": "labs/ericsson/idf-pod1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-08-16T15:17:29Z",
+      "side": 1,
+      "message": "where\u0027s this value coming from?",
+      "range": {
+        "startLine": 19,
+        "startChar": 6,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "11e7777bd9be395a5839cb8605609f1ff2ca0ff5",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_08120fb1",
+        "filename": "labs/lf/idf-pod2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-08-16T15:17:29Z",
+      "side": 1,
+      "message": "according to [1], this should be 26\nhttps://wiki.opnfv.org/display/pharos/LF+POD+2",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 14
+      },
+      "revId": "11e7777bd9be395a5839cb8605609f1ff2ca0ff5",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
