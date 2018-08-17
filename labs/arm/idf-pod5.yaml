@@ -17,6 +17,7 @@ idf:
     oob:
       ip-range: 10.0.8.3-10.0.8.10
       vlan: native
+      mask: 24
     admin:
       interface: 0
       vlan: native

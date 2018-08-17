@@ -15,6 +15,7 @@ idf:
       interface: 0
       ip-range:
       vlan:
+      mask: 24
     admin:  # admin
       interface: 1
       vlan: native
