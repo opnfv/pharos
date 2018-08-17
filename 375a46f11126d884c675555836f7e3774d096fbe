@@ -22,6 +22,30 @@
       "revId": "375a46f11126d884c675555836f7e3774d096fbe",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9f52d211",
+        "filename": "labs/ericsson/idf-pod2.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2091
+      },
+      "writtenOn": "2018-08-17T15:16:33Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "9a561d44_fce83c7e",
+      "range": {
+        "startLine": 12,
+        "startChar": 47,
+        "endLine": 12,
+        "endChar": 51
+      },
+      "revId": "375a46f11126d884c675555836f7e3774d096fbe",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
