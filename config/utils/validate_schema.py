@@ -19,10 +19,10 @@ ARGS = PARSER.parse_args()
 LOADER = yaml.CSafeLoader if yaml.__with_libyaml__ else yaml.SafeLoader
 
 with open(ARGS.yaml) as _:
-    _DICT = yaml.load(_, Loader=LOADER)
+    _DICT = yaml.safe_load(_)
 
 with open(ARGS.schema) as _:
-    _SCHEMA = yaml.load(_, Loader=LOADER)
+    _SCHEMA = yaml.safe_load(_)
 
 
 def schema_version_workaround(node):

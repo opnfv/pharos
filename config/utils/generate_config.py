@@ -45,8 +45,8 @@ gen_config_lib.load_custom_filters(ENV)
 # Note: eyaml return code is 0 even if keys are not available
 try:
     if isfile(ARGS.yaml) and 'ENC[PKCS7' in open(ARGS.yaml).read():
-        DICT = yaml.load(check_output(['eyaml', 'decrypt',
-                                       '-f', ARGS.yaml]), Loader=LOADER)
+        DICT = yaml.safe_load(check_output(['eyaml', 'decrypt',
+                                       '-f', ARGS.yaml]))
 except CalledProcessError as ex:
     LOGGER.error('eyaml decryption failed! Fallback to raw data.')
 except OSError as ex:
@@ -55,13 +55,13 @@ try:
     DICT['details']
 except (NameError, TypeError) as ex:
     with open(ARGS.yaml) as _:
-        DICT = yaml.load(_.read().replace('/', '__slash__'), Loader=LOADER)
+        DICT = yaml.safe_load(_.read().replace('/', '__slash__'))
 
 # If an installer descriptor file (IDF) exists, include it (temporary)
 IDF_PATH = '/idf-'.join(split(ARGS.yaml))
 if exists(IDF_PATH):
     with open(IDF_PATH) as _:
-        IDF = yaml.load(_, Loader=LOADER)
+        IDF = yaml.safe_load(_)
         DICT['idf'] = IDF['idf']
 
 # Print dictionary generated from yaml (uncomment for debug)
