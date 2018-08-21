@@ -149,9 +149,9 @@ lab:
     feature: odl_l2
     spaces:
       - type: admin  # admin
-        bridge: {{ net_config.admin.bridge }}
+        bridge: {{ net_config.admin.bridge }}   # admin bridge
         cidr: {{ net_config.admin.network }}/{{ net_config.admin.mask }}
-        gateway: {{ net_config.admin.gateway }}
+        gateway: {{ net_config.admin.gateway }} # admin gateway
         vlan:
       - type: data  # mgmt
         cidr: {{ net_config.mgmt.network }}/{{ net_config.mgmt.mask }}
@@ -162,11 +162,11 @@ lab:
         gateway:
         vlan:
       - type: floating  # private
-        bridge: {{ net_config.private.bridge }}
+        bridge: {{ net_config.private.bridge }} # private bridge
         cidr: {{ net_config.private.network }}/{{ net_config.private.mask }}
         gateway:
         vlan:
       - type: public  # public
         cidr: {{ net_config.public.network }}/{{ net_config.public.mask }}
         gateway: {{ net_config.public.gateway }}
-        vlan: {% if net_config.public.vlan | int > 0 %}{{ net_config.public.vlan }}{% endif %}
+        vlan: {% if net_config.public.vlan | int > 0 %}{{ net_config.public.vlan }}{% endif %} # public vlan
