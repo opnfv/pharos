@@ -47,7 +47,6 @@ coverage.xml
 *.log
 
 # Sphinx documentation
-docs/_build/
 
 # PyBuilder
 target/
@@ -58,9 +57,9 @@ target/
 
 *~
 .*.sw?
-/docs_build/
 /docs_output/
 /releng/
 
 # macos preview
 .DS_Store
+docs/_build/*
