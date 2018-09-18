@@ -47,7 +47,7 @@ coverage.xml
 *.log
 
 # Sphinx documentation
-docs/_build/
+docs/_build/*
 
 # PyBuilder
 target/
@@ -58,7 +58,6 @@ target/
 
 *~
 .*.sw?
-/docs_build/
 /docs_output/
 /releng/
 
