@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_7f1703ee",
+        "filename": "labs/itri/ITRI-pod1-idf.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-09-26T19:59:25Z",
+      "side": 1,
+      "message": "Usually, a bus address like \u002700000:0\u003cN\u003e:00:0\u0027 leads to an interface name like enp\u003cN\u003es0 (depending on machine\u0027s PCI topology).\nit\u0027s hard to say whether these are correct without access to those nodes, but my feeling is that the names do not match the bus addresses - either the names are probably wrong, or the bus info is wrong.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 28
+      },
+      "revId": "c125c830c6f484deebb40f9cefb566b08121aaf8",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
