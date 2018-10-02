@@ -1,0 +1,12 @@
+PDF Generator
+=============
+
+This ansible code is used to generate a Pod Descriptor File (PDF) when
+run on a jumpserver.
+
+It requires the following dependencies be installed:
+
+ - ansible
+ - gcc
+ - ipmitool
+

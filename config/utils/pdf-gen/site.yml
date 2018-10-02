@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  vars:
+    lab:
+        owner: 'Trevor Bramwell'
+        contact: 'tbramwell@linuxfoundation.org'
+        name: 'Linux Foundation'
+        shortname: 'LF'
+        location: 'Portland, Oregon, USA'
+        type: 'development'
+        link: 'https://wiki.opnfv.org/display/pharos/LF+POD+5'
+        pod_number: 5
+    node:
+        type: "{{ facter_is_virtual | ternary('virtual', 'baremetal') }}"
+        vendor: '{{ ansible_system_vendor }}'
+        model: '{{ ansible_product_name }}'
+        arch: '{{ ansible_architecture }}'
+        cpus: '{{ ansible_processor_vcpus }}'
+        cores: '{{ ansible_processor_cores }}'
+        memory: '{{ (ansible_memtotal_mb*1000000) | int | filesizeformat }}'
+        os: '{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}'
+  tasks:
+    - name: Get CPU Family
+      shell: >
+          gcc -march=native -Q --help=target | \
+          grep arch | \
+          tr -d ' \t' | \
+          cut -d '=' -f2
+      register: cflags
+    - name: Expose CPU Family
+      set_fact:
+          node: "{{ node | combine({'cpu_family': cflags.stdout}) }}"
+    # Need to collect IPMI MACs given the IPs (ipmitool lan)
+    - name: Write PDF
+      template:
+          src: templates/pod.yaml.j2
+          dest: pod1.yaml
+          # Run PDF validation script here to verify syntax
+          # validate: pharos

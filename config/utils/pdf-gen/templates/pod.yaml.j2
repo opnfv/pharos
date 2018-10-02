@@ -1,0 +1,239 @@
+##############################################################################
+# Copyright (c) 2018 Linux Foundation, Enea AB and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### {{ lab.shortname }} POD {{ lab.pod_number }} descriptor file ###
+
+version: 1.0
+details:
+  pod_owner: {{ lab.owner }}
+  contact: {{ lab.contact }}
+  lab: {{ lab.name }}
+  location: {{ lab.location }}
+  type: {{ lab.type }}
+  link: {{ lab.link }}
+jumphost:
+  name: 'pod{{ lab.pod_number }}-jump'
+  node: &nodeparams
+    type: '{{ node.type }}'
+    vendor: '{{ node.vendor }}'
+    model: '{{ node.model }}' 
+    arch: '{{ node.arch }}'
+    cpus: '{{ node.cpus }}'
+    cpu_cflags: '{{ node.cpu_family }}'
+    cores: '{{ node.cores }}'
+    memory: '{{ node.memory }}'
+  disks: &disks
+    - name: 'disk1'
+      disk_capacity: 2048G
+      disk_type: hdd
+      disk_interface: sas
+      disk_rotation: 15000
+  os: '{{ node.os }}'
+  remote_params: &remote_params
+    # hardware management tool
+    type: ipmi
+    # array of supported versions, mandatory for all but 'libvirt'
+    versions:
+      - 1.0
+      - 2.0
+    user: root
+    pass: root
+  remote_management:
+    <<: *remote_params
+    address: 10.4.7.3/24
+    # MAC address is mandatory for all BMC types but 'libvirt'
+    mac_address: "10:23:45:67:89:AC"
+  # physical interface list
+  interfaces:
+    # first interface
+    - name: nic1
+      # ip address of nic
+      address: 192.168.100.1
+      mac_address: "10:23:45:67:89:AC"
+      # vlan tag, may have multiple tags
+      vlan: native
+    # second interface
+    - name: 'nic2'
+      address: 10.20.0.1/24
+      mac_address: "10:23:45:67:89:5B"
+nodes:
+  - name: pod1-node1
+    # for nodes in the same pod may have the same configuration
+    node: &nodeparas
+      type: baremetal
+      vendor: supermicro
+      model: S2600JF
+      arch: x86_64
+      cpus: 2
+      cpu_cflags: haswell
+      cores: 12
+      memory: 128G
+    # for nodes in the same pod may have the same configuration
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 4906G
+        disk_type: hdd
+        disk_interface: sata
+        disk_rotation: 7200
+      - name: 'disk2'
+        disk_capacity: 2048G
+        disk_type: hdd
+        disk_interface: sas
+        disk_rotation: 15000
+      - name: 'disk3'
+        disk_capacity: 600G
+        disk_type: ssd
+        disk_interface: ssd
+        disk_rotation: 15000
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.7/24
+      mac_address: "10:20:22:67:89:A2"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: dpdk
+        address: 10.2.4.7/24
+        mac_address: "10:23:22:67:89:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.7/24
+        mac_address: "10:23:22:67:89:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f1:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f1:b5"
+        vlan: 204
+  - name: pod1-node2
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.8/24
+      mac_address: "10:20:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.8/24
+        mac_address: "10:23:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:1b:21:22:f8:b5"
+  - name: pod1-node3
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.9/24
+      mac_address: "10:30:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.9/24
+        mac_address: "10:33:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.9/24
+        mac_address: "10:33:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:3b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:3b:21:22:f8:b5"
+  - name: pod1-node4
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.10/24
+      mac_address: "10:40:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.10/24
+        mac_address: "10:43:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.10/24
+        mac_address: "10:43:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:4b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:4b:21:22:f8:b5"
+  - name: pod1-node5
+    node: *nodeparas
+    # disks are same as pod1-node1
+    disks: *disks
+    remote_management:
+      <<: *remote_params
+      address: 10.4.7.11/24
+      mac_address: "10:50:22:67:88:A3"
+    interfaces:
+      - name: 'nic1'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.11/24
+        mac_address: "10:53:22:67:88:AC"
+        vlan: 201
+      - name: 'nic2'
+        speed: 1gb
+        features: ''
+        address: 10.2.4.11/24
+        mac_address: "10:53:22:67:88:5B"
+        vlan: 202
+      - name: 'nic3'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:5b:21:22:f8:b4"
+        vlan: 203
+      - name: 'nic4'
+        speed: 10gb
+        features: 'dpdk|sriov'
+        mac_address: "00:5b:21:22:f8:b5"
