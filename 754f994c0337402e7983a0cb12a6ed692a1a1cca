@@ -1,0 +1,11 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Michael Polenchuk <mpolenchuk@mirantis.com>
+Code-Review+1: Cristina Pauna <cristina.pauna@enea.com>
+Code-Review+1: Delia Popescu <delia.popescu@enea.com>
+Code-Review+2: Guillermo Herrero <guillermo.herrero@enea.com>
+Code-Review+1: Charalampos Kominos <charalampos.kominos@enea.com>
+Submitted-by: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-at: Thu, 04 Oct 2018 21:06:52 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/63023
+Project: pharos
+Branch: refs/heads/master
