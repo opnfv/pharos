@@ -1,0 +1,141 @@
+lab:
+  location: itri
+  racks:
+  - rack: pod1
+    nodes:
+    - name: itri-node28
+      architecture: x86_64
+      roles: [control,network,storage]
+      nics:
+      - ifname: eth2
+        spaces: [admin]
+        mac: ['18:66:da:a3:f0:97']
+      - ifname: eth1
+        spaces: [floating]
+        mac: ['18:66:da:a3:f0:96']
+      - ifname: eth0
+        spaces: [storage]
+        mac: ['3c:fd:fe:12:29:c6']
+      - ifname: eth6
+        spaces: [data]
+        mac: ['3c:fd:fe:12:29:c0']
+      power: {type: ipmi, address: 100.86.5.28, user: admin, pass: admin}
+    - name: itri-node29
+      architecture: x86_64
+      roles: [control,network,storage]
+      nics:
+      - ifname: eth2
+        spaces: [admin]
+        mac: ['18:66:da:a3:f3:c7']
+      - ifname: eth1
+        spaces: [floating]
+        mac: ['18:66:da:a3:f3:c6']
+      - ifname: eth0
+        spaces: [storage]
+        mac: ['3c:fd:fe:1a:e0:02']
+      - ifname: eth6
+        spaces: [data]
+        mac: ['3c:fd:fe:12:09:e2']
+      power: {type: ipmi, address: 100.86.5.29, user: admin, pass: admin}
+    - name: itri-node30
+      architecture: x86_64
+      roles: [control,network,storage]
+      nics:
+      - ifname: eth2
+        spaces: [admin]
+        mac: ['18:66:da:a3:c2:c4']
+      - ifname: eth1
+        spaces: [floating]
+        mac: ['18:66:da:a3:c2:c3']
+      - ifname: eth0
+        spaces: [storage]
+        mac: ['3c:fd:fe:1b:23:62']
+      - ifname: eth6
+        spaces: [data]
+        mac: ['3c:fd:fe:12:29:e2']
+      power: {type: ipmi, address: 100.86.5.30, user: admin, pass: admin}
+    - name: itri-node31
+      architecture: x86_64
+      roles: [compute]
+      nics:
+      - ifname: eth2
+        spaces: [admin]
+        mac: ['18:66:da:a3:bd:db']
+      - ifname: eth1
+        spaces: [floating]
+        mac: ['18:66:da:a3:bd:da']
+      - ifname: eth0
+        spaces: [storage]
+        mac: ['3c:fd:fe:1a:c6:c2']
+      - ifname: eth6
+        spaces: [data]
+        mac: ['3c:fd:fe:12:2b:22']
+      power: {type: ipmi, address: 100.86.5.31, user: admin, pass: admin}
+    - name: itri-node32
+      architecture: x86_64
+      roles: [compute]
+      nics:
+      - ifname: eth2
+        spaces: [admin]
+        mac: ['18:66:da:a3:b9:8c']
+      - ifname: eth1
+        spaces: [floating]
+        mac: ['18:66:da:a3:b9:8b']
+      - ifname: eth0
+        spaces: [storage]
+        mac: ['3c:fd:fe:1b:22:e2']
+      - ifname: eth6
+        spaces: [data]
+        mac: ['3c:fd:fe:12:29:a2']
+      power: {type: ipmi, address: 100.86.5.32, user: admin, pass: admin}
+    - name: itri-node33
+      architecture: x86_64
+      roles: [compute]
+      nics:
+      - ifname: eth2
+        spaces: [admin]
+        mac: ['18:66:da:a3:c7:59']
+      - ifname: eth1
+        spaces: [floating]
+        mac: ['18:66:da:a3:c7:58']
+      - ifname: eth0
+        spaces: [storage]
+        mac: ['3c:fd:fe:1b:00:82']
+      - ifname: eth6
+        spaces: [data]
+        mac: ['3c:fd:fe:12:2a:c2']
+      power: {type: ipmi, address: 100.86.5.33, user: admin, pass: admin}
+    floating-ip-range: 100.86.88.1,100.86.88.254,100.86.0.254,100.86.0.0/24
+    ext-port: eth1
+    dns: 8.8.8.8
+    osdomainname:
+opnfv:
+    release: f
+    distro: xenial
+    type: noha
+    openstack: pike
+    sdncontroller:
+    - type: nosdn
+    storage:
+    - type: ceph
+      disk: /dev/sdb
+    feature: odl_l2
+    spaces:
+    - type: admin
+      bridge: brAdmin
+      cidr: 10.20.0.0/24
+      gateway: 10.20.0.2
+    - type: data
+      cidr: 192.168.103.0/24
+      gateway:
+      vlan: 
+    - type: storage
+      cidr: 192.168.102.0/24
+      gateway:
+      vlan:
+    - type: floating
+      bridge: brExt
+      cidr: 100.86.0.0/16
+      gateway:
+      vlan:
+
