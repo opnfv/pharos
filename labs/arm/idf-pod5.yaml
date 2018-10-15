@@ -35,7 +35,7 @@ idf:
       network: 10.2.0.0
       mask: 24
     private:
-      interface: 1
+      interface: 3
       vlan: 2185-2200
       network: 10.1.0.0
       mask: 24
@@ -77,10 +77,18 @@ idf:
           busaddr: *busaddr
         - interfaces: *interfaces
           busaddr: *busaddr
-        - interfaces: *interfaces
-          busaddr: *busaddr
-        - interfaces: *interfaces
-          busaddr: *busaddr
+        - interfaces: &interfaces_dual
+            - 'eth0'
+            - 'eth1'
+            - 'enp1s0f0'
+            - 'enp1s0f1'
+          busaddr: &busaddr_dual
+            - 'e0700000.xgmac'
+            - 'e0900000.xgmac'
+            - '0000:01:00.0'
+            - '0000:01:00.1'
+        - interfaces: *interfaces_dual
+          busaddr: *busaddr_dual
     reclass:
       node:
         - compute_params: &compute_params
