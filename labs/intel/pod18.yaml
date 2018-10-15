@@ -51,8 +51,12 @@ jumphost:
       mac_address: "A4:BF:01:16:31:96"
       vlan: native
     - name: 'nic2'
-      address: 10.10.181.20
+      address: 10.10.182.20
       mac_address: "A4:BF:01:16:31:97"
+      vlan: native
+    - name: 'nic3'
+      address: 10.10.181.20
+      mac_address: "3c:fd:fe:a4:9c:f1"
       vlan: native
 nodes:
   - name: pod18-node1
@@ -92,7 +96,7 @@ nodes:
         features:
         address: 10.10.181.21
         mac_address: "A4:BF:01:14:40:17"
-        vlan: native
+        vlan: 184
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -136,7 +140,7 @@ nodes:
         features:
         address: 10.10.181.22
         mac_address: "A4:BF:01:16:31:1F"
-        vlan: native
+        vlan: 184
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -180,7 +184,7 @@ nodes:
         features:
         address: 10.10.181.23
         mac_address: "A4:BF:01:16:30:F7"
-        vlan: native
+        vlan: 184
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -224,7 +228,7 @@ nodes:
         features:
         address: 10.10.181.24
         mac_address: "A4:BF:01:14:72:0E"
-        vlan: native
+        vlan: 184
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
@@ -268,7 +272,7 @@ nodes:
         features:
         address: 10.10.181.25
         mac_address: "A4:BF:01:14:71:69"
-        vlan: native
+        vlan: 184
       - name: 'nic3'
         speed: 10gb
         features: 'dpdk|sriov'
