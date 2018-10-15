@@ -113,6 +113,8 @@ definitions:
                             type: ['string', 'number']
                           compute_ovs_memory_channels:  # Optional
                             type: ['string', 'number']
+                          pxe_admin_interface:  # Optional
+                            type: 'string'
                         required: ['compute_hugepages_size', 'compute_hugepages_count',
                                    'compute_hugepages_mount']
                         additionalProperties: false
@@ -130,6 +132,8 @@ definitions:
                             type: 'string'
                           dpdk0_n_rxq:
                             type: 'number'
+                          pxe_admin_interface:  # Optional
+                            type: 'string'
                         required: ['compute_dpdk_driver', 'dpdk0_driver', 'dpdk0_n_rxq',
                                    'compute_ovs_dpdk_socket_mem',
                                    'compute_ovs_dpdk_lcore_mask']

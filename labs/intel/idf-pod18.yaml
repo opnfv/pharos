@@ -8,39 +8,38 @@
 ---
 idf:
   version: 0.1
-  installer: ['joid']
+  installer: ['joid', 'fuel']
   net_config:
     # NOTE: Network names are likely to change after the PDF spec is updated
     oob:
       interface: 0
-      ip-range:
-      vlan:
+      ip-range: 10.10.180.10-10.10.180.15
+      vlan: native
       mask: 24
     admin:  # admin
       interface: 1
       vlan: native
       network: 10.10.181.0
       mask: 24
-      gateway: 10.10.181.2
       bridge: brAdm
     mgmt:  # data
       interface: 2
-      vlan:
-      network: 10.10.182.0
+      vlan: 184
+      network: 10.10.184.0
       mask: 24
     storage:  # storage
       interface: 3
-      vlan:
-      network: 10.10.182.0
+      vlan: native
+      network: 10.10.183.0
       mask: 24
     private:  # floating
-      interface:
-      vlan:
-      network: 10.10.180.0
+      interface: 2
+      vlan: native
+      network: 10.10.182.0
       mask: 24
       bridge: brExt
     public:  # public
-      interface:
+      interface: 3
       vlan: 1183
       network: 10.10.185.0
       mask: 24
@@ -48,3 +47,55 @@ idf:
       dns:
         - 8.8.8.8
         - 8.8.4.4
+  fuel:
+    jumphost:
+      bridges:
+        admin: 'brAdm'
+        mgmt: 'mgmt18_br0'
+        private: ~
+        public: 'brExt'
+    maas:
+      # MaaS timeouts (in minutes)
+      timeout_comissioning: 10
+      timeout_deploying: 15
+    network:
+      ntp_strata_host1: 1.pool.ntp.org
+      ntp_strata_host2: 0.pool.ntp.org
+      node:
+        # Ordered-list, index should be in sync with node index in PDF
+        - interfaces: &interfaces
+            # Ordered-list, index should be in sync with interface index in PDF
+            - 'eno1'
+            - 'eno2'
+            - 'ens785f0'
+            - 'ens785f1'
+            - 'ens785f2'
+            - 'ens785f3'
+          busaddr: &busaddr
+            # Bus-info reported by `ethtool -i ethX`
+            - '0000:03:00.0'
+            - '0000:03:00.3'
+            - '0000:05:00.0'
+            - '0000:05:00.1'
+            - '0000:05:00.2'
+            - '0000:05:00.3'
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces:
+            - 'eno1'
+            - 'enp3s0f3'
+            - 'ens785f0'
+            - 'ens785f1'
+            - 'ens785f2'
+            - 'ens785f3'
+          busaddr:
+            - '0000:03:00.0'
+            - '0000:03:00.3'
+            - '0000:05:00.0'
+            - '0000:05:00.1'
+            - '0000:05:00.2'
+            - '0000:05:00.3'
