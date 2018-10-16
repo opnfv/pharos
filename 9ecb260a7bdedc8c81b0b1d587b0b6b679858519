@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a682502_10b7cbd9",
+        "filename": "labs/arm/idf-pod5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5267
+      },
+      "writtenOn": "2018-10-16T14:59:47Z",
+      "side": 1,
+      "message": "I think this should be 2. we start the count at 0",
+      "range": {
+        "startLine": 38,
+        "startChar": 17,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "9ecb260a7bdedc8c81b0b1d587b0b6b679858519",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_f00a0fd1",
         "filename": "labs/arm/pod5.yaml",
         "patchSetId": 1
