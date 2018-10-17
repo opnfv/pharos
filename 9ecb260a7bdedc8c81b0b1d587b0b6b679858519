@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a682502_33b651da",
+        "filename": "labs/arm/idf-pod5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-10-17T07:38:45Z",
+      "side": 1,
+      "message": "You are right!",
+      "parentUuid": "5a682502_10b7cbd9",
+      "range": {
+        "startLine": 38,
+        "startChar": 17,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "9ecb260a7bdedc8c81b0b1d587b0b6b679858519",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_f00a0fd1",
         "filename": "labs/arm/pod5.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-10-16T14:14:58Z",
       "side": 1,
       "message": "not that we actually consume it in Fuel, but I think this should list SR-IOV and/or DPDK",
+      "range": {
+        "startLine": 161,
+        "startChar": 8,
+        "endLine": 161,
+        "endChar": 20
+      },
+      "revId": "9ecb260a7bdedc8c81b0b1d587b0b6b679858519",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_13b7d5d9",
+        "filename": "labs/arm/pod5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6819
+      },
+      "writtenOn": "2018-10-17T07:38:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a682502_f00a0fd1",
       "range": {
         "startLine": 161,
         "startChar": 8,
