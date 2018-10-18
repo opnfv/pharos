@@ -156,6 +156,14 @@ nodes:
         speed: 10gb
         features: ''
         name: 'nic2'
+      - mac_address: "ac:1f:6b:8a:82:84"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "ac:1f:6b:8a:82:85"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
   ############################################################################
   - name: softiron-7
     node: *nodeparams
@@ -173,3 +181,11 @@ nodes:
         speed: 10gb
         features: ''
         name: 'nic2'
+      - mac_address: "ac:1f:6b:8a:82:a0"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic3'
+      - mac_address: "ac:1f:6b:8a:82:a1"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
