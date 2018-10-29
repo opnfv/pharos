@@ -27,7 +27,7 @@ parameters:
             mac: {{ node.interfaces[nm.idx_admin].mac_address }}
           power_parameters:
             power_address: {{ node.remote_management.address.rsplit('/')[0] }}
-            power_password: {{ node.remote_management.pass }}
+            power_pass: {{ node.remote_management.pass }}
             power_type: {{ node.remote_management.type }}
             power_user: {{ node.remote_management.user }}
           architecture: {{ node.node.arch | dpkg_arch }}/generic
