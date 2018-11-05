@@ -104,12 +104,12 @@ idf:
               compute_hugepages_count: 8192
               compute_hugepages_mount: /mnt/hugepages_2M
               compute_kernel_isolcpu: *nova_cpu_pinning_common
-              compute_dpdk_driver: vfio
+              compute_dpdk_driver: uio
               compute_ovs_pmd_cpu_mask: "0xc"
               compute_ovs_dpdk_socket_mem: "4096"
               compute_ovs_dpdk_lcore_mask: "0xc"
               compute_ovs_memory_channels: "2"
-              dpdk0_driver: vfio-pci
+              dpdk0_driver: igb_uio
               dpdk0_n_rxq: 2
         - compute_params: *compute_params
         - compute_params: *compute_params
