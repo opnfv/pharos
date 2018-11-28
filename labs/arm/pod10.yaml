@@ -104,30 +104,30 @@ nodes:
         speed: 1gb
         features: ''
         name: 'nic1'
-      # eno2
-      - mac_address: "D0:94:66:58:8C:A5"
-        speed: 1gb
-        features: ''
-        name: 'nic2'
-      # eno3
-      - mac_address: "D0:94:66:58:8C:A6"
-        speed: 1gb
-        features: ''
-        name: 'nic3'
-      # eno4
-      - mac_address: "D0:94:66:58:8C:A7"
-        speed: 1gb
-        features: ''
-        name: 'nic4'
       # enp5s0f0
       - mac_address: "B4:96:91:31:9D:44"
         speed: 10gb
         features: 'dpdk|sriov'
-        name: 'nic5'
+        name: 'nic2'
       # enp5s0f1
       - mac_address: "B4:96:91:31:9D:46"
         speed: 10gb
         features: 'dpdk|sriov'
+        name: 'nic3'
+      # eno2 UNUSED
+      - mac_address: "D0:94:66:58:8C:A5"
+        speed: 1gb
+        features: ''
+        name: 'nic4'
+      # eno3 UNUSED
+      - mac_address: "D0:94:66:58:8C:A6"
+        speed: 1gb
+        features: ''
+        name: 'nic5'
+      # eno4 UNUSED
+      - mac_address: "D0:94:66:58:8C:A7"
+        speed: 1gb
+        features: ''
         name: 'nic6'
   ############################################################################
   - name: intel2660-2
@@ -143,30 +143,30 @@ nodes:
         speed: 1gb
         features: ''
         name: 'nic1'
-      # eno2
-      - mac_address: "D0:94:66:6D:9A:DB"
-        speed: 1gb
-        features: ''
-        name: 'nic2'
-      # eno3
-      - mac_address: "D0:94:66:6D:9A:DC"
-        speed: 1gb
-        features: ''
-        name: 'nic3'
-      # eno4
-      - mac_address: "D0:94:66:6D:9A:DD"
-        speed: 1gb
-        features: ''
-        name: 'nic4'
       # enp5s0f0
       - mac_address: "B4:96:91:31:9C:64"
         speed: 10gb
         features: 'dpdk|sriov'
-        name: 'nic5'
+        name: 'nic2'
       # enp5s0f1
       - mac_address: "B4:96:91:31:9C:66"
         speed: 10gb
         features: 'dpdk|sriov'
+        name: 'nic3'
+      # eno2 UNUSED
+      - mac_address: "D0:94:66:6D:9A:DB"
+        speed: 1gb
+        features: ''
+        name: 'nic4'
+      # eno3 UNUSED
+      - mac_address: "D0:94:66:6D:9A:DC"
+        speed: 1gb
+        features: ''
+        name: 'nic5'
+      # eno4 UNUSED
+      - mac_address: "D0:94:66:6D:9A:DD"
+        speed: 1gb
+        features: ''
         name: 'nic6'
   ############################################################################
   - name: intel2660-3
@@ -182,30 +182,30 @@ nodes:
         speed: 1gb
         features: ''
         name: 'nic1'
-      # eno2
-      - mac_address: "D0:94:66:58:9E:DC"
-        speed: 1gb
-        features: ''
-        name: 'nic2'
-      # eno3
-      - mac_address: "D0:94:66:58:9E:DD"
-        speed: 1gb
-        features: ''
-        name: 'nic3'
-      # eno4
-      - mac_address: "D0:94:66:58:9E:DE"
-        speed: 1gb
-        features: ''
-        name: 'nic4'
       # enp5s0f0
       - mac_address: "B4:96:91:31:9C:9C"
         speed: 10gb
         features: 'dpdk|sriov'
-        name: 'nic5'
+        name: 'nic2'
       # enp5s0f1
       - mac_address: "B4:96:91:31:9C:9E"
         speed: 10gb
         features: 'dpdk|sriov'
+        name: 'nic3'
+      # eno2 UNUSED
+      - mac_address: "D0:94:66:58:9E:DC"
+        speed: 1gb
+        features: ''
+        name: 'nic4'
+      # eno3 UNUSED
+      - mac_address: "D0:94:66:58:9E:DD"
+        speed: 1gb
+        features: ''
+        name: 'nic5'
+      # eno4 UNUSED
+      - mac_address: "D0:94:66:58:9E:DE"
+        speed: 1gb
+        features: ''
         name: 'nic6'
   ############################################################################
   - name: cn8890-10
