@@ -23,6 +23,7 @@
         {{ vlans[vlan] }}.{{ vlan }}:
           enabled: true
           proto: manual
+          mtu: ${_param:interface_mtu}
           type: vlan
           name: {{ vlans[vlan] }}.{{ vlan }}
           use_interfaces:
