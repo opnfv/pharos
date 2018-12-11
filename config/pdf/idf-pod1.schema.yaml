@@ -63,6 +63,8 @@ definitions:
         network:
           type: 'object'
           properties:
+            interface_mtu:
+              type: 'number'
             ntp_strata_host1:
               type: 'string'
             ntp_strata_host2:
