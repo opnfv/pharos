@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_c48815ea",
+        "filename": "config/installers/fuel/net_macros.j2",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5267
+      },
+      "writtenOn": "2018-12-11T16:19:42Z",
+      "side": 1,
+      "message": "Do we need a default set or we\u0027re enforcing its existance?",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "8f43c9af3ca49498659fb3caa08162504b50ab07",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
