@@ -35,3 +35,11 @@
 {%- macro interface_str(nic, vlan = 0) -%}
     {{ nic }}{% if vlan | int > 0 %}.{{ vlan }}{% endif %}
 {%- endmacro -%}
+
+{%- macro vpp_interface_str(speed, pci_addr) -%}
+    {%- set p = pci_addr.replace('.', ':').split(':') -%}
+    {%- set s = 'GigabitEthernet%d/%d/%d' | format(p[-3] | int(0, 16),
+                                                   p[-2] | int(0, 16),
+                                                   p[-1] | int(0, 16)) -%}
+    {% if '40g' in speed %}Forty{% elif '10g' in speed %}Ten{% endif %}{{ s }}
+{%- endmacro -%}
