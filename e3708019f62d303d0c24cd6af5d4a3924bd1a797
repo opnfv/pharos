@@ -22,6 +22,30 @@
       "revId": "e3708019f62d303d0c24cd6af5d4a3924bd1a797",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d1528812",
+        "filename": "config/installers/fuel/net_macros.j2",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2018-12-28T11:00:28Z",
+      "side": 1,
+      "message": "pci addresses look like \u00270000:0e:00.0\u0027 (domain:bus:slot.function)\nVPP does not use the domain ID, but does use the bus:slot.function parts",
+      "parentUuid": "1a622d24_8603b80e",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 42
+      },
+      "revId": "e3708019f62d303d0c24cd6af5d4a3924bd1a797",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
