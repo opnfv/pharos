@@ -115,22 +115,22 @@ nodes:
       address: 'qemu:///system'
     interfaces: &interfaces
       - name: 'nic1'
-        speed: 10gb
+        speed: 1gb
         features: 'dpdk|sriov'
         mac_address: "00:00:00:00:00:00"  # MACs will be assigned by libvirt
         vlan: native
       - name: 'nic2'
-        speed: 10gb
+        speed: 1gb
         features: 'dpdk|sriov'
         mac_address: "00:00:00:00:00:00"
         vlan: native
       - name: 'nic3'
-        speed: 10gb
+        speed: 1gb
         features: 'dpdk|sriov'
         mac_address: "00:00:00:00:00:00"
         vlan: native
       - name: 'nic4'
-        speed: 10gb
+        speed: 1gb
         features: 'dpdk|sriov'
         mac_address: "00:00:00:00:00:00"
         vlan: native
