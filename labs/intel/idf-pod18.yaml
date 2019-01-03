@@ -35,7 +35,7 @@ idf:
       mask: 24
     private:  # floating
       interface: 2
-      vlan: native
+      vlan: 1000-1030
       network: 10.10.182.0
       mask: 24
       bridge: brExt
