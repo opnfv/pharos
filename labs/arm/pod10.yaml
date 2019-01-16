@@ -243,12 +243,12 @@ nodes:
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic2'
-      # enP2p1s0f1, Not connected
+      # enP2p1s0f3, private
       - mac_address: "00:0f:b7:07:00:c2"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic3'
-      # enP2p1s0f3, Not connected
+      # enP2p1s0f1, Not connected
       - mac_address: "00:0f:b7:07:00:c0"
         speed: 40gb
         features: 'dpdk|sriov'
