@@ -284,13 +284,13 @@ nodes:
         speed: 1gb
         features: ''
         name: 'nic1'
-      # enP2p1s0f1
-      - mac_address: "1c:1b:0d:e8:fb:af"
+      # enP2p1s0f2
+      - mac_address: "1c:1b:0d:e8:fb:b0"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic2'
-      # enP2p1s0f2
-      - mac_address: "1c:1b:0d:e8:fb:b0"
+      # enP2p1s0f1
+      - mac_address: "1c:1b:0d:e8:fb:af"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic3'
