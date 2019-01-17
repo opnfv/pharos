@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_9293e4a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-17T13:56:39Z",
+      "side": 1,
+      "message": "As recommended in [1]:\n- please add an empty line after the commit title\n- drop the trailing full stop \u0027.\u0027\n- wrap the commit message contents to 70 columns\n\n[1] https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "ff824365a35df512a4923cb1c96f1d913b3e7eb9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d28d5c7d",
+        "filename": "labs/itri/idf-pod1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-17T13:56:39Z",
+      "side": 1,
+      "message": "2019, maybe add ITRI",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "ff824365a35df512a4923cb1c96f1d913b3e7eb9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_32ead00f",
+        "filename": "labs/itri/idf-pod1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-17T13:56:39Z",
+      "side": 1,
+      "message": "at least for Fuel, private should always have a VLAN range assigned, in case you want to deploy DPDK-enabled scenarios, which use VLAN and not VXLAN.\nIf you don\u0027t have tagged VLANs on this network, remove \u0027fuel\u0027 from the list of supported installers above.",
+      "range": {
+        "startLine": 46,
+        "startChar": 10,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "ff824365a35df512a4923cb1c96f1d913b3e7eb9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f2e7b83e",
+        "filename": "labs/itri/idf-pod1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-17T13:56:39Z",
+      "side": 1,
+      "message": "This seems to be the only node with different busaddr, so let\u0027s drop the \u0027\u0026interfaces\u0027 and \u0027\u0026busaddr\u0027 anchors since they will clearly not be used.\nNote: an YAML anchor should be unique, so defining them multiple times in the same file is an error.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 28
+      },
+      "revId": "ff824365a35df512a4923cb1c96f1d913b3e7eb9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d2e43c3d",
+        "filename": "labs/itri/idf-pod1.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-17T13:56:39Z",
+      "side": 1,
+      "message": "These look similar to the second node, so you can use the YAML anchors defined there, e.g. see [1].\n\n[1] https://github.com/opnfv/pharos/blob/master/labs/arm/idf-pod10.yaml#L84-L85",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 28
+      },
+      "revId": "ff824365a35df512a4923cb1c96f1d913b3e7eb9",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
