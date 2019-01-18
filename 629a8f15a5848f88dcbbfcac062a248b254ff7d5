@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_bd2cf1ac",
+        "filename": "labs/itri/idf-pod1.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-18T16:13:59Z",
+      "side": 1,
+      "message": "This whole block should be idented 2 more spaces, as it\u0027s part of net_config and not a sibling.",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 48,
+        "endChar": 12
+      },
+      "revId": "629a8f15a5848f88dcbbfcac062a248b254ff7d5",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_7d2259ba",
+        "filename": "labs/itri/pod1.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-01-18T16:13:59Z",
+      "side": 1,
+      "message": "Quick question about Compass4NFV: does it use this value here?\nRight now we define a \u0027name\u0027 for each interface, but we enforce it via YAML schema to be in the format \u0027nicN\u0027 (e.g. nic0, nic1 etc.) in order to not be confused with the distro-specific name assigned (while some distros will use eth0/eth1/eth2, others might use predictable interface names like eno1, enP2p1 etc.).\nIf Compass really uses these values, we can relax the PDF schema and allow any interface name here. If not, let\u0027s just replace all occurences of \u0027eth\u0027 in this file with \u0027nic\u0027.",
+      "range": {
+        "startLine": 88,
+        "startChar": 13,
+        "endLine": 88,
+        "endChar": 17
+      },
+      "revId": "629a8f15a5848f88dcbbfcac062a248b254ff7d5",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
