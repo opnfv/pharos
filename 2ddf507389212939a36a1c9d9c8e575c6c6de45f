@@ -1,0 +1,8 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+2: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Code-Review+2: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-by: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-at: Mon, 21 Jan 2019 16:49:20 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/62959
+Project: pharos
+Branch: refs/heads/master
