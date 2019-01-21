@@ -1,0 +1,92 @@
+##############################################################################
+# Copyright (c) 2019 ITRI.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+### ITRI POD 1 installer descriptor file ###
+
+idf:
+  version: 0.1
+  installer: ['compass4nfv', 'fuel']
+  net_config:
+    # NOTE: Network names are likely to change after the PDF spec is updated
+    admin:
+      interface: 0
+      vlan: native
+      network: 10.1.0.0
+      mask: 24
+    storage:
+      interface: 1
+      vlan: native
+      network: 172.16.2.0
+      mask: 24
+    oob:
+      interface: 1
+      ip-range: 100.86.5.28-100.86.5.33
+      vlan: native
+    public:
+      interface: 2
+      vlan: native
+      network: 100.86.0.0
+      mask: 16
+      gateway: 100.86.0.254
+      dns:
+        - 8.8.8.8
+        - 8.8.4.4
+    mgmt:
+      interface: 4
+      vlan: 1001
+      network: 172.16.3.0
+      mask: 24
+    private:
+      interface: 3
+      vlan: 100
+      network: 172.16.1.0
+      mask: 24
+  fuel:
+    jumphost:
+      bridges:
+        admin: 'pxebr'
+        mgmt: 'br-ctl'
+        private: ''
+        public: ''
+    network:
+      node:
+        # Ordered-list, index should be in sync with node index in PDF
+        - interfaces:
+            # Ordered-list, index should be in sync with interface index in PDF
+            - 'eth0'
+            - 'eth1'
+            - 'eth2'
+            - 'eth3'
+            - 'eth4'
+          busaddr:
+            # Bus-info reported by `ethtool -i ethX`
+            - '0000:03:00.0'
+            - '0000:05:00.3'
+            - '0000:02:00.1'
+            - '0000:05:00.0'
+            - '0000:02:00.0'
+        - interfaces: &interfaces
+            - 'eth0'
+            - 'eth1'
+            - 'eth2'
+            - 'eth3'
+            - 'eth4'
+          busaddr: &busaddr
+            - '0000:03:00.0'
+            - '0000:04:00.1'
+            - '0000:02:00.1'
+            - '0000:05:00.1'
+            - '0000:02:00.0'
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
+        - interfaces: *interfaces
+          busaddr: *busaddr
