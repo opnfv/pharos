@@ -208,7 +208,7 @@ nodes:
         features: ''
         name: 'nic6'
   ############################################################################
-  - name: cn8890-10
+  - name: cn8890-14
     node:
       type: baremetal
       vendor: Cavium
@@ -220,10 +220,10 @@ nodes:
       memory: 128G
     disks:
       - name: 'disk1'
-        disk_capacity: 500G
-        disk_type: hdd
+        disk_capacity: 240G
+        disk_type: ssd
         disk_interface: sata
-        disk_rotation: 7200
+        disk_rotation: 0
     remote_management:
       type: ipmi
       versions:
@@ -231,30 +231,41 @@ nodes:
       user: admin
       pass: admin
       address: 10.0.21.5
-      mac_address: "40:8D:5C:BA:B9:65"
+      mac_address: "1c:1b:0d:60:ed:9b"
     interfaces:
-      # enP5s3, Connected, used only for admin/PXE
-      - mac_address: "68:05:ca:3d:93:0f"
+      # emP5144s0, Connected, used only for admin/PXE
+      - mac_address: "68:05:ca:42:cb:e5"
         speed: 1gb
         features: ''
         name: 'nic1'
-      # enP2p1s0f2, Connected, trunk for all other VLANs
-      - mac_address: "00:0f:b7:07:00:c1"
+      # em2p1s0f1, Connected, trunk for all other VLANs
+      - mac_address: "1c:1b:0d:60:ed:96"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic2'
-      # enP2p1s0f3, private
-      - mac_address: "00:0f:b7:07:00:c2"
+      # em2p1s0f2, private
+      - mac_address: "1c:1b:0d:60:ed:97"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic3'
-      # enP2p1s0f1, Not connected
-      - mac_address: "00:0f:b7:07:00:c0"
+      # em2p1s0f3, Not connected
+      - mac_address: "1c:1b:0d:60:ed:98"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      # em2p1s0f4, Not connected
+      - mac_address: "1c:1b:0d:60:ed:99"
+        speed: 10gb
+        features: 'dpdk|sriov'
+        name: 'nic4'
+      # em2p1s0f5, Not connected
+      - mac_address: "1c:1b:0d:60:ed:9a"
         speed: 40gb
         features: 'dpdk|sriov'
         name: 'nic4'
+
   ############################################################################
-  - name: cn8890-23
+  - name: cn8890-15
     node:
       type: baremetal
       vendor: Cavium
@@ -266,7 +277,7 @@ nodes:
       memory: 64G
     disks:
       - name: 'disk1'
-        disk_capacity: 480G
+        disk_capacity: 240G
         disk_type: ssd
         disk_interface: sata
         disk_rotation: 0
@@ -277,35 +288,35 @@ nodes:
       user: ADMIN
       pass: ADMIN
       address: 10.0.21.6
-      mac_address: "1c:1b:0d:e8:fb:b7"
+      mac_address: "1c:1b:0d:60:ed:b7"
     interfaces:
-      # enP5p144s0
-      - mac_address: "68:05:ca:5a:c3:b9"
+      # em5p144s0
+      - mac_address: "68:05:ca:42:cb:e8"
         speed: 1gb
         features: ''
         name: 'nic1'
-      # enP2p1s0f2
-      - mac_address: "1c:1b:0d:e8:fb:b0"
+      # em2p1s0f1
+      - mac_address: "1c:1b:0d:60:ed:b2"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic2'
-      # enP2p1s0f1
-      - mac_address: "1c:1b:0d:e8:fb:af"
+      # em2p1s0f2
+      - mac_address: "1c:1b:0d:60:ed:b3"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic3'
-      # enP2p1s0f3
-      - mac_address: "1c:1b:0d:e8:fb:b1"
+      # em2p1s0f3, Not connected
+      - mac_address: "1c:1b:0d:60:ed:b4"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic4'
-      # enP2p1s0f4
-      - mac_address: "1c:1b:0d:e8:fb:b2"
+      # em2p1s0f4, Not connected
+      - mac_address: "1c:1b:0d:60:ed:b5"
         speed: 10gb
         features: 'dpdk|sriov'
         name: 'nic5'
-      # enP2p1s0f5
-      - mac_address: "1c:1b:0d:e8:fb:b3"
+      # em2p1s0f5, Not connected
+      - mac_address: "1c:1b:0d:60:ed:b6"
         speed: 40gb
         features: 'dpdk|sriov'
         name: 'nic6'
