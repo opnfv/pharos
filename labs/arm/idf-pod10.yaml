@@ -85,30 +85,21 @@ idf:
           busaddr: *busaddr_intel
         - interfaces: *interfaces_intel
           busaddr: *busaddr_intel
-        - interfaces:
-            - 'enP5s3'
-            - 'enP2p1s0f2'
-            - 'enP2p1s0f3'
-            - 'enP2p1s0f1'
-          busaddr:
+        - interfaces: &interfaces_arm
+            - 'em5p144s0'
+            - 'em2p1s0f1'
+            - 'em2p1s0f2'
+            - 'em2p1s0f3'
+            - 'em2p1s0f4'
+            - 'em2p1s0f5'
+          busaddr: &busaddr_arm
             - '0005:90:00.0'
-            - '0002:01:00.2'
-            - '0002:01:00.3'
             - '0002:01:00.1'
-        - interfaces:
-            - 'enP5p144s0'
-            - 'enP2p1s0f2'
-            - 'enP2p1s0f1'
-            - 'enP2p1s0f3'
-            - 'enP2p1s0f4'
-            - 'enP2p1s0f5'
-          busaddr:
-            - '0005:90:00.0'
             - '0002:01:00.2'
-            - '0002:01:00.1'
-            - '0002:01:00.3'
             - '0002:01:00.4'
             - '0002:01:00.5'
+        - interfaces: *interfaces_arm
+          busaddr: *busaddr_arm
     reclass:
       node:
         - compute_params: &compute_params_intel
