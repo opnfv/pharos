@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_7eb7e5d8",
+        "filename": "labs/arm/idf-pod10.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2997
+      },
+      "writtenOn": "2019-02-02T19:10:33Z",
+      "side": 1,
+      "message": "This naming is OS-dependent and the old values were fit for Debian (and our old custom systemd-udev tailored to avoid uppercase chars in interfaces names in order to bypass an old Fuel bug).\nUbuntu stock system-udev names these differently, so I did a mass replace \u0027s/em/enP/\u0027.",
+      "range": {
+        "startLine": 89,
+        "startChar": 15,
+        "endLine": 89,
+        "endChar": 25
+      },
+      "revId": "917a71636a73cc72098d13ec32e52520cced8237",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
