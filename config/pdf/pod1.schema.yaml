@@ -74,6 +74,8 @@ definitions:
           type: 'string'
         pass:
           type: 'string'
+        privilege_level:
+          type: 'string'
         type:
           type: 'string'
         versions:
