@@ -74,6 +74,8 @@ definitions:
           type: 'string'
         pass:
           type: 'string'
+        port:
+          type: 'number'
         privilege_level:
           type: 'string'
         type:
