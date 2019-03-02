@@ -1,95 +1,69 @@
 ##############################################################################
-# Copyright (c) 2018 Ericsson AB, Mirantis Inc., Enea AB and others.
+# Copyright (c) 2019 Ericsson AB, Mirantis Inc., Enea AB and others.
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Apache License, Version 2.0
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 ---
-### ericsson-virtual1 POD descriptor file ###
+### unh-virtual1 POD descriptor file ###
 
 version: 1.0
 details:
-  pod_owner: Dianfeng Du
-  contact: dianfeng.du@ericsson.com
-  lab: Ericsson
-  location: Rosersberg, Sweden
-  type: production
-  link: https://wiki.opnfv.org/display/pharos/Ericsson+Hosting
+  pod_owner: University of New Hampshire
+  contact: lincoln.lavoie@iol.unh.edu
+  lab: UNH lab
+  location: New Hampshire, USA
+  type: development
+  link: https://wiki.opnfv.org/pages/viewpage.action?pageId=12389095
 ##############################################################################
 jumphost:
-  name: ericsson-virtual1
+  name: unh-virtual1
   node: &jumpparams
     type: baremetal
     vendor: HP
-    model: ProLiant BL460c Gen8
+    model: ProLiant
     arch: x86_64
     cpus: 2
-    cpu_cflags: ivybridge
-    cores: 10
-    memory: 64G
+    cpu_cflags: haswell
+    cores: 22
+    memory: 512G
   disks:
     - name: 'disk1'
       disk_capacity: 800G
-      disk_type: hdd
-      disk_interface: scsi
-      disk_rotation: &diskrotation 15000
+      disk_type: ssd
+      disk_interface: sata
+      disk_rotation: 0
   os: ubuntu-16.04
   remote_params: &remoteparas
     type: ipmi
     versions:
       - 1.0
       - 2.0
-    user: >
-      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
-      DQYJKoZIhvcNAQEBBQAEggEAAs3kLIVkEqhUWd/pfTCGlq2uau+dzvox/HXY
-      G6ccXNZfwFV1mV1z7S0Bg5NME/xF2PU4sUkk9wbK/+yYG8CF6tHCzJMIy6wO
-      fOfW5rzmM56GFRqsc0rr5qAVpRrOVNiLjiheAwmyVzfRWq0efLayflg3pnZm
-      j4Z1Uad9YVPeovD8zYsnNWQktaIKwX1TBAg9awZ7dRX43tJthwRNSBU+t3XJ
-      wiMtbJIOeLKpCQ+DoQ//was7juO82oZXcAz/ds7Ec1/8Vh4qB2XcURzgM7tJ
-      Gj5U2OXC0pCvH9PKih93OTIGqlboyOn7kqLXN1cIdd+I/OoO/lLpjyCsLmDP
-      GZhoXDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBQUeVPp2xAdVKUvwCg
-      B9rcgBC8DoeAeBhrJ/KJmCPVjSF+]
-    pass: >
-      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
-      DQYJKoZIhvcNAQEBBQAEggEAQSVWy2cbhjfPeMfXjsrOMyvjDSCQY3Xj+DvK
-      bp1uBqYbgoJXjaLcU/OVTrJqUTC6aA7CZuFeXbqcc+xay2gznXju2o+gB/wk
-      wNo0p6bfLsGbqDgO1NIGm6KHX2sHsgFUxmOZB3K63PrNEdQRdK0F0rxg9es8
-      am0sHEdeteG91rVgHj1FyEaSH1R5xC5Rm4l/AIcGTnhPtGi9gDVdik/zHUh1
-      mDDwwIxlhsFCK7B8BJxIXnQe+KdaRRbbdusDafoOgQMpefmNxusr4ljaX0vp
-      7WXFtikERCUy6MCZKU55tSTu6sMeSO44tw419EKGEhsAnELIxWoYKiUnM/vB
-      a3XIujA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBBLLgA3biEw8bloqg38
-      m+WpgBBgGzF7DTMsUBVS+pa2DUbI]
+    user: changeme
+    pass: changeme
   remote_management:
     <<: *remoteparas
-    address: 172.16.1.22/24
-    mac_address: "9C:B6:54:8E:D7:80"
+    address: 0.0.0.0/24
+    mac_address: "00:00:00:00:00:00"
   interfaces:
     - name: 'nic1'
       speed: 10gb
       features: 'dpdk|sriov'
       address: 100.64.202.5/24
-      mac_address: "38:ea:a7:8e:16:c8"
+      mac_address: "00:00:00:00:00:00"
     - name: 'nic2'
       speed: 10gb
       features: 'dpdk|sriov'
-      mac_address: "38:ea:a7:8e:16:c9"
+      mac_address: "00:00:00:00:00:00"
     - name: 'nic3'
       speed: 10gb
       features: 'dpdk|sriov'
-      mac_address: "38:ea:a7:8e:17:e4"
+      mac_address: "00:00:00:00:00:00"
     - name: 'nic4'
       speed: 10gb
       features: 'dpdk|sriov'
-      mac_address: "38:ea:a7:8e:17:e5"
-    - name: 'nic5'
-      speed: 10gb
-      features: 'dpdk|sriov'
-      mac_address: "9C:B6:54:89:BD:18"
-    - name: 'nic6'
-      speed: 10gb
-      features: 'dpdk|sriov'
-      mac_address: "9C:B6:54:89:BD:1C"
+      mac_address: "00:00:00:00:00:00"
 ##############################################################################
 nodes:
   - name: node-1
@@ -101,13 +75,13 @@ nodes:
       model: virt
       cpus: 1
       cores: 4
-      memory: 6G
-    disks: &disks
+      memory: 14G
+    disks:
       - name: 'disk1'
-        disk_capacity: 100G
+        disk_capacity: 400G
         disk_type: hdd
         disk_interface: scsi  # virtio-scsi
-        disk_rotation: *diskrotation
+        disk_rotation: &diskrotation 0
     remote_management: &remotemgmt
       type: libvirt
       user: changeme
@@ -136,19 +110,39 @@ nodes:
         vlan: native
   ############################################################################
   - name: node-2
-    node: *nodeparams
-    disks: *disks
+    node:
+      <<: *nodeparams
+      # Fuel overrides certain params (e.g. cpus, mem) based on node role later
+      cpus: 1
+      cores: 4
+      memory: 8G
+    disks: &disks
+      - name: 'disk1'
+        disk_capacity: 100G
+        disk_type: hdd
+        disk_interface: scsi  # virtio-scsi
+        disk_rotation: *diskrotation
     remote_management: *remotemgmt
     interfaces: *interfaces
   ############################################################################
   - name: node-3
-    node: *nodeparams
+    node:
+      <<: *nodeparams
+      # Fuel overrides certain params (e.g. cpus, mem) based on node role later
+      cpus: 1
+      cores: 4
+      memory: 8G
     disks: *disks
     remote_management: *remotemgmt
     interfaces: *interfaces
   ############################################################################
   - name: node-4
-    node: *nodeparams
+    node: &compute_nodeparams
+      <<: *nodeparams
+      # Fuel overrides certain params (e.g. cpus, mem) based on node role later
+      cpus: 2
+      cores: 18
+      memory: 120G
     disks: &compute_disks
       - name: 'disk1'
         disk_capacity: 100G
@@ -164,7 +158,7 @@ nodes:
     interfaces: *interfaces
   ############################################################################
   - name: node-5
-    node: *nodeparams
+    node: *compute_nodeparams
     disks: *compute_disks
     remote_management: *remotemgmt
     interfaces: *interfaces
