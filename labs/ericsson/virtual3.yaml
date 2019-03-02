@@ -100,7 +100,7 @@ nodes:
       vendor: libvirt
       model: virt
       cpus: 1
-      cores: 8
+      cores: 4
       memory: 6G
     disks: &disks
       - name: 'disk1'
@@ -149,12 +149,22 @@ nodes:
   ############################################################################
   - name: node-4
     node: *nodeparams
-    disks: *disks
+    disks: &compute_disks
+      - name: 'disk1'
+        disk_capacity: 100G
+        disk_type: hdd
+        disk_interface: scsi  # virtio-scsi
+        disk_rotation: *diskrotation
+      - name: 'disk2'
+        disk_capacity: 100G
+        disk_type: hdd
+        disk_interface: scsi  # virtio-scsi
+        disk_rotation: *diskrotation
     remote_management: *remotemgmt
     interfaces: *interfaces
   ############################################################################
   - name: node-5
     node: *nodeparams
-    disks: *disks
+    disks: *compute_disks
     remote_management: *remotemgmt
     interfaces: *interfaces
