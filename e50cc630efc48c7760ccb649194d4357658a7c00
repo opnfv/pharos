@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_abf4c587",
+        "filename": "labs/unh/virtual1.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1306
+      },
+      "writtenOn": "2019-03-06T07:22:16Z",
+      "side": 1,
+      "message": "This points to Auto project. It should probably link to LaaS v2 page instead, what do you think?\n\ne.g. https://wiki.opnfv.org/display/INF/Lab+as+a+Service+2.0",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 68
+      },
+      "revId": "e50cc630efc48c7760ccb649194d4357658a7c00",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
