@@ -1,0 +1,8 @@
+Verified+1: jenkins-ci <jenkins-opnfv-ci@opnfv.org>
+Code-Review+1: Martin Klozik <martin.klozik@tieto.com>
+Code-Review+2: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Submitted-by: Alexandru Avadanii <Alexandru.Avadanii@enea.com>
+Submitted-at: Mon, 18 Mar 2019 15:49:15 +0000
+Reviewed-on: https://gerrit.opnfv.org/gerrit/67161
+Project: pharos
+Branch: refs/heads/master
