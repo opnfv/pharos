@@ -4,11 +4,11 @@ project_creation_date: 'January 8, 2015'
 project_category: 'Integration & Testing'
 lifecycle_state: 'Mature'
 project_lead: &opnfv_pharos_ptl
-    name: 'julien zhang'
-    email: 'zhang.jun3g@zte.com.cn'
-    company: 'zte.com.cn'
-    id: 'Julien-zte'
-    timezone: 'GMT+8'
+    name: 'Jack Morgan'
+    email: 'jack.morgan@intel.com'
+    id: 'jmorgan1'
+    company: 'intel.com'
+    timezone: 'Unknown'
 primary_contact: *opnfv_pharos_ptl
 issue_tracking:
     type: 'jira'
@@ -35,10 +35,6 @@ repositories:
     - 'pharos-tools'
 committers:
     - <<: *opnfv_pharos_ptl
-    - name: 'Jack Morgan'
-      email: 'jack.morgan@intel.com'
-      id: 'jmorgan1'
-      company: 'intel.com'
     - name: 'Wenjing Chu'
       email: 'chu.wenjing@gmail.com'
       company: 'gmail.com'
@@ -59,6 +55,10 @@ committers:
       email: 'fdegir@gmail.com'
       company: 'gmail.com'
       id: 'fdegir'
+    - name: 'julien zhang'
+      email: 'zhang.jun3g@zte.com.cn'
+      company: 'zte.com.cn'
+      id: 'Julien-zte'
     - name: 'Aric Gardner'
       email: 'agardner@linuxfoundation.org'
       company: 'linuxfoundation.org'
