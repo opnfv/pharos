@@ -118,7 +118,7 @@ idf:
               compute_kernel_isolcpu: *nova_cpu_pinning_common_intel
               compute_dpdk_driver: uio
               compute_ovs_pmd_cpu_mask: "0xc"
-              compute_ovs_dpdk_socket_mem: "1024"
+              compute_ovs_dpdk_socket_mem: "2048"
               compute_ovs_dpdk_lcore_mask: "0xc"
               compute_ovs_memory_channels: "2"
               dpdk0_driver: igb_uio
