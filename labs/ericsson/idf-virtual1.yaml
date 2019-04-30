@@ -88,13 +88,13 @@ idf:
         - compute_params: &compute_params
             common: &compute_params_common
               compute_hugepages_size: 2M
-              compute_hugepages_count: 4096
+              compute_hugepages_count: 5120
               compute_hugepages_mount: /mnt/hugepages_2M
             dpdk:
               <<: *compute_params_common
               compute_dpdk_driver: uio
               compute_ovs_pmd_cpu_mask: "0x6"
-              compute_ovs_dpdk_socket_mem: "2048"
+              compute_ovs_dpdk_socket_mem: "3072"
               compute_ovs_dpdk_lcore_mask: "0x8"
               compute_ovs_memory_channels: "2"
               dpdk0_driver: igb_uio
