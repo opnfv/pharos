@@ -5,24 +5,24 @@
 # which accompanies this distribution, and is available at
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
-{%- macro linux_network_interfaces_nic(nics) -%}
+{%- macro linux_network_interfaces_nic(nics, proto = 'manual') -%}
 {%- for nic in nics %}
         {{ nic }}:
           enabled: true
           type: eth
-          proto: manual
+          proto: {{ proto }}
           mtu: ${_param:interface_mtu}
           name: {{ nic }}
           noifupdown: true
 {%- endfor %}
 {%- endmacro -%}
 
-{%- macro linux_network_interfaces_vlan(vlans) -%}
+{%- macro linux_network_interfaces_vlan(vlans, proto = 'manual') -%}
 {%- for vlan in vlans %}
     {%- if vlan | int > 0 %}
         {{ vlans[vlan] }}.{{ vlan }}:
           enabled: true
-          proto: manual
+          proto: {{ proto }}
           mtu: ${_param:interface_mtu}
           type: vlan
           name: {{ vlans[vlan] }}.{{ vlan }}
