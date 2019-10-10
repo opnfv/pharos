@@ -5,10 +5,10 @@ project_category: 'Integration & Testing'
 lifecycle_state: 'Mature'
 project_lead: &opnfv_pharos_ptl
     name: 'Jack Morgan'
-    email: 'jack.morgan@intel.com'
-    id: 'jmorgan1'
-    company: 'intel.com'
-    timezone: 'Unknown'
+    email: 'jack@jento.io'
+    id: 'jentoio'
+    company: 'none'
+    timezone: 'PDT(UTC-7)'
 primary_contact: *opnfv_pharos_ptl
 issue_tracking:
     type: 'jira'
